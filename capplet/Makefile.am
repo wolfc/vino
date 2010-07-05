@@ -22,6 +22,8 @@ vino_preferences_SOURCES = \
 	vino-connectivity-info.c	\
 	vino-url-webservice.h		\
 	vino-url-webservice.c		\
+	vino-radio-button.h		\
+	vino-radio-button.c		\
 	vino-message-box.h		\
 	vino-message-box.c		\
 	vino-preferences.c		\
