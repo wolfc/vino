@@ -124,13 +124,22 @@ static void
 vino_radio_button_toggled (GtkToggleButton *button)
 {
   VinoRadioButton *vrb = (VinoRadioButton *) button;
-  const GSList *list;
 
-  list = gtk_radio_button_get_group (&vrb->parent_instance);
-  while (list)
+  /* As it is, we get the notification of the old button becoming inactivity
+   * followed by the notification of the new button becoming active.  Only run
+   * when the new button becomes active in order to avoid unnecessary
+   * notifications.
+   */
+  if (gtk_toggle_button_get_active (button))
     {
-      g_object_notify (list->data, "settings-active");
-      list = list->next;
+      const GSList *list;
+
+      list = gtk_radio_button_get_group (&vrb->parent_instance);
+      while (list)
+        {
+          g_object_notify (list->data, "settings-active");
+          list = list->next;
+        }
     }
 }
 
