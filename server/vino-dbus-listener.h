@@ -60,14 +60,6 @@ GType              vino_dbus_listener_get_type   (void) G_GNUC_CONST;
 VinoDBusListener * vino_dbus_listener_new        (VinoServer       *server);
 VinoServer        *vino_dbus_listener_get_server (VinoDBusListener *listener);
 
-G_END_DECLS
-
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus.h>
-
-G_BEGIN_DECLS
-
-DBusGConnection *vino_dbus_get_connection   (void);
 gboolean        vino_dbus_request_name     (void);
 
 G_END_DECLS

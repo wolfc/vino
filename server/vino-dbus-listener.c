@@ -40,10 +40,6 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus-glib-lowlevel.h>
-#include <dbus/dbus-glib-bindings.h>
-
 #include "vino-dbus-error.h"
 
 #ifdef HAVE_TELEPATHY_GLIB

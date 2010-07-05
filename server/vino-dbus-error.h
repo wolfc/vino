@@ -23,8 +23,6 @@
 #ifndef __VINO_DBUS_ERROR_H__
 #define __VINO_DBUS_ERROR_H__
 
-#include <dbus/dbus-glib.h>
-
 typedef enum
 {
   VINO_DBUS_ERROR_NOT_IMPLEMENTED,

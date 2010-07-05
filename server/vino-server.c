@@ -35,11 +35,9 @@
 #include "vino-prompt.h"
 #include "vino-dbus-listener.h"
 #include "vino-util.h"
-#include "vino-enums.h"
-#include "vino-background.h"
 #include "vino-upnp.h"
+#include "vino-enums.h"
 #include <sys/poll.h>
-#include <dbus/dbus-glib.h>
 #include <gtk/gtk.h>
 
 #ifdef VINO_ENABLE_KEYRING
@@ -147,18 +145,15 @@ static gpointer parent_class;
 static void
 vino_server_lock_screen (VinoServer *server)
 {
-
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
+  GDBusConnection *connection;
+  GError *error = NULL;
 
   if (!server->priv->lock_screen)
     return;
-  
+
   dprintf(DBUS, "Locking screen via gnome-screensaver\n");
 
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
   if (!connection)
     {
       dprintf (DBUS, _("Failed to open connection to bus: %s\n"), error->message);
@@ -166,29 +161,22 @@ vino_server_lock_screen (VinoServer *server)
       return;
     }
 
-  proxy = dbus_g_proxy_new_for_name (connection,
-                                     GNOME_SCREENSAVER_BUS_NAME,
-                                     GNOME_SCREENSAVER_PATH,
-                                     GNOME_SCREENSAVER_INTERFACE);
-
-  dbus_g_proxy_call_no_reply (proxy, "Lock", G_TYPE_INVALID);
-
-  g_object_unref (proxy);
-  dbus_g_connection_unref (connection);
+  g_dbus_connection_call (connection, GNOME_SCREENSAVER_BUS_NAME,
+                          GNOME_SCREENSAVER_PATH, GNOME_SCREENSAVER_INTERFACE,
+                          "Lock", NULL, NULL,
+                          G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+  g_object_unref (connection);
 }
 
 static void
 vino_server_unlock_screen (void)
 {
-
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
+  GDBusConnection *connection;
+  GError *error = NULL;
 
   dprintf(DBUS, "Unlocking screen via gnome-screensaver\n");
 
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
   if (!connection)
     {
       dprintf (DBUS, _("Failed to open connection to bus: %s\n"), error->message);
@@ -196,15 +184,11 @@ vino_server_unlock_screen (void)
       return;
     }
 
-  proxy = dbus_g_proxy_new_for_name (connection,
-                                     GNOME_SCREENSAVER_BUS_NAME,
-                                     GNOME_SCREENSAVER_PATH,
-                                     GNOME_SCREENSAVER_INTERFACE);
-
-  dbus_g_proxy_call_no_reply (proxy, "SimulateUserActivity", G_TYPE_INVALID);
-
-  g_object_unref (proxy);
-  dbus_g_connection_unref (connection);
+  g_dbus_connection_call (connection, GNOME_SCREENSAVER_BUS_NAME,
+                          GNOME_SCREENSAVER_PATH, GNOME_SCREENSAVER_INTERFACE,
+                          "SimulateUserActivity", NULL, NULL,
+                          G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+  g_object_unref (connection);
 }
 
 #undef GNOME_SCREENSAVER_BUS_NAME
@@ -300,6 +284,21 @@ vino_server_get_disable_xdamage (VinoServer *server)
 }
 
 static void
+vino_background_draw (gboolean status)
+{
+  static GSettings *background_settings;
+  gsize initialised;
+
+  if (g_once_init_enter (&initialised))
+    {
+      background_settings = g_settings_new ("org.gnome.desktop.background");
+      g_once_init_leave (&initialised, TRUE);
+    }
+
+  g_settings_set_boolean (background_settings, "draw-background", status);
+}
+
+static void
 vino_server_client_accepted (VinoServer *server,
                              VinoClient *client)
 {
@@ -309,7 +308,7 @@ vino_server_client_accepted (VinoServer *server,
   vino_server_unlock_screen ();
 
   if (vino_server_get_disable_background (server))
-     vino_background_draw (FALSE);
+    vino_background_draw (FALSE);
 }
 
 

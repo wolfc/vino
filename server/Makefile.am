@@ -73,8 +73,6 @@ vino_server_SOURCES = \
 	vino-dbus-listener.h \
 	vino-dbus-error.c \
 	vino-dbus-error.h \
-	vino-background.c \
-	vino-background.h \
 	vino-upnp.h \
 	vino-upnp.c \
 	$(VINO_HTTP_SRC) \
