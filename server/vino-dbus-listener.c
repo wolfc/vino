@@ -82,6 +82,39 @@ enum
   PROP_SERVER
 };
 
+static void
+vino_dbus_listener_method_call (GDBusConnection       *connection,
+                                const gchar           *sender,
+                                const gchar           *object_path,
+                                const gchar           *interface_name,
+                                const gchar           *method_name,
+                                GVariant              *parameters,
+                                GDBusMethodInvocation *invocation,
+                                gpointer               user_data)
+{
+  g_assert_cmpstr (method_name, ==, "ShareWithTube");
+
+
+}
+
+
+static GVariant *
+vino_dbus_listener_get_property (GDBusConnection  *connection,
+                                 const gchar      *sender,
+                                 const gchar      *object_path,
+                                 const gchar      *interface_name,
+                                 const gchar      *property_name,
+                                 GError          **error,
+                                 gpointer          user_data)
+{
+}
+
+const GDBusInterfaceVTable vtable =
+{
+  vino_dbus_listener_method_call,
+  vino_dbus_listener_get_property,
+};
+
 static gboolean
 vino_dbus_listener_get_external_port (VinoDBusListener *listener,
                                       gint             *ret,
@@ -93,8 +126,6 @@ vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
                                       char             **avahi_hostname,
                                       gint             *port,
                                       GError           **error);
-
-#include "dbus-interface-glue.h"
 
 static void vino_dbus_listener_set_server (VinoDBusListener *listener,
                                            VinoServer       *server);

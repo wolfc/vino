@@ -40,6 +40,7 @@
 
 static GSettings *background_settings = NULL;
 static GSettings *vino_settings       = NULL;
+static gboolean   force_view_only;
 
 static void
 vino_prefs_restart_mdns (VinoServer *server,
@@ -67,6 +68,7 @@ vino_prefs_create_server (GdkScreen *screen)
 
   /* Start the server 'on-hold' until all the settings are in, then go. */
   server = g_object_new (VINO_TYPE_SERVER,
+                         "view-only", force_view_only,
                          "on-hold", TRUE,
                          "screen", screen,
                          NULL);
@@ -74,8 +76,11 @@ vino_prefs_create_server (GdkScreen *screen)
 
   g_settings_bind (vino_settings, "prompt-enabled",
                    server, "prompt-enabled", G_SETTINGS_BIND_GET);
-  g_settings_bind (vino_settings, "view-only",
-                   server, "view-only", G_SETTINGS_BIND_GET);
+
+  if (!force_view_only)
+    g_settings_bind (vino_settings, "view-only",
+                     server, "view-only", G_SETTINGS_BIND_GET);
+
   g_settings_bind (vino_settings, "network-interface",
                    server, "network-interface", G_SETTINGS_BIND_GET);
   g_settings_bind (vino_settings, "use-alternative-port",
@@ -208,6 +213,8 @@ vino_prefs_init (gboolean view_only)
 
   if(!vino_prefs_lock ())
     vino_prefs_restore_background ();
+
+  force_view_only = view_only;
 }
 
 void

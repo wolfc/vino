@@ -95,9 +95,6 @@ clientfile_DATA = Vino.client
 
 endif
 
-dbus-interface-glue.h: dbus-interface.xml
-	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server $< > dbus-interface-glue.h
-
 vino-marshal.h: vino-marshal.list $(GLIB_GENMARSHAL)
 	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
 
@@ -171,7 +168,6 @@ BUILT_SOURCES = \
 	vino-enums.h \
 	vino-marshal.c \
 	vino-marshal.h \
-	dbus-interface-glue.h \
 	$(NULL)
 
 CLEANFILES = \
