@@ -140,12 +140,6 @@ vino-enums.h: @REBUILD@ $(vino_enum_headers)
 			--eprod "GType @enum_name@_get_type (void);\n" \
 		$(vino_enum_headers) >  $@
 
-schemasdir       = $(GCONF_SCHEMA_FILE_DIR)
-schemas_in_files = vino-server.schemas.in
-schemas_DATA     = $(schemas_in_files:.schemas.in=.schemas)
-
-@INTLTOOL_SCHEMAS_RULE@
-
 vino-server.desktop.in: vino-server.desktop.in.in
 	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
@@ -167,7 +161,6 @@ ui_DATA = vino-prompt.ui
 
 EXTRA_DIST = \
 	vino-prompt.ui \
-	vino-server.schemas.in \
 	vino-marshal.list \
 	vino-server.desktop.in.in \
 	org.freedesktop.Telepathy.Client.Vino.service.in \
@@ -189,7 +182,6 @@ CLEANFILES = \
 	vino-server.desktop.in
 
 DISTCLEANFILES = \
-	$(schemas_DATA) \
 	$(BUILT_SOURCES) \
 	$(NULL)
 
