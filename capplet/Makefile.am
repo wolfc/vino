@@ -1,6 +1,7 @@
 NULL =
 
 INCLUDES = \
+	-I$(top_srcdir)/common \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
 	-DVINO_UIDIR=\""$(datadir)/vino"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
@@ -15,10 +16,17 @@ INCLUDES = \
 bin_PROGRAMS = vino-preferences
 
 vino_preferences_SOURCES = \
-	vino-preferences.c \
-	vino-message-box.h vino-message-box.c \
-	vino-url-webservice.h vino-url-webservice.c \
+	../common/vino-dbus.c		\
+	../common/vino-keyring.c	\
+	vino-connectivity-info.h	\
+	vino-connectivity-info.c	\
+	vino-url-webservice.h		\
+	vino-url-webservice.c		\
+	vino-message-box.h		\
+	vino-message-box.c		\
+	vino-preferences.c		\
 	$(NULL)
+
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
 	$(VINO_KEYRING_LIBS) \

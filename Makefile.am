@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = server capplet tools docs po
+SUBDIRS = common server capplet tools docs po
 
 EXTRA_DIST =                \
 	MAINTAINERS         \

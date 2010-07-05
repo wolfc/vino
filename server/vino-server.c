@@ -801,21 +801,31 @@ vino_server_check_vnc_password (rfbClientPtr  rfb_client,
 static void
 vino_server_handle_damage_notify (VinoServer *server)
 {
-  GdkRectangle *rects;
-  int           i, n_rects;
+  cairo_region_t *region;
 
   g_return_if_fail (VINO_IS_SERVER (server));
-  
-  rects = vino_fb_get_damage (server->priv->fb, &n_rects, TRUE);
 
-  for (i = 0; i < n_rects; i++)
-    rfbMarkRectAsModified (server->priv->rfb_screen,
-			   rects [i].x,
-			   rects [i].y,
-			   rects [i].x + rects [i].width,
-			   rects [i].y + rects [i].height);
+  if ((region = vino_fb_steal_damage (server->priv->fb)))
+    {
+      int i, n_rects;
 
-  g_free (rects);
+      n_rects = cairo_region_num_rectangles (region);
+
+      for (i = 0; i < n_rects; i++)
+        {
+          cairo_rectangle_int_t rect;
+
+          cairo_region_get_rectangle (region, i, &rect);
+
+          rfbMarkRectAsModified (server->priv->rfb_screen,
+                                 rect.x,
+                                 rect.y,
+                                 rect.x + rect.width,
+                                 rect.y + rect.height);
+        }
+
+      cairo_region_destroy (region);
+    }
 }
 
 static void

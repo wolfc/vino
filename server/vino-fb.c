@@ -2,6 +2,7 @@
  * Copyright (C) 2003 Sun Microsystems, Inc.
  * Copyright (C) 2004 Red Hat, Inc.
  * Copyright (C) 2004 Novell, Inc.
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -21,6 +22,7 @@
  * Authors:
  *      Mark McLoughlin <mark@skynet.ie>
  *      Federico Mena Quintero <federico@ximian.com>
+ *      Ryan Lortie <desrt@desrt.ca>
  *
  *
  *   The screen polling code is based on XUpdateScanner from
@@ -74,12 +76,12 @@ struct _VinoFBPrivate
   XImage          *tile;
   XShmSegmentInfo  tile_x_shm_info;
 
-  GdkRegion       *damage_region;
+  cairo_region_t  *damage_region;
 
   guint            update_timeout;
 
 #ifdef HAVE_XDAMAGE
-  GdkRegion       *pending_damage;
+  cairo_region_t  *pending_damage;
   guint            damage_idle_handler;
 
   Damage           xdamage;
@@ -312,8 +314,8 @@ vino_fb_create_image (VinoFB           *vfb,
 }
 
 static gboolean
-vino_fb_copy_tile (VinoFB       *vfb,
-		   GdkRectangle *rect)
+vino_fb_copy_tile (VinoFB                      *vfb,
+		   const cairo_rectangle_int_t *rect)
 {
   XImage *fb_image;
   char   *src;
@@ -390,7 +392,7 @@ vino_fb_poll_scanline (VinoFB *vfb,
 
       if (memcmp (dest, src, width * bytes_per_pixel) != 0)
 	{
-	  GdkRectangle rect;
+	  cairo_rectangle_int_t rect;
 
 	  rect.x = x;
 	  rect.y = line - (line % TILE_HEIGHT);
@@ -402,9 +404,9 @@ vino_fb_poll_scanline (VinoFB *vfb,
 	  if (vino_fb_copy_tile (vfb, &rect))
 	    {
 	      if (!vfb->priv->damage_region)
-		vfb->priv->damage_region = gdk_region_rectangle (&rect);
+		vfb->priv->damage_region = cairo_region_create_rectangle (&rect);
 	      else
-		gdk_region_union_with_rect (vfb->priv->damage_region, &rect);
+                cairo_region_union_rectangle (vfb->priv->damage_region, &rect);
 	    }
 
 	  retval = TRUE;
@@ -461,7 +463,7 @@ vino_fb_finalize_xdamage (VinoFB *vfb)
   vfb->priv->damage_idle_handler = 0;
 
   if (vfb->priv->pending_damage)
-    gdk_region_destroy (vfb->priv->pending_damage);
+    cairo_region_destroy (vfb->priv->pending_damage);
   vfb->priv->pending_damage = NULL;
 
   if (vfb->priv->fb_pixmap)
@@ -515,7 +517,7 @@ static void
 vino_fb_finalize_screen_data (VinoFB *vfb)
 {
   if (vfb->priv->damage_region)
-    gdk_region_destroy (vfb->priv->damage_region);
+    cairo_region_destroy (vfb->priv->damage_region);
   vfb->priv->damage_region = NULL;
 
   if (vfb->priv->use_xdamage)
@@ -554,19 +556,18 @@ vino_fb_screen_size_changed (VinoFB    *vfb,
 static gboolean
 vino_fb_xdamage_idle_handler (VinoFB *vfb)
 {
-  GdkRectangle *damage = NULL;
-  XRectangle    xdamage;
-  int           n_rects;
-  int           error;
+  cairo_rectangle_int_t damage;
+  XRectangle            xdamage;
+  int                   error;
 
-  g_assert (!gdk_region_empty (vfb->priv->pending_damage));
+  g_assert (!cairo_region_is_empty (vfb->priv->pending_damage));
 
-  gdk_region_get_rectangles (vfb->priv->pending_damage, &damage, &n_rects);
+  cairo_region_get_rectangle (vfb->priv->pending_damage, 0, &damage);
 
-  xdamage.x      = damage->x;
-  xdamage.y      = damage->y;
-  xdamage.width  = damage->width;
-  xdamage.height = damage->height;
+  xdamage.x      = damage.x;
+  xdamage.y      = damage.y;
+  xdamage.width  = damage.width;
+  xdamage.height = damage.height;
 
   dprintf (POLLING, "Updating damaged region in idle: %d %d %dx%d\n",
 	   damage->x, damage->y, damage->width, damage->height);
@@ -587,27 +588,27 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
 		 GDK_WINDOW_XWINDOW (vfb->priv->root_window),
 		 vfb->priv->fb_pixmap,
 		 vfb->priv->xdamage_copy_gc,
-		 damage->x,
-		 damage->y,
-		 damage->width,
-		 damage->height,
-		 damage->x,
-		 damage->y);
+		 damage.x,
+		 damage.y,
+		 damage.width,
+		 damage.height,
+		 damage.x,
+		 damage.y);
       XSync (vfb->priv->xdisplay, False);
     }
   else
     {
       XGetSubImage (vfb->priv->xdisplay,
 		    GDK_WINDOW_XWINDOW (vfb->priv->root_window),
-		    damage->x,
-		    damage->y,
-		    damage->width,
-		    damage->height,
+		    damage.x,
+		    damage.y,
+		    damage.width,
+		    damage.height,
 		    AllPlanes,
 		    ZPixmap,
 		    vfb->priv->fb_image,
-		    damage->x,
-		    damage->y);
+		    damage.x,
+		    damage.y);
     }
 
   if ((error = gdk_error_trap_pop ()))
@@ -632,24 +633,22 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
 
   /* add damage to our region */
   if (vfb->priv->damage_region)
-    gdk_region_union_with_rect (vfb->priv->damage_region, damage);
+    cairo_region_union_rectangle (vfb->priv->damage_region, &damage);
   else
-    vfb->priv->damage_region = gdk_region_rectangle (damage);
+    vfb->priv->damage_region = cairo_region_create_rectangle (&damage);
 
   emit_damage_notify (vfb);
 
  out:
   {
-    GdkRegion *tmp;
+    cairo_region_t *tmp;
 
-    tmp = gdk_region_rectangle (damage);
-    gdk_region_subtract (vfb->priv->pending_damage, tmp);
-    gdk_region_destroy (tmp);
+    tmp = cairo_region_create_rectangle (&damage);
+    cairo_region_subtract (vfb->priv->pending_damage, tmp);
+    cairo_region_destroy (tmp);
   }
 
-  g_free (damage);
-
-  if (gdk_region_empty (vfb->priv->pending_damage))
+  if (cairo_region_is_empty (vfb->priv->pending_damage))
     {
       vfb->priv->damage_idle_handler = 0;
       return FALSE;
@@ -663,9 +662,9 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 			      GdkEvent  *event,
 			      VinoFB    *vfb)
 {
-  XEvent             *xev = (XEvent *) xevent;
-  XDamageNotifyEvent *notify;
-  GdkRectangle        damage;
+  XEvent                *xev = (XEvent *) xevent;
+  XDamageNotifyEvent    *notify;
+  cairo_rectangle_int_t  damage;
 
   if (xev->type != vfb->priv->xdamage_notify_event)
     return GDK_FILTER_CONTINUE;
@@ -681,7 +680,7 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 	   damage.x, damage.y, damage.width, damage.height,
 	   notify->more ? "(true)" : "(false)", notify->level);
 
-  gdk_region_union_with_rect (vfb->priv->pending_damage, &damage);
+  cairo_region_union_rectangle (vfb->priv->pending_damage, &damage);
 
   if (!vfb->priv->damage_idle_handler)
     vfb->priv->damage_idle_handler =
@@ -740,7 +739,7 @@ vino_fb_init_xdamage (VinoFB *vfb)
 			 (GdkFilterFunc) vino_fb_xdamage_event_filter,
 			 vfb);
 
-  vfb->priv->pending_damage = gdk_region_new ();
+  vfb->priv->pending_damage = cairo_region_create ();
 
   vfb->priv->use_xdamage = TRUE;
 #endif
@@ -1176,65 +1175,53 @@ vino_fb_get_color_masks (VinoFB *vfb,
 }
 
 static inline void
-vino_fb_debug_dump_damage (VinoFB       *vfb,
-			   GdkRectangle *rects,
-			   int           n_rects)
+vino_fb_debug_dump_damage (VinoFB         *vfb,
+			   cairo_region_t *region)
 {
 #ifdef GNOME_ENABLE_DEBUG
   if (_vino_debug_flags & VINO_DEBUG_POLLING)
     {
-      GdkRectangle clipbox;
-      int          area;
-      int          i;
+      cairo_rectangle_int_t extents;
+      int                   n_rects;
+      int                   area;
+      int                   i;
 
-      gdk_region_get_clipbox (vfb->priv->damage_region, &clipbox);
+      cairo_region_get_extents (vfb->priv->damage_region, &extents);
 
-      fprintf (stderr, "Dump of damage region: clipbox (%d, %d) (%d x %d)\n",
-	       clipbox.x, clipbox.y, clipbox.width, clipbox.height);
+      fprintf (stderr, "Dump of damage region: extents (%d, %d) (%d x %d)\n",
+               extents.x, extents.y, extents.width, extents.height);
 
       area = 0;
+      n_rects = cairo_region_num_rectangles (region);
       for (i = 0; i < n_rects; i++)
-	{
-	  fprintf (stderr, "\t(%d, %d) (%d x %d)\n",
-		   rects [i].x, rects [i].y, rects [i].width, rects [i].height);
-	  area += rects [i].width * rects [i].height;
-	}
+        {
+          cairo_rectangle_int_t rect;
+
+          cairo_region_get_rectangle (region, i, &rect);
+
+          fprintf (stderr, "\t(%d, %d) (%d x %d)\n",
+                   rect.x, rect.y, rect.width, rect.height);
+          area += rect.width * rect.height;
+        }
 
       fprintf (stderr, "Bounding area %d, damaged area %d ... (%d%%)\n",
-	       clipbox.width * clipbox.height, area,
-	       (area * 100) / (clipbox.width * clipbox.height));
+               extents.width * extents.height, area,
+               (area * 100) / (extents.width * extents.height));
     }
 #endif
 }
 
-GdkRectangle *
-vino_fb_get_damage (VinoFB   *vfb,
-		    int      *n_rects,
-		    gboolean  clear_damage)
-
+cairo_region_t *
+vino_fb_steal_damage (VinoFB *vfb)
 {
-  GdkRectangle *retval;
+  cairo_region_t *retval;
 
   g_return_val_if_fail (VINO_IS_FB (vfb), NULL);
-  g_return_val_if_fail (n_rects != NULL, NULL);
 
-  if (!vfb->priv->damage_region)
-    {
-      *n_rects = 0;
-      return NULL;
-    }
+  retval = vfb->priv->damage_region;
+  vino_fb_debug_dump_damage (vfb, retval);
 
-  retval = NULL;
-  *n_rects = 0;
-  gdk_region_get_rectangles (vfb->priv->damage_region, &retval, n_rects);
-
-  vino_fb_debug_dump_damage (vfb, retval, *n_rects);
- 
-  if (clear_damage)
-    {
-      gdk_region_destroy (vfb->priv->damage_region);
-      vfb->priv->damage_region = NULL;
-    }
+  vfb->priv->damage_region = NULL;
 
   return retval;
 }

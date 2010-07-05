@@ -162,17 +162,6 @@ org.freedesktop.Telepathy.Client.Vino.service: org.freedesktop.Telepathy.Client.
 
 @INTLTOOL_DESKTOP_RULE@
 
-if GCONF_SCHEMAS_INSTALL
-install-data-local:
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/server/$$p ; \
-		done ; \
-        fi
-else
-install-data-local:
-endif
-
 uidir   = $(datadir)/vino
 ui_DATA = vino-prompt.ui
 
