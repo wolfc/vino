@@ -27,6 +27,7 @@
 #include "config.h"
 
 #include "vino-connectivity-info.h"
+#include "vino-radio-button.h"
 #include "vino-message-box.h"
 #include "vino-keyring.h"
 
@@ -265,6 +266,8 @@ vino_preferences_create_window (GtkApplication *gtk_app)
   const char *ui_file;
   gpointer    window;
 
+  vino_radio_button_get_type ();
+
 #define VINO_UI_FILE "vino-preferences.ui"
   if (g_file_test (VINO_UI_FILE, G_FILE_TEST_EXISTS))
     ui_file = VINO_UI_FILE;
@@ -309,6 +312,11 @@ vino_preferences_create_window (GtkApplication *gtk_app)
                                                         "password_entry"),
                                 "text", 0,
                                 get_password, set_password, NULL, NULL);
+
+  g_settings_bind (settings, "icon-visibility",
+                   gtk_builder_get_object (builder, "icon_always_radio"),
+                   "settings-active", 0);
+
 
   window = gtk_builder_get_object (builder, "vino_dialog");
   g_signal_connect (window, "response",
