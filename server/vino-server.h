@@ -90,7 +90,8 @@ int                  vino_server_get_alternative_port     (VinoServer     *serve
 void                 vino_server_set_alternative_port     (VinoServer     *server,
 							   int             alternative_port);
 int                  vino_server_get_port                 (VinoServer     *server);
-int                  vino_server_get_external_port        (VinoServer     *server);
+gchar *              vino_server_get_external_ip          (VinoServer     *server);
+guint16              vino_server_get_external_port        (VinoServer     *server);
 
 void                 vino_server_set_network_interface    (VinoServer     *server,
                                                            const char     *network_interface);

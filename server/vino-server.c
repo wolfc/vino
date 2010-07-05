@@ -33,7 +33,6 @@
 #include "vino-input.h"
 #include "vino-cursor.h"
 #include "vino-prompt.h"
-#include "vino-dbus-listener.h"
 #include "vino-util.h"
 #include "vino-upnp.h"
 #include "vino-enums.h"
@@ -61,8 +60,6 @@ struct _VinoServerPrivate
   VinoPrompt       *prompt;
   VinoStatusIcon   *icon;
   gboolean          display_status_icon;
-  VinoDBusListener *listener;
-  gboolean          use_dbus_listener;
   VinoUpnp         *upnp;
 
   GIOChannel       *io_channel[RFB_MAX_SOCKETLISTEN];
@@ -1127,10 +1124,6 @@ vino_server_finalize (GObject *object)
     g_object_unref (server->priv->fb);
   server->priv->fb = NULL;
 
-  if (server->priv->listener)
-    g_object_unref (server->priv->listener);
-  server->priv->listener = NULL;
-
   if (server->priv->icon)
     g_object_unref (server->priv->icon);
   server->priv->icon = NULL;
@@ -1170,9 +1163,6 @@ vino_server_set_property (GObject      *object,
       break;
     case PROP_DISPLAY_STATUS_ICON:
       vino_server_set_display_status_icon (server, g_value_get_boolean (value));
-      break;
-    case PROP_USE_DBUS_LISTENER:
-      vino_server_set_use_dbus_listener (server, g_value_get_boolean (value));
       break;
     case PROP_NETWORK_INTERFACE:
       vino_server_set_network_interface (server, g_value_get_string (value));
@@ -1235,9 +1225,6 @@ vino_server_get_property (GObject    *object,
     case PROP_DISPLAY_STATUS_ICON:
       g_value_set_boolean (value, server->priv->display_status_icon);
       break;
-    case PROP_USE_DBUS_LISTENER:
-      g_value_set_boolean (value, server->priv->use_dbus_listener);
-      break;
     case PROP_NETWORK_INTERFACE:
       g_value_set_string (value, server->priv->network_interface);
       break;
@@ -1281,11 +1268,6 @@ static void
 vino_server_constructed (GObject *object)
 {
   VinoServer *server = VINO_SERVER (object);
-
-  if (server->priv->use_dbus_listener)
-    server->priv->listener = vino_dbus_listener_new (server);
-  else
-    server->priv->listener = NULL;
 
   if (server->priv->display_status_icon)
     server->priv->icon = vino_status_icon_new (server, server->priv->screen);
@@ -1369,17 +1351,6 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT   |
                                                          G_PARAM_STATIC_STRINGS));
-
-   g_object_class_install_property (gobject_class,
-				   PROP_USE_DBUS_LISTENER,
-				   g_param_spec_boolean ("use-dbus-listener",
-							 "Use the dbus listener",
-							 "Allow to use the dbus listener",
-							 TRUE,
-                                                         G_PARAM_READWRITE   |
-                                                         G_PARAM_CONSTRUCT   |
-                                                         G_PARAM_STATIC_STRINGS));
-
 
   g_object_class_install_property (gobject_class,
 				   PROP_NETWORK_INTERFACE,
@@ -1571,15 +1542,6 @@ vino_server_set_display_status_icon (VinoServer *server,
   g_return_if_fail (VINO_IS_SERVER (server));
 
   server->priv->display_status_icon = display_status_icon;
-}
-
-void
-vino_server_set_use_dbus_listener (VinoServer *server,
-    gboolean use_dbus_listener)
-{
-  g_return_if_fail (VINO_IS_SERVER (server));
-
-  server->priv->use_dbus_listener = use_dbus_listener;
 }
 
 G_CONST_RETURN char *
@@ -1872,14 +1834,31 @@ vino_server_get_port (VinoServer *server)
   return server->priv->rfb_screen->rfbPort;
 }
 
-int
+guint16
 vino_server_get_external_port (VinoServer *server)
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), 0);
 
-  return server->priv->use_upnp && VINO_IS_UPNP (server->priv->upnp) ?
-           vino_upnp_get_external_port (server->priv->upnp) :
-           server->priv->rfb_screen->rfbPort;
+  if (server->priv->use_upnp && server->priv->upnp)
+    {
+      gint port = vino_upnp_get_external_port (server->priv->upnp);
+
+      if (port > 0)
+        return port;
+    }
+
+  return 0;
+}
+
+gchar *
+vino_server_get_external_ip (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), 0);
+
+  if (server->priv->use_upnp && server->priv->upnp)
+    return vino_upnp_get_external_ip (server->priv->upnp);
+
+  return NULL;
 }
 
 gboolean

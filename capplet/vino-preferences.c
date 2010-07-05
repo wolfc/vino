@@ -215,7 +215,7 @@ vino_preferences_update_message (VinoPreferences *app)
           port = internal_port;
         }
 
-      g_string_append_printf (message, "<a href=\"vnc://%s::%d\">%s</a>",
+      g_string_append_printf (url, "<a href=\"vnc://%s::%d\">%s</a>",
                               host, (guint) port, host);
 
       if (avahi_host)

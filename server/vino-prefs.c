@@ -60,7 +60,7 @@ get_inverted_boolean (GValue   *value,
   return TRUE;
 }
 
-void
+VinoServer *
 vino_prefs_create_server (GdkScreen *screen)
 {
   VinoServer     *server;
@@ -116,6 +116,8 @@ vino_prefs_create_server (GdkScreen *screen)
   g_signal_connect (server, "notify::alternative-port", G_CALLBACK (vino_prefs_restart_mdns), NULL);
   g_signal_connect (server, "notify::use-alternative-port", G_CALLBACK(vino_prefs_restart_mdns), NULL);
   g_signal_connect (server, "notify::network-interface", G_CALLBACK (vino_prefs_restart_mdns), NULL);
+
+  return server;
 }
 
 static void

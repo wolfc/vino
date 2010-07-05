@@ -114,7 +114,7 @@ main (int argc, char **argv)
 
   n_screens = gdk_display_get_n_screens (display);
   for (i = 0; i < n_screens; i++)
-    vino_prefs_create_server (gdk_display_get_screen (display, i));
+    vino_dbus_listener_set_server (vino_dbus_listener_new (i), vino_prefs_create_server (gdk_display_get_screen (display, i)));
 
   gtk_main ();
 

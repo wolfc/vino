@@ -21,30 +21,6 @@
 
 #include "vino-dbus.h"
 
-static const GDBusArgInfo org_gnome_VinoScreen_ShareWithTube_connection = {
-  -1, "connection", "o", NULL
-};
-
-static const GDBusArgInfo org_gnome_VinoScreen_ShareWithTube_tube = {
-  -1, "tube", "o", NULL
-};
-
-static const GDBusArgInfo org_gnome_VinoScreen_ShareWithTube_properties = {
-  -1, "properties", "a{sv}", NULL
-};
-
-static const GDBusArgInfo* const org_gnome_VinoScreen_ShareWithTube_args[] = {
-  &org_gnome_VinoScreen_ShareWithTube_connection,
-  &org_gnome_VinoScreen_ShareWithTube_tube,
-  &org_gnome_VinoScreen_ShareWithTube_properties,
-  NULL
-};
-
-static const GDBusMethodInfo org_gnome_VinoScreen_ShareWithTube = {
-  -1, "ShareWithTube",
-  (GDBusArgInfo **) &org_gnome_VinoScreen_ShareWithTube_args
-};
-
 static const GDBusPropertyInfo org_gnome_VinoScreen_ExternalHost = {
   -1, "ExternalHost", "s", G_DBUS_PROPERTY_INFO_FLAGS_READABLE
 };
@@ -65,7 +41,6 @@ static const GDBusPropertyInfo org_gnome_VinoScreen_AvahiHost = {
   -1, "AvahiHost", "s", G_DBUS_PROPERTY_INFO_FLAGS_READABLE
 };
 
-
 static const GDBusPropertyInfo* const org_gnome_VinoScreen_properties[] = {
   &org_gnome_VinoScreen_ExternalHost,
   &org_gnome_VinoScreen_ExternalPort,
@@ -75,15 +50,10 @@ static const GDBusPropertyInfo* const org_gnome_VinoScreen_properties[] = {
   NULL
 };
 
-static const GDBusMethodInfo* const org_gnome_VinoScreen_methods[] = {
-  &org_gnome_VinoScreen_ShareWithTube,
-  NULL
-};
-
 const GDBusInterfaceInfo org_gnome_VinoScreen_interface = {
   -1,
   "org.gnome.VinoScreen",
-  (GDBusMethodInfo **)     org_gnome_VinoScreen_methods,
+  (GDBusMethodInfo **)     NULL,
   (GDBusSignalInfo **)     NULL,
   (GDBusPropertyInfo **)   org_gnome_VinoScreen_properties,
   (GDBusAnnotationInfo **) NULL

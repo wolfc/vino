@@ -3,6 +3,7 @@ NULL =
 SUBDIRS = libvncserver miniupnp smclient
 
 INCLUDES = \
+	-I$(top_srcdir)/common \
 	-I$(top_srcdir)/server/libvncserver \
 	-I$(top_srcdir)/server/miniupnp \
 	-I$(top_srcdir)/server/smclient \
@@ -46,6 +47,7 @@ VINO_HTTP_SRC = \
 endif
 
 vino_server_SOURCES = \
+	../common/vino-dbus.c \
 	vino-cursor.c \
 	vino-cursor.h \
 	vino-enums.c \

@@ -29,6 +29,7 @@
 #include "config.h"
 
 #include "vino-dbus-listener.h"
+#include "vino-dbus.h"
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -66,69 +67,22 @@
 
 #define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
 
+
+struct _VinoDBusListener
+{
+  GObject  parent_instance;
+
+  GDBusConnection *connection;
+  gchar           *path;
+  gint             screen;
+
+  VinoServer      *server;
+};
+
+typedef GObjectClass VinoDBusListenerClass;
+
+static GType vino_dbus_listener_get_type (void);
 G_DEFINE_TYPE (VinoDBusListener, vino_dbus_listener, G_TYPE_OBJECT)
-
-struct _VinoDBusListenerPrivate
-{
-  VinoServer *server;
-#ifdef HAVE_TELEPATHY_GLIB
-  VinoTubeServersManager *manager;
-#endif
-};
-
-enum
-{
-  PROP_0,
-  PROP_SERVER
-};
-
-static void
-vino_dbus_listener_method_call (GDBusConnection       *connection,
-                                const gchar           *sender,
-                                const gchar           *object_path,
-                                const gchar           *interface_name,
-                                const gchar           *method_name,
-                                GVariant              *parameters,
-                                GDBusMethodInvocation *invocation,
-                                gpointer               user_data)
-{
-  g_assert_cmpstr (method_name, ==, "ShareWithTube");
-
-
-}
-
-
-static GVariant *
-vino_dbus_listener_get_property (GDBusConnection  *connection,
-                                 const gchar      *sender,
-                                 const gchar      *object_path,
-                                 const gchar      *interface_name,
-                                 const gchar      *property_name,
-                                 GError          **error,
-                                 gpointer          user_data)
-{
-}
-
-const GDBusInterfaceVTable vtable =
-{
-  vino_dbus_listener_method_call,
-  vino_dbus_listener_get_property,
-};
-
-static gboolean
-vino_dbus_listener_get_external_port (VinoDBusListener *listener,
-                                      gint             *ret,
-                                      GError           **error);
-
-static gboolean
-vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
-                                      char             **hostname,
-                                      char             **avahi_hostname,
-                                      gint             *port,
-                                      GError           **error);
-
-static void vino_dbus_listener_set_server (VinoDBusListener *listener,
-                                           VinoServer       *server);
 
 static char *
 get_local_hostname (VinoDBusListener *listener)
@@ -142,7 +96,7 @@ get_local_hostname (VinoDBusListener *listener)
   gpointer            key, value;
 
   retval = NULL;
-  server_iface = vino_server_get_network_interface (listener->priv->server);
+  server_iface = vino_server_get_network_interface (listener->server);
   ipv4 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
   ipv6 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
 
@@ -213,6 +167,7 @@ get_local_hostname (VinoDBusListener *listener)
 }
 
 #ifdef HAVE_TELEPATHY_GLIB
+
 static void
 vino_dbus_listener_dispose (GObject *object)
 {
@@ -230,246 +185,128 @@ vino_dbus_listener_dispose (GObject *object)
 #endif
 
 static void
-vino_dbus_listener_set_property (GObject       *object,
-                                 guint          prop_id,
-                                 const GValue  *value,
-                                 GParamSpec    *pspec)
-{
-  VinoDBusListener *listener = VINO_DBUS_LISTENER (object);
-
-  switch (prop_id)
-    {
-    case PROP_SERVER:
-      vino_dbus_listener_set_server (listener, g_value_get_object (value));
-      break;
-    default:
-      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-      break;
-    }
-}
-
-static void
-vino_dbus_listener_get_property (GObject    *object,
-                                 guint       prop_id,
-                                 GValue     *value,
-                                 GParamSpec *pspec)
-{
-  VinoDBusListener *listener = VINO_DBUS_LISTENER (object);
-
-  switch (prop_id)
-    {
-    case PROP_SERVER:
-      g_value_set_object (value, listener->priv->server);
-      break;
-    default:
-      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
-      break;
-    }
-}
-
-static void
 vino_dbus_listener_init (VinoDBusListener *listener)
 {
-  listener->priv = G_TYPE_INSTANCE_GET_PRIVATE (listener, VINO_TYPE_DBUS_LISTENER, VinoDBusListenerPrivate);
 #ifdef HAVE_TELEPATHY_GLIB
   listener->priv->manager = vino_tube_servers_manager_new ();
 #endif
 }
 
-static guint signal_server_info_changed = 0;
-
 static void
 vino_dbus_listener_class_init (VinoDBusListenerClass *klass)
 {
+#ifdef HAVE_TELEPATHY_GLIB
   GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-#ifdef HAVE_TELEPATHY_GLIB
   object_class->dispose = vino_dbus_listener_dispose;
 #endif
-  object_class->get_property = vino_dbus_listener_get_property;
-  object_class->set_property = vino_dbus_listener_set_property;
-
-  signal_server_info_changed = g_signal_new ("server_info_changed", 
-      G_OBJECT_CLASS_TYPE (klass), 
-      (G_SIGNAL_RUN_LAST | G_SIGNAL_DETAILED),
-      0,
-      NULL, NULL,
-      g_cclosure_marshal_VOID__VOID,
-      G_TYPE_NONE, 0);
-
-  g_object_class_install_property (object_class,
-				   PROP_SERVER,
-				   g_param_spec_object ("server",
-							"Server",
-							"The server",
-							VINO_TYPE_SERVER,
-							G_PARAM_READWRITE      |
-							G_PARAM_CONSTRUCT_ONLY |
-							G_PARAM_STATIC_NAME    |
-							G_PARAM_STATIC_NICK    |
-							G_PARAM_STATIC_BLURB));
-
-  g_type_class_add_private (klass, sizeof (VinoDBusListenerPrivate));
 }
 
-VinoDBusListener *
-vino_dbus_listener_new (VinoServer *server)
-{
-  g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
-
-  return g_object_new (VINO_TYPE_DBUS_LISTENER,
-                       "server", server,
-                       NULL);
-}
-
-static gboolean
-vino_dbus_listener_get_external_port (VinoDBusListener *listener,
-                                      gint             *ret,
-                                      GError           **error)
-{
-  *ret = vino_server_get_external_port (listener->priv->server);
-
-  return TRUE;
-}
-
-
-static gboolean
-vino_dbus_listener_get_internal_data (VinoDBusListener *listener,
-                                      char             **hostname,
-                                      char             **avahi_hostname,
-                                      gint             *port,
-                                      GError           **error)
+static guint16
+vino_dbus_listener_get_port (VinoDBusListener *listener)
 {
 #ifdef VINO_ENABLE_HTTP_SERVER
-  *port = vino_get_http_server_port (listener->priv->server);
+  return vino_get_http_server_port (listener->server);
 #else
-  *port = vino_server_get_port (listener->priv->server);
+  return vino_server_get_port (listener->server);
 #endif
-
-  *hostname = get_local_hostname (listener);
-  *avahi_hostname = g_strdup (vino_mdns_get_hostname ());
-
-  return TRUE;
 }
 
-static void
-vino_dbus_listener_info_changed (VinoServer *server,
-                                 GParamSpec *property,
-                                 VinoDBusListener *listener)
+static GVariant *
+vino_dbus_listener_get_property (GDBusConnection  *connection,
+                                 const gchar      *sender,
+                                 const gchar      *object_path,
+                                 const gchar      *interface_name,
+                                 const gchar      *property_name,
+                                 GError          **error,
+                                 gpointer          user_data)
 {
-  dprintf (DBUS, "Emitting ServerInfoChanged signal\n");
-  g_signal_emit (listener, signal_server_info_changed, 0);
+  VinoDBusListener *listener = user_data;
+
+  if (strcmp (property_name, "Host") == 0)
+    {
+      gchar *local_hostname;
+      GVariant *result;
+
+      local_hostname = get_local_hostname (listener);
+      if (local_hostname)
+        result = g_variant_new_string (local_hostname);
+      else
+        result = g_variant_new_string ("");
+      g_free (local_hostname);
+
+      return result;
+    }
+
+  else if (strcmp (property_name, "Port") == 0)
+    return g_variant_new_uint16 (vino_dbus_listener_get_port (listener));
+
+  else if (strcmp (property_name, "ExternalHost") == 0)
+    {
+      gchar *external_ip;
+      GVariant *result;
+
+      external_ip = vino_server_get_external_ip (listener->server);
+      if (external_ip)
+        result = g_variant_new_string (external_ip);
+      else
+        result = g_variant_new_string ("");
+      g_free (external_ip);
+
+      return result;
+    }
+
+  else if (strcmp (property_name, "ExternalPort") == 0)
+    return g_variant_new_uint16 (vino_server_get_external_port (listener->server));
+
+  else if (strcmp (property_name, "AvahiHost") == 0)
+    return g_variant_new_string ("aaa");
+
+  else
+    g_assert_not_reached ();
 }
 
-static void
+
+VinoDBusListener *
+vino_dbus_listener_new (gint screen)
+{
+  static const GDBusInterfaceVTable vtable = {
+    NULL, vino_dbus_listener_get_property
+  };
+  VinoDBusListener *listener;
+
+  listener = g_object_new (vino_dbus_listener_get_type (), NULL);
+  listener->connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, NULL);
+  listener->path = g_strdup_printf ("%s%d",
+                                    ORG_GNOME_VINO_SCREEN_PATH_PREFIX,
+                                    screen);
+  listener->screen = screen;
+
+  g_dbus_connection_register_object (listener->connection, listener->path,
+                                     ORG_GNOME_VINO_SCREEN_INTERFACE,
+                                     &vtable, listener, NULL, NULL);
+
+  return listener;
+}
+
+
+void
 vino_dbus_listener_set_server (VinoDBusListener *listener,
                                VinoServer       *server)
 {
-  DBusGConnection *conn;
-  GdkScreen       *screen;
-  char            *obj_path;
+  g_assert (listener->server == NULL);
+  g_assert_cmpint (listener->screen, ==,
+                   gdk_screen_get_number (vino_server_get_screen (server)));
 
-  g_assert (listener->priv->server == NULL);
+  listener->server = server;
 
-  listener->priv->server = server;
-
-  if (!(conn = vino_dbus_get_connection ()))
-    return;
-
-  screen = vino_server_get_screen (listener->priv->server);
-
-  obj_path = g_strdup_printf ("/org/gnome/vino/screens/%d",
-                              gdk_screen_get_number (screen));
-
-  dbus_g_connection_register_g_object (conn, obj_path, G_OBJECT (listener));
-
-  dprintf (DBUS, "Object registered at path '%s'\n", obj_path);
-
-  g_signal_connect (server,
-		    "notify::alternative-port",
-		    G_CALLBACK (vino_dbus_listener_info_changed),
-		    listener);
-
-  g_free (obj_path);
-}
-
-VinoServer *
-vino_dbus_listener_get_server (VinoDBusListener *listener)
-{
-  g_return_val_if_fail (VINO_IS_DBUS_LISTENER (listener), NULL);
-
-  return listener->priv->server;
-}
-
-static DBusGConnection *vino_dbus_connection = NULL;
-static gboolean        vino_dbus_failed_to_connect = FALSE;
-
-DBusGConnection *
-vino_dbus_get_connection (void)
-{
-  if (vino_dbus_connection == NULL && !vino_dbus_failed_to_connect)
-    {
-      GError *error = NULL;
-
-      if ((vino_dbus_connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error)))
-	{
-	  DBusConnection * dbus_conn;
-
-	  dprintf (DBUS, "Successfully connected to the message bus\n");
-	  dbus_conn = dbus_g_connection_get_connection (vino_dbus_connection);
-	  dbus_connection_set_exit_on_disconnect (dbus_conn, FALSE);
-	}
-      else
-	{
-	  vino_dbus_failed_to_connect = TRUE;
-	  dprintf (DBUS, "Failed to open connection to bus: %s\n", error->message);
-	  g_error_free (error);
-	}
-    }
-
-  return vino_dbus_connection;
+  /* XXX: emit property change signal, watch for more changes
+   */
 }
 
 gboolean
 vino_dbus_request_name (void)
 {
-
-  DBusGConnection *connection;
-  DBusGProxy      *bus_proxy;
-  guint           request_name_result;
-  GError          *error = NULL;
-
-  if (!(connection = vino_dbus_get_connection ()))
-    return FALSE;
-
-  dbus_g_object_type_install_info (VINO_TYPE_DBUS_LISTENER,
-				   &dbus_glib_vino_dbus_listener_object_info);
-
-  bus_proxy = dbus_g_proxy_new_for_name (connection,
-      "org.freedesktop.DBus",
-      "/org/freedesktop/DBus",
-      "org.freedesktop.DBus");
-
-  if (!dbus_g_proxy_call (bus_proxy,
-			  "RequestName",
-			  &error,
-			  G_TYPE_STRING, VINO_DBUS_BUS_NAME,
-			  G_TYPE_UINT, DBUS_NAME_FLAG_DO_NOT_QUEUE,
-			  G_TYPE_INVALID,
-			  G_TYPE_UINT, &request_name_result,
-			  G_TYPE_INVALID))
-    {
-      dprintf (DBUS, "Failed to request DBUS name: %s", error ? error->message : "No error given");
-      g_clear_error (&error);
-      return FALSE;
-    }
-
-  if (request_name_result == DBUS_REQUEST_NAME_REPLY_EXISTS)
-    {
-      g_warning (_("Remote Desktop server already running; exiting ...\n"));
-      return FALSE;
-    }
-
-  dprintf (DBUS, "Successfully acquired D-Bus name '%s'\n", VINO_DBUS_BUS_NAME);
+  g_application_new ("org.gnome.Vino", 0, NULL);
   return TRUE;
 }

@@ -29,7 +29,7 @@
 G_BEGIN_DECLS
 
 void vino_prefs_init          (gboolean   view_only);
-void vino_prefs_create_server (GdkScreen *screen);
+VinoServer *vino_prefs_create_server (GdkScreen *screen);
 void vino_prefs_shutdown      (void);
 
 G_END_DECLS
