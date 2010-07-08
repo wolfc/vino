@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright (C) 2006-2010 Jonh Wendell <wendell@bani.com.br>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -17,13 +18,36 @@
  * 02111-1307, USA.
  *
  * Authors:
+ *      Jonh Wendell <wendell@bani.com.br>
  *      Mark McLoughlin <mark@skynet.ie>
  */
 
-#include <config.h>
+#include "config.h"
 
 #include "vino-util.h"
+
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <unistd.h>
+#include <netdb.h>
+#include <sys/socket.h>
+#include <net/if.h>
+#include <arpa/inet.h>
+#include <netinet/in.h>
 #include <gtk/gtk.h>
+
+#ifdef HAVE_IFADDRS_H
+#include <ifaddrs.h>
+#else
+#include "libvncserver/ifaddr/ifaddrs.h"
+#endif
+
+#ifdef RFC2553
+#define ADDR_FAMILY_MEMBER ss_family
+#else
+#define ADDR_FAMILY_MEMBER sa_family
+#endif
 
 #ifdef GNOME_ENABLE_DEBUG
 VinoDebugFlags _vino_debug_flags = VINO_DEBUG_NONE;
@@ -135,3 +159,82 @@ vino_util_show_error (const gchar *title, const gchar *message, GtkWindow *paren
   gtk_widget_show_all (GTK_WIDGET(d));
 }
 
+gchar *
+vino_util_get_local_hostname (const gchar *server_iface)
+{
+  char                *retval, buf[INET6_ADDRSTRLEN];
+  struct ifaddrs      *myaddrs, *ifa;
+  void                *sin;
+  GHashTable          *ipv4, *ipv6;
+  GHashTableIter      iter;
+  gpointer            key, value;
+
+  retval = NULL;
+  ipv4 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
+  ipv6 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
+
+  getifaddrs (&myaddrs);
+  for (ifa = myaddrs; ifa != NULL; ifa = ifa->ifa_next)
+    {
+      if (ifa->ifa_addr == NULL || ifa->ifa_name == NULL || (ifa->ifa_flags & IFF_UP) == 0)
+        continue;
+
+      switch (ifa->ifa_addr->ADDR_FAMILY_MEMBER)
+        {
+          case AF_INET:
+            sin = &((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
+            inet_ntop (AF_INET, sin, buf, INET6_ADDRSTRLEN);
+            g_hash_table_insert (ipv4,
+                                 ifa->ifa_name,
+                                 g_strdup (buf));
+            break;
+
+          case AF_INET6:
+            sin = &((struct sockaddr_in6 *)ifa->ifa_addr)->sin6_addr;
+            inet_ntop (AF_INET6, sin, buf, INET6_ADDRSTRLEN);
+            g_hash_table_insert (ipv6,
+                                 ifa->ifa_name,
+                                 g_strdup (buf));
+            break;
+          default: continue;
+        }
+    }
+
+  if (server_iface && server_iface[0] != '\0')
+    {
+      if ((retval = g_strdup (g_hash_table_lookup (ipv4, server_iface))))
+        goto the_end;
+      if ((retval = g_strdup (g_hash_table_lookup (ipv6, server_iface))))
+        goto the_end;
+    }
+
+  g_hash_table_iter_init (&iter, ipv4);
+  while (g_hash_table_iter_next (&iter, &key, &value))
+    {
+      if (strncmp (key, "lo", 2) == 0)
+        continue;
+      retval = g_strdup (value);
+      goto the_end;
+    }
+
+  g_hash_table_iter_init (&iter, ipv6);
+  while (g_hash_table_iter_next (&iter, &key, &value))
+    {
+      if (strncmp (key, "lo", 2) == 0)
+        continue;
+      retval = g_strdup (value);
+      goto the_end;
+    }
+
+  if ((retval = g_strdup (g_hash_table_lookup (ipv4, "lo"))))
+    goto the_end;
+  if ((retval = g_strdup (g_hash_table_lookup (ipv6, "lo"))))
+    goto the_end;
+
+  the_end:
+  freeifaddrs (myaddrs);
+  g_hash_table_destroy (ipv4);
+  g_hash_table_destroy (ipv6);
+
+  return retval;
+}

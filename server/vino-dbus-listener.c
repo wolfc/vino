@@ -1,7 +1,5 @@
 /*
- * Copyright (C) 2004-2006 William Jon McCann <mccann@jhu.edu>
- * Copyright (C) 2006 Jonh Wendell <wendell@bani.com.br>
- * Copyright (C) 2007 Mark McLoughlin <markmc@skynet.ie>
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,12 +16,7 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Authors:
- *      William Jon McCann <mccann@jhu.edu>
- *      Jonh Wendell <wendell@bani.com.br>
- *      Mark McLoughlin <mark@skynet.ie>
- *
- * Code taken from gnome-screensaver/src/gs-listener-dbus.c
+ * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
 #include "config.h"
@@ -31,42 +24,14 @@
 #include "vino-dbus-listener.h"
 #include "vino-dbus.h"
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
-#include <netdb.h>
-#include <sys/socket.h>
-#include <net/if.h>
-#include <arpa/inet.h>
-#include <netinet/in.h>
-
-#include "vino-dbus-error.h"
-
 #ifdef HAVE_TELEPATHY_GLIB
 #include "vino-tube-servers-manager.h"
 #endif
 
 #include "vino-util.h"
-#include "vino-mdns.h"
 #ifdef VINO_ENABLE_HTTP_SERVER
 #include "vino-http.h"
 #endif
-
-#ifdef HAVE_IFADDRS_H
-#include <ifaddrs.h>
-#else
-#include "libvncserver/ifaddr/ifaddrs.h"
-#endif
-
-#ifdef RFC2553
-#define ADDR_FAMILY_MEMBER ss_family
-#else
-#define ADDR_FAMILY_MEMBER sa_family
-#endif
-
-#define VINO_DBUS_BUS_NAME  "org.gnome.Vino"
-
 
 struct _VinoDBusListener
 {
@@ -82,124 +47,44 @@ struct _VinoDBusListener
 typedef GObjectClass VinoDBusListenerClass;
 
 static GType vino_dbus_listener_get_type (void);
+
 G_DEFINE_TYPE (VinoDBusListener, vino_dbus_listener, G_TYPE_OBJECT)
 
-static char *
-get_local_hostname (VinoDBusListener *listener)
+static void
+vino_dbus_listener_finalize (GObject *object)
 {
-  char                *retval, buf[INET6_ADDRSTRLEN];
-  struct ifaddrs      *myaddrs, *ifa; 
-  void                *sin;
-  const char          *server_iface;
-  GHashTable          *ipv4, *ipv6;
-  GHashTableIter      iter;
-  gpointer            key, value;
+  VinoDBusListener *listener = (VinoDBusListener *) object;
 
-  retval = NULL;
-  server_iface = vino_server_get_network_interface (listener->server);
-  ipv4 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
-  ipv6 = g_hash_table_new_full (g_str_hash, g_str_equal, NULL, g_free);
+  g_object_unref (listener->connection);
+  g_free (listener->path);
+  if (listener->server)
+    g_object_unref (listener->server);
 
-  getifaddrs (&myaddrs);
-  for (ifa = myaddrs; ifa != NULL; ifa = ifa->ifa_next)
-    {
-      if (ifa->ifa_addr == NULL || ifa->ifa_name == NULL || (ifa->ifa_flags & IFF_UP) == 0)
-	continue;
-
-      switch (ifa->ifa_addr->ADDR_FAMILY_MEMBER)
-	{
-	  case AF_INET:
-	    sin = &((struct sockaddr_in *)ifa->ifa_addr)->sin_addr;
-	    inet_ntop (AF_INET, sin, buf, INET6_ADDRSTRLEN);
-	    g_hash_table_insert (ipv4,
-				 ifa->ifa_name,
-				 g_strdup (buf));
-	    break;
-
-	  case AF_INET6:
-	    sin = &((struct sockaddr_in6 *)ifa->ifa_addr)->sin6_addr;
-	    inet_ntop (AF_INET6, sin, buf, INET6_ADDRSTRLEN);
-	    g_hash_table_insert (ipv6,
-				 ifa->ifa_name,
-				 g_strdup (buf));
-	    break;
-	  default: continue;
-	}
-    }
-
-  if (server_iface && server_iface[0] != '\0')
-    {
-      if ((retval = g_strdup (g_hash_table_lookup (ipv4, server_iface))))
-	goto the_end;
-      if ((retval = g_strdup (g_hash_table_lookup (ipv6, server_iface))))
-	goto the_end;
-    }
-
-  g_hash_table_iter_init (&iter, ipv4);
-  while (g_hash_table_iter_next (&iter, &key, &value))
-    {
-      if (strncmp (key, "lo", 2) == 0)
-	continue;
-      retval = g_strdup (value);
-      goto the_end;
-    }
-
-  g_hash_table_iter_init (&iter, ipv6);
-  while (g_hash_table_iter_next (&iter, &key, &value))
-    {
-      if (strncmp (key, "lo", 2) == 0)
-	continue;
-      retval = g_strdup (value);
-      goto the_end;
-    }
-
-  if ((retval = g_strdup (g_hash_table_lookup (ipv4, "lo"))))
-    goto the_end;
-  if ((retval = g_strdup (g_hash_table_lookup (ipv6, "lo"))))
-    goto the_end;
-
-  the_end:
-  freeifaddrs (myaddrs); 
-  g_hash_table_destroy (ipv4);
-  g_hash_table_destroy (ipv6);
-
-  return retval;
-}
 
 #ifdef HAVE_TELEPATHY_GLIB
-
-static void
-vino_dbus_listener_dispose (GObject *object)
-{
-  VinoDBusListener *listener = VINO_DBUS_LISTENER (object);
-
-  if (listener->priv->manager != NULL)
+  if (listener->manager != NULL)
     {
       g_object_unref (listener->priv->manager);
       listener->priv->manager = NULL;
     }
-
-  if (G_OBJECT_CLASS (vino_dbus_listener_parent_class)->dispose)
-    G_OBJECT_CLASS (vino_dbus_listener_parent_class)->dispose (object);
-}
 #endif
+
+  G_OBJECT_CLASS (vino_dbus_listener_parent_class)
+    ->finalize (object);
+}
 
 static void
 vino_dbus_listener_init (VinoDBusListener *listener)
 {
 #ifdef HAVE_TELEPATHY_GLIB
-  listener->priv->manager = vino_tube_servers_manager_new ();
+  listener->manager = vino_tube_servers_manager_new ();
 #endif
 }
 
 static void
-vino_dbus_listener_class_init (VinoDBusListenerClass *klass)
+vino_dbus_listener_class_init (GObjectClass *class)
 {
-#ifdef HAVE_TELEPATHY_GLIB
-  GObjectClass *object_class = G_OBJECT_CLASS (klass);
-
-  object_class->dispose = vino_dbus_listener_dispose;
-#endif
+  class->finalize = vino_dbus_listener_finalize;
 }
 
 static guint16
@@ -223,12 +108,36 @@ vino_dbus_listener_get_property (GDBusConnection  *connection,
 {
   VinoDBusListener *listener = user_data;
 
+  if (listener->server == NULL)
+    /* We (reasonably) assume that nobody will be doing Vino property
+     * queries during the extremely short period of time between
+     * connecting to the bus and acquiring our well-known name.
+     *
+     * As soon as the well-known name is acquired, GDBus invokes our
+     * name_acquired function (in vino-main.c) and that blocks until all
+     * of the servers have been setup.  That completes before any more
+     * messages (ie: to the well-known name) can be dispatched.
+     *
+     * That means that the only possibility that we see property queries
+     * here without listener->server being set is in the case that the
+     * property is being queried against our unique name (which we
+     * assume won't happen).
+     */
+    {
+      g_warning ("Somebody queried vino server properties "
+                 "(%s, property %s) before unique name was acquired.",
+                 object_path, property_name);
+      return NULL;
+    }
+
   if (strcmp (property_name, "Host") == 0)
     {
       gchar *local_hostname;
+      const gchar *iface;
       GVariant *result;
 
-      local_hostname = get_local_hostname (listener);
+      iface = vino_server_get_network_interface (listener->server);
+      local_hostname = vino_util_get_local_hostname (iface);
       if (local_hostname)
         result = g_variant_new_string (local_hostname);
       else
@@ -266,6 +175,22 @@ vino_dbus_listener_get_property (GDBusConnection  *connection,
     g_assert_not_reached ();
 }
 
+void
+vino_dbus_listener_set_server (VinoDBusListener *listener,
+                               VinoServer       *server)
+{
+  g_return_if_fail (listener->server == NULL);
+  g_return_if_fail (VINO_IS_SERVER (server));
+  g_return_if_fail (listener->screen ==
+                    gdk_screen_get_number (vino_server_get_screen (server)));
+
+  listener->server = g_object_ref (server);
+
+  /* We need not notify for property changes here since we assume that
+   * nobody will have checked properties before now (see large comment
+   * above in get_property()).
+   */
+}
 
 VinoDBusListener *
 vino_dbus_listener_new (gint screen)
@@ -287,26 +212,4 @@ vino_dbus_listener_new (gint screen)
                                      &vtable, listener, NULL, NULL);
 
   return listener;
-}
-
-
-void
-vino_dbus_listener_set_server (VinoDBusListener *listener,
-                               VinoServer       *server)
-{
-  g_assert (listener->server == NULL);
-  g_assert_cmpint (listener->screen, ==,
-                   gdk_screen_get_number (vino_server_get_screen (server)));
-
-  listener->server = server;
-
-  /* XXX: emit property change signal, watch for more changes
-   */
-}
-
-gboolean
-vino_dbus_request_name (void)
-{
-  g_application_new ("org.gnome.Vino", 0, NULL);
-  return TRUE;
 }
