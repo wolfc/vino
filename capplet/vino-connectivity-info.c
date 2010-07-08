@@ -186,12 +186,11 @@ vino_connectivity_info_properties_changed (VinoConnectivityInfo *info)
   /* Cancel any in-flight webservice requests */
   if (info->checking_port)
     {
-      g_source_remove (info->checking_timeout);
-      info->checking_timeout = 0;
-      info->checking_msg = NULL;
-      info->checking_port = 0;
-
       soup_session_abort (info->soup_session);
+
+      g_assert (info->checking_timeout == 0);
+      g_assert (info->checking_msg == NULL);
+      g_assert (info->checking_port == 0);
     }
 
   get_property_string (info->proxy, "ExternalHost", &info->external_host);
