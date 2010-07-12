@@ -429,6 +429,7 @@ main (int argc, char **argv)
   gtk_application_get_window (app);
   gtk_application_run (app);
   g_object_unref (app);
+  g_settings_sync ();
 
   return 0;
 }

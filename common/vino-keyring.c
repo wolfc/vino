@@ -24,6 +24,8 @@
  *      Ryan Lortie <desrt@desrt.ca>
  */
 
+#include "config.h"
+
 #include "vino-keyring.h"
 
 #ifdef VINO_ENABLE_KEYRING
@@ -32,7 +34,7 @@
 
 #include <gnome-keyring.h>
 
-static char *
+char *
 vino_keyring_get_password (void)
 {
   GnomeKeyringNetworkPasswordData *found_item;
@@ -64,7 +66,7 @@ vino_keyring_get_password (void)
   return password;
 }
 
-static gboolean
+gboolean
 vino_keyring_set_password (const char *password)
 {
   GnomeKeyringResult result;
