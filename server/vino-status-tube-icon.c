@@ -23,6 +23,7 @@
 #include <config.h>
 #include <string.h>
 #include <gtk/gtk.h>
+#include <gio/gdesktopappinfo.h>
 #ifdef VINO_ENABLE_LIBNOTIFY
 #include <glib/gi18n.h>
 #include <libnotify/notify.h>
@@ -167,15 +168,23 @@ static void
 vino_status_tube_icon_preferences (VinoStatusTubeIcon *icon)
 {
   GdkScreen *screen;
+  GDesktopAppInfo *info;
+  GdkAppLaunchContext *context;
   GError *error = NULL;
 
   screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
-  if (!gdk_spawn_command_line_on_screen (screen, "vino-preferences", &error))
+  info = g_desktop_app_info_new ("vino-preferences.desktop");
+  context = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
+  if (!g_app_info_launch (G_APP_INFO (info), NULL, G_APP_LAUNCH_CONTEXT (context), &error))
     {
       vino_util_show_error (_("Error displaying preferences"),
-          error->message, NULL);
+                            error->message,
+                            NULL);
       g_error_free (error);
     }
+
+  g_object_unref (info);
+  g_object_unref (context);
 }
 
 static void

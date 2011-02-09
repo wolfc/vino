@@ -801,7 +801,7 @@ vino_server_check_vnc_password (rfbClientPtr  rfb_client,
 static void
 vino_server_handle_damage_notify (VinoServer *server)
 {
-  GdkRectangle *rects;
+  cairo_rectangle_int_t *rects;
   int           i, n_rects;
 
   g_return_if_fail (VINO_IS_SERVER (server));

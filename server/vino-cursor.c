@@ -88,16 +88,17 @@ vino_cursor_update_timeout (VinoCursorData *data)
 {
   GdkScreen *tmp_screen;
   int        tmp_x, tmp_y;
+  GdkDeviceManager *dm;
 
   data->x = 0;
   data->y = 0;
 
   tmp_screen = NULL;
-  gdk_display_get_pointer (gdk_screen_get_display (data->screen),
-			   &tmp_screen,
-			   &tmp_x,
-			   &tmp_y,
-			   NULL);
+  dm = gdk_display_get_device_manager (gdk_screen_get_display (data->screen));
+  gdk_device_get_position (gdk_device_manager_get_client_pointer (dm),
+                           &tmp_screen,
+                           &tmp_x,
+                           &tmp_y);
   if (data->screen == tmp_screen)
     {
       data->x = tmp_x;
