@@ -72,9 +72,7 @@ void          vino_fb_get_color_masks    (VinoFB    *vfb,
 					  gulong    *green_mask,
 					  gulong    *blue_mask);
 
-cairo_rectangle_int_t *vino_fb_get_damage         (VinoFB    *vfb,
-						  int       *n_rects,
-						  gboolean   clear_damage);
+cairo_region_t *   vino_fb_steal_damage  (VinoFB    *vfb);
 
 G_END_DECLS
 

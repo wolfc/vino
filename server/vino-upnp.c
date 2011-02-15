@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2008,2009 Jonh Wendell
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -18,6 +19,7 @@
  *
  * Authors:
  *      Jonh Wendell <wendell@bani.com.br>
+ *      Ryan Lortie <desrt@desrt.ca>
  */
 
 #ifdef HAVE_CONFIG_H
@@ -29,7 +31,6 @@
 #include <miniupnp/upnpcommands.h>
 
 #ifdef VINO_ENABLE_NETWORKMANAGER
-#include <dbus/dbus-glib.h>
 #include <NetworkManager/NetworkManager.h>
 #endif
 
@@ -45,8 +46,8 @@ struct _VinoUpnpPrivate
   int              port;
   int              internal_port;
 #ifdef VINO_ENABLE_NETWORKMANAGER
-  DBusGConnection *bus;
-  DBusGProxy      *proxy_nm, *proxy_name;
+  GDBusConnection *bus;
+  GDBusProxy      *proxy_nm, *proxy_name;
 #endif
 };
 
@@ -146,7 +147,7 @@ vino_upnp_dispose (GObject *object)
 
   if (upnp->priv->bus)
     {
-      dbus_g_connection_unref (upnp->priv->bus);
+      g_object_unref (upnp->priv->bus);
       upnp->priv->bus = NULL;
     }
 #endif
@@ -334,9 +335,12 @@ vino_upnp_get_external_port (VinoUpnp *upnp)
 
 #ifdef VINO_ENABLE_NETWORKMANAGER
 static gboolean
-redo_forward (VinoUpnp *upnp)
+redo_forward (gpointer data)
 {
-  int port = upnp->priv->internal_port;
+  VinoUpnp *upnp = data;
+  int port;
+
+  port = upnp->priv->internal_port;
 
   dprintf (UPNP, "UPnP: Doing the forward again\n");
   upnp->priv->have_igd = FALSE;
@@ -347,79 +351,56 @@ redo_forward (VinoUpnp *upnp)
 }
 
 static void
-state_changed_cb (DBusGProxy *proxy, guint state, VinoUpnp *upnp)
+state_changed (GDBusProxy *proxy,
+               const gchar *sender_name,
+               const gchar *signal_name,
+               GVariant    *parameters,
+               gpointer     user_data)
 {
+  VinoUpnp *upnp = user_data;
+  guint state;
+
+  g_variant_get (parameters, "(u)", &state);
+
   dprintf (UPNP, "UPnP: Got the 'network state changed' signal. Status = %d\n", state);
 
   if ((state == NM_STATE_CONNECTED) && (upnp->priv->internal_port != -1))
-    g_timeout_add_seconds (2, (GSourceFunc) redo_forward, upnp);
+    g_timeout_add (2000, redo_forward, upnp);
 }
 
 static void
-name_changed (DBusGProxy *proxy,
-	      const char *name,
-	      const char *prev_owner,
-	      const char *new_owner,
-	      VinoUpnp *upnp)
+proxy_created (GObject      *source,
+               GAsyncResult *result,
+               gpointer      user_data)
 {
-  if ( (new_owner) && (!strcmp (name, NM_DBUS_SERVICE)) )
+  VinoUpnp *upnp = user_data;
+  GError *error = NULL;
+  GDBusProxy *proxy;
+
+  proxy = g_dbus_proxy_new_for_bus_finish (result, &error);
+
+  if (proxy != NULL)
     {
-      dprintf (UPNP, "UPnP: Got the NetWorkManager d-bus name");
+      g_signal_connect (proxy, "g-signal", G_CALLBACK (state_changed), upnp);
+      g_timeout_add (2000, redo_forward, upnp);
+      upnp->priv->proxy_nm = proxy;
+    }
 
-      if (upnp->priv->proxy_nm)
-	g_object_unref (upnp->priv->proxy_nm);
-
-      upnp->priv->proxy_nm = dbus_g_proxy_new_for_name (upnp->priv->bus,
-							NM_DBUS_SERVICE,
-							NM_DBUS_PATH,
-							NM_DBUS_INTERFACE);
-
-      dbus_g_proxy_add_signal (upnp->priv->proxy_nm, "StateChanged", G_TYPE_UINT, G_TYPE_INVALID);
-      dbus_g_proxy_connect_signal (upnp->priv->proxy_nm,
-				   "StateChanged",
-				   G_CALLBACK (state_changed_cb),
-				   upnp,
-				   NULL);
-
-       g_timeout_add_seconds (2, (GSourceFunc) redo_forward, upnp);
-     }
-} 
+  else
+    {
+      g_warning ("Failed to create proxy: %s\n", error->message);
+      g_error_free (error);
+    }
+}
 
 static void
 setup_network_monitor (VinoUpnp *upnp)
 {
-  GError *error = NULL;
-
-  upnp->priv->bus = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
-  if (upnp->priv->bus == NULL)
-    {
-      g_warning ("Couldn't connect to system bus: %s", error->message);
-      g_error_free (error);
-      return;
-    }
-
-  upnp->priv->proxy_name = dbus_g_proxy_new_for_name (upnp->priv->bus,
-						      DBUS_SERVICE_DBUS,
-						      DBUS_PATH_DBUS,
-						      DBUS_INTERFACE_DBUS);
-  dbus_g_proxy_add_signal (upnp->priv->proxy_name, "NameOwnerChanged",
-			   G_TYPE_STRING, G_TYPE_STRING, G_TYPE_STRING, G_TYPE_INVALID);
-  dbus_g_proxy_connect_signal (upnp->priv->proxy_name,
-			       "NameOwnerChanged",
-			       G_CALLBACK (name_changed),
-			       upnp,
-			       NULL); 
-
-  upnp->priv->proxy_nm = dbus_g_proxy_new_for_name (upnp->priv->bus,
-						    NM_DBUS_SERVICE,
-						    NM_DBUS_PATH,
-						    NM_DBUS_INTERFACE);
-
-  dbus_g_proxy_add_signal (upnp->priv->proxy_nm, "StateChanged", G_TYPE_UINT, G_TYPE_INVALID);
-  dbus_g_proxy_connect_signal (upnp->priv->proxy_nm,
-                               "StateChanged",
-                               G_CALLBACK (state_changed_cb),
-                               upnp,
-                               NULL);
+  g_dbus_proxy_new_for_bus (G_BUS_TYPE_SYSTEM,
+                            G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
+                            G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
+                            NULL,
+                            NM_DBUS_SERVICE, NM_DBUS_PATH, NM_DBUS_INTERFACE,
+                            NULL, proxy_created, g_object_ref (upnp));
 }
 #endif /* HAVE_NETWORKMANAGER */

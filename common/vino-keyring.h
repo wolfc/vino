@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2008 Jorge Pereira <jorge@jorgepereira.com.br>
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -16,21 +16,15 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Authors:
- *      Jorge Pereira <jorge@jorgepereira.com.br>
+ * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
-#ifndef __VINO_BACKGROUND_H__
-#define __VINO_BACKGROUND_H__
+#ifndef __vino_keyring_h__
+#define __vino_keyring_h__
 
 #include <glib.h>
 
-G_BEGIN_DECLS
+gchar *         vino_keyring_get_password       (void);
+gboolean        vino_keyring_set_password       (const gchar *password);
 
-void vino_background_handler (int sig);
-void vino_background_draw (gboolean option);
-gboolean vino_background_get_status (void);
-
-G_END_DECLS
-
-#endif /* __VINO_BACKGROUND_H__ */
+#endif /* __vino_keyring_h__ */

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -16,22 +16,19 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Authors:
- *      Mark McLoughlin <mark@skynet.ie>
+ * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
-#ifndef __VINO_PREFS_H__
-#define __VINO_PREFS_H__
+#ifndef __vino_dbus_h__
+#define __vino_dbus_h__
 
-#include <gdk/gdk.h>
-#include "vino-server.h"
+#include <gio/gio.h>
 
-G_BEGIN_DECLS
+extern const GDBusInterfaceInfo org_gnome_VinoScreen_interface;
+#define ORG_GNOME_VINO_SCREEN_INTERFACE_NAME    "org.gnome.VinoScreen"
+#define ORG_GNOME_VINO_BUS_NAME                 "org.gnome.Vino"
+#define ORG_GNOME_VINO_SCREEN_PATH_PREFIX       "/org/gnome/vino/screens/"
+#define ORG_GNOME_VINO_SCREEN_INTERFACE \
+  ((GDBusInterfaceInfo *) &org_gnome_VinoScreen_interface)
 
-void vino_prefs_init          (gboolean   view_only);
-VinoServer *vino_prefs_create_server (GdkScreen *screen);
-void vino_prefs_shutdown      (void);
-
-G_END_DECLS
-
-#endif /* __VINO_PREFS_H__ */
+#endif /* __vino_dbus_h__ */

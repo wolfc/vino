@@ -46,7 +46,7 @@ struct _VinoMessageBox
   VinoMessageBoxPrivate *priv;
 };
 
-GType vino_message_box_get_type (void) G_GNUC_CONST;
+GType vino_message_box_get_type (void);
 
 GtkWidget	*vino_message_box_new (void);
 

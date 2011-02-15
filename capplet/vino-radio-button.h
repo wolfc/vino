@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -16,22 +16,14 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Authors:
- *      Mark McLoughlin <mark@skynet.ie>
+ * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
-#ifndef __VINO_PREFS_H__
-#define __VINO_PREFS_H__
+#ifndef __vino_radio_button_h__
+#define __vino_radio_button_h__
 
-#include <gdk/gdk.h>
-#include "vino-server.h"
+#include <glib-object.h>
 
-G_BEGIN_DECLS
+GType vino_radio_button_get_type (void);
 
-void vino_prefs_init          (gboolean   view_only);
-VinoServer *vino_prefs_create_server (GdkScreen *screen);
-void vino_prefs_shutdown      (void);
-
-G_END_DECLS
-
-#endif /* __VINO_PREFS_H__ */
+#endif /* __vino_radio_button_h__ */

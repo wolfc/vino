@@ -31,45 +31,12 @@
 
 #include "vino-server.h"
 
-G_BEGIN_DECLS
-
-#define VINO_TYPE_DBUS_LISTENER         (vino_dbus_listener_get_type ())
-#define VINO_DBUS_LISTENER(o)           (G_TYPE_CHECK_INSTANCE_CAST ((o), VINO_TYPE_DBUS_LISTENER, VinoDBusListener))
-#define VINO_DBUS_LISTENER_CLASS(k)     (G_TYPE_CHECK_CLASS_CAST((k), VINO_TYPE_DBUS_LISTENER, VinoDBusListenerClass))
-#define VINO_IS_DBUS_LISTENER(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), VINO_TYPE_DBUS_LISTENER))
-#define VINO_IS_DBUS_LISTENER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), VINO_TYPE_DBUS_LISTENER))
-#define VINO_DBUS_LISTENER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), VINO_TYPE_DBUS_LISTENER, VinoDBusListenerClass))
-
 typedef struct _VinoDBusListener        VinoDBusListener;
-typedef struct _VinoDBusListenerClass   VinoDBusListenerClass;
-typedef struct _VinoDBusListenerPrivate VinoDBusListenerPrivate;
 
-struct _VinoDBusListener
-{
-  GObject                   base;
+VinoDBusListener *      vino_dbus_listener_new          (gint screen);
+void                    vino_dbus_listener_set_server   (VinoDBusListener *listener,
+                                                         VinoServer       *server);
 
-  VinoDBusListenerPrivate  *priv;
-};
-
-struct _VinoDBusListenerClass
-{
-  GObjectClass  base_class;
-};
-
-GType              vino_dbus_listener_get_type   (void) G_GNUC_CONST;
-VinoDBusListener * vino_dbus_listener_new        (VinoServer       *server);
-VinoServer        *vino_dbus_listener_get_server (VinoDBusListener *listener);
-
-G_END_DECLS
-
-#include <dbus/dbus-glib.h>
-#include <dbus/dbus.h>
-
-G_BEGIN_DECLS
-
-DBusGConnection *vino_dbus_get_connection   (void);
 gboolean        vino_dbus_request_name     (void);
-
-G_END_DECLS
 
 #endif /* __VINO_DBUS_LISTENER_H__ */

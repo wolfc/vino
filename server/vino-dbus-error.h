@@ -19,11 +19,11 @@
  * Authors:
  *      Arnaud Maillet <arnaud.maillet@collabora.co.uk>
  */
- 
+
 #ifndef __VINO_DBUS_ERROR_H__
 #define __VINO_DBUS_ERROR_H__
 
-#include <dbus/dbus-glib.h>
+#include <glib.h>
 
 typedef enum
 {

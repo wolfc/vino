@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -16,22 +16,18 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Authors:
- *      Mark McLoughlin <mark@skynet.ie>
+ * Author: Ryan Lortie <desrt@desrt.ca>
  */
 
-#ifndef __VINO_PREFS_H__
-#define __VINO_PREFS_H__
+#include <glib.h>
 
-#include <gdk/gdk.h>
-#include "vino-server.h"
+typedef struct _VinoConnectivityInfo VinoConnectivityInfo;
 
-G_BEGIN_DECLS
-
-void vino_prefs_init          (gboolean   view_only);
-VinoServer *vino_prefs_create_server (GdkScreen *screen);
-void vino_prefs_shutdown      (void);
-
-G_END_DECLS
-
-#endif /* __VINO_PREFS_H__ */
+VinoConnectivityInfo * vino_connectivity_info_new (gint screen_number);
+gboolean vino_connectivity_info_get (VinoConnectivityInfo  *info,
+                                     gchar                **internal_host,
+                                     guint16               *internal_port,
+                                     gchar                **external_host,
+                                     guint16               *external_port,
+                                     gchar                **avahi_host);
+void vino_connectivity_info_check (VinoConnectivityInfo *info);

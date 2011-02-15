@@ -78,8 +78,6 @@ void vino_setup_debug_flags (void);
 #  define dprintf(args...)
 #endif
 
-#define vino_setup_debug_flags()
-
 #endif /* GNOME_ENABLE_DEBUG */
 
 void  vino_init_stock_items	(void);
@@ -87,6 +85,8 @@ void  vino_init_stock_items	(void);
 void  vino_util_show_error	(const gchar *title,
 				 const gchar *message,
 				 GtkWindow *parent);
+
+gchar *vino_util_get_local_hostname (const gchar *server_iface);
 
 
 G_END_DECLS

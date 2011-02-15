@@ -33,13 +33,10 @@
 #include "vino-input.h"
 #include "vino-cursor.h"
 #include "vino-prompt.h"
-#include "vino-dbus-listener.h"
 #include "vino-util.h"
-#include "vino-enums.h"
-#include "vino-background.h"
 #include "vino-upnp.h"
+#include "vino-enums.h"
 #include <sys/poll.h>
-#include <dbus/dbus-glib.h>
 #include <gtk/gtk.h>
 
 #ifdef VINO_ENABLE_KEYRING
@@ -63,8 +60,6 @@ struct _VinoServerPrivate
   VinoPrompt       *prompt;
   VinoStatusIcon   *icon;
   gboolean          display_status_icon;
-  VinoDBusListener *listener;
-  gboolean          use_dbus_listener;
   VinoUpnp         *upnp;
 
   GIOChannel       *io_channel[RFB_MAX_SOCKETLISTEN];
@@ -147,18 +142,15 @@ static gpointer parent_class;
 static void
 vino_server_lock_screen (VinoServer *server)
 {
-
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
+  GDBusConnection *connection;
+  GError *error = NULL;
 
   if (!server->priv->lock_screen)
     return;
-  
+
   dprintf(DBUS, "Locking screen via gnome-screensaver\n");
 
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
   if (!connection)
     {
       dprintf (DBUS, _("Failed to open connection to bus: %s\n"), error->message);
@@ -166,29 +158,22 @@ vino_server_lock_screen (VinoServer *server)
       return;
     }
 
-  proxy = dbus_g_proxy_new_for_name (connection,
-                                     GNOME_SCREENSAVER_BUS_NAME,
-                                     GNOME_SCREENSAVER_PATH,
-                                     GNOME_SCREENSAVER_INTERFACE);
-
-  dbus_g_proxy_call_no_reply (proxy, "Lock", G_TYPE_INVALID);
-
-  g_object_unref (proxy);
-  dbus_g_connection_unref (connection);
+  g_dbus_connection_call (connection, GNOME_SCREENSAVER_BUS_NAME,
+                          GNOME_SCREENSAVER_PATH, GNOME_SCREENSAVER_INTERFACE,
+                          "Lock", NULL, NULL,
+                          G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+  g_object_unref (connection);
 }
 
 static void
 vino_server_unlock_screen (void)
 {
-
-  DBusGConnection *connection;
-  GError          *error;
-  DBusGProxy      *proxy;
+  GDBusConnection *connection;
+  GError *error = NULL;
 
   dprintf(DBUS, "Unlocking screen via gnome-screensaver\n");
 
-  error = NULL;
-  connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
+  connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
   if (!connection)
     {
       dprintf (DBUS, _("Failed to open connection to bus: %s\n"), error->message);
@@ -196,15 +181,11 @@ vino_server_unlock_screen (void)
       return;
     }
 
-  proxy = dbus_g_proxy_new_for_name (connection,
-                                     GNOME_SCREENSAVER_BUS_NAME,
-                                     GNOME_SCREENSAVER_PATH,
-                                     GNOME_SCREENSAVER_INTERFACE);
-
-  dbus_g_proxy_call_no_reply (proxy, "SimulateUserActivity", G_TYPE_INVALID);
-
-  g_object_unref (proxy);
-  dbus_g_connection_unref (connection);
+  g_dbus_connection_call (connection, GNOME_SCREENSAVER_BUS_NAME,
+                          GNOME_SCREENSAVER_PATH, GNOME_SCREENSAVER_INTERFACE,
+                          "SimulateUserActivity", NULL, NULL,
+                          G_DBUS_CALL_FLAGS_NONE, -1, NULL, NULL, NULL);
+  g_object_unref (connection);
 }
 
 #undef GNOME_SCREENSAVER_BUS_NAME
@@ -300,6 +281,21 @@ vino_server_get_disable_xdamage (VinoServer *server)
 }
 
 static void
+vino_background_draw (gboolean status)
+{
+  static GSettings *background_settings;
+  gsize initialised;
+
+  if (g_once_init_enter (&initialised))
+    {
+      background_settings = g_settings_new ("org.gnome.desktop.background");
+      g_once_init_leave (&initialised, TRUE);
+    }
+
+  g_settings_set_boolean (background_settings, "draw-background", status);
+}
+
+static void
 vino_server_client_accepted (VinoServer *server,
                              VinoClient *client)
 {
@@ -309,7 +305,7 @@ vino_server_client_accepted (VinoServer *server,
   vino_server_unlock_screen ();
 
   if (vino_server_get_disable_background (server))
-     vino_background_draw (FALSE);
+    vino_background_draw (FALSE);
 }
 
 
@@ -801,21 +797,31 @@ vino_server_check_vnc_password (rfbClientPtr  rfb_client,
 static void
 vino_server_handle_damage_notify (VinoServer *server)
 {
-  cairo_rectangle_int_t *rects;
-  int           i, n_rects;
+  cairo_region_t *region;
 
   g_return_if_fail (VINO_IS_SERVER (server));
-  
-  rects = vino_fb_get_damage (server->priv->fb, &n_rects, TRUE);
 
-  for (i = 0; i < n_rects; i++)
-    rfbMarkRectAsModified (server->priv->rfb_screen,
-			   rects [i].x,
-			   rects [i].y,
-			   rects [i].x + rects [i].width,
-			   rects [i].y + rects [i].height);
+  if ((region = vino_fb_steal_damage (server->priv->fb)))
+    {
+      int i, n_rects;
 
-  g_free (rects);
+      n_rects = cairo_region_num_rectangles (region);
+
+      for (i = 0; i < n_rects; i++)
+        {
+          cairo_rectangle_int_t rect;
+
+          cairo_region_get_rectangle (region, i, &rect);
+
+          rfbMarkRectAsModified (server->priv->rfb_screen,
+                                 rect.x,
+                                 rect.y,
+                                 rect.x + rect.width,
+                                 rect.y + rect.height);
+        }
+
+      cairo_region_destroy (region);
+    }
 }
 
 static void
@@ -1118,10 +1124,6 @@ vino_server_finalize (GObject *object)
     g_object_unref (server->priv->fb);
   server->priv->fb = NULL;
 
-  if (server->priv->listener)
-    g_object_unref (server->priv->listener);
-  server->priv->listener = NULL;
-
   if (server->priv->icon)
     g_object_unref (server->priv->icon);
   server->priv->icon = NULL;
@@ -1161,9 +1163,6 @@ vino_server_set_property (GObject      *object,
       break;
     case PROP_DISPLAY_STATUS_ICON:
       vino_server_set_display_status_icon (server, g_value_get_boolean (value));
-      break;
-    case PROP_USE_DBUS_LISTENER:
-      vino_server_set_use_dbus_listener (server, g_value_get_boolean (value));
       break;
     case PROP_NETWORK_INTERFACE:
       vino_server_set_network_interface (server, g_value_get_string (value));
@@ -1226,9 +1225,6 @@ vino_server_get_property (GObject    *object,
     case PROP_DISPLAY_STATUS_ICON:
       g_value_set_boolean (value, server->priv->display_status_icon);
       break;
-    case PROP_USE_DBUS_LISTENER:
-      g_value_set_boolean (value, server->priv->use_dbus_listener);
-      break;
     case PROP_NETWORK_INTERFACE:
       g_value_set_string (value, server->priv->network_interface);
       break;
@@ -1272,11 +1268,6 @@ static void
 vino_server_constructed (GObject *object)
 {
   VinoServer *server = VINO_SERVER (object);
-
-  if (server->priv->use_dbus_listener)
-    server->priv->listener = vino_dbus_listener_new (server);
-  else
-    server->priv->listener = NULL;
 
   if (server->priv->display_status_icon)
     server->priv->icon = vino_status_icon_new (server, server->priv->screen);
@@ -1360,17 +1351,6 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT   |
                                                          G_PARAM_STATIC_STRINGS));
-
-   g_object_class_install_property (gobject_class,
-				   PROP_USE_DBUS_LISTENER,
-				   g_param_spec_boolean ("use-dbus-listener",
-							 "Use the dbus listener",
-							 "Allow to use the dbus listener",
-							 TRUE,
-                                                         G_PARAM_READWRITE   |
-                                                         G_PARAM_CONSTRUCT   |
-                                                         G_PARAM_STATIC_STRINGS));
-
 
   g_object_class_install_property (gobject_class,
 				   PROP_NETWORK_INTERFACE,
@@ -1562,15 +1542,6 @@ vino_server_set_display_status_icon (VinoServer *server,
   g_return_if_fail (VINO_IS_SERVER (server));
 
   server->priv->display_status_icon = display_status_icon;
-}
-
-void
-vino_server_set_use_dbus_listener (VinoServer *server,
-    gboolean use_dbus_listener)
-{
-  g_return_if_fail (VINO_IS_SERVER (server));
-
-  server->priv->use_dbus_listener = use_dbus_listener;
 }
 
 G_CONST_RETURN char *
@@ -1863,14 +1834,31 @@ vino_server_get_port (VinoServer *server)
   return server->priv->rfb_screen->rfbPort;
 }
 
-int
+guint16
 vino_server_get_external_port (VinoServer *server)
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), 0);
 
-  return server->priv->use_upnp && VINO_IS_UPNP (server->priv->upnp) ?
-           vino_upnp_get_external_port (server->priv->upnp) :
-           server->priv->rfb_screen->rfbPort;
+  if (server->priv->use_upnp && server->priv->upnp)
+    {
+      gint port = vino_upnp_get_external_port (server->priv->upnp);
+
+      if (port > 0)
+        return port;
+    }
+
+  return 0;
+}
+
+gchar *
+vino_server_get_external_ip (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), 0);
+
+  if (server->priv->use_upnp && server->priv->upnp)
+    return vino_upnp_get_external_ip (server->priv->upnp);
+
+  return NULL;
 }
 
 gboolean

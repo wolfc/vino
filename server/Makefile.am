@@ -3,6 +3,7 @@ NULL =
 SUBDIRS = libvncserver miniupnp smclient
 
 INCLUDES = \
+	-I$(top_srcdir)/common \
 	-I$(top_srcdir)/server/libvncserver \
 	-I$(top_srcdir)/server/miniupnp \
 	-I$(top_srcdir)/server/smclient \
@@ -46,6 +47,7 @@ VINO_HTTP_SRC = \
 endif
 
 vino_server_SOURCES = \
+	../common/vino-dbus.c \
 	vino-cursor.c \
 	vino-cursor.h \
 	vino-enums.c \
@@ -73,8 +75,6 @@ vino_server_SOURCES = \
 	vino-dbus-listener.h \
 	vino-dbus-error.c \
 	vino-dbus-error.h \
-	vino-background.c \
-	vino-background.h \
 	vino-upnp.h \
 	vino-upnp.c \
 	$(VINO_HTTP_SRC) \
@@ -96,9 +96,6 @@ clientfiledir = $(datarootdir)/telepathy/clients
 clientfile_DATA = Vino.client
 
 endif
-
-dbus-interface-glue.h: dbus-interface.xml
-	dbus-binding-tool --prefix=vino_dbus_listener --mode=glib-server $< > dbus-interface-glue.h
 
 vino-marshal.h: vino-marshal.list $(GLIB_GENMARSHAL)
 	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
@@ -140,12 +137,6 @@ vino-enums.h: @REBUILD@ $(vino_enum_headers)
 			--eprod "GType @enum_name@_get_type (void);\n" \
 		$(vino_enum_headers) >  $@
 
-schemasdir       = $(GCONF_SCHEMA_FILE_DIR)
-schemas_in_files = vino-server.schemas.in
-schemas_DATA     = $(schemas_in_files:.schemas.in=.schemas)
-
-@INTLTOOL_SCHEMAS_RULE@
-
 vino-server.desktop.in: vino-server.desktop.in.in
 	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
@@ -162,23 +153,11 @@ org.freedesktop.Telepathy.Client.Vino.service: org.freedesktop.Telepathy.Client.
 
 @INTLTOOL_DESKTOP_RULE@
 
-if GCONF_SCHEMAS_INSTALL
-install-data-local:
-	if test -z "$(DESTDIR)" ; then \
-		for p in $(schemas_DATA) ; do \
-			GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) $(GCONFTOOL) --makefile-install-rule $(top_builddir)/server/$$p ; \
-		done ; \
-        fi
-else
-install-data-local:
-endif
-
 uidir   = $(datadir)/vino
 ui_DATA = vino-prompt.ui
 
 EXTRA_DIST = \
 	vino-prompt.ui \
-	vino-server.schemas.in \
 	vino-marshal.list \
 	vino-server.desktop.in.in \
 	org.freedesktop.Telepathy.Client.Vino.service.in \
@@ -191,7 +170,6 @@ BUILT_SOURCES = \
 	vino-enums.h \
 	vino-marshal.c \
 	vino-marshal.h \
-	dbus-interface-glue.h \
 	$(NULL)
 
 CLEANFILES = \
@@ -200,7 +178,6 @@ CLEANFILES = \
 	vino-server.desktop.in
 
 DISTCLEANFILES = \
-	$(schemas_DATA) \
 	$(BUILT_SOURCES) \
 	$(NULL)
 
