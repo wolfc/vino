@@ -600,7 +600,7 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
   else
     {
       XGetSubImage (vfb->priv->xdisplay,
-		    GDK_WINDOW_XWINDOW (vfb->priv->root_window),
+		    GDK_WINDOW_XID (vfb->priv->root_window),
 		    damage.x,
 		    damage.y,
 		    damage.width,
