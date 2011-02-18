@@ -35,15 +35,15 @@
 
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gconf/gconf-client.h>
+#include <gio/gio.h>
 
 #ifdef VINO_ENABLE_KEYRING
 #include <gnome-keyring.h>
 #endif
 
-#define VINO_PREFS_DIR			"/desktop/gnome/remote_access"
-#define VINO_PREFS_VNC_PASSWORD		VINO_PREFS_DIR "/vnc_password"
-#define VINO_PASSWORD_MAXLEN		8
+#define VINO_PREFS_SCHEMA       "org.gnome.Vino"
+#define VINO_PREFS_VNC_PASSWORD "vnc-password"
+#define VINO_PASSWORD_MAXLEN	8
 
 static gboolean
 vino_passwd_set_password_in_keyring (const char *password)
@@ -71,7 +71,7 @@ vino_passwd_set_password_in_keyring (const char *password)
 }
 
 static void
-vino_passwd_set_password (GConfClient *conf, 
+vino_passwd_set_password (GSettings *settings,
                           const char *password)
 {
   gchar *password_b64;
@@ -80,7 +80,7 @@ vino_passwd_set_password (GConfClient *conf,
     return;
 
   password_b64 = g_base64_encode ((guchar *) password, strlen (password));
-  gconf_client_set_string (conf, VINO_PREFS_VNC_PASSWORD, password_b64, NULL);
+  g_settings_set_string (settings, VINO_PREFS_VNC_PASSWORD, password_b64);
   g_free (password_b64);
 }
 
@@ -148,7 +148,7 @@ vino_passwd_read (char *buff,
 }
 
 static int
-vino_passwd_change (GConfClient *conf)
+vino_passwd_change (GSettings *settings)
 {
   gchar password1[VINO_PASSWORD_MAXLEN + 1];
   gchar password2[VINO_PASSWORD_MAXLEN + 1];
@@ -163,7 +163,7 @@ vino_passwd_change (GConfClient *conf)
 
   if (g_str_equal (password1, password2))
     {
-      vino_passwd_set_password (conf, password1);
+      vino_passwd_set_password (settings, password1);
       g_print (_("vino-passwd: password updated successfully.\n"));
       return 0;
     }
@@ -175,23 +175,12 @@ vino_passwd_change (GConfClient *conf)
     }
 }
 
-static void
-gconf_error_handle (GConfClient *client, GError *error)
-{
-  g_print (_("Error while communicating with GConf. Are you logged into a GNOME session?"));
-  g_print ("\n");
-  g_print (_("Error message:"));
-  g_print ("\n\n%s\n\n", error->message);
-
-  exit (1);
-}
-
 int 
 main(int argc, char *argv[])
 {
   gboolean       opt_version = FALSE;
   GError         *error      = NULL;
-  GConfClient    *conf       = NULL;
+  GSettings      *settings   = NULL;
   GOptionContext *context    = NULL;  
   
   const GOptionEntry entries[] = 
@@ -228,11 +217,10 @@ main(int argc, char *argv[])
    }
 
   g_type_init ();
-  gconf_client_set_global_default_error_handler (gconf_error_handle);
-  conf = gconf_client_get_default ();
+  settings = g_settings_new (VINO_PREFS_SCHEMA);
 
-  if (gconf_client_key_is_writable (conf, VINO_PREFS_VNC_PASSWORD, NULL))
-    return vino_passwd_change (conf);
+  if (g_settings_is_writable (settings, VINO_PREFS_VNC_PASSWORD))
+    return vino_passwd_change (settings);
   else
     {
       g_printerr (_("ERROR: You do not have enough permissions to change Vino password.\n"));

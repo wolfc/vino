@@ -170,6 +170,55 @@ set_password (const GValue       *value,
                                   TRUE, g_free, base64);
 }
 
+typedef enum
+{
+  VINO_ICON_VISIBILITY_NEVER,
+  VINO_ICON_VISIBILITY_ALWAYS,
+  VINO_ICON_VISIBILITY_CLIENT
+} VinoIconVisibility;
+
+static gboolean
+get_icon_visibility (GValue   *value,
+                     GVariant *variant,
+                     gpointer  user_data)
+{
+  const char *setting;
+  char *name;
+
+  setting = g_variant_get_string (variant, NULL);
+
+  g_object_get (user_data, "name", &name, NULL);
+
+  /* If the button name matches the setting, it should be active. */
+  if (g_strcmp0 (name, setting) == 0)
+      g_value_set_boolean (value, TRUE);
+
+  g_free (name);
+
+  return TRUE;
+}
+
+static GVariant *
+set_icon_visibility (const GValue       *value,
+                     const GVariantType *type,
+                     gpointer            user_data)
+{
+  GVariant *variant = NULL;
+  char *name;
+
+  /* Don't act unless the button has been activated (turned ON). */
+  if (!g_value_get_boolean (value))
+    return NULL;
+
+  /* GtkToggleButton *button = GTK_TOGGLE_BUTTON(user_data); */
+  g_object_get (user_data, "name", &name, NULL);
+  variant = g_variant_new_string (name);
+
+  g_free (name);
+
+  return variant;
+}
+
 static void
 vino_preferences_dialog_response (GtkWidget *widget,
                                   gint       response,
@@ -293,20 +342,23 @@ vino_preferences_connect_ui (VinoPreferences *app,
     GSettingsBindGetMapping  get_mapping;
     GSettingsBindSetMapping  set_mapping;
   } bindings[] = {
-    { "enabled",                "allowed_toggle",        "active"                                                           },
+    { "enabled",                "allowed_toggle",        "active",    G_SETTINGS_BIND_DEFAULT, NULL,                NULL                },
 
-    { "enabled",                "control_settings",      "sensitive",       G_SETTINGS_BIND_GET                             },
-    { "view-only",              "view_only_toggle",      "active",          0,                   get_inverted, set_inverted },
+    { "enabled",                "control_settings",      "sensitive", G_SETTINGS_BIND_GET,     NULL,                NULL                },
+    { "view-only",              "view_only_toggle",      "active",    G_SETTINGS_BIND_DEFAULT, get_inverted,        set_inverted        },
 
-    { "enabled",                "security_settings",     "sensitive",       G_SETTINGS_BIND_GET                             },
-    { "prompt-enabled",         "prompt_enabled_toggle", "active",                                                          },
-    { "authentication-methods", "password_toggle",       "active",          0,                   get_authtype, set_authtype },
-    { "authentication-methods", "password_box",          "sensitive",       G_SETTINGS_BIND_GET, get_authtype               },
-    { "vnc-password",           "password_entry",        "text",            0,                   get_password, set_password },
-    { "use-upnp",               "use_upnp_toggle",       "active",                                                          },
+    { "enabled",                "security_settings",     "sensitive", G_SETTINGS_BIND_GET,     NULL,                NULL                },
+    { "prompt-enabled",         "prompt_enabled_toggle", "active",    G_SETTINGS_BIND_DEFAULT, NULL,                NULL                },
+    { "authentication-methods", "password_toggle",       "active",    G_SETTINGS_BIND_DEFAULT, get_authtype,        set_authtype        },
+    { "authentication-methods", "password_box",          "sensitive", G_SETTINGS_BIND_GET,     get_authtype,        NULL                },
+    { "vnc-password",           "password_entry",        "text",      G_SETTINGS_BIND_DEFAULT, get_password,        set_password        },
+    { "use-upnp",               "use_upnp_toggle",       "active",    G_SETTINGS_BIND_DEFAULT, NULL,                NULL                },
 
-    { "enabled",                "notification_settings", "sensitive",       G_SETTINGS_BIND_GET                             },
-    { "icon-visibility",        "icon_always_radio",     "settings-active",                                                 }
+    { "enabled",                "notification_settings", "sensitive", G_SETTINGS_BIND_GET,     NULL,                NULL                },
+
+    { "icon-visibility",        "icon_always_radio",     "active",    G_SETTINGS_BIND_DEFAULT, get_icon_visibility, set_icon_visibility },
+    { "icon-visibility",        "icon_client_radio",     "active",    G_SETTINGS_BIND_DEFAULT, get_icon_visibility, set_icon_visibility },
+    { "icon-visibility",        "icon_never_radio",      "active",    G_SETTINGS_BIND_DEFAULT, get_icon_visibility, set_icon_visibility }
   };
   GSettings *settings;
   gpointer window;
@@ -315,14 +367,16 @@ vino_preferences_connect_ui (VinoPreferences *app,
   settings = g_settings_new ("org.gnome.Vino");
 
   for (i = 0; i < G_N_ELEMENTS (bindings); i++)
+  {
+    GObject *object =  gtk_builder_get_object (builder, bindings[i].name);
     g_settings_bind_with_mapping (settings, bindings[i].setting,
-                                  gtk_builder_get_object (builder,
-                                                          bindings[i].name),
+                                  object,
                                   bindings[i].property,
                                   bindings[i].flags,
                                   bindings[i].get_mapping,
                                   bindings[i].set_mapping,
-                                  NULL, NULL);
+                                  object, NULL);
+  }
 
   window = gtk_builder_get_object (builder, "vino_dialog");
   g_signal_connect (window, "response",

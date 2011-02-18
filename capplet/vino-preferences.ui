@@ -10,7 +10,6 @@
     <property name="window_position">center-on-parent</property>
     <property name="icon_name">preferences-desktop-remote-desktop</property>
     <property name="type_hint">dialog</property>
-    <property name="has_separator">False</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox1">
         <property name="visible">True</property>
@@ -315,7 +314,7 @@
                         <property name="spacing">3</property>
                         <child>
                           <object class="VinoRadioButton" id="icon_always_radio">
-                            <property name='settings-name'>always</property>
+                            <property name='name'>always</property>
                             <property name="label" translatable="yes">Al_ways display an icon</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -330,7 +329,7 @@
                         </child>
                         <child>
                           <object class="VinoRadioButton" id="icon_client_radio">
-                            <property name='settings-name'>client</property>
+                            <property name='name'>client</property>
                             <property name="label" translatable="yes">_Only display an icon when there is someone connected</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
@@ -346,7 +345,7 @@
                         </child>
                         <child>
                           <object class="VinoRadioButton" id="icon_never_radio">
-                            <property name='settings-name'>never</property>
+                            <property name='name'>never</property>
                             <property name="label" translatable="yes">_Never display an icon</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
