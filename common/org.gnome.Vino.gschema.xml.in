@@ -42,7 +42,7 @@
     </key>
 
     <key name='use-alternative-port' type='b'>
-      <_summary>Listen an alternative port</_summary>
+      <_summary>Listen on an alternative port</_summary>
       <_description>
         If true, the server will listen to another port, instead of the
         default (5900). The port must be specified in the
