@@ -341,13 +341,14 @@ vino_preferences_connect_ui (VinoPreferences *app,
   return window;
 }
 
-static GtkWindow *
-vino_preferences_create_window (GtkApplication *gtk_app)
+static void
+vino_preferences_create_window (GApplication *g_app)
 {
-  VinoPreferences *app = (VinoPreferences *) gtk_app;
+  VinoPreferences *app = (VinoPreferences *) g_app;
   GError     *error = NULL;
   GtkBuilder *builder;
   const char *ui_file;
+  GtkWindow  *window;
 
   vino_radio_button_get_type ();
   vino_message_box_get_type ();
@@ -364,10 +365,11 @@ vino_preferences_create_window (GtkApplication *gtk_app)
     {
       g_warning ("Unable to load ui file '%s': %s", ui_file, error->message);
       g_error_free (error);
-      return NULL;
     }
 
-  return vino_preferences_connect_ui (app, builder);
+  window = vino_preferences_connect_ui (app, builder);
+  gtk_window_set_application (GTK_WINDOW (window), GTK_APPLICATION (app));
+  gtk_widget_show_all(GTK_WIDGET(window));
 }
 
 static void
@@ -377,8 +379,7 @@ vino_preferences_finalize (GObject *object)
 
   g_object_unref (app->info);
 
-  G_OBJECT_CLASS (vino_preferences_parent_class)
-    ->finalize (object);
+  G_OBJECT_CLASS (vino_preferences_parent_class)->finalize (object);
 }
 
 static void
@@ -386,50 +387,54 @@ vino_preferences_init (VinoPreferences *app)
 {
 }
 
+static GtkApplication *
+vino_preferences_new (void)
+{
+  g_type_init();
+
+  return g_object_new (vino_preferences_get_type (),
+                       "application-id", "org.gnome.Vino.Preferences",
+                       "flags", G_APPLICATION_FLAGS_NONE,
+                       NULL);
+}
+
 static void
-vino_preferences_class_init (GtkApplicationClass *class)
+vino_preferences_activate (GApplication *app)
+{
+  GList *list;
+
+  list = gtk_application_get_windows (GTK_APPLICATION(app));
+
+  if (list)
+    gtk_window_present (GTK_WINDOW (list->data));
+  else
+    vino_preferences_create_window (app);
+}
+
+static void
+vino_preferences_class_init (VinoPreferencesClass *class)
 {
   GObjectClass *object_class = G_OBJECT_CLASS (class);
 
-  class->create_window = vino_preferences_create_window;
-  object_class->finalize = vino_preferences_finalize;
-}
-
-static GtkApplication *
-vino_preferences_new (gint argc, char **argv)
-{
-  GError *error = NULL;
-  GtkApplication *app;
-  const gchar **args;
-
-  args = (const gchar **) argv;
-
-  app = g_initable_new (vino_preferences_get_type (), NULL, &error,
-                        "application-id", "org.gnome.Vino.Preferences",
-                        "argv", g_variant_new_bytestring_array (args, argc),
-                        NULL);
-
-  if G_UNLIKELY (app == NULL)
-    g_error ("%s", error->message);
-
-  return app;
+  G_APPLICATION_CLASS (class)->activate = vino_preferences_activate;
+  object_class->finalize                = vino_preferences_finalize;
 }
 
 int
 main (int argc, char **argv)
 {
   GtkApplication *app;
+  int status;
 
   bindtextdomain (GETTEXT_PACKAGE, VINO_LOCALEDIR);
   bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
   textdomain (GETTEXT_PACKAGE);
 
   gtk_init (&argc, &argv);
-  app = vino_preferences_new (argc, argv);
-  gtk_application_get_window (app);
-  gtk_application_run (app);
+  app = vino_preferences_new ();
+  status = g_application_run (G_APPLICATION(app), argc, argv);
   g_object_unref (app);
   g_settings_sync ();
 
-  return 0;
+  return status;
 }
