@@ -8,7 +8,7 @@ EXTRA_DIST = \
 # GSettings schemas, enum files and conversion file
 gsettings_ENUM_NAMESPACE = org.gnome.Vino
 gsettings_ENUM_FILES = $(top_srcdir)/capplet/vino-preferences.c
-wgsettings_in_file = org.gnome.Vino.gschema.xml.in
+gsettings_in_file = org.gnome.Vino.gschema.xml.in
 gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
 
 @INTLTOOL_XML_NOMERGE_RULE@
