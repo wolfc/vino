@@ -1,4 +1,20 @@
 ==============
+Version 2.99.0
+==============
+
+  Fixes:
+
+	+ Port to Gtk3 (Ryan Lortie, Matthias Clasen)
+	+ Port to GSettings (Ryan Lortie, Chris Kühl)
+	+ Port to GtkApplication (Ryan Lortie, Chris Kühl)
+	+ Port to GDBus (Ryan Lortie)
+
+  Translations:
+
+	+ Daniel Korostil (uk)
+	+ Yaron Shahrabani (he)
+
+==============
 Version 2.32.1
 ==============
 
