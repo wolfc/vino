@@ -44,6 +44,10 @@ struct _VinoDBusListener
   gint             screen;
 
   VinoServer      *server;
+
+#ifdef HAVE_TELEPATHY_GLIB
+  VinoTubeServersManager *manager;
+#endif
 };
 
 typedef GObjectClass VinoDBusListenerClass;
@@ -66,8 +70,8 @@ vino_dbus_listener_finalize (GObject *object)
 #ifdef HAVE_TELEPATHY_GLIB
   if (listener->manager != NULL)
     {
-      g_object_unref (listener->priv->manager);
-      listener->priv->manager = NULL;
+      g_object_unref (listener->manager);
+      listener->manager = NULL;
     }
 #endif
 
