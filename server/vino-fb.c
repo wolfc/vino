@@ -571,7 +571,7 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
   xdamage.height = damage.height;
 
   dprintf (POLLING, "Updating damaged region in idle: %d %d %dx%d\n",
-	   damage->x, damage->y, damage->width, damage->height);
+	   damage.x, damage.y, damage.width, damage.height);
 
   /* subtract damage from server */
   XFixesSetRegion (vfb->priv->xdisplay, vfb->priv->xdamage_region, &xdamage, 1);
@@ -622,10 +622,10 @@ vino_fb_xdamage_idle_handler (VinoFB *vfb)
       g_warning ("Received a '%s' X Window System error while copying damaged pixels",
 		 error_text);
       g_warning ("Failed image = %d, %d %dx%d - screen = %dx%d",
-		 damage->x,
-		 damage->y,
-		 damage->width,
-		 damage->height,
+		 damage.x,
+		 damage.y,
+		 damage.width,
+		 damage.height,
 		 gdk_screen_get_width (vfb->priv->screen),
 		 gdk_screen_get_height (vfb->priv->screen));
 #endif
