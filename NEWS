@@ -1,4 +1,13 @@
 ==============
+Version 2.99.2
+==============
+
+  Fixes:
+
+	+ Added back telepathy functionality. (Pierre Wieser)
+	+ Added DISTCHECK_CONFIGURE_FLAGS to Makefile.am. (Chris Kühl)
+
+==============
 Version 2.99.1
 ==============
 
