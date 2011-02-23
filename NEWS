@@ -1,4 +1,20 @@
 ==============
+Version 2.99.1
+==============
+
+  Fixes:
+
+	+ Added back basic mdns functionality. (Chris Kühl)
+	+ Fixed typo in configure.in (Chris Kühl)
+
+  Translations:
+
+	+ Daniel Mustieles (es)
+	+ Kjartan Maraas (nb)
+	+ Daniel Nylander (sv)
+	+ Alexander Shopov (bg)
+
+==============
 Version 2.99.0
 ==============
 
