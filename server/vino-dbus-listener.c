@@ -33,6 +33,8 @@
 #include "vino-http.h"
 #endif
 
+#include "vino-mdns.h"
+
 struct _VinoDBusListener
 {
   GObject  parent_instance;
@@ -169,7 +171,7 @@ vino_dbus_listener_get_property (GDBusConnection  *connection,
     return g_variant_new_uint16 (vino_server_get_external_port (listener->server));
 
   else if (strcmp (property_name, "AvahiHost") == 0)
-    return g_variant_new_string ("aaa");
+    return g_variant_new_string (vino_mdns_get_hostname());
 
   else
     g_assert_not_reached ();

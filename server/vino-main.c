@@ -156,6 +156,11 @@ name_acquired (GDBusConnection *connection,
       vino_dbus_listener_set_server (vino->listeners[i], server);
       vino_server_set_on_hold (server, FALSE);
 
+      if (g_settings_get_boolean (vino->settings, "enabled"))
+        {
+          vino_mdns_start(vino_server_get_network_interface (server));
+        }
+
       g_object_unref (server);
     }
 }
@@ -264,6 +269,8 @@ main (int argc, char **argv)
 
       g_free (vino.listeners);
     }
+
+  vino_mdns_shutdown ();
 
   g_main_loop_unref (vino.main_loop);
   g_object_unref (vino.sm_client);
