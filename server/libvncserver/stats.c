@@ -24,7 +24,7 @@
  *  USA.
  */
 
-#include <rfb/rfb.h>
+#include "rfb/rfb.h"
 
 static const char* encNames[] = {
     "raw", "copyRect", "RRE", "[encoding 3]", "CoRRE", "hextile",

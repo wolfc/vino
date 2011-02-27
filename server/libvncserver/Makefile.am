@@ -4,7 +4,7 @@ SUBDIRS = ifaddr rfb
 
 noinst_LTLIBRARIES = libvncserver.la
 
-INCLUDES = $(WARN_CFLAGS) $(LIBGNUTLS_CFLAGS) $(LIBGCRYPT_CFLAGS)
+INCLUDES = $(WARN_CFLAGS) $(GNUTLS_CFLAGS) $(GCRYPT_CFLAGS) -I$(top_builddir)
 
 libvncserver_la_SOURCES = 	\
 	auth.c 			\
@@ -33,11 +33,12 @@ libvncserver_la_SOURCES = 	\
 	$(NULL)
 
 libvncserver_la_LIBADD =	\
-	$(LIBGNUTLS_LIBS)	\
-	$(LIBGCRYPT_LIBS)	\
+	$(GNUTLS_LIBS)	\
+	$(GCRYPT_LIBS)	\
+	$(JPEG_LIBS) \
 	$(NULL)
 
-if SELF_IFADDRS
+if VINO_HAVE_SELF_IFADDRS
 libvncserver_la_LIBADD += ifaddr/libifaddrs.la
 endif
 

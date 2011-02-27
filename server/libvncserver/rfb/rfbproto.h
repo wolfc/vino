@@ -65,9 +65,9 @@
 #endif
 #endif
 #endif
-#include <rfb/keysym.h>
+#include "keysym.h"
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 #include <zlib.h>
 #endif
 

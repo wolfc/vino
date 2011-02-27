@@ -1,12 +1,13 @@
 platform_defines = -DEGG_SM_CLIENT_BACKEND_XSMP
-platform_libs = libeggdesktopfile.la
+platform_libs = libeggdesktopfile.la -lSM -lICE
 platform_ltlibraries = libeggdesktopfile.la
 platform_sources = eggsmclient-xsmp.c
 
 INCLUDES =                               \
 	-DG_LOG_DOMAIN=\""EggSMClient"\" \
 	$(platform_defines)              \
-	$(EGG_SMCLIENT_CFLAGS)
+	$(EGG_SMCLIENT_CFLAGS)		 \
+	-I$(top_builddir)
 
 noinst_LTLIBRARIES =                     \
 	libeggsmclient.la                \

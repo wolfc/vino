@@ -25,10 +25,9 @@
  */
 
 /*#include <stdio.h>*/
-#include <rfb/rfb.h>
+#include "rfb/rfb.h"
 
-#ifdef HAVE_LIBZ
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
 
 #ifdef WIN32
 #define XMD_H
@@ -1823,5 +1822,4 @@ JpegSetDstManager(j_compress_ptr cinfo)
     cinfo->dest = &jpegDstManager;
 }
 
-#endif /* LIBJPEG */
-#endif /* LIBZ */
+#endif /* VINO_HAVE_JPEG */

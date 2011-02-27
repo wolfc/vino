@@ -212,7 +212,7 @@ main(int argc, char *argv[])
 
   if (opt_version)
    {
-     g_print (_("VINO Version %s\n"), VERSION);
+     g_print (_("VINO Version %s\n"), PACKAGE_VERSION);
      return 0;
    }
 

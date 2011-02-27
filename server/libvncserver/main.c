@@ -10,8 +10,8 @@
  *  see GPL (latest version) for full details
  */
 
-#include <rfb/rfb.h>
-#include <rfb/rfbregion.h>
+#include "rfb/rfb.h"
+#include "rfb/rfbregion.h"
 
 #include <stdarg.h>
 #include <errno.h>
@@ -461,7 +461,7 @@ void rfbScreenCleanup(rfbScreenInfoPtr rfbScreen)
   if(rfbScreen->desktopName)
     free(rfbScreen->desktopName);
   free(rfbScreen);
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
   rfbTightCleanup();
 #endif
 }

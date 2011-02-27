@@ -24,11 +24,11 @@
  * Routines to implement Zlib Run-length Encoding (ZRLE).
  */
 
-#include <rfb/rfb.h>
-#include <zrleoutstream.h>
+#include "rfb/rfb.h"
+#include "zrleoutstream.h"
 
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 
 #define GET_IMAGE_INTO_BUF(tx,ty,tw,th,buf)                                \
 {  char *fbptr = (cl->screen->frameBuffer                                   \
@@ -42,18 +42,18 @@
 #define EXTRA_ARGS , rfbClientPtr cl
 
 #define BPP 8
-#include <zrleencodetemplate.c>
+#include "zrleencodetemplate.c"
 #undef BPP
 #define BPP 16
-#include <zrleencodetemplate.c>
+#include "zrleencodetemplate.c"
 #undef BPP
 #define BPP 32
-#include <zrleencodetemplate.c>
+#include "zrleencodetemplate.c"
 #define CPIXEL 24A
-#include <zrleencodetemplate.c>
+#include "zrleencodetemplate.c"
 #undef CPIXEL
 #define CPIXEL 24B
-#include <zrleencodetemplate.c>
+#include "zrleencodetemplate.c"
 #undef CPIXEL
 #undef BPP
 
@@ -183,4 +183,4 @@ void FreeZrleData(rfbClientPtr cl)
   cl->zrleData = NULL;
 }
 
-#endif  /* HAVE_LIBZ */
+#endif  /* VINO_HAVE_ZLIB */

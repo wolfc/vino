@@ -141,10 +141,10 @@
 #include <gtk/gtk.h>
 #include <X11/Xlib.h>
 #include <X11/keysym.h>
-#ifdef HAVE_XTEST
+#ifdef VINO_HAVE_XTEST
 #include <X11/extensions/XTest.h>
 #endif
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
 #include <X11/XKBlib.h>
 #endif
 
@@ -198,7 +198,7 @@ typedef struct
 {
   guint8             button_mask;
   VinoModifierState  modifier_state;
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
   int                current_group;
 #endif
 
@@ -213,7 +213,7 @@ typedef struct
   KeySym             alt_gr_keysym;
   guint              num_lock_mod;
 
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
   int                xkb_num_groups;
   int                xkb_event_type;
 #endif
@@ -230,7 +230,7 @@ static VinoInputData global_input_data = { 0, };
 
 static gchar *cb_str = NULL;
 
-#ifdef HAVE_XTEST
+#ifdef VINO_HAVE_XTEST
 
 static struct {
   guint32 composed;
@@ -522,7 +522,7 @@ vino_input_initialize_keycodes_core (Display *xdisplay)
   XFreeModifiermap (modmap);
 }
 
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
 static void
 vino_input_initialize_keycodes_xkb (Display *xdisplay)
 {
@@ -731,7 +731,7 @@ vino_input_initialize_keycodes (Display *xdisplay)
   global_input_data.keybindings =
     g_hash_table_new_full (NULL, NULL, NULL, g_free);
 
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
   if (global_input_data.xkb_supported)
     vino_input_initialize_keycodes_xkb (xdisplay);
 #endif
@@ -744,12 +744,12 @@ vino_input_initialize_keycodes (Display *xdisplay)
   global_input_data.num_lock_keycode     = XKeysymToKeycode (xdisplay, XK_Num_Lock);
   global_input_data.alt_gr_keycode       = XKeysymToKeycode (xdisplay, global_input_data.alt_gr_keysym);
 }
-#endif /* HAVE_XTEST */
+#endif /* VINO_HAVE_XTEST */
 
 gboolean
 vino_input_init (GdkDisplay *display)
 {
-#ifdef HAVE_XTEST
+#ifdef VINO_HAVE_XTEST
   Display *xdisplay;
   int      ignore, *i = &ignore;
   int      d;
@@ -767,7 +767,7 @@ vino_input_init (GdkDisplay *display)
 
   global_input_data.n_pointer_buttons = XGetPointerMapping (xdisplay, NULL, 0);
 
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
   if (XkbQueryExtension (xdisplay, NULL, &global_input_data.xkb_event_type,
 			 NULL, NULL, NULL))
     {
@@ -809,7 +809,7 @@ vino_input_init (GdkDisplay *display)
   return global_input_data.xtest_supported;
 #else
   return global_input_data.xtest_supported = FALSE;
-#endif /* HAVE_XTEST */
+#endif /* VINO_HAVE_XTEST */
 }
 
 void
@@ -818,7 +818,7 @@ vino_input_handle_pointer_event (GdkScreen *screen,
 				 guint16    x,
 				 guint16    y)
 {
-#ifdef HAVE_XTEST
+#ifdef VINO_HAVE_XTEST
   Display *xdisplay;
   guint8   prev_mask = global_input_data.button_mask;
   int      i;
@@ -847,10 +847,10 @@ vino_input_handle_pointer_event (GdkScreen *screen,
     }
 
   global_input_data.button_mask = button_mask;
-#endif /* HAVE_XTEST */
+#endif /* VINO_HAVE_XTEST */
 }
 
-#ifdef HAVE_XTEST
+#ifdef VINO_HAVE_XTEST
 static inline void
 vino_input_update_modifier_state (VinoInputData    *input_data,
 				  VinoModifierState state,
@@ -968,7 +968,7 @@ vino_input_fake_keypress (Display *xdisplay, guint32 keysym)
     {
       int group;
 
-#ifdef HAVE_XKB
+#ifdef VINO_HAVE_XKB
       if (global_input_data.xkb_supported)
 	{
 	  if (binding[global_input_data.current_group].keycode)
@@ -1031,14 +1031,14 @@ vino_input_fake_keypress (Display *xdisplay, guint32 keysym)
 
   return FALSE;
 }
-#endif /* HAVE_XTEST */
+#endif /* VINO_HAVE_XTEST */
 
 void
 vino_input_handle_key_event (GdkScreen *screen,
 			     guint32    keysym,
 			     gboolean   key_press)
 {
-#ifdef HAVE_XTEST
+#ifdef VINO_HAVE_XTEST
   Display *xdisplay;
 
   dprintf (INPUT, "Got key %s for %s\n", key_press ? "press" : "release",
@@ -1114,7 +1114,7 @@ vino_input_handle_key_event (GdkScreen *screen,
 
   XFlush (xdisplay);
 
-#endif /* HAVE_XTEST */
+#endif /* VINO_HAVE_XTEST */
 }
 
 /* text was actually requested */

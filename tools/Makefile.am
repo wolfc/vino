@@ -1,6 +1,7 @@
 NULL =
 
 INCLUDES = \
+	-I$(top_builddir) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
 	$(VINO_TOOLS_CFLAGS) \
 	$(WARN_CFLAGS) \

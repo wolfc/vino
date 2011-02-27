@@ -35,9 +35,9 @@ extern "C"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <rfb/rfbproto.h>
-#include <rfb/rfbregion.h>
-#ifdef HAVE_GNUTLS
+#include "rfbproto.h"
+#include "rfbregion.h"
+#ifdef VINO_HAVE_GNUTLS
 #include <gnutls/gnutls.h>
 #endif
 
@@ -320,14 +320,14 @@ typedef struct _rfbClientRec {
     int rfbKeyEventsRcvd;
     int rfbPointerEventsRcvd;
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
     /* zlib encoding -- necessary compression state info per client */
 
     struct z_stream_s compStream;
     rfbBool compStreamInited;
     uint32_t zlibCompressLevel;
 
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
     /* tight encoding -- preserve zlib streams' state for each client */
     z_stream zsStruct[4];
     rfbBool zsActive[4];
@@ -349,7 +349,7 @@ typedef struct _rfbClientRec {
     struct _rfbClientRec *prev;
     struct _rfbClientRec *next;
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
     void* zrleData;
 #endif
 
@@ -488,7 +488,7 @@ extern rfbBool rfbSendRectEncodingHextile(rfbClientPtr cl, int x, int y, int w,
                                        int h);
 
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 /* zlib.c */
 
 /* Minimum zlib rectangle size in bytes.  Anything smaller will
@@ -506,7 +506,7 @@ extern rfbBool rfbSendRectEncodingHextile(rfbClientPtr cl, int x, int y, int w,
 extern rfbBool rfbSendRectEncodingZlib(rfbClientPtr cl, int x, int y, int w,
 				    int h);
 
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
 /* tight.c */
 
 #define TIGHT_DEFAULT_COMPRESSION  6
@@ -553,7 +553,7 @@ extern void rfbSetCursorPosition(rfbScreenInfoPtr rfbScreen, rfbClientPtr client
 extern void defaultPtrAddEvent(int buttonMask,int x,int y,rfbClientPtr cl);
 
 /* zrle.c */
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 extern rfbBool rfbSendRectEncodingZRLE(rfbClientPtr cl, int x, int y, int w,int h);
 extern void FreeZrleData(rfbClientPtr cl);
 #endif

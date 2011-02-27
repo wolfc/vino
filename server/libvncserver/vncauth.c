@@ -21,10 +21,10 @@
  * vncauth.c - Functions for VNC password management and authentication.
  */
 
-#include <rfb/rfbproto.h>
+#include "rfb/rfbproto.h"
 #include "d3des.h"
 
-#ifdef HAVE_GCRYPT
+#ifdef VINO_HAVE_GCRYPT
 #include <gcrypt.h>
 #endif
 #include <string.h>
@@ -44,7 +44,7 @@
 void
 vncRandomBytes(unsigned char *bytes)
 {
-#ifdef HAVE_GCRYPT
+#ifdef VINO_HAVE_GCRYPT
     static rfbBool gcrypt_init = FALSE;
 
     if (!gcrypt_init) {
@@ -68,7 +68,7 @@ vncRandomBytes(unsigned char *bytes)
     for (i = 0; i < CHALLENGESIZE; i++) {
       bytes[i] = (unsigned char)(random() & 255);
     }
-#endif /* HAVE_GCRYPT */
+#endif /* VINO_HAVE_GCRYPT */
 }
 
 

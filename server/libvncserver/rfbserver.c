@@ -27,8 +27,8 @@
 #define _GNU_SOURCE 1
 
 #include <string.h>
-#include <rfb/rfb.h>
-#include <rfb/rfbregion.h>
+#include "rfb/rfb.h"
+#include "rfb/rfbregion.h"
 #include <netdb.h>
 
 #ifdef HAVE_FCNTL_H
@@ -213,7 +213,7 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
       cl->preferredEncoding = rfbEncodingRaw;
       cl->correMaxWidth = 48;
       cl->correMaxHeight = 48;
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
       cl->zrleData = NULL;
 #endif
 
@@ -240,7 +240,7 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
       rfbScreen->rfbClientHead = cl;
       UNLOCK(rfbClientListMutex);
 
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
       cl->tightCompressLevel = TIGHT_DEFAULT_COMPRESSION;
       cl->tightQualityLevel = -1;
       for (i = 0; i < 4; i++)
@@ -252,7 +252,7 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
       cl->enableLastRectEncoding = FALSE;
       cl->useNewFBSize = FALSE;
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
       cl->compStreamInited = FALSE;
       cl->compStream.total_in = 0;
       cl->compStream.total_out = 0;
@@ -317,7 +317,7 @@ rfbClientConnectionGone(rfbClientPtr cl)
     if(cl->sock>0)
         close(cl->sock);
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
     FreeZrleData(cl);
 #endif
 
@@ -330,13 +330,13 @@ rfbClientConnectionGone(rfbClientPtr cl)
     rfbLog("Client %s gone\n",cl->host);
     free(cl->host);
 
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
     /* Release the compression state structures if any. */
     if ( cl->compStreamInited ) {
 	deflateEnd( &(cl->compStream) );
     }
 
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
     for (i = 0; i < 4; i++) {
 	if (cl->zsActive[i])
 	    deflateEnd(&cl->zsStruct[i]);
@@ -666,10 +666,10 @@ rfbProcessClientNormalMessage(rfbClientPtr cl)
             case rfbEncodingRRE:
             case rfbEncodingCoRRE:
             case rfbEncodingHextile:
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 	    case rfbEncodingZlib:
             case rfbEncodingZRLE:
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
 	    case rfbEncodingTight:
 #endif
 #endif
@@ -704,11 +704,11 @@ rfbProcessClientNormalMessage(rfbClientPtr cl)
 		}
 		break;
             default:
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 		if ( enc >= (uint32_t)rfbEncodingCompressLevel0 &&
 		     enc <= (uint32_t)rfbEncodingCompressLevel9 ) {
 		    cl->zlibCompressLevel = enc & 0x0F;
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
 		    cl->tightCompressLevel = enc & 0x0F;
 		    rfbLog("Using compression level %d for client %s\n",
 			   cl->tightCompressLevel, cl->host);
@@ -1074,7 +1074,7 @@ rfbSendFramebufferUpdate(rfbClientPtr cl,
                                      * ((h-1) / cl->correMaxHeight + 1));
         }
 	sraRgnReleaseIterator(i);
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
     } else if (cl->preferredEncoding == rfbEncodingZlib) {
 	nUpdateRegionRects = 0;
 
@@ -1085,7 +1085,7 @@ rfbSendFramebufferUpdate(rfbClientPtr cl,
             int h = rect.y2 - y;
 	    nUpdateRegionRects += (((h-1) / (ZLIB_MAX_SIZE( w ) / w)) + 1);
 	}
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
     } else if (cl->preferredEncoding == rfbEncodingTight) {
 	nUpdateRegionRects = 0;
 
@@ -1113,14 +1113,14 @@ rfbSendFramebufferUpdate(rfbClientPtr cl,
 	if(cl->screen->maxRectsPerUpdate>0
 	   /* CoRRE splits the screen into smaller squares */
 	   && cl->preferredEncoding != rfbEncodingCoRRE
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 	   /* Zlib encoding splits rectangles up into smaller chunks */
 	   && cl->preferredEncoding != rfbEncodingZlib
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
 	   /* Tight encoding counts the rectangles differently */
 	   && cl->preferredEncoding != rfbEncodingTight
 #endif
-#endif /* HAVE_LIBZ */
+#endif /* VINO_HAVE_ZLIB */
 	   && nUpdateRegionRects>cl->screen->maxRectsPerUpdate) {
 	    sraRegion* newUpdateRegion = sraRgnBBox(updateRegion);
 	    sraRgnDestroy(updateRegion);
@@ -1180,19 +1180,19 @@ rfbSendFramebufferUpdate(rfbClientPtr cl,
             if (!rfbSendRectEncodingHextile(cl, x, y, w, h))
 		goto tx_error;
             break;
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
 	case rfbEncodingZlib:
 	    if (!rfbSendRectEncodingZlib(cl, x, y, w, h))
 		goto tx_error;
 	    break;
-#ifdef HAVE_LIBJPEG
+#ifdef VINO_HAVE_JPEG
 	case rfbEncodingTight:
 	    if (!rfbSendRectEncodingTight(cl, x, y, w, h))
 		goto tx_error;
 	    break;
 #endif
 #endif
-#ifdef HAVE_LIBZ
+#ifdef VINO_HAVE_ZLIB
        case rfbEncodingZRLE:
            if (!rfbSendRectEncodingZRLE(cl, x, y, w, h))
 	       goto tx_error;

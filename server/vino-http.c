@@ -593,7 +593,7 @@ start_probing_at (int rfb_port)
 static void
 vino_http_create_listening_socket (VinoHTTP *http)
 {
-#ifdef ENABLE_IPV6
+#ifdef VINO_ENABLE_IPV6
   struct sockaddr_in6  saddr_in6;
 #endif
   struct sockaddr_in   saddr_in;
@@ -619,7 +619,7 @@ vino_http_create_listening_socket (VinoHTTP *http)
 
   sock = -1;
 
-#ifdef ENABLE_IPV6
+#ifdef VINO_ENABLE_IPV6
   sock = socket (AF_INET6, SOCK_STREAM, 0);
 
   memset (&saddr_in6, 0, sizeof (struct sockaddr_in6));
@@ -668,7 +668,7 @@ vino_http_create_listening_socket (VinoHTTP *http)
 
   while (http_port <= VINO_HTTP_MAX_PORT)
     {
-#ifdef ENABLE_IPV6
+#ifdef VINO_ENABLE_IPV6
       if (saddr->sa_family == AF_INET6)
         ((struct sockaddr_in6 *) saddr)->sin6_port = htons (http_port);
       else

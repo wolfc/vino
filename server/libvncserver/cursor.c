@@ -22,8 +22,8 @@
  *  USA.
  */
 
-#include <rfb/rfb.h>
-#include <rfb/rfbregion.h>
+#include "rfb/rfb.h"
+#include "rfb/rfbregion.h"
 
 /*
  * Send cursor shape either in X-style format or in client pixel format.

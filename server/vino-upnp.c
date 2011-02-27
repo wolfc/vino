@@ -27,8 +27,8 @@
 #endif
 
 #include <string.h>
-#include <miniupnp/miniupnpc.h>
-#include <miniupnp/upnpcommands.h>
+#include "miniupnp/miniupnpc.h"
+#include "miniupnp/upnpcommands.h"
 
 #ifdef VINO_ENABLE_NETWORKMANAGER
 #include <NetworkManager/NetworkManager.h>

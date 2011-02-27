@@ -39,7 +39,7 @@
  *  USA.
  */
 
-#include <rfb/rfb.h>
+#include "rfb/rfb.h"
 
 #ifdef HAVE_SYS_TYPES_H
 #include <sys/types.h>
@@ -582,7 +582,7 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
 
   if(netIface == NULL || strlen(netIface) == 0)
   {
-#ifdef ENABLE_IPV6
+#ifdef VINO_ENABLE_IPV6
     struct sockaddr_in6 s6;
 
     memset(&s6, 0, sizeof(s6));
@@ -639,7 +639,7 @@ ListenOnTCPPort(rfbScreenInfoPtr rfbScreen, int port, const char *netIface)
         sock = NewSocketListenTCP((struct sockaddr*)s4, INET_ADDRSTRLEN);
       }
     }
-#ifdef ENABLE_IPV6            
+#ifdef VINO_ENABLE_IPV6
     if (ifa->ifa_addr->ADDR_FAMILY_MEMBER == AF_INET6) {
       struct sockaddr_in6 *s6 = (struct sockaddr_in6*)ifa->ifa_addr;
       s6->sin6_port           = htons(port);

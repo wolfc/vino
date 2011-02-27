@@ -2,6 +2,7 @@ NULL =
 
 INCLUDES = \
 	-I$(top_srcdir)/common \
+	-I$(top_builddir) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
 	-DVINO_UIDIR=\""$(datadir)/vino"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \

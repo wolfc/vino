@@ -43,10 +43,10 @@
 #include <sys/shm.h>
 #include <gdk/gdkx.h>
 #include <X11/Xlib.h>
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
 #include <X11/extensions/XShm.h>
 #endif
-#ifdef HAVE_XDAMAGE
+#ifdef VINO_HAVE_XDAMAGE
 #include <X11/extensions/Xdamage.h>
 #endif
 
@@ -55,7 +55,7 @@
 #define TILE_WIDTH  32
 #define TILE_HEIGHT 32
 
-#ifndef HAVE_XSHM
+#ifndef VINO_HAVE_XSHM
 typedef struct { int dummy; } XShmSegmentInfo;
 #endif
 
@@ -80,7 +80,7 @@ struct _VinoFBPrivate
 
   guint            update_timeout;
 
-#ifdef HAVE_XDAMAGE
+#ifdef VINO_HAVE_XDAMAGE
   cairo_region_t  *pending_damage;
   guint            damage_idle_handler;
 
@@ -120,7 +120,7 @@ static void vino_fb_init_from_screen (VinoFB    *vfb,
 static void vino_fb_screen_size_changed (VinoFB    *vfb,
 					 GdkScreen *screen);
 
-#ifdef HAVE_XDAMAGE
+#ifdef VINO_HAVE_XDAMAGE
 static GdkFilterReturn vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 						     GdkEvent  *event,
 						     VinoFB    *vfb);
@@ -162,7 +162,7 @@ vino_fb_get_image (VinoFB          *vfb,
 
   gdk_error_trap_push ();
 
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
   if (is_x_shm_segment && image->width == width && image->height == height)
     {
       XShmGetImage (vfb->priv->xdisplay,
@@ -172,7 +172,7 @@ vino_fb_get_image (VinoFB          *vfb,
 		    AllPlanes);
     }
   else
-#endif /* HAVE_XSHM */
+#endif /* VINO_HAVE_XSHM */
     {
       XGetSubImage (vfb->priv->xdisplay,
 		    xdrawable,
@@ -209,7 +209,7 @@ vino_fb_destroy_image (VinoFB          *vfb,
 		       gboolean         is_x_shm_segment,
 		       gboolean         is_attached)
 {
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
   if (is_x_shm_segment)
     {
       if (is_attached)
@@ -220,7 +220,7 @@ vino_fb_destroy_image (VinoFB          *vfb,
       x_shm_info->shmaddr = (char *)-1;
       x_shm_info->shmid = -1;
     }
-#endif /* HAVE_XSHM */
+#endif /* VINO_HAVE_XSHM */
   
   if (image)
     XDestroyImage (image);
@@ -239,7 +239,7 @@ vino_fb_create_image (VinoFB           *vfb,
 
   n_screen = gdk_screen_get_number (vfb->priv->screen);
 
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
   if (vfb->priv->use_x_shm)
     {
       *image = XShmCreateImage (vfb->priv->xdisplay,
@@ -287,7 +287,7 @@ vino_fb_create_image (VinoFB           *vfb,
       return vino_fb_create_image (vfb, image, x_shm_info, FALSE,
 				   width, height, depth);
     }
-#endif /* HAVE_XSHM */
+#endif /* VINO_HAVE_XSHM */
 
   if (!must_use_x_shm)
     {
@@ -457,7 +457,7 @@ vino_fb_poll_screen (VinoFB *vfb)
 static void
 vino_fb_finalize_xdamage (VinoFB *vfb)
 {
-#ifdef HAVE_XDAMAGE
+#ifdef VINO_HAVE_XDAMAGE
   if (vfb->priv->damage_idle_handler)
     g_source_remove (vfb->priv->damage_idle_handler);
   vfb->priv->damage_idle_handler = 0;
@@ -551,7 +551,7 @@ vino_fb_screen_size_changed (VinoFB    *vfb,
   emit_size_changed (vfb);
 }
 
-#ifdef HAVE_XDAMAGE
+#ifdef VINO_HAVE_XDAMAGE
 
 static gboolean
 vino_fb_xdamage_idle_handler (VinoFB *vfb)
@@ -689,12 +689,12 @@ vino_fb_xdamage_event_filter (GdkXEvent *xevent,
 
   return GDK_FILTER_REMOVE;
 }
-#endif /* HAVE_XDAMAGE */
+#endif /* VINO_HAVE_XDAMAGE */
 
 static void
 vino_fb_init_xdamage (VinoFB *vfb)
 {
-#ifdef HAVE_XDAMAGE
+#ifdef VINO_HAVE_XDAMAGE
   int       event_base, error_base;
   int       major, minor;
   XGCValues values;
@@ -814,7 +814,7 @@ vino_fb_init_fb_image (VinoFB *vfb)
 
   if (vfb->priv->fb_image)
     {
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
       if (vfb->priv->use_x_shm)
 	{
 	  vfb->priv->fb_pixmap = XShmCreatePixmap (vfb->priv->xdisplay,
@@ -861,7 +861,7 @@ vino_fb_init_from_screen (VinoFB    *vfb,
   vfb->priv->xdisplay    = GDK_DISPLAY_XDISPLAY (gdk_screen_get_display (screen));
   vfb->priv->root_window = gdk_screen_get_root_window (screen);
 
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
   vfb->priv->use_x_shm = XShmQueryExtension (vfb->priv->xdisplay) != False;
   if (vfb->priv->use_x_shm)
     {
@@ -962,7 +962,7 @@ vino_fb_instance_init (VinoFB *vfb)
 {
   vfb->priv = g_new0 (VinoFBPrivate, 1);
 
-#ifdef HAVE_XSHM
+#ifdef VINO_HAVE_XSHM
   vfb->priv->fb_image_x_shm_info.shmid   = -1;
   vfb->priv->fb_image_x_shm_info.shmaddr = (char *) -1;
 
@@ -971,7 +971,7 @@ vino_fb_instance_init (VinoFB *vfb)
   
   vfb->priv->tile_x_shm_info.shmid   = -1;
   vfb->priv->tile_x_shm_info.shmaddr = (char *) -1;
-#endif /* HAVE_XSHM */
+#endif /* VINO_HAVE_XSHM */
 }
 
 static void

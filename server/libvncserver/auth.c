@@ -26,7 +26,7 @@
  *  USA.
  */
 
-#include <rfb/rfb.h>
+#include "rfb/rfb.h"
 
 void
 rfbAuthInitScreen(rfbScreenInfoPtr rfbScreen)
