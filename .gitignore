@@ -9,7 +9,7 @@ Makefile.in
 /build-aux/
 /capplet/*.o
 /capplet/.deps
-/capplet/vino-preferences
+/capplet/.dirstamp
 /capplet/vino-preferences.desktop
 /capplet/vino-preferences.desktop.in
 /common/*.o
@@ -72,3 +72,5 @@ Makefile.in
 /tools/*.o
 /tools/.deps
 /tools/vino-passwd
+/tools/.dirstamp
+/vino-preferences

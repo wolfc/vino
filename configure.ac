@@ -5,10 +5,11 @@ AC_CONFIG_SRCDIR([server/vino-fb.c])
 AC_CONFIG_HEADERS([config.h])
 AC_CONFIG_MACRO_DIR([m4])
 
-AM_INIT_AUTOMAKE([1.10 -Wall no-define nostdinc])
+AM_INIT_AUTOMAKE([1.10 -Wall no-define nostdinc subdir-objects])
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
 AC_PROG_CC
+AM_PROG_CC_C_O
 
 # Check whether to enable HTTP server support
 AC_ARG_ENABLE([http-server],
@@ -350,7 +351,6 @@ server/libvncserver/ifaddr/Makefile
 server/libvncserver/rfb/Makefile
 server/miniupnp/Makefile
 server/smclient/Makefile
-capplet/Makefile
 capplet/vino-preferences.desktop.in
 tools/Makefile
 docs/Makefile
