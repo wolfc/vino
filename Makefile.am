@@ -1,7 +1,32 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = docs po server/libvncserver server/miniupnp server/smclient
+SUBDIRS = docs po server/libvncserver server/smclient
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
+
+noinst_LTLIBRARIES = libminiupnp.la
+
+libminiupnp_la_CPPFLAGS = -DNDEBUG
+
+libminiupnp_la_SOURCES = \
+	server/miniupnp/bsdqueue.h \
+	server/miniupnp/codelength.h \
+	server/miniupnp/declspec.h \
+	server/miniupnp/igd_desc_parse.c \
+	server/miniupnp/igd_desc_parse.h \
+	server/miniupnp/minisoap.c \
+	server/miniupnp/minisoap.h \
+	server/miniupnp/minissdpc.c \
+	server/miniupnp/minissdpc.h \
+	server/miniupnp/miniupnpc.c \
+	server/miniupnp/miniupnpc.h \
+	server/miniupnp/miniwget.c \
+	server/miniupnp/miniwget.h \
+	server/miniupnp/minixml.c \
+	server/miniupnp/minixml.h \
+	server/miniupnp/upnpcommands.c \
+	server/miniupnp/upnpcommands.h \
+	server/miniupnp/upnpreplyparse.c \
+	server/miniupnp/upnpreplyparse.h
 
 vino_server_CPPFLAGS = \
 	-I$(top_srcdir) \
@@ -29,7 +54,7 @@ libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
 	$(top_builddir)/server/libvncserver/libvncserver.la \
-	$(top_builddir)/server/miniupnp/libminiupnp.la \
+	libminiupnp.la \
 	$(top_builddir)/server/smclient/libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
 	$(LIBNOTIFY_LIBS) \
@@ -238,6 +263,8 @@ dist_noinst_DATA = \
 	server/vino-server.desktop.in.in \
 	server/org.freedesktop.Telepathy.Client.Vino.service.in \
 	server/dbus-interface.xml \
+	server/miniupnp/README \
+	server/miniupnp/LICENCE \
 	\
 	MAINTAINERS \
 	intltool-extract.in \

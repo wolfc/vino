@@ -348,7 +348,6 @@ Makefile
 server/libvncserver/Makefile
 server/libvncserver/ifaddr/Makefile
 server/libvncserver/rfb/Makefile
-server/miniupnp/Makefile
 server/smclient/Makefile
 capplet/vino-preferences.desktop.in
 docs/Makefile

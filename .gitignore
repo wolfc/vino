@@ -1,6 +1,8 @@
 *~
 Makefile
 Makefile.in
+/.deps
+/.libs
 /*.tar.gz
 /ABOUT-NLS
 /INSTALL
@@ -25,6 +27,7 @@ Makefile.in
 /intltool-extract.in
 /intltool-merge.in
 /intltool-update.in
+/libminiupnp.la
 /libtool
 /mkinstalldirs
 /m4/
@@ -61,8 +64,8 @@ Makefile.in
 /server/miniupnp/*.o
 /server/miniupnp/*.lo
 /server/miniupnp/.deps
+/server/miniupnp/.dirstamp
 /server/miniupnp/.libs
-/server/miniupnp/libminiupnp.la
 /server/smclient/*.o
 /server/smclient/*.lo
 /server/smclient/.deps
