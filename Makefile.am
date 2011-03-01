@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = docs po
+SUBDIRS = po
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
 
@@ -350,6 +350,10 @@ dist_noinst_DATA = \
 	\
 	common/org.gnome.Vino.gschema.xml \
 	$(gsettings_in_file) \
+	\
+	docs/remote-desktop.txt \
+	docs/debugging.txt \
+	docs/TODO \
 	\
 	server/vino-marshal.list \
 	server/vino-server.desktop.in.in \
