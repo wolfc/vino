@@ -39,6 +39,13 @@ AS_IF([test "x$GLIB_GENMARSHAL" = "x"],
   [AC_SUBST([GLIB_GENMARSHAL])
     AC_MSG_RESULT([$GLIB_GENMARSHAL])])
 
+AC_MSG_CHECKING([for glib-mkenums script])
+GLIB_MKENUMS=`$PKG_CONFIG --variable=glib_mkenums glib-2.0`
+AS_IF([test "x$GLIB_MKENUMS" = "x"],
+  [AC_MSG_ERROR([glib-mkenums not listed in glib-2.0 pkg-config file])],
+  [AC_SUBST([GLIB_MKENUMS])
+    AC_MSG_RESULT([$GLIB_MKENUMS])])
+
 # GNOME libraries
 GTK_VERSION=3.0.0
 GLIB_VERSION=2.17.0

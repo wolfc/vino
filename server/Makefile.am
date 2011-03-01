@@ -113,7 +113,7 @@ vino_enum_headers = \
 	$(NULL)
 
 vino-enums.c: $(vino_enum_headers)
-	$(AM_V_GEN)glib-mkenums    --fhead "#include <glib-object.h>\n" \
+	$(AM_V_GEN)$(GLIB_MKENUMS)    --fhead "#include <glib-object.h>\n" \
 			--fhead "#include \"vino-enums.h\"\n\n" \
 			--fprod "\n/* enumerations from \"@filename@\" */" \
 			--fprod "\n#include \"@filename@\"\n" \
@@ -128,7 +128,7 @@ vino-enums.c: $(vino_enum_headers)
 		$(vino_enum_headers) > $@
 
 vino-enums.h: $(vino_enum_headers)
-	$(AM_V_GEN)glib-mkenums    --fhead "#ifndef __VINO_ENUMS_H__\n" \
+	$(AM_V_GEN)$(GLIB_MKENUMS)    --fhead "#ifndef __VINO_ENUMS_H__\n" \
 			--fhead "#define __VINO_ENUMS_H__ 1\n\n" \
 			--fhead "G_BEGIN_DECLS\n\n" \
 			--ftail "G_END_DECLS\n\n" \
