@@ -1,9 +1,44 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = docs po server/libvncserver server/smclient
+SUBDIRS = docs po server/libvncserver
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
 
-noinst_LTLIBRARIES = libminiupnp.la
+smclient_platform_defines = -DEGG_SM_CLIENT_BACKEND_XSMP
+smclient_cppflags = \
+	-DG_LOG_DOMAIN=\""EggSMClient"\" \
+	$(smclient_platform_defines) \
+	$(EGG_SMCLIENT_CFLAGS) \
+	-I$(top_builddir)
+smclient_platform_libs = libeggdesktopfile.la -lSM -lICE
+smclient_platform_sources = server/smclient/eggsmclient-xsmp.c
+
+noinst_LTLIBRARIES = \
+	libeggsmclient.la \
+	libeggdesktopfile.la \
+	libminiupnp.la
+
+libeggsmclient_la_CPPFLAGS = \
+	$(smclient_cppflags)
+
+libeggsmclient_la_LIBADD = \
+	$(EGG_SMCLIENT_LIBS) \
+	$(smclient_platform_libs)
+
+libeggsmclient_la_SOURCES = \
+	server/smclient/eggsmclient.c \
+	server/smclient/eggsmclient.h \
+	server/smclient/eggsmclient-private.h \
+	$(smclient_platform_sources)
+
+libeggdesktopfile_la_CPPFLAGS = \
+	$(smclient_cppflags)
+
+libeggdesktopfile_la_LIBADD = \
+	$(EGG_LIBS)
+
+libeggdesktopfile_la_SOURCES = \
+	server/smclient/eggdesktopfile.c \
+	server/smclient/eggdesktopfile.h
 
 libminiupnp_la_CPPFLAGS = -DNDEBUG
 
@@ -55,7 +90,7 @@ libexec_PROGRAMS = vino-server
 vino_server_LDADD = \
 	$(top_builddir)/server/libvncserver/libvncserver.la \
 	libminiupnp.la \
-	$(top_builddir)/server/smclient/libeggsmclient.la \
+	libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
 	$(LIBNOTIFY_LIBS) \
 	$(KEYRING_LIBS) \

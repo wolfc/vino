@@ -27,6 +27,8 @@ Makefile.in
 /intltool-extract.in
 /intltool-merge.in
 /intltool-update.in
+/libeggdesktopfile.la
+/libeggsmclient.la
 /libminiupnp.la
 /libtool
 /mkinstalldirs
@@ -66,11 +68,10 @@ Makefile.in
 /server/miniupnp/.deps
 /server/miniupnp/.dirstamp
 /server/miniupnp/.libs
-/server/smclient/*.o
 /server/smclient/*.lo
 /server/smclient/.deps
+/server/smclient/.dirstamp
 /server/smclient/.libs
-/server/smclient/*.la
 /stamp-h1
 /tools/*.o
 /tools/.deps
