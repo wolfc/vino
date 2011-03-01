@@ -1,16 +1,166 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = server docs po
+SUBDIRS = docs po server/libvncserver server/miniupnp server/smclient
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
 
-bin_PROGRAMS = vino-preferences \
+vino_server_CPPFLAGS = \
+	-I$(top_srcdir) \
+	-I$(top_srcdir)/common \
+	-I$(top_srcdir)/server/libvncserver \
+	-I$(top_srcdir)/server/miniupnp \
+	-I$(top_srcdir)/server/smclient \
+	-I$(top_builddir) \
+	-I$(top_builddir)/server \
+	$(VINO_SERVER_CFLAGS) \
+	$(LIBNOTIFY_CFLAGS) \
+	$(VINO_KEYRING_CFLAGS) \
+	$(VINO_NETWORKMANAGER_CFLAGS) \
+	$(AVAHI_CFLAGS) \
+	$(GNUTLS_CFLAGS) \
+	$(GCRYPT_CFLAGS) \
+	$(WARN_CFLAGS) \
+	$(DISABLE_DEPRECATED) \
+	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
+	-DVINO_CLIENTDIR=\""$(pkgdatadir)"\" \
+	-DVINO_UIDIR=\""$(pkgdatadir)"\"
+
+libexec_PROGRAMS = vino-server
+
+vino_server_LDADD = \
+	$(top_builddir)/server/libvncserver/libvncserver.la \
+	$(top_builddir)/server/miniupnp/libminiupnp.la \
+	$(top_builddir)/server/smclient/libeggsmclient.la \
+	$(VINO_SERVER_LIBS) \
+	$(LIBNOTIFY_LIBS) \
+	$(KEYRING_LIBS) \
+	$(AVAHI_LIBS) \
+	$(NETWORKMANAGER_LIBS) \
+	$(GNUTLS_LIBS) \
+	$(GCRYPT_LIBS) \
+	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS)
+
+if VINO_ENABLE_HTTP_SERVER
+VINO_HTTP_SRC = \
+	server/vino-http.c \
+	server/vino-http.h
+endif
+
+if VINO_HAVE_TELEPATHY_GLIB
+vino_server_CPPFLAGS += $(TELEPATHY_GLIB_CFLAGS)
+vino_server_LDADD += $(TELEPATHY_GLIB_LIBS)
+VINO_TELEPATHY_GLIB_SRC = \
+	server/vino-tube-servers-manager.c \
+	server/vino-tube-servers-manager.h \
+	server/vino-tube-server.c \
+	server/vino-tube-server.h \
+	server/vino-status-tube-icon.c \
+	server/vino-status-tube-icon.h	\
+	server/vino-types.h
+
+clientfiledir = $(datarootdir)/telepathy/clients
+dist_clientfile_DATA = server/Vino.client
+endif
+
+vino_server_SOURCES = \
+	common/vino-dbus.c \
+	common/vino-dbus.h \
+	server/vino-cursor.c \
+	server/vino-cursor.h \
+	server/vino-enums.c \
+	server/vino-enums.h \
+	server/vino-fb.c \
+	server/vino-fb.h \
+	server/vino-input.c \
+	server/vino-input.h \
+	server/vino-main.c \
+	server/vino-marshal.c \
+	server/vino-marshal.h \
+	server/vino-mdns.c \
+	server/vino-mdns.h \
+	server/vino-prefs.c \
+	server/vino-prefs.h \
+	server/vino-prompt.c \
+	server/vino-prompt.h \
+	server/vino-server.c \
+	server/vino-server.h \
+	server/vino-util.c \
+	server/vino-util.h \
+	server/vino-status-icon.c \
+	server/vino-status-icon.h \
+	server/vino-dbus-listener.c \
+	server/vino-dbus-listener.h \
+	server/vino-dbus-error.c \
+	server/vino-dbus-error.h \
+	server/vino-upnp.h \
+	server/vino-upnp.c \
+	$(VINO_HTTP_SRC) \
+	$(VINO_TELEPATHY_GLIB_SRC)
+
+server/vino-marshal.h: server/vino-marshal.list
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
+
+server/vino-marshal.c: server/vino-marshal.list
+	$(AM_V_GEN)echo "#include \"vino-marshal.h\"" > $@ && \
+	$(GLIB_GENMARSHAL) $< --body --prefix=vino_marshal >> $@
+
+vino_enum_headers = \
+	server/vino-server.h \
+	server/vino-prompt.h \
+	server/vino-status-icon.h \
+	server/vino-status-tube-icon.h
+
+server/vino-enums.c: $(vino_enum_headers)
+	$(AM_V_GEN)$(GLIB_MKENUMS)    --fhead "#include <glib-object.h>\n" \
+			--fhead "#include \"vino-enums.h\"\n\n" \
+			--fprod "\n/* enumerations from \"@filename@\" */" \
+			--fprod "\n#include \"@filename@\"\n" \
+			--vhead "static const G@Type@Value _@enum_name@_values[] = {" \
+			--vprod "  { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+			--vtail "  { 0, NULL, NULL }\n};\n\n" \
+			--vtail "GType\n@enum_name@_get_type (void)\n{\n" \
+			--vtail "  static GType type = 0;\n\n" \
+			--vtail "  if (!type)\n" \
+			--vtail "    type = g_@type@_register_static (\"@EnumName@\", _@enum_name@_values);\n\n" \
+			--vtail "  return type;\n}\n\n" \
+		$(vino_enum_headers) > $@
+
+server/vino-enums.h: $(vino_enum_headers)
+	$(AM_V_GEN)$(GLIB_MKENUMS)    --fhead "#ifndef __VINO_ENUMS_H__\n" \
+			--fhead "#define __VINO_ENUMS_H__ 1\n\n" \
+			--fhead "G_BEGIN_DECLS\n\n" \
+			--ftail "G_END_DECLS\n\n" \
+			--ftail "#endif /* __VINO_ENUMS_H__ */\n" \
+			--fprod "\n/* --- @filename@ --- */" \
+			--eprod "#define VINO_TYPE_@ENUMSHORT@ @enum_name@_get_type()\n" \
+			--eprod "GType @enum_name@_get_type (void);\n" \
+		$(vino_enum_headers) >  $@
+
+server/vino-server.desktop.in: server/vino-server.desktop.in.in
+	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
+
+servicedir = $(datadir)/dbus-1/services
+nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
+
+server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in \
+		Makefile
+	@sed -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
+
+BUILT_SOURCES = \
+	server/vino-enums.c \
+	server/vino-enums.h \
+	server/vino-marshal.c \
+	server/vino-marshal.h
+
+bin_PROGRAMS = \
+	vino-preferences \
 	vino-passwd
 
 vino_preferences_CPPFLAGS = \
 	-I$(top_srcdir)/common \
 	-I$(top_builddir) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
-	-DVINO_UIDIR=\""$(datadir)/vino"\" \
+	-DVINO_UIDIR=\""$(pkgdatadir)"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	$(VINO_CAPPLET_CFLAGS) \
 	$(VINO_KEYRING_CFLAGS) \
@@ -54,7 +204,14 @@ vino_passwd_LDADD = \
 	$(VINO_TOOLS_LIBS)
 
 uidir = $(pkgdatadir)
-dist_ui_DATA = capplet/vino-preferences.ui capplet/webservices
+dist_ui_DATA = \
+	capplet/vino-preferences.ui \
+	capplet/webservices \
+	server/vino-prompt.ui
+
+autostartdir = $(sysconfdir)/xdg/autostart
+autostart_in_files = server/vino-server.desktop.in
+nodist_autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
 desktopdir = $(datadir)/applications
 desktop_in_files = capplet/vino-preferences.desktop.in
@@ -77,6 +234,11 @@ dist_noinst_DATA = \
 	common/org.gnome.Vino.gschema.xml \
 	$(gsettings_in_file) \
 	\
+	server/vino-marshal.list \
+	server/vino-server.desktop.in.in \
+	server/org.freedesktop.Telepathy.Client.Vino.service.in \
+	server/dbus-interface.xml \
+	\
 	MAINTAINERS \
 	intltool-extract.in \
 	intltool-merge.in \
@@ -86,9 +248,13 @@ dist_noinst_SCRIPTS = autogen.sh
 
 CLEANFILES = \
 	$(nodist_desktop_DATA) \
-	$(gsettings_SCHEMAS)
+	$(gsettings_SCHEMAS) \
+	$(nodist_service_DATA) \
+	server/vino-server.desktop \
+	server/vino-server.desktop.in
 
 DISTCLEANFILES = \
+	$(BUILT_SOURCES) \
 	intltool-extract \
 	intltool-merge \
 	intltool-update \

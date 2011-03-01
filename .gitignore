@@ -45,10 +45,10 @@ Makefile.in
 /po/vino.pot
 /server/*.o
 /server/.deps
+/server/.dirstamp
 /server/vino-enums.*
 /server/vino-marshal.*
 /server/dbus-interface-glue.h
-/server/vino-server
 /server/vino-server.desktop
 /server/vino-server.desktop.in
 /server/org.freedesktop.Telepathy.Client.Vino.service
@@ -74,3 +74,4 @@ Makefile.in
 /tools/.dirstamp
 /vino-preferences
 /vino-passwd
+/vino-server
