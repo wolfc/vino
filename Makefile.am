@@ -254,14 +254,13 @@ server/vino-enums.h: $(vino_enum_headers)
 		$(vino_enum_headers) >  $@
 
 server/vino-server.desktop.in: server/vino-server.desktop.in.in
-	$(AM_V_GEN)sed -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
+	$(AM_V_GEN)$(SED) -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
 
 servicedir = $(datadir)/dbus-1/services
 nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
 
-server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in \
-		Makefile
-	@sed -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
+server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in
+	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
 BUILT_SOURCES = \
 	server/vino-enums.c \

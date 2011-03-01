@@ -33,6 +33,8 @@ LT_INIT([disable-static])
 
 PKG_PROG_PKG_CONFIG([0.16])
 
+AC_PROG_SED
+
 AC_MSG_CHECKING([for glib-genmarshal script])
 GLIB_GENMARSHAL=`$PKG_CONFIG --variable=glib_genmarshal glib-2.0`
 AS_IF([test "x$GLIB_GENMARSHAL" = "x"],
