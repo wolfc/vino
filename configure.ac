@@ -352,7 +352,6 @@ server/libvncserver/rfb/Makefile
 server/miniupnp/Makefile
 server/smclient/Makefile
 capplet/vino-preferences.desktop.in
-tools/Makefile
 docs/Makefile
 po/Makefile.in
 ])

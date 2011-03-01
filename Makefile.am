@@ -1,9 +1,10 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = server tools docs po
+SUBDIRS = server docs po
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
 
-bin_PROGRAMS = vino-preferences
+bin_PROGRAMS = vino-preferences \
+	vino-passwd
 
 vino_preferences_CPPFLAGS = \
 	-I$(top_srcdir)/common \
@@ -38,6 +39,19 @@ vino_preferences_LDADD = \
 	$(VINO_KEYRING_LIBS) \
 	$(VINO_LIBUNIQUE_LIBS) \
 	$(X_LIBS)
+
+vino_passwd_CPPFLAGS = \
+	-I$(top_builddir) \
+	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
+	$(VINO_TOOLS_CFLAGS) \
+	$(WARN_CFLAGS) \
+	$(DISABLE_DEPRECATED)
+
+vino_passwd_SOURCES = \
+	tools/vino-passwd.c
+
+vino_passwd_LDADD = \
+	$(VINO_TOOLS_LIBS)
 
 uidir = $(pkgdatadir)
 dist_ui_DATA = capplet/vino-preferences.ui capplet/webservices

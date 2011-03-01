@@ -71,6 +71,6 @@ Makefile.in
 /stamp-h1
 /tools/*.o
 /tools/.deps
-/tools/vino-passwd
 /tools/.dirstamp
 /vino-preferences
+/vino-passwd
