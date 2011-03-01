@@ -344,7 +344,6 @@ GLIB_GSETTINGS
 
 AC_CONFIG_FILES([
 Makefile
-common/Makefile
 server/Makefile
 server/libvncserver/Makefile
 server/libvncserver/ifaddr/Makefile

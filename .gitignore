@@ -12,7 +12,9 @@ Makefile.in
 /capplet/vino-preferences
 /capplet/vino-preferences.desktop
 /capplet/vino-preferences.desktop.in
-/common/org.gnome.Vino.enums.xml
+/common/*.o
+/common/.deps
+/common/.dirstamp
 /common/org.gnome.Vino.gschema.xml
 /config.log
 /config.h
@@ -26,6 +28,7 @@ Makefile.in
 /libtool
 /mkinstalldirs
 /m4/
+/org.gnome.Vino.enums.xml
 /po/.intltool-merge-cache
 /po/Makefile.in.in
 /po/Makevars.template
