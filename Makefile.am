@@ -1,5 +1,5 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
-SUBDIRS = docs po server/libvncserver
+SUBDIRS = docs po
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
 
@@ -12,10 +12,15 @@ smclient_cppflags = \
 smclient_platform_libs = libeggdesktopfile.la -lSM -lICE
 smclient_platform_sources = server/smclient/eggsmclient-xsmp.c
 
+if VINO_HAVE_SELF_IFADDRS
+ifaddrs_ltlibraries = libifaddrs.la
+endif
 noinst_LTLIBRARIES = \
 	libeggsmclient.la \
 	libeggdesktopfile.la \
-	libminiupnp.la
+	libminiupnp.la \
+	libvncserver.la \
+	$(ifaddrs_ltlibraries)
 
 libeggsmclient_la_CPPFLAGS = \
 	$(smclient_cppflags)
@@ -63,6 +68,58 @@ libminiupnp_la_SOURCES = \
 	server/miniupnp/upnpreplyparse.c \
 	server/miniupnp/upnpreplyparse.h
 
+libifaddrs_la_SOURCES = \
+	server/libvncserver/ifaddr/getifaddrs.c \
+	server/libvncserver/ifaddr/ifaddrs.h
+
+rfb_headers = \
+	server/libvncserver/rfb/rfb.h \
+	server/libvncserver/rfb/rfbregion.h \
+	server/libvncserver/rfb/rfbproto.h \
+	server/libvncserver/rfb/keysym.h
+
+libvncserver_la_CPPFLAGS = \
+	$(WARN_CFLAGS) \
+	$(GNUTLS_CFLAGS) \
+	$(GCRYPT_CFLAGS) \
+	-I$(top_builddir)
+
+libvncserver_la_SOURCES = \
+	server/libvncserver/auth.c \
+	server/libvncserver/corre.c \
+	server/libvncserver/cursor.c \
+	server/libvncserver/cutpaste.c \
+	server/libvncserver/d3des.c \
+	server/libvncserver/d3des.h \
+	server/libvncserver/hextile.c \
+	server/libvncserver/main.c \
+	server/libvncserver/rfbregion.c \
+	server/libvncserver/rfbserver.c \
+	server/libvncserver/rre.c \
+	server/libvncserver/sockets.c \
+	server/libvncserver/stats.c \
+	server/libvncserver/tight.c \
+	server/libvncserver/translate.c \
+	server/libvncserver/vncauth.c \
+	server/libvncserver/zlib.c \
+	server/libvncserver/zrle.c \
+	server/libvncserver/zrleoutstream.c \
+	server/libvncserver/zrleoutstream.h \
+	server/libvncserver/zrlepalettehelper.c \
+	server/libvncserver/zrlepalettehelper.h \
+	server/libvncserver/zrletypes.h \
+	$(rfb_headers)
+
+if VINO_HAVE_SELF_IFADDRS
+SELF_IFADDRS_LIBS = server/libvncserver/ifaddr/libifaddrs.la
+endif
+
+libvncserver_la_LIBADD = \
+	$(GNUTLS_LIBS) \
+	$(GCRYPT_LIBS) \
+	$(JPEG_LIBS) \
+	$(SELF_IFADDRS_LIBS)
+
 vino_server_CPPFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/common \
@@ -88,7 +145,7 @@ vino_server_CPPFLAGS = \
 libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
-	$(top_builddir)/server/libvncserver/libvncserver.la \
+	libvncserver.la \
 	libminiupnp.la \
 	libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
@@ -298,6 +355,12 @@ dist_noinst_DATA = \
 	server/vino-server.desktop.in.in \
 	server/org.freedesktop.Telepathy.Client.Vino.service.in \
 	server/dbus-interface.xml \
+	server/libvncserver/tableinit24.c \
+	server/libvncserver/tableinittctemplate.c \
+	server/libvncserver/tabletrans24template.c \
+	server/libvncserver/tabletranstemplate.c \
+        server/libvncserver/tableinitcmtemplate.c \
+        server/libvncserver/zrleencodetemplate.c \
 	server/miniupnp/README \
 	server/miniupnp/LICENCE \
 	\

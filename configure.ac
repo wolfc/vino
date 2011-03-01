@@ -345,9 +345,6 @@ GLIB_GSETTINGS
 
 AC_CONFIG_FILES([
 Makefile
-server/libvncserver/Makefile
-server/libvncserver/ifaddr/Makefile
-server/libvncserver/rfb/Makefile
 capplet/vino-preferences.desktop.in
 docs/Makefile
 po/Makefile.in
