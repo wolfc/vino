@@ -3,51 +3,31 @@ SUBDIRS = po
 
 DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
 
-smclient_platform_defines = -DEGG_SM_CLIENT_BACKEND_XSMP
-smclient_cppflags = \
+noinst_LTLIBRARIES = \
+	libeggsmclient.la
+
+libeggsmclient_la_CPPFLAGS = \
 	-DG_LOG_DOMAIN=\""EggSMClient"\" \
+	-DEGG_SM_CLIENT_BACKEND_XSMP \
 	$(smclient_platform_defines) \
 	$(EGG_SMCLIENT_CFLAGS) \
 	-I$(top_builddir)
-smclient_platform_libs = libeggdesktopfile.la -lSM -lICE
-smclient_platform_sources = server/smclient/eggsmclient-xsmp.c
-
-if VINO_HAVE_SELF_IFADDRS
-ifaddrs_ltlibraries = libifaddrs.la
-endif
-noinst_LTLIBRARIES = \
-	libeggsmclient.la \
-	libeggdesktopfile.la \
-	libminiupnp.la \
-	libvncserver.la \
-	$(ifaddrs_ltlibraries)
-
-libeggsmclient_la_CPPFLAGS = \
-	$(smclient_cppflags)
 
 libeggsmclient_la_LIBADD = \
 	$(EGG_SMCLIENT_LIBS) \
-	$(smclient_platform_libs)
+	-lSM -lICE
 
 libeggsmclient_la_SOURCES = \
 	server/smclient/eggsmclient.c \
 	server/smclient/eggsmclient.h \
 	server/smclient/eggsmclient-private.h \
-	$(smclient_platform_sources)
-
-libeggdesktopfile_la_CPPFLAGS = \
-	$(smclient_cppflags)
-
-libeggdesktopfile_la_LIBADD = \
-	$(EGG_LIBS)
-
-libeggdesktopfile_la_SOURCES = \
+	server/smclient/eggsmclient-xsmp.c \
 	server/smclient/eggdesktopfile.c \
 	server/smclient/eggdesktopfile.h
 
-libminiupnp_la_CPPFLAGS = -DNDEBUG
+VINO_MINIUPNP_cppflags = -DNDEBUG
 
-libminiupnp_la_SOURCES = \
+VINO_MINIUPNP_sources = \
 	server/miniupnp/bsdqueue.h \
 	server/miniupnp/codelength.h \
 	server/miniupnp/declspec.h \
@@ -68,9 +48,11 @@ libminiupnp_la_SOURCES = \
 	server/miniupnp/upnpreplyparse.c \
 	server/miniupnp/upnpreplyparse.h
 
-libifaddrs_la_SOURCES = \
+if VINO_HAVE_SELF_IFADDRS
+VINO_IFADDRS_sources = \
 	server/libvncserver/ifaddr/getifaddrs.c \
 	server/libvncserver/ifaddr/ifaddrs.h
+endif
 
 rfb_headers = \
 	server/libvncserver/rfb/rfb.h \
@@ -78,13 +60,7 @@ rfb_headers = \
 	server/libvncserver/rfb/rfbproto.h \
 	server/libvncserver/rfb/keysym.h
 
-libvncserver_la_CPPFLAGS = \
-	$(WARN_CFLAGS) \
-	$(GNUTLS_CFLAGS) \
-	$(GCRYPT_CFLAGS) \
-	-I$(top_builddir)
-
-libvncserver_la_SOURCES = \
+VINO_LIBVNCSERVER_sources = \
 	server/libvncserver/auth.c \
 	server/libvncserver/corre.c \
 	server/libvncserver/cursor.c \
@@ -110,16 +86,6 @@ libvncserver_la_SOURCES = \
 	server/libvncserver/zrletypes.h \
 	$(rfb_headers)
 
-if VINO_HAVE_SELF_IFADDRS
-SELF_IFADDRS_LIBS = server/libvncserver/ifaddr/libifaddrs.la
-endif
-
-libvncserver_la_LIBADD = \
-	$(GNUTLS_LIBS) \
-	$(GCRYPT_LIBS) \
-	$(JPEG_LIBS) \
-	$(SELF_IFADDRS_LIBS)
-
 vino_server_CPPFLAGS = \
 	-I$(top_srcdir) \
 	-I$(top_srcdir)/common \
@@ -129,6 +95,7 @@ vino_server_CPPFLAGS = \
 	-I$(top_builddir) \
 	-I$(top_builddir)/server \
 	$(VINO_SERVER_CFLAGS) \
+	$(VINO_MINIUPNP_cppflags) \
 	$(GCRYPT_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(DISABLE_DEPRECATED) \
@@ -140,21 +107,20 @@ vino_server_CPPFLAGS = \
 libexec_PROGRAMS = vino-server
 
 vino_server_LDADD = \
-	libvncserver.la \
-	libminiupnp.la \
 	libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
 	$(GCRYPT_LIBS) \
+	$(JPEG_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS)
 
 if VINO_ENABLE_HTTP_SERVER
-VINO_HTTP_SRC = \
+VINO_HTTP_sources = \
 	server/vino-http.c \
 	server/vino-http.h
 endif
 
 if VINO_HAVE_TELEPATHY_GLIB
-VINO_TELEPATHY_GLIB_SRC = \
+VINO_TELEPATHY_GLIB_sources = \
 	server/vino-tube-servers-manager.c \
 	server/vino-tube-servers-manager.h \
 	server/vino-tube-server.c \
@@ -199,8 +165,11 @@ vino_server_SOURCES = \
 	server/vino-dbus-error.h \
 	server/vino-upnp.h \
 	server/vino-upnp.c \
-	$(VINO_HTTP_SRC) \
-	$(VINO_TELEPATHY_GLIB_SRC)
+	$(VINO_MINIUPNP_sources) \
+	$(VINO_IFADDR_sources) \
+	$(VINO_LIBVNCSERVER_sources) \
+	$(VINO_HTTP_sources) \
+	$(VINO_TELEPATHY_GLIB_sources)
 
 server/vino-marshal.h: server/vino-marshal.list
 	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@

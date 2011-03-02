@@ -164,7 +164,7 @@ AC_ARG_WITH([gnutls],
     [ignore gnutls support and disable it])])
 
 AS_IF([test "x$with_gnutls" != "xno"],
-  [PKG_CHECK_MODULES([GNUTLS],
+  [PKG_CHECK_EXISTS([GNUTLS],
     [$GNUTLS_DEPS],
     [have_gnutls=yes],
     [have_gnutls=no])],
@@ -351,7 +351,6 @@ PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VER
 PKG_CHECK_MODULES([VINO_TOOLS], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gobject-2.0 >= $GLIB_VERSION $GNOME_KEYRING_DEPS])
 
 # EGG stuff
-PKG_CHECK_MODULES([EGG], [gtk+-3.0 >= $GTK_VERSION])
 PKG_CHECK_MODULES([EGG_SMCLIENT], [gtk+-3.0])
 
 GLIB_GSETTINGS
