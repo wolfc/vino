@@ -1,4 +1,23 @@
 ==============
+Version 2.99.3
+==============
+
+  Fixes:
+
+	+ Overhaul build system. (David King)
+	  Note to packagers: Arguments to the configure script were changed.
+	  All functionality is now automagically enabled, and can be disabled
+	  or explicitly enabled with the appropriate configure arguments.
+	  Please check `configure --help`.
+
+  Translations:
+
+	+ Matej Urbančič (sl)
+	+ Bruno Brouard (fr)
+	+ Changwoo Ryu (ko)
+	+ Sweta Kothari (gu)
+
+==============
 Version 2.99.2
 ==============
 
