@@ -49,100 +49,93 @@ AS_IF([test "x$GLIB_MKENUMS" = "x"],
   [AC_SUBST([GLIB_MKENUMS])
     AC_MSG_RESULT([$GLIB_MKENUMS])])
 
-# GNOME libraries
-GTK_VERSION=3.0.0
-GLIB_VERSION=2.17.0
-GIO_VERSION=2.26
-DBUS_VERSION=1.2.3
-SOUP_VERSION=2.24.0
-TELEPATHY_GLIB_VERSION=0.11.6
-NETWORKMANAGER_VERSION=0.7
-
-PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION])
-
-PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gtk+-3.0 >= $GTK_VERSION libsoup-2.4 >= $SOUP_VERSION])
-
-PKG_CHECK_MODULES([VINO_TOOLS], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gobject-2.0 >= $GLIB_VERSION gnome-keyring-1])
-
-# EGG stuff
-PKG_CHECK_MODULES([EGG], [gtk+-3.0 >= $GTK_VERSION])
-PKG_CHECK_MODULES([EGG_SMCLIENT], [gtk+-3.0])
-
 # Check for telepathy-glib
+TELEPATHY_GLIB_DEPS="telepathy-glib >= 0.11.6"
+
 AC_ARG_WITH([telepathy],
   [AS_HELP_STRING([--without-telepathy],
     [ignore the presence of telepathy and disable it])])
 
 AS_IF([test "x$with_telepathy" != "xno"],
-  [PKG_CHECK_MODULES([TELEPATHY_GLIB],
-    [telepathy-glib >= $TELEPATHY_GLIB_VERSION],
+  [PKG_CHECK_EXISTS([TELEPATHY_GLIB],
+    [$TELEPATHY_GLIB_DEPS],
     [have_telepathy=yes],
     [have_telepathy=no])],
   [have_telepathy=no])
 
 AS_IF([test "x$have_telepathy" = "xyes"],
   [AC_DEFINE([VINO_HAVE_TELEPATHY_GLIB], [], [Build with telepathy support])],
-  [AS_IF([test "x$with_telepathy" = "xyes"],
+  [TELEPATHY_GLIB_DEPS=""
+    AS_IF([test "x$with_telepathy" = "xyes"],
     [AC_MSG_ERROR([telepathy support requested but not found])])])
 
 AM_CONDITIONAL([VINO_HAVE_TELEPATHY_GLIB], [test "x$have_telepathy" = "xyes"])
 
 # Check for libnotify
-LIBNOTIFY_VERSION=0.4.4
+LIBNOTIFY_DEPS="libnotify >= 0.4.4"
+LIBNOTIFY_0_7_DEPS="libnotify >= 0.7.0"
 
 AC_ARG_WITH([libnotify],
   [AS_HELP_STRING([--without-libnotify],
     [ignore the presence of libnotify and disable it])])
 
 AS_IF([test "x$with_libnotify" != "xno"],
-  [PKG_CHECK_MODULES([LIBNOTIFY],
-    [libnotify >= $LIBNOTIFY_VERSION],
+  [PKG_CHECK_EXISTS([LIBNOTIFY],
+    [$LIBNOTIFY_DEPS],
     [have_libnotify=yes],
     [have_libnotify=no])],
   [have_libnotify=no])
 
 AS_IF([test "x$have_libnotify" = "xyes"],
   [AC_DEFINE([VINO_HAVE_LIBNOTIFY], [], [Build with libnotify support])
-    PKG_CHECK_EXISTS([libnotify >= 0.7.0],
+    PKG_CHECK_EXISTS([$LIBNOTIFY_0_7_DEPS],
       [have_libnotify_0_7=yes],
       [have_libnotify_0_7=no])
     AS_IF([test "x$have_libnotify_0_7" = "xyes"],
-      [AC_DEFINE([VINO_HAVE_LIBNOTIFY_0_7], [], [Build with libnotify 0.7 or greater support])])],
-  [AS_IF([test "x$have_libnotify" = "xyes"],
+      [LIBNOTIFY_DEPS="$LIBNOTIFY_0_7_DEPS"
+        AC_DEFINE([VINO_HAVE_LIBNOTIFY_0_7], [], [Build with libnotify 0.7 or greater support])])],
+  [LIBNOTIFY_DEPS=""
+    AS_IF([test "x$have_libnotify" = "xyes"],
     [AC_MSG_ERROR([libnotify support requested but not found])])])
 
 # Check for NetworkManager
+NETWORKMANAGER_DEPS="NetworkManager >= 0.7"
+
 AC_ARG_WITH([network-manager],
   [AS_HELP_STRING([--without-network-manager],
     [ignore the presence of NetworkManager and disable it])])
 
 AS_IF([test "x$with_networkmanager" != "xno"],
-  [PKG_CHECK_MODULES([NETWORKMANAGER],
-    [NetworkManager >= $NETWORKMANAGER_VERSION],
+  [PKG_CHECK_EXISTS([NETWORKMANAGER],
+    [$NETWORKMANAGER_DEPS],
     [have_networkmanager=yes],
     [have_networkmanager=no])],
   [have_networkmanager=no])
 
 AS_IF([test "x$have_networkmanager" = "xyes"],
   [AC_DEFINE([VINO_HAVE_NETWORKMANAGER], [], [Build with NetworkManager support])],
-  [AS_IF([test "x$with_networkmanager" = "xyes"],
+  [NETWORKMANAGER_DEPS=""
+    AS_IF([test "x$with_networkmanager" = "xyes"],
     [AC_MSG_ERROR([NetworkManager support requested but not found])])])
 
 # Check for gnome-keyring
+GNOME_KEYRING_DEPS="gnome-keyring-1"
+
 AC_ARG_WITH([gnome-keyring],
   [AS_HELP_STRING([--without-gnome-keyring],
     [ignore the presence of gnome-keyring and disable it])])
 
 AS_IF([test "x$with_gnomekeyring" != "xno"],
-  [PKG_CHECK_MODULES([GNOME_KEYRING],
-    [gnome-keyring-1],
+  [PKG_CHECK_EXISTS([GNOME_KEYRING],
+    [$GNOME_KEYRING_DEPS],
     [have_gnomekeyring=yes],
     [have_gnomekeyring=no])],
   [have_gnomekeyring=no])
 
 AS_IF([test "x$have_gnomekeyring" != "xno"],
   [AC_DEFINE([VINO_HAVE_GNOME_KEYRING], [], [Build with gnome-keyring support])],
-  [AS_IF([test "x$with_gnomekeyring" = "xyes"],
+  [GNOME_KEYRING_DEPS=""
+    AS_IF([test "x$with_gnomekeyring" = "xyes"],
     [AC_MSG_ERROR([gnome-keyring support requested but not found])])])
 
 # If Pango included the shared library dependencies from X11 in
@@ -164,7 +157,7 @@ AS_IF([test "x$pango_omitted_x_deps" = "xyes"],
       [AC_SUBST([X_LIBS], [$X_PRE_LIBS $X_LIBS -lX11 $X_EXTRA_LIBS])])])
 
 # Check for gnutls
-GNUTLS_VERSION=1.0.0
+GNUTLS_DEPS="gnutls >= 1.0.0"
 
 AC_ARG_WITH([gnutls],
   [AS_HELP_STRING([--without-gnutls],
@@ -172,7 +165,7 @@ AC_ARG_WITH([gnutls],
 
 AS_IF([test "x$with_gnutls" != "xno"],
   [PKG_CHECK_MODULES([GNUTLS],
-    [gnutls >= $GNUTLS_VERSION],
+    [$GNUTLS_DEPS],
     [have_gnutls=yes],
     [have_gnutls=no])],
   [have_gnutls=no
@@ -180,7 +173,8 @@ AS_IF([test "x$with_gnutls" != "xno"],
 
 AS_IF([test "x$have_gnutls" = "xyes"],
   [AC_DEFINE([VINO_HAVE_GNUTLS], [], [Build with gnutls support])],
-  [AS_IF([test "x$with_gnutls" = "xyes"],
+  [GNUTLS_DEPS=""
+    AS_IF([test "x$with_gnutls" = "xyes"],
     [AC_MSG_ERROR([gnutls support was requested but not found])])])
 
 # Check for gcrypt
@@ -203,22 +197,23 @@ AS_IF([test "x$have_gcrypt" = "xyes"],
     [AC_MSG_ERROR([gcrypt support requested but not found])])])
 
 # Check for Avahi
-AVAHI_VERSION=0.6
+AVAHI_DEPS="avahi-client >= 0.6 avahi-glib >= 0.6"
 
 AC_ARG_WITH([avahi],
   [AS_HELP_STRING([--without-avahi],
     [ignore avahi support and disable it])])
 
 AS_IF([test "x$with_avahi" != "xno"],
-  [PKG_CHECK_MODULES([AVAHI],
-    [avahi-client >= $AVAHI_VERSION avahi-glib >= $AVAHI_VERSION],
+  [PKG_CHECK_EXISTS([AVAHI],
+    [$AVAHI_DEPS],
     [have_avahi=yes],
     [have_avahi=no])],
   [have_avahi=no])
 
 AS_IF([test "x$have_avahi" = "xyes"],
   [AC_DEFINE([VINO_HAVE_AVAHI], [], [Build with avahi support])],
-  [AS_IF([test "x$with_avahi" = "xyes"],
+  [AVAHI_DEPS=""
+    AS_IF([test "x$with_avahi" = "xyes"],
     [AC_MSG_ERROR([avahi support requested but not found])])])
 
 # Check for zlib
@@ -342,6 +337,22 @@ AS_IF([test "x$have_ipv6" = "xyes"],
   [AS_IF([test "x$enable_ipv6" = "xyes"],
     [AC_MSG_ERROR([IPv6 support requested but not found])])])
 AC_MSG_RESULT([$have_ipv6])
+
+# GNOME libraries
+GTK_VERSION=3.0.0
+GLIB_VERSION=2.17.0
+GIO_VERSION=2.26
+SOUP_VERSION=2.24.0
+
+PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS $LIBNOTIFY_DEPS $GNOME_KEYRING_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
+
+PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gtk+-3.0 >= $GTK_VERSION libsoup-2.4 >= $SOUP_VERSION $GNOME_KEYRING_DEPS])
+
+PKG_CHECK_MODULES([VINO_TOOLS], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gobject-2.0 >= $GLIB_VERSION $GNOME_KEYRING_DEPS])
+
+# EGG stuff
+PKG_CHECK_MODULES([EGG], [gtk+-3.0 >= $GTK_VERSION])
+PKG_CHECK_MODULES([EGG_SMCLIENT], [gtk+-3.0])
 
 GLIB_GSETTINGS
 

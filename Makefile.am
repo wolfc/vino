@@ -129,11 +129,6 @@ vino_server_CPPFLAGS = \
 	-I$(top_builddir) \
 	-I$(top_builddir)/server \
 	$(VINO_SERVER_CFLAGS) \
-	$(LIBNOTIFY_CFLAGS) \
-	$(VINO_KEYRING_CFLAGS) \
-	$(VINO_NETWORKMANAGER_CFLAGS) \
-	$(AVAHI_CFLAGS) \
-	$(GNUTLS_CFLAGS) \
 	$(GCRYPT_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(DISABLE_DEPRECATED) \
@@ -149,11 +144,6 @@ vino_server_LDADD = \
 	libminiupnp.la \
 	libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
-	$(LIBNOTIFY_LIBS) \
-	$(KEYRING_LIBS) \
-	$(AVAHI_LIBS) \
-	$(NETWORKMANAGER_LIBS) \
-	$(GNUTLS_LIBS) \
 	$(GCRYPT_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS)
 
@@ -164,8 +154,6 @@ VINO_HTTP_SRC = \
 endif
 
 if VINO_HAVE_TELEPATHY_GLIB
-vino_server_CPPFLAGS += $(TELEPATHY_GLIB_CFLAGS)
-vino_server_LDADD += $(TELEPATHY_GLIB_LIBS)
 VINO_TELEPATHY_GLIB_SRC = \
 	server/vino-tube-servers-manager.c \
 	server/vino-tube-servers-manager.h \
@@ -279,9 +267,6 @@ vino_preferences_CPPFLAGS = \
 	-DVINO_UIDIR=\""$(pkgdatadir)"\" \
 	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
 	$(VINO_CAPPLET_CFLAGS) \
-	$(VINO_KEYRING_CFLAGS) \
-	$(VINO_HTTP_CFLAGS) \
-	$(VINO_LIBUNIQUE_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(DISABLE_DEPRECATED)
 
@@ -302,8 +287,6 @@ vino_preferences_SOURCES = \
 
 vino_preferences_LDADD = \
 	$(VINO_CAPPLET_LIBS) \
-	$(VINO_KEYRING_LIBS) \
-	$(VINO_LIBUNIQUE_LIBS) \
 	$(X_LIBS)
 
 vino_passwd_CPPFLAGS = \
