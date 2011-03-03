@@ -597,7 +597,6 @@ vino_http_create_listening_socket (VinoHTTP *http)
   struct sockaddr_in6  saddr_in6;
 #endif
   struct sockaddr_in   saddr_in;
-  struct sockaddr     *saddr;
   socklen_t            saddr_len;
   int                  sock;
   int                  opt;
@@ -626,7 +625,6 @@ vino_http_create_listening_socket (VinoHTTP *http)
   saddr_in6.sin6_family = AF_INET6;
   saddr_in6.sin6_addr = in6addr_any;
 
-  saddr = (struct sockaddr *) &saddr_in6;
   saddr_len = sizeof (saddr_in6);
 #endif
 
@@ -642,7 +640,6 @@ vino_http_create_listening_socket (VinoHTTP *http)
       saddr_in.sin_family = AF_INET;
       saddr_in.sin_addr.s_addr = htonl (INADDR_ANY);
 
-      saddr = (struct sockaddr *) &saddr_in;
       saddr_len = sizeof (saddr_in);
     }
 
@@ -669,13 +666,17 @@ vino_http_create_listening_socket (VinoHTTP *http)
   while (http_port <= VINO_HTTP_MAX_PORT)
     {
 #ifdef VINO_ENABLE_IPV6
-      if (saddr->sa_family == AF_INET6)
-        ((struct sockaddr_in6 *) saddr)->sin6_port = htons (http_port);
+      if (saddr_in.sin_family != AF_INET)
+        {
+          saddr_in6.sin6_port = htons (http_port);
+          if (bind (sock, (struct sockaddr *) &saddr_in6, saddr_len) == 0 )
+            break;
+        }
       else
 #endif
-        ((struct sockaddr_in *) saddr)->sin_port = htons (http_port);
+        saddr_in.sin_port = htons (http_port);
 
-      if (bind (sock, saddr, saddr_len) == 0 )
+      if (bind (sock, (struct sockaddr *) &saddr_in, saddr_len) == 0 )
 	break;
       
       dprintf (HTTP, "Failed to probe port %d: %s\n", http_port, g_strerror (errno));
