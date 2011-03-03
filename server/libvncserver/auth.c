@@ -151,7 +151,10 @@ rfbAuthNewClient3_7(rfbClientPtr cl)
 static void
 rfbAuthNewClient3_3(rfbClientPtr cl)
 {
-    char buf[4 + CHALLENGESIZE];
+    union {
+        uint32_t authType;
+        char buf[4 + CHALLENGESIZE];
+    } auth;
     int len, i;
 
     for (i = 0; i < cl->screen->nSecurityTypes; i++)
@@ -166,14 +169,14 @@ rfbAuthNewClient3_3(rfbClientPtr cl)
 
     switch (cl->screen->securityTypes [i]) {
     case rfbVncAuth:
-        *(uint32_t *)buf = Swap32IfLE(rfbVncAuth);
+        auth.authType = Swap32IfLE(rfbVncAuth);
         vncRandomBytes(cl->authChallenge);
-        memcpy(&buf[4], (char *)cl->authChallenge, CHALLENGESIZE);
+        memcpy(&(auth.buf[4]), (char *)cl->authChallenge, CHALLENGESIZE);
         len = 4 + CHALLENGESIZE;
 	cl->state = RFB_AUTHENTICATION;
 	break;
     case rfbNoAuth:
-        *(uint32_t *)buf = Swap32IfLE(rfbNoAuth);
+        auth.authType = Swap32IfLE(rfbNoAuth);
         len = 4;
         cl->state = RFB_INITIALISATION;
 	break;
@@ -182,7 +185,7 @@ rfbAuthNewClient3_3(rfbClientPtr cl)
 	return;
     }
 
-    if (WriteExact(cl, buf, len) < 0) {
+    if (WriteExact(cl, auth.buf, len) < 0) {
         rfbLogPerror("rfbAuthNewClient: write");
         rfbCloseClient(cl);
         return;
