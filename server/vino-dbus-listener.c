@@ -97,7 +97,7 @@ static guint16
 vino_dbus_listener_get_port (VinoDBusListener *listener)
 {
 #ifdef VINO_ENABLE_HTTP_SERVER
-  return vino_get_http_server_port (listener->server);
+  return vino_get_http_server_port ();
 #else
   return vino_server_get_port (listener->server);
 #endif

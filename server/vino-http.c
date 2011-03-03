@@ -844,7 +844,7 @@ vino_http_remove_rfb_port (VinoHTTP *http,
 }
 
 int
-vino_get_http_server_port ()
+vino_get_http_server_port (void)
 {
   return singleton_http->priv->http_port;
 }
