@@ -457,7 +457,7 @@ vino_http_data_pending (GIOChannel     *source,
 
       if (client->header->len  > VINO_HTTP_MAX_HEADER_LEN)
 	{
-	  g_warning ("HTTP header far too long (%d bytes). Disconnecting client",
+	  g_warning ("HTTP header far too long (%" G_GSIZE_FORMAT " bytes). Disconnecting client",
 		     client->header->len);
 	  goto invalid_request;
 	}
