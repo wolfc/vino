@@ -319,7 +319,6 @@ dist_noinst_DATA = \
 	server/miniupnp/README \
 	server/miniupnp/LICENCE \
 	\
-	MAINTAINERS \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in
