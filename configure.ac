@@ -295,8 +295,8 @@ AM_CONDITIONAL([VINO_HAVE_SELF_IFADDRS], [test "x$ac_cv_header_ifaddrs_h" != "xy
 # Not all distros follow this.
 AS_IF([test "x$ac_cv_header_ifaddrs_h" = "xyes"],
   [AC_COMPILE_IFELSE([AC_LANG_PROGRAM([[
-    #include <ifaddrs.h>
     #include <net/if.h>
+    #include <ifaddrs.h>
     ]], [[
     struct ifaddrs *myaddrs;
     getifaddrs (&myaddrs);
