@@ -16,12 +16,12 @@ AC_ARG_ENABLE([http-server],
   [AS_HELP_STRING([--disable-http-server],
    [build with an HTTP server for serving a Java applet client @<:@default=yes@:>@])],
    [],
-   [enable_httpserver=yes])
+   [enable_http_server=yes])
 
-AS_IF([test "x$enable_httpserver" = "xyes"],
+AS_IF([test "x$enable_http_server" = "xyes"],
   [AC_DEFINE([VINO_ENABLE_HTTP_SERVER], [], [Enable HTTP server support])])
 
-AM_CONDITIONAL([VINO_ENABLE_HTTP_SERVER], [test "x$enable_httpserver" = "xyes"])
+AM_CONDITIONAL([VINO_ENABLE_HTTP_SERVER], [test "x$enable_http_server" = "xyes"])
 
 # GNOME common
 GNOME_MAINTAINER_MODE_DEFINES
@@ -105,17 +105,17 @@ AC_ARG_WITH([network-manager],
   [AS_HELP_STRING([--without-network-manager],
     [ignore the presence of NetworkManager and disable it])])
 
-AS_IF([test "x$with_networkmanager" != "xno"],
+AS_IF([test "x$with_network_manager" != "xno"],
   [PKG_CHECK_EXISTS([NETWORKMANAGER],
     [$NETWORKMANAGER_DEPS],
-    [have_networkmanager=yes],
-    [have_networkmanager=no])],
-  [have_networkmanager=no])
+    [have_network_manager=yes],
+    [have_network_manager=no])],
+  [have_network_manager=no])
 
-AS_IF([test "x$have_networkmanager" = "xyes"],
+AS_IF([test "x$have_network_manager" = "xyes"],
   [AC_DEFINE([VINO_HAVE_NETWORKMANAGER], [], [Build with NetworkManager support])],
   [NETWORKMANAGER_DEPS=""
-    AS_IF([test "x$with_networkmanager" = "xyes"],
+    AS_IF([test "x$with_network_manager" = "xyes"],
     [AC_MSG_ERROR([NetworkManager support requested but not found])])])
 
 # Check for gnome-keyring
@@ -125,17 +125,17 @@ AC_ARG_WITH([gnome-keyring],
   [AS_HELP_STRING([--without-gnome-keyring],
     [ignore the presence of gnome-keyring and disable it])])
 
-AS_IF([test "x$with_gnomekeyring" != "xno"],
+AS_IF([test "x$with_gnome_keyring" != "xno"],
   [PKG_CHECK_EXISTS([GNOME_KEYRING],
     [$GNOME_KEYRING_DEPS],
-    [have_gnomekeyring=yes],
-    [have_gnomekeyring=no])],
-  [have_gnomekeyring=no])
+    [have_gnome_keyring=yes],
+    [have_gnome_keyring=no])],
+  [have_gnome_keyring=no])
 
-AS_IF([test "x$have_gnomekeyring" != "xno"],
+AS_IF([test "x$have_gnome_keyring" != "xno"],
   [AC_DEFINE([VINO_HAVE_GNOME_KEYRING], [], [Build with gnome-keyring support])],
   [GNOME_KEYRING_DEPS=""
-    AS_IF([test "x$with_gnomekeyring" = "xyes"],
+    AS_IF([test "x$with_gnome_keyring" = "xyes"],
     [AC_MSG_ERROR([gnome-keyring support requested but not found])])])
 
 # If Pango included the shared library dependencies from X11 in
