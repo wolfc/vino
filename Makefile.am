@@ -321,7 +321,8 @@ dist_noinst_DATA = \
 	\
 	intltool-extract.in \
 	intltool-merge.in \
-	intltool-update.in
+	intltool-update.in \
+	vino.doap
 
 dist_noinst_SCRIPTS = autogen.sh
 
