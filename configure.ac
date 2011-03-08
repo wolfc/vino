@@ -138,23 +138,12 @@ AS_IF([test "x$have_gnome_keyring" != "xno"],
     AS_IF([test "x$with_gnome_keyring" = "xyes"],
     [AC_MSG_ERROR([gnome-keyring support requested but not found])])])
 
-# If Pango included the shared library dependencies from X11 in
-# the pkg-config output, then we use that (to avoid duplicates).
-# but if they were omitted to avoid binary compatibility problems
-# then we need to repeat the checks.
-PKG_CHECK_EXISTS([pangoxft],
-  [PANGO_PACKAGES="pangox pangoxft"],
-  [PANGO_PACKAGES="pangox"])
+# Check for X11
+AC_PATH_XTRA
 
-AS_CASE([`$PKG_CONFIG --libs $PANGO_PACKAGES`],
-  [*-lX11*], [pango_omitted_x_deps=no],
-  [pango_omitted_x_deps=yes])
-
-AS_IF([test "x$pango_omitted_x_deps" = "xyes"],
-  [AC_PATH_XTRA
-    AS_IF([test "x$no_x" = "xyes"],
-      [AC_MSG_ERROR([X development libraries not found])],
-      [AC_SUBST([X_LIBS], [$X_PRE_LIBS $X_LIBS -lX11 $X_EXTRA_LIBS])])])
+AS_IF([test "x$no_x" = "xyes"],
+  [AC_MSG_ERROR([X development libraries not found])],
+  [AC_SUBST([X_LIBS], ["$X_PRE_LIBS $X_LIBS -lX11 $X_EXTRA_LIBS"])])
 
 # Check for gnutls
 GNUTLS_DEPS="gnutls >= 1.0.0"
@@ -229,7 +218,8 @@ AS_IF([test "x$with_zlib" != "xno"],
   [have_zlib=no])
 
 AS_IF([test "x$have_zlib" = "xyes"],
-  [AC_DEFINE([VINO_HAVE_ZLIB], [], [Build with zlib support])],
+  [AC_DEFINE([VINO_HAVE_ZLIB], [], [Build with zlib support])
+    AC_SUBST([ZLIB_LIBS], [-lz])],
   [AS_IF([test "x$with_zlib" = "xyes"],
     [AC_MSG_ERROR([zlib support requested but not found])])])
 
