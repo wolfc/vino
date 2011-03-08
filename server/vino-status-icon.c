@@ -281,6 +281,7 @@ vino_status_icon_about (VinoStatusIcon *icon)
   gtk_show_about_dialog (NULL,
                          "comments",           _("Share your desktop with other users"),
                          "version",            PACKAGE_VERSION,
+                         "website",            PACKAGE_URL,
                          "license",            license,
                          "authors",            authors,
                          "translator-credits", translators,
