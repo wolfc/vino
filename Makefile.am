@@ -96,7 +96,7 @@ vino_server_CPPFLAGS = \
 	-I$(top_builddir)/server \
 	$(VINO_SERVER_CFLAGS) \
 	$(VINO_MINIUPNP_cppflags) \
-	$(GCRYPT_CFLAGS) \
+	$(LIBGCRYPT_CFLAGS) \
 	$(WARN_CFLAGS) \
 	$(DISABLE_DEPRECATED) \
 	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
@@ -109,7 +109,7 @@ libexec_PROGRAMS = vino-server
 vino_server_LDADD = \
 	libeggsmclient.la \
 	$(VINO_SERVER_LIBS) \
-	$(GCRYPT_LIBS) \
+	$(LIBGCRYPT_LIBS) \
 	$(JPEG_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) $(ZLIB_LIBS)
 
