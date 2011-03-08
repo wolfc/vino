@@ -57,8 +57,7 @@ AC_ARG_WITH([telepathy],
     [ignore the presence of telepathy and disable it])])
 
 AS_IF([test "x$with_telepathy" != "xno"],
-  [PKG_CHECK_EXISTS([TELEPATHY_GLIB],
-    [$TELEPATHY_GLIB_DEPS],
+  [PKG_CHECK_EXISTS([$TELEPATHY_GLIB_DEPS],
     [have_telepathy=yes],
     [have_telepathy=no])],
   [have_telepathy=no])
@@ -80,8 +79,7 @@ AC_ARG_WITH([libnotify],
     [ignore the presence of libnotify and disable it])])
 
 AS_IF([test "x$with_libnotify" != "xno"],
-  [PKG_CHECK_EXISTS([LIBNOTIFY],
-    [$LIBNOTIFY_DEPS],
+  [PKG_CHECK_EXISTS([$LIBNOTIFY_DEPS],
     [have_libnotify=yes],
     [have_libnotify=no])],
   [have_libnotify=no])
@@ -106,8 +104,7 @@ AC_ARG_WITH([network-manager],
     [ignore the presence of NetworkManager and disable it])])
 
 AS_IF([test "x$with_network_manager" != "xno"],
-  [PKG_CHECK_EXISTS([NETWORKMANAGER],
-    [$NETWORKMANAGER_DEPS],
+  [PKG_CHECK_EXISTS([$NETWORKMANAGER_DEPS],
     [have_network_manager=yes],
     [have_network_manager=no])],
   [have_network_manager=no])
@@ -126,8 +123,7 @@ AC_ARG_WITH([gnome-keyring],
     [ignore the presence of gnome-keyring and disable it])])
 
 AS_IF([test "x$with_gnome_keyring" != "xno"],
-  [PKG_CHECK_EXISTS([GNOME_KEYRING],
-    [$GNOME_KEYRING_DEPS],
+  [PKG_CHECK_EXISTS([$GNOME_KEYRING_DEPS],
     [have_gnome_keyring=yes],
     [have_gnome_keyring=no])],
   [have_gnome_keyring=no])
@@ -153,8 +149,7 @@ AC_ARG_WITH([gnutls],
     [ignore gnutls support and disable it])])
 
 AS_IF([test "x$with_gnutls" != "xno"],
-  [PKG_CHECK_EXISTS([GNUTLS],
-    [$GNUTLS_DEPS],
+  [PKG_CHECK_EXISTS([$GNUTLS_DEPS],
     [have_gnutls=yes],
     [have_gnutls=no])],
   [have_gnutls=no
@@ -193,8 +188,7 @@ AC_ARG_WITH([avahi],
     [ignore avahi support and disable it])])
 
 AS_IF([test "x$with_avahi" != "xno"],
-  [PKG_CHECK_EXISTS([AVAHI],
-    [$AVAHI_DEPS],
+  [PKG_CHECK_EXISTS([$AVAHI_DEPS],
     [have_avahi=yes],
     [have_avahi=no])],
   [have_avahi=no])
