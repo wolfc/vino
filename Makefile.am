@@ -296,6 +296,22 @@ gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
 @INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
+if MAINTAINER_MODE
+dist-hook: dist-changelog
+else
+dist-hook:
+endif
+
+dist-changelog:
+	$(AM_V_at)if git --git-dir=$(top_srcdir)/.git --work-tree=$(top_srcdir) \
+		log --no-merges --date=short --pretty='tformat:%cd  %an  <%ae>%n%n%s%n%n%b' a65e89b3e25a22ea177581462fb253bc392c789b.. | \
+	 $(SED)	-e '/^[12]...-[01].-[0123].  [^<>]*  <[^<>]*>$$/,/^$$/ b' \
+		-e '/[^	 ]/,/^[	 ]*$$/ !d' \
+		-e 's/^[	 ]*/	/' \
+		-e 's/^[	 ]*$$//' >.ChangeLog.tmp; \
+	then mv -f .ChangeLog.tmp "$(top_distdir)/ChangeLog"; \
+	else rm -f .ChangeLog.tmp; exit 1; fi
+
 dist_noinst_DATA = \
 	$(desktop_in_files) \
 	\
@@ -319,6 +335,7 @@ dist_noinst_DATA = \
 	server/miniupnp/README \
 	server/miniupnp/LICENCE \
 	\
+	ChangeLog.pre-git \
 	intltool-extract.in \
 	intltool-merge.in \
 	intltool-update.in \
@@ -341,3 +358,5 @@ DISTCLEANFILES = \
 	po/.intltool-merge-cache
 
 MAINTAINERCLEANFILES = $(gsettings_SCHEMAS:.xml=.valid)
+
+.PHONY: dist-changelog
