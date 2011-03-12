@@ -138,15 +138,11 @@ vino_server_SOURCES = \
 	common/vino-dbus.h \
 	server/vino-cursor.c \
 	server/vino-cursor.h \
-	server/vino-enums.c \
-	server/vino-enums.h \
 	server/vino-fb.c \
 	server/vino-fb.h \
 	server/vino-input.c \
 	server/vino-input.h \
 	server/vino-main.c \
-	server/vino-marshal.c \
-	server/vino-marshal.h \
 	server/vino-mdns.c \
 	server/vino-mdns.h \
 	server/vino-prefs.c \
@@ -169,14 +165,23 @@ vino_server_SOURCES = \
 	$(VINO_IFADDR_sources) \
 	$(VINO_LIBVNCSERVER_sources) \
 	$(VINO_HTTP_sources) \
-	$(VINO_TELEPATHY_GLIB_sources)
+	$(VINO_TELEPATHY_GLIB_sources) \
+	$(nodist_marshal_data) \
+	$(nodist_enum_data)
+
+nodist_marshal_data = \
+	server/vino-marshal.c \
+	server/vino-marshal.h
 
 server/vino-marshal.h: server/vino-marshal.list
-	$(AM_V_GEN)$(GLIB_GENMARSHAL) $< --header --prefix=vino_marshal > $@
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) --header --prefix=vino_marshal $< > $@
 
-server/vino-marshal.c: server/vino-marshal.list
-	$(AM_V_GEN)echo "#include \"vino-marshal.h\"" > $@ && \
-	$(GLIB_GENMARSHAL) $< --body --prefix=vino_marshal >> $@
+server/vino-marshal.c: server/vino-marshal.list server/vino-marshal.h
+	$(AM_V_GEN)$(GLIB_GENMARSHAL) --header --body --prefix=vino_marshal $< > $@
+
+nodist_enum_data = \
+	server/vino-enums.c \
+	server/vino-enums.h
 
 vino_enum_headers = \
 	server/vino-server.h \
@@ -185,30 +190,32 @@ vino_enum_headers = \
 	server/vino-status-tube-icon.h
 
 server/vino-enums.c: $(vino_enum_headers)
-	$(AM_V_GEN)$(GLIB_MKENUMS)    --fhead "#include <glib-object.h>\n" \
-			--fhead "#include \"vino-enums.h\"\n\n" \
-			--fprod "\n/* enumerations from \"@filename@\" */" \
-			--fprod "\n#include \"@filename@\"\n" \
-			--vhead "static const G@Type@Value _@enum_name@_values[] = {" \
-			--vprod "  { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
-			--vtail "  { 0, NULL, NULL }\n};\n\n" \
-			--vtail "GType\n@enum_name@_get_type (void)\n{\n" \
-			--vtail "  static GType type = 0;\n\n" \
-			--vtail "  if (!type)\n" \
-			--vtail "    type = g_@type@_register_static (\"@EnumName@\", _@enum_name@_values);\n\n" \
-			--vtail "  return type;\n}\n\n" \
+	$(AM_V_GEN)$(GLIB_MKENUMS) \
+		--fhead "#include \"vino-enums.h\"\n\n" \
+		--fprod "/* enumerations from \"@filename@\" */\n" \
+		--fprod "#include \"@filename@\"\n" \
+		--vhead "GType\n@enum_name@_get_type (void)\n{\n" \
+		--vhead "  static GType type = 0;\n\n" \
+		--vhead "  if (!type)\n  {\n" \
+		--vhead "    static const G@Type@Value _@enum_name@_values[] = {" \
+		--vprod "      { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" }," \
+		--vtail "      { 0, NULL, NULL }\n    };\n\n" \
+		--vtail "    type = g_@type@_register_static (\"@EnumName@\", _@enum_name@_values);\n  }\n\n" \
+		--vtail "  return type;\n}\n\n" \
 		$(vino_enum_headers) > $@
 
 server/vino-enums.h: $(vino_enum_headers)
-	$(AM_V_GEN)$(GLIB_MKENUMS)    --fhead "#ifndef __VINO_ENUMS_H__\n" \
-			--fhead "#define __VINO_ENUMS_H__ 1\n\n" \
-			--fhead "G_BEGIN_DECLS\n\n" \
-			--ftail "G_END_DECLS\n\n" \
-			--ftail "#endif /* __VINO_ENUMS_H__ */\n" \
-			--fprod "\n/* --- @filename@ --- */" \
-			--eprod "#define VINO_TYPE_@ENUMSHORT@ @enum_name@_get_type()\n" \
-			--eprod "GType @enum_name@_get_type (void);\n" \
-		$(vino_enum_headers) >  $@
+	$(AM_V_GEN)$(GLIB_MKENUMS) \
+		--fhead "#ifndef VINO_ENUMS_H_\n" \
+		--fhead "#define VINO_ENUMS_H_\n\n" \
+		--fhead "#include <glib-object.h>\n\n" \
+		--fhead "G_BEGIN_DECLS\n\n" \
+		--fprod "/* enumerations from @filename@ */\n" \
+		--vhead "GType @enum_name@_get_type (void) G_GNUC_CONST;\n" \
+		--vhead "#define VINO_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n" \
+		--ftail "G_END_DECLS\n\n" \
+		--ftail "#endif /* VINO_ENUMS_H_ */" \
+		$(vino_enum_headers) > $@
 
 server/vino-server.desktop.in: server/vino-server.desktop.in.in
 	$(AM_V_GEN)$(SED) -e "s|\@LIBEXECDIR\@|$(libexecdir)|" $< > $@
@@ -218,12 +225,6 @@ nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
 
 server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in
 	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
-
-BUILT_SOURCES = \
-	server/vino-enums.c \
-	server/vino-enums.h \
-	server/vino-marshal.c \
-	server/vino-marshal.h
 
 bin_PROGRAMS = \
 	vino-preferences \
@@ -347,11 +348,12 @@ CLEANFILES = \
 	$(nodist_desktop_DATA) \
 	$(gsettings_SCHEMAS) \
 	$(nodist_service_DATA) \
+	$(nodist_marshal_data) \
+	$(nodist_enum_data) \
 	server/vino-server.desktop \
 	server/vino-server.desktop.in
 
 DISTCLEANFILES = \
-	$(BUILT_SOURCES) \
 	intltool-extract \
 	intltool-merge \
 	intltool-update \
