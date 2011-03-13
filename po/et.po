@@ -14,8 +14,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2010-12-12 19:39+0000\n"
+"product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2011-03-13 13:46+0000\n"
 "PO-Revision-Date: 2010-05-29 08:25+0300\n"
 "Last-Translator: Priit Laes <plaes@plaes.org>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
@@ -29,9 +29,6 @@ msgstr ""
 msgid "There was an error showing the URL \"%s\""
 msgstr "URLi \"%s\" kuvamisel esines viga"
 
-msgid "Checking the connectivity of this machine..."
-msgstr "Selle masinaga ühendumise kontrollimine..."
-
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -39,6 +36,9 @@ msgid ""
 msgstr ""
 "Abiteabe kuvamisel tekkis viga:\n"
 "%s"
+
+msgid "Checking the connectivity of this machine..."
+msgstr "Selle masinaga ühendumise kontrollimine..."
 
 msgid "Your desktop is only reachable over the local network."
 msgstr "Sinu töölauda on võimalik vaadata ainult kohtvõrgust."
@@ -53,24 +53,187 @@ msgstr "Teised pääsevad Sinu arvutile ligi kasutades aadressi %s."
 msgid "Nobody can access your desktop."
 msgstr "Keegi ei pääse su töölauale ligi."
 
-#, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "Tõrge siiniga ühendumisel: %s\n"
-
 msgid "Choose how other users can remotely view your desktop"
 msgstr "Määrab kuidas teised kasutajad sinu töölauda vaadata tohivad"
 
 msgid "Remote Desktop"
 msgstr "Kaugtöölaud"
 
+msgid "Allowed authentication methods"
+msgstr "Lubatud autentimismeetodid"
+
+msgid "Alternative port number"
+msgstr "Alternatiivse pordi number"
+
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "E-posti aadress, millele võrgutöölaua URL tuleks saata"
+
+msgid "Enable remote desktop access"
+msgstr "Juurdepääsu lubamine kaugtöölauale"
+
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
+msgstr ""
+"Kui pole määratud, kuulab server kõiki võrguliideseid. Määra, et nõustuda "
+"ühendustega ainult määratud võrguliidestelt, nagu eth0, wifi0, lo, ..."
+
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Kui märgitud, siis töölauale on lubatud väline juurdepääs RFB protokolli "
+"abil. Eemalasuvate masinate kasutajad saavad seejärel töölauaga ühendada "
+"vncviewer'i abil."
+
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Kui märgitud, siis peab peremeesmasina kasutaja andma loa enne enne kui "
+"kaugjuurdepääsu kasutaja saab töölauda kasutada. See on soovitatav eelkõige "
+"parooliga kaitsmata ligipääsu korral."
+
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+"Kui märgitud, siis kaugjuurdepääsu kasutajatel lubatakse töölauda ainult "
+"vaadata, neil pole võimalik kasutada ei hiirt ega klaviatuuri."
+
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Kui märgitud, siis kaugtöölaua kasutajatelt nõutakse krüptimise tuge. Kuni "
+"kaugtöölauda ei kasutata usaldusväärses võrgus, on tungivalt soovitatav "
+"pruukida krüptimise toega klienti."
+
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr ""
+"Kui märgitud, siis pärast viimase kaugkliendi lahtiühendamist ekraan "
+"lukustatakse."
+
+#, fuzzy
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative-port' key."
+msgstr ""
+"Kui märgitud, siis kuulab server vaikimisi pordi (5900) asemel võtmega "
+"'alternative_port' määratud alternatiivset porti."
+
+msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"Kui märgitud, siis X.org'i XDamage laiendust ei kasutata. See laiendus ei "
+"tööta mõnede videodraiveritega korrektselt, kui kasutatakse 3D efekte. "
+"Laienduse keelamine lubab vinol töötada, kuid renderdamine on mõnevõrra "
+"aeglasem."
+
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"Kui tõene, kasutatakse UPNP protokolli vino kasutatava pordi automaatseks "
+"edasisuunamiseks ruuterist."
+
+#, fuzzy
+msgid "Listen on an alternative port"
+msgstr "Alternatiivse pordi kuulamine"
+
+#, fuzzy
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc-password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Nimekiri autentimismeetoditest, mille abil kaugtöölaua kasutajad saavad "
+"juurdepääsu töölauale. On kaks võimalikku autentimismeetodit; \"vnc\" küsub "
+"kaugtöölaua kasutajalt enne ühenduse loomist parooli (parooli saab määrata "
+"võtmega \"vnc_password\") ja \"none\", mis lubab igal kaugtöölaua kasutajal "
+"ühenduse luua."
+
+msgid "Lock the screen when last user disconnect"
+msgstr "Ekraani lukustamine pärast viimase kasutaja lahtiühendamist"
+
+msgid "Network interface for listening"
+msgstr "Võrguliides, mida kuulatakse"
+
+msgid "Only allow remote users to view the desktop"
+msgstr "Kaugkasutajatel lubatakse töölauda ainult vaadata"
+
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" autentimiseks on vaja salasõna"
+
+msgid "Prompt the user before completing a connection"
+msgstr "Kasutajalt kinnituse küsimine enne ühendamise lõpuleviimist"
+
+msgid "Require encryption"
+msgstr "Krüptimise nõudmine"
+
+#, fuzzy
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded. The special value of 'keyring' (which is not valid base64) means "
+"that the password is stored in the GNOME keyring."
+msgstr ""
+"\"vnc\" autentimismeetodi korral kaugtöölaua kasutajailt küsitav salasõna. "
+"Võtme poolt määratud salasõna on kodeeritud base64 algoritmiga."
+
+#, fuzzy
+msgid ""
+"The port which the server will listen to if the 'use-alternative-port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"Port, mida kuulatakse kui võti \"use_alternative_port\" on märgitud. "
+"Võimalikud väärtused on vahemikus 5000 kuni 50000."
+
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Selle võtmega juhitakse olekuikooni käitumist. Võimalikud on kolm väärtust: "
+"\"always\" - ikooni kuvatakse alati; \"client\" - ikooni kuvatakse ainult "
+"juhul, kui keegi on ühendatud, see on ka vaikimisi väärtus; \"never\" - "
+"ikooni ei kvuata mitte kunagi."
+
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"See võti määrab e-posti aadressi, millele kaugtöölaua juurdepääsuaadress "
+"saadetakse, juhul kui kasutaja klõpsab kaugtöölaua sätete dialoogis oleval "
+"URL-il."
+
+msgid "When the status icon should be shown"
+msgstr "Kas olekuikooni tuleb näidata"
+
+msgid "When true, disable the background on receive valid session"
+msgstr "Kui tõene, keelatakse sissetuleva õige ühenduse korral taustapilt"
+
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "Kas X.org'i XDamage laiendus on keelatud või mitte"
+
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr "UPNP kasutamine ruuterist pordi edasisuunamiseks"
+
 msgid "Al_ways display an icon"
 msgstr "_Ikooni kuvatakse alati"
 
 msgid "Allow other users to _view your desktop"
 msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
-
-msgid "Maximum size: 8 characters"
-msgstr "Suurim pikkus: 8 tähemärki"
 
 msgid "Notification Area"
 msgstr "Teateala"
@@ -89,13 +252,6 @@ msgstr "Ühiskasutus"
 
 msgid "Some of these preferences are locked down"
 msgstr "Mõned nendest eelistustest on lukustatud"
-
-msgid "The router must have the UPnP feature enabled"
-msgstr "Ruuteris peab UPnP võimalus olema lubatud"
-
-msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr ""
-"Iga sissetuleva ühenduse kohta küsitakse sinult, kas see lubada või keelduda"
 
 msgid "Your desktop will be shared"
 msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
@@ -168,8 +324,12 @@ msgstr "Seansihalduse valikud:"
 msgid "Show session management options"
 msgstr "Seansihalduse valikuid näidatakse"
 
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Võrgutöölaua server juba töötab, töö lõpetatakse...\n"
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Sinu XServer ei toeta XTest laiendust - võrgus asuv töölaud on ligipääsetav "
+"ainult vaatamiseks\n"
 
 msgid "- VNC Server for GNOME"
 msgstr "- VNC server GNOME jaoks"
@@ -182,13 +342,6 @@ msgstr ""
 
 msgid "GNOME Remote Desktop"
 msgstr "GNOME Kaugtöölaud"
-
-msgid ""
-"Your XServer does not support the XTest extension - remote desktop access "
-"will be view-only\n"
-msgstr ""
-"Sinu XServer ei toeta XTest laiendust - võrgus asuv töölaud on ligipääsetav "
-"ainult vaatamiseks\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -246,172 +399,12 @@ msgstr "_Luba"
 msgid "_Refuse"
 msgstr "_Keela"
 
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Tõrge siiniga ühendumisel: %s\n"
+
 msgid "GNOME Remote Desktop Server"
 msgstr "GNOME kaugtöölauaserver"
-
-msgid "Allowed authentication methods"
-msgstr "Lubatud autentimismeetodid"
-
-msgid "Alternative port number"
-msgstr "Alternatiivse pordi number"
-
-msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "E-posti aadress, millele võrgutöölaua URL tuleks saata"
-
-msgid "Enable remote desktop access"
-msgstr "Juurdepääsu lubamine kaugtöölauale"
-
-msgid ""
-"If not set, the server will listen on all network interfaces. Set this if "
-"you want that accept connections only from some specific network interface. "
-"eg: eth0, wifi0, lo, ..."
-msgstr ""
-"Kui pole määratud, kuulab server kõiki võrguliideseid. Määra, et nõustuda "
-"ühendustega ainult määratud võrguliidestelt, nagu eth0, wifi0, lo, ..."
-
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"Kui märgitud, siis töölauale on lubatud väline juurdepääs RFB protokolli "
-"abil. Eemalasuvate masinate kasutajad saavad seejärel töölauaga ühendada "
-"vncviewer'i abil."
-
-msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
-msgstr ""
-"Kui märgitud, siis peab peremeesmasina kasutaja andma loa enne enne kui "
-"kaugjuurdepääsu kasutaja saab töölauda kasutada. See on soovitatav eelkõige "
-"parooliga kaitsmata ligipääsu korral."
-
-msgid ""
-"If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"Kui märgitud, siis kaugjuurdepääsu kasutajatel lubatakse töölauda ainult "
-"vaadata, neil pole võimalik kasutada ei hiirt ega klaviatuuri."
-
-msgid ""
-"If true, remote users accessing the desktop are required to support "
-"encryption. It is highly recommended that you use a client which supports "
-"encryption unless the intervening network is trusted."
-msgstr ""
-"Kui märgitud, siis kaugtöölaua kasutajatelt nõutakse krüptimise tuge. Kuni "
-"kaugtöölauda ei kasutata usaldusväärses võrgus, on tungivalt soovitatav "
-"pruukida krüptimise toega klienti."
-
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"Kui märgitud, siis pärast viimase kaugkliendi lahtiühendamist ekraan "
-"lukustatakse."
-
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"Kui märgitud, siis kuulab server vaikimisi pordi (5900) asemel võtmega "
-"'alternative_port' määratud alternatiivset porti."
-
-msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
-msgstr ""
-"Kui märgitud, siis X.org'i XDamage laiendust ei kasutata. See laiendus ei "
-"tööta mõnede videodraiveritega korrektselt, kui kasutatakse 3D efekte. "
-"Laienduse keelamine lubab vinol töötada, kuid renderdamine on mõnevõrra "
-"aeglasem."
-
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
-msgstr ""
-"Kui tõene, kasutatakse UPNP protokolli vino kasutatava pordi automaatseks "
-"edasisuunamiseks ruuterist."
-
-msgid "Listen an alternative port"
-msgstr "Alternatiivse pordi kuulamine"
-
-msgid ""
-"Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc_password key) before connecting and \"none\" which allows any remote "
-"user to connect."
-msgstr ""
-"Nimekiri autentimismeetoditest, mille abil kaugtöölaua kasutajad saavad "
-"juurdepääsu töölauale. On kaks võimalikku autentimismeetodit; \"vnc\" küsub "
-"kaugtöölaua kasutajalt enne ühenduse loomist parooli (parooli saab määrata "
-"võtmega \"vnc_password\") ja \"none\", mis lubab igal kaugtöölaua kasutajal "
-"ühenduse luua."
-
-msgid "Lock the screen when last user disconnect"
-msgstr "Ekraani lukustamine pärast viimase kasutaja lahtiühendamist"
-
-msgid "Network interface for listening"
-msgstr "Võrguliides, mida kuulatakse"
-
-msgid "Only allow remote users to view the desktop"
-msgstr "Kaugkasutajatel lubatakse töölauda ainult vaadata"
-
-msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" autentimiseks on vaja salasõna"
-
-msgid "Prompt the user before completing a connection"
-msgstr "Kasutajalt kinnituse küsimine enne ühendamise lõpuleviimist"
-
-msgid "Require encryption"
-msgstr "Krüptimise nõudmine"
-
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"\"vnc\" autentimismeetodi korral kaugtöölaua kasutajailt küsitav salasõna. "
-"Võtme poolt määratud salasõna on kodeeritud base64 algoritmiga."
-
-msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"Port, mida kuulatakse kui võti \"use_alternative_port\" on märgitud. "
-"Võimalikud väärtused on vahemikus 5000 kuni 50000."
-
-msgid ""
-"This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
-msgstr ""
-"Selle võtmega juhitakse olekuikooni käitumist. Võimalikud on kolm väärtust: "
-"\"always\" - ikooni kuvatakse alati; \"client\" - ikooni kuvatakse ainult "
-"juhul, kui keegi on ühendatud, see on ka vaikimisi väärtus; \"never\" - "
-"ikooni ei kvuata mitte kunagi."
-
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
-"dialog."
-msgstr ""
-"See võti määrab e-posti aadressi, millele kaugtöölaua juurdepääsuaadress "
-"saadetakse, juhul kui kasutaja klõpsab kaugtöölaua sätete dialoogis oleval "
-"URL-il."
-
-msgid "When the status icon should be shown"
-msgstr "Kas olekuikooni tuleb näidata"
-
-msgid "When true, disable the background on receive valid session"
-msgstr "Kui tõene, keelatakse sissetuleva õige ühenduse korral taustapilt"
-
-msgid "Whether we should disable the XDamage extension of X.org"
-msgstr "Kas X.org'i XDamage laiendus on keelatud või mitte"
-
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "UPNP kasutamine ruuterist pordi edasisuunamiseks"
 
 msgid "Desktop sharing is enabled"
 msgstr "Töölaua jagamise ikoon on lubatud"
@@ -602,15 +595,6 @@ msgstr "Kahjuks paroolid ei klapi.\n"
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: parool muutmata.\n"
 
-#, c-format
-msgid ""
-"Error while communicating with GConf. Are you logged into a GNOME session?"
-msgstr "Viga GConf-iga suhtlemisel. Kas sa oled GNOME sessiooni sisse logitud?"
-
-#, c-format
-msgid "Error message:"
-msgstr "Veateade:"
-
 msgid "Show Vino version"
 msgstr "Näita Vino versiooni"
 
@@ -630,6 +614,28 @@ msgstr "VINO versioon %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIGA: Sul ei ole piisavalt õiguseid Vino parooli muutmiseks.\n"
+
+#~ msgid "Maximum size: 8 characters"
+#~ msgstr "Suurim pikkus: 8 tähemärki"
+
+#~ msgid "The router must have the UPnP feature enabled"
+#~ msgstr "Ruuteris peab UPnP võimalus olema lubatud"
+
+#~ msgid "You will be queried to allow or to refuse every incoming connection"
+#~ msgstr ""
+#~ "Iga sissetuleva ühenduse kohta küsitakse sinult, kas see lubada või "
+#~ "keelduda"
+
+#~ msgid "Remote Desktop server already running; exiting ...\n"
+#~ msgstr "Võrgutöölaua server juba töötab, töö lõpetatakse...\n"
+
+#~ msgid ""
+#~ "Error while communicating with GConf. Are you logged into a GNOME session?"
+#~ msgstr ""
+#~ "Viga GConf-iga suhtlemisel. Kas sa oled GNOME sessiooni sisse logitud?"
+
+#~ msgid "Error message:"
+#~ msgstr "Veateade:"
 
 #~ msgid "_Send address by email"
 #~ msgstr "_Saada aadress e-postiga"
