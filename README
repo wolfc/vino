@@ -1,37 +1,33 @@
-Vino 2.99.2
-===========
+Vino
+====
 
-	This package is free software and is part of the
-GNOME project.
+This package is free software and is part of the GNOME project.
 
-	The package contains an integrated VNC server for
-GNOME.
+The package contains an integrated VNC server for GNOME.
 
-You may download updates to the package from:
-   ftp://ftp.gnome.org/pub/GNOME/sources/vino
-
-desktop-devel-list@gnome.org is the relevant mailing list:
-   http://mail.gnome.org/mailman/listinfo/desktop-devel-list
-
-To subscribe:
-	Send a mail to desktop-devel-list-request@gnome.org
-with the subject "subscribe".
+You can download or see more information about it on:
+   http://live.gnome.org/Vino
 
 Installation
 ============
 
-See the file 'INSTALL'
+See the file 'INSTALL' for generic installation instructions.
 
-How to report bugs
-==================
+You need the development packages of the following libraries:
 
-Bugs should be reported to the GNOME bug tracking system. 
-(http://bugzilla.gnome.org, product vino.) You will need to
-create an account for yourself.
+* gtk+-3.0
+* glib-2.0
+* libsoup-2.4
 
-Please read the following page on how to prepare a useful
-bug report
-   http://bugzilla.gnome.org/bug-HOWTO.html
+Optional support for external libraries can be enabled with the configure
+script. Relevant libraries include:
 
-Please read the HACKING file for information on where to
-send changes or bugfixes for this package.
+* telepathy-glib
+* libnotify
+* NetworkManager
+* gnome-keyring
+* GnuTLS
+* gcrypt
+* avahi-client and avahi-glib
+* zlib
+* libjpeg
