@@ -278,10 +278,6 @@ vino_connectivity_info_proxy_ready (GObject      *source,
       g_signal_connect_swapped (info->proxy, "g-properties-changed",
         G_CALLBACK (vino_connectivity_info_properties_changed), info);
 
-      /* TODO: remove when #623538 is fixed */
-      g_signal_connect_swapped (info->proxy, "notify::g-name-owner",
-        G_CALLBACK (vino_connectivity_info_properties_changed), info);
-
       vino_connectivity_info_properties_changed (info);
     }
   else
