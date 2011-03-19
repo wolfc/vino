@@ -8,38 +8,26 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: lv\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2009-11-17 08:33+0000\n"
-"PO-Revision-Date: 2010-03-07 19:04+0200\n"
-"Last-Translator: Peteris Krisjanis <pecisk@gmail.com>\n"
-"Language-Team: Latviešu <lata-l10n@googlegroups.com>\n"
+"Report-Msgid-Bugs-To: "
+"http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences "
+"Dialog\n"
+"POT-Creation-Date: 2011-02-21 13:54+0000\n"
+"PO-Revision-Date: 2011-03-10 23:02+0200\n"
+"Last-Translator: Rudolfs <rudolfs.mazurs@gmail.com>\n"
+"Language-Team: Latvian <lata-l10n@googlegroups.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
-"Plural-Forms:  nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : "
 "2);\n"
+"X-Generator: Lokalize 1.0\n"
 
-#. Open Link
-#: ../capplet/sexy-url-label.c:183
-msgid "_Send address by email"
-msgstr "_Nosūtīt adresi pa e-pastu"
-
-#. Copy Link Address
-#: ../capplet/sexy-url-label.c:195
-msgid "_Copy address to clipboard"
-msgstr "_Kopēt adresi uz starpliktuvi"
-
-#: ../capplet/vino-message-box.c:103
+#: ../capplet/vino-message-box.c:54
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "Kļūda parādot URL \"%s\""
 
-#: ../capplet/vino-preferences.c:197 ../capplet/vino-preferences.c:1000
-msgid "Checking the connectivity of this machine..."
-msgstr "Pārbaudīt iespēju savienoties ar šo mašīnu..."
-
+#: ../capplet/vino-preferences.c:245
 #: ../capplet/vino-preferences.c:804
 #, c-format
 msgid ""
@@ -49,28 +37,34 @@ msgstr ""
 "Kļūda atverot palīdzību:\n"
 "%s"
 
+#: ../capplet/vino-preferences.c:278
+#: ../capplet/vino-preferences.c:197
+#: ../capplet/vino-preferences.c:1000
+msgid "Checking the connectivity of this machine..."
+msgstr "Pārbaudīt iespēju savienoties ar šo mašīnu..."
+
+#: ../capplet/vino-preferences.c:298
 #: ../capplet/vino-preferences.c:834
 msgid "Your desktop is only reachable over the local network."
 msgstr "Jūsu darbvirsma ir sasniedzama tikai no lokālā tīkla."
 
-#: ../capplet/vino-preferences.c:854 ../capplet/vino-preferences.c:929
+#: ../capplet/vino-preferences.c:311
+#: ../capplet/vino-preferences.c:854
+#: ../capplet/vino-preferences.c:929
 msgid " or "
 msgstr " vai "
 
-#: ../capplet/vino-preferences.c:859 ../capplet/vino-preferences.c:933
+#: ../capplet/vino-preferences.c:315
+#: ../capplet/vino-preferences.c:859
+#: ../capplet/vino-preferences.c:933
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Citi var piekļūt jūsu datoram izmantojot adresi %s."
 
+#: ../capplet/vino-preferences.c:324
 #: ../capplet/vino-preferences.c:986
 msgid "Nobody can access your desktop."
 msgstr "Neviens nevar piekļūt jūsu darbvirsmai."
-
-#: ../capplet/vino-preferences.c:1130 ../server/vino-server.c:164
-#: ../server/vino-server.c:194
-#, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "Neizdevās atvērt savienojumu ar kopni: %s\n"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 msgid "Choose how other users can remotely view your desktop"
@@ -82,6 +76,245 @@ msgstr ""
 msgid "Remote Desktop"
 msgstr "Attālinātā darbvirsma"
 
+#: ../common/org.gnome.Vino.gschema.xml.in.h:1
+#: ../server/vino-server.schemas.in.h:1
+msgid "Allowed authentication methods"
+msgstr "Atļautās autentificēšanas metodes"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:2
+#: ../server/vino-server.schemas.in.h:2
+msgid "Alternative port number"
+msgstr "Alternatīvais porta numurs"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:3
+#: ../server/vino-server.schemas.in.h:3
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "E-pasta adrese, uz kurieni jānosūta attālinātās darbvirsmas URL"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:4
+#: ../server/vino-server.schemas.in.h:4
+msgid "Enable remote desktop access"
+msgstr "Aktivizēta attālinātās darbvirsmas pieeja"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:5
+#: ../server/vino-server.schemas.in.h:5
+msgid ""
+"If not set, the server will listen on all network interfaces. Set this if "
+"you want that accept connections only from some specific network interface. "
+"eg: eth0, wifi0, lo, ..."
+msgstr ""
+"Ja nav iestatīts, serveris klausīsies uz visiem tīkla interfeisiem. "
+"Iestatiet šo, ja jūs vēlaties pieņemt savienojumus tikai no konkrēta tīkla "
+"interfeisa. piemēram: eth0, wifi0, lo, ..."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:6
+#: ../server/vino-server.schemas.in.h:6
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a vncviewer."
+msgstr ""
+"Ja patiess, atļauj attālinātu pieeju darbvirsmai izmantojot RFB protokolu. "
+"Lietotāji no attālinātām mašīnām varēs savienoties ar darbvirsmu izmantojot "
+"VNC klientu."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:7
+#: ../server/vino-server.schemas.in.h:7
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek liegta "
+"pieeja, kamēr saimniekdatora lietotājs apstiprina savienojumu. Rekomendēts "
+"it īpaši tad, ja pieeja nav aizsargāta ar paroli."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:8
+#: ../server/vino-server.schemas.in.h:8
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek "
+"atļauts tikai skatīties uz darbvirsmu. Attālinātie lietotāji nevarēs "
+"kontrolēt peli vai klaviatūru."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:9
+#: ../server/vino-server.schemas.in.h:9
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek "
+"prasīts atbalstīt šifrēšanu. Tā ir sevišķi ieteicama, ja izmanto klientu, "
+"kas atbalsta šifrēšanu, izņemot ja savienojošais tīkls ir uzticams."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:10
+#: ../server/vino-server.schemas.in.h:10
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr ""
+"Ja patiess, ekrāns tiks noslēgts pēc pēdējā attālinātā klienta atvienošanas."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:11
+#| msgid ""
+#| "If true, the server will listen to another port, instead of the default "
+#| "(5900). The port must be specified in the 'alternative_port' key."
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative-port' key."
+msgstr ""
+"Ja patiess, serveris klausīsies uz cita porta, nevis noklusētā (5900). Ports "
+"jānorāda ar 'alternative_port' atslēgu."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:12
+#: ../server/vino-server.schemas.in.h:12
+msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"Ja patiess, neizmantosim X.org paplašinājumu XDamage. Šis paplašinājums "
+"nestrādā korekti ar dažiem video draiveriem situācijā kad tiek izmantoti 3D "
+"efekti. Tā atslēgšana atļaus vino strādāt šādās situācijās, ar lēnāku "
+"renderāciju kā blakusefektu."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:13
+#: ../server/vino-server.schemas.in.h:13
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"Ja patiess, izmantosim UPNP protokolu, lai maršrutētājā automātiski "
+"pārsūtītu portu, ko izmanto vino."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#| msgid "Listen an alternative port"
+msgid "Listen on an alternative port"
+msgstr "Klausīties uz alternatīva porta"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#| msgid ""
+#| "Lists the authentication methods with which remote users may access the "
+#| "desktop. There are two possible authentication methods; \"vnc\" causes "
+#| "the remote user to be prompted for a password (the password is specified "
+#| "by the vnc_password key) before connecting and \"none\" which allows any "
+#| "remote user to connect."
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop. There are two possible authentication methods; \"vnc\" causes the "
+"remote user to be prompted for a password (the password is specified by the "
+"vnc-password key) before connecting and \"none\" which allows any remote "
+"user to connect."
+msgstr ""
+"Uzskaita autentificēšanas metodes, ar kurām attālinātie lietotāji var "
+"piekļūt darbvirsmai. Ir divas iespējamās autentificēšanas metodes: \"vnc\", "
+"kas liek attālinātam lietotājam ievadīt paroli (paroli jānorāda ar vnc-"
+"passwor key) pirms pievienošanās un \"none\", kas atļauj izveidot savienojumu "
+"jebkuram attālinātam lietotājam."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../server/vino-server.schemas.in.h:16
+msgid "Lock the screen when last user disconnect"
+msgstr "Noslēgt ekrānu pēc pēdējā lietotāja atvienošanās"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../server/vino-server.schemas.in.h:17
+msgid "Network interface for listening"
+msgstr "Tīkla interfeiss, kuru klausīties"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../server/vino-server.schemas.in.h:18
+msgid "Only allow remote users to view the desktop"
+msgstr "Attālinātiem lietotājiem atļaut tikai apskatīt darbvirsmu"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../server/vino-server.schemas.in.h:19
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" autentificēšanai nepieciešama parole "
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:20
+#: ../server/vino-server.schemas.in.h:20
+msgid "Prompt the user before completing a connection"
+msgstr "Vaicāt lietotājam, pirms pabeigt savienojumu"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../server/vino-server.schemas.in.h:21
+msgid "Require encryption"
+msgstr "Pieprasīt šifrēšanu"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+#| msgid ""
+#| "The password which the remote user will be prompted for if the \"vnc\" "
+#| "authentication method is used. The password specified by the key is "
+#| "base64 encoded."
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded. The special value of 'keyring' (which is not valid base64) means "
+"that the password is stored in the GNOME keyring."
+msgstr ""
+"Parole, kuru pieprasīs attālinātam lietotājam, ja tiks lietota \"vnc\" "
+"autentificēšanas metode. Atslēgas norādītā parole ir base64 šifrēta. "
+"Speciālā 'keyring' vērtība (kura nav derīga base64) nozīmē, ka parole tiek "
+"saglabāta GNOME atslēgu saišķī."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#| msgid ""
+#| "The port which the server will listen to if the 'use_alternative_port' "
+#| "key is set to true. Valid values are in the range from 5000 to 50000."
+msgid ""
+"The port which the server will listen to if the 'use-alternative-port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"Ports, kuru serveris klausīsies, ja 'use-alternative-port' atslēga ir "
+"patiesa. Derīgas vērtības ir skaitļi apgabalā no 5000 līdz 50000."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../server/vino-server.schemas.in.h:24
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - The icon will be always there; \"client\" - You will see the "
+"icon only when there is someone connected, this is the default behavior; "
+"\"never\" - Never shows the icon."
+msgstr ""
+"Atslēga kontrolē statusa ikonas uzvedību. Tai ir trīs opcijas: \"always\" - "
+"ikona vienmēr būs redzama; \"client\" - jūs redzēsiet ikonu tikai tad, ja ir "
+"savienojums ar kādu lietotāju (noklusētā uzvedība), un \"never\" - ikona nekad "
+"netiks rādīta. "
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:25
+#: ../server/vino-server.schemas.in.h:25
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"dialog."
+msgstr ""
+"Šī atslēga norāda e-pasta adresi, uz kuru tiks nosūtīts attālinātas "
+"darbvirsmas URL, ja lietotājs uzklikšķinās uz URL, kas ir norādītā "
+"attālinātās darbvirsmas iestatījumu dialogā."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../server/vino-server.schemas.in.h:26
+msgid "When the status icon should be shown"
+msgstr "Kad statusa ikonai jābūt parādītai"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../server/vino-server.schemas.in.h:27
+msgid "When true, disable the background on receive valid session"
+msgstr "Ja patiess, izslēgt darbvirsmas fonu pareizas sesijas gadījumā"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../server/vino-server.schemas.in.h:28
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "Vai vajadzētu izslēgt X.org paplašinājumu XDamage."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../server/vino-server.schemas.in.h:29
+msgid "Whether we should use UPNP to forward the port in routers"
+msgstr ""
+"Vai vajadzētu izmantot UPNP, lai maršrutētājos pārsūtītu izmantoto portu"
+
 #: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways display an icon"
 msgstr "_Vienmēr rādīt ikonu"
@@ -91,67 +324,56 @@ msgid "Allow other users to _view your desktop"
 msgstr "Atļaut citiem lietotājiem skatīt jūsu darb_virsmu"
 
 #: ../capplet/vino-preferences.ui.h:3
-msgid "Maximum size: 8 characters"
-msgstr "Maksimālais izmērs: 8 simboli"
+msgid "Notification Area"
+msgstr "Paziņojumu lauks"
 
 #: ../capplet/vino-preferences.ui.h:4
-msgid "Notification Area"
-msgstr "Ziņojumu lauks"
-
-#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote Desktop Preferences"
 msgstr "Attālinātās darbvirsmas iestatījumi"
 
-#: ../capplet/vino-preferences.ui.h:6
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Attālinātie lietotāji var kontrolēt jūsu peli un klaviatūru"
 
-#: ../capplet/vino-preferences.ui.h:7
+#: ../capplet/vino-preferences.ui.h:6
 msgid "Security"
 msgstr "Drošība"
 
-#: ../capplet/vino-preferences.ui.h:8
+#: ../capplet/vino-preferences.ui.h:7
 msgid "Sharing"
 msgstr "Koplietošana"
 
-#: ../capplet/vino-preferences.ui.h:9
+#: ../capplet/vino-preferences.ui.h:8
 msgid "Some of these preferences are locked down"
-msgstr "Daži no šiem iestatījumiem ir slēgti"
+msgstr "Daži no šiem iestatījumiem ir noslēgti"
 
-#: ../capplet/vino-preferences.ui.h:10
-msgid "The router must have the UPnP feature enabled"
-msgstr "Maršrutētājā ir jābūt ieslēgtam UPnP atbalstam"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "You will be queried to allow or to refuse every incoming connection"
-msgstr ""
-"Jums tiks vaicāts vai atļaut vai arī liegt piekļuvi katram ienākošajam "
-"savienojumam"
-
-#: ../capplet/vino-preferences.ui.h:12
+#: ../capplet/vino-preferences.ui.h:9
 msgid "Your desktop will be shared"
 msgstr "Jūsu darbvirsma tiks koplietota"
 
-#: ../capplet/vino-preferences.ui.h:13
+#: ../capplet/vino-preferences.ui.h:10
 msgid "_Allow other users to control your desktop"
 msgstr "_Atļaut citiem lietotājiem kontrolēt jūsu darbvirsmu"
 
-#: ../capplet/vino-preferences.ui.h:14
+#: ../capplet/vino-preferences.ui.h:11
 msgid "_Configure network automatically to accept connections"
 msgstr "_Konfigurēt tīklu, lai tas automātiski atļautu savienojumus"
 
-#: ../capplet/vino-preferences.ui.h:15
+#: ../capplet/vino-preferences.ui.h:12
 msgid "_Never display an icon"
 msgstr "_Nekad nerādīt ikonu"
 
+#: ../capplet/vino-preferences.ui.h:13
 #: ../capplet/vino-preferences.ui.h:16
 msgid "_Only display an icon when there is someone connected"
 msgstr "Rā_dīt ikonu tikai gadījumā, kad kāds ir savienojies"
 
+#: ../capplet/vino-preferences.ui.h:14
 #: ../capplet/vino-preferences.ui.h:17
 msgid "_Require the user to enter this password:"
 msgstr "P_rasīt lietotājam ievadīt paroli:"
 
+#: ../capplet/vino-preferences.ui.h:15
 #: ../capplet/vino-preferences.ui.h:18
 msgid "_You must confirm each access to this machine"
 msgstr "_Jums jāapstiprina katra piekļuve jūsu mašīnai"
@@ -166,67 +388,83 @@ msgstr "Fails nav pareizs .desktop fails"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Neatpazīta darbvirsmas faila versija '%s'"
 
+#: ../server/smclient/eggdesktopfile.c:968
 #: ../server/smclient/eggdesktopfile.c:958
 #, c-format
 msgid "Starting %s"
 msgstr "Startē %s"
 
+#: ../server/smclient/eggdesktopfile.c:1110
 #: ../server/smclient/eggdesktopfile.c:1100
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Lietotne nepieņem norādes uz dokumentiem no komandrindas"
 
+#: ../server/smclient/eggdesktopfile.c:1178
 #: ../server/smclient/eggdesktopfile.c:1168
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Neatpazīta palaišanas opcija: %d"
 
+#: ../server/smclient/eggdesktopfile.c:1383
 #: ../server/smclient/eggdesktopfile.c:1373
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Nevar padot dokumentu URI uz 'Type=Link' darbvirsmas ierakstu"
 
+#: ../server/smclient/eggdesktopfile.c:1404
 #: ../server/smclient/eggdesktopfile.c:1392
 #, c-format
 msgid "Not a launchable item"
 msgstr "Nepalaižama vienība"
 
+#: ../server/smclient/eggsmclient.c:226
 #: ../server/smclient/eggsmclient.c:225
 msgid "Disable connection to session manager"
 msgstr "Atvienoties no sesiju pārvaldnieka"
 
+#: ../server/smclient/eggsmclient.c:229
 #: ../server/smclient/eggsmclient.c:228
 msgid "Specify file containing saved configuration"
 msgstr "Norādīt failu, kas satur saglabāto konfigurāciju"
 
+#: ../server/smclient/eggsmclient.c:229
 #: ../server/smclient/eggsmclient.c:228
 msgid "FILE"
 msgstr "FAILS"
 
+#: ../server/smclient/eggsmclient.c:232
 #: ../server/smclient/eggsmclient.c:231
 msgid "Specify session management ID"
 msgstr "Norādīt sesijas pārvaldības ID"
 
+#: ../server/smclient/eggsmclient.c:232
 #: ../server/smclient/eggsmclient.c:231
 msgid "ID"
 msgstr "ID"
 
+#: ../server/smclient/eggsmclient.c:253
 #: ../server/smclient/eggsmclient.c:252
 msgid "Session management options:"
 msgstr "Sesijas pārvaldības opcijas:"
 
-#: ../server/smclient/eggsmclient.c:253
+#: ../server/smclient/eggsmclient.c:254
 msgid "Show session management options"
 msgstr "Parādīt sesijas pārvaldības opcijas"
 
-#: ../server/vino-dbus-listener.c:461
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "Attālinātās darbvirsmas serveris jau strādā; iziet ...\n"
+#: ../server/vino-main.c:108
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr "Jūsu XServer neatbalsta Xtest paplašinājumu - attālinātās darbvirsmas pieeja "
+"būs bez kontroles iespējām\n"
 
+#: ../server/vino-main.c:195
 #: ../server/vino-main.c:67
 msgid "- VNC Server for GNOME"
 msgstr "- VNC serveris GNOME videi"
 
+#: ../server/vino-main.c:201
 #: ../server/vino-main.c:75
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
@@ -234,17 +472,10 @@ msgstr ""
 "Palaidiet 'vino-server --help', lai redzētu pilnu sarakstu ar pieejamajām "
 "komandrindas opcijām"
 
+#: ../server/vino-main.c:221
 #: ../server/vino-main.c:98
 msgid "GNOME Remote Desktop"
 msgstr "GNOME attālinātā darbvirsma"
-
-#: ../server/vino-main.c:108
-msgid ""
-"Your XServer does not support the XTest extension - remote desktop access "
-"will be view-only\n"
-msgstr ""
-"Jūsu XServer neatbalsta Xtest paplašinājumu - attālinātās darbvirsmas pieeja "
-"būs bez kontroles iespējām\n"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -265,6 +496,7 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop on %s"
 msgstr "%s attālinātā darbvirsma %s"
 
+#: ../server/vino-prefs.c:109
 #: ../server/vino-prefs.c:607
 #, c-format
 msgid "Received signal %d, exiting...\n"
@@ -307,217 +539,35 @@ msgstr "Vai jūs vēlaties viņam atļaut to darīt?"
 msgid "Question"
 msgstr "Jautājums"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:65
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:89
+#: ../server/vino-util.c:65
 msgid "_Allow"
 msgstr "_Atļaut"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:66
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:90
+#: ../server/vino-util.c:66
 msgid "_Refuse"
 msgstr "No_raidīt"
+
+#: ../server/vino-server.c:156 ../server/vino-server.c:179
+#: ../capplet/vino-preferences.c:1130
+#: ../server/vino-server.c:164
+#: ../server/vino-server.c:194
+#, c-format
+msgid "Failed to open connection to bus: %s\n"
+msgstr "Neizdevās atvērt savienojumu ar kopni: %s\n"
 
 #: ../server/vino-server.desktop.in.in.h:1
 msgid "GNOME Remote Desktop Server"
 msgstr "GNOME attālinātās darbvirsmas serveris"
 
-#: ../server/vino-server.schemas.in.h:1
-msgid "Allowed authentication methods"
-msgstr "Atļautās autentificēšanas metodes"
-
-#: ../server/vino-server.schemas.in.h:2
-msgid "Alternative port number"
-msgstr "Alternatīvais porta numurs"
-
-#: ../server/vino-server.schemas.in.h:3
-msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "E-pasta adrese, uz kurieni jānosūta attālinātās darbvirsmas URL"
-
-#: ../server/vino-server.schemas.in.h:4
-msgid "Enable remote desktop access"
-msgstr "Aktivizēta attālinātās darbvirsmas pieeja"
-
-#: ../server/vino-server.schemas.in.h:5
-msgid ""
-"If not set, the server will listen on all network interfaces. Set this if "
-"you want that accept connections only from some specific network interface. "
-"eg: eth0, wifi0, lo, ..."
-msgstr ""
-"Ja nav iestatīts, serveris klausīsies uz visiem tīkla interfeisiem. "
-"Iestatiet šo, ja jūs vēlaties pieņemt savienojumus tikai no konkrēta tīkla "
-"interfeisa. piemēram: eth0, wifi0, lo, ..."
-
-#: ../server/vino-server.schemas.in.h:6
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"Ja patiess, atļauj attālinātu pieeju darbvirsmai izmantojot RFB protokolu. "
-"Lietotāji no attālinātām mašīnām varēs savienoties ar darbvirsmu izmantojot "
-"VNC klientu."
-
-#: ../server/vino-server.schemas.in.h:7
-msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
-msgstr ""
-"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek liegta "
-"pieeja, kamēr saimniekdatora lietotājs apstiprina savienojumu. Rekomendēts "
-"it īpaši tad, ja pieeja nav aizsargāta ar paroli."
-
-#: ../server/vino-server.schemas.in.h:8
-msgid ""
-"If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek "
-"atļauts tikai skatīties uz darbvirsmu. Attālinātie lietotāji nevarēs "
-"kontrolēt peli vai klaviatūru."
-
-#: ../server/vino-server.schemas.in.h:9
-msgid ""
-"If true, remote users accessing the desktop are required to support "
-"encryption. It is highly recommended that you use a client which supports "
-"encryption unless the intervening network is trusted."
-msgstr ""
-"ja patiess, attālinātiem lietotājiem, kuri piekļūst darbvirsmai, tiek "
-"prasīts atbalstīt šifrēšanu. Tā ir sevišķi ieteicama, ja izmanto klientu, "
-"kas atbalsta šifrēšanu, izņemot ja savienojošais tīkls ir uzticams."
-
-#: ../server/vino-server.schemas.in.h:10
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"Ja patiess, ekrāns tiks noslēgts pēc pēdējā attālinātā klienta atvienošanas."
-
-#: ../server/vino-server.schemas.in.h:11
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr ""
-"Ja patiess, serveris klausīsies uz cita porta, nevis noklusētā (5900). Ports "
-"jānorāda ar 'alternative_port' atslēgu."
-
-#: ../server/vino-server.schemas.in.h:12
-msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
-msgstr ""
-"Ja patiess, neizmantosim X.org paplašinājumu XDamage. Šis paplašinājums "
-"nestrādā korekti ar dažiem video draiveriem situācijā kad tiek izmantoti 3D "
-"efekti. Tā atslēgšana atļaus vino strādāt šādās situācijās, ar lēnāku "
-"renderāciju kā blakusefektu."
-
-#: ../server/vino-server.schemas.in.h:13
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
-msgstr ""
-"Ja patiess, izmantosim UPNP protokolu, lai maršrutētājā automātiski "
-"pārsūtītu portu, ko izmanto vino."
-
-#: ../server/vino-server.schemas.in.h:14
-msgid "Listen an alternative port"
-msgstr "Klausīties uz alternatīva porta"
-
-#: ../server/vino-server.schemas.in.h:15
-msgid ""
-"Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc_password key) before connecting and \"none\" which allows any remote "
-"user to connect."
-msgstr ""
-"Uzskaita autentificēšanas metodes, ar kurām attālinātie lietotāji var "
-"piekļūt darbvirsmai. Ir divas iespējamās autentificēšanas metodes: \"vnc\", "
-"kas liek attālinātam lietotājam ievadīt paroli (paroli jānorāda ar "
-"vnc_password key) pirms pievienošanās un \"none\", kas atļauj izveidot "
-"savienojumu jebkuram attālinātam lietotājam."
-
-#: ../server/vino-server.schemas.in.h:16
-msgid "Lock the screen when last user disconnect"
-msgstr "Noslēgt ekrānu pēc pēdējā lietotāja atvienošanās"
-
-#: ../server/vino-server.schemas.in.h:17
-msgid "Network interface for listening"
-msgstr "Tīkla interfeiss, kuru klausīties"
-
-#: ../server/vino-server.schemas.in.h:18
-msgid "Only allow remote users to view the desktop"
-msgstr "Attālinātiem lietotājiem atļaut tikai apskatīt darbvirsmu"
-
-#: ../server/vino-server.schemas.in.h:19
-msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" autentificēšanai nepieciešama parole "
-
-#: ../server/vino-server.schemas.in.h:20
-msgid "Prompt the user before completing a connection"
-msgstr "Vaicāt lietotājam, pirms pabeigt savienojumu"
-
-#: ../server/vino-server.schemas.in.h:21
-msgid "Require encryption"
-msgstr "Pieprasīt šifrēšanu"
-
-#: ../server/vino-server.schemas.in.h:22
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"Parole, kuru pieprasīs attālinātam lietotājam, ja tiks lietota \"vnc\" "
-"autentificēšanas metode. Atslēgas norādītā parole ir base64 šifrēta."
-
-#: ../server/vino-server.schemas.in.h:23
-msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"Ports, kuru serveris klausīsies, ja 'use_alternative_port' atslēga ir "
-"patiesa. Derīgas vērtības ir skaitļi apgabalā no 5000 līdz 50000."
-
-#: ../server/vino-server.schemas.in.h:24
-msgid ""
-"This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
-msgstr ""
-"Atslēga kontrolē statusa ikonas uzvedību. Tai ir trīs opcijas: \"always\" - "
-"ikona vienmēr būs redzama; \"client\" - jūs redzēsiet ikonu tikai tad, ja ir "
-"savienojums ar kādu lietotāju (noklusētā uzvedība), un \"never\" - ikona "
-"nekad netiks rādīta. "
-
-#: ../server/vino-server.schemas.in.h:25
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
-"dialog."
-msgstr ""
-"Šī atslēga norāda e-pasta adresi, uz kuru tiks nosūtīts attālinātas "
-"darbvirsmas URL, ja lietotājs uzklikšķinās uz URL, kas ir norādītā "
-"attālinātās darbvirsmas iestatījumu dialogā."
-
-#: ../server/vino-server.schemas.in.h:26
-msgid "When the status icon should be shown"
-msgstr "Kad statusa ikonai jābūt parādītai"
-
-#: ../server/vino-server.schemas.in.h:27
-msgid "When true, disable the background on receive valid session"
-msgstr "Ja patiess, izslēgt darbvirsmas fonu pareizas sesijas gadījumā"
-
-#: ../server/vino-server.schemas.in.h:28
-msgid "Whether we should disable the XDamage extension of X.org"
-msgstr "Vai vajadzētu izslēgt X.org paplašinājumu XDamage."
-
-#: ../server/vino-server.schemas.in.h:29
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr ""
-"Vai vajadzētu izmantot UPNP, lai maršrutētājos pārsūtītu izmantoto portu"
-
-#: ../server/vino-status-icon.c:102 ../server/vino-status-tube-icon.c:95
+#: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
+#: ../server/vino-status-icon.c:102
+#: ../server/vino-status-tube-icon.c:95
 msgid "Desktop sharing is enabled"
 msgstr "Darbvirsmas koplietošana ir aktivizēta"
 
+#: ../server/vino-status-icon.c:111
 #: ../server/vino-status-icon.c:110
 #, c-format
 msgid "One person is connected"
@@ -526,14 +576,19 @@ msgstr[0] "%d persona ir izveidojusi savienojumu"
 msgstr[1] "%d personas ir izveidojušas savienojumus"
 msgstr[2] "%d personas ir izveidojušas savienojumus"
 
-#: ../server/vino-status-icon.c:207 ../server/vino-status-tube-icon.c:175
+#: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:207
+#: ../server/vino-status-tube-icon.c:175
 msgid "Error displaying preferences"
 msgstr "Kļūda parādot iestatījumus"
 
-#: ../server/vino-status-icon.c:226 ../server/vino-status-tube-icon.c:191
+#: ../server/vino-status-icon.c:234 ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:226
+#: ../server/vino-status-tube-icon.c:191
 msgid "Error displaying help"
 msgstr "Kļūda parādot palīdzību"
 
+#: ../server/vino-status-icon.c:261
 #: ../server/vino-status-icon.c:253
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
@@ -553,13 +608,12 @@ msgid ""
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
 msgstr ""
-"Licensēts saskaņā ar GNU Vispārīgās publiskās licenses 2. versiju\n"
+"Licencēts saskaņā ar GNU Vispārīgās publiskās licences 2. versiju\n"
 "\n"
 "Vino ir brīva programmatūra; jūs varat to izplatīt tālāk un/vai\n"
 "modificēt saskaņā ar GNU Vispārējās publiskās licences noteikumiem,\n"
-"ko publicējis Brīvas programmatūras fonds; izmantojie licences 2. versiju\n"
-"vai (pēc jūsu izvēles) jebkuru vēlāku versiju."
-"\n"
+"ko publicējis Brīvas programmatūras fonds; izmantojiet licences 2. versiju\n"
+"vai (pēc jūsu izvēles) jebkuru vēlāku versiju.\n"
 "Šī programma tiek izplatīta cerībā, ka tā būs noderīga, taču BEZ\n"
 "JEBKĀDĀM GARANTIJĀM; pat bez šķietamām KOMERCIĀLAS VĒRTĪBAS un\n"
 "PIEMĒROTĪBAS KONKRĒTIEM NOLŪKIEM garantijām. Sīkāku informāciju\n"
@@ -567,121 +621,148 @@ msgstr ""
 "Jums vajadzēja saņemt GNU Vispārējās publiskās licences kopiju kopā\n"
 "ar šo programmu; ja jūs to nesaņēmāt, rakstiet uz Brīvas\n"
 "programmatūras fondu - Free Software Foundation, Inc.,\n"
-"59 Temple Place, Suite 330, Boston, MA 02111-1307 USA\n"
+"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
+#: ../server/vino-status-icon.c:276
 #: ../server/vino-status-icon.c:268
 msgid "translator-credits"
 msgstr "Raivis Dejus <orvils@gmail.com> Pēteris Krišjānis <pecisk@gmail.com>"
 
+#: ../server/vino-status-icon.c:282
 #: ../server/vino-status-icon.c:274
 msgid "Share your desktop with other users"
 msgstr "Lietojiet savu darbvirsmu kopā ar citiem lietotājiem"
 
-#: ../server/vino-status-icon.c:339 ../server/vino-status-tube-icon.c:223
+#: ../server/vino-status-icon.c:347 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:339
+#: ../server/vino-status-tube-icon.c:223
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Vai tiešām vēlaties atvienoties no '%s'?"
 
+#: ../server/vino-status-icon.c:350
 #: ../server/vino-status-icon.c:342
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Attālinātais lietotājs no '%s' tiks atvienots. Vai vēlaties turpināt?"
 
+#: ../server/vino-status-icon.c:356
 #: ../server/vino-status-icon.c:348
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Vai tiešām vēlaties atvienot visus klientus?"
 
-#: ../server/vino-status-icon.c:350
+#: ../server/vino-status-icon.c:358
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Visi attālinātie lietotāji tiks atvienoti. Vai vēlaties turpināt?"
 
-#: ../server/vino-status-icon.c:362 ../server/vino-status-tube-icon.c:237
+#: ../server/vino-status-icon.c:370 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-tube-icon.c:237
 msgid "Disconnect"
 msgstr "Atvienot"
 
-#: ../server/vino-status-icon.c:388 ../server/vino-status-tube-icon.c:262
+#: ../server/vino-status-icon.c:396 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:388
+#: ../server/vino-status-tube-icon.c:262
 msgid "_Preferences"
 msgstr "_Iestatījumi"
 
+#: ../server/vino-status-icon.c:411
 #: ../server/vino-status-icon.c:403
 msgid "Disconnect all"
 msgstr "Atvienot visus"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:427 ../server/vino-status-tube-icon.c:275
+#: ../server/vino-status-icon.c:435 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:427
+#: ../server/vino-status-tube-icon.c:275
 #, c-format
 msgid "Disconnect %s"
 msgstr "Atvienot %s"
 
-#: ../server/vino-status-icon.c:448 ../server/vino-status-tube-icon.c:294
+#: ../server/vino-status-icon.c:456 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:448
+#: ../server/vino-status-tube-icon.c:294
 msgid "_Help"
 msgstr "_Palīdzība"
 
-#: ../server/vino-status-icon.c:456
+#: ../server/vino-status-icon.c:464
 msgid "_About"
 msgstr "P_ar"
 
-#: ../server/vino-status-icon.c:589 ../server/vino-status-tube-icon.c:391
+#: ../server/vino-status-icon.c:597 ../server/vino-status-tube-icon.c:400
+#: ../server/vino-status-icon.c:589
+#: ../server/vino-status-tube-icon.c:391
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Kļūda inicializējot libnotify\n"
 
 #. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:618
 #: ../server/vino-status-icon.c:610
 msgid "Another user is viewing your desktop"
 msgstr "Cits lietotājs apskata jūsu darbvirsmu"
 
+#: ../server/vino-status-icon.c:620
 #: ../server/vino-status-icon.c:612
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Lietotājs uz datora '%s' attālināti apskata jūsu darbvirsmu."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:626
 msgid "Another user is controlling your desktop"
 msgstr "Cits lietotājs kontrolē jūsu darbvirsmu"
 
-#: ../server/vino-status-icon.c:620
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Lietotājs uz datora '%s' attālināti kontrolē jūsu darbvirsmu."
 
-#: ../server/vino-status-icon.c:642 ../server/vino-status-tube-icon.c:422
+#: ../server/vino-status-icon.c:656 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:642
+#: ../server/vino-status-tube-icon.c:422
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Kļūda attēlojot ziņojuma burbuli: %s\n"
 
+#: ../server/vino-status-tube-icon.c:235
 #: ../server/vino-status-tube-icon.c:226
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Attālinātais lietotājs no '%s' tiks atvienots. Vai vēlaties turpināt?"
 
-#: ../server/vino-tube-server.c:311 ../server/vino-tube-server.c:340
+#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
 msgid "Share my desktop information"
 msgstr "Koplietot informāciju par darbvirsmu"
 
-#: ../server/vino-tube-server.c:315
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:272
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' atteicās no darbvirsmas koplietošanas uzaicinājuma."
 
-#: ../server/vino-tube-server.c:319
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:276
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' atvienots"
 
-#: ../server/vino-tube-server.c:346
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:303
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' attālināti kontrolē jūsu darbvirsmu."
 
-#: ../server/vino-tube-server.c:355
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:312
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Gaida '%s' savienojumu ar ekrānu."
 
+#: ../server/vino-util.c:140
 #: ../server/vino-util.c:116
 msgid "An error has occurred:"
 msgstr "Notikusi kļūda:"
@@ -737,25 +818,17 @@ msgstr "Atvainojiet, paroles nesakrīt.\n"
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: parole nav izmainīta.\n"
 
-#: ../tools/vino-passwd.c:181
-#, c-format
-msgid ""
-"Error while communicating with GConf. Are you logged into a GNOME session?"
-msgstr "Kļūda komunicējot ar GConf. Vai jūs esat pieteicies GNOME sesijā?"
-
-#: ../tools/vino-passwd.c:183
-#, c-format
-msgid "Error message:"
-msgstr "Kļūdas paziņojums:"
-
+#: ../tools/vino-passwd.c:189
 #: ../tools/vino-passwd.c:200
 msgid "Show Vino version"
 msgstr "Parādīt Vino versiju"
 
+#: ../tools/vino-passwd.c:198
 #: ../tools/vino-passwd.c:209
 msgid "- Updates Vino password"
 msgstr "- Atjaunina Vino paroli"
 
+#: ../tools/vino-passwd.c:208
 #: ../tools/vino-passwd.c:219
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
@@ -763,16 +836,44 @@ msgstr ""
 "Palaidiet 'vino-passwd --help', lai redzētu pilnu sarakstu ar pieejamajām "
 "komandrindas opcijām"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:215
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO versija %s\n"
 
+#: ../tools/vino-passwd.c:226
 #: ../tools/vino-passwd.c:238
 #, c-format
+#, c-format,
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr ""
-"KĻŪDA: jums nav pietiekami lielas tiesības, lai izmainītu Vino paroli.\n"
+msgstr "KĻŪDA: jums nav pietiekami lielas tiesības, lai izmainītu Vino paroli.\n"
+
+#~ msgid "_Send address by email"
+#~ msgstr "_Nosūtīt adresi pa e-pastu"
+
+#~ msgid "_Copy address to clipboard"
+#~ msgstr "_Kopēt adresi uz starpliktuvi"
+
+#~ msgid "Maximum size: 8 characters"
+#~ msgstr "Maksimālais izmērs: 8 simboli"
+
+#~ msgid "The router must have the UPnP feature enabled"
+#~ msgstr "Maršrutētājā ir jābūt ieslēgtam UPnP atbalstam"
+
+#~ msgid "You will be queried to allow or to refuse every incoming connection"
+#~ msgstr ""
+#~ "Jums tiks vaicāts vai atļaut vai arī liegt piekļuvi katram ienākošajam "
+#~ "savienojumam"
+
+#~ msgid "Remote Desktop server already running; exiting ...\n"
+#~ msgstr "Attālinātās darbvirsmas serveris jau strādā; iziet ...\n"
+
+#~ msgid ""
+#~ "Error while communicating with GConf. Are you logged into a GNOME session?"
+#~ msgstr "Kļūda komunicējot ar GConf. Vai jūs esat pieteicies GNOME sesijā?"
+
+#~ msgid "Error message:"
+#~ msgstr "Kļūdas paziņojums:"
 
 #~ msgid "Set your remote desktop access preferences"
 #~ msgstr "Uzstādīt jūsu attālinātās darbvirsmas pieejas preferences"
