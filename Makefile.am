@@ -134,6 +134,8 @@ dist_clientfile_DATA = server/Vino.client
 endif
 
 vino_server_SOURCES = \
+	$(marshal_data) \
+	$(enum_data) \
 	common/vino-dbus.c \
 	common/vino-dbus.h \
 	server/vino-cursor.c \
@@ -165,11 +167,9 @@ vino_server_SOURCES = \
 	$(VINO_IFADDR_sources) \
 	$(VINO_LIBVNCSERVER_sources) \
 	$(VINO_HTTP_sources) \
-	$(VINO_TELEPATHY_GLIB_sources) \
-	$(nodist_marshal_data) \
-	$(nodist_enum_data)
+	$(VINO_TELEPATHY_GLIB_sources)
 
-nodist_marshal_data = \
+marshal_data = \
 	server/vino-marshal.c \
 	server/vino-marshal.h
 
@@ -179,7 +179,7 @@ server/vino-marshal.h: server/vino-marshal.list
 server/vino-marshal.c: server/vino-marshal.list server/vino-marshal.h
 	$(AM_V_GEN)$(GLIB_GENMARSHAL) --header --body --prefix=vino_marshal $< > $@
 
-nodist_enum_data = \
+enum_data = \
 	server/vino-enums.c \
 	server/vino-enums.h
 
@@ -189,7 +189,7 @@ vino_enum_headers = \
 	server/vino-status-icon.h \
 	server/vino-status-tube-icon.h
 
-server/vino-enums.c: $(vino_enum_headers)
+server/vino-enums.c: $(vino_enum_headers) server/vino-enums.h
 	$(AM_V_GEN)$(GLIB_MKENUMS) \
 		--fhead "#include \"vino-enums.h\"\n\n" \
 		--fprod "/* enumerations from \"@filename@\" */\n" \
@@ -348,8 +348,8 @@ CLEANFILES = \
 	$(nodist_desktop_DATA) \
 	$(gsettings_SCHEMAS) \
 	$(nodist_service_DATA) \
-	$(nodist_marshal_data) \
-	$(nodist_enum_data) \
+	$(marshal_data) \
+	$(enum_data) \
 	server/vino-server.desktop \
 	server/vino-server.desktop.in
 
