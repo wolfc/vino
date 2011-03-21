@@ -6,6 +6,6 @@ Icon=preferences-desktop-remote-desktop
 OnlyShowIn=GNOME;
 Terminal=false
 Type=Application
-AutostartCondition=GNOME /desktop/gnome/remote_access/enabled
+AutostartCondition=GSettings org.gnome.Vino enabled
 X-GNOME-Autostart-Phase=Applications
 X-GNOME-AutoRestart=true
