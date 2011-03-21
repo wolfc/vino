@@ -1,4 +1,79 @@
 ==============
+Version 2.99.4
+==============
+
+Amitakhya Phukan (1):
+      Updated Assamese translations
+
+Bruce Cowan (1):
+      Updated British English translation
+
+Claudio Arseni (1):
+      Updated Italian translation
+
+David King (13):
+      Post-release bump to 2.99.4
+      Fix configure options containing extra dashes
+      Fix underlinking with libX11 and libz
+      Fix non-functional PKG_CHECK_EXISTS checks
+      Correct gcrypt CFLAGS and LIBS variable usage
+      Add website to AC_INIT and use in about dialog
+      Check for the inline keyword with AC_C_INLINE
+      Generate ChangeLog from commit log during 'dist'
+      Tidy the marshal and enums generation rules
+      Update README for upcoming release
+      Remove some unnecessary code in the capplet
+      Generate enums and marshalers before they are used
+      Remove server reachability message from the UI
+        This is a workaround that addresses CVE-2011-1164.
+
+Dirgita (1):
+      Updated Indonesian translation
+
+Duarte Loreto (1):
+      Updated Portuguese translation
+
+Fran Diéguez (1):
+      Updated Galician translations
+
+Gabor Kelemen (1):
+      Updated Hungarian translation
+
+Joan Duran (1):
+      [l10n] Updated Catalan translation
+
+Lucian Adrian Grijincu (2):
+      Updated Romanian translation
+      Updated Romanian translation
+
+Marek Černocký (1):
+      Updated Czech translation
+
+Mario Blättermann (1):
+      [l10n] Updated German translation
+
+Mattias Põldaru (1):
+      [l10n] Updated Estonian translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Priit Laes (1):
+      [l10n] Updated Estonian translation
+
+Rudolfs Mazurs (1):
+      Updated Latvian translation.
+
+Wouter Bolsterlee (1):
+      Updated Dutch translation by Wouter Bolsterlee
+
+Yunqiang Su (1):
+      Update Simplified Chinese translation.
+
+Yuri Myasoedov (1):
+      Updated Russian translation
+
+==============
 Version 2.99.3
 ==============
 
