@@ -383,11 +383,16 @@ vino_preferences_connect_ui (VinoPreferences *app,
                     G_CALLBACK (vino_preferences_dialog_response), NULL);
 
   app->info = vino_connectivity_info_new (gdk_screen_get_number (gtk_window_get_screen (window)));
+/* Remove reporting of reachability from network to workaround GNOME bug
+ * 596190.
+ * TODO: Fix the bug and remove this workaround. */
+#if 0
   g_signal_connect (app->info, "changed",
                     G_CALLBACK (vino_preferences_info_changed),
                     gtk_builder_get_object (builder, "message"));
   vino_preferences_info_changed (app->info,
                                  gtk_builder_get_object (builder, "message"));
+#endif
 
   g_object_unref (settings);
   g_object_unref (builder);
