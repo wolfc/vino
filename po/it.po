@@ -1,5 +1,5 @@
-# Italian translation of vino.
-# Copyright (C) 2004-2011 Free Software Foundation, Inc.
+# Italian translation of vino
+# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2010 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Alessio Frusciante <algol@firenze.linux.it>, 2004, 2005, 2006.
 # Milo Casagrande <milo@ubuntu.com>, 2007, 2008, 2009.
@@ -8,13 +8,14 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-03-16 22:35+0000\n"
-"PO-Revision-Date: 2011-03-17 13:22+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2011-03-21 19:50+0000\n"
+"PO-Revision-Date: 2011-03-18 10:09+0100\n"
 "Last-Translator: Claudio Arseni <claudio.arseni@gmail.com>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=utf-8\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
@@ -126,7 +127,7 @@ msgid ""
 msgstr ""
 "Se impostata a VERO, gli utenti remoti che accedono al desktop devono "
 "supportare la cifratura. È caldamente consigliato usare un client che "
-"supporta la cifratura, a meno che non ci si trovi su una rete fidata."
+"supporti la cifratura, a meno che non ci si trovi su una rete fidata."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:10
 msgid "If true, screen will be locked after the last remote client disconnect."
@@ -153,7 +154,7 @@ msgstr ""
 "Se impostata a VERO, non viene utilizzata l'estensione XDamage di X.org. "
 "Questa estensione non funziona correttamente con alcuni driver video quando "
 "si usano gli effetti 3D. Disabilitandola è possibile far funzionare vino in "
-"tali ambianti, anche se con un rendering più lento."
+"tali ambienti, anche se con un rendering più lento."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:13
 msgid ""
@@ -176,7 +177,7 @@ msgid ""
 "user to connect."
 msgstr ""
 "Elenca i metodi di autenticazione tramite i quali gli utenti remoti possono "
-"accedere al desktop. Ci sono due possibili metodi: \"vnc\" chiede una "
+"accedere al desktop. Ci sono due possibili metodi: \"vnc\" che chiede una "
 "password all'utente remoto (la password è specificata dalla chiave vnc-"
 "password) prima di connettersi e \"none\" che permette ad ogni utente remoto "
 "di connettersi."
@@ -191,7 +192,7 @@ msgstr "Interfaccia di rete per l'ascolto"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:18
 msgid "Only allow remote users to view the desktop"
-msgstr "Consente agli utenti remoti di vedere solamente il desktop"
+msgstr "Consente agli utenti remoti solamente di vedere il desktop"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:19
 msgid "Password required for \"vnc\" authentication"
@@ -214,8 +215,8 @@ msgid ""
 msgstr ""
 "La password che verrà richiesta all'utente remoto se viene usato il metodo "
 "di autenticazione \"vnc\". La password specificata dalla chiave è codificata "
-"base64. Il valore speciale di \"keyring\" (che non è un base64 valido) "
-"indica che la password è archiviata in \"GNOME keyring\"."
+"in base64. Il valore speciale di \"keyring\" (che non è codificati in base64 "
+"valido) indica che la password è archiviata nel \"portachiavi GNOME\"."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid ""
@@ -446,7 +447,7 @@ msgstr "Schermo"
 
 #: ../server/vino-prompt.c:142
 msgid "The screen on which to display the prompt"
-msgstr "Lo schermo su cui visualizzare il prompt"
+msgstr "Lo schermo su cui visualizzare la richiesta"
 
 #: ../server/vino-prompt.c:345
 #, c-format
@@ -454,8 +455,8 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Un utente del computer «%s» sta tentando di visualizzare o controllare questo "
-"desktop."
+"Un utente del computer «%s» sta tentando di visualizzare o controllare da "
+"remoto questo desktop."
 
 #: ../server/vino-prompt.ui.h:1
 msgid ""
@@ -571,7 +572,7 @@ msgstr "Disconnettere veramente «%s»?"
 #: ../server/vino-status-icon.c:351
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
-msgstr "L'utente remoto da «%s» sarà disconnesso. Continuare?"
+msgstr "L'utente remoto da «%s» sarà disconnesso. Disconnettere?"
 
 #: ../server/vino-status-icon.c:357
 msgid "Are you sure you want to disconnect all clients?"
@@ -579,7 +580,7 @@ msgstr "Disconnettere veramente tutti i client?"
 
 #: ../server/vino-status-icon.c:359
 msgid "All remote users will be disconnected. Are you sure?"
-msgstr "Tutti gli utenti remoti saranno disconnessi. Continuare?"
+msgstr "Tutti gli utenti remoti saranno disconnessi. Disconnettere?"
 
 #: ../server/vino-status-icon.c:371 ../server/vino-status-tube-icon.c:246
 msgid "Disconnect"
@@ -621,7 +622,7 @@ msgstr "Un altro utente sta visualizzando questo desktop"
 #: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Un utente del computer «%s» sta visualizzando questo desktop."
+msgstr "Un utente del computer «%s» sta visualizzando da remoto questo desktop."
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:627
@@ -631,7 +632,7 @@ msgstr "Un altro utente sta controllando questo desktop"
 #: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Un utente del computer «%s» sta controllando questo desktop."
+msgstr "Un utente del computer «%s» sta controllando da remoto questo desktop."
 
 #: ../server/vino-status-icon.c:657 ../server/vino-status-tube-icon.c:435
 #, c-format
