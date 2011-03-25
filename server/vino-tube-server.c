@@ -20,6 +20,7 @@
  *      Arnaud Maillet <arnaud.maillet@collabora.co.uk>
  */
 
+#include <config.h>
 #include <glib/gi18n.h>
 
 #include <telepathy-glib/gtypes.h>
