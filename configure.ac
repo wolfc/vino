@@ -50,7 +50,7 @@ AS_IF([test "x$GLIB_MKENUMS" = "x"],
     AC_MSG_RESULT([$GLIB_MKENUMS])])
 
 # Check for telepathy-glib
-TELEPATHY_GLIB_DEPS="telepathy-glib >= 0.11.6"
+TELEPATHY_GLIB_DEPS="dbus-glib-1 telepathy-glib >= 0.11.6"
 
 AC_ARG_WITH([telepathy],
   [AS_HELP_STRING([--without-telepathy],
