@@ -1,3 +1,30 @@
+Vino 3.0.0
+==========
+
+Abduxukur Abdurixit (1):
+      Added UG translation
+
+Ask H. Larsen (1):
+      Updated Danish translation
+
+Chao-Hsiung Liao (1):
+      Updated Traditional Chinese translation(Hong Kong and Taiwan)
+
+David King (4):
+      Add description to DOAP file
+      Require automake 1.11.1 and dist as .xz only
+      Add dbus-glib-1 to telepathy-glib pkg-config check
+      Add translator comments from eggsmclient
+
+Dr.T.Vasudevan (1):
+      Updated Tamil translation
+
+Inaki Larranaga Murgoitio (1):
+      Updated Basque language
+
+Kjartan Maraas (1):
+      Include config.h where necessary
+
 Vino 2.99.5
 ===========
 
