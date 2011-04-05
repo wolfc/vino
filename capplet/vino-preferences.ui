@@ -263,10 +263,12 @@
                         </child>
                         <child>
                           <object class="GtkCheckButton" id="use_upnp_toggle">
-                            <property name="label" translatable="yes">_Configure network automatically to accept connections</property>
+                            <property name="label" translatable="yes">Automatically _configure UPnP router to open and forward ports</property>
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
                             <property name="receives_default">False</property>
+                            <property name="has_tooltip">True</property>
+                            <property name="tooltip_text" translatable="yes">The router must have the UPnP feature enabled</property>
                             <property name="use_underline">True</property>
                             <property name="draw_indicator">True</property>
                           </object>
