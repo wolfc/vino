@@ -108,8 +108,8 @@ vino_status_icon_update_state (VinoStatusIcon *icon)
 
       n_clients = g_slist_length (icon->priv->clients);
 
-      tooltip = g_strdup_printf (ngettext ("One person is connected",
-                                           "%d people are connected",
+      tooltip = g_strdup_printf (ngettext ("One person is viewing your desktop",
+                                           "%d people are viewing your desktop",
                                            n_clients),
                                  n_clients);
       visible = (visible) && ( (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_CLIENT) ||
