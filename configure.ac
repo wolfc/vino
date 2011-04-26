@@ -142,7 +142,7 @@ AS_IF([test "x$no_x" = "xyes"],
   [AC_SUBST([X_LIBS], ["$X_PRE_LIBS $X_LIBS -lX11 $X_EXTRA_LIBS"])])
 
 # Check for gnutls
-GNUTLS_DEPS="gnutls >= 1.0.0"
+GNUTLS_DEPS="gnutls >= 2.2.0"
 
 AC_ARG_WITH([gnutls],
   [AS_HELP_STRING([--without-gnutls],

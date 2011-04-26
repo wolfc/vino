@@ -64,13 +64,15 @@ rfbAuthCleanupScreen(rfbScreenInfoPtr rfbScreen)
 static rfbBool
 rfbAuthTLSHandshake(rfbClientPtr cl)
 {
-    static const int kx_priority[] = { GNUTLS_KX_ANON_DH, 0 };
+    /* TODO: Perform non-anonymous key exchange to prevent man-in-the-middle
+     * attacks. */
+    static const char kx_priority[] = "NORMAL:+ANON-DH";
     int              err;
     
     gnutls_init(&cl->tlsSession, GNUTLS_SERVER);
 
     gnutls_set_default_priority(cl->tlsSession);
-    gnutls_kx_set_priority(cl->tlsSession, kx_priority);
+    gnutls_priority_set_direct(cl->tlsSession, kx_priority, NULL);
 
     gnutls_credentials_set(cl->tlsSession,
 			   GNUTLS_CRD_ANON,
