@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-04-28 18:58+0000\n"
-"PO-Revision-Date: 2011-04-28 21:02+0100\n"
+"POT-Creation-Date: 2011-04-28 19:05+0000\n"
+"PO-Revision-Date: 2011-04-28 21:10+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
 "Language: \n"
@@ -62,9 +62,9 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr "Izberite, na kakšen način si lahko drugi uporabniki ogledajo vaše namizje"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
-#: ../server/vino-server.desktop.in.in.h:2
-msgid "Remote Desktop"
-msgstr "Oddaljeno namizje"
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "Souporaba namizja"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:1
 msgid "Allowed authentication methods"
@@ -79,16 +79,16 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Elektronski naslov na katerega naj se pošlje naslov URL oddaljenega namizja"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-msgid "Enable remote desktop access"
-msgstr "Omogoči dostop do oddaljenega namizja"
+msgid "Enable remote access to the desktop"
+msgstr "Omogoči oddaljeni dostop do namizja"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:5
 msgid "If not set, the server will listen on all network interfaces. Set this if you want that accept connections only from some specific network interface. eg: eth0, wifi0, lo, ..."
 msgstr "V primeru, da možnost ni izbrana, bo strežnik prisluhnil vsem omrežnim vmesnikom. Nastavite možnost, če želite sprejeti povezave le preko določenega vmesnika; eth0, wifi0, lo ..."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
-msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a vncviewer."
-msgstr "Izbrana možnost omogoča oddaljenim uporabnikom dostop do namizja preko RFB protokola. Uporabniki na oddaljenih namizjih se bodo lahko povezali preko vncviewer-ja."
+msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a VNC viewer."
+msgstr "Izbrana možnost omogoča oddaljenim uporabnikom dostop do namizja preko protokola RFB. Uporabniki na oddaljenih namizjih se bodo lahko povezali preko programa VNC viewer."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
@@ -163,7 +163,7 @@ msgid "This key controls the behavior of the status icon. There are three option
 msgstr "Tipka nadzira obnašanje ikone stanja. Na voljo so tri možnosti: \"vedno\" - ikona je vedno vidna; \"odjemalec\" - ikona bo vidna le, kadar je uporabnik z računalnikom povezan (privzeto); \"nikoli\" - ikona ni nikoli vidna."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
-msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Remote Desktop preferences dialog."
+msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Desktop Sharing preferences dialog."
 msgstr "Ključ določa elektronski naslov, na katerega bo poslan naslov URL oddaljenega namizja, če uporabnik klikne povezavo v možnostih oddaljenega namizja."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
@@ -195,8 +195,8 @@ msgid "Automatically _configure UPnP router to open and forward ports"
 msgstr "Samodejno _nastavi usmerjevalnik UPnP za odpiranje in posredovanje vrat"
 
 #: ../capplet/vino-preferences.ui.h:4
-msgid "Remote Desktop Preferences"
-msgstr "Možnosti oddaljenega namizja"
+msgid "Desktop Sharing Preferences"
+msgstr "Možnosti souporabe namizja"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
@@ -327,8 +327,8 @@ msgid "Run 'vino-server --help' to see a full list of available command line opt
 msgstr "Ukaz 'vino-passwd --help' pokaže seznam vseh ukazov na voljo."
 
 #: ../server/vino-main.c:226
-msgid "GNOME Remote Desktop"
-msgstr "GNOME oddaljeno namizje"
+msgid "GNOME Desktop Sharing"
+msgstr "Oddaljena souporaba namizja"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -351,8 +351,8 @@ msgstr "%s : oddaljeno namizje na %s"
 
 #: ../server/vino-prefs.c:109
 #, c-format
-msgid "Received signal %d, exiting...\n"
-msgstr "Prejet signal %d, zaustavljanje ...\n"
+msgid "Received signal %d, exiting."
+msgstr "Prejet signal %d, zaustavljanje."
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -399,9 +399,9 @@ msgstr "_Zavrni"
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Napaka med odpiranjem vodila: %s\n"
 
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "GNOME Remote Desktop Server"
-msgstr "Strežnik oddaljenega namizja GNOME"
+#: ../server/vino-server.desktop.in.in.h:2
+msgid "GNOME Desktop Sharing Server"
+msgstr "Strežnik oddaljene souporabe GNOME"
 
 #: ../server/vino-status-icon.c:103
 #: ../server/vino-status-tube-icon.c:96
@@ -653,6 +653,12 @@ msgstr "Različica paketa VINO %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "NAPAKA: ni ustreznih dovoljenj za spreminjanje gesla v programu Vino.\n"
 
+#~ msgid "Remote Desktop"
+#~ msgstr "Oddaljeno namizje"
+#~ msgid "Enable remote desktop access"
+#~ msgstr "Omogoči dostop do oddaljenega namizja"
+#~ msgid "GNOME Remote Desktop"
+#~ msgstr "GNOME oddaljeno namizje"
 #~ msgid "Al_ways display an icon"
 #~ msgstr "_Vedno pokaži ikono"
 #~ msgid "_Configure network automatically to accept connections"
