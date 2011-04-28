@@ -8,11 +8,12 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-02-21 16:26+0000\n"
-"PO-Revision-Date: 2011-02-22 08:03+0100\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2011-04-28 18:58+0000\n"
+"PO-Revision-Date: 2011-04-28 21:02+0100\n"
 "Last-Translator: Matej Urbančič <mateju@svn.gnome.org>\n"
 "Language-Team: Slovenian GNOME Translation Team <gnome-si@googlegroups.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,7 +22,7 @@ msgstr ""
 "X-Poedit-Country: SLOVENIA\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: ../capplet/vino-message-box.c:54
+#: ../capplet/vino-message-box.c:55
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "Prišlo je do napake med prikazovanjem naslova URL \"%s\""
@@ -182,16 +183,16 @@ msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Ali naj bo uporabljeno UPNP za posredovanje vrat na usmerjevalnik."
 
 #: ../capplet/vino-preferences.ui.h:1
-msgid "Al_ways display an icon"
-msgstr "_Vedno pokaži ikono"
+msgid "Al_ways"
+msgstr "_Vedno"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "Dovolite drugim uporabnikom _pregled vašega namizja"
 
 #: ../capplet/vino-preferences.ui.h:3
-msgid "Notification Area"
-msgstr "Opozorilno območje"
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "Samodejno _nastavi usmerjevalnik UPnP za odpiranje in posredovanje vrat"
 
 #: ../capplet/vino-preferences.ui.h:4
 msgid "Remote Desktop Preferences"
@@ -210,34 +211,38 @@ msgid "Sharing"
 msgstr "Souporaba"
 
 #: ../capplet/vino-preferences.ui.h:8
+msgid "Show Notification Area Icon"
+msgstr "Pokaži obvestilno ikono"
+
+#: ../capplet/vino-preferences.ui.h:9
 msgid "Some of these preferences are locked down"
 msgstr "Nekatere možnosti so zaklenjene"
 
-#: ../capplet/vino-preferences.ui.h:9
+#: ../capplet/vino-preferences.ui.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "Usmerjevalnih mora imeti možnost UPnP omogočeno"
+
+#: ../capplet/vino-preferences.ui.h:11
 msgid "Your desktop will be shared"
 msgstr "Namizje bo v souporabi"
 
-#: ../capplet/vino-preferences.ui.h:10
+#: ../capplet/vino-preferences.ui.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "_Dovoli drugim uporabnikom nadziranje namizja"
 
-#: ../capplet/vino-preferences.ui.h:11
-msgid "_Configure network automatically to accept connections"
-msgstr "_Samodejno nastavi omrežje za sprejemanje povezav"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "_Never display an icon"
-msgstr "_Nikoli ne pokaži ikone"
-
 #: ../capplet/vino-preferences.ui.h:13
-msgid "_Only display an icon when there is someone connected"
-msgstr "Ikono pokaži le, kadar je z računalnikom _ustvarjena povezava."
+msgid "_Never"
+msgstr "_Nikoli"
 
 #: ../capplet/vino-preferences.ui.h:14
+msgid "_Only when someone is connected"
+msgstr "Le, ko je kdo _povezan"
+
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Require the user to enter this password:"
 msgstr "Od uporabnika _zahtevaj geslo:"
 
-#: ../capplet/vino-preferences.ui.h:15
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_You must confirm each access to this machine"
 msgstr "_Potrditi je treba vsak dostop do tega računalnika"
 
@@ -246,32 +251,37 @@ msgstr "_Potrditi je treba vsak dostop do tega računalnika"
 msgid "File is not a valid .desktop file"
 msgstr "Datoteka ni veljavna .desktop datoteka"
 
-#: ../server/smclient/eggdesktopfile.c:188
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../server/smclient/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Neznana različica datoteke namizja '%s'"
 
-#: ../server/smclient/eggdesktopfile.c:968
+#: ../server/smclient/eggdesktopfile.c:971
 #, c-format
 msgid "Starting %s"
 msgstr "Zaganjanje %s"
 
-#: ../server/smclient/eggdesktopfile.c:1110
+#: ../server/smclient/eggdesktopfile.c:1113
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Program ne sprejme dokumentov preko ukazne vrstice"
 
-#: ../server/smclient/eggdesktopfile.c:1178
+#: ../server/smclient/eggdesktopfile.c:1181
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Nepoznana možnost zagona: %d"
 
-#: ../server/smclient/eggdesktopfile.c:1383
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../server/smclient/eggdesktopfile.c:1388
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Ni mogoče poslati naslova URI dokumenta na vnos 'Vrsta=Povezava' predmeta namizja"
 
-#: ../server/smclient/eggdesktopfile.c:1404
+#: ../server/smclient/eggdesktopfile.c:1409
 #, c-format
 msgid "Not a launchable item"
 msgstr "Predmet ni izvedljiv"
@@ -308,15 +318,15 @@ msgstr "Pokaži možnosti upravljanja seje"
 msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
 msgstr "XServer ne podpira XTest razširitve - dostop do oddaljenega namizja bo le za branje\n"
 
-#: ../server/vino-main.c:195
+#: ../server/vino-main.c:200
 msgid "- VNC Server for GNOME"
 msgstr "- VNC strežnik za GNOME"
 
-#: ../server/vino-main.c:201
+#: ../server/vino-main.c:206
 msgid "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "Ukaz 'vino-passwd --help' pokaže seznam vseh ukazov na voljo."
 
-#: ../server/vino-main.c:221
+#: ../server/vino-main.c:226
 msgid "GNOME Remote Desktop"
 msgstr "GNOME oddaljeno namizje"
 
@@ -400,12 +410,12 @@ msgstr "Omogočena je souporaba namizja"
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "Povezanih je %d oseb."
-msgstr[1] "Povezana je %d oseba."
-msgstr[2] "Povezani sta %d osebi."
-msgstr[3] "Povezane so %d osebe."
+msgid "One person is viewing your desktop"
+msgid_plural "%d people are viewing your desktop"
+msgstr[0] "%d uporabnikov pregleduje vaše namizje"
+msgstr[1] "%d uporabnik pregleduje vaše namizje"
+msgstr[2] "%d uporabnika pregledujeta vaše namizje"
+msgstr[3] "%d uporabniki pregledujejo vaše namizje"
 
 #: ../server/vino-status-icon.c:212
 #: ../server/vino-status-tube-icon.c:180
@@ -417,7 +427,7 @@ msgstr "Prišlo je do napake med prikazovanjem možnosti"
 msgid "Error displaying help"
 msgstr "Napaka med prikazom pomoči"
 
-#: ../server/vino-status-icon.c:261
+#: ../server/vino-status-icon.c:267
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -451,91 +461,91 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:276
+#: ../server/vino-status-icon.c:282
 msgid "translator-credits"
 msgstr "Matej Urbančič"
 
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:288
 msgid "Share your desktop with other users"
 msgstr "Souporaba namizja z drugimi uporabniki"
 
-#: ../server/vino-status-icon.c:347
+#: ../server/vino-status-icon.c:355
 #: ../server/vino-status-tube-icon.c:232
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Ali želite prekiniti povezavo '%s'?"
 
-#: ../server/vino-status-icon.c:350
+#: ../server/vino-status-icon.c:358
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Povezava z oddaljenim uporabnikom '%s' bo  prekinjena. Ali želite nadaljevati?"
 
-#: ../server/vino-status-icon.c:356
+#: ../server/vino-status-icon.c:364
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Ali želite prekiniti povezave vseh oddaljenih uporabnikov?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:366
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Povezave vseh oddaljenih uporabnikov bodo prekinjene. Ali želite nadaljevati?"
 
-#: ../server/vino-status-icon.c:370
+#: ../server/vino-status-icon.c:378
 #: ../server/vino-status-tube-icon.c:246
 msgid "Disconnect"
 msgstr "Prekini povezavo"
 
-#: ../server/vino-status-icon.c:396
+#: ../server/vino-status-icon.c:404
 #: ../server/vino-status-tube-icon.c:271
 msgid "_Preferences"
 msgstr "_Možnosti"
 
-#: ../server/vino-status-icon.c:411
+#: ../server/vino-status-icon.c:419
 msgid "Disconnect all"
 msgstr "Odstrani vse povezave"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:435
+#: ../server/vino-status-icon.c:443
 #: ../server/vino-status-tube-icon.c:284
 #, c-format
 msgid "Disconnect %s"
 msgstr "Prekini povezavo %s"
 
-#: ../server/vino-status-icon.c:456
+#: ../server/vino-status-icon.c:464
 #: ../server/vino-status-tube-icon.c:303
 msgid "_Help"
 msgstr "Pomo_č"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_O Programu"
 
-#: ../server/vino-status-icon.c:597
+#: ../server/vino-status-icon.c:605
 #: ../server/vino-status-tube-icon.c:400
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Napaka med zagonom libnotify\n"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:626
 msgid "Another user is viewing your desktop"
 msgstr "Drug uporabnik pregleduje namizje"
 
-#: ../server/vino-status-icon.c:620
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Uporabnik za računalnikom '%s' poskuša oddaljeno pregledovati namizje."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:634
 msgid "Another user is controlling your desktop"
 msgstr "Drug uporabnik nadzira namizje"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:636
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Uporabnik za računalnikom '%s' nadzira oddaljeno namizje."
 
-#: ../server/vino-status-icon.c:656
+#: ../server/vino-status-icon.c:664
 #: ../server/vino-status-tube-icon.c:435
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
@@ -546,31 +556,31 @@ msgstr "Napaka med prikazovanjem opozorila v oblačku: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Z oddaljenim uporabnikom '%s' bo povezava prekinjena. Ali želite nadaljevati?"
 
-#: ../server/vino-tube-server.c:268
-#: ../server/vino-tube-server.c:297
+#: ../server/vino-tube-server.c:269
+#: ../server/vino-tube-server.c:298
 msgid "Share my desktop information"
 msgstr "Souporaba namizja"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:272
+#: ../server/vino-tube-server.c:273
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' je zavrnil vabilo za souporabo namizja."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:276
+#: ../server/vino-tube-server.c:277
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' je prekinil povezavo"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:303
+#: ../server/vino-tube-server.c:304
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "Uporabnik '%s' oddaljeno nadzira vaše namizje."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:312
+#: ../server/vino-tube-server.c:313
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Čakanje na '%s' za povezavo z zaslonom."
@@ -643,30 +653,30 @@ msgstr "Različica paketa VINO %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "NAPAKA: ni ustreznih dovoljenj za spreminjanje gesla v programu Vino.\n"
 
+#~ msgid "Al_ways display an icon"
+#~ msgstr "_Vedno pokaži ikono"
+#~ msgid "_Configure network automatically to accept connections"
+#~ msgstr "_Samodejno nastavi omrežje za sprejemanje povezav"
+#~ msgid "_Never display an icon"
+#~ msgstr "_Nikoli ne pokaži ikone"
+#~ msgid "_Only display an icon when there is someone connected"
+#~ msgstr "Ikono pokaži le, kadar je z računalnikom _ustvarjena povezava."
 #~ msgid "_Send address by email"
 #~ msgstr "_Pošlji naslov po elektronski pošti"
-
 #~ msgid "_Copy address to clipboard"
 #~ msgstr "_Kopiraj naslov v odložišče"
-
 #~ msgid "Maximum size: 8 characters"
 #~ msgstr "Največja velikost: 8 znakov"
-
-#~ msgid "The router must have the UPnP feature enabled"
-#~ msgstr "Usmerjevalnih mora imeti možnost UPnP omogočeno"
-
 #~ msgid "You will be queried to allow or to refuse every incoming connection"
 #~ msgstr ""
 #~ "Pred vsako prihajajočo povezavo bo treba zahtevo odobriti ali zavrniti"
-
 #~ msgid "Remote Desktop server already running; exiting ...\n"
 #~ msgstr ""
 #~ "Strežnik oddaljenega namizja je že zagnan, zato bo zaustavljeno "
 #~ "izvajanje ...\n"
-
 #~ msgid ""
 #~ "Error while communicating with GConf. Are you logged into a GNOME session?"
 #~ msgstr "Napaka med povezovanjem z GConf. Ali ste prijavljeni v GNOME sejo?"
-
 #~ msgid "Error message:"
 #~ msgstr "Sporočilo o napaki:"
+
