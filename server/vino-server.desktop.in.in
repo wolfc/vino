@@ -1,6 +1,6 @@
 [Desktop Entry]
-_Name=Remote Desktop
-_Comment=GNOME Remote Desktop Server
+_Name=Desktop Sharing
+_Comment=GNOME Desktop Sharing Server
 Exec=@LIBEXECDIR@/vino-server
 Icon=preferences-desktop-remote-desktop
 OnlyShowIn=GNOME;

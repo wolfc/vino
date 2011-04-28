@@ -64,7 +64,7 @@ enabled_changed (VinoApplication *vino)
 {
   if (!g_settings_get_boolean (vino->settings, "enabled"))
     {
-      g_message ("The remote desktop service has been disabled.  Exiting.");
+      g_message ("The desktop sharing service has been disabled, exiting.");
       g_main_loop_quit (vino->main_loop);
     }
 }
@@ -172,7 +172,7 @@ name_lost (GDBusConnection *connection,
 {
   VinoApplication *vino = user_data;
 
-  g_message ("The remote desktop service is already running.  Exiting.");
+  g_message ("The desktop sharing service is already running, exiting.");
   g_main_loop_quit (vino->main_loop);
 }
 
@@ -217,13 +217,13 @@ main (int argc, char **argv)
                             G_CALLBACK (enabled_changed), &vino);
   if (!g_settings_get_boolean (vino.settings, "enabled"))
     {
-      g_warning ("The remote desktop service is not "
+      g_warning ("The desktop sharing service is not "
                  "enabled, so it should not be run.");
       return 1;
     }
 
   gtk_window_set_default_icon_name ("preferences-desktop-remote-desktop");
-  g_set_application_name (_("GNOME Remote Desktop"));
+  g_set_application_name (_("GNOME Desktop Sharing"));
   vino.main_loop = g_main_loop_new (NULL, FALSE);
 
 #ifdef GNOME_ENABLE_DEBUG

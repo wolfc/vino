@@ -5,7 +5,7 @@
   <object class="GtkDialog" id="vino_dialog">
     <property name="visible">True</property>
     <property name="border_width">5</property>
-    <property name="title" translatable="yes">Remote Desktop Preferences</property>
+    <property name="title" translatable="yes">Desktop Sharing Preferences</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="icon_name">preferences-desktop-remote-desktop</property>

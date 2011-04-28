@@ -106,7 +106,7 @@ vino_prefs_create_server (GdkScreen *screen)
 static void
 vino_prefs_sighandler (int sig)
 {
-  g_message (_("Received signal %d, exiting...\n"), sig);
+  g_message (_("Received signal %d, exiting."), sig);
   vino_mdns_shutdown ();
   vino_prefs_shutdown ();
   exit (0);
@@ -117,7 +117,7 @@ notify_enabled (void)
 {
   if (!g_settings_get_boolean (settings, "enabled"))
     {
-      g_message ("The remote desktop service is disabled.  Exiting.");
+      g_message ("The desktop sharing service is disabled, exiting.");
       exit (0);
     }
 }

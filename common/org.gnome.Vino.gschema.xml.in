@@ -1,11 +1,11 @@
 <schemalist>
   <schema id='org.gnome.Vino' path='/desktop/gnome/remote-access/'>
     <key name='enabled' type='b'>
-      <_summary>Enable remote desktop access</_summary>
+      <_summary>Enable remote access to the desktop</_summary>
       <_description>
         If true, allows remote access to the desktop via the RFB
         protocol. Users on remote machines may then connect to the
-        desktop using a vncviewer.  </_description>
+        desktop using a VNC viewer.</_description>
       <default>false</default>
     </key>
 
@@ -108,7 +108,7 @@
       <_description>
         This key specifies the e-mail address to which the remote
         desktop URL should be sent if the user clicks on the URL in the
-        Remote Desktop preferences dialog.
+        Desktop Sharing preferences dialog.
       </_description>
       <default>''</default>
     </key>
