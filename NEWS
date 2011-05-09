@@ -1,3 +1,67 @@
+Vino 3.1.1
+==========
+
+Abduxukur Abdurixit (2):
+      Added UG translation
+      Added UG translation
+
+Daniel Korostil (1):
+      Uploaded Ukranian
+
+Daniel Mustieles (3):
+      Updated Spanish translation
+      Updated Spanish translation
+      Updated Spanish translation
+
+David King (8):
+      Improve description of UPnP feature, bug 594521
+      Improve status icon tooltip string, bug 594253
+      Post-release version bump to 3.1.1
+      Update copyright information in about dialog
+      Do not use deprecated GnuTLS functions, bug 648606
+      Use ‘Desktop Sharing’ rather than ‘Remote Desktop’
+      Avoid out-of-bounds memory accesses
+      Change *.tar.gz to *.tar.xz in .gitignore
+
+Fran Diéguez (1):
+      Updated galician translations
+
+Jordi Mallach (1):
+      Fix defines to match configure script output
+
+Jordi Serratosa (1):
+      [l10n]Fixes on Catalan translation
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
+Marek Černocký (1):
+      Updated Czech translation
+
+Matej Urbančič (2):
+      Updated Slovenian translation
+      Updated Slovenian translation
+
+Muhammet Kara (2):
+      Updated Turkish translation
+      Updated Turkish translation
+
+Oliver Gerlich (2):
+      Fix cursor update logic, bug 617436
+      Only send a motion event when the pointer moved
+
+Theppitak Karoonboonyanan (1):
+      Updated Thai translation.
+
+Thorsten Glaser (1):
+      Bind both an IPv4 and an IPv6 socket
+
+Travis B. Hartwell (1):
+      String improvements in preferences capplet
+
+Yaron Shahrabani (1):
+      Updated Hebrew translation.
+
 Vino 3.0.0
 ==========
 
