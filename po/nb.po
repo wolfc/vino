@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 2.92.x\n"
+"Project-Id-Version: vino 3.1.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-04 13:35+0200\n"
-"PO-Revision-Date: 2011-05-04 13:40+0200\n"
+"POT-Creation-Date: 2011-06-09 15:44+0200\n"
+"PO-Revision-Date: 2011-06-09 15:45+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -88,13 +88,10 @@ msgstr ""
 "nettverksgrensesnitt som eth0, wifi0, lo …"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
-#, fuzzy
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
-msgstr ""
-"Tillat ekstern tilgang til skrivebordet via RFB-protokollen. Brukere på "
-"eksterne maskiner kan da koble til skrivebordet med vncviwer."
+msgstr "Tillat ekstern tilgang til skrivebordet via RFB-protokollen. Brukere på eksterne maskiner kan da koble til skrivebordet med et VNC-visningprogram."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid ""
@@ -234,14 +231,11 @@ msgstr ""
 "vises aldri."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
-#, fuzzy
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
-msgstr ""
-"Denne nøkkelen inneholder e-postadressen som eksternt skrivebord URL-en blir "
-"sendt til hvis brukeren klikker på URL-en i instillingene."
+msgstr "Denne nøkkelen inneholder e-postadressen som eksternt skrivebord URL-en blir sendt til hvis brukeren klikker på URL-en i brukervalg for deling av skrivebord."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "When the status icon should be shown"
