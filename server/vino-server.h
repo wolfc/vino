@@ -95,7 +95,7 @@ guint16              vino_server_get_external_port        (VinoServer     *serve
 
 void                 vino_server_set_network_interface    (VinoServer     *server,
                                                            const char     *network_interface);
-G_CONST_RETURN char *vino_server_get_network_interface    (VinoServer     *server);
+const char          *vino_server_get_network_interface    (VinoServer     *server);
 void                 vino_server_set_require_encryption   (VinoServer     *server,
 							   gboolean        require_encryption);
 gboolean             vino_server_get_require_encryption   (VinoServer     *server);
@@ -104,7 +104,7 @@ void                 vino_server_set_auth_methods         (VinoServer     *serve
 VinoAuthMethod       vino_server_get_auth_methods         (VinoServer     *server);
 void                 vino_server_set_vnc_password         (VinoServer     *server,
 							   const char     *vnc_password);
-G_CONST_RETURN char *vino_server_get_vnc_password         (VinoServer     *server);
+const char          *vino_server_get_vnc_password         (VinoServer     *server);
 void                 vino_server_set_lock_screen          (VinoServer     *server,
 							   gboolean        lock_screen);
 gboolean             vino_server_get_lock_screen          (VinoServer     *server);
@@ -124,7 +124,7 @@ gboolean             vino_server_get_disable_xdamage      (VinoServer     *serve
 #include "vino-status-icon.h"
 VinoStatusIcon      *vino_server_get_status_icon          (VinoServer      *server);
 
-G_CONST_RETURN char *vino_client_get_hostname (VinoClient *client);
+const char          *vino_client_get_hostname (VinoClient *client);
 void                 vino_client_disconnect   (VinoClient *client);
 
 G_END_DECLS

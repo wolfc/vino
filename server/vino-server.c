@@ -1544,7 +1544,7 @@ vino_server_set_display_status_icon (VinoServer *server,
   server->priv->display_status_icon = display_status_icon;
 }
 
-G_CONST_RETURN char *
+const char *
 vino_server_get_network_interface (VinoServer *server)
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
@@ -1805,7 +1805,7 @@ vino_server_set_vnc_password (VinoServer *server,
   g_object_notify (G_OBJECT (server), "vnc-password");
 }
 
-G_CONST_RETURN char *
+const char *
 vino_server_get_vnc_password (VinoServer *server)
 {
   g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
@@ -1813,7 +1813,7 @@ vino_server_get_vnc_password (VinoServer *server)
   return server->priv->vnc_password;
 }
 
-G_CONST_RETURN char *
+const char *
 vino_client_get_hostname (VinoClient *client)
 {
   return client->rfb_client->host;
