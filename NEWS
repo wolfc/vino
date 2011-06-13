@@ -1,3 +1,38 @@
+Vino 3.1.2
+==========
+
+Abduxukur Abdurixit (1):
+      Added UG translation
+
+Andika Triwidada (1):
+      Updated Indonesian translation
+
+Arash Mousavi (1):
+      Updated Persian translation
+
+Carles Ferrando (1):
+      [l10n]Updated Catalan (Valencian) translation
+
+Chao-Hsiung Liao (1):
+      Updated Traditional Chinese translation(Hong Kong and Taiwan)
+
+David King (2):
+      Post-release version bump to 3.1.2
+      Remove gettext macros from configure.ac
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
+Kristjan SCHMIDT (1):
+      Updated Esperanto translation
+
+Sjoerd Simons (2):
+      Fix _TELEPATHY_GLIB mistyped as _TELEPATHY_GLUB
+      Do not set non-existent use-dbus-listener property
+
+Мирослав Николић (1):
+      Updated Serbian translation
+
 Vino 3.1.1
 ==========
 
