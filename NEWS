@@ -1,3 +1,23 @@
+Vino 3.1.4
+==========
+
+Abduxukur Abdurixit (1):
+      Added UG translation
+
+Bastien Nocera (1):
+      Add GConf to GSettings convert file, bug 654901
+
+David King (3):
+      Post-release version bump to 3.1.4
+      Only call g_settings_sync() when necessary
+      Update NEWS for 3.1.4 release
+
+Rudolfs Mazurs (1):
+      Updated Latvian translation.
+
+Tommi Vainikainen (1):
+      Updated Finnish translation
+
 Vino 3.1.3
 ==========
 
