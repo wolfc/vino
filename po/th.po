@@ -8,14 +8,14 @@ msgstr ""
 "Project-Id-Version: vino 2.11.2\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-04-16 11:53+0000\n"
-"PO-Revision-Date: 2011-04-24 19:37+0700\n"
+"POT-Creation-Date: 2011-07-18 08:35+0000\n"
+"PO-Revision-Date: 2011-08-13 15:56+0700\n"
 "Last-Translator: Theppitak Karoonboonyanan <thep@linux.thai.net>\n"
 "Language-Team: Thai <thai-l10n@googlegroups.com>\n"
-"Language: th\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../capplet/vino-message-box.c:55
@@ -58,9 +58,9 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr "เลือกว่าจะอนุญาตให้ผู้ใช้อื่นมองพื้นโต๊ะของคุณอย่างไร"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
-#: ../server/vino-server.desktop.in.in.h:2
-msgid "Remote Desktop"
-msgstr "พื้นโต๊ะระยะไกล"
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "การแบ่งปันพื้นโต๊ะ"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:1
 msgid "Allowed authentication methods"
@@ -75,8 +75,8 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "ที่อยู่อีเมลที่จะส่ง URL ของพื้นโต๊ะระยะไกลไปให้"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-msgid "Enable remote desktop access"
-msgstr "เปิดใช้การเข้าถึงพื้นโต๊ะจากเครื่องอื่น"
+msgid "Enable remote access to the desktop"
+msgstr "อนุญาตให้ผู้ใช้จากเครื่องอื่นเข้าถึงพื้นโต๊ะได้"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:5
 msgid ""
@@ -91,10 +91,10 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
+"remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
 "ถ้าเป็นค่าจริง จะอนุญาตให้เข้าถึงพื้นโต๊ะจากเครื่องอื่นผ่านโพรโทคอล RFB "
-"ผู้ใช้จากเครื่องอื่นจะสามารถเชื่อมต่อมายังพื้นโต๊ะได้ด้วย vncviewer"
+"ผู้ใช้จากเครื่องอื่นจะสามารถเชื่อมต่อมายังพื้นโต๊ะได้ด้วยโปรแกรมแสดง VNC"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid ""
@@ -225,11 +225,11 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 "คีย์นี้ระบุที่อยู่อีเมลที่จะส่ง URL ของพื้นโต๊ะระยะไกลไปให้ ถ้าผู้ใช้คลิกที่ URL "
-"ในไดอะล็อกปรับแต่งพื้นโต๊ะระยะไกล"
+"ในกล่องโต้ตอบปรับแต่งการแบ่งปันพื้นโต๊ะ"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "When the status icon should be shown"
@@ -260,8 +260,8 @@ msgid "Automatically _configure UPnP router to open and forward ports"
 msgstr "ตั้งค่าเราเตอร์ UPnP โดยอัตโนมัติให้เปิดและฟอร์เวิร์ดพอร์ตต่างๆ"
 
 #: ../capplet/vino-preferences.ui.h:4
-msgid "Remote Desktop Preferences"
-msgstr "ปรับแต่งพื้นโต๊ะระยะไกล"
+msgid "Desktop Sharing Preferences"
+msgstr "ปรับแต่งการแบ่งปันพื้นโต๊ะ"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
@@ -397,8 +397,8 @@ msgid ""
 msgstr "เรียก 'vino-server --help' เพื่อดูตัวเลือกบรรทัดคำสั่งที่ใช้ได้ทั้งหมด"
 
 #: ../server/vino-main.c:226
-msgid "GNOME Remote Desktop"
-msgstr "พื้นโต๊ะระยะไกลของ GNOME"
+msgid "GNOME Desktop Sharing"
+msgstr "การแบ่งปันพื้นโต๊ะของ GNOME"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -421,8 +421,8 @@ msgstr "พื้นโต๊ะระยะไกลของ %s ที่เ�
 
 #: ../server/vino-prefs.c:109
 #, c-format
-msgid "Received signal %d, exiting...\n"
-msgstr "ได้รับสัญญาณ %d, ขอออกจากโปรแกรม...\n"
+msgid "Received signal %d, exiting."
+msgstr "ได้รับสัญญาณ %d, ขอออกจากโปรแกรม"
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -470,9 +470,9 @@ msgstr "_ปฏิเสธ"
 msgid "Failed to open connection to bus: %s\n"
 msgstr "ไม่สามารถเปิดการเชื่อมต่อไปยังบัส: %s\n"
 
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "GNOME Remote Desktop Server"
-msgstr "เซิร์ฟเวอร์พื้นโต๊ะระยะไกลของ GNOME"
+#: ../server/vino-server.desktop.in.in.h:2
+msgid "GNOME Desktop Sharing Server"
+msgstr "เซิร์ฟเวอร์แบ่งปันพื้นโต๊ะของ GNOME"
 
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
@@ -492,7 +492,7 @@ msgstr "เกิดข้อผิดพลาดขณะแสดงค่า
 msgid "Error displaying help"
 msgstr "เกิดข้อผิดพลาดขณะแสดงวิธีใช้"
 
-#: ../server/vino-status-icon.c:261
+#: ../server/vino-status-icon.c:267
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -527,85 +527,85 @@ msgstr ""
 "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:276
+#: ../server/vino-status-icon.c:282
 msgid "translator-credits"
 msgstr "เทพพิทักษ์ การุญบุญญานันท์ <thep@linux.thai.net>"
 
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:288
 msgid "Share your desktop with other users"
 msgstr "แบ่งพื้นโต๊ะของคุณให้ผู้อื่นใช้ร่วม"
 
-#: ../server/vino-status-icon.c:348 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับ '%s' หรือไม่?"
 
-#: ../server/vino-status-icon.c:351
+#: ../server/vino-status-icon.c:358
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "ผู้ใช้ระยะไกลจากเครื่อง '%s' จะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: ../server/vino-status-icon.c:357
+#: ../server/vino-status-icon.c:364
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "ยืนยันที่จะตัดการเชื่อมต่อกับทุกเครื่องหรือไม่?"
 
-#: ../server/vino-status-icon.c:359
+#: ../server/vino-status-icon.c:366
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "ผู้ใช้จากเครื่องอื่นทั้งหมดจะถูกตัดการเชื่อมต่อ คุณแน่ใจหรือไม่?"
 
-#: ../server/vino-status-icon.c:371 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
 msgid "Disconnect"
 msgstr "ตัดการเชื่อมต่อ"
 
-#: ../server/vino-status-icon.c:397 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
 msgid "_Preferences"
 msgstr "_ปรับแต่ง"
 
-#: ../server/vino-status-icon.c:412
+#: ../server/vino-status-icon.c:419
 msgid "Disconnect all"
 msgstr "ตัดการเชื่อมต่อทั้งหมด"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:436 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
 #, c-format
 msgid "Disconnect %s"
 msgstr "ตัดการเชื่อมต่อกับ %s"
 
-#: ../server/vino-status-icon.c:457 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
 msgid "_Help"
 msgstr "_วิธีใช้"
 
-#: ../server/vino-status-icon.c:465
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "เ_กี่ยวกับ"
 
-#: ../server/vino-status-icon.c:598 ../server/vino-status-tube-icon.c:400
+#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "เกิดข้อผิดพลาดขณะตั้งต้น libnotify\n"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:626
 msgid "Another user is viewing your desktop"
 msgstr "มีผู้ใช้อื่นกำลังมองพื้นโต๊ะของคุณ"
 
-#: ../server/vino-status-icon.c:621
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังมองพื้นโต๊ะของคุณจากระยะไกล"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:634
 msgid "Another user is controlling your desktop"
 msgstr "มีผู้ใช้อื่นกำลังควบคุมพื้นโต๊ะของคุณ"
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:636
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "มีผู้ใช้จากเครื่อง '%s' กำลังควบคุมพื้นโต๊ะของคุณจากระยะไกล"
 
-#: ../server/vino-status-icon.c:657 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "เกิดข้อผิดพลาดขณะแสดงกรอบคำพูดแจ้งเหตุ: %s\n"
@@ -713,12 +713,21 @@ msgstr "VINO รุ่น %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ข้อผิดพลาด: คุณไม่มีสิทธิ์เปลี่ยนรหัสผ่าน Vino\n"
 
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr ""
-"มีปัญหาในการลงทะเบียนเซิร์ฟเวอร์พื้นโต๊ะระยะไกลกับ bonobo-activation; "
-"จะออกจากโปรแกรม ...\n"
+#~ msgid "Remote Desktop"
+#~ msgstr "พื้นโต๊ะระยะไกล"
+
+#~ msgid "Enable remote desktop access"
+#~ msgstr "เปิดใช้การเข้าถึงพื้นโต๊ะจากเครื่องอื่น"
+
+#~ msgid "GNOME Remote Desktop"
+#~ msgstr "พื้นโต๊ะระยะไกลของ GNOME"
+
+#~ msgid ""
+#~ "Problem registering the remote desktop server with bonobo-activation; "
+#~ "exiting ...\n"
+#~ msgstr ""
+#~ "มีปัญหาในการลงทะเบียนเซิร์ฟเวอร์พื้นโต๊ะระยะไกลกับ bonobo-activation; "
+#~ "จะออกจากโปรแกรม ...\n"
 
 #~ msgid "_Send address by email"
 #~ msgstr "_ส่งที่อยู่ทางอีเมล"
