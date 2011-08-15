@@ -4,25 +4,28 @@
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkDialog" id="vino_dialog">
     <property name="visible">True</property>
-    <property name="border_width">5</property>
+    <property name="border_width">12</property>
     <property name="title" translatable="yes">Desktop Sharing Preferences</property>
     <property name="resizable">False</property>
     <property name="window_position">center-on-parent</property>
     <property name="icon_name">preferences-desktop-remote-desktop</property>
     <property name="type_hint">dialog</property>
     <child internal-child="vbox">
-      <object class="GtkVBox" id="dialog-vbox1">
+      <object class="GtkBox" id="dialog-vbox1">
         <property name="visible">True</property>
-        <property name="spacing">2</property>
+        <property name="orientation">vertical</property>
+        <property name="spacing">6</property>
         <child>
-          <object class="GtkVBox" id="vbox1">
+          <object class="GtkBox" id="vbox1">
             <property name="visible">True</property>
+            <property name="orientation">vertical</property>
             <property name="border_width">6</property>
             <property name="spacing">18</property>
             <child>
-              <object class="GtkVBox" id="sharing_box">
+              <object class="GtkBox" id="sharing_box">
                 <property name="visible">True</property>
-                <property name="spacing">3</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="label1">
                     <property name="visible">True</property>
@@ -37,7 +40,8 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkHBox" id="writability_warning">
+                  <object class="GtkBox" id="writability_warning">
+                    <property name="orientation">horizontal</property>
                     <property name="no_show_all">True</property>
                     <property name="border_width">3</property>
                     <property name="spacing">6</property>
@@ -82,8 +86,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkHBox" id="hbox1">
+                  <object class="GtkBox" id="hbox1">
                     <property name="visible">True</property>
+                    <property name="orientation">horizontal</property>
                     <child>
                       <object class="GtkLabel" id="label2">
                         <property name="visible">True</property>
@@ -116,8 +121,9 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkHBox" id="control_settings">
+                  <object class="GtkBox" id="control_settings">
                     <property name="visible">True</property>
+                    <property name="orientation">horizontal</property>
                     <child>
                       <object class="GtkLabel" id="label3">
                         <property name="visible">True</property>
@@ -151,8 +157,9 @@
                 </child>
 		    <!--
                 <child>
-                  <object class="GtkHBox" id="message_box">
+                  <object class="GtkBox" id="message_box">
                     <property name="visible">True</property>
+                    <property name="orientation">horizontal</property>
                     <child>
                       <object class="GtkLabel" id="label14">
                         <property name="visible">True</property>
@@ -184,9 +191,10 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="security_box">
+              <object class="GtkBox" id="security_box">
                 <property name="visible">True</property>
-                <property name="spacing">3</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="label4">
                     <property name="visible">True</property>
@@ -201,11 +209,14 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkHBox" id="hbox3">
+                  <object class="GtkBox" id="hbox3">
                     <property name="visible">True</property>
+                    <property name="orientation">horizontal</property>
                     <child>
-                      <object class="GtkVBox" id="security_settings">
+                      <object class="GtkBox" id="security_settings">
                         <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
+                        <property name="spacing">6</property>
                         <child>
                           <object class="GtkCheckButton" id="prompt_enabled_toggle">
                             <property name="label" translatable="yes">_You must confirm each access to this machine</property>
@@ -220,8 +231,10 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkHBox" id="hbox4">
+                          <object class="GtkBox" id="hbox4">
                             <property name="visible">True</property>
+                            <property name="orientation">horizontal</property>
+			    <property name="spacing">12</property>
                             <child>
                               <object class="GtkCheckButton" id="password_toggle">
                                 <property name="label" translatable="yes">_Require the user to enter this password:</property>
@@ -237,8 +250,9 @@
                               </packing>
                             </child>
                             <child>
-                              <object class="GtkHBox" id="password_box">
+                              <object class="GtkBox" id="password_box">
                                 <property name="visible">True</property>
+                                <property name="orientation">horizontal</property>
                                 <child>
                                   <object class="GtkEntry" id="password_entry">
                                     <property name="visible">True</property>
@@ -293,9 +307,10 @@
               </packing>
             </child>
             <child>
-              <object class="GtkVBox" id="notification_box">
+              <object class="GtkBox" id="notification_box">
                 <property name="visible">True</property>
-                <property name="spacing">3</property>
+                <property name="orientation">vertical</property>
+                <property name="spacing">6</property>
                 <child>
                   <object class="GtkLabel" id="label12">
                     <property name="visible">True</property>
@@ -310,11 +325,13 @@
                   </packing>
                 </child>
                 <child>
-                  <object class="GtkHBox" id="hbox8">
+                  <object class="GtkBox" id="hbox8">
                     <property name="visible">True</property>
+                    <property name="orientation">horizontal</property>
                     <child>
-                      <object class="GtkVBox" id="notification_settings">
+                      <object class="GtkBox" id="notification_settings">
                         <property name="visible">True</property>
+                        <property name="orientation">vertical</property>
                         <property name="spacing">3</property>
                         <child>
                           <object class="VinoRadioButton" id="icon_always_radio">
