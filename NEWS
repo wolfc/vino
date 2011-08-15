@@ -1,3 +1,26 @@
+Vino 3.1.5
+==========
+
+Alexander Shopov (1):
+      Updated Bulgarian translation
+
+Aurimas Černius (1):
+      Updated Lithuanian translation
+
+Claude Paroz (1):
+      Updated French translation
+
+Daniel Nylander (1):
+      Updated Swedish translation
+
+David King (3):
+      Post-release version bump to 3.1.5
+      Use GtkBox rather than GtkHBox or GtkVBox
+      Update NEWS for 3.1.5 release
+
+Theppitak Karoonboonyanan (1):
+      Updated Thai translation.
+
 Vino 3.1.4
 ==========
 
