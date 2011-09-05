@@ -1,3 +1,21 @@
+Vino 3.1.91
+===========
+
+David King (4):
+      Post-release version bump to 3.1.91
+      Use new location for Mallard help, bug 657927
+      Make all targets use compiler warning flags
+      Update NEWS for 3.1.91 release
+
+Dr.T.Vasudevan (1):
+      updated Tamil translation
+
+Og B. Maciel (1):
+      Updated Brazilian Portuguese translation.
+
+Yuri Myasoedov (1):
+      Updated Russian translation
+
 Vino 3.1.90
 ===========
 
