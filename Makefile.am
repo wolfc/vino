@@ -1,7 +1,19 @@
 ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
 SUBDIRS = po
 
-DISTCHECK_CONFIGURE_FLAGS = --with-avahi --with-libnotify --with-gnome-keyring --with-network-manager --with-telepathy --with-gnutls --with-gcrypt --with-zlib --with-jpeg --enable-debug --enable-http-server
+DISTCHECK_CONFIGURE_FLAGS = \
+	--with-avahi \
+	--with-libnotify \
+	--with-gnome-keyring \
+	--with-network-manager \
+	--with-telepathy \
+	--with-gnutls \
+	--with-gcrypt \
+	--with-zlib \
+	--with-jpeg \
+	--enable-debug \
+	--enable-http-server \
+	--enable-compile-warnings=maximum
 
 noinst_LTLIBRARIES = \
 	libeggsmclient.la
@@ -11,6 +23,8 @@ libeggsmclient_la_CPPFLAGS = \
 	-DEGG_SM_CLIENT_BACKEND_XSMP \
 	$(smclient_platform_defines) \
 	$(EGG_SMCLIENT_CFLAGS) \
+	$(WARN_CFLAGS) \
+	$(DISABLE_DEPRECATED) \
 	-I$(top_builddir)
 
 libeggsmclient_la_LIBADD = \
