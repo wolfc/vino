@@ -232,7 +232,7 @@ vino_preferences_dialog_response (GtkWidget *widget,
     case GTK_RESPONSE_HELP:
       screen = gtk_widget_get_screen (widget);
 
-      if (!gtk_show_uri (screen, "ghelp:user-guide?goscustdesk-90",
+      if (!gtk_show_uri (screen, "help:gnome-help?sharing-desktop",
                          GDK_CURRENT_TIME, &error))
         {
           GtkWidget *message_dialog;
