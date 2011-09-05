@@ -5,27 +5,28 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Jayaradha N <jaya@pune.redhat.com>, 2004.
-# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009, 2011.
 # Dr.T.vasudevan <agnihot3@gmail.com>, 2009.
 # I. Felix <ifelix@redhat.com>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.master.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-03-30 17:16+0530\n"
-"PO-Revision-Date: 2011-03-30 17:21+0530\n"
-"Last-Translator: \n"
+"POT-Creation-Date: 2011-09-05 20:10+0530\n"
+"PO-Revision-Date: 2011-09-05 20:19+0530\n"
+"Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Lokalize 1.0\n"
+"X-Generator: Lokalize 1.1\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\\n"
 "\n"
 "\n"
 "\n"
 
-#: ../capplet/vino-message-box.c:54
+#: ../capplet/vino-message-box.c:55
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "URLயை காட்டுவதில் பிழை இருந்தது \"%s\""
@@ -65,9 +66,9 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr "மற்ற பயனீட்டாளர் உங்கள் பணிமேடையை பார்க்க தேர்ந்தெடுக்கவும்"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
-#: ../server/vino-server.desktop.in.in.h:2
-msgid "Remote Desktop"
-msgstr "தொலை பணிமேடை"
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "மேல்மேசை பகிர்வு "
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:1
 msgid "Allowed authentication methods"
@@ -82,8 +83,8 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "தொலை கணினி URL அனுப்பவ் வேண்டிய மின்னஞ்சல் முகவரி "
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-msgid "Enable remote desktop access"
-msgstr "தொலை மேல்மேசை சேவகன் அனுகலை செயல்படுத்து"
+msgid "Enable remote access to the desktop"
+msgstr " மேல்மேசை தொலை அணுகலுக்கு செயலாக்கு"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:5
 msgid ""
@@ -97,9 +98,10 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
+"remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
-"உண்மையெனில், RFB விதிமுறைபடி மேல்மேசையை அனுக முடியும். vncviewer வழியாக "
+"உண்மையெனில், RFB நெறிமுறைபடி மேல்மேசையை அனுக அனுமதிக்கிறது. அதன் பின் தொலை கணினி பயனர்கள்  "
+"vncviewer வழியாக "
 "மேல்மேசையை இணைக்க முடியும்"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
@@ -208,8 +210,8 @@ msgid ""
 "that the password is stored in the GNOME keyring."
 msgstr ""
 "\"vnc\" அனுமதி முறை கடவுச்சொல்லை கேட்க பயன்பட்டிருக்கிறது. கடவுச்சொல் base64 "
-"குறிமுறையாக்கப்பட்டுள்ளது. விசைவளையத்தின்' சிறப்பு மதிப்பு (இது செல்லுபடியாகும் base64 இல்லை) "
-"எனில் கடவுச்சொல் விசை வளையத்தில் சேமிக்கப்பட்டுள்ளது."
+"குறிமுறையாக்கப்பட்டுள்ளது. விசைவளையத்தின்' சிறப்பு மதிப்பு (இது செல்லுபடியாகும் base64 "
+"இல்லை) எனில் கடவுச்சொல் விசை வளையத்தில் சேமிக்கப்பட்டுள்ளது."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid ""
@@ -234,11 +236,12 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
-"பயனர் URL ஐ தொலை மேல்மேசையிலிருந்து க்ளிக் செய்யும் போது அது அனுப்பப்பட வேண்டிய "
-"மின்னஞ்சல் முகவரியை குறிக்க இது பயன்படும்."
+"பயனர் URL ஐ தொலை மேல்மேசையிலிருந்து பகிர்வு விருப்பங்கள் உரையாடலை க்ளிக் செய்யும் போது அது "
+"அனுப்பப்பட வேண்டிய "
+"மின்னஞ்சல் முகவரியை இந்த விசை குறிக்கிறது"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "When the status icon should be shown"
@@ -257,20 +260,20 @@ msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "ரௌட்டர்களில் UPNPஐ பயன்படுத்தி முன்னனுப்ப வேண்டுமா"
 
 #: ../capplet/vino-preferences.ui.h:1
-msgid "Al_ways display an icon"
-msgstr "எப்போதும் சின்னத்தை காட்டுக்"
+msgid "Al_ways"
+msgstr "_w எப்போதும்"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "(_v)மற்ற பயனீட்டாளர் உங்கள் மேல் மேசையை பார்க்க அனுமதி"
 
 #: ../capplet/vino-preferences.ui.h:3
-msgid "Notification Area"
-msgstr "அறிவிப்பு பகுதி"
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "_c தானியங்கியாக யூபிஎன்பி திசைவியை திறக்கவும் துறைகளை மேலனுப்பவும் வடிவமை"
 
 #: ../capplet/vino-preferences.ui.h:4
-msgid "Remote Desktop Preferences"
-msgstr "தொலை மேல்மேசை விருப்பங்கள்"
+msgid "Desktop Sharing Preferences"
+msgstr "தொலை பகிர்வு விருப்பங்கள்"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
@@ -285,34 +288,38 @@ msgid "Sharing"
 msgstr "பகிர்வு"
 
 #: ../capplet/vino-preferences.ui.h:8
+msgid "Show Notification Area Icon"
+msgstr "அறிவிப்பு பகுதி சின்னத்தை காட்டுக"
+
+#: ../capplet/vino-preferences.ui.h:9
 msgid "Some of these preferences are locked down"
 msgstr "இவற்றில் சில  விருப்பங்கள் பூட்டப்பட்டுள்ளன"
 
-#: ../capplet/vino-preferences.ui.h:9
+#: ../capplet/vino-preferences.ui.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "ரௌடர் UPnP வசதியை செயல்படுத்தப்பட வேண்டும்"
+
+#: ../capplet/vino-preferences.ui.h:11
 msgid "Your desktop will be shared"
 msgstr "உங்கள் பணிமேடை பகிர்ந்து கொள்ளப்படும்"
 
-#: ../capplet/vino-preferences.ui.h:10
+#: ../capplet/vino-preferences.ui.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "(_A)பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துவதை அனுமதிக்கவும்"
 
-#: ../capplet/vino-preferences.ui.h:11
-msgid "_Configure network automatically to accept connections"
-msgstr "இணைப்புகளை ஏற்க பிணையத்தை தானாக கட்டமை (_C)"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "_Never display an icon"
-msgstr "_N சின்னத்தை ஒருபோதும் காட்டாதே"
-
 #: ../capplet/vino-preferences.ui.h:13
-msgid "_Only display an icon when there is someone connected"
-msgstr " இணைப்பில் யாரேனும் இருக்தால் மட்டும்சின்னத்ததை காட்டுக "
+msgid "_Never"
+msgstr "_N எப்போதுமில்லை"
 
 #: ../capplet/vino-preferences.ui.h:14
+msgid "_Only when someone is connected"
+msgstr "_O யாரேனும் இணைந்தபோது"
+
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Require the user to enter this password:"
 msgstr "(_R)பயனர் கடவுச்சொல்லை உள்ளிட வேண்டும்:"
 
-#: ../capplet/vino-preferences.ui.h:15
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_You must confirm each access to this machine"
 msgstr "இந்த கணினியின் ஒவ்வொரு அணுகலையும் உறுதிப்படுத்தவும் (_Y)"
 
@@ -321,32 +328,37 @@ msgstr "இந்த கணினியின் ஒவ்வொரு அணு
 msgid "File is not a valid .desktop file"
 msgstr "கோப்பு செல்லுபடியாகும்  .desktop கோப்பு அல்ல"
 
-#: ../server/smclient/eggdesktopfile.c:188
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../server/smclient/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "அடையாளம் காணா மேல்மேசை கோப்பு பதிப்பு '%s' "
 
-#: ../server/smclient/eggdesktopfile.c:968
+#: ../server/smclient/eggdesktopfile.c:971
 #, c-format
 msgid "Starting %s"
 msgstr "%s ஐ துவக்குகிறது"
 
-#: ../server/smclient/eggdesktopfile.c:1110
+#: ../server/smclient/eggdesktopfile.c:1113
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "பயன்பாடு கட்டளை வரியில் ஆவணங்களை ஒப்புக்கொள்ளாது"
 
-#: ../server/smclient/eggdesktopfile.c:1178
+#: ../server/smclient/eggdesktopfile.c:1181
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "இனம் காணாத துவக்க தேர்வு: %d"
 
-#: ../server/smclient/eggdesktopfile.c:1383
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../server/smclient/eggdesktopfile.c:1388
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "'Type=Link' மேல்மேசை உள்ளீடுக்கு ஆவண யூஆர்ஐ ஐ கொடுக்க இயலாது"
 
-#: ../server/smclient/eggdesktopfile.c:1404
+#: ../server/smclient/eggdesktopfile.c:1409
 #, c-format
 msgid "Not a launchable item"
 msgstr "துவக்க முடியாத உருப்படி"
@@ -396,8 +408,8 @@ msgid "Run 'vino-server --help' to see a full list of available command line opt
 msgstr "'vino-passwd --help'ஐ இயக்கி முழு கட்டளை வரி விருப்பங்கள் பட்டியலை பார்க்கவும்"
 
 #: ../server/vino-main.c:226
-msgid "GNOME Remote Desktop"
-msgstr "க்நோம் தொலை மேசைச்சூழல்"
+msgid "GNOME Desktop Sharing"
+msgstr "GNOME  பணிமேடை பகிர்வு"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -420,8 +432,8 @@ msgstr "%s இன் தொலை மேல்மேசை %s இல்"
 
 #: ../server/vino-prefs.c:109
 #, c-format
-msgid "Received signal %d, exiting...\n"
-msgstr "பெறப்பட்ட சிக்னல் %d, வெளியேறுகிறது...\n"
+msgid "Received signal %d, exiting."
+msgstr "பெறப்பட்ட சிக்னல் %d, வெளியேறுகிறது"
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -469,9 +481,9 @@ msgstr "(_R)மறுக்கவும்"
 msgid "Failed to open connection to bus: %s\n"
 msgstr "பஸ்ஸுக்கு இணைப்பை திறத்தல் தோல்வியுற்றது: %s\n"
 
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "GNOME Remote Desktop Server"
-msgstr "GNOME தொலை பணிமேடை சேவையகம்"
+#: ../server/vino-server.desktop.in.in.h:2
+msgid "GNOME Desktop Sharing Server"
+msgstr "GNOME  பணிமேடை பகிர்வு சேவையகம்"
 
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
@@ -479,10 +491,10 @@ msgstr "மேல்மேசை பகிர்வு  செயற்படு
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "ஒரு நபர் இணைக்கப்பட்டுள்ளார்"
-msgstr[1] "%d நபர்கள் இணைக்கப்பட்டுள்ளனர்"
+msgid "One person is viewing your desktop"
+msgid_plural "%d people are viewing your desktop"
+msgstr[0] "ஒருவர் உங்கள் மேல் மேசையை பார்க்கிறார்."
+msgstr[1] "%d பேர் உங்கள் மேல் மேசையை பார்க்கிறார்கள்."
 
 #: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
 msgid "Error displaying preferences"
@@ -492,7 +504,7 @@ msgstr "விருப்பங்களை காட்டுவதில் �
 msgid "Error displaying help"
 msgstr "உதவியை காட்டுவதில் பிழை"
 
-#: ../server/vino-status-icon.c:261
+#: ../server/vino-status-icon.c:267
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -529,85 +541,85 @@ msgstr ""
 " Fifth Floor, Boston, MA 02110-1301, USA \n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:276
+#: ../server/vino-status-icon.c:282
 msgid "translator-credits"
 msgstr "I. Felix <ifelix@redhat.com>. Dr. T. Vasudevan <agnihot3@gmail.com>"
 
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:288
 msgid "Share your desktop with other users"
 msgstr "மற்ற பயனர்களுடன் உங்கள் மேல் மேசையை பகிர்ந்து கொள்ளுங்கள்."
 
-#: ../server/vino-status-icon.c:348 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "'%s'  ஐ துண்டிக்க நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-status-icon.c:351
+#: ../server/vino-status-icon.c:358
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'  இலிருந்து தொலை பயனர் துண்டிக்கப்படுவார். நீங்கள் உறுதியாக இருக்கிறீகளா?"
 
-#: ../server/vino-status-icon.c:357
+#: ../server/vino-status-icon.c:364
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "எல்லா பயனர்களையும் துண்டிக்க நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-status-icon.c:359
+#: ../server/vino-status-icon.c:366
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "எல்லா தொலை பயனர்களும் துண்டிக்கப்படுவார்கள். நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-status-icon.c:371 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
 msgid "Disconnect"
 msgstr "துண்டிப்பு"
 
-#: ../server/vino-status-icon.c:397 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
 msgid "_Preferences"
 msgstr "_ம முன்னுரிமைகள்"
 
-#: ../server/vino-status-icon.c:412
+#: ../server/vino-status-icon.c:419
 msgid "Disconnect all"
 msgstr "அனைத்தையும் துண்டிக்கவும்"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:436 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s ஐ துண்டிக்கவும்"
 
-#: ../server/vino-status-icon.c:457 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
 msgid "_Help"
 msgstr "_உதவி"
 
-#: ../server/vino-status-icon.c:465
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_பற்றி"
 
-#: ../server/vino-status-icon.c:598 ../server/vino-status-tube-icon.c:400
+#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "libnotify ஐ ஆரம்பிப்ப்பதில் பிழை \n"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:626
 msgid "Another user is viewing your desktop"
 msgstr "மற்ற பயனர் உங்கள் மேல் மேசையை பார்க்கிறார்."
 
-#: ../server/vino-status-icon.c:621
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "'%s'  கணினியில் உள்ள மற்றொரு பயனர் உங்கள் மேல் மேசையை பார்க்கிறார்."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:634
 msgid "Another user is controlling your desktop"
 msgstr "பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:636
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "'%s'  கணினியில் உள்ள மற்றொரு பயனர் உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
 
-#: ../server/vino-status-icon.c:657 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "அறிக்கை குமிழை காட்டுவதில் பிழை : %s\n"
@@ -617,30 +629,30 @@ msgstr "அறிக்கை குமிழை காட்டுவதில�
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "'%s'  இலிருந்து தொலை பயனர் துண்டிக்கப்படுவார். நீங்கள் உறுதியாக இருக்கிறீர்களா?"
 
-#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
+#: ../server/vino-tube-server.c:269 ../server/vino-tube-server.c:298
 msgid "Share my desktop information"
 msgstr "எனது பணிமேடை தகவலை பகிரவும்."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:272
+#: ../server/vino-tube-server.c:273
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' பணிமேடை பகிர்வு அழைப்பை நிராகரித்தார்."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:276
+#: ../server/vino-tube-server.c:277
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' துண்டிக்கப்பட்டது"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:303
+#: ../server/vino-tube-server.c:304
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' தொலைவிலிருந்து உங்கள் மேல் மேசையை கட்டுப்படுத்துகிறார்"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:312
+#: ../server/vino-tube-server.c:313
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "திரையில் இணைக்க '%s'க்கு காத்திருக்கிறது."
@@ -715,6 +727,27 @@ msgstr "VINO பதிப்பு %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: உங்களுக்கு Vino கடவுச்சொல்லை மாற்ற அனுமதி இல்லை.\n"
 
+#~ msgid "Remote Desktop"
+#~ msgstr "தொலை பணிமேடை"
+
+#~ msgid "Enable remote desktop access"
+#~ msgstr "தொலை மேல்மேசை சேவகன் அனுகலை செயல்படுத்து"
+
+#~ msgid "Al_ways display an icon"
+#~ msgstr "எப்போதும் சின்னத்தை காட்டுக்"
+
+#~ msgid "_Configure network automatically to accept connections"
+#~ msgstr "இணைப்புகளை ஏற்க பிணையத்தை தானாக கட்டமை (_C)"
+
+#~ msgid "_Never display an icon"
+#~ msgstr "_N சின்னத்தை ஒருபோதும் காட்டாதே"
+
+#~ msgid "_Only display an icon when there is someone connected"
+#~ msgstr " இணைப்பில் யாரேனும் இருக்தால் மட்டும்சின்னத்ததை காட்டுக "
+
+#~ msgid "GNOME Remote Desktop"
+#~ msgstr "க்நோம் தொலை மேசைச்சூழல்"
+
 #~ msgid "_Send address by email"
 #~ msgstr "மின்னஞ்சல் வழியாக முகவரியை அனுப்பவும் (_S)"
 
@@ -723,9 +756,6 @@ msgstr "ERROR: உங்களுக்கு Vino கடவுச்சொல�
 
 #~ msgid "Maximum size: 8 characters"
 #~ msgstr "அதிகபட்ச அளவு: 8 எழுத்துக்கள்"
-
-#~ msgid "The router must have the UPnP feature enabled"
-#~ msgstr "ரௌடர் UPnP வசதியை செயல்படுத்தப்பட வேண்டும்"
 
 #~ msgid "You will be queried to allow or to refuse every incoming connection"
 #~ msgstr "உள்வரும் இணைப்பை நீங்கள் அனுமதிக்க அல்லது மறுக்க வினாவிடலாம்"
