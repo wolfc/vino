@@ -227,7 +227,7 @@ vino_status_icon_help (VinoStatusIcon *icon)
 
   screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
   if (!gtk_show_uri (screen,
-		     "ghelp:user-guide?goscustdesk-90",
+		     "help:gnome-help/sharing-desktop",
 		     GDK_CURRENT_TIME,
 		     &error))
     {

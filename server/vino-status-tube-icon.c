@@ -194,7 +194,7 @@ vino_status_tube_icon_help (VinoStatusTubeIcon *icon)
   GError    *error = NULL;
 
   screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
-  if (!gtk_show_uri (screen, "ghelp:user-guide?goscustdesk-90",
+  if (!gtk_show_uri (screen, "help:gnome-help/sharing-desktop",
       GDK_CURRENT_TIME, &error))
     {
       vino_util_show_error (_("Error displaying help"), error->message, NULL);
