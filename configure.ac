@@ -24,6 +24,7 @@ AS_IF([test "x$enable_http_server" = "xyes"],
 AM_CONDITIONAL([VINO_ENABLE_HTTP_SERVER], [test "x$enable_http_server" = "xyes"])
 
 # GNOME common
+AM_MAINTAINER_MODE([enable])
 GNOME_MAINTAINER_MODE_DEFINES
 GNOME_COMPILE_WARNINGS([maximum])
 GNOME_DEBUG_CHECK
