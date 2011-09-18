@@ -6,6 +6,7 @@
 # Peter Bach <bach.peter@gmail.com>, 2007.
 # Kenneth Nielsen <k.nielsen81@gmail.com>, 2008.
 # Ask Hjorth Larsen <asklarsen@gmail.com>, 2007, 08, 09.
+# Joe Hansen <joedalton2@yahoo.dk>, 2011.
 #
 # Konventioner:
 # remote -> fjern, udefrakommende
@@ -15,9 +16,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-04-02 22:40+0200\n"
-"PO-Revision-Date: 2011-04-02 21:09+0200\n"
-"Last-Translator: Ask Hjorth Larsen <asklarsen@gmail.com>\n"
+"POT-Creation-Date: 2011-09-18 18:08+0200\n"
+"PO-Revision-Date: 2011-09-18 21:09+0200\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -65,9 +66,9 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr "Vælg hvordan andre brugere kan se dit skrivebord fjernt"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
-#: ../server/vino-server.desktop.in.in.h:2
-msgid "Remote Desktop"
-msgstr "Fjernskrivebord"
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "Deling af skrivebord"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:1
 msgid "Allowed authentication methods"
@@ -82,8 +83,8 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "E-post-adresse som fjernskrivebordsadressen skal sendes til"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-msgid "Enable remote desktop access"
-msgstr "Aktivér fjernadgang til skrivebordet"
+msgid "Enable remote access to the desktop"
+msgstr "Aktiver fjernadgang til skrivebordet"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:5
 msgid ""
@@ -98,10 +99,11 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
+"remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
-"Tillader fjernadgang til skrivebordet vha. RFB-protokollen. Brugere på "
-"fjernmaskiner kan så tilslutte til skrivebordet med en VNC-fremviser."
+"Hvis sand, tillader fjernadgang til skrivebordet vha. RFB-protokollen. "
+"Brugere på fjernmaskiner kan så tilslutte til skrivebordet med en VNC-"
+"fremviser."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid ""
@@ -240,11 +242,11 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 "Denne nøgle angiver den e-post-adresse som fjernskrivebordsadressen skal "
-"sendes til hvis brugeren klikker på adressen under indstillingerne for "
+"sendes til, hvis brugeren klikker på adressen under indstillingerne for "
 "fjernskrivebord."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
@@ -265,20 +267,20 @@ msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Om vi skal bruge UPNP-protokollen til at viderestille porten i rutere"
 
 #: ../capplet/vino-preferences.ui.h:1
-msgid "Al_ways display an icon"
-msgstr "_Vis altid et ikon"
+msgid "Al_ways"
+msgstr "_Altid"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "Tillad andre brugere at _se dit skrivebord"
 
 #: ../capplet/vino-preferences.ui.h:3
-msgid "Notification Area"
-msgstr "Statusfelt"
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "_Konfigurer automatisk UPnP-router til at åbne og videresende porte"
 
 #: ../capplet/vino-preferences.ui.h:4
-msgid "Remote Desktop Preferences"
-msgstr "Indstillinger for fjernskrivebord"
+msgid "Desktop Sharing Preferences"
+msgstr "Indstillinger for skrivebordsdeling"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
@@ -293,34 +295,38 @@ msgid "Sharing"
 msgstr "Deling"
 
 #: ../capplet/vino-preferences.ui.h:8
+msgid "Show Notification Area Icon"
+msgstr "Vis ikon i statusfelt"
+
+#: ../capplet/vino-preferences.ui.h:9
 msgid "Some of these preferences are locked down"
 msgstr "Nogle af disse indstillinger er låst"
 
-#: ../capplet/vino-preferences.ui.h:9
+#: ../capplet/vino-preferences.ui.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "Din ruter skal have UPnP slået til"
+
+#: ../capplet/vino-preferences.ui.h:11
 msgid "Your desktop will be shared"
 msgstr "Dit skrivebord vil blive delt"
 
-#: ../capplet/vino-preferences.ui.h:10
+#: ../capplet/vino-preferences.ui.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "_Tillad andre brugere at kontrollere dit skrivebord"
 
-#: ../capplet/vino-preferences.ui.h:11
-msgid "_Configure network automatically to accept connections"
-msgstr "_Konfigurér netværk automatisk til at acceptere forbindelser"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "_Never display an icon"
-msgstr "Vis _aldrig et ikon"
-
 #: ../capplet/vino-preferences.ui.h:13
-msgid "_Only display an icon when there is someone connected"
-msgstr "Vis _kun et ikon når nogen er forbundet"
+msgid "_Never"
+msgstr "_Aldrig"
 
 #: ../capplet/vino-preferences.ui.h:14
+msgid "_Only when someone is connected"
+msgstr "_Kun når nogle er forbundet"
+
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Require the user to enter this password:"
 msgstr "_Påkræv at brugeren indtaster denne adgangskode:"
 
-#: ../capplet/vino-preferences.ui.h:15
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_You must confirm each access to this machine"
 msgstr "_Du skal godkende hver tilgang til denne maskine"
 
@@ -329,32 +335,37 @@ msgstr "_Du skal godkende hver tilgang til denne maskine"
 msgid "File is not a valid .desktop file"
 msgstr "Filen er ikke en gyldig .desktop-fil"
 
-#: ../server/smclient/eggdesktopfile.c:188
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../server/smclient/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Ukendt version \"%s\" af skrivebordsfil"
 
-#: ../server/smclient/eggdesktopfile.c:968
+#: ../server/smclient/eggdesktopfile.c:971
 #, c-format
 msgid "Starting %s"
 msgstr "Starter %s"
 
-#: ../server/smclient/eggdesktopfile.c:1110
+#: ../server/smclient/eggdesktopfile.c:1113
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Programmet accepterer ikke dokumenter på kommandolinjen"
 
-#: ../server/smclient/eggdesktopfile.c:1178
+#: ../server/smclient/eggdesktopfile.c:1181
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Ukendt starttilvalg: %d"
 
-#: ../server/smclient/eggdesktopfile.c:1383
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../server/smclient/eggdesktopfile.c:1388
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Kan ikke give dokument-URI'er til et \"Type=Link\"-skrivebordselement"
 
-#: ../server/smclient/eggdesktopfile.c:1404
+#: ../server/smclient/eggdesktopfile.c:1409
 #, c-format
 msgid "Not a launchable item"
 msgstr "Ikke et kørbart element"
@@ -407,8 +418,8 @@ msgstr ""
 "kommandolinjetilvalg"
 
 #: ../server/vino-main.c:226
-msgid "GNOME Remote Desktop"
-msgstr "GNOME Fjernskrivebord"
+msgid "GNOME Desktop Sharing"
+msgstr "Deling af GNOME-skrivebord"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -431,8 +442,8 @@ msgstr "%s's fjernskrivebord på %s"
 
 #: ../server/vino-prefs.c:109
 #, c-format
-msgid "Received signal %d, exiting...\n"
-msgstr "Modtog signalet %d, afslutter...\n"
+msgid "Received signal %d, exiting."
+msgstr "Modtaget signal %d, afslutter."
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -484,9 +495,9 @@ msgstr "_Afvis"
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke oprette forbindelse til bus: %s\n"
 
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "GNOME Remote Desktop Server"
-msgstr "GNOME-Fjernskrivebordsserver"
+#: ../server/vino-server.desktop.in.in.h:2
+msgid "GNOME Desktop Sharing Server"
+msgstr "Server til deling af GNOME-skrivebord"
 
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
@@ -494,10 +505,10 @@ msgstr "Skrivebordsdeling er slået til"
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "En person er forbundet"
-msgstr[1] "%d personer er forbundet"
+msgid "One person is viewing your desktop"
+msgid_plural "%d people are viewing your desktop"
+msgstr[0] "En bruger ser dit skrivebord"
+msgstr[1] "%d brugere ser dit skrivebord"
 
 #: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
 msgid "Error displaying preferences"
@@ -507,7 +518,7 @@ msgstr "Fejl ved visning af indstillinger"
 msgid "Error displaying help"
 msgstr "Fejl ved visning af hjælp"
 
-#: ../server/vino-status-icon.c:261
+#: ../server/vino-status-icon.c:267
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -545,89 +556,90 @@ msgstr ""
 "MA  02111-1307  USA\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:276
+#: ../server/vino-status-icon.c:282
 msgid "translator-credits"
 msgstr ""
 "Peter Bach\n"
+"Joe Hansen\n"
 "\n"
 "Dansk-gruppen <dansk@dansk-gruppen.dk>\n"
 "Mere info: http://www.dansk-gruppen.dk"
 
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:288
 msgid "Share your desktop with other users"
 msgstr "Del dit skrivebord med andre brugere"
 
-#: ../server/vino-status-icon.c:348 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
-msgstr "Er du sikker på at du vil afbryde \"%s\"?"
+msgstr "Er du sikker på, at du vil afbryde \"%s\"?"
 
-#: ../server/vino-status-icon.c:351
+#: ../server/vino-status-icon.c:358
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Fjernbrugeren fra \"%s\" vil blive afbrudt. Er du sikker?"
 
-#: ../server/vino-status-icon.c:357
+#: ../server/vino-status-icon.c:364
 msgid "Are you sure you want to disconnect all clients?"
-msgstr "Er du sikker på at du vil afbryde alle klienter?"
+msgstr "Er du sikker på, at du vil afbryde alle klienter?"
 
-#: ../server/vino-status-icon.c:359
+#: ../server/vino-status-icon.c:366
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Alle fjerne brugere vil blive afbrudt. Er du sikker?"
 
-#: ../server/vino-status-icon.c:371 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
 msgid "Disconnect"
 msgstr "Afbryd"
 
-#: ../server/vino-status-icon.c:397 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
 msgid "_Preferences"
 msgstr "_Indstillinger"
 
-#: ../server/vino-status-icon.c:412
+#: ../server/vino-status-icon.c:419
 msgid "Disconnect all"
 msgstr "Afbryd alle"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:436 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
 #, c-format
 msgid "Disconnect %s"
 msgstr "Afbryd %s"
 
-#: ../server/vino-status-icon.c:457 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
 msgid "_Help"
 msgstr "_Hjælp"
 
-#: ../server/vino-status-icon.c:465
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "_Om"
 
-#: ../server/vino-status-icon.c:598 ../server/vino-status-tube-icon.c:400
+#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Fejl ved klargøring af libnotify\n"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:626
 msgid "Another user is viewing your desktop"
 msgstr "En anden bruger ser dit skrivebord"
 
-#: ../server/vino-status-icon.c:621
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "En bruger på maskinen \"%s\" fjernser dit skrivebord."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:634
 msgid "Another user is controlling your desktop"
 msgstr "En anden bruger kontrollerer dit skrivebord"
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:636
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En bruger på maskinen \"%s\" fjernkontrollerer dit skrivebord."
 
-#: ../server/vino-status-icon.c:657 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Fejl ved visning af påmindelsesboblen: %s\n"
@@ -741,217 +753,3 @@ msgstr "VINO, version %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "FEJL: Du har ikke rettigheder til at ændre Vino-kodeord.\n"
-
-#~ msgid "_Send address by email"
-#~ msgstr "_Send adresse via e-post"
-
-#~ msgid "_Copy address to clipboard"
-#~ msgstr "_Kopiér adresse til udklipsholderen"
-
-#~ msgid "Maximum size: 8 characters"
-#~ msgstr "Maksimal størrelse: 8 tegn"
-
-#~ msgid "The router must have the UPnP feature enabled"
-#~ msgstr "Din ruter skal have UPnP slået til"
-
-#~ msgid "You will be queried to allow or to refuse every incoming connection"
-#~ msgstr ""
-#~ "Du vil blive adspurgt om at tillade eller afslå enhver indkommende "
-#~ "forbindelse"
-
-#~ msgid "Remote Desktop server already running; exiting ...\n"
-#~ msgstr "Fjernskrivebordsserveren kører allerede; afslutter...\n"
-
-#~ msgid ""
-#~ "Error while communicating with GConf. Are you logged into a GNOME session?"
-#~ msgstr ""
-#~ "Fejl under kommunikation med GConf. Er du logget ind i en GNOME-session?"
-
-#~ msgid "Error message:"
-#~ msgstr "Fejlmeddelelse:"
-
-#~ msgid "Out of memory handling '%s' message"
-#~ msgstr "Ikke mere fri hukommelse ved behandling af \"%s\"-signal"
-
-#~ msgid "Out of memory registering object path '%s'"
-#~ msgstr "Ikke mere fri hukommelse ved registrering af objektsti \"%s\""
-
-#~ msgid "Failed to acquire D-Bus name '%s'\n"
-#~ msgstr "Kunne ikke hente D-Bus navn \"%s\"\n"
-
-#~ msgid "Set your remote desktop access preferences"
-#~ msgstr "Angiv indstillinger for fjernadgang til skrivebordet"
-
-#~ msgid "<b>Network</b>"
-#~ msgstr "<b>Netværk</b>"
-
-#~ msgid "A_sk you for confirmation"
-#~ msgstr "S_pørg dig om bekræftelse"
-
-#~ msgid "Advanced"
-#~ msgstr "Avanceret"
-
-#~ msgid "Disable the _wallpaper when connected"
-#~ msgstr "Deaktivér _baggrundsbillede ved tilslutning"
-
-#~ msgid "Disable the wallpaper when successfull connection"
-#~ msgstr "Deaktivér skrivebordets baggrundsbillede når der tilsluttes"
-
-#~ msgid "General"
-#~ msgstr "Generelt"
-
-#~ msgid ""
-#~ "Remote users' VNC clients accessing the desktop are required to support "
-#~ "encryption"
-#~ msgstr ""
-#~ "Fjernbrugeres VNC-klienter, der tilgår skrivebordet, skal understøtte "
-#~ "kryptering"
-
-#~ msgid "Screen will be locked after the last remote client disconnect"
-#~ msgstr "Skærmen vil blive låst efter den sidste fjernklients afkobling"
-
-#~ msgid "The server will only accept connections from localhost"
-#~ msgstr ""
-#~ "Serveren vil kun acceptere forbindelser fra den lokale vært (localhost)"
-
-#~ msgid "The server will use another port, instead of the default (5900)"
-#~ msgstr "Serveren vil bruge en anden port i stedet for standardporten (5900)"
-
-#~ msgid "Users can view your desktop using this command:"
-#~ msgstr "Brugere kan se dit skrivebord vha. denne kommando:"
-
-#~ msgid "When a user tries to view or control your desktop:"
-#~ msgstr "Når en bruger forsøger at se eller kontrollere dit skrivebord:"
-
-#~ msgid "_Lock screen on disconnect"
-#~ msgstr "_Lås skærmen ved afkobling"
-
-#~ msgid "_Only allow local connections"
-#~ msgstr "Tillad _kun lokale forbindelser"
-
-#~ msgid "_Password:"
-#~ msgstr "_Adgangskode:"
-
-#~ msgid "_Require encryption"
-#~ msgstr "_Kræv kryptering"
-
-#~ msgid "_Use an alternative port:"
-#~ msgstr "_Brug en alternativ port:"
-
-#~ msgid ""
-#~ "If true, the server will only accept connections from localhost and "
-#~ "network connections will be rejected. Set this option to true if you wish "
-#~ "to exclusively use a tunneling mechanism to access the server, such as "
-#~ "ssh."
-#~ msgstr ""
-#~ "Hvis sand, vil serveren kun acceptere forbindelser fra lokalvært og "
-#~ "netværksforbindelser vil blive afvist. Sæt dette tilvalg til sand hvis du "
-#~ "kun vil bruge en tunnelmekanisme til adgang af serveren, såsom ssh."
-
-#~ msgid "Only allow local connections"
-#~ msgstr "Tillad kun lokale forbindelser"
-
-#~ msgid ""
-#~ "If checked, screen will be locked after the last remote client disconnect"
-#~ msgstr ""
-#~ "Hvis valgt vil skærmen blive låst efter den sidste fjernklients afkobling."
-
-#~ msgid ""
-#~ "Problem registering the remote desktop server with bonobo-activation; "
-#~ "exiting ...\n"
-#~ msgstr ""
-#~ "Problem ved registrering af den udefrakommende skrivebordsserver med "
-#~ "bonobo-activation; afslutter...\n"
-
-#~ msgid "Remote desktop server died, restarting\n"
-#~ msgstr "Fjernskrivebordsserver døde, genstarter\n"
-
-#~ msgid "Activation of %s failed: %s\n"
-#~ msgstr "Aktivering af %s mislykkedes: %s\n"
-
-#~ msgid "Activation of %s failed: Unknown Error\n"
-#~ msgstr "Aktivering af %s mislykkedes: ukendt fejl\n"
-
-#~ msgid "Failed to activate remote desktop server: tried too many times\n"
-#~ msgstr ""
-#~ "Det mislykkedes at aktivere fjernskrivebordsserveren: forsøgte for mange "
-#~ "gange\n"
-
-#~ msgid "Starting remote desktop server"
-#~ msgstr "Starter fjernskrivebordsserveren"
-
-#~ msgid "Not starting remote desktop server"
-#~ msgstr "Starter ikke fjernskrivebordsserveren"
-
-#~ msgid "    "
-#~ msgstr "    "
-
-#~ msgid "        "
-#~ msgstr "        "
-
-#~ msgid "*"
-#~ msgstr "*"
-
-#~ msgid "Address"
-#~ msgstr "Adresse"
-
-#~ msgid "The address pointed to by the widget"
-#~ msgstr "Den adresse som peges på af kontrollen"
-
-#~ msgid "Tooltip"
-#~ msgstr "Værktøjstip"
-
-#~ msgid "A tooltip for this URL"
-#~ msgstr "Et værktøjstip for denne adresse"
-
-#~ msgid "URL color"
-#~ msgstr "Adressefarve"
-
-#~ msgid "The color of the URL's label"
-#~ msgstr "Farven på adressens etiket"
-
-#~ msgid "The screen to be monitored"
-#~ msgstr "Den skærm som skal overvåges"
-
-#~ msgid "The screen for which to create a VNC server"
-#~ msgstr "Den skærm som VNC-serveren skal oprettes for"
-
-#~ msgid "On Hold"
-#~ msgstr "På pause"
-
-#~ msgid "Place all clients on hold"
-#~ msgstr "Sæt alle klienter på pause"
-
-#~ msgid "Prompt enabled"
-#~ msgstr "Spørgsmål aktiveret"
-
-#~ msgid "Prompt the user about connection attempts"
-#~ msgstr "Spørg brugeren ved forsøg på tilslutning"
-
-#~ msgid "View Only"
-#~ msgstr "Kun visning"
-
-#~ msgid "Disallow keyboard/pointer input from clients"
-#~ msgstr "Tillad ikke tastatur/musemarkør-inddata fra klienter"
-
-#~ msgid "Require Encryption"
-#~ msgstr "Påkræv kryptering"
-
-#~ msgid "Require clients to use encryption"
-#~ msgstr "Påkræv at klienter anvender kryptering"
-
-#~ msgid "Authentication methods"
-#~ msgstr "Godkendelsesmetoder"
-
-#~ msgid "The authentication methods this server should allow"
-#~ msgstr "De godkendelsesmetoder som denne server skal tillade"
-
-#~ msgid "VNC Password"
-#~ msgstr "VNC-adgangskode"
-
-#~ msgid ""
-#~ "The password (base64 encoded) used to authenticate types using the "
-#~ "VncAuth method"
-#~ msgstr ""
-#~ "Den adgangskode (base64-kodet) som bruges til at godkender typer vha. "
-#~ "VncAuth-metoden"
