@@ -1,3 +1,44 @@
+Vino 3.1.92
+===========
+
+Bruce Cowan (1):
+      Updated British English translation
+
+Claudio Arseni (1):
+      l10n: Updated Italian translation
+
+David King (3):
+      Post-release version bump to 3.1.92
+      Enable AM_MAINTAINER_MODE in configure.ac
+      Update NEWS for 3.1.92 release
+
+Duarte Loreto (1):
+      Updated Portuguese translation
+
+Ihar Hrachyshka (1):
+      Updated Belarusian translation.
+
+Jeremy Bicha (1):
+      Corrected new help links
+
+Jiro Matsuzawa (1):
+      Updated Japanese translation
+
+Joan DUran (1):
+      [l10n]Updated Catalan translation
+
+Joe Hansen (1):
+      Updated Danish translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Wouter Bolsterlee (1):
+      Updated Dutch translation by Wouter Bolsterlee
+
+Yinghua Wang (1):
+      update Simplified Chinese (zh_CN) translation
+
 Vino 3.1.91
 ===========
 
