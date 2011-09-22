@@ -9,18 +9,19 @@
 msgid ""
 msgstr ""
 "Project-Id-Version:  vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-02-27 17:31+0900\n"
-"PO-Revision-Date: 2011-02-27 17:35+0900\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2011-07-08 10:28+0000\n"
+"PO-Revision-Date: 2011-09-23 06:31+0900\n"
 "Last-Translator: Changwoo Ryu <cwryu@debian.org>\n"
 "Language-Team: GNOME Korea <gnome-kr@googlegroups.com>\n"
-"Language: Korean\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: Korean\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: ../capplet/vino-message-box.c:54
+#: ../capplet/vino-message-box.c:55
 #, c-format
 msgid "There was an error showing the URL \"%s\""
 msgstr "\"%s\" URL을 표시하는데 오류가 발생했습니다"
@@ -60,9 +61,9 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr "다른 사용자가 데스크톱을 보는 방법을 설정합니다"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
-#: ../server/vino-server.desktop.in.in.h:2
-msgid "Remote Desktop"
-msgstr "원격 데스크톱"
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "데스크톱 공유"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:1
 msgid "Allowed authentication methods"
@@ -77,8 +78,8 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "원격 데스크톱 URL을 보낼 전자우편 주소"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-msgid "Enable remote desktop access"
-msgstr "원격 데스크톱 접근 사용"
+msgid "Enable remote access to the desktop"
+msgstr "데스크톱에 원격 접근 허용"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:5
 msgid ""
@@ -93,10 +94,8 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"참이면 RFB프로토콜을 통해서 원격으로 데스크톱에 접근합니다. 원격 컴퓨터의 사"
-"용자는 vncviewer를 써서 데스크톱에 접근할 수 있습니다."
+"remote machines may then connect to the desktop using a VNC viewer."
+msgstr "참이면 RFB 프로토콜을 통해서 원격으로 데스크톱에 접근을 허용합니다. 원격 컴퓨터의 사용자는 VNC viewer를 써서 데스크톱에 접근할 수 있습니다."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid ""
@@ -132,7 +131,9 @@ msgstr "참이면 원격 클라이언트의 연결이 끊긴 후 화면을 잠�
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
-msgstr "참이면 서버가 기본 포트 (5900) 대신 다른 포트에서 연결을 받아들입니다. 포트 번호는 'alternative-port' 키에 지정해야 합니다."
+msgstr ""
+"참이면 서버가 기본 포트 (5900) 대신 다른 포트에서 연결을 받아들입니다. 포트 "
+"번호는 'alternative-port' 키에 지정해야 합니다."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:12
 msgid ""
@@ -163,7 +164,11 @@ msgid ""
 "remote user to be prompted for a password (the password is specified by the "
 "vnc-password key) before connecting and \"none\" which allows any remote "
 "user to connect."
-msgstr "원격 사용자가 데스크톱에 접근할 때 쓰일 인증 방법의 목록입니다. 쓸 수 있는 인증방법은 두가지가 있습니다. \"vnc\"는 원격 사용자가 연결하기 전에 암호 인증을 합니다. (그 암호는 vnc-password 키에서 지정합니다.) \"none\"은 아무 원격 사용자에게 연결을 허용합니다."
+msgstr ""
+"원격 사용자가 데스크톱에 접근할 때 쓰일 인증 방법의 목록입니다. 쓸 수 있는 인"
+"증방법은 두가지가 있습니다. \"vnc\"는 원격 사용자가 연결하기 전에 암호 인증"
+"을 합니다. (그 암호는 vnc-password 키에서 지정합니다.) \"none\"은 아무 원격 "
+"사용자에게 연결을 허용합니다."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:16
 msgid "Lock the screen when last user disconnect"
@@ -195,13 +200,18 @@ msgid ""
 "authentication method is used. The password specified by the key is base64 "
 "encoded. The special value of 'keyring' (which is not valid base64) means "
 "that the password is stored in the GNOME keyring."
-msgstr "\"vnc\" 인증방법을 사용하는 경우 원격 사용자에게 물어볼 암호입니다. 이 암호는 base64 인코딩된 키이여야 합니다. 값이 'keyring'인 경우 (올바른 base64 값이 아님) 암호를 그놈 키 모음에 저장한다는 뜻입니다."
+msgstr ""
+"\"vnc\" 인증방법을 사용하는 경우 원격 사용자에게 물어볼 암호입니다. 이 암호"
+"는 base64 인코딩된 키이여야 합니다. 값이 'keyring'인 경우 (올바른 base64 값"
+"이 아님) 암호를 그놈 키 모음에 저장한다는 뜻입니다."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
-msgstr "'use-alternative-port'키가 참이면 연결을 받아들일 포트 번호입니다. 올바른 범위는 5000에서 50000입니다."
+msgstr ""
+"'use-alternative-port'키가 참이면 연결을 받아들일 포트 번호입니다. 올바른 범"
+"위는 5000에서 50000입니다."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:24
 msgid ""
@@ -217,11 +227,9 @@ msgstr ""
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
-msgstr ""
-"원격 데스크톱 기본 설정 대화상자에서 사용자가 URL을 눌렀을 때 원격 데스크톱 "
-"URL을 보낼 메일주소를 지정합니다."
+msgstr "데스크톱 공유 기본 설정 대화상자에서 사용자가 URL을 눌렀을 때 원격 데스크톱 URL을 보낼 메일주소를 지정합니다."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "When the status icon should be shown"
@@ -240,20 +248,20 @@ msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "라우터에서 포트 포워드에 UPNP를 사용할지 여부"
 
 #: ../capplet/vino-preferences.ui.h:1
-msgid "Al_ways display an icon"
-msgstr "항상 아이콘 표시(_W)"
+msgid "Al_ways"
+msgstr "항상 사용(_W)"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
 msgstr "다른 사용자가 데스크톱을 볼 수 있도록 합니다(_V)"
 
 #: ../capplet/vino-preferences.ui.h:3
-msgid "Notification Area"
-msgstr "알림 영역"
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "포트를 열고 포워딩할 때 UPnP 라우터 자동 설정"
 
 #: ../capplet/vino-preferences.ui.h:4
-msgid "Remote Desktop Preferences"
-msgstr "원격 데스크톱 기본 설정"
+msgid "Desktop Sharing Preferences"
+msgstr "데스크톱 공유 기본 설정"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
@@ -268,34 +276,38 @@ msgid "Sharing"
 msgstr "공유"
 
 #: ../capplet/vino-preferences.ui.h:8
+msgid "Show Notification Area Icon"
+msgstr "알림 영역 아이콘 표시"
+
+#: ../capplet/vino-preferences.ui.h:9
 msgid "Some of these preferences are locked down"
 msgstr "잠겨져 있는 설정이 있습니다"
 
-#: ../capplet/vino-preferences.ui.h:9
+#: ../capplet/vino-preferences.ui.h:10
+msgid "The router must have the UPnP feature enabled"
+msgstr "라우터에서 UPnP 기능을 사용해야 합니다"
+
+#: ../capplet/vino-preferences.ui.h:11
 msgid "Your desktop will be shared"
 msgstr "데스크톱을 공유합니다"
 
-#: ../capplet/vino-preferences.ui.h:10
+#: ../capplet/vino-preferences.ui.h:12
 msgid "_Allow other users to control your desktop"
 msgstr "다른 사용자가 데스크톱을 제어할 수 있음(_A)"
 
-#: ../capplet/vino-preferences.ui.h:11
-msgid "_Configure network automatically to accept connections"
-msgstr "연결을 받아들이도록 자동 네트워크 설정(_C)"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "_Never display an icon"
-msgstr "아이콘 표시하지 않기(_N)"
-
 #: ../capplet/vino-preferences.ui.h:13
-msgid "_Only display an icon when there is someone connected"
-msgstr "누군가 연결했을 경우에만 아이콘 표시(_O)"
+msgid "_Never"
+msgstr "하지 않기(_N)"
 
 #: ../capplet/vino-preferences.ui.h:14
+msgid "_Only when someone is connected"
+msgstr "누군가 연결되었을 경우에만(_O)"
+
+#: ../capplet/vino-preferences.ui.h:15
 msgid "_Require the user to enter this password:"
 msgstr "사용자가 이 암호를 입력(_R):"
 
-#: ../capplet/vino-preferences.ui.h:15
+#: ../capplet/vino-preferences.ui.h:16
 msgid "_You must confirm each access to this machine"
 msgstr "매번 이 컴퓨터에 연결할 때마다 확인(_Y)"
 
@@ -304,32 +316,37 @@ msgstr "매번 이 컴퓨터에 연결할 때마다 확인(_Y)"
 msgid "File is not a valid .desktop file"
 msgstr "올바른 .desktop 파일이 아닙니다"
 
-#: ../server/smclient/eggdesktopfile.c:188
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../server/smclient/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "desktop 파일 버전을 ('%s') 인식할 수 없습니다"
 
-#: ../server/smclient/eggdesktopfile.c:968
+#: ../server/smclient/eggdesktopfile.c:971
 #, c-format
 msgid "Starting %s"
 msgstr "%s 시작"
 
-#: ../server/smclient/eggdesktopfile.c:1110
+#: ../server/smclient/eggdesktopfile.c:1113
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "명령행에서 문서를 지정할 수 없는 프로그램입니다"
 
-#: ../server/smclient/eggdesktopfile.c:1178
+#: ../server/smclient/eggdesktopfile.c:1181
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "알 수 없는 실행 옵션: %d"
 
-#: ../server/smclient/eggdesktopfile.c:1383
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../server/smclient/eggdesktopfile.c:1388
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "문서 URI는 'Type=Link' desktop 항목에 넘길 수 없습니다"
 
-#: ../server/smclient/eggdesktopfile.c:1404
+#: ../server/smclient/eggdesktopfile.c:1409
 #, c-format
 msgid "Not a launchable item"
 msgstr "실행할 수 있는 항목이 없습니다"
@@ -381,8 +398,8 @@ msgstr ""
 "전체 명령행 옵션의 목록을 보려면 'vino-passwd --help' 명령을 실행하십시오"
 
 #: ../server/vino-main.c:226
-msgid "GNOME Remote Desktop"
-msgstr "그놈 원격 데스크톱"
+msgid "GNOME Desktop Sharing"
+msgstr "그놈 데스크톱 공유"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -405,8 +422,8 @@ msgstr "%2$s에 있는 %1$s의 원격 데스크톱"
 
 #: ../server/vino-prefs.c:109
 #, c-format
-msgid "Received signal %d, exiting...\n"
-msgstr "시그널 %d번을 받았습니다, 끝냅니다...\n"
+msgid "Received signal %d, exiting."
+msgstr "시그널 %d번을 받았습니다, 끝냅니다."
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -454,9 +471,9 @@ msgstr "거부(_R)"
 msgid "Failed to open connection to bus: %s\n"
 msgstr "버스로 연결 열기 실패: %s\n"
 
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "GNOME Remote Desktop Server"
-msgstr "그놈 원격 데스크톱 서버"
+#: ../server/vino-server.desktop.in.in.h:2
+msgid "GNOME Desktop Sharing Server"
+msgstr "그놈 데스크톱 공유 서버"
 
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
@@ -464,9 +481,9 @@ msgstr "데스크톱 공유를 사용합니다"
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "%d명이 연결했습니다"
+msgid "One person is viewing your desktop"
+msgid_plural "%d people are viewing your desktop"
+msgstr[0] "%d명이 데스크톱을 보고 있습니다"
 
 #: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
 msgid "Error displaying preferences"
@@ -476,7 +493,7 @@ msgstr "기본 설정을 표시하는데 오류가 발생했습니다"
 msgid "Error displaying help"
 msgstr "도움말을 표시하는데 오류가 발생했습니다"
 
-#: ../server/vino-status-icon.c:261
+#: ../server/vino-status-icon.c:267
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -513,87 +530,87 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:276
+#: ../server/vino-status-icon.c:282
 msgid "translator-credits"
 msgstr ""
 "차영호 <ganadist@gmail.com>, 2004, 2007.\n"
 "류창우 <cwryu@debian.org>, 2008."
 
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:288
 msgid "Share your desktop with other users"
 msgstr "데스크톱을 다른 사람과 공유합니다"
 
-#: ../server/vino-status-icon.c:347 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "'%s'의 연결을 정말로 끊겠습니까?"
 
-#: ../server/vino-status-icon.c:350
+#: ../server/vino-status-icon.c:358
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'의 원격 사용자 연결을 끊겠습니까?"
 
-#: ../server/vino-status-icon.c:356
+#: ../server/vino-status-icon.c:364
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "모든 클라이언트의 연결을 끊겠습니까?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:366
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "모든 원격 사용자의 연결을 끊겠습니까?"
 
-#: ../server/vino-status-icon.c:370 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
 msgid "Disconnect"
 msgstr "연결 끊기"
 
-#: ../server/vino-status-icon.c:396 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
-#: ../server/vino-status-icon.c:411
+#: ../server/vino-status-icon.c:419
 msgid "Disconnect all"
 msgstr "모두 연결 끊기"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:435 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s의 연결 끊기"
 
-#: ../server/vino-status-icon.c:456 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
 msgid "_Help"
 msgstr "도움말(_H)"
 
-#: ../server/vino-status-icon.c:464
+#: ../server/vino-status-icon.c:472
 msgid "_About"
 msgstr "정보(_A)"
 
-#: ../server/vino-status-icon.c:597 ../server/vino-status-tube-icon.c:400
+#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "libnotify 초기화 중 오류\n"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:618
+#: ../server/vino-status-icon.c:626
 msgid "Another user is viewing your desktop"
 msgstr "다른 사용자가 데스크톱을 보고 있습니다"
 
-#: ../server/vino-status-icon.c:620
+#: ../server/vino-status-icon.c:628
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "컴퓨터 '%s'의 사용자가 원격에서 데스크톱을 보고 있습니다."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:634
 msgid "Another user is controlling your desktop"
 msgstr "다른 사용자가 데스크톱을 제어하고 있습니다"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:636
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "컴퓨터 '%s'의 사용자가 원격에서 데스크톱을 제어하고 있습니다."
 
-#: ../server/vino-status-icon.c:656 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "알림 상자를 표시하는데 오류: %s\n"
@@ -603,30 +620,30 @@ msgstr "알림 상자를 표시하는데 오류: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "'%s' 원격 사용자의 연결이 끊어집니다. 정말 계속 하시겠습니까?"
 
-#: ../server/vino-tube-server.c:268 ../server/vino-tube-server.c:297
+#: ../server/vino-tube-server.c:269 ../server/vino-tube-server.c:298
 msgid "Share my desktop information"
 msgstr "데스크톱 정보 공유"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:272
+#: ../server/vino-tube-server.c:273
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' 사용자가 데스크톱 공유 초대를 거절했습니다."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:276
+#: ../server/vino-tube-server.c:277
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' 사용자가 연결 끊었습니다"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:303
+#: ../server/vino-tube-server.c:304
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' 사용자가 원격에서 데스크톱을 제어하고 있습니다."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:312
+#: ../server/vino-tube-server.c:313
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "'%s' 사용자가 화면에 연결하길 기다리는 중입니다."
