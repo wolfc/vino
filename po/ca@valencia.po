@@ -8,11 +8,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-05-29 19:11+0200\n"
-"PO-Revision-Date: 2011-04-05 23:06+0200\n"
+"POT-Creation-Date: 2011-09-26 14:11+0200\n"
+"PO-Revision-Date: 2011-09-07 23:07+0200\n"
 "Last-Translator: Joan Duran <jodufi@gmail.com>\n"
 "Language-Team: Catalan <tradgnome@softcatala.org>\n"
-"Language: ca\n"
+"Language: ca-XV\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -59,9 +59,8 @@ msgstr "Trieu com altres usuaris remots poden visualitzar el meu escriptori"
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:1
-#, fuzzy
 msgid "Desktop Sharing"
-msgstr "La compartició d'escriptori està habilitada"
+msgstr "Compartició de l'escriptori"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:1
 msgid "Allowed authentication methods"
@@ -77,9 +76,8 @@ msgstr ""
 "Adreça de correu a la qual s'hauria d'enviar l'URL de l'escriptori remot"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-#, fuzzy
 msgid "Enable remote access to the desktop"
-msgstr "Permet només que els usuaris remots visualitzen l'escriptori"
+msgstr "Habilita l'accés remot a l'escriptori"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:5
 msgid ""
@@ -92,14 +90,13 @@ msgstr ""
 "específica. Per exemple, eth0, wifi0, lo..."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
-#, fuzzy
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
 "Si s'habilita, permet l'accés remot a l'escriptori a través del protocol "
 "RFB. Els usuaris en màquines remotes es poden connectar a l'escriptori si "
-"utilitzen el vncviewer."
+"utilitzen un visualitzador VNC."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid ""
@@ -240,15 +237,14 @@ msgstr ""
 "mai la icona."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:25
-#, fuzzy
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 "Esta clau especifica l'adreça de correu a la qual s'hauria d'enviar l'URL de "
-"l'escriptori remot, si l'usuari fa clic a l'URL en el quadre de diàleg de "
-"preferències de l'escriptori remot."
+"l'escriptori remot, si l'usuari fa clic a l'URL en el diàleg de preferències "
+"de compartició de l'escriptori."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "When the status icon should be shown"
@@ -270,7 +266,7 @@ msgstr ""
 
 #: ../capplet/vino-preferences.ui.h:1
 msgid "Al_ways"
-msgstr ""
+msgstr "_Sempre"
 
 #: ../capplet/vino-preferences.ui.h:2
 msgid "Allow other users to _view your desktop"
@@ -279,11 +275,11 @@ msgstr "Permet que altres usuaris _visualitzen el meu escriptori"
 #: ../capplet/vino-preferences.ui.h:3
 msgid "Automatically _configure UPnP router to open and forward ports"
 msgstr ""
+"_Configura automàticament l'encaminador UPnP per obrir i reenviar els ports"
 
 #: ../capplet/vino-preferences.ui.h:4
-#, fuzzy
 msgid "Desktop Sharing Preferences"
-msgstr "Preferències de l'escriptori remot"
+msgstr "Preferències de la compartició de l'escriptori"
 
 #: ../capplet/vino-preferences.ui.h:5
 msgid "Remote users are able to control your mouse and keyboard"
@@ -298,9 +294,8 @@ msgid "Sharing"
 msgstr "Compartició"
 
 #: ../capplet/vino-preferences.ui.h:8
-#, fuzzy
 msgid "Show Notification Area Icon"
-msgstr "Àrea de notificació"
+msgstr "Mostra la icona a l'àrea de notificació"
 
 #: ../capplet/vino-preferences.ui.h:9
 msgid "Some of these preferences are locked down"
@@ -320,12 +315,11 @@ msgstr "_Permet que altres usuaris controlin l'escriptori"
 
 #: ../capplet/vino-preferences.ui.h:13
 msgid "_Never"
-msgstr ""
+msgstr "_Mai"
 
 #: ../capplet/vino-preferences.ui.h:14
-#, fuzzy
 msgid "_Only when someone is connected"
-msgstr "Hi ha una persona connectada"
+msgstr "_Només quan algú estiga connectat"
 
 #: ../capplet/vino-preferences.ui.h:15
 msgid "_Require the user to enter this password:"
@@ -425,9 +419,8 @@ msgstr ""
 "disponibles de la línia d'ordes"
 
 #: ../server/vino-main.c:226
-#, fuzzy
 msgid "GNOME Desktop Sharing"
-msgstr "Servidor d'escriptori remot del GNOME"
+msgstr "Compartició de l'escriptori del GNOME"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -449,9 +442,9 @@ msgid "%s's remote desktop on %s"
 msgstr "Escriptori remot de %s a %s"
 
 #: ../server/vino-prefs.c:109
-#, fuzzy, c-format
+#, c-format
 msgid "Received signal %d, exiting."
-msgstr "S'ha rebut la senyal %d, s'està eixint...\n"
+msgstr "S'ha rebut la senyal %d, s'està eixint."
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
@@ -504,20 +497,19 @@ msgid "Failed to open connection to bus: %s\n"
 msgstr "Ha fallat obrir la connexió al bus: %s\n"
 
 #: ../server/vino-server.desktop.in.in.h:2
-#, fuzzy
 msgid "GNOME Desktop Sharing Server"
-msgstr "Servidor d'escriptori remot del GNOME"
+msgstr "Servidor de compartició de l'escriptori del GNOME"
 
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
-msgstr "La compartició d'escriptori està habilitada"
+msgstr "La compartició de l'escriptori està habilitada"
 
 #: ../server/vino-status-icon.c:111
-#, fuzzy, c-format
+#, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
-msgstr[0] "Un altre usuari està veient el vostre escriptori"
-msgstr[1] "Un altre usuari està veient el vostre escriptori"
+msgstr[0] "Una persona està visualitzant el vostre escriptori"
+msgstr[1] "%d persones estan visualitzant el vostre escriptori"
 
 #: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
 msgid "Error displaying preferences"
