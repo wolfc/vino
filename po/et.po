@@ -8,22 +8,22 @@
 # Priit Laes <plaes plaes org>, 2005-2006, 2010
 # Ain Vagula <avagula gmail com>, 2005.
 # Ivar Smolin <okul linux ee>, 2006-2008.
-# Mattias Põldaru <mahfiaz gmail com>, 2008, 2009, 2011.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2008, 2009, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-03-15 18:42+0000\n"
-"PO-Revision-Date: 2011-03-15 21:43+0300\n"
+"POT-Creation-Date: 2011-10-24 16:04+0000\n"
+"PO-Revision-Date: 2011-11-06 01:09+0200\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
-"Language-Team: Estonian <gnome-et@linux.ee>\n"
+"Language-Team: Estonian <>\n"
 "Language: et\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #, c-format
 msgid "There was an error showing the URL \"%s\""
@@ -56,8 +56,8 @@ msgstr "Keegi ei pääse su töölauale ligi."
 msgid "Choose how other users can remotely view your desktop"
 msgstr "Määrab kuidas teised kasutajad sinu töölauda vaadata tohivad"
 
-msgid "Remote Desktop"
-msgstr "Kaugtöölaud"
+msgid "Desktop Sharing"
+msgstr "Töölaua jagamine"
 
 msgid "Allowed authentication methods"
 msgstr "Lubatud autentimismeetodid"
@@ -68,8 +68,8 @@ msgstr "Alternatiivse pordi number"
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "E-posti aadress, millele võrgutöölaua URL tuleks saata"
 
-msgid "Enable remote desktop access"
-msgstr "Juurdepääsu lubamine kaugtöölauale"
+msgid "Enable remote access to the desktop"
+msgstr "Kaugkasutajatel lubatakse töölauda ainult vaadata"
 
 msgid ""
 "If not set, the server will listen on all network interfaces. Set this if "
@@ -81,11 +81,11 @@ msgstr ""
 
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
+"remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
 "Kui märgitud, siis töölauale on lubatud väline juurdepääs RFB protokolli "
-"abil. Eemalasuvate masinate kasutajad saavad seejärel töölauaga ühendada "
-"vncviewer'i abil."
+"abil. Eemalasuvate masinate kasutajad saavad seejärel töölauaga ühenduda VNC "
+"vaaturi abil."
 
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
@@ -207,12 +207,12 @@ msgstr ""
 
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 "See võti määrab e-posti aadressi, millele kaugtöölaua juurdepääsuaadress "
-"saadetakse, juhul kui kasutaja klõpsab kaugtöölaua sätete dialoogis oleval "
-"URL-il."
+"saadetakse, juhul kui kasutaja klõpsab töölaua jagamise eelistuste dialoogis "
+"oleval URL-il."
 
 msgid "When the status icon should be shown"
 msgstr "Kas olekuikooni tuleb näidata"
@@ -226,17 +226,17 @@ msgstr "Kas X.org'i XDamage laiendus on keelatud või mitte"
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "UPNP kasutamine ruuterist pordi edasisuunamiseks"
 
-msgid "Al_ways display an icon"
-msgstr "_Ikooni kuvatakse alati"
+msgid "Al_ways"
+msgstr "_Alati"
 
 msgid "Allow other users to _view your desktop"
 msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
 
-msgid "Notification Area"
-msgstr "Teateala"
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "UPnP ruuteris portite automaatne avamine ja suunamine"
 
-msgid "Remote Desktop Preferences"
-msgstr "Kaugtöölaua eelistused"
+msgid "Desktop Sharing Preferences"
+msgstr "Töölaua jagamise eelistused"
 
 msgid "Remote users are able to control your mouse and keyboard"
 msgstr "Kaugkasutajatel on lubatud sinu hiirt ja klaviatuuri juhtida"
@@ -247,8 +247,14 @@ msgstr "Turvalisus"
 msgid "Sharing"
 msgstr "Ühiskasutus"
 
+msgid "Show Notification Area Icon"
+msgstr "Teateala ikooni näitamine"
+
 msgid "Some of these preferences are locked down"
 msgstr "Mõned nendest eelistustest on lukustatud"
+
+msgid "The router must have the UPnP feature enabled"
+msgstr "Ruuteris peab UPnP võimalus olema lubatud"
 
 msgid "Your desktop will be shared"
 msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
@@ -256,14 +262,11 @@ msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
 msgid "_Allow other users to control your desktop"
 msgstr "_Teistel kasutajatel lubatakse juhtida Sinu töölauda"
 
-msgid "_Configure network automatically to accept connections"
-msgstr "_Võrgu automaatne seadistamine ühenduste vastuvõtmiseks"
+msgid "_Never"
+msgstr "_Mitte kunagi"
 
-msgid "_Never display an icon"
-msgstr "Ikooni _ei kuvata kunagi"
-
-msgid "_Only display an icon when there is someone connected"
-msgstr "Ikooni kuvatakse ainult siis, kui keegi on ü_hendatud"
+msgid "_Only when someone is connected"
+msgstr "_Ainult, kui keegi on ühendatud"
 
 msgid "_Require the user to enter this password:"
 msgstr "Nõutakse kasutajalt pa_rooli sisestamist:"
@@ -275,6 +278,9 @@ msgstr "_Iga pöördumist sellesse masinasse peab kasutaja kinnitama"
 msgid "File is not a valid .desktop file"
 msgstr "See pole korrektne .desktop fail"
 
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Töölauafaili versioon '%s' on tundmatu"
@@ -291,6 +297,8 @@ msgstr "Rakendus ei ava käsurealt dokumenti"
 msgid "Unrecognized launch option: %d"
 msgstr "Tundmatu käivitusvalik: %d"
 
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr ""
@@ -337,8 +345,8 @@ msgstr ""
 "Käivita 'vino-server --help', et näha kogu nimekirja saadaolevatest käsurea "
 "valikutest"
 
-msgid "GNOME Remote Desktop"
-msgstr "GNOME Kaugtöölaud"
+msgid "GNOME Desktop Sharing"
+msgstr "GNOME töölaua jagamine"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -358,8 +366,8 @@ msgid "%s's remote desktop on %s"
 msgstr "Kasutaja %s kaugtöölaud masinas %s"
 
 #, c-format
-msgid "Received signal %d, exiting...\n"
-msgstr "Vastu võeti signaal %d, väljumine...\n"
+msgid "Received signal %d, exiting."
+msgstr "Vastu võeti signaal %d, väljumine."
 
 msgid "Screen"
 msgstr "Ekraan"
@@ -400,17 +408,17 @@ msgstr "_Keela"
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Tõrge siiniga ühendumisel: %s\n"
 
-msgid "GNOME Remote Desktop Server"
-msgstr "GNOME kaugtöölauaserver"
+msgid "GNOME Desktop Sharing Server"
+msgstr "GNOME töölaua jagamise server"
 
 msgid "Desktop sharing is enabled"
-msgstr "Töölaua jagamise ikoon on lubatud"
+msgstr "Töölaua jagamine on lubatud"
 
 #, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "Üks isik on ühendatud"
-msgstr[1] "%d isikut on ühendatud"
+msgid "One person is viewing your desktop"
+msgid_plural "%d people are viewing your desktop"
+msgstr[0] "Üks kasutaja vaatab Sinu töölauda"
+msgstr[1] "%d kasutajat vaatavad Sinu töölauda"
 
 msgid "Error displaying preferences"
 msgstr "Viga eelistuste kuvamisel"
@@ -534,7 +542,7 @@ msgstr "Oma töölaua andmete jagamine teistega"
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
-msgstr "'%s' keeldus töölaua jagamisest."
+msgstr "'%s' keeldus töölaua jagamise kutsest."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #, c-format
@@ -612,11 +620,29 @@ msgstr "VINO versioon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIGA: Sul ei ole piisavalt õiguseid Vino parooli muutmiseks.\n"
 
+#~ msgid "Remote Desktop"
+#~ msgstr "Kaugtöölaud"
+
+#~ msgid "Enable remote desktop access"
+#~ msgstr "Juurdepääsu lubamine kaugtöölauale"
+
+#~ msgid "Al_ways display an icon"
+#~ msgstr "_Ikooni kuvatakse alati"
+
+#~ msgid "_Configure network automatically to accept connections"
+#~ msgstr "_Võrgu automaatne seadistamine ühenduste vastuvõtmiseks"
+
+#~ msgid "_Never display an icon"
+#~ msgstr "Ikooni _ei kuvata kunagi"
+
+#~ msgid "_Only display an icon when there is someone connected"
+#~ msgstr "Ikooni kuvatakse ainult siis, kui keegi on ü_hendatud"
+
+#~ msgid "GNOME Remote Desktop"
+#~ msgstr "GNOME Kaugtöölaud"
+
 #~ msgid "Maximum size: 8 characters"
 #~ msgstr "Suurim pikkus: 8 tähemärki"
-
-#~ msgid "The router must have the UPnP feature enabled"
-#~ msgstr "Ruuteris peab UPnP võimalus olema lubatud"
 
 #~ msgid "You will be queried to allow or to refuse every incoming connection"
 #~ msgstr ""
