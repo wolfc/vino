@@ -659,7 +659,7 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
                                    NOTIFICATION_TIMEOUT * 1000);
 
   error = NULL;
-  if (!notify_notification_show (icon->priv->new_client_notification, &error))
+  if (vino_server_get_notify_on_connect (icon->priv->server) && !notify_notification_show (icon->priv->new_client_notification, &error))
     {
       g_printerr (_("Error while displaying notification bubble: %s\n"),
                   error->message);

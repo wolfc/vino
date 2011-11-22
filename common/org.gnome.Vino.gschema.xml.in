@@ -161,6 +161,14 @@
       </_description>
       <default>false</default>
     </key>
+
+    <key name='notify-on-connect' type='b'>
+      <_summary>Notify on connect</_summary>
+      <_description>
+        If true, we will notify, when the user connects to the system.
+      </_description>
+      <default>true</default>
+    </key>
   </schema>
 </schemalist>
 

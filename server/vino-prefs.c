@@ -91,6 +91,8 @@ vino_prefs_create_server (GdkScreen *screen)
                    server, "use-upnp", G_SETTINGS_BIND_GET);
   g_settings_bind (settings, "disable-xdamage",
                    server, "disable-xdamage", G_SETTINGS_BIND_GET);
+  g_settings_bind (settings, "notify-on-connect",
+                   server, "notify-on-connect", G_SETTINGS_BIND_GET);
   g_settings_bind (settings, "icon-visibility",
                    icon, "visibility", G_SETTINGS_BIND_GET);
 

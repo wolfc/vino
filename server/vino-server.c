@@ -87,6 +87,7 @@ struct _VinoServerPrivate
   guint             disable_background : 1;
   guint             use_upnp : 1;
   guint             disable_xdamage : 1;
+  guint             notify_on_connect : 1;
 };
 
 struct _VinoClient
@@ -121,7 +122,8 @@ enum
   PROP_LOCK_SCREEN,
   PROP_DISABLE_BACKGROUND,
   PROP_USE_UPNP,
-  PROP_DISABLE_XDAMAGE
+  PROP_DISABLE_XDAMAGE,
+  PROP_NOTIFY_ON_CONNECT
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -1258,6 +1260,9 @@ vino_server_get_property (GObject    *object,
     case PROP_DISABLE_XDAMAGE:
       g_value_set_boolean (value, server->priv->disable_xdamage);
       break;
+    case PROP_NOTIFY_ON_CONNECT:
+      g_value_set_boolean (value, server->priv->notify_on_connect);
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1389,7 +1394,7 @@ vino_server_class_init (VinoServerClass *klass)
                                                        G_PARAM_STATIC_NAME |
                                                        G_PARAM_STATIC_NICK |
                                                        G_PARAM_STATIC_BLURB));
-  
+
   g_object_class_install_property (gobject_class,
 				   PROP_VNC_PASSWORD,
 				   g_param_spec_string ("vnc-password",
@@ -1485,6 +1490,18 @@ vino_server_class_init (VinoServerClass *klass)
 							 FALSE,
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
+
+  g_object_class_install_property (gobject_class,
+                                   PROP_NOTIFY_ON_CONNECT,
+                                   g_param_spec_boolean ("notify-on-connect",
+                                                         "Notify on connect",
+                                                         "Notifies when the user connects to the system",
+                                                         TRUE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT_ONLY   |
                                                          G_PARAM_STATIC_NAME |
                                                          G_PARAM_STATIC_NICK |
                                                          G_PARAM_STATIC_BLURB));
@@ -1883,6 +1900,14 @@ vino_server_set_lock_screen (VinoServer *server,
 
       g_object_notify (G_OBJECT (server), "lock-screen");
     }
+}
+
+gboolean
+vino_server_get_notify_on_connect (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->notify_on_connect;
 }
 
 VinoStatusIcon *
