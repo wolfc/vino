@@ -1,3 +1,37 @@
+Vino 3.3.3
+==========
+
+Alexandre Franke (1):
+      Update French translation
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (2):
+      Post-release version bump to 3.3.2
+      Update NEWS for 3.3.3 release
+
+Hideki Yamane (1):
+      Updated Japanese translation
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
+Matej Urbančič (1):
+      Updated Slovenian translation
+
+Mateusz Maćkowski (1):
+      Added option to disable connect notifications
+
+Mattias Põldaru (1):
+      [l10n] Updated Estonian translation
+
+Muhammet Kara (1):
+      [l10n]Updated Turkish translation
+
+Yaron Shahrabani (1):
+      Updated Hebrew translation.
+
 Vino 3.3.1
 ==========
 
