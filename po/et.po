@@ -8,15 +8,15 @@
 # Priit Laes <plaes plaes org>, 2005-2006, 2010
 # Ain Vagula <avagula gmail com>, 2005.
 # Ivar Smolin <okul linux ee>, 2006-2008.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2008, 2009, 2011.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2008, 2009, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-10-24 16:04+0000\n"
-"PO-Revision-Date: 2011-11-06 01:09+0200\n"
+"POT-Creation-Date: 2011-12-19 21:03+0000\n"
+"PO-Revision-Date: 2012-01-01 21:57+0200\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <>\n"
 "Language: et\n"
@@ -135,6 +135,9 @@ msgstr ""
 "Laienduse keelamine lubab vinol töötada, kuid renderdamine on mõnevõrra "
 "aeglasem."
 
+msgid "If true, we will notify, when the user connects to the system."
+msgstr "Kui märgitud, siis antakse teada kasutaja ühendumisest süsteemiga."
+
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
@@ -163,6 +166,9 @@ msgstr "Ekraani lukustamine pärast viimase kasutaja lahtiühendamist"
 
 msgid "Network interface for listening"
 msgstr "Võrguliides, mida kuulatakse"
+
+msgid "Notify on connect"
+msgstr "Teade ühendumisel"
 
 msgid "Only allow remote users to view the desktop"
 msgstr "Kaugkasutajatel lubatakse töölauda ainult vaadata"
@@ -619,49 +625,3 @@ msgstr "VINO versioon %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIGA: Sul ei ole piisavalt õiguseid Vino parooli muutmiseks.\n"
-
-#~ msgid "Remote Desktop"
-#~ msgstr "Kaugtöölaud"
-
-#~ msgid "Enable remote desktop access"
-#~ msgstr "Juurdepääsu lubamine kaugtöölauale"
-
-#~ msgid "Al_ways display an icon"
-#~ msgstr "_Ikooni kuvatakse alati"
-
-#~ msgid "_Configure network automatically to accept connections"
-#~ msgstr "_Võrgu automaatne seadistamine ühenduste vastuvõtmiseks"
-
-#~ msgid "_Never display an icon"
-#~ msgstr "Ikooni _ei kuvata kunagi"
-
-#~ msgid "_Only display an icon when there is someone connected"
-#~ msgstr "Ikooni kuvatakse ainult siis, kui keegi on ü_hendatud"
-
-#~ msgid "GNOME Remote Desktop"
-#~ msgstr "GNOME Kaugtöölaud"
-
-#~ msgid "Maximum size: 8 characters"
-#~ msgstr "Suurim pikkus: 8 tähemärki"
-
-#~ msgid "You will be queried to allow or to refuse every incoming connection"
-#~ msgstr ""
-#~ "Iga sissetuleva ühenduse kohta küsitakse sinult, kas see lubada või "
-#~ "keelduda"
-
-#~ msgid "Remote Desktop server already running; exiting ...\n"
-#~ msgstr "Võrgutöölaua server juba töötab, töö lõpetatakse...\n"
-
-#~ msgid ""
-#~ "Error while communicating with GConf. Are you logged into a GNOME session?"
-#~ msgstr ""
-#~ "Viga GConf-iga suhtlemisel. Kas sa oled GNOME sessiooni sisse logitud?"
-
-#~ msgid "Error message:"
-#~ msgstr "Veateade:"
-
-#~ msgid "_Send address by email"
-#~ msgstr "_Saada aadress e-postiga"
-
-#~ msgid "_Copy address to clipboard"
-#~ msgstr "_Kopeeri aadress"
