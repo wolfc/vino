@@ -1,16 +1,17 @@
 # Bulgarian translation of vino po-file.
-# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009, 2011 Free Software Foundation, Inc.
+# Copyright (C) 2004, 2005, 2006, 2007, 2008, 2009 Free Software Foundation, Inc.
+# Copyright (C) 2011, 2012 Free Software Foundation, Inc.
 # This file is distributed under the same license as the vino package.
 # Rostislav "zbrox" Raykov <zbrox@i-space.org>, 2004, 2005, 2006.
-# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2011.
+# Alexander Shopov <ash@kambanaria.org>, 2007, 2008, 2009, 2011, 2012.
 #
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino master\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-08-12 07:17+0300\n"
-"PO-Revision-Date: 2011-08-12 07:17+0300\n"
+"POT-Creation-Date: 2012-01-08 08:43+0200\n"
+"PO-Revision-Date: 2012-01-08 08:43+0200\n"
 "Last-Translator: Alexander Shopov <ash@kambanaria.org>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
 "Language: bg\n"
@@ -156,6 +157,11 @@ msgstr ""
 "малко по-бавна работа."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:13
+msgid "If true, we will notify, when the user connects to the system."
+msgstr ""
+"Ако е истина, ще се известява, когато потребител се свърже със системата."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:14
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
@@ -163,11 +169,11 @@ msgstr ""
 "Ако е истина, ще се ползва протоколът UPNP за автоматично пренасочване от "
 "страна на маршрутизатора на порта ползван от vino."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.in.h:15
 msgid "Listen on an alternative port"
 msgstr "Слушане на нестандартен порт"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#: ../common/org.gnome.Vino.gschema.xml.in.h:16
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -181,32 +187,36 @@ msgstr ""
 "определена от ключа „vnc_password“) преди да позволи връзката, и „none“ — "
 "позволява на всеки потребител да се свърже."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.in.h:17
 msgid "Lock the screen when last user disconnect"
 msgstr ""
 "Заключване на екрана след като и последният потребител прекъсне връзката"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.in.h:18
 msgid "Network interface for listening"
 msgstr "Мрежов интерфейс, който да се следи"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+msgid "Notify on connect"
+msgstr "Известяване при свързване"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:20
 msgid "Only allow remote users to view the desktop"
 msgstr "Отдалечените потребители могат само да наблюдават работното място"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../common/org.gnome.Vino.gschema.xml.in.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "Нужна е парола за идентификация „vnc“"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
+#: ../common/org.gnome.Vino.gschema.xml.in.h:22
 msgid "Prompt the user before completing a connection"
 msgstr "Запитване до потребителя преди завършване на връзката"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid "Require encryption"
 msgstr "Изискване на шифриране"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+#: ../common/org.gnome.Vino.gschema.xml.in.h:24
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -218,7 +228,7 @@ msgstr ""
 "base64. Специалната стойност „keyring“ (ключодържател, това не е правилен "
 "base64) означава, че паролата се съхранява в ключодържателя на GNOME."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -226,7 +236,7 @@ msgstr ""
 "Портът, на който сървърът ще слуша, ако ключът „use_alternative_port“ е "
 "зададен да е истина. Валидните стойности са в обхвата от 5000 до 50000."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -238,7 +248,7 @@ msgstr ""
 "само когато някой е свързан (това е стандартната настройка), „never“ — "
 "никога да не се показва."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
+#: ../common/org.gnome.Vino.gschema.xml.in.h:27
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
@@ -248,19 +258,19 @@ msgstr ""
 "работно място, ако потребителят натисне с мишката върху адреса в настройките "
 "за отдалеченото работно място."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.in.h:28
 msgid "When the status icon should be shown"
 msgstr "Кога да се показва иконата за състоянието"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.in.h:29
 msgid "When true, disable the background on receive valid session"
 msgstr "Когато е истина, при получаване на успешна сесия фонът се изключва"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.in.h:30
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Дали разширението XDamage на X.org да се изключи"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.in.h:31
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Дали да се ползва UPNP за пренасочване на порт от маршрутизаторите"
 
@@ -343,29 +353,29 @@ msgstr "Файлът не е във формат .desktop"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Непозната версия на файла: %s"
 
-#: ../server/smclient/eggdesktopfile.c:971
+#: ../server/smclient/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
 msgstr "Стартиране на %s"
 
-#: ../server/smclient/eggdesktopfile.c:1113
+#: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Програмата не приема документи през командния ред"
 
-#: ../server/smclient/eggdesktopfile.c:1181
+#: ../server/smclient/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Непозната опция при стартиране: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
-#: ../server/smclient/eggdesktopfile.c:1388
+#: ../server/smclient/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "В обекти от вида „Type=Link“ не може да се подават адреси на документи"
 
-#: ../server/smclient/eggdesktopfile.c:1409
+#: ../server/smclient/eggdesktopfile.c:1412
 #, c-format
 msgid "Not a launchable item"
 msgstr "Не е обект за стартиране"
@@ -438,7 +448,7 @@ msgstr "0"
 msgid "%s's remote desktop on %s"
 msgstr "Отдалечено работно място на %s на %s"
 
-#: ../server/vino-prefs.c:109
+#: ../server/vino-prefs.c:111
 #, c-format
 msgid "Received signal %d, exiting."
 msgstr "Получен е сигнал %d, спиране на програмата."
@@ -488,7 +498,7 @@ msgstr "_Позволяване"
 msgid "_Refuse"
 msgstr "_Отказване"
 
-#: ../server/vino-server.c:156 ../server/vino-server.c:179
+#: ../server/vino-server.c:158 ../server/vino-server.c:181
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Неуспех при отваряне на връзка към шината: %s\n"
