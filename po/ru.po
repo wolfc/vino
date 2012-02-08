@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ru\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-07-08 10:28+0000\n"
-"PO-Revision-Date: 2011-09-01 15:27+0300\n"
+"POT-Creation-Date: 2011-11-22 16:48+0000\n"
+"PO-Revision-Date: 2012-02-08 12:02+0300\n"
 "Last-Translator: Yuri Myasoedov <omerta13@yandex.ru>\n"
 "Language-Team: Russian <gnome-cyr@gnome.org>\n"
 "MIME-Version: 1.0\n"
@@ -60,7 +60,6 @@ msgstr "Позволять определять, как другие польз�
 
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:1
-#| msgid "Desktop sharing is enabled"
 msgid "Desktop Sharing"
 msgstr "Общий доступ к рабочему столу"
 
@@ -77,7 +76,6 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Адрес эл. почты, по которому должен быть отправлен URL удалённого рабочего стола"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-#| msgid "Only allow remote users to view the desktop"
 msgid "Enable remote access to the desktop"
 msgstr "Разрешить удалённый доступ к рабочему столу"
 
@@ -86,9 +84,6 @@ msgid "If not set, the server will listen on all network interfaces. Set this if
 msgstr "Если ключ не установлен, сервер будет ожидать соединения на всех сетевых интерфейсах. Установите этот параметр, если хотите принимать соединения только от определённого сетевого интерфейса, например: eth0, wifi0, lo, …"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
-#| msgid ""
-#| "If true, allows remote access to the desktop via the RFB protocol. Users "
-#| "on remote machines may then connect to the desktop using a vncviewer."
 msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a VNC viewer."
 msgstr "Если установлено, то к рабочему столу разрешается получать удалённый доступ по протоколу RFB. Пользователи могут подключаться к рабочему столу с помощью просмотрщика VNC."
 
@@ -117,74 +112,78 @@ msgid "If true, we will not use the XDamage extension of X.org. This extension d
 msgstr "Если ключ установлен, расширение XDamage для  X.org использоваться не будет. Расширение работает некорректно с некоторыми видео драйверами, когда применяются 3D эффекты. Отключение приведет к более медленному рендерингу в качестве побочного эффекта, когда vino будет работать в этом окружении.   "
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:13
+msgid "If true, we will notify, when the user connects to the system."
+msgstr "Если установлено, то при подключении пользователя к системе будет выдано уведомление."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:14
 msgid "If true, we will use UPNP protocol to automatically forward the port used by vino in the router."
 msgstr "Если ключ установлен, будет использоваться протокол UPNP для автоматической настройки портов маршрутизатора, используемых vino."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.in.h:15
 msgid "Listen on an alternative port"
 msgstr "Использовать альтернативный порт"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#: ../common/org.gnome.Vino.gschema.xml.in.h:16
 msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc-password key) before connecting and \"none\" which allows any remote user to connect."
 msgstr "Перечиcляет методы аутентификации, при помощи которых удалённые пользователи могут получить доступ к рабочему столу. Существует два возможных метода: «vnc» — заставляет удалённого пользователя вводить пароль, указанный в ключе vnc-password; «none» — позволяет подключиться любому удалённому пользователю."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.in.h:17
 msgid "Lock the screen when last user disconnect"
 msgstr "Блокировать экран после отсоединения последнего пользователя"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.in.h:18
 msgid "Network interface for listening"
 msgstr "Сетевой интерфейс для ожидания соединения"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+msgid "Notify on connect"
+msgstr "Уведомлять при подключении"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:20
 msgid "Only allow remote users to view the desktop"
 msgstr "Разрешить доступ к рабочему столу только для просмотра"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../common/org.gnome.Vino.gschema.xml.in.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "Требовать пароль для аутентификации «vnc»"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
+#: ../common/org.gnome.Vino.gschema.xml.in.h:22
 msgid "Prompt the user before completing a connection"
 msgstr "Запрашивать разрешение пользователя перед соединением"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid "Require encryption"
 msgstr "Требовать шифрование"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+#: ../common/org.gnome.Vino.gschema.xml.in.h:24
 msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded. The special value of 'keyring' (which is not valid base64) means that the password is stored in the GNOME keyring."
 msgstr "Пароль, которые будет запрошен у пользователя, если используется метод аутентификации «vnc». Пароль зашифрован алгоритмом base64. Особое значение «keyring» говорит о том, что пароль хранится в связке ключей GNOME."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid "The port which the server will listen to if the 'use-alternative-port' key is set to true. Valid values are in the range from 5000 to 50000."
 msgstr "Порт, который будет слушать сервер, если установлен ключ 'use-alternative-port'. Допустимы значения в диапазоне от 5000 до 50000."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
 msgstr "Этот ключ отвечает за отображение значка статуса. Доступно три состояния: \"всегда\" - показывать значок постоянно; \"клиент\" - показывать значок если имеются активные подключения (по умолчанию) ; \"никогда\" - никогда не показывать."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
-#| msgid ""
-#| "This key specifies the e-mail address to which the remote desktop URL "
-#| "should be sent if the user clicks on the URL in the Remote Desktop "
-#| "preferences dialog."
+#: ../common/org.gnome.Vino.gschema.xml.in.h:27
 msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Desktop Sharing preferences dialog."
 msgstr "Этот ключ указывает адрес эл. почты, по которому должна быть отправлена ссылка, если пользователь щёлкает по URL в диалоге «Настройки удалённого рабочего стола»."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.in.h:28
 msgid "When the status icon should be shown"
 msgstr "Когда показывать значок статуса"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.in.h:29
 msgid "When true, disable the background on receive valid session"
 msgstr "Если включено, при успешном подключении обои рабочего стола отключаются"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.in.h:30
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Должны ли мы отключить расширение XDamage для X.org"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.in.h:31
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "Будет ли использоваться UPNP для настройки портов на маршрутизаторах"
 
@@ -201,7 +200,6 @@ msgid "Automatically _configure UPnP router to open and forward ports"
 msgstr "_Автоматически настраивать маршрутизатор для открытия и перенаправления портов"
 
 #: ../capplet/vino-preferences.ui.h:4
-#| msgid "Remote Desktop Preferences"
 msgid "Desktop Sharing Preferences"
 msgstr "Настройки удалённого рабочего стола"
 
@@ -218,7 +216,6 @@ msgid "Sharing"
 msgstr "Совместный доступ"
 
 #: ../capplet/vino-preferences.ui.h:8
-#| msgid "Notification Area"
 msgid "Show Notification Area Icon"
 msgstr "Значок в области уведомлений"
 
@@ -243,8 +240,6 @@ msgid "_Never"
 msgstr "_Никогда"
 
 #: ../capplet/vino-preferences.ui.h:14
-#| msgid "One person is connected"
-#| msgid_plural "%d people are connected"
 msgid "_Only when someone is connected"
 msgstr "_Только когда кто-нибудь подключён"
 
@@ -269,29 +264,29 @@ msgstr "Это некорректный файл  .desktop"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Неправильная версия файла с расширением desktop пользователя «%s»"
 
-#: ../server/smclient/eggdesktopfile.c:971
+#: ../server/smclient/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
 msgstr "Запуск %s"
 
-#: ../server/smclient/eggdesktopfile.c:1113
+#: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Приложение не может работать с документами с командной строки"
 
-#: ../server/smclient/eggdesktopfile.c:1181
+#: ../server/smclient/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Неопознанный параметр запуска: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
-#: ../server/smclient/eggdesktopfile.c:1388
+#: ../server/smclient/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Не получается передать URI документа в запись «Type=Link» рабочего стола"
 
-#: ../server/smclient/eggdesktopfile.c:1409
+#: ../server/smclient/eggdesktopfile.c:1412
 #, c-format
 msgid "Not a launchable item"
 msgstr "Этот элемент не может быть запущен"
@@ -337,7 +332,6 @@ msgid "Run 'vino-server --help' to see a full list of available command line opt
 msgstr "Запустите «vino-server --help», чтобы увидеть полный список доступных параметров командной строки"
 
 #: ../server/vino-main.c:226
-#| msgid "GNOME Remote Desktop Server"
 msgid "GNOME Desktop Sharing"
 msgstr "Удалённый рабочий стол GNOME"
 
@@ -360,9 +354,8 @@ msgstr "0"
 msgid "%s's remote desktop on %s"
 msgstr "Удалённый рабочий стол пользователя %s на %s"
 
-#: ../server/vino-prefs.c:109
+#: ../server/vino-prefs.c:111
 #, c-format
-#| msgid "Received signal %d, exiting...\n"
 msgid "Received signal %d, exiting."
 msgstr "Получен сигнал %d, осуществляется выход."
 
@@ -405,14 +398,13 @@ msgstr "_Разрешить"
 msgid "_Refuse"
 msgstr "_Отклонить"
 
-#: ../server/vino-server.c:156
-#: ../server/vino-server.c:179
+#: ../server/vino-server.c:158
+#: ../server/vino-server.c:181
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не удаётся открыть соединение с шиной: %s\n"
 
 #: ../server/vino-server.desktop.in.in.h:2
-#| msgid "GNOME Remote Desktop Server"
 msgid "GNOME Desktop Sharing Server"
 msgstr "Сервер удалённого рабочего стола GNOME"
 
@@ -423,7 +415,6 @@ msgstr "Включён общий доступ к рабочему столу"
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-#| msgid "Another user is viewing your desktop"
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "%d пользователь просматривает ваш рабочий стол"
