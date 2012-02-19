@@ -2,21 +2,21 @@
 # Copyright (c) 2010 Rosetta Contributors and Canonical Ltd 2010.
 # This file is distributed under the same license as the vino package.
 # Aisano <>, 2010.
-# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011.
+# Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>, 2010, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-05-24 00:23+0000\n"
-"PO-Revision-Date: 2011-05-27 19:50+0200\n"
+"POT-Creation-Date: 2011-11-22 16:48+0000\n"
+"PO-Revision-Date: 2012-02-19 17:34+0100\n"
 "Last-Translator: Kristjan SCHMIDT <kristjan.schmidt@googlemail.com>\n"
-"Language-Team: Esperanto <ubuntu-l10n-eo@lists.launchpad.net>\n"
-"Language: eo\n"
+"Language-Team: Esperanto <gnome-l10n-eo@lists.launchpad.net>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: eo\n"
 "Plural-Forms: nplurals=2; plural=(n != 1)\n"
 "X-Launchpad-Export-Date: 2011-05-27 15:52+0000\n"
 "X-Generator: Launchpad (build 13117)\n"
@@ -133,16 +133,20 @@ msgid ""
 msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:13
+msgid "If true, we will notify, when the user connects to the system."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:14
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.in.h:15
 msgid "Listen on an alternative port"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#: ../common/org.gnome.Vino.gschema.xml.in.h:16
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -151,31 +155,35 @@ msgid ""
 "user to connect."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.in.h:17
 msgid "Lock the screen when last user disconnect"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.in.h:18
 msgid "Network interface for listening"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
-msgid "Only allow remote users to view the desktop"
-msgstr ""
-
 #: ../common/org.gnome.Vino.gschema.xml.in.h:19
-msgid "Password required for \"vnc\" authentication"
+msgid "Notify on connect"
 msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:20
-msgid "Prompt the user before completing a connection"
+msgid "Only allow remote users to view the desktop"
 msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:21
+msgid "Password required for \"vnc\" authentication"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+msgid "Prompt the user before completing a connection"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid "Require encryption"
 msgstr "Bezonas ĉifradon"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+#: ../common/org.gnome.Vino.gschema.xml.in.h:24
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -183,13 +191,13 @@ msgid ""
 "that the password is stored in the GNOME keyring."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -197,26 +205,26 @@ msgid ""
 "\"never\" - Never shows the icon."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
+#: ../common/org.gnome.Vino.gschema.xml.in.h:27
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.in.h:28
 msgid "When the status icon should be shown"
 msgstr "Kiam montri la statopiktogramon"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.in.h:29
 msgid "When true, disable the background on receive valid session"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.in.h:30
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.in.h:31
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr ""
 
@@ -253,9 +261,8 @@ msgid "Show Notification Area Icon"
 msgstr "Montri piktogramon de la atentigoareo"
 
 #: ../capplet/vino-preferences.ui.h:9
-#, fuzzy
 msgid "Some of these preferences are locked down"
-msgstr "Kelkaj de tiuj agordoj estas finŝlositaj"
+msgstr "Kelkaj de tiuj agordoj estas finŝlositaj"
 
 #: ../capplet/vino-preferences.ui.h:10
 msgid "The router must have the UPnP feature enabled"
@@ -298,29 +305,29 @@ msgstr "La dosiero ne estas valida .desktop-dosiero"
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "Nerekonata versio '%s' de labortabla dosiero"
 
-#: ../server/smclient/eggdesktopfile.c:971
+#: ../server/smclient/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
 msgstr "Lanĉante %s"
 
-#: ../server/smclient/eggdesktopfile.c:1113
+#: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "Aplikaĵo ne akceptas dokumentojn per komandlinio"
 
-#: ../server/smclient/eggdesktopfile.c:1181
+#: ../server/smclient/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "Nerekonata lanĉparametro: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
-#: ../server/smclient/eggdesktopfile.c:1388
+#: ../server/smclient/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "Ne eblas transdoni dokument-URIojn al labortabla elemento 'Type=Link'"
 
-#: ../server/smclient/eggdesktopfile.c:1409
+#: ../server/smclient/eggdesktopfile.c:1412
 #, c-format
 msgid "Not a launchable item"
 msgstr "Nelanĉebla elemento"
@@ -361,7 +368,7 @@ msgstr ""
 
 #: ../server/vino-main.c:200
 msgid "- VNC Server for GNOME"
-msgstr ""
+msgstr "- VNC-servilo por GNOME"
 
 #: ../server/vino-main.c:206
 msgid ""
@@ -391,7 +398,7 @@ msgstr "0"
 msgid "%s's remote desktop on %s"
 msgstr ""
 
-#: ../server/vino-prefs.c:109
+#: ../server/vino-prefs.c:111
 #, c-format
 msgid "Received signal %d, exiting."
 msgstr ""
@@ -437,7 +444,7 @@ msgstr "_Permesi"
 msgid "_Refuse"
 msgstr ""
 
-#: ../server/vino-server.c:156 ../server/vino-server.c:179
+#: ../server/vino-server.c:158 ../server/vino-server.c:181
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Fiaskis malfermi konekton al buso: %s\n"
@@ -491,13 +498,13 @@ msgstr ""
 "Software Foundation'; aŭ en la 2a versio de la permesilo aŭ (laŭ via volo) "
 "en iu sekva versio.\n"
 "\n"
-"Vino estas distribuite kun la espero ke ĝi estos utila, sed SEN IA AJN "
-"GARANTIO; eĉ sen la implica garantio de NEGOCEBLO aŭ ADAPTADO AL IU APARTA "
+"Vino estas distribuite kun la espero ke ĝi estos utila, sed SEN IA AJN "
+"GARANTIO; eĉ sen la implica garantio de NEGOCEBLO aŭ ADAPTADO AL IU APARTA "
 "CELO. Vidu la Ĝeneralan Publikan Permesilon de GNU por pli da detaloj.\n"
 "\n"
-"Vi devintus ricevi kopion de la Ĝeneralan Publikan Permesilon de GNU kune "
-"kun Vino; se ne, skribu al Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA 02110-1301 Usono.\n"
+"Vi devintus ricevi kopion de la Ĝenerala Publika Permesilo de GNU kune kun "
+"Vino; se ne, skribu al Free Software Foundation, Inc., 51 Franklin Street, "
+"Fifth Floor, Boston, MA 02110-1301 Usono.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:282
