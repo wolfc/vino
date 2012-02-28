@@ -5,15 +5,15 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER.
 #
 # Jayaradha N <jaya@pune.redhat.com>, 2004.
-# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009, 2011.
+# Dr.T.Vasudevan <agnihot3@gmail.com>, 2007, 2008, 2009, 2011, 2012.
 # Dr.T.vasudevan <agnihot3@gmail.com>, 2009.
 # I. Felix <ifelix@redhat.com>, 2009, 2011.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.master.ta\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-05 20:10+0530\n"
-"PO-Revision-Date: 2011-09-05 20:19+0530\n"
+"POT-Creation-Date: 2012-02-28 16:47+0530\n"
+"PO-Revision-Date: 2012-02-28 16:51+0530\n"
 "Last-Translator: Dr.T.Vasudevan <agnihot3@gmail.com>\n"
 "Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: \n"
@@ -100,9 +100,8 @@ msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
-"உண்மையெனில், RFB நெறிமுறைபடி மேல்மேசையை அனுக அனுமதிக்கிறது. அதன் பின் தொலை கணினி பயனர்கள்  "
-"vncviewer வழியாக "
-"மேல்மேசையை இணைக்க முடியும்"
+"உண்மையெனில், RFB நெறிமுறைபடி மேல்மேசையை அனுக அனுமதிக்கிறது. அதன் பின் தொலை கணினி "
+"பயனர்கள்  vncviewer வழியாக மேல்மேசையை இணைக்க முடியும்"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:7
 msgid ""
@@ -155,6 +154,10 @@ msgstr ""
 "நீக்குவது வினோ இந்த சூழல்களில் மெதுவாக வேலை செய்யும் பக்க விளைவுடன் வேலை செய்யும்."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:13
+msgid "If true, we will notify, when the user connects to the system."
+msgstr "உண்மையென அமைத்தால் பயனர் கணினியுடம் இணைக்கும்போது நாங்கள் அறிவிப்போம்."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:14
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
@@ -162,11 +165,11 @@ msgstr ""
 "உண்மையெனில் நாம் யூபிஎன்பி நடபடியை பயன்படுத்தி தானியங்கியாக வினோ ரூட்டரில் பயன்படுத்திய "
 "துறையை மேலனுப்புவோம். "
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.in.h:15
 msgid "Listen on an alternative port"
 msgstr "மாற்று துறையில் செவி சாய்க்கவும்"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#: ../common/org.gnome.Vino.gschema.xml.in.h:16
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop. There are two possible authentication methods; \"vnc\" causes the "
@@ -178,31 +181,35 @@ msgstr ""
 "(vnc-password விசையால் கடவுச்சொல் குறிக்கப்படும்) \"none\" அனைவரையும் சுலபமாக "
 "அனுமதிக்கும்"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.in.h:17
 msgid "Lock the screen when last user disconnect"
 msgstr "கடைசி பயனர் இணைப்பை துண்டித்ததும் திரையை பூட்டுக"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.in.h:18
 msgid "Network interface for listening"
 msgstr "கேட்பதற்கு பிணைய முகப்பு"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+msgid "Notify on connect"
+msgstr "இணைக்கும் போது அறிவிக்கவும்"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:20
 msgid "Only allow remote users to view the desktop"
 msgstr "பயனர் மேல்மேசையை மட்டும் பார்க்க அனுமதி"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../common/org.gnome.Vino.gschema.xml.in.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"vnc\" அனுமதிக்கான கடவுச்சொல் தேவை"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
+#: ../common/org.gnome.Vino.gschema.xml.in.h:22
 msgid "Prompt the user before completing a connection"
 msgstr "இணைப்பை முடிக்க பயனருக்கு நினைவூட்டு"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid "Require encryption"
 msgstr "குறிமுறையாக்கம் தேவை"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+#: ../common/org.gnome.Vino.gschema.xml.in.h:24
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -213,7 +220,7 @@ msgstr ""
 "குறிமுறையாக்கப்பட்டுள்ளது. விசைவளையத்தின்' சிறப்பு மதிப்பு (இது செல்லுபடியாகும் base64 "
 "இல்லை) எனில் கடவுச்சொல் விசை வளையத்தில் சேமிக்கப்பட்டுள்ளது."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -221,7 +228,7 @@ msgstr ""
 "'use-alternative-port' விசை உண்மை என அமைத்த போது சேவையகம் செவி சாய்க்கும் துறை. "
 "செல்லுபடியாகும் மதிப்புகள் 5000 முதல் 50000."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -233,29 +240,28 @@ msgstr ""
 "மட்டுமே சின்னம் தென்படும். இதுவே முன்னிருப்பு \"எப்போதும் இல்லை\"  சின்னம் ஒருபோதும் "
 "காட்டப்படாது."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
+#: ../common/org.gnome.Vino.gschema.xml.in.h:27
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
-"பயனர் URL ஐ தொலை மேல்மேசையிலிருந்து பகிர்வு விருப்பங்கள் உரையாடலை க்ளிக் செய்யும் போது அது "
-"அனுப்பப்பட வேண்டிய "
-"மின்னஞ்சல் முகவரியை இந்த விசை குறிக்கிறது"
+"பயனர் URL ஐ தொலை மேல்மேசையிலிருந்து பகிர்வு விருப்பங்கள் உரையாடலை க்ளிக் செய்யும் போது "
+"அது அனுப்பப்பட வேண்டிய மின்னஞ்சல் முகவரியை இந்த விசை குறிக்கிறது"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.in.h:28
 msgid "When the status icon should be shown"
 msgstr "இருப்பு நிலை சின்னம் எப்போது காட்டப்பட வேண்டும்"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.in.h:29
 msgid "When true, disable the background on receive valid session"
 msgstr "உண்மையெனில், சரியான அமர்வை பெறும் போது பின்னணியை செயல்நீக்கு"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.in.h:30
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "எக்ஸ்.ஆர்க் இன் எக்ஸ்டேமேஜ் நீட்சியை செயல் நீக்க வேண்டுமா."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.in.h:31
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "ரௌட்டர்களில் UPNPஐ பயன்படுத்தி முன்னனுப்ப வேண்டுமா"
 
@@ -336,29 +342,29 @@ msgstr "கோப்பு செல்லுபடியாகும்  .deskt
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "அடையாளம் காணா மேல்மேசை கோப்பு பதிப்பு '%s' "
 
-#: ../server/smclient/eggdesktopfile.c:971
+#: ../server/smclient/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
 msgstr "%s ஐ துவக்குகிறது"
 
-#: ../server/smclient/eggdesktopfile.c:1113
+#: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "பயன்பாடு கட்டளை வரியில் ஆவணங்களை ஒப்புக்கொள்ளாது"
 
-#: ../server/smclient/eggdesktopfile.c:1181
+#: ../server/smclient/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "இனம் காணாத துவக்க தேர்வு: %d"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
-#: ../server/smclient/eggdesktopfile.c:1388
+#: ../server/smclient/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "'Type=Link' மேல்மேசை உள்ளீடுக்கு ஆவண யூஆர்ஐ ஐ கொடுக்க இயலாது"
 
-#: ../server/smclient/eggdesktopfile.c:1409
+#: ../server/smclient/eggdesktopfile.c:1412
 #, c-format
 msgid "Not a launchable item"
 msgstr "துவக்க முடியாத உருப்படி"
@@ -430,7 +436,7 @@ msgstr "vino-mdns:showusername"
 msgid "%s's remote desktop on %s"
 msgstr "%s இன் தொலை மேல்மேசை %s இல்"
 
-#: ../server/vino-prefs.c:109
+#: ../server/vino-prefs.c:111
 #, c-format
 msgid "Received signal %d, exiting."
 msgstr "பெறப்பட்ட சிக்னல் %d, வெளியேறுகிறது"
@@ -476,7 +482,7 @@ msgstr "(_A)அனுமதி"
 msgid "_Refuse"
 msgstr "(_R)மறுக்கவும்"
 
-#: ../server/vino-server.c:156 ../server/vino-server.c:179
+#: ../server/vino-server.c:158 ../server/vino-server.c:181
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "பஸ்ஸுக்கு இணைப்பை திறத்தல் தோல்வியுற்றது: %s\n"
