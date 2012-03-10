@@ -4,16 +4,16 @@
 # This file is distributed under the same license as the vino package.
 # Elnaz Sarbar <elnaz@farsiweb.info>, 2005.
 # Meelad Zakaria <meelad@farsiweb.info>, 2005.
-# Arash Mousavi <mousavi.arash@gmail.com>, 2011.
+# Arash Mousavi <mousavi.arash@gmail.com>, 2011, 2012.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-04-28 19:01+0000\n"
-"PO-Revision-Date: 2011-06-03 04:03+0330\n"
+"POT-Creation-Date: 2011-11-22 16:48+0000\n"
+"PO-Revision-Date: 2012-03-10 19:55+0330\n"
 "Last-Translator: Arash Mousavi <mousavi.arash@gmail.com>\n"
-"Language-Team: Persian <translate@ifsug.org>\n"
+"Language-Team: Persian\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -24,9 +24,6 @@ msgstr ""
 
 #: ../capplet/vino-message-box.c:55
 #, c-format
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| "%s"
 msgid "There was an error showing the URL \"%s\""
 msgstr "خطایی هنگام نمایش آدرس اینترنتی «%s» رخ داد"
 
@@ -61,7 +58,6 @@ msgid "Nobody can access your desktop."
 msgstr "هیچکس نمی‌تواند به رایانه شما دسترسی داشته باشد."
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-#| msgid "Allow other users to _view your desktop"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "انتخاب کنید که چگونه کاربران دیگر می‌توانند از دوردست رومیزی شما را ببینند"
 
@@ -83,7 +79,6 @@ msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "آدرس پست الکترونیکی‌ای که نشانی اینترنتی رومیزی باید به آن فرستاده شود"
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:4
-#| msgid "Only allow remote users to view the desktop"
 msgid "Enable remote access to the desktop"
 msgstr "فعال کردن دسترسی دوردست به رومیزی"
 
@@ -92,9 +87,6 @@ msgid "If not set, the server will listen on all network interfaces. Set this if
 msgstr "اگر تنظیم نشود، کارگزار به تمام واسطهای شبکه گوش می‌سپارد. چناچه می‌خواهید اتصال‌های مشخصی از واسط‌های شبکه را نظیر eth0، wifi0، lo و... را بپذیرید، این کلید را تنظیم کنید."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:6
-#| msgid ""
-#| "If true, allows remote access to the desktop via the RFB protocol. Users "
-#| "on remote machines may then connect to the desktop using a vncviewer."
 msgid "If true, allows remote access to the desktop via the RFB protocol. Users on remote machines may then connect to the desktop using a VNC viewer."
 msgstr "اگر درست باشد، اجازه‌ی دسترسی دوردست به رومیزی از طریق قرارداد RFB را می‌دهد. آن وقت کاربران ماشین‌های دوردست می‌توانند با استفاده از نمایشگر VNC به رومیزی متصل شوند."
 
@@ -103,17 +95,10 @@ msgid "If true, remote users accessing the desktop are not allowed access until 
 msgstr "اگر درست باشد، کاربران دوردست هنگام دسترسی به رومیزی، اجازه‌ی دسترسی را ندارند مگر این که کاربر ماشین میزبان اتصال را تأیید کند. برای مواقعی که دسترسی با گذرواژه محافظت نشده است توصیه می‌شود."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:8
-#| msgid ""
-#| "If true, remote users accessing the desktop are only allowed to view the "
-#| "desktop. Remote user's will not be able to use the mouse or keyboard."
 msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr "اگر درست باشد، کاربران دوردست هنگام دسترسی به رومیزی تنها اجازه‌ی دیدن رومیزی را دارند. کاربران دوردست قادر به استفاده از موشی یا صفحه‌کلید را نخواهند داشت."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:9
-#| msgid ""
-#| "If true, remote users accessing the desktop are required to be able "
-#| "support encryption. It is highly recommended that you use a client which "
-#| "supports encryption unless the intervening network is trusted."
 msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
 msgstr "اگر درست باشد، کاربران دوردست هنگام دسترسی به رومیزی ملزم به پشتیبانی رمزنگاری هستند. به شدت توصیه می‌شود که شما از کارگیری که از رمزنگاری پشتیبانی می‌کنند استفاده کنید مگر اینکه شبکه‌ی متصل شونده مورد اعتماد باشد."
 
@@ -130,84 +115,78 @@ msgid "If true, we will not use the XDamage extension of X.org. This extension d
 msgstr "اگر درست باشد، ما از افزونه‌ی XDamage مربوط به X.org استفاده نخواهیم کرد. این افزونه بر روی تعدادی از راه‌اندازهای ویدئویی هنگامی که از جلوه‌های سه‌بعدی استفاده میکنند بدرستی کار نمی‌کند. غیرفعال کردن این گزینه باعث می‌شود تا وینو بتواند در این محیط‌ها با سرعت کمتری در رندر اجرا شود."
 
 #: ../common/org.gnome.Vino.gschema.xml.in.h:13
+msgid "If true, we will notify, when the user connects to the system."
+msgstr "اگر درست باشد، در هنگام اتصال کاربر به سیستم به شما اعلان می‌شود."
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:14
 msgid "If true, we will use UPNP protocol to automatically forward the port used by vino in the router."
 msgstr "اگر درست باشد، ما از پرتکل UPNP جهت ارجاع درگاه استفاده شده توسط وینو در مسیریاب بطور خودکار استفاده میکنیم."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.in.h:15
 msgid "Listen on an alternative port"
 msgstr "گوش‌سپردن به یک درگاه دیگر"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
-#| msgid ""
-#| "Lists the authentication methods with which remote users may access the "
-#| "desktop. There are two possible authentication methods; \"vnc\" causes "
-#| "the remote user to be prompted for a password (the password is specified "
-#| "by the vnc_password key) before connecting and \"none\" which allows any "
-#| "remote user to connect."
+#: ../common/org.gnome.Vino.gschema.xml.in.h:16
 msgid "Lists the authentication methods with which remote users may access the desktop. There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc-password key) before connecting and \"none\" which allows any remote user to connect."
 msgstr "روش‌های تأیید هویتی که کاربران دوردست می‌توانند با آن‌ها به رومیزی دسترسی داشته باشند فهرست می‌کند. دو روش تأیید هویت ممکن است: «vnc» که قبل از اتصال از کاربر دوردست تقاضای گذرواژه می‌کند (گذرواژه با کلید vnc_password تعریف می‌شود) و «none» که به هر کاربر دوردستی اجازه‌ی اتصال می‌دهد."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.in.h:17
 msgid "Lock the screen when last user disconnect"
 msgstr "قفل کردن صفحه زمانی که ارتباط آخرین کاربر قطع شد"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.in.h:18
 msgid "Network interface for listening"
 msgstr "واسط شبکه جهت گوش سپردن"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+msgid "Notify on connect"
+msgstr "اعلان هنگام اتصال"
+
+#: ../common/org.gnome.Vino.gschema.xml.in.h:20
 msgid "Only allow remote users to view the desktop"
 msgstr "فقط کاربران دوردست مجاز با نمایش رومیزی باشند"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../common/org.gnome.Vino.gschema.xml.in.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "برای تأیید هویت «vcn» گذرواژه لازم است"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
+#: ../common/org.gnome.Vino.gschema.xml.in.h:22
 msgid "Prompt the user before completing a connection"
 msgstr "کسب تکلیف از کاربر قبل از تکمیل اتصال"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.in.h:23
 msgid "Require encryption"
 msgstr "ملزم کردن رمزنگاری"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
-#| msgid ""
-#| "The password which the remote user will be prompted for if the \"vnc\" "
-#| "authentication method is used. The password specified by the key is "
-#| "base64 encoded."
+#: ../common/org.gnome.Vino.gschema.xml.in.h:24
 msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded. The special value of 'keyring' (which is not valid base64) means that the password is stored in the GNOME keyring."
 msgstr "گذرواژه‌ای که از کاربر دوردست تقاضا خواهد شد اگر از روش تأیید هویت «vnc» استفاده شود. گذرواژه تعریف شده با کلید با base64 کدگذاری می‌شود. مقدار خاص «keyring» (که یک base64 معتبر نیست) به این معنی‌است که گذرواژه در جاکلیدی گنوم ذخیره شده است."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.in.h:25
 msgid "The port which the server will listen to if the 'use-alternative-port' key is set to true. Valid values are in the range from 5000 to 50000."
 msgstr "درگاهی که کارگزار به آن گوش خواهد سپرد چنانچه کلید «use-alternative-port» بر روی درست تنظیم شده باشد. مقادیر معتبر در بازه‌ی ۵۰۰۰ تا ۵۰۰۰۰ هستند."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.in.h:26
 msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
 msgstr "این کلید رفتار شمایل وضعیت را کنترل می‌کند. سه گزینه وجود دارد: «always» - شمایل همواره همانجا خواهد بود؛ «client» - شما تنها زمانی شمایل را خواهید دید که یک نفر متصل شده باشد، این پیش‌فرض گزینه می‌باشد؛ «never» - هیچ‌وقت شامیل را نشان نمی‌دهد."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
-#| msgid ""
-#| "This key specifies the e-mail address to which the remote desktop URL "
-#| "should be sent if the user clicks on the URL in the Remote Desktop "
-#| "preferences dialog."
+#: ../common/org.gnome.Vino.gschema.xml.in.h:27
 msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Desktop Sharing preferences dialog."
 msgstr "این کلید آدرس پست الکترونیکی‌ای را تعریف می‌کند که در صورتی که کاربر روی نشانی اینترنتی محاوره‌ی ترجیحات رومیزی دوردست کلیک کند،‌ نشانی اینترنتی رومیزی دوردست به‌ آن فرستاده می‌شود."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.in.h:28
 msgid "When the status icon should be shown"
 msgstr "زمانی که شمایل وضعیت باید نشان داده شود"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.in.h:29
 msgid "When true, disable the background on receive valid session"
 msgstr "در هنگام درست بودن، پس‌زمینه در نشست معتبر دریافت شده غیرفعال می‌کند"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.in.h:30
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "اینکه آیا باید افزونه‌ی XDamage مربوط به X.org را غیرفعال کنیم یا خیر"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.in.h:31
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "اینکه آیا باید از UPNP جهت ارجاع درگاه‌ها در مسیریاب استفاده کنم یا خیر"
 
@@ -224,7 +203,6 @@ msgid "Automatically _configure UPnP router to open and forward ports"
 msgstr "امکان UPnP مسیریاب را بطور خودکار جهت بازکردن و ارجاع درگاه‌ها پیکربندی کن"
 
 #: ../capplet/vino-preferences.ui.h:4
-#| msgid "Remote Desktop Preferences"
 msgid "Desktop Sharing Preferences"
 msgstr "ترجیحات اشتراک‌گذاری رومیزی"
 
@@ -233,12 +211,10 @@ msgid "Remote users are able to control your mouse and keyboard"
 msgstr "کاربران دوردست قابلیت کنترل موشی و صفحه‌کلید را دارند"
 
 #: ../capplet/vino-preferences.ui.h:6
-#| msgid "<b>Security</b>"
 msgid "Security"
 msgstr "امنیت"
 
 #: ../capplet/vino-preferences.ui.h:7
-#| msgid "<b>Sharing</b>"
 msgid "Sharing"
 msgstr "اشتراک‌گذاری"
 
@@ -291,29 +267,29 @@ msgstr "پرونده، یک پرونده‌ی معتبر desktop. نمی‌با�
 msgid "Unrecognized desktop file Version '%s'"
 msgstr "پرونده‌ی رومیزی ناشناس «%s»"
 
-#: ../server/smclient/eggdesktopfile.c:971
+#: ../server/smclient/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
 msgstr "درحال شروع %s"
 
-#: ../server/smclient/eggdesktopfile.c:1113
+#: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
 msgstr "برنامه اسناد را از طریق خط فرمان نمی‌پذیرد"
 
-#: ../server/smclient/eggdesktopfile.c:1181
+#: ../server/smclient/eggdesktopfile.c:1184
 #, c-format
 msgid "Unrecognized launch option: %d"
 msgstr "گزینه اجرا ناشناس: %Id"
 
 #. translators: The 'Type=Link' string is found in a
 #. * desktop file, and should not be translated.
-#: ../server/smclient/eggdesktopfile.c:1388
+#: ../server/smclient/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
 msgstr "ناتوان در ارجاع URIهای سند به یک ورودی رومیزی «Type=Link»"
 
-#: ../server/smclient/eggdesktopfile.c:1409
+#: ../server/smclient/eggdesktopfile.c:1412
 #, c-format
 msgid "Not a launchable item"
 msgstr "یک مورد قابل اجرا نیست"
@@ -378,11 +354,10 @@ msgstr "vino-mdns:showusername"
 #.
 #: ../server/vino-mdns.c:74
 #, c-format
-#| msgid "Enable remote desktop access"
 msgid "%s's remote desktop on %s"
 msgstr "رومیزی دوردست %s بر روی %s"
 
-#: ../server/vino-prefs.c:109
+#: ../server/vino-prefs.c:111
 #, c-format
 msgid "Received signal %d, exiting."
 msgstr "سیگنال %Id دریافت شد، در حال خروج."
@@ -405,7 +380,6 @@ msgid "A user on another computer is trying to remotely view or control your des
 msgstr "کاربری از یک کامپیوتر دیگر تلاش می‌کند رومیزی شما را از دوردست نمایش دهد یا کنترل کند."
 
 #: ../server/vino-prompt.ui.h:2
-#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
 msgid "Another user is trying to view your desktop."
 msgstr "کاربر دیگری در حال تلاش برای دیدن رومیزی شما است."
 
@@ -427,8 +401,8 @@ msgstr "_اجازه"
 msgid "_Refuse"
 msgstr "_رد"
 
-#: ../server/vino-server.c:156
-#: ../server/vino-server.c:179
+#: ../server/vino-server.c:158
+#: ../server/vino-server.c:181
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "بازکردن اتصال به bus شکست خورد: %s\n"
@@ -444,7 +418,6 @@ msgstr "اشتراک‌گذاری رومیزی فعال است"
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-#| msgid "Allow other users to _view your desktop"
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "یک نفر درحال دیدن رومیزی شماست"
@@ -457,9 +430,6 @@ msgstr "خطا در هنگام نمایش ترجیحات"
 
 #: ../server/vino-status-icon.c:234
 #: ../server/vino-status-tube-icon.c:200
-#| msgid ""
-#| "There was an error displaying help:\n"
-#| "%s"
 msgid "Error displaying help"
 msgstr "خطایی هنگام نمایش راهنما رخ داد"
 
@@ -562,29 +532,21 @@ msgstr "خطا در هنگام مقدار دهی اولیه libnotify\n"
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:626
-#| msgid "Allow other users to _view your desktop"
 msgid "Another user is viewing your desktop"
 msgstr "کاربر دیگر درحال دیدن رومیزی شماست"
 
 #: ../server/vino-status-icon.c:628
 #, c-format
-#| msgid ""
-#| "A user on the computer '%s' is trying to remotely view or control your "
-#| "desktop."
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "کاربری از کامپیوتر «%s» درحال دیدن رومیزی شما از دوردست است."
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:634
-#| msgid "_Allow other users to control your desktop"
 msgid "Another user is controlling your desktop"
 msgstr "کاربر دیگری درحال کنترل سیستم شماست"
 
 #: ../server/vino-status-icon.c:636
 #, c-format
-#| msgid ""
-#| "A user on the computer '%s' is trying to remotely view or control your "
-#| "desktop."
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "کاربری از کامپیوتر «%s» درحال کنترل رومیزی شما از دوردست است."
 
@@ -619,9 +581,6 @@ msgstr "«%s» قطع شد"
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #: ../server/vino-tube-server.c:304
 #, c-format
-#| msgid ""
-#| "A user on the computer '%s' is trying to remotely view or control your "
-#| "desktop."
 msgid "'%s' is remotely controlling your desktop."
 msgstr "کاربر «%s» درحال کنترل رومیزی شما از دوردست است."
 
