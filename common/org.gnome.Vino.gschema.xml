@@ -1,5 +1,5 @@
 <schemalist>
-  <schema id='org.gnome.Vino' path='/desktop/gnome/remote-access/'>
+  <schema id='org.gnome.Vino' path='/org/gnome/desktop/remote-access/'>
     <key name='enabled' type='b'>
       <summary>Enable remote access to the desktop</summary>
       <description>
