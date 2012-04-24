@@ -185,25 +185,19 @@ handle_channels_cb (TpSimpleHandler *handler,
   connect to it */
   gchar * network_interface = "lo";
   GList *l;
-  TpChannel *channel = NULL;
+  TpStreamTubeChannel *channel = NULL;
 
   for (l = channels; l != NULL; l = g_list_next (l))
     {
-      TpChannel *chan = l->data;
-      const gchar *service;
+      TpStreamTubeChannel *chan = l->data;
 
-      if (tp_channel_get_channel_type_id (chan) !=
-          TP_IFACE_QUARK_CHANNEL_TYPE_STREAM_TUBE)
+      if (!TP_IS_STREAM_TUBE_CHANNEL (chan))
         continue;
 
       if (tp_proxy_get_invalidated (chan) != NULL)
         continue;
 
-      service = tp_asv_get_string (
-          tp_channel_borrow_immutable_properties (chan),
-          TP_PROP_CHANNEL_TYPE_STREAM_TUBE_SERVICE);
-
-      if (tp_strdiff (service, "rfb"))
+      if (tp_strdiff (tp_stream_tube_channel_get_service (chan), "rfb"))
         continue;
 
       channel = chan;
