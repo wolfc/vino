@@ -393,7 +393,7 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
 #define NOTIFICATION_TIMEOUT 5
 
   GError *error;
-  const gchar *filename = NULL;
+  gchar *filename;
 
   if (!notify_is_initted () &&  !notify_init (g_get_application_name ()))
     {
@@ -408,10 +408,10 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
       icon->priv->new_client_notification = NULL;
     }
 
-  filename = vino_tube_server_get_avatar_filename (icon->priv->server);
+  filename = vino_tube_server_dup_avatar_filename (icon->priv->server);
 
   if (filename == NULL)
-      filename = "stock_person";
+      filename = g_strdup ("stock_person");
 
   icon->priv->new_client_notification =
 #ifdef VINO_HAVE_LIBNOTIFY_0_7
@@ -420,6 +420,8 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
       notify_notification_new_with_status_icon (summary, body,
       filename, GTK_STATUS_ICON (icon));
 #endif
+
+  g_free (filename);
 
   notify_notification_set_timeout (icon->priv->new_client_notification,
       NOTIFICATION_TIMEOUT * 1000);

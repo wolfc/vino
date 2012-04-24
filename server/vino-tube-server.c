@@ -44,7 +44,6 @@ G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 struct _VinoTubeServerPrivate
 {
   TpChannel *tube;
-  gchar *filename;
   gulong signal_invalidated_id;
   VinoStatusTubeIcon *icon_tube;
   TpTubeChannelState state;
@@ -64,38 +63,6 @@ enum
 };
 
 static guint signals[LAST_SIGNAL] = { 0 };
-
-static gchar * vino_tube_server_contact_get_avatar_filename (TpContact *contact,
-    const gchar *token,
-    VinoTubeServer *self);
-
-static void
-vino_tube_server_constructed (GObject *object)
-{
-  VinoTubeServer *self = VINO_TUBE_SERVER (object);
-  TpContact *contact;
-  const gchar *token;
-
-  if (G_OBJECT_CLASS (vino_tube_server_parent_class)->constructed)
-    G_OBJECT_CLASS (vino_tube_server_parent_class)->constructed (object);
-
-  g_assert (self->priv->tube != NULL);
-
-  contact = tp_channel_get_target_contact (self->priv->tube);
-  g_assert (contact != NULL);
-
-  token = tp_contact_get_avatar_token (contact);
-
-  if (!tp_str_empty (token))
-    {
-      self->priv->filename = NULL;
-    }
-  else
-    {
-      self->priv->filename = vino_tube_server_contact_get_avatar_filename
-          (contact, token, self);
-    }
-}
 
 static void
 vino_tube_server_dispose (GObject *object)
@@ -124,14 +91,6 @@ vino_tube_server_dispose (GObject *object)
 static void
 vino_tube_server_finalize (GObject *object)
 {
-  VinoTubeServer *server = VINO_TUBE_SERVER (object);
-
-  if (server->priv->filename != NULL)
-    {
-      g_free (server->priv->filename);
-      server->priv->filename = NULL;
-    }
-
   dprintf (TUBE, "Destruction of a VinoTubeServer\n");
 
   if (G_OBJECT_CLASS (vino_tube_server_parent_class)->finalize)
@@ -200,7 +159,6 @@ vino_tube_server_class_init (VinoTubeServerClass *klass)
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
   gobject_class->dispose = vino_tube_server_dispose;
-  gobject_class->constructed = vino_tube_server_constructed;
   gobject_class->finalize = vino_tube_server_finalize;
   gobject_class->set_property = vino_tube_server_set_property;
   gobject_class->get_property = vino_tube_server_get_property;
@@ -326,49 +284,6 @@ vino_tube_server_offer_cb (TpChannel *proxy,
     }
 }
 
-static gchar *
-vino_tube_server_contact_get_avatar_filename (TpContact *contact,
-    const gchar *token,
-    VinoTubeServer *self)
-{
-  gchar *avatar_path;
-  gchar *avatar_file;
-  gchar *token_escaped;
-  TpConnection *connection;
-  gchar *cm;
-  gchar *protocol;
-
-  if (contact == NULL)
-    return NULL;
-
-  token_escaped = tp_escape_as_identifier (token);
-
-  connection = tp_contact_get_connection (contact);
-
-  if (!tp_connection_parse_object_path (connection, &protocol, &cm))
-    {
-      dprintf (TUBE, "Impossible to parse object path\n");
-      return NULL;
-    }
-
-  avatar_path = g_build_filename (g_get_user_cache_dir (),
-      "telepathy",
-      "avatars",
-      cm,
-      protocol,
-      NULL);
-  g_mkdir_with_parents (avatar_path, 0700);
-
-  avatar_file = g_build_filename (avatar_path, token_escaped, NULL);
-
-  g_free (token_escaped);
-  g_free (avatar_path);
-  g_free (cm);
-  g_free (protocol);
-
-  return avatar_file;
-}
-
 gboolean
 vino_tube_server_share_with_tube (VinoTubeServer *server,
     GError **error)
@@ -432,13 +347,18 @@ vino_tube_server_get_alias (VinoTubeServer *self)
   return tp_contact_get_alias (contact);
 }
 
-const gchar*
-vino_tube_server_get_avatar_filename (VinoTubeServer *self)
+gchar*
+vino_tube_server_dup_avatar_filename (VinoTubeServer *self)
 {
   TpContact *contact;
+  GFile *file;
 
   contact = tp_channel_get_target_contact (self->priv->tube);
   g_return_val_if_fail (contact != NULL, NULL);
 
-  return tp_contact_get_alias (contact);
+  file = tp_contact_get_avatar_file (contact);
+  if (file == NULL)
+    return NULL;
+
+  return g_file_get_path (file);
 }

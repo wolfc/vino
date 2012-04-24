@@ -119,7 +119,7 @@ vino_tube_servers_manager_init (VinoTubeServersManager *self)
 
   tp_simple_client_factory_add_contact_features_varargs (factory,
       TP_CONTACT_FEATURE_ALIAS,
-      TP_CONTACT_FEATURE_AVATAR_TOKEN,
+      TP_CONTACT_FEATURE_AVATAR_DATA,
       TP_CONTACT_FEATURE_INVALID);
 
   tp_simple_client_factory_add_channel_features_varargs (factory,
