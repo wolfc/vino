@@ -44,7 +44,6 @@ G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 struct _VinoTubeServerPrivate
 {
   TpChannel *tube;
-  TpConnection *connection;
   gchar *filename;
   gulong signal_invalidated_id;
   VinoStatusTubeIcon *icon_tube;
@@ -133,25 +132,10 @@ vino_tube_server_finalize (GObject *object)
       server->priv->filename = NULL;
     }
 
-  if (server->priv->connection != NULL)
-    {
-      g_object_unref (server->priv->connection);
-      server->priv->connection = NULL;
-    }
-
   dprintf (TUBE, "Destruction of a VinoTubeServer\n");
 
   if (G_OBJECT_CLASS (vino_tube_server_parent_class)->finalize)
     G_OBJECT_CLASS (vino_tube_server_parent_class)->finalize (object);
-}
-
-static void
-vino_tube_server_set_connection (VinoTubeServer *server,
-    TpConnection *connection)
-{
-  g_return_if_fail (VINO_IS_TUBE_SERVER (server));
-
-  server->priv->connection = g_object_ref (connection);
 }
 
 static void
@@ -173,10 +157,6 @@ vino_tube_server_set_property (GObject *object,
 
   switch (prop_id)
     {
-    case PROP_CONNECTION:
-      vino_tube_server_set_connection (server,
-          g_value_get_object (value));
-      break;
     case PROP_TUBE:
       vino_tube_server_set_tube (server, g_value_get_object (value));
       break;
@@ -196,9 +176,6 @@ vino_tube_server_get_property (GObject *object,
 
   switch (prop_id)
     {
-    case PROP_CONNECTION:
-      g_value_set_object (value, server->priv->connection);
-      break;
     case PROP_TUBE:
       g_value_set_object (value, server->priv->tube);
       break;
@@ -237,16 +214,6 @@ vino_tube_server_class_init (VinoTubeServerClass *klass)
       g_cclosure_marshal_VOID__VOID,
       G_TYPE_NONE,
       0);
-
-  g_object_class_install_property (gobject_class,
-      PROP_CONNECTION,
-      g_param_spec_object ("connection",
-      "TpConnection",
-      "Connection of the stream tube",
-      TP_TYPE_CONNECTION,
-      G_PARAM_READWRITE   |
-      G_PARAM_CONSTRUCT   |
-      G_PARAM_STATIC_STRINGS));
 
   g_object_class_install_property (gobject_class,
       PROP_TUBE,

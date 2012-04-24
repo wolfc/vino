@@ -238,7 +238,6 @@ handle_channels_cb (TpSimpleHandler *handler,
       "lock-screen",          0,
       "disable-background",   0,
       "use-upnp",             0,
-      "connection",           connection,
       "tube",                 channel,
       NULL);
 
