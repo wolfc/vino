@@ -43,7 +43,7 @@ G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 
 struct _VinoTubeServerPrivate
 {
-  TpChannel *tp_channel;
+  TpChannel *tube;
   TpConnection *connection;
   gchar *filename;
   gulong signal_invalidated_id;
@@ -80,9 +80,9 @@ vino_tube_server_constructed (GObject *object)
   if (G_OBJECT_CLASS (vino_tube_server_parent_class)->constructed)
     G_OBJECT_CLASS (vino_tube_server_parent_class)->constructed (object);
 
-  g_assert (self->priv->tp_channel != NULL);
+  g_assert (self->priv->tube != NULL);
 
-  contact = tp_channel_get_target_contact (self->priv->tp_channel);
+  contact = tp_channel_get_target_contact (self->priv->tube);
   g_assert (contact != NULL);
 
   token = tp_contact_get_avatar_token (contact);
@@ -103,13 +103,13 @@ vino_tube_server_dispose (GObject *object)
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (object);
 
-  g_signal_handler_disconnect (G_OBJECT (server->priv->tp_channel),
+  g_signal_handler_disconnect (G_OBJECT (server->priv->tube),
       server->priv->signal_invalidated_id);
 
-  if (server->priv->tp_channel != NULL)
+  if (server->priv->tube != NULL)
     {
-      g_object_unref (server->priv->tp_channel);
-      server->priv->tp_channel = NULL;
+      g_object_unref (server->priv->tube);
+      server->priv->tube = NULL;
     }
 
   if (server->priv->icon_tube != NULL)
@@ -160,7 +160,7 @@ vino_tube_server_set_tube (VinoTubeServer *server,
 {
   g_return_if_fail (VINO_IS_TUBE_SERVER (server));
 
-  server->priv->tp_channel = g_object_ref (tube);
+  server->priv->tube = g_object_ref (tube);
 }
 
 static void
@@ -200,7 +200,7 @@ vino_tube_server_get_property (GObject *object,
       g_value_set_object (value, server->priv->connection);
       break;
     case PROP_TUBE:
-      g_value_set_object (value, server->priv->tp_channel);
+      g_value_set_object (value, server->priv->tube);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -212,7 +212,7 @@ static void
 vino_tube_server_init (VinoTubeServer *self)
 {
   self->priv = VINO_TUBE_SERVER_GET_PRIVATE (self);
-  self->priv->tp_channel = NULL;
+  self->priv->tube = NULL;
   self->priv->icon_tube = NULL;
   self->priv->state = TP_TUBE_CHANNEL_STATE_NOT_OFFERED;
 }
@@ -275,7 +275,7 @@ vino_tube_server_close_tube (VinoTubeServer *server)
 {
   VinoTubeServer *self = VINO_TUBE_SERVER (server);
 
-  tp_cli_channel_call_close (self->priv->tp_channel, -1,
+  tp_cli_channel_call_close (self->priv->tube, -1,
           NULL, NULL, NULL, NULL);
 
   vino_tube_server_fire_closed (self);
@@ -421,7 +421,7 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
       VINO_STATUS_TUBE_ICON_VISIBILITY_ALWAYS);
 
   tp_cli_channel_interface_tube_connect_to_tube_channel_state_changed
-      (server->priv->tp_channel, vino_tube_server_state_changed, server,
+      (server->priv->tube, vino_tube_server_state_changed, server,
        NULL, NULL, error);
 
   if (error != NULL)
@@ -435,7 +435,7 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
   dprintf (TUBE, "Creation of a VinoTubeServer, port : %d\n", port);
 
   server->priv->signal_invalidated_id = g_signal_connect (
-      server->priv->tp_channel, "invalidated",
+      server->priv->tube, "invalidated",
       G_CALLBACK (vino_tube_server_invalidated_cb), server);
 
   g_value_init (&address, TP_STRUCT_TYPE_SOCKET_ADDRESS_IPV4);
@@ -443,7 +443,7 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
       (TP_STRUCT_TYPE_SOCKET_ADDRESS_IPV4));
   dbus_g_type_struct_set (&address, 0, "127.0.0.1", 1, port, G_MAXUINT);
 
-  tp_cli_channel_type_stream_tube_call_offer (server->priv->tp_channel,
+  tp_cli_channel_type_stream_tube_call_offer (server->priv->tube,
       -1, TP_SOCKET_ADDRESS_TYPE_IPV4, &address,
      TP_SOCKET_ACCESS_CONTROL_LOCALHOST, parameters,
      vino_tube_server_offer_cb, server, NULL, NULL);
@@ -459,7 +459,7 @@ vino_tube_server_get_alias (VinoTubeServer *self)
 {
   TpContact *contact;
 
-  contact = tp_channel_get_target_contact (self->priv->tp_channel);
+  contact = tp_channel_get_target_contact (self->priv->tube);
   g_return_val_if_fail (contact != NULL, NULL);
 
   return tp_contact_get_alias (contact);
@@ -470,7 +470,7 @@ vino_tube_server_get_avatar_filename (VinoTubeServer *self)
 {
   TpContact *contact;
 
-  contact = tp_channel_get_target_contact (self->priv->tp_channel);
+  contact = tp_channel_get_target_contact (self->priv->tube);
   g_return_val_if_fail (contact != NULL, NULL);
 
   return tp_contact_get_alias (contact);
