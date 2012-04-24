@@ -120,6 +120,9 @@ gboolean             vino_server_get_use_upnp             (VinoServer     *serve
 void                 vino_server_set_disable_xdamage      (VinoServer     *server,
                                                            gboolean        disable_xdamage);
 gboolean             vino_server_get_disable_xdamage      (VinoServer     *server);
+void                 vino_server_set_reject_incoming      (VinoServer     *server,
+                                                           gboolean        reject);
+gboolean             vino_server_get_reject_incoming      (VinoServer     *server);
 
 #include "vino-status-icon.h"
 VinoStatusIcon      *vino_server_get_status_icon          (VinoServer      *server);

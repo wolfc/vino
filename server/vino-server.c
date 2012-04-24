@@ -88,6 +88,7 @@ struct _VinoServerPrivate
   guint             use_upnp : 1;
   guint             disable_xdamage : 1;
   guint             notify_on_connect : 1;
+  guint             reject_incoming : 1;
 };
 
 struct _VinoClient
@@ -123,7 +124,8 @@ enum
   PROP_DISABLE_BACKGROUND,
   PROP_USE_UPNP,
   PROP_DISABLE_XDAMAGE,
-  PROP_NOTIFY_ON_CONNECT
+  PROP_NOTIFY_ON_CONNECT,
+  PROP_REJECT_INCOMING
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -501,6 +503,12 @@ vino_server_handle_new_client (rfbClientPtr rfb_client)
   VinoClient *client;
 
   g_return_val_if_fail (VINO_IS_SERVER (server), RFB_CLIENT_REFUSE);
+
+  if (server->priv->reject_incoming)
+    {
+      dprintf (RFB, "Reject client on fd %d\n", rfb_client->sock);
+      return RFB_CLIENT_REFUSE;
+    }
 
   dprintf (RFB, "New client on fd %d\n", rfb_client->sock);
 
@@ -1196,6 +1204,9 @@ vino_server_set_property (GObject      *object,
     case PROP_DISABLE_XDAMAGE:
       vino_server_set_disable_xdamage (server, g_value_get_boolean (value));
       break;
+    case PROP_REJECT_INCOMING:
+      vino_server_set_reject_incoming (server, g_value_get_boolean (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1262,6 +1273,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_NOTIFY_ON_CONNECT:
       g_value_set_boolean (value, server->priv->notify_on_connect);
+      break;
+    case PROP_REJECT_INCOMING:
+      g_value_set_boolean (value, server->priv->reject_incoming);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1505,7 +1519,15 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_NAME |
                                                          G_PARAM_STATIC_NICK |
                                                          G_PARAM_STATIC_BLURB));
-
+  g_object_class_install_property (gobject_class,
+                                   PROP_REJECT_INCOMING,
+                                   g_param_spec_boolean ("reject-incoming",
+                                                         "Reject incoming",
+                                                         "If TRUE reject incoming connections",
+                                                         FALSE,
+                                                         G_PARAM_READWRITE   |
+                                                         G_PARAM_CONSTRUCT_ONLY |
+                                                         G_PARAM_STATIC_STRINGS));
 }
 
 VinoServer *
@@ -1918,3 +1940,23 @@ vino_server_get_status_icon (VinoServer *server)
   return server->priv->icon;
 }
 
+void
+vino_server_set_reject_incoming (VinoServer *server,
+    gboolean reject)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  if (server->priv->reject_incoming == reject)
+    return;
+
+  server->priv->reject_incoming = reject;
+  g_object_notify (G_OBJECT (server), "reject-incoming");
+}
+
+gboolean
+vino_server_get_reject_incoming (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->reject_incoming;
+}
