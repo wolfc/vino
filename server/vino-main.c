@@ -39,6 +39,10 @@
 #ifdef VINO_HAVE_GNUTLS
 #include <gnutls/gnutls.h>
 
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+static gboolean tube = FALSE;
+#endif
+
 # ifdef GNOME_ENABLE_DEBUG
 static void
 vino_debug_gnutls (int         level,
@@ -59,14 +63,76 @@ typedef struct
   GMainLoop         *main_loop;
 } VinoApplication;
 
+typedef enum
+{
+  /* Screen sharing enabled, Vino should always be running */
+  RUN_MODE_ALL,
+  /* Screen sharing disabled but Vino started with --tube;
+   * should exit once the tube has been handled */
+  RUN_MODE_TUBE,
+  /* Screen sharing disabled and Vino started without --tube;
+   * should exit right away */
+  RUN_MODE_EXIT,
+} RunMode;
+
+static RunMode
+get_run_mode (VinoApplication *vino)
+{
+  if (g_settings_get_boolean (vino->settings, "enabled"))
+    return RUN_MODE_ALL;
+
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+  if (tube)
+    return RUN_MODE_TUBE;
+#endif
+
+  return RUN_MODE_EXIT;
+}
+
+static void
+set_all_servers_reject(VinoApplication *vino,
+    gboolean reject)
+{
+  guint i;
+
+  for (i = 0; i < vino->n_screens; i++)
+    {
+      VinoServer *server;
+
+      server = vino_dbus_listener_get_server (vino->listeners[i]);
+
+      vino_server_set_reject_incoming (server, reject);
+    }
+}
+
 static void
 enabled_changed (VinoApplication *vino)
 {
-  if (!g_settings_get_boolean (vino->settings, "enabled"))
+  RunMode mode;
+  gboolean reject;
+
+  mode = get_run_mode (vino);
+  if (mode == RUN_MODE_EXIT)
     {
       g_message ("The desktop sharing service has been disabled, exiting.");
       g_main_loop_quit (vino->main_loop);
+      return;
     }
+
+  if (mode == RUN_MODE_TUBE)
+    {
+      g_message ("The desktop sharing service has been disabled, "
+          "reject network connections");
+      reject = TRUE;
+    }
+  else
+    {
+      g_message ("The desktop sharing service has been enabled, "
+          "accept network connections");
+      reject = FALSE;
+    }
+
+  set_all_servers_reject (vino, reject);
 }
 
 static void
@@ -100,6 +166,13 @@ name_acquired (GDBusConnection *connection,
   VinoApplication *vino = user_data;
   gboolean view_only;
   gint i;
+  gboolean reject = FALSE;
+
+  if (get_run_mode (vino) == RUN_MODE_TUBE)
+    {
+      g_message ("Started in tube mode; reject network connections");
+      reject = TRUE;
+    }
 
   /* Name is acquired.  Start up the servers and register them with the
    * listeners.
@@ -155,6 +228,7 @@ name_acquired (GDBusConnection *connection,
 
       vino_dbus_listener_set_server (vino->listeners[i], server);
       vino_server_set_on_hold (server, FALSE);
+      vino_server_set_reject_incoming (server, reject);
 
       if (g_settings_get_boolean (vino->settings, "enabled"))
         {
@@ -196,10 +270,21 @@ main (int argc, char **argv)
   {
     GOptionContext *context;
     GError *error = NULL;
+    GOptionEntry options[] = {
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+      { "tube", 't',
+        0, G_OPTION_ARG_NONE, &tube,
+        N_("Start in tube mode, for the ‘Share my Desktop’ feature"),
+        NULL },
+#endif
+      { NULL }
+    };
 
     context = g_option_context_new (_("- VNC Server for GNOME"));
     g_option_context_add_group (context, gtk_get_option_group (TRUE));
     g_option_context_add_group (context, egg_sm_client_get_option_group ());
+    g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
+
     if (!g_option_context_parse (context, &argc, &argv, &error))
       {
         g_print ("%s\n%s\n", error->message,
@@ -215,7 +300,8 @@ main (int argc, char **argv)
   vino.settings = g_settings_new ("org.gnome.Vino");
   g_signal_connect_swapped (vino.settings, "changed::enabled",
                             G_CALLBACK (enabled_changed), &vino);
-  if (!g_settings_get_boolean (vino.settings, "enabled"))
+
+  if (get_run_mode (&vino) == RUN_MODE_EXIT)
     {
       g_warning ("The desktop sharing service is not "
                  "enabled, so it should not be run.");
