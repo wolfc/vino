@@ -135,6 +135,20 @@ enabled_changed (VinoApplication *vino)
   set_all_servers_reject (vino, reject);
 }
 
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+static void
+tube_disconnected_cb (VinoDBusListener *listener,
+    VinoTubeServer *server,
+    VinoApplication *vino)
+{
+  if (get_run_mode (vino) != RUN_MODE_TUBE)
+    return;
+
+  g_message ("Tube has been closed, exiting.");
+  g_main_loop_quit (vino->main_loop);
+}
+#endif
+
 static void
 bus_acquired (GDBusConnection *connection,
               const gchar     *name,
@@ -155,7 +169,14 @@ bus_acquired (GDBusConnection *connection,
   vino->n_screens = gdk_display_get_n_screens (vino->display);
   vino->listeners = g_new (VinoDBusListener *, vino->n_screens);
   for (i = 0; i < vino->n_screens; i++)
-    vino->listeners[i] = vino_dbus_listener_new (i);
+    {
+      vino->listeners[i] = vino_dbus_listener_new (i);
+
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+      g_signal_connect (vino->listeners[i], "tube-disconnected",
+          G_CALLBACK (tube_disconnected_cb), vino);
+#endif
+    }
 }
 
 static void
