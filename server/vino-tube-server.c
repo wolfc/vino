@@ -44,7 +44,6 @@ G_DEFINE_TYPE (VinoTubeServer, vino_tube_server, VINO_TYPE_SERVER);
 struct _VinoTubeServerPrivate
 {
   TpChannel *tp_channel;
-  gchar *alias;
   TpConnection *connection;
   gchar *filename;
   gulong signal_invalidated_id;
@@ -66,6 +65,38 @@ enum
 };
 
 static guint signals[LAST_SIGNAL] = { 0 };
+
+static gchar * vino_tube_server_contact_get_avatar_filename (TpContact *contact,
+    const gchar *token,
+    VinoTubeServer *self);
+
+static void
+vino_tube_server_constructed (GObject *object)
+{
+  VinoTubeServer *self = VINO_TUBE_SERVER (object);
+  TpContact *contact;
+  const gchar *token;
+
+  if (G_OBJECT_CLASS (vino_tube_server_parent_class)->constructed)
+    G_OBJECT_CLASS (vino_tube_server_parent_class)->constructed (object);
+
+  g_assert (self->priv->tp_channel != NULL);
+
+  contact = tp_channel_get_target_contact (self->priv->tp_channel);
+  g_assert (contact != NULL);
+
+  token = tp_contact_get_avatar_token (contact);
+
+  if (!tp_str_empty (token))
+    {
+      self->priv->filename = NULL;
+    }
+  else
+    {
+      self->priv->filename = vino_tube_server_contact_get_avatar_filename
+          (contact, token, self);
+    }
+}
 
 static void
 vino_tube_server_dispose (GObject *object)
@@ -95,12 +126,6 @@ static void
 vino_tube_server_finalize (GObject *object)
 {
   VinoTubeServer *server = VINO_TUBE_SERVER (object);
-
-  if (server->priv->alias != NULL)
-    {
-      g_free (server->priv->alias);
-      server->priv->alias = NULL;
-    }
 
   if (server->priv->filename != NULL)
     {
@@ -198,6 +223,7 @@ vino_tube_server_class_init (VinoTubeServerClass *klass)
   GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
 
   gobject_class->dispose = vino_tube_server_dispose;
+  gobject_class->constructed = vino_tube_server_constructed;
   gobject_class->finalize = vino_tube_server_finalize;
   gobject_class->set_property = vino_tube_server_set_property;
   gobject_class->get_property = vino_tube_server_get_property;
@@ -376,48 +402,10 @@ vino_tube_server_contact_get_avatar_filename (TpContact *contact,
   return avatar_file;
 }
 
-static void
-vino_tube_server_factory_handle_cb (TpConnection *connection,
-    guint n_contacts,
-    TpContact * const *contacts,
-    guint n_failed,
-    const TpHandle *failed,
-    const GError *error,
-    gpointer self,
-    GObject *weak_object)
-{
-  VinoTubeServer *server = VINO_TUBE_SERVER (self);
-  TpContact *contact;
-  const gchar *token;
-
-  if (error != NULL)
-    {
-      dprintf (TUBE, "Impossible to get the contact name: %s\n", error->message);
-      return;
-    }
-
-  contact = contacts[0];
-  server->priv->alias = g_strdup (tp_contact_get_alias (contact));
-  token = tp_contact_get_avatar_token (contact);
-
-  if (!tp_strdiff (token, ""))
-    {
-      server->priv->filename = NULL;
-    }
-  else
-    {
-      server->priv->filename = vino_tube_server_contact_get_avatar_filename
-          (contact, token, self);
-    }
-}
-
 gboolean
 vino_tube_server_share_with_tube (VinoTubeServer *server,
     GError **error)
 {
-  TpHandle handle;
-  TpContactFeature features[] = { TP_CONTACT_FEATURE_ALIAS,
-      TP_CONTACT_FEATURE_AVATAR_TOKEN };
   GHashTable *parameters;
   GValue address = {0,};
   gint port;
@@ -441,12 +429,6 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
       dprintf (TUBE, "Failed to connect state channel\n");
       return FALSE;
     }
-
-  handle = tp_channel_get_handle (server->priv->tp_channel, NULL);
-
-  tp_connection_get_contacts_by_handle (server->priv->connection, 1, &handle,
-      G_N_ELEMENTS(features), features, vino_tube_server_factory_handle_cb,
-      server, NULL, NULL);
 
   port = vino_server_get_port (VINO_SERVER (server));
 
@@ -475,13 +457,21 @@ vino_tube_server_share_with_tube (VinoTubeServer *server,
 const gchar*
 vino_tube_server_get_alias (VinoTubeServer *self)
 {
-  VinoTubeServer *server = VINO_TUBE_SERVER (self);
-  return (const gchar*)server->priv->alias;
+  TpContact *contact;
+
+  contact = tp_channel_get_target_contact (self->priv->tp_channel);
+  g_return_val_if_fail (contact != NULL, NULL);
+
+  return tp_contact_get_alias (contact);
 }
 
 const gchar*
 vino_tube_server_get_avatar_filename (VinoTubeServer *self)
 {
-  VinoTubeServer *server = VINO_TUBE_SERVER (self);
-  return (const gchar*)server->priv->filename;
+  TpContact *contact;
+
+  contact = tp_channel_get_target_contact (self->priv->tp_channel);
+  g_return_val_if_fail (contact != NULL, NULL);
+
+  return tp_contact_get_alias (contact);
 }

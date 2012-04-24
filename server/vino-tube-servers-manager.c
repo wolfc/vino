@@ -117,6 +117,15 @@ vino_tube_servers_manager_init (VinoTubeServersManager *self)
   factory = TP_SIMPLE_CLIENT_FACTORY (tp_automatic_client_factory_new (dbus));
   g_object_unref (dbus);
 
+  tp_simple_client_factory_add_contact_features_varargs (factory,
+      TP_CONTACT_FEATURE_ALIAS,
+      TP_CONTACT_FEATURE_AVATAR_TOKEN,
+      TP_CONTACT_FEATURE_INVALID);
+
+  tp_simple_client_factory_add_channel_features_varargs (factory,
+      TP_CHANNEL_FEATURE_CONTACTS,
+      0);
+
   self->priv->handler = tp_simple_handler_new_with_factory (factory, FALSE,
       FALSE, "Vino", FALSE, handle_channels_cb, self, NULL);
 
