@@ -107,17 +107,20 @@ vino_tube_servers_manager_init (VinoTubeServersManager *self)
 {
   TpDBusDaemon *dbus;
   GError *error = NULL;
+  TpSimpleClientFactory *factory;
 
   self->priv = VINO_TUBE_SERVERS_MANAGER_GET_PRIVATE (self);
   self->priv->vino_tube_servers = NULL;
   self->priv->alternative_port = 26570;
 
   dbus = tp_dbus_daemon_dup (NULL);
-
-  self->priv->handler = tp_simple_handler_new (dbus, FALSE, FALSE, "Vino",
-      FALSE, handle_channels_cb, self, NULL);
-
+  factory = TP_SIMPLE_CLIENT_FACTORY (tp_automatic_client_factory_new (dbus));
   g_object_unref (dbus);
+
+  self->priv->handler = tp_simple_handler_new_with_factory (factory, FALSE,
+      FALSE, "Vino", FALSE, handle_channels_cb, self, NULL);
+
+  g_object_unref (factory);
 
   tp_base_client_take_handler_filter (self->priv->handler, tp_asv_new (
         TP_PROP_CHANNEL_CHANNEL_TYPE, G_TYPE_STRING,
