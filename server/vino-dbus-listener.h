@@ -36,6 +36,7 @@ typedef struct _VinoDBusListener        VinoDBusListener;
 VinoDBusListener *      vino_dbus_listener_new          (gint screen);
 void                    vino_dbus_listener_set_server   (VinoDBusListener *listener,
                                                          VinoServer       *server);
+VinoServer *            vino_dbus_listener_get_server   (VinoDBusListener *self);
 
 gboolean        vino_dbus_request_name     (void);
 

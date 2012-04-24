@@ -219,3 +219,9 @@ vino_dbus_listener_new (gint screen)
 
   return listener;
 }
+
+VinoServer *
+vino_dbus_listener_get_server (VinoDBusListener *self)
+{
+  return self->server;
+}
