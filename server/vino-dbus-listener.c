@@ -26,6 +26,7 @@
 
 #ifdef VINO_HAVE_TELEPATHY_GLIB
 #include "vino-tube-servers-manager.h"
+#include "vino-tube-server.h"
 #endif
 
 #include "vino-util.h"
@@ -34,6 +35,16 @@
 #endif
 
 #include "vino-mdns.h"
+
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+enum
+{
+  SIG_TUBE_DISCONNECTED,
+  LAST_SIGNAL
+};
+
+static guint signals[LAST_SIGNAL];
+#endif
 
 struct _VinoDBusListener
 {
@@ -79,11 +90,24 @@ vino_dbus_listener_finalize (GObject *object)
     ->finalize (object);
 }
 
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+static void
+tube_disconnected_cb (VinoTubeServersManager *mgr,
+    VinoTubeServer *server,
+    VinoDBusListener *listener)
+{
+  g_signal_emit (listener, signals[SIG_TUBE_DISCONNECTED], 0, server);
+}
+#endif
+
 static void
 vino_dbus_listener_init (VinoDBusListener *listener)
 {
 #ifdef VINO_HAVE_TELEPATHY_GLIB
   listener->manager = vino_tube_servers_manager_new ();
+
+  g_signal_connect (listener->manager, "tube-disconnected",
+      G_CALLBACK (tube_disconnected_cb), listener);
 #endif
 }
 
@@ -91,6 +115,15 @@ static void
 vino_dbus_listener_class_init (GObjectClass *class)
 {
   class->finalize = vino_dbus_listener_finalize;
+
+#ifdef VINO_HAVE_TELEPATHY_GLIB
+  signals[SIG_TUBE_DISCONNECTED] = g_signal_new ("tube-disconnected",
+      G_OBJECT_CLASS_TYPE (class),
+      G_SIGNAL_RUN_LAST,
+      0, NULL, NULL, NULL,
+      G_TYPE_NONE,
+      1, VINO_TYPE_TUBE_SERVER);
+#endif
 }
 
 static guint16
