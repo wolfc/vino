@@ -40,6 +40,14 @@ G_DEFINE_TYPE (VinoTubeServersManager, vino_tube_servers_manager,
     (G_TYPE_INSTANCE_GET_PRIVATE ((obj), VINO_TYPE_TUBE_SERVERS_MANAGER,\
     VinoTubeServersManagerPrivate))
 
+enum
+{
+  SIG_TUBE_DISCONNECTED,
+  LAST_SIGNAL
+};
+
+static guint signals[LAST_SIGNAL];
+
 static void handle_channels_cb (TpSimpleHandler *handler,
     TpAccount *account,
     TpConnection *connection,
@@ -83,6 +91,13 @@ vino_tube_servers_manager_class_init (VinoTubeServersManagerClass *klass)
   dprintf (TUBE, "Creation of the VinoTubeServersManager\n");
 
   gobject_class->dispose = vino_tube_servers_manager_dispose;
+
+  signals[SIG_TUBE_DISCONNECTED] = g_signal_new ("tube-disconnected",
+      G_OBJECT_CLASS_TYPE (klass),
+      G_SIGNAL_RUN_LAST,
+      0, NULL, NULL, NULL,
+      G_TYPE_NONE,
+      1, VINO_TYPE_TUBE_SERVER);
 
   g_type_class_add_private (klass, sizeof (VinoTubeServersManagerPrivate));
 }
@@ -129,6 +144,8 @@ vino_tube_servers_manager_disconnected_cb (VinoTubeServer *server,
   VinoTubeServersManager *self = VINO_TUBE_SERVERS_MANAGER (object);
   self->priv->vino_tube_servers = g_slist_remove
       (self->priv->vino_tube_servers, server);
+
+  g_signal_emit (self, signals[SIG_TUBE_DISCONNECTED], 0, server);
   g_object_unref (server);
 }
 
