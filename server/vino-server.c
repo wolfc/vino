@@ -136,6 +136,8 @@ static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
 static void vino_server_setup_framebuffer     (VinoServer *server);
 static void vino_server_release_framebuffer   (VinoServer *server);
 static void vino_server_update_security_types (VinoServer *server);
+static void vino_server_set_notify_on_connect (VinoServer *server,
+    gboolean notify_on_connect);
 
 static gpointer parent_class;
 
@@ -1204,6 +1206,9 @@ vino_server_set_property (GObject      *object,
     case PROP_DISABLE_XDAMAGE:
       vino_server_set_disable_xdamage (server, g_value_get_boolean (value));
       break;
+    case PROP_NOTIFY_ON_CONNECT:
+      vino_server_set_notify_on_connect (server, g_value_get_boolean (value));
+      break;
     case PROP_REJECT_INCOMING:
       vino_server_set_reject_incoming (server, g_value_get_boolean (value));
       break;
@@ -1922,6 +1927,19 @@ vino_server_set_lock_screen (VinoServer *server,
 
       g_object_notify (G_OBJECT (server), "lock-screen");
     }
+}
+
+static void
+vino_server_set_notify_on_connect (VinoServer *server,
+    gboolean notify_on_connect)
+{
+    g_return_if_fail (VINO_IS_SERVER (server));
+
+    if (server->priv->notify_on_connect == notify_on_connect)
+        return;
+
+    server->priv->notify_on_connect = notify_on_connect;
+    g_object_notify (G_OBJECT (server), "notify-on-connect");
 }
 
 gboolean
