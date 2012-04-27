@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino-master-po-gl-22006\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-01-15 01:23+0100\n"
-"PO-Revision-Date: 2012-01-15 01:24+0100\n"
+"POT-Creation-Date: 2012-04-27 17:10+0200\n"
+"PO-Revision-Date: 2012-04-27 17:10+0200\n"
 "Last-Translator: Fran Dieguez <frandieguez@gnome.org>\n"
 "Language-Team: Galician <gnome-l10n-gl@gnome.org>\n"
 "Language: gl\n"
@@ -413,7 +413,7 @@ msgstr "Opcións de xestión de sesión:"
 msgid "Show session management options"
 msgstr "Mostrar as opción da xestión de sesión"
 
-#: ../server/vino-main.c:108
+#: ../server/vino-main.c:202
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -421,18 +421,23 @@ msgstr ""
 "O seu servidor X non é compatíbel coa extensión XTest - o acceso ao "
 "escritorio remoto será só en modo de visualización\n"
 
-#: ../server/vino-main.c:200
+#: ../server/vino-main.c:298
+msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
+msgstr ""
+"Iniciar en modo tubo, para a característica «Compartir o meu escritorio»."
+
+#: ../server/vino-main.c:304
 msgid "- VNC Server for GNOME"
 msgstr "- Servidor VNC para GNOME"
 
-#: ../server/vino-main.c:206
+#: ../server/vino-main.c:312
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr ""
 "Execute 'vino-server --help' para ver unha lista completa das opcións da "
 "liña de ordes dispoñíbeis"
 
-#: ../server/vino-main.c:226
+#: ../server/vino-main.c:333
 msgid "GNOME Desktop Sharing"
 msgstr "Compartición de escritorio de GNOME"
 
@@ -505,7 +510,7 @@ msgstr "_Rexeitar"
 msgid "_Allow"
 msgstr "_Permitir"
 
-#: ../server/vino-server.c:158 ../server/vino-server.c:181
+#: ../server/vino-server.c:162 ../server/vino-server.c:185
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Non foi posíbel abrir a conexión co bus: %s\n"
@@ -658,7 +663,7 @@ msgstr ""
 "Un usuario do computador «%s» está controlando o seu escritorio de forma "
 "remota."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Produciuse un erro ao mostrar a burbulla de notificación: %s\n"
@@ -668,30 +673,30 @@ msgstr "Produciuse un erro ao mostrar a burbulla de notificación: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "O usuario remoto de «%s» será desconectado. Está seguro?"
 
-#: ../server/vino-tube-server.c:269 ../server/vino-tube-server.c:298
+#: ../server/vino-tube-server.c:220 ../server/vino-tube-server.c:249
 msgid "Share my desktop information"
 msgstr "Compartir a información do meu escritorio"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:273
+#: ../server/vino-tube-server.c:224
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "«%s» rexeitou a invitación a compartir o escritorio."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:277
+#: ../server/vino-tube-server.c:228
 #, c-format
 msgid "'%s' disconnected"
 msgstr "«%s» desconectada"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:304
+#: ../server/vino-tube-server.c:255
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "«%s» está a controlar remotamente o seu escritorio."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:313
+#: ../server/vino-tube-server.c:264
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Agardando por «%s» para conectar á pantalla."
