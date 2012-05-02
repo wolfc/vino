@@ -1,3 +1,47 @@
+Vino 3.5.1
+==========
+
+Carles Ferrando (1):
+      [l10n]Updated Catalan (Valencian) translation
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (3):
+      Post-release version bump to 3.5.1
+      Add vino_server_set_notify_on_connect()
+      Update NEWS for 3.5.1 release
+
+Fran Diéguez (1):
+      Updated Galician translations
+
+Guillaume Desmottes (13):
+      Add vino_dbus_listener_get_server()
+      Add VinoServer:reject-incoming property
+      Add --tube arg to launch Vino in ‘tube only’ mode
+      VinoTubeServersManager::tube-disconnected signal
+      Relay tube-disconnected signal in VinoDbusListener
+      Exit when tube is closed if run in tube mode
+      Depend on telepathy-glib 0.18.0
+      Use tp_simple_handler_new_with_factory()
+      Rely on the factory to prepare the TpContact
+      Rename VinoTubeServer.tp_channel to .tube
+      Remove VinoTubeServer::connection property
+      Use TP_CONTACT_FEATURE_AVATAR_DATA
+      Use tp_stream_tube_channel_get_service()
+
+Jordi Serratosa (1):
+      [l10n] Fixes on Catalan translation
+
+Khaled Hosny (1):
+      Updated Arabic translation
+
+Mitsuya Shibata (1):
+      [l10n] Update Japanese translation
+
+Yaron Shahrabani (1):
+      Updated Hebrew translation.
+
 Vino 3.4.0
 ==========
 
