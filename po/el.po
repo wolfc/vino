@@ -475,7 +475,7 @@ msgstr "Απομακρυσμένη επιφάνεια εργασίας του %s
 #: ../server/vino-prefs.c:111
 #, c-format
 msgid "Received signal %d, exiting."
-msgstr "Ελήφθη σήμα %d, έξοδος...\n"
+msgstr "Ελήφθη σήμα %d, έξοδος"
 
 #: ../server/vino-prompt.c:141
 msgid "Screen"
