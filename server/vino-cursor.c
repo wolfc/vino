@@ -21,6 +21,10 @@
  */
 
 #include <config.h>
+#ifdef VINO_HAVE_DAMAGE
+#include <X11/extensions/Xfixes.h>
+#include <gdk/gdkx.h>
+#endif /* VINO_HAVE_DAMAGE */
 
 #include "vino-cursor.h"
 
@@ -105,6 +109,7 @@ vino_cursor_update_timeout (VinoCursorData *data)
       data->y = tmp_y;
     }
 
+  data->cursor_has_changed = TRUE;
   return TRUE;
 }
 
@@ -155,6 +160,25 @@ vino_cursor_get_position (VinoCursorData *data,
     *y = data->y;
 }
 
+#ifdef VINO_HAVE_DAMAGE
+static void
+argbdata_to_cursor_source (long *argb_data, int len, char **cursor_source)
+{
+  int i = 0;
+  char *p = g_new(char, len);
+
+  *cursor_source = p;
+  while (i < len) {
+    if (((argb_data[i]>>24 & 0xff) == 0xff) &&
+        (argb_data[i] & 0x80) == 0)
+      *p++ = 'x';
+    else
+      *p++ = ' ';
+    i++;
+  }
+}
+#endif /* VINO_HAVE_DAMAGE */
+
 gboolean
 vino_cursor_get_x_source (VinoCursorData  *data,
 			  int             *width,
@@ -162,19 +186,49 @@ vino_cursor_get_x_source (VinoCursorData  *data,
 			  const char     **cursor_source,
 			  const char     **cursor_mask)
 {
+#ifdef VINO_HAVE_DAMAGE
+  int event, error;
+  Display *display = GDK_SCREEN_XDISPLAY(data->screen);
+#endif /* VINO_HAVE_DAMAGE */
+
   g_return_val_if_fail (data != NULL, FALSE);
 
   if (!data->cursor_has_changed)
     return FALSE;
 
-  if (width)
-    *width = VINO_CURSOR_WIDTH;
-  if (height)
-    *height = VINO_CURSOR_HEIGHT;
-  if (cursor_source)
-    *cursor_source = vino_cursor_source;
-  if (cursor_mask)
-    *cursor_mask = vino_cursor_mask;
+#ifdef VINO_HAVE_DAMAGE
+  if (XFixesQueryExtension (display, &event, &error))
+  {
+    static char *cursor_source_from_xfixes = NULL;
+
+    XFixesCursorImage *cur = XFixesGetCursorImage (display);
+    if (cursor_source_from_xfixes)
+      g_free (cursor_source_from_xfixes);
+    argbdata_to_cursor_source ((long *)cur->pixels, cur->width*cur->height, &cursor_source_from_xfixes);
+    if (width)
+      *width = cur->width;
+    if (height)
+      *height = cur->height;
+    if (cursor_source)
+      *cursor_source = cursor_source_from_xfixes;
+    if (cursor_mask)
+      *cursor_mask = NULL;
+    data->x = cur->x - cur->xhot;
+    data->y = cur->y - cur->yhot;
+    XFree (cur);
+  } else {
+#else /* !VINO_HAVE_DAMAGE */
+  {
+#endif /* VINO_HAVE_DAMAGE */
+    if (width)
+      *width = VINO_CURSOR_WIDTH;
+    if (height)
+      *height = VINO_CURSOR_HEIGHT;
+    if (cursor_source)
+      *cursor_source = vino_cursor_source;
+    if (cursor_mask)
+      *cursor_mask = vino_cursor_mask;
+  }
 
   data->cursor_has_changed = FALSE;
 
