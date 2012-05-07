@@ -393,18 +393,20 @@ rfbBool rfbGetCursorBounds(rfbScreenInfoPtr screen,
 	return FALSE;
 
    x1 = screen->cursorX - cursor->xhot;
+   x2 = x1 + cursor->width;
+
    if (x1 < 0)
        x1 = 0;
    
-   x2 = x1 + cursor->width;
    if (x2 >= screen->width)
        x2 = screen->width - 1;
    
    y1 = screen->cursorY - cursor->yhot;
+   y2 = y1 + cursor->height;
+
    if (y1 < 0)
        y1 = 0;
 
-   y2 = y1 + cursor->height;
    if (y2 >= screen->height)
        y2 = screen->height - 1;
 
@@ -483,7 +485,7 @@ void rfbDrawCursor(rfbScreenInfoPtr screen,
    if (screen->cursorX < cursor->xhot)
        i1 = cursor->xhot - screen->cursorX;
    if (screen->cursorY < cursor->yhot)
-       j1 = cursor->xhot - screen->cursorY;
+       j1 = cursor->yhot - screen->cursorY;
 
    /* save what is under the cursor */
    for (j = 0; j < (bounds->y2 - bounds->y1); j++)
