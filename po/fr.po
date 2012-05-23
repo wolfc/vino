@@ -284,7 +284,7 @@ msgstr "Notification à la connexion"
 msgid "If true, we will notify, when the user connects to the system."
 msgstr ""
 "Si vrai, Vino affiche une notification lorsque l'utilisateur se connecte au "
-"systeme."
+"système."
 
 #: ../capplet/vino-preferences.ui.h:1
 msgid "Desktop Sharing Preferences"
