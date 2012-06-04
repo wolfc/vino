@@ -238,7 +238,7 @@ AS_IF([test "x$have_jpeg" = "xyes"],
 # Internationalization
 AC_SUBST([GETTEXT_PACKAGE],[$PACKAGE_TARNAME])
 AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [gettext package])
-IT_PROG_INTLTOOL([0.40.0])
+IT_PROG_INTLTOOL([0.50.0])
 
 # Check for XDAMAGE extension
 AC_CHECK_HEADER([X11/extensions/Xdamage.h],

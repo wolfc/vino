@@ -305,10 +305,8 @@ nodist_desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 # GSettings schemas, enum files and conversion file
 gsettings_ENUM_NAMESPACE = org.gnome.Vino
 gsettings_ENUM_FILES = capplet/vino-preferences.c
-gsettings_in_file = common/org.gnome.Vino.gschema.xml.in
-gsettings_SCHEMAS = $(gsettings_in_file:.xml.in=.xml)
+gsettings_SCHEMAS = common/org.gnome.Vino.gschema.xml
 
-@INTLTOOL_XML_NOMERGE_RULE@
 @GSETTINGS_RULES@
 
 convertdir = $(datadir)/GConf/gsettings
@@ -333,8 +331,7 @@ dist-changelog:
 dist_noinst_DATA = \
 	$(desktop_in_files) \
 	\
-	common/org.gnome.Vino.gschema.xml \
-	$(gsettings_in_file) \
+	$(gsettings_SCHEMAS) \
 	\
 	docs/remote-desktop.txt \
 	docs/debugging.txt \
@@ -363,7 +360,6 @@ dist_noinst_SCRIPTS = autogen.sh
 
 CLEANFILES = \
 	$(nodist_desktop_DATA) \
-	$(gsettings_SCHEMAS) \
 	$(nodist_service_DATA) \
 	$(marshal_data) \
 	$(enum_data) \

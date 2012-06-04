@@ -1,80 +1,80 @@
 <schemalist>
   <schema id='org.gnome.Vino' path='/desktop/gnome/remote-access/'>
     <key name='enabled' type='b'>
-      <_summary>Enable remote access to the desktop</_summary>
-      <_description>
+      <summary>Enable remote access to the desktop</summary>
+      <description>
         If true, allows remote access to the desktop via the RFB
         protocol. Users on remote machines may then connect to the
-        desktop using a VNC viewer.</_description>
+        desktop using a VNC viewer.</description>
       <default>false</default>
     </key>
 
     <key name='prompt-enabled' type='b'>
-      <_summary>Prompt the user before completing a connection</_summary>
-      <_description>
+      <summary>Prompt the user before completing a connection</summary>
+      <description>
         If true, remote users accessing the desktop are not allowed
         access until the user on the host machine approves the
         connection.  Recommended especially when access is not password
         protected.
-      </_description>
+      </description>
       <default>true</default>
     </key>
 
     <key name='view-only' type='b'>
-      <_summary>Only allow remote users to view the desktop</_summary>
-      <_description>
+      <summary>Only allow remote users to view the desktop</summary>
+      <description>
         If true, remote users accessing the desktop are only allowed to
         view the desktop. Remote users will not be able to use the mouse
         or keyboard.
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='network-interface' type='s'>
-      <_summary>Network interface for listening</_summary>
-      <_description>
+      <summary>Network interface for listening</summary>
+      <description>
         If not set, the server will listen on all network interfaces.
 
         Set this if you want that accept connections only from some
         specific network interface. eg: eth0, wifi0, lo, ...
-      </_description>
+      </description>
       <default>''</default>
     </key>
 
     <key name='use-alternative-port' type='b'>
-      <_summary>Listen on an alternative port</_summary>
-      <_description>
+      <summary>Listen on an alternative port</summary>
+      <description>
         If true, the server will listen to another port, instead of the
         default (5900). The port must be specified in the
         'alternative-port' key.
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='alternative-port' type='q'>
-      <_summary>Alternative port number</_summary>
-      <_description>
+      <summary>Alternative port number</summary>
+      <description>
         The port which the server will listen to if the
         'use-alternative-port' key is set to true.  Valid values are in
         the range from 5000 to 50000.
-      </_description>
+      </description>
       <default>5900</default>
     </key>
 
     <key name='require-encryption' type='b'>
-      <_summary>Require encryption</_summary>
-      <_description>
+      <summary>Require encryption</summary>
+      <description>
         If true, remote users accessing the desktop are required to
         support encryption. It is highly recommended that you use a
         client which supports encryption unless the intervening network
         is trusted.
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='authentication-methods' type='as'>
-      <_summary>Allowed authentication methods</_summary>
-      <_description>
+      <summary>Allowed authentication methods</summary>
+      <description>
         Lists the authentication methods with which remote users may
         access the desktop.
 
@@ -82,7 +82,7 @@
         remote user to be prompted for a password (the password is
         specified by the vnc-password key) before connecting and "none"
         which allows any remote user to connect.
-      </_description>
+      </description>
       <choices>
         <choice value='none'/>
         <choice value='vnc'/>
@@ -91,82 +91,82 @@
     </key>
 
     <key name='vnc-password' type='s'>
-      <_summary>Password required for "vnc" authentication</_summary>
-      <_description>
+      <summary>Password required for "vnc" authentication</summary>
+      <description>
         The password which the remote user will be prompted for if the
         "vnc" authentication method is used. The password specified by
         the key is base64 encoded.
 
         The special value of 'keyring' (which is not valid base64) means
         that the password is stored in the GNOME keyring.
-      </_description>
+      </description>
       <default>'keyring'</default>
     </key>
 
     <key name='mailto' type='s'>
-      <_summary>E-mail address to which the remote desktop URL should be sent</_summary>
-      <_description>
+      <summary>E-mail address to which the remote desktop URL should be sent</summary>
+      <description>
         This key specifies the e-mail address to which the remote
         desktop URL should be sent if the user clicks on the URL in the
         Desktop Sharing preferences dialog.
-      </_description>
+      </description>
       <default>''</default>
     </key>
 
     <key name='lock-screen-on-disconnect' type='b'>
-      <_summary>Lock the screen when last user disconnect</_summary>
-      <_description>
+      <summary>Lock the screen when last user disconnect</summary>
+      <description>
         If true, screen will be locked after the last remote client
         disconnect.
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='icon-visibility' enum="org.gnome.Vino.VinoIconVisibility">
-      <_summary>When the status icon should be shown</_summary>
-      <_description>
+      <summary>When the status icon should be shown</summary>
+      <description>
         This key controls the behavior of the status icon. There are
         three options: "always" - The icon will be always there;
         "client" - You will see the icon only when there is someone
         connected, this is the default behavior; "never" - Never shows
         the icon.
-      </_description>
+      </description>
       <default>'client'</default>
     </key>
 
     <key name='disable-background' type='b'>
-      <_summary>When true, disable the background on receive valid session</_summary>
-      <_description>
+      <summary>When true, disable the background on receive valid session</summary>
+      <description>
         When true, disable the background on receive valid session
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='use-upnp' type='b'>
-      <_summary>Whether we should use UPNP to forward the port in routers</_summary>
-      <_description>
+      <summary>Whether we should use UPNP to forward the port in routers</summary>
+      <description>
         If true, we will use UPNP protocol to automatically forward the
         port used by vino in the router.
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='disable-xdamage' type='b'>
-      <_summary>Whether we should disable the XDamage extension of X.org</_summary>
-      <_description>
+      <summary>Whether we should disable the XDamage extension of X.org</summary>
+      <description>
         If true, we will not use the XDamage extension of X.org. This
         extension does not work properly on some video drivers when
         using 3D effects.  Disabling it will make vino work on these
         environments with a slower rendering as side effect.
-      </_description>
+      </description>
       <default>false</default>
     </key>
 
     <key name='notify-on-connect' type='b'>
-      <_summary>Notify on connect</_summary>
-      <_description>
+      <summary>Notify on connect</summary>
+      <description>
         If true, we will notify, when the user connects to the system.
-      </_description>
+      </description>
       <default>true</default>
     </key>
   </schema>
