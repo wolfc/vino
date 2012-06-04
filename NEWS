@@ -1,3 +1,30 @@
+Vino 3.5.2
+==========
+
+Bruno Brouard (2):
+      Updated French translation
+      Updated French translation
+
+David King (3):
+      Depend on intltool 0.50 for GSettings translations
+      Post-release version bump to 3.5.2
+      Update NEWS for 3.5.2 release
+
+Fabrice Bellet (3):
+      Use XFixes to provide RFB cursor image
+      Fix the cursor bounds computation
+      Fix iteration of the cursor->source[] array
+
+Kostas Papadimas (2):
+      Updated Greek translation
+      Updated Greek translation
+
+Luca Ferretti (1):
+      l10n: updated Italian translation
+
+Mantas Kriaučiūnas (1):
+      Updated Lithuanian translation
+
 Vino 3.5.1
 ==========
 
