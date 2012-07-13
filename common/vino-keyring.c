@@ -32,59 +32,32 @@
 
 /* TODO: canhas async? */
 
-#include <gnome-keyring.h>
+#include <secret/secret.h>
 
 char *
 vino_keyring_get_password (void)
 {
-  GnomeKeyringNetworkPasswordData *found_item;
-  GnomeKeyringResult               result;
-  GList                           *matches;
-  char                            *password;
-
-  matches = NULL;
-
-  result = gnome_keyring_find_network_password_sync (
-                NULL,           /* user     */
-                NULL,           /* domain   */
-                "vino.local",   /* server   */
-                NULL,           /* object   */
-                "rfb",          /* protocol */
-                "vnc-password", /* authtype */
-                5900,           /* port     */
-                &matches);
-
-  if (result != GNOME_KEYRING_RESULT_OK || matches == NULL || matches->data == NULL)
-    return NULL;
-
-  found_item = (GnomeKeyringNetworkPasswordData *) matches->data;
-
-  password = g_strdup (found_item->password);
-
-  gnome_keyring_network_password_list_free (matches);
-
-  return password;
+  return secret_password_lookup (SECRET_SCHEMA_COMPAT_NETWORK,
+                                 NULL, NULL,
+                                 "server", "vino.local",
+                                 "protocol", "rfb",
+                                 "authtype", "vnc-password",
+                                 "port", 5900,
+                                 NULL);
 }
 
 gboolean
 vino_keyring_set_password (const char *password)
 {
-  GnomeKeyringResult result;
-  guint32            item_id;
-
-  result = gnome_keyring_set_network_password_sync (
-                NULL,           /* default keyring */
-                NULL,           /* user            */
-                NULL,           /* domain          */
-                "vino.local",   /* server          */
-                NULL,           /* object          */
-                "rfb",          /* protocol        */
-                "vnc-password", /* authtype        */
-                5900,           /* port            */
-                password,       /* password        */
-                &item_id);
-
-  return result == GNOME_KEYRING_RESULT_OK;
+  return secret_password_store_sync (SECRET_SCHEMA_COMPAT_NETWORK,
+                                     SECRET_COLLECTION_DEFAULT,
+                                     _("Remote desktop sharing password"),
+                                     password, NULL, NULL,
+                                     "server", "vino.local",
+                                     "protocol", "rfb",
+                                     "authtype", "vnc-password",
+                                     "port", 5900,
+                                     NULL);
 }
 
 #else

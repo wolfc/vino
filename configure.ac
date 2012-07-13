@@ -117,21 +117,21 @@ AS_IF([test "x$have_network_manager" = "xyes"],
     [AC_MSG_ERROR([NetworkManager support requested but not found])])])
 
 # Check for gnome-keyring
-GNOME_KEYRING_DEPS="gnome-keyring-1"
+LIBSECRET_DEPS="libsecret-1"
 
 AC_ARG_WITH([gnome-keyring],
   [AS_HELP_STRING([--without-gnome-keyring],
     [ignore the presence of gnome-keyring and disable it])])
 
 AS_IF([test "x$with_gnome_keyring" != "xno"],
-  [PKG_CHECK_EXISTS([$GNOME_KEYRING_DEPS],
+  [PKG_CHECK_EXISTS([$LIBSECRET_DEPS],
     [have_gnome_keyring=yes],
     [have_gnome_keyring=no])],
   [have_gnome_keyring=no])
 
 AS_IF([test "x$have_gnome_keyring" != "xno"],
   [AC_DEFINE([VINO_HAVE_GNOME_KEYRING], [], [Build with gnome-keyring support])],
-  [GNOME_KEYRING_DEPS=""
+  [LIBSECRET_DEPS=""
     AS_IF([test "x$with_gnome_keyring" = "xyes"],
     [AC_MSG_ERROR([gnome-keyring support requested but not found])])])
 
@@ -328,11 +328,11 @@ GLIB_VERSION=2.17.0
 GIO_VERSION=2.26
 SOUP_VERSION=2.24.0
 
-PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS $LIBNOTIFY_DEPS $GNOME_KEYRING_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
+PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS $LIBNOTIFY_DEPS $LIBSECRET_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
 
-PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gtk+-3.0 >= $GTK_VERSION libsoup-2.4 >= $SOUP_VERSION $GNOME_KEYRING_DEPS])
+PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gtk+-3.0 >= $GTK_VERSION libsoup-2.4 >= $SOUP_VERSION $LIBSECRET_DEPS])
 
-PKG_CHECK_MODULES([VINO_TOOLS], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gobject-2.0 >= $GLIB_VERSION $GNOME_KEYRING_DEPS])
+PKG_CHECK_MODULES([VINO_TOOLS], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gobject-2.0 >= $GLIB_VERSION $LIBSECRET_DEPS])
 
 # EGG stuff
 PKG_CHECK_MODULES([EGG_SMCLIENT], [gtk+-3.0])

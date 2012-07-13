@@ -40,7 +40,7 @@
 #include <gtk/gtk.h>
 
 #ifdef VINO_HAVE_GNOME_KEYRING
-#include <gnome-keyring.h>
+#include <libsecret/secret.h>
 #endif
 
 G_DEFINE_TYPE (VinoServer, vino_server, G_TYPE_OBJECT);
@@ -687,34 +687,13 @@ static char *
 vino_server_get_password_from_keyring (VinoServer *server)
 {
 #ifdef VINO_HAVE_GNOME_KEYRING
-  GnomeKeyringNetworkPasswordData *found_item;
-  GnomeKeyringResult               result;
-  GList                           *matches;
-  char                            *password;
-  
-  matches = NULL;
-
-  result = gnome_keyring_find_network_password_sync (
-                NULL,           /* user     */
-		NULL,           /* domain   */
-		"vino.local",   /* server   */
-		NULL,           /* object   */
-		"rfb",          /* protocol */
-		"vnc-password", /* authtype */
-		5900,           /* port     */
-		&matches);
-
-  if (result != GNOME_KEYRING_RESULT_OK || matches == NULL || matches->data == NULL)
-    return NULL;
-
-
-  found_item = (GnomeKeyringNetworkPasswordData *) matches->data;
-
-  password = g_strdup (found_item->password);
-
-  gnome_keyring_network_password_list_free (matches);
-
-  return password;
+  return secret_password_lookup_sync (SECRET_SCHEMA_COMPAT_NETWORK,
+                                      NULL, NULL,
+                                      "server", "vino.local",
+                                      "protocol", "rfb",
+                                      "authtype", "vnc-password",
+                                      "port", 5900,
+                                      NULL);
 #else
   return NULL;
 #endif

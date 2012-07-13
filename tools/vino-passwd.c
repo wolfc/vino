@@ -38,7 +38,7 @@
 #include <gio/gio.h>
 
 #ifdef VINO_HAVE_GNOME_KEYRING
-#include <gnome-keyring.h>
+#include <libsecret/secret.h>
 #endif
 
 #define VINO_PREFS_SCHEMA       "org.gnome.Vino"
@@ -49,22 +49,15 @@ static gboolean
 vino_passwd_set_password_in_keyring (const char *password)
 {
 #ifdef VINO_HAVE_GNOME_KEYRING
-  GnomeKeyringResult result;
-  guint32            item_id;
-
-  result = gnome_keyring_set_network_password_sync (
-		NULL,           /* default keyring */
-		NULL,           /* user            */
-		NULL,           /* domain          */
-		"vino.local",   /* server          */
-		NULL,           /* object          */
-		"rfb",          /* protocol        */
-		"vnc-password", /* authtype        */
-		5900,           /* port            */
-		password,       /* password        */
-		&item_id);
-
-  return result == GNOME_KEYRING_RESULT_OK;
+  return secret_password_store_sync (SECRET_SCHEMA_COMPAT_NETWORK,
+                                     SECRET_COLLECTION_DEFAULT,
+                                     _("Remote desktop sharing password"),
+                                     password, NULL, NULL,
+                                     "server", "vino.local",
+                                     "protocol", "rfb",
+                                     "authtype", "vnc-password",
+                                     "port", 5900,
+                                     NULL);
 #else
   return FALSE;
 #endif
