@@ -540,7 +540,7 @@ msgstr "ヘルプ(_H)"
 
 #: ../server/vino-status-icon.c:472
 msgid "_About"
-msgstr "情報(_A)"
+msgstr "このアプリケーションについて(_A)"
 
 #: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
 #, c-format
