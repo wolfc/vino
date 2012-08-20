@@ -37,7 +37,7 @@
 #include <glib/gi18n.h>
 #include <gio/gio.h>
 
-#ifdef VINO_HAVE_GNOME_KEYRING
+#ifdef VINO_HAVE_SECRET
 #include <libsecret/secret.h>
 #endif
 
@@ -48,7 +48,7 @@
 static gboolean
 vino_passwd_set_password_in_keyring (const char *password)
 {
-#ifdef VINO_HAVE_GNOME_KEYRING
+#ifdef VINO_HAVE_SECRET
   return secret_password_store_sync (SECRET_SCHEMA_COMPAT_NETWORK,
                                      SECRET_COLLECTION_DEFAULT,
                                      _("Remote desktop sharing password"),

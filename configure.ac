@@ -116,24 +116,24 @@ AS_IF([test "x$have_network_manager" = "xyes"],
     AS_IF([test "x$with_network_manager" = "xyes"],
     [AC_MSG_ERROR([NetworkManager support requested but not found])])])
 
-# Check for gnome-keyring
-LIBSECRET_DEPS="libsecret-1"
+# Check for secret
+SECRET_DEPS="libsecret-1"
 
-AC_ARG_WITH([gnome-keyring],
-  [AS_HELP_STRING([--without-gnome-keyring],
-    [ignore the presence of gnome-keyring and disable it])])
+AC_ARG_WITH([secret],
+  [AS_HELP_STRING([--without-secret],
+    [ignore the presence of secret and disable it])])
 
-AS_IF([test "x$with_gnome_keyring" != "xno"],
+AS_IF([test "x$with_secret" != "xno"],
   [PKG_CHECK_EXISTS([$LIBSECRET_DEPS],
-    [have_gnome_keyring=yes],
-    [have_gnome_keyring=no])],
-  [have_gnome_keyring=no])
+    [have_secret=yes],
+    [have_secret=no])],
+  [have_secret=no])
 
-AS_IF([test "x$have_gnome_keyring" != "xno"],
-  [AC_DEFINE([VINO_HAVE_GNOME_KEYRING], [], [Build with gnome-keyring support])],
-  [LIBSECRET_DEPS=""
-    AS_IF([test "x$with_gnome_keyring" = "xyes"],
-    [AC_MSG_ERROR([gnome-keyring support requested but not found])])])
+AS_IF([test "x$have_secret" != "xno"],
+  [AC_DEFINE([VINO_HAVE_SECRET], [], [Build with secret support])],
+  [SECRET_DEPS=""
+    AS_IF([test "x$with_secret" = "xyes"],
+    [AC_MSG_ERROR([secret support requested but not found])])])
 
 # Check for X11
 AC_PATH_XTRA

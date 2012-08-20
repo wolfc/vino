@@ -39,7 +39,7 @@
 #include <sys/poll.h>
 #include <gtk/gtk.h>
 
-#ifdef VINO_HAVE_GNOME_KEYRING
+#ifdef VINO_HAVE_SECRET
 #include <libsecret/secret.h>
 #endif
 
@@ -686,7 +686,7 @@ vino_server_defer_client_auth (VinoServer *server,
 static char *
 vino_server_get_password_from_keyring (VinoServer *server)
 {
-#ifdef VINO_HAVE_GNOME_KEYRING
+#ifdef VINO_HAVE_SECRET
   return secret_password_lookup_sync (SECRET_SCHEMA_COMPAT_NETWORK,
                                       NULL, NULL,
                                       "server", "vino.local",
