@@ -1,3 +1,68 @@
+Vino 3.5.90
+===========
+
+Alexander Shopov (1):
+      Updated Bulgarian translation
+
+Chao-Hsiung Liao (1):
+      Updated Traditional Chinese translation(Hong Kong and Taiwan)
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (5):
+      Post-release version bump to 3.5.3
+      Post-release version bump to 3.5.90
+      Rename defines from gnome-keyring to secret
+      Update POTFILES.in
+      Update NEWS for 3.5.90 release
+
+Duarte Loreto (1):
+      Updated Portuguese translation
+
+Fran Diéguez (2):
+      Updated Galician translations
+      Updated Galician translations
+
+Jiro Matsuzawa (1):
+      [l10n] Update Japanese translation
+
+Kjartan Maraas (2):
+      Updated Norwegian bokmål translation
+      Updated Norwegian bokmål translation
+
+Matej Urbančič (1):
+      Updated Slovenian translation
+
+Mattias Põldaru (2):
+      [l10n] Updated Estonian translation
+      [l10n] Updated Estonian translation
+
+Mitsuya Shibata (1):
+      [l10n] Update Japanese translation
+
+Nilamdyuti Goswami (1):
+      Assamese translation reviewed
+
+Sandeep Sheshrao Shedmake (1):
+      Updated Marathi Translations
+
+Stef Walter (1):
+      Migrate from libgnome-keyring to libsecret
+
+Sweta Kothari (2):
+      Updated gujarati file
+      Updated gujarati file
+
+Tom Tryfonidis (1):
+      Updated Greek translation
+
+Yaron Shahrabani (1):
+      Updated Hebrew translation.
+
+Мирослав Николић (1):
+      Updated Serbian translation
+
 Vino 3.5.2
 ==========
 
