@@ -3,6 +3,7 @@
 capplet/vino-message-box.c
 capplet/vino-preferences.c
 capplet/vino-preferences.desktop.in.in
+common/vino-keyring.c
 common/org.gnome.Vino.gschema.xml
 [type: gettext/glade]capplet/vino-preferences.ui
 server/smclient/eggdesktopfile.c
