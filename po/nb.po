@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 3.5.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-25 16:35+0200\n"
-"PO-Revision-Date: 2012-07-10 08:10+0200\n"
+"POT-Creation-Date: 2012-08-22 10:55+0200\n"
+"PO-Revision-Date: 2012-08-22 10:57+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -61,6 +61,10 @@ msgstr "Deling av skrivebord"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "Velg hvordan andre eksterne brukere kan se ditt skrivebord"
 
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "Passord for deling av skrivebordet"
+
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
 msgstr "Slå på ekstern tilgang til skrivebordet"
@@ -105,16 +109,15 @@ msgid "Network interface for listening"
 msgstr "Nettverksgrensesnitt det skal lyttes på"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:8
-#, fuzzy
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
 "Set this if you want that accept connections only from some specific network "
 "interface. eg: eth0, wifi0, lo, ..."
 msgstr ""
-"Tjeneren vil lytte på alle nettverksgrensesnitt hvis denne ikke er satt. "
-"Sett denne hvis du vil godta tilkoblinger kun fra spesifikke "
-"nettverksgrensesnitt som eth0, wifi0, lo …"
+"Tjeneren vil lytte på alle nettverksgrensesnitt hvis denne ikke er satt.\n"
+"\n"
+"Sett denne hvis du vil godta tilkoblinger kun fra spesifikke nettverksgrensesnitt som eth0, wifi0, lo …"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
@@ -159,7 +162,6 @@ msgid "Allowed authentication methods"
 msgstr "Tillatte autentiseringsmetoder"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:18
-#, fuzzy
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop.\n"
@@ -169,18 +171,15 @@ msgid ""
 "password key) before connecting and \"none\" which allows any remote user to "
 "connect."
 msgstr ""
-"Lister autentiseringsmetodene som eksterne brukere kan få tilgang på "
-"skrivebordet med. Det er to mulige autentiseringsmetoder; med «vnc» blir den "
-"eksterne brukeren spurt etter et passord (passordet er lagret i «vnc-"
-"password»-nøkkelen) før tilkobling. «none» tillater alle eksterne brukere å "
-"koble til."
+"Viser autentiseringsmetodene som eksterne brukere kan få tilgang på skrivebordet med.\n"
+"\n"
+"Det er to mulige autentiseringsmetoder; med «vnc» blir den eksterne brukeren spurt etter et passord (passordet er lagret i «vnc-password»-nøkkelen) før tilkobling. «none» tillater alle eksterne brukere å koble til."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "Passord kreves for «vnc»-autentisering"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:22
-#, fuzzy
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -189,10 +188,9 @@ msgid ""
 "The special value of 'keyring' (which is not valid base64) means that the "
 "password is stored in the GNOME keyring."
 msgstr ""
-"Passordet som den eksterne brukeren vil bli spurt etter hvis «vnc»-"
-"autentisering blir brukt. Passordet som blir spesifisert har base64 "
-"kryptering. Hvis verdien «keyring» blir oppgitt (denne er ikke gyldig "
-"base64) betyr dette at passordet blir lagret i GNOME nøkkelringen."
+"Passordet som den eksterne brukeren vil bli spurt etter hvis «vnc»-autentisering blir brukt. Passordet som blir spesifisert har base64 kryptering.\n"
+"\n"
+"Hvis verdien «keyring» blir oppgitt (denne er ikke gyldig base64) betyr dette at passordet blir lagret i GNOME nøkkelringen."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -687,12 +685,12 @@ msgstr "Venter på at «%s» skal koble til skjermen."
 msgid "An error has occurred:"
 msgstr "En feil har oppstått:"
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "Avbrutt"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -707,55 +705,55 @@ msgstr[1] ""
 "FEIL: Maksimal lengde på passord er %d tegn. Vennligst skriv inn passordet "
 "på nytt."
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Bytter passord for Vino.\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "Oppgi nytt passord for Vino: "
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "Skriv nytt passord for Vino på nytt: "
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: oppdatering av passord fullført.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Beklager. Passordene er ikke like.\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: passord ikke endret.\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "Vis Vino-versjon"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- Oppdaterer passord for Vino"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Kjør «vino-passwd --help» for å se en full liste med tilgjengelige "
 "kommandolinjeflagg"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO Versjon %s\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
