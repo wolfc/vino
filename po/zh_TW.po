@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 3.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-07-17 15:33+0800\n"
-"PO-Revision-Date: 2012-07-16 09:37+0800\n"
+"POT-Creation-Date: 2012-08-23 15:50+0800\n"
+"PO-Revision-Date: 2012-08-22 20:13+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional)\n"
 "Language: zh_TW\n"
@@ -62,6 +62,10 @@ msgstr "桌面分享"
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Choose how other users can remotely view your desktop"
 msgstr "選擇其他使用者要以何種方式遠端觀看您的桌面"
+
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "遠端桌面分享密碼"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -673,12 +677,12 @@ msgstr "正在等候「%s」連線至畫面。"
 msgid "An error has occurred:"
 msgstr "發生錯誤："
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "已取消"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -689,53 +693,53 @@ msgid_plural ""
 msgstr[0] "錯誤：密碼的最大長度為 %d 個字元。請重新輸入密碼。"
 msgstr[1] "錯誤：密碼的最大長度為 %d 個字元。請重新輸入密碼。"
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "正在改變 Vino 密碼。\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "輸入新的 Vino 密碼："
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "再輸入一次 Vino 密碼："
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd：密碼更新成功。\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "抱歉，密碼不相符。\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd：密碼沒有改變。\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "顯示 Vino 版本"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- 更新 Vino 密碼"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "執行‘vino-passwd --help‘ 以查看所有可用的命令列選項清單"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO %s 版\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "錯誤：您沒有足夠的權限來改變 Vino 密碼。\n"
