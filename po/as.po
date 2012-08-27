@@ -349,7 +349,7 @@ msgstr "কেতিয়াও নহয় (_N)"
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"
-msgstr "এইটো বৈধ .desktop নথিপত্ৰ নহয়"
+msgstr "এইটো বৈধ .desktop ফাইল নহয়"
 
 #. translators: 'Version' is from a desktop file, and
 #. * should not be translated. '%s' would probably be a
@@ -357,7 +357,7 @@ msgstr "এইটো বৈধ .desktop নথিপত্ৰ নহয়"
 #: ../server/smclient/eggdesktopfile.c:191
 #, c-format
 msgid "Unrecognized desktop file Version '%s'"
-msgstr "ডেস্কটপ নথিপত্ৰৰ অজ্ঞাত সংস্কৰণ '%s'"
+msgstr "ডেস্কটপ ফাইলৰ অজ্ঞাত সংস্কৰণ '%s'"
 
 #: ../server/smclient/eggdesktopfile.c:974
 #, c-format
@@ -367,7 +367,7 @@ msgstr "%s আৰম্ভ কৰা হৈছে"
 #: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
 msgid "Application does not accept documents on command line"
-msgstr "অনুপ্ৰয়োগ দ্বাৰা কমান্ড-শাৰীৰ মাধ্যমে নথিপত্ৰ গ্ৰহণ কৰা নহয়"
+msgstr "এপ্লিকেচন দ্বাৰা কমান্ড-শাৰীৰ মাধ্যমে ফাইল গ্ৰহণ কৰা নহয়"
 
 #: ../server/smclient/eggdesktopfile.c:1184
 #, c-format
@@ -379,7 +379,7 @@ msgstr "অপৰিচিত লঞ্চ বিকল্প: %d"
 #: ../server/smclient/eggdesktopfile.c:1391
 #, c-format
 msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
-msgstr "'Type=Link' ডেস্কটপ প্ৰবিষ্টিৰ ক্ষেত্ৰত নথিপত্ৰৰ URI উল্লেখ কৰা সম্ভব নহয়"
+msgstr "'Type=Link' ডেস্কটপ প্ৰবিষ্টিৰ ক্ষেত্ৰত ফাইলৰ URI উল্লেখ কৰা সম্ভব নহয়"
 
 #: ../server/smclient/eggdesktopfile.c:1412
 #, c-format
@@ -392,7 +392,7 @@ msgstr "অধিবেশন ব্যৱস্থাপকৰ সৈতে স
 
 #: ../server/smclient/eggsmclient.c:229
 msgid "Specify file containing saved configuration"
-msgstr "সংৰক্ষিত বিন্যাস ধাৰণকৰ্তা নথিপত্ৰ ধাৰ্য্য কৰক"
+msgstr "সংৰক্ষিত বিন্যাস ধাৰণকৰ্তা ফাইল ধাৰ্য্য কৰক"
 
 #: ../server/smclient/eggsmclient.c:229
 msgid "FILE"
