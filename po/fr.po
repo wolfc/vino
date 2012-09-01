@@ -7,7 +7,7 @@
 # Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008.
 # Jonathan Ernst <jonathan@ernstfamily.ch>, 2007.
 # Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007-2008.
-# Claude Paroz <claude@2xlibre.net>, 2008-2011.
+# Claude Paroz <claude@2xlibre.net>, 2008-2012.
 # Bruno Brouard <annoa.b@gmail.com>, 2009-2012.
 # Laurent Coudeur <laurentc@iol.ie>, 2009.
 # Alexandre Franke <alexandre.franke@gmail.com#, 2011.
@@ -17,10 +17,11 @@ msgstr ""
 "Project-Id-Version: vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-04-27 15:11+0000\n"
-"PO-Revision-Date: 2012-05-23 21:55+0200\n"
-"Last-Translator: Alexandre Franke <alexandre.franke@gmail.com>\n"
+"POT-Creation-Date: 2012-08-20 21:35+0000\n"
+"PO-Revision-Date: 2012-09-01 18:05+0200\n"
+"Last-Translator: Claude Paroz <claude@2xlibre.net>\n"
 "Language-Team: GNOME French Team <gnomefr@traduc.org>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -73,11 +74,15 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr ""
 "Choisir comment d'autres utilisateurs peuvent voir votre bureau à distance"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:1
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "Mot de passe du partage de bureau à distance"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
 msgstr "Activer l'accès distant au bureau"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:2
+#: ../common/org.gnome.Vino.gschema.xml.h:2
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
@@ -86,11 +91,11 @@ msgstr ""
 "utilisateurs sur des ordinateurs à distance peuvent alors se connecter au "
 "bureau à l'aide d'un visionneur VNC."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:3
+#: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Prompt the user before completing a connection"
 msgstr "Demander à l'utilisateur avant de procéder à une connexion"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:4
+#: ../common/org.gnome.Vino.gschema.xml.h:4
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -101,11 +106,11 @@ msgstr ""
 "connexion. Recommandé particulièrement lorsque l'accès n'est pas protégé par "
 "un mot de passe."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:5
+#: ../common/org.gnome.Vino.gschema.xml.h:5
 msgid "Only allow remote users to view the desktop"
 msgstr "Autoriser les utilisateurs à distance uniquement à voir le bureau"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:6
+#: ../common/org.gnome.Vino.gschema.xml.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -114,25 +119,27 @@ msgstr ""
 "autorisés à voir le bureau. Ils ne peuvent utiliser ni la souris ni le "
 "clavier."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:7
+#: ../common/org.gnome.Vino.gschema.xml.h:7
 msgid "Network interface for listening"
 msgstr "Interface réseau à écouter"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:8
+#: ../common/org.gnome.Vino.gschema.xml.h:8
 msgid ""
-"If not set, the server will listen on all network interfaces. Set this if "
-"you want that accept connections only from some specific network interface. "
-"eg: eth0, wifi0, lo, ..."
+"If not set, the server will listen on all network interfaces.\n"
+"\n"
+"Set this if you want that accept connections only from some specific network "
+"interface. eg: eth0, wifi0, lo, ..."
 msgstr ""
-"Si non défini, le serveur écoute toutes les interfaces réseau. Définissez ce "
-"paramètre si vous voulez limiter les connexions à certaines interfaces "
-"réseau. Ex : eth0, wifi0, lo, ..."
+"Si non défini, le serveur écoute toutes les interfaces réseau.\n"
+"\n"
+"Définissez ce paramètre si vous voulez limiter les connexions à certaines "
+"interfaces réseau. Ex : eth0, wifi0, lo, ..."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:9
+#: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
 msgstr "Écouter sur un autre port"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:10
+#: ../common/org.gnome.Vino.gschema.xml.h:12
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
@@ -140,11 +147,11 @@ msgstr ""
 "Si vrai, le serveur écoutera sur un autre port, au lieu du port par défaut "
 "(5900). Le port doit être indiqué par la clé « alternative-port »."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:11
+#: ../common/org.gnome.Vino.gschema.xml.h:13
 msgid "Alternative port number"
 msgstr "Numéro de port alternatif"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:12
+#: ../common/org.gnome.Vino.gschema.xml.h:14
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
@@ -152,11 +159,11 @@ msgstr ""
 "Le port sur lequel le serveur écoute si la clé « use-alternative-port » est "
 "définie à vrai. Les valeurs valides sont dans la plage 5000 à 50000."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:13
+#: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Require encryption"
 msgstr "Requiert le chiffrement"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.h:16
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -167,47 +174,54 @@ msgstr ""
 "utilisiez un client qui prenne en charge le chiffrement à moins que le "
 "réseau en question soit de confiance."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#: ../common/org.gnome.Vino.gschema.xml.h:17
 msgid "Allowed authentication methods"
 msgstr "Méthodes d'authentification autorisées"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.h:18
 msgid ""
 "Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc-password key) before connecting and \"none\" which allows any remote "
-"user to connect."
+"desktop.\n"
+"\n"
+"There are two possible authentication methods; \"vnc\" causes the remote "
+"user to be prompted for a password (the password is specified by the vnc-"
+"password key) before connecting and \"none\" which allows any remote user to "
+"connect."
 msgstr ""
 "Liste les méthodes d'authentification à l'aide desquelles les utilisateurs à "
-"distance peuvent accéder au bureau. Il existe deux méthodes "
-"d'authentification possibles ; « vnc » fera en sorte qu'un mot de passe soit "
-"demandé à l'utilisateur (le mot de passe est indiqué par la clé vnc-"
-"password) avant la connexion et « none » permet à tout utilisateur à distance "
-"de se connecter."
+"distance peuvent accéder au bureau.\n"
+"\n"
+"Il existe deux méthodes d'authentification possibles ; « vnc » fera en sorte "
+"qu'un mot de passe soit demandé à l'utilisateur (le mot de passe est indiqué "
+"par la clé vnc-password) avant la connexion et « none » permet à tout utilisateur à "
+"distance de se connecter."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "Mot de passe requis pour l'authentification « vnc »"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../common/org.gnome.Vino.gschema.xml.h:22
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
-"encoded. The special value of 'keyring' (which is not valid base64) means "
-"that the password is stored in the GNOME keyring."
+"encoded.\n"
+"\n"
+"The special value of 'keyring' (which is not valid base64) means that the "
+"password is stored in the GNOME keyring."
 msgstr ""
 "Le mot de passe qui sera demandé à l'utilisateur si la méthode "
 "d'authentification « vnc » est utilisée. Le mot de passe indiqué par la clé "
-"est codé en base64. La valeur spéciale « keyring » (qui n'est pas valide en "
+"est codé en base64.\n"
+"\n"
+"La valeur spéciale « keyring » (qui n'est pas valide en "
 "base64) signifie que le mot de passe est enregistré dans le trousseau de clé "
 "GNOME."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Adresse électronique à laquelle envoyer l'URL du bureau à distance"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
+#: ../common/org.gnome.Vino.gschema.xml.h:26
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
@@ -217,20 +231,20 @@ msgstr ""
 "à distance si l'utilisateur clique sur l'URL dans la boîte de dialogue de "
 "préférences du partage de bureau."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.h:27
 msgid "Lock the screen when last user disconnect"
 msgstr "Verrouiller l'écran après la déconnexion du dernier utilisateur"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
+#: ../common/org.gnome.Vino.gschema.xml.h:28
 msgid "If true, screen will be locked after the last remote client disconnect."
 msgstr ""
 "Si vrai, l'écran sera verrouillé après la déconnexion du dernier utilisateur."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.h:29
 msgid "When the status icon should be shown"
 msgstr "Indique si l'icône d'état doit être affichée"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.h:30
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -242,17 +256,17 @@ msgstr ""
 "l'icône est affichée uniquement quand quelqu'un est connecté, il s'agit du "
 "comportement par défaut ; « never »  - l'icône n'est jamais affichée."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
+#: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "When true, disable the background on receive valid session"
 msgstr ""
 "Si vrai, l'arrière-plan est désactivé lors d'une session entrante valide."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.h:32
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr ""
 "Indique s'il faut utiliser UPNP pour propager le port dans les routeurs"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid ""
 "If true, we will use UPNP protocol to automatically forward the port used by "
 "vino in the router."
@@ -260,11 +274,11 @@ msgstr ""
 "Si vrai, Vino utilise le protocole UPNP pour propager automatiquement dans "
 "le routeur le port qu'il utilise."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.h:34
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Indique s'il faut désactiver l'extension XDamage de X.org"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid ""
 "If true, we will not use the XDamage extension of X.org. This extension does "
 "not work properly on some video drivers when using 3D effects. Disabling it "
@@ -276,11 +290,11 @@ msgstr ""
 "effets 3D sont activés. Sa désactivation permet à vino de fonctionner dans "
 "ces cas de figure, avec comme conséquence un ralentissement d'affichage."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:30
+#: ../common/org.gnome.Vino.gschema.xml.h:36
 msgid "Notify on connect"
 msgstr "Notification à la connexion"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:31
+#: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "If true, we will notify, when the user connects to the system."
 msgstr ""
 "Si vrai, Vino affiche une notification lorsque l'utilisateur se connecte au "
@@ -488,8 +502,8 @@ msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
-"Un utilisateur sur l'ordinateur « %s » essaie de voir ou contrôler à distance "
-"votre bureau."
+"Un utilisateur sur l'ordinateur « %s » essaie de voir ou contrôler à "
+"distance votre bureau."
 
 #: ../server/vino-prompt.ui.h:1
 msgid "Question"
@@ -711,12 +725,12 @@ msgstr "En attente de la connexion de « %s » à cet écran."
 msgid "An error has occurred:"
 msgstr "Une erreur est survenue :"
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "Annulé"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -731,55 +745,55 @@ msgstr[1] ""
 "ERREUR : la taille maximale des mots de passe est de %d caractères. Veuillez "
 "saisir à nouveau le mot de passe."
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Changement du mot de passe de Vino.\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "Saisissez le nouveau mot de passe Vino : "
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "Confirmez le nouveau mot de passe Vino : "
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd : le mot de passe a été mis à jour.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "Désolé, les mots de passe ne correspondent pas.\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd : le mot de passe reste inchangé.\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "Afficher la version de Vino"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- Mise à jour des mots de passe de Vino"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Lancez « vino-passwd --help » pour voir la liste complète des options "
 "disponibles en ligne de commande"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "Version de Vino %s\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
