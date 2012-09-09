@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 3.6\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-15 19:14+0100\n"
-"PO-Revision-Date: 2012-08-15 19:15+0000\n"
+"POT-Creation-Date: 2012-09-09 01:44+0100\n"
+"PO-Revision-Date: 2012-09-09 01:45+0000\n"
 "Last-Translator: Duarte Loreto <happyguy_pt@hotmail.com>\n"
 "Language-Team: Portuguese <gnome_pt@yahoogroups.com>\n"
 "Language: pt\n"
@@ -64,6 +64,10 @@ msgstr ""
 "Seleccionar como outros utilizadores poderão remotamente visualizar a sua "
 "área de trabalho"
 
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "Senha de partilha de ambiente de trabalho remoto"
+
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
 msgstr "Permitir o acesso remoto à área de trabalho"
@@ -118,8 +122,8 @@ msgstr ""
 "Se não estiver definida, o servidor irá escutar em todos os interfaces de "
 "rede.\n"
 "\n"
-"Defina-a caso deseje aceitar ligações apenas de alguns interfaces de "
-"rede específicos. Por ex: eth0, wifi0, lo, ..."
+"Defina-a caso deseje aceitar ligações apenas de alguns interfaces de rede "
+"específicos. Por ex: eth0, wifi0, lo, ..."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
@@ -199,8 +203,8 @@ msgstr ""
 "autenticação \"vnc\". A senha especificada pela chave é codificada em "
 "base64.\n"
 "\n"
-"O valor especial de 'keyring' (que não é base64 válido) significa "
-"que a senha é armazenada no chaveiro do GNOME."
+"O valor especial de 'keyring' (que não é base64 válido) significa que a "
+"senha é armazenada no chaveiro do GNOME."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -430,7 +434,9 @@ msgstr ""
 
 #: ../server/vino-main.c:298
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
-msgstr "Iniciar em modo tubo, para a funcionalidade ‘Partilhar a Minha Área de Trabalho’"
+msgstr ""
+"Iniciar em modo tubo, para a funcionalidade ‘Partilhar a Minha Área de "
+"Trabalho’"
 
 #: ../server/vino-main.c:304
 msgid "- VNC Server for GNOME"
@@ -707,12 +713,12 @@ msgstr "A aguardar que '%s' se ligue ao ecrã."
 msgid "An error has occurred:"
 msgstr "Ocorreu um erro:"
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "Cancelado"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -725,55 +731,55 @@ msgstr[0] ""
 msgstr[1] ""
 "ERRO: O comprimento máximo da senha são %d caracteres. Re-introduza a senha."
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "A alterar a senha do Vino.\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "Introduza a nova senha do Vino: "
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "Introduza novamente a nova senha do Vino: "
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: senha alterada com sucesso.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "As senhas não são equivalentes.\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: senha não foi alterada.\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "Apresentar a versão do Vino"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- Actualiza a senha do Vino"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "Execute 'vino-passwd --help' para consultar uma lista completa de todas as "
 "opções de comando"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "Versão do VINO %s\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
