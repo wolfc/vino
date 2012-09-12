@@ -10,16 +10,16 @@ msgstr ""
 "Project-Id-Version: mr\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-06-04 19:35+0000\n"
-"PO-Revision-Date: 2012-08-16 15:59+0530\n"
+"POT-Creation-Date: 2012-08-20 21:35+0000\n"
+"PO-Revision-Date: 2012-09-12 17:55+0530\n"
 "Last-Translator: Sandeep Shedmake <sshedmak@redhat.com>\n"
-"Language-Team: Marathi <fedora-trans-mr@redhat.com>\n"
+"Language-Team: Marathi <maajhe-sanganak@freelists.org>\n"
+"Language: mr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "X-Generator: Lokalize 1.4\n"
-"Language: mr\n"
 
 #: ../capplet/vino-message-box.c:55
 #, c-format
@@ -58,7 +58,6 @@ msgstr "तुमच्या डेस्कटॉपवर कुणाचे�
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 #: ../server/vino-server.desktop.in.in.h:1
-#| msgid "Desktop sharing is enabled"
 msgid "Desktop Sharing"
 msgstr "डेस्कटॉपचा मिळून वापर"
 
@@ -66,22 +65,23 @@ msgstr "डेस्कटॉपचा मिळून वापर"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "इतर वापरकर्ता तुमचे डेस्कटॉप दूरस्थरित्या कसे पाहू शकतिल ते पसंत करा"
 
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+#| msgid "Retype new Vino password: "
+msgid "Remote desktop sharing password"
+msgstr "रिमोट डेस्कटॉप शेअरिंग पासवर्ड"
+
 #: ../common/org.gnome.Vino.gschema.xml.h:1
-#| msgid "Only allow remote users to view the desktop"
 msgid "Enable remote access to the desktop"
 msgstr "डेस्कटॉपकरीता रिमोट प्रवेश सुरू करा"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:2
-#| msgid ""
-#| "If true, allows remote access to the desktop via the RFB protocol. Users "
-#| "on remote machines may then connect to the desktop using a vncviewer."
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
 msgstr ""
 "खरे असल्यास, RFB प्रटोकॉलमार्गे डेस्कटॉपकरीता रिमोट प्रवेश स्वीकारा. रिमोट "
-"मशीनवरील वापरकर्ते त्यानंतर VNC दर्शकाचा वापर करून डेस्कटॉपशी जोडणी करून "
-"शकतात."
+"मशीनवरील "
+"वापरकर्ते त्यानंतर VNC दर्शकाचा वापर करून डेस्कटॉपशी जोडणी करून शकतात."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Prompt the user before completing a connection"
@@ -118,10 +118,6 @@ msgid "Network interface for listening"
 msgstr "ऐकण्याकरीता जाळं संवाद"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:8
-#| msgid ""
-#| "If not set, the server will listen on all network interfaces. Set this if "
-#| "you want that accept connections only from some specific network "
-#| "interface. eg: eth0, wifi0, lo, ..."
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
@@ -131,38 +127,34 @@ msgstr ""
 "ठरवले नसल्यास, सर्व्हर सर्व नेटवर्क इंटरफेसवर ऐकेल.\n"
 "\n"
 "फक्त ठराविक नेटवर्क संवादशी जोडणी स्वीकारायचे असतानाच यास सेट करा. "
-"उदाहरणार्थ: eth0, wifi0, lo, ..."
+"उदाहरणार्थ: eth0, "
+"wifi0, lo, ..."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
-#| msgid "Listen an alternative port"
 msgid "Listen on an alternative port"
 msgstr "वैकल्पिक पोर्टवर ऐका"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
-#| msgid ""
-#| "If true, the server will listen to another port, instead of the default "
-#| "(5900). The port must be specified in the 'alternative_port' key."
 msgid ""
 "If true, the server will listen to another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
 msgstr ""
 "खरे असल्यास, सर्वर इतर पोर्टकरीता ऐकतो (पूर्वनिर्धारित 5900 ऐवजी). "
-"'alternative-port' किमध्ये पोर्ट निर्देशीत करणे आवश्यक आहे."
+"'alternative-"
+"port' किमध्ये पोर्ट निर्देशीत करणे आवश्यक आहे."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:13
 msgid "Alternative port number"
 msgstr "पर्यायी पोर्ट क्रमांक"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:14
-#| msgid ""
-#| "The port which the server will listen to if the 'use_alternative_port' "
-#| "key is set to true. Valid values are in the range from 5000 to 50000."
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range from 5000 to 50000."
 msgstr ""
 "'use-alternative-port' कि खरे असल्यास पोर्ट ज्यासह सर्वर ऐकेल, त्यास खरेकरीता "
-"निश्चित केले जाते. वैध मूल्ये 5000 ते 50000 च्या व्याप्तिमध्ये आढळतात."
+"निश्चित "
+"केले जाते. वैध मूल्ये 5000 ते 50000 च्या व्याप्तिमध्ये आढळतात."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Require encryption"
@@ -185,12 +177,6 @@ msgid "Allowed authentication methods"
 msgstr "सत्यापन रीती स्वीकारल्या"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:18
-#| msgid ""
-#| "Lists the authentication methods with which remote users may access the "
-#| "desktop. There are two possible authentication methods; \"vnc\" causes "
-#| "the remote user to be prompted for a password (the password is specified "
-#| "by the vnc_password key) before connecting and \"none\" which allows any "
-#| "remote user to connect."
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop.\n"
@@ -200,24 +186,21 @@ msgid ""
 "password key) before connecting and \"none\" which allows any remote user to "
 "connect."
 msgstr ""
-"दूरस्थ वापरकर्ता डेस्कटॉप करीता प्रवेश प्राप्त करतेवेळी "
-"ऑथेंटिकेशनची सूची दाखवतो.\n"
-"\n "
-"दोन संभाव्य ऑथेंटिकेशन पद्धती आहेत; जुळवणी पूर्व \"vnc\" दूरस्थ वापरकर्त्यास "
-"गुप्तशब्द प्रविष्ट "
-"करण्यास प्रवृत्त करतो (पासवर्ड vnc-password कि द्वारे निश्चित केला जातो) व "
-"\"काहिच "
-"नाही\" कुठल्याही दूरस्थ वापरकर्त्यास जुळवणी स्थपीत करण्यास परवानगी देतो."
+"दूरस्थ वापरकर्ता डेस्कटॉप करीता प्रवेश प्राप्त करतेवेळी ऑथेंटिकेशनची सूची "
+"दाखवतो.\n"
+"\n"
+" दोन संभाव्य ऑथेंटिकेशन पद्धती आहेत; जुळवणी पूर्व \"vnc\" दूरस्थ वापरकर्त्यास "
+"गुप्तशब्द "
+"प्रविष्ट करण्यास प्रवृत्त करतो (पासवर्ड vnc-password कि द्वारे निश्चित केला "
+"जातो) व "
+"\"काहिच नाही\" कुठल्याही दूरस्थ वापरकर्त्यास जुळवणी स्थपीत करण्यास परवानगी "
+"देतो."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"vnc\" सत्यापनासाठी परवलीची गरज आहे"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:22
-#| msgid ""
-#| "The password which the remote user will be prompted for if the \"vnc\" "
-#| "authentication method is used. The password specified by the key is "
-#| "base64 encoded."
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -227,27 +210,26 @@ msgid ""
 "password is stored in the GNOME keyring."
 msgstr ""
 "\"vnc\" ऑथेंटिंकेशन पद्धतीचा वापर केल्यास विनंतीसाठीचे रिमोट युजरचे पासवर्ड. "
-"कितर्फे निर्देशीत पासवर्ड base64 एंकोडेड आहे.\n"
+"कितर्फे "
+"निर्देशीत पासवर्ड base64 एंकोडेड आहे.\n"
 "\n"
 "'keyring' (जे वैध base64 नाही) चे विशेष मूल्य म्हणजे पासवर्ड GNOME "
-"किरिंगमध्ये साठवले जाईल."
+"किरिंगमध्ये साठवले "
+"जाईल."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "दूरस्थ संगणकस्थान युआरएल ला पाठविण्यासाठी ई-मेलचा पत्ता"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:26
-#| msgid ""
-#| "This key specifies the e-mail address to which the remote desktop URL "
-#| "should be sent if the user clicks on the URL in the Remote Desktop "
-#| "preferences dialog."
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 "डेस्कटॉप शेअरिंग पसंती संवादात वापरकर्ता URL वर क्लिक करत असल्यास, हे कि ईमेल "
-"पत्ता निर्देशीत करते ज्याकरीता रिमोट डेस्कटॉप पाठवणे आवश्यक आहे."
+"पत्ता "
+"निर्देशीत करते ज्याकरीता रिमोट डेस्कटॉप पाठवणे आवश्यक आहे."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:27
 msgid "Lock the screen when last user disconnect"
@@ -318,7 +300,6 @@ msgstr ""
 "खरे असल्यास, वापरकर्त्याने प्रणालीशी जोडणी केल्यानंतर, सूचीत केले जाईल."
 
 #: ../capplet/vino-preferences.ui.h:1
-#| msgid "Remote Desktop Preferences"
 msgid "Desktop Sharing Preferences"
 msgstr "डेस्कटॉप शेअरिंग पसंती"
 
@@ -368,7 +349,6 @@ msgid "The router must have the UPnP feature enabled"
 msgstr "राऊटर द्वारे UPnP गुणविशेष कार्यान्वीत असायला हवे"
 
 #: ../capplet/vino-preferences.ui.h:13
-#| msgid "Notification Area"
 msgid "Show Notification Area Icon"
 msgstr "सूचना क्षेत्र चिन्ह दाखवा"
 
@@ -377,8 +357,6 @@ msgid "Al_ways"
 msgstr "नेहमी (_w)"
 
 #: ../capplet/vino-preferences.ui.h:15
-#| msgid "One person is connected"
-#| msgid_plural "%d people are connected"
 msgid "_Only when someone is connected"
 msgstr "कुणितरि जोडणी केल्यानंतरच (_O)"
 
@@ -477,7 +455,6 @@ msgid ""
 msgstr "उपलब्ध आदेश ओळ पर्यायांची पूर्ण सूचीसाठी 'vino-passwd --help' चालवा"
 
 #: ../server/vino-main.c:333
-#| msgid "GNOME Remote Desktop Server"
 msgid "GNOME Desktop Sharing"
 msgstr "GNOME डेस्कटॉप शेअरिंग"
 
@@ -502,7 +479,6 @@ msgstr "%s वरील %s चे दूरस्थ कार्यस्थळ
 
 #: ../server/vino-prefs.c:111
 #, c-format
-#| msgid "Received signal %d, exiting...\n"
 msgid "Received signal %d, exiting."
 msgstr "सिग्नल %d प्राप्त, बाहेर पडत आहे."
 
@@ -558,7 +534,6 @@ msgid "Failed to open connection to bus: %s\n"
 msgstr "बस करीता जुळवणी उघडण्यास अपयशी: %s\n"
 
 #: ../server/vino-server.desktop.in.in.h:2
-#| msgid "GNOME Remote Desktop Server"
 msgid "GNOME Desktop Sharing Server"
 msgstr "GNOME डेस्कटॉप शेअरिंग सर्व्हर"
 
@@ -568,7 +543,6 @@ msgstr "कार्यस्थळ सहभाग कार्यान्व�
 
 #: ../server/vino-status-icon.c:111
 #, c-format
-#| msgid "Another user is viewing your desktop"
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "एक वापरकर्ता डेस्कटॉपचे अवलोकन करत आहे"
@@ -744,12 +718,12 @@ msgstr "'%s'ची पडद्याशी जुळवणीसाठी प�
 msgid "An error has occurred:"
 msgstr "त्रुटी आढळली:"
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "रद्द केले"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -764,54 +738,54 @@ msgstr[1] ""
 "त्रुटी: परवलीचा शब्दची कमाल लांबी %d अक्षर आहे. कृपया, गुप्तशब्द पुन्हा "
 "प्रविष्ट करा."
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Vino गुप्तशब्द प्रविष्ट करा.\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "नविन Vino गुप्तशब्द प्रविष्ट करा: "
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "Vino गुप्तशब्द पुन्हा टाइप करा: "
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-passwd: गुप्तशब्द यशस्वीरित्या अद्ययावत झाले.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "माफ करा, गुप्तशब्द जुळत नाही.\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-passwd: गुप्तशब्द मध्ये बदल नाही.\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "Vino आवृत्ती दर्शवा"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- Vino गुप्तशब्द अद्ययावतीत करतो"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "उपलब्ध आदेश ओळ पर्यायच्या पूर्णतया यादी करीता 'vino-passwd --help' चालवा"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO आवृत्ती %s\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
