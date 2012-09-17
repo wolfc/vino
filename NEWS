@@ -1,3 +1,114 @@
+Vino 3.5.92
+===========
+
+A S Alam (1):
+      update Punjabi Translation
+
+Ani Peter (1):
+      Updated Malayalam file
+
+Ask H. Larsen (1):
+      Updated Danish translation
+
+Aurimas Černius (1):
+      Updated Lithuanian translation
+
+Changwoo Ryu (2):
+      Updated Korean translation
+      Updated Korean translation
+
+Chao-Hsiung Liao (1):
+      Updated Traditional Chinese translation(Hong Kong and Taiwan)
+
+Chris Leonard (1):
+      Updated British English translation
+
+Claude Paroz (1):
+      Updated French translation
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+Daniel Nylander (1):
+      Updated Swedish translation
+
+David King (1):
+      Post-release version bump to 3.5.91
+      Update NEWS for 3.5.92 release
+
+Dirgita (1):
+      Updated Indonesian translation
+
+Dr.T.Vasudevan (1):
+      updated Tamil translation
+
+Duarte Loreto (1):
+      Updated Portuguese translation
+
+Fran Diéguez (1):
+      Updated Galician translations
+
+Gabor Kelemen (1):
+      Updated Hungarian translation
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
+Marek Černocký (1):
+      Updated Czech translation
+
+Matej Urbančič (1):
+      Updated Slovenian translation
+
+Muhammet Kara (1):
+      [l10n]Updated Turkish translation
+
+Nguyễn Thái Ngọc Duy (2):
+      po/vi: import from Damned Lies
+      Updated Vietnamese translation
+
+Nilamdyuti Goswami (2):
+      Assamese translation updated
+      Implemented FUEL entries to Assamese translation
+
+Piotr Drąg (2):
+      Updated Polish translation
+      Updated Polish translation
+
+Rafael Ferreira (1):
+      Updated Brazilian Portuguese translation
+
+Sandeep Sheshrao Shedmake (1):
+      Updated Marathi Translations
+
+Sweta Kothari (1):
+      Updated gujarati file
+
+Takayuki KUSANO (1):
+      [l10n] Update Japanese translation
+
+Theppitak Karoonboonyanan (1):
+      Updated Thai translation.
+
+Timo Jyrinki (1):
+      Finnish translation update by Jiri Grönroos
+
+Tom Tryfonidis (1):
+      Updated Greek translation
+
+Vincent Untz (1):
+      Fix license headers of a few files
+
+Yaron Shahrabani (2):
+      Updated Hebrew translation.
+      Updated Hebrew translation.
+
+Yuri Myasoedov (1):
+      Updated Russian translation
+
+Мирослав Николић (1):
+      Updated Serbian translation
+
 Vino 3.5.90
 ===========
 
