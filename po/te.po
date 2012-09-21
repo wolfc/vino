@@ -13,18 +13,18 @@ msgstr ""
 "Project-Id-Version: te\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2011-11-22 16:48+0000\n"
-"PO-Revision-Date: 2012-03-15 13:06+0530\n"
+"POT-Creation-Date: 2012-08-20 21:35+0000\n"
+"PO-Revision-Date: 2012-09-21 21:23+0530\n"
 "Last-Translator: Krishnababu Krothapalli <kkrothap@redhat.com>\n"
-"Language-Team: Telugu <indlinux-telugu@lists.sourceforge.net>\n"
+"Language-Team: Telugu <Fedora-trans-te@redhat.com>\n"
+"Language: te\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
 "\n"
 "\n"
-"X-Generator: Lokalize 1.2\n"
-"Language: te\n"
+"X-Generator: Lokalize 1.4\n"
 
 #: ../capplet/vino-message-box.c:55
 #, c-format
@@ -62,41 +62,24 @@ msgid "Nobody can access your desktop."
 msgstr "మీ డెస్కుటాప్‌ను యెవరూ యాక్సెస్ చేయలేరు."
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
-msgid "Choose how other users can remotely view your desktop"
-msgstr "ఇతర వాడుకరులు దూరస్థంగా యెలా మీ డెస్కుటాపును చూడగలగాలో యెంచుకొనుండి"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:2
 #: ../server/vino-server.desktop.in.in.h:1
 msgid "Desktop Sharing"
 msgstr "రంగస్థలం పంచుకొనుట "
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:1
-msgid "Allowed authentication methods"
-msgstr "అనుమతించు ప్రామాణీకరణ పద్దతులు"
+#: ../capplet/vino-preferences.desktop.in.in.h:2
+msgid "Choose how other users can remotely view your desktop"
+msgstr "ఇతర వాడుకరులు దూరస్థంగా యెలా మీ డెస్కుటాపును చూడగలగాలో యెంచుకొనుండి"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:2
-msgid "Alternative port number"
-msgstr "మార్పుకలుగజేసెడు రేవు సంఖ్య"
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+#| msgid "Retype new Vino password: "
+msgid "Remote desktop sharing password"
+msgstr "దూరస్థ డెస్కుటాప్ భాగస్వామ్య సంకేతపదం"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:3
-msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "దూరస్థ రంగస్థల యుఆర్ యల్ పంపబడు ఈ-తపాలా చిరునామా "
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:4
+#: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
 msgstr "రంగస్థలం దర్శించుటకు దూరస్థ సాంగత్యం క్రియాశీలీకరించు"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:5
-msgid ""
-"If not set, the server will listen on all network interfaces. Set this if "
-"you want that accept connections only from some specific network interface. "
-"eg: eth0, wifi0, lo, ..."
-msgstr ""
-"అమర్చక పోతే, సేవిక అన్ని నెట్వర్కు యింటర్ఫేసులపైనా వింటుంది. ఫలానా నెట్వర్కు "
-"యింటర్ఫేస్‌నుండి మాత్రమే "
-"అనుసంధానాలను అది ఆమోదించాలంటే దీనిని అమర్చండి. ఉదా: eth0, wifi0, lo, ..."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:6
+#: ../common/org.gnome.Vino.gschema.xml.h:2
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
@@ -105,7 +88,11 @@ msgstr ""
 "దూరస్థ మిషన్లపైని "
 "వాడుకరులు అప్పుడు డెస్కుటాపునకు  VNC viewer వుపయోగించి అనుసంధానం కావచ్చు."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:7
+#: ../common/org.gnome.Vino.gschema.xml.h:3
+msgid "Prompt the user before completing a connection"
+msgstr "అనుసంధానమును పూర్తిచేయుటకు ముందుగా వాడుకరిని అడుగుతుంది"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:4
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -117,7 +104,11 @@ msgstr ""
 "కానప్పుడు యిది "
 "సిఫార్సు చేయడమైనది."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:8
+#: ../common/org.gnome.Vino.gschema.xml.h:5
+msgid "Only allow remote users to view the desktop"
+msgstr "రంగస్థలం దర్శించుటకు దూరస్థ వాడుకరిలకు మాత్రమే అనుమతించు"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -126,7 +117,58 @@ msgstr ""
 "చూడటకు మాత్రమే "
 "అనుమతించబడతారు. దూరస్థ వాడుకరులు మౌస్‌కాని లేదా కీబోర్డుకాని వుపయోగించ లేదు."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:9
+#: ../common/org.gnome.Vino.gschema.xml.h:7
+msgid "Network interface for listening"
+msgstr "వినుట కొరకు నెట్వర్కు యింటర్ఫేస్"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:8
+#| msgid ""
+#| "If not set, the server will listen on all network interfaces. Set this if "
+#| "you want that accept connections only from some specific network "
+#| "interface. eg: eth0, wifi0, lo, ..."
+msgid ""
+"If not set, the server will listen on all network interfaces.\n"
+"\n"
+"Set this if you want that accept connections only from some specific network "
+"interface. eg: eth0, wifi0, lo, ..."
+msgstr ""
+"అమర్చక పోతే, సేవిక అన్ని నెట్వర్కు యింటర్ఫేసులపైనా వింటుంది.\n"
+"\n"
+" ఫలానా నెట్వర్కు యింటర్ఫేస్‌నుండి మాత్రమే అనుసంధానాలను అది ఆమోదించాలంటే "
+"దీనిని అమర్చండి. "
+"ఉదా: eth0, wifi0, lo, ..."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:11
+msgid "Listen on an alternative port"
+msgstr "ఒక మార్పుకలుగజేసెడు రేవుపై వినుము"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:12
+msgid ""
+"If true, the server will listen to another port, instead of the default "
+"(5900). The port must be specified in the 'alternative-port' key."
+msgstr ""
+"సత్యమైతే, సేవిక వేరొక పోర్టును వింటుంది, అప్రమేయ (5900) బదులుగా. పోర్టు తప్పక "
+"'alternative-"
+"port' కీనందు తెలుపవలెను."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:13
+msgid "Alternative port number"
+msgstr "మార్పుకలుగజేసెడు రేవు సంఖ్య"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:14
+msgid ""
+"The port which the server will listen to if the 'use-alternative-port' key "
+"is set to true. Valid values are in the range from 5000 to 50000."
+msgstr ""
+"'use-alternative-port' కీ సత్యమునకు అమర్చితే సేవిక వినునటువంటి పోర్టు. "
+"చెల్లునటువంటి "
+"విలువలు 5000 నుండి 50000 విస్తృతిలోపల వుంటాయి."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:15
+msgid "Require encryption"
+msgstr "రహస్యపరచుట అవసరము"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:16
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -138,119 +180,88 @@ msgstr ""
 "మద్దతించు క్లైంటును "
 "వుపయోగించాలని సిఫార్సు చేయడమైనది."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:10
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr ""
-"సత్యమైతే, చివరి దూరస్థ క్లైంటు అననుసంధానము కాగానే తెర లాక్ చేయబడుతుంది."
+#: ../common/org.gnome.Vino.gschema.xml.h:17
+msgid "Allowed authentication methods"
+msgstr "అనుమతించు ప్రామాణీకరణ పద్దతులు"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:11
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative-port' key."
-msgstr ""
-"సత్యమైతే, సేవిక వేరొక పోర్టును వింటుంది, అప్రమేయ (5900) బదులుగా. పోర్టు తప్పక "
-"'alternative-"
-"port' కీనందు తెలుపవలెను."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:12
-msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
-msgstr ""
-"సత్యమైతే, X.org యొక్క XDamage పొడిగింపును మనము వుపయోగించము. 3D ప్రభావాలను "
-"వుపయోగించునప్పుడు "
-"కొన్ని వీడియో డ్రైవర్లపై ఈ పొడిగింపు సరిగా పనిచేయదు. దీనిని అచేతనముచేస్తే "
-"vino ఈ యెన్విరాన్మెట్లనందు నిదానమైన "
-"రెండరింగుతో పనిచేస్తుంది."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:13
-msgid "If true, we will notify, when the user connects to the system."
-msgstr ""
-"ఇది నిజమైనట్లయితే, వినియోగదారు వ్యవస్థ అనుసంధానం చేసినప్పుడు, మేము "
-"తెలియచేస్తాము."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
-msgstr ""
-"సత్యమైతే, రూటర్ నందు vino చేత వుపయోగించబడిన పోర్టును స్వయంచాలకంగా "
-"ముందుకుపంపుటకు మనము "
-"UPNP నింభందనను వుపయోగిస్తాము."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
-msgid "Listen on an alternative port"
-msgstr "ఒక మార్పుకలుగజేసెడు రేవుపై వినుము"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
+#: ../common/org.gnome.Vino.gschema.xml.h:18
+#| msgid ""
+#| "Lists the authentication methods with which remote users may access the "
+#| "desktop. There are two possible authentication methods; \"vnc\" causes "
+#| "the remote user to be prompted for a password (the password is specified "
+#| "by the vnc-password key) before connecting and \"none\" which allows any "
+#| "remote user to connect."
 msgid ""
 "Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc-password key) before connecting and \"none\" which allows any remote "
-"user to connect."
+"desktop.\n"
+"\n"
+"There are two possible authentication methods; \"vnc\" causes the remote "
+"user to be prompted for a password (the password is specified by the vnc-"
+"password key) before connecting and \"none\" which allows any remote user to "
+"connect."
 msgstr ""
 "దూరస్థ వాడుకరులు వేటితోనైతే డెస్కుటాపును యాక్సెస్ చేస్తోరో ఆ ధృవీకరణ "
-"పద్దతులను జాబితా చేస్తుంది. రెండు "
-"ధృవీకరణ పద్దతులు వున్నాయి; \"vnc\" దూరస్థ వాడుకరిని సంకేతపదము (సంకేతపదము "
-"vnc-password "
+"పద్దతులను జాబితా చేస్తుంది.\n"
+"\n"
+"రెండు ధృవీకరణ పద్దతులు వున్నాయి; \"vnc\" దూరస్థ వాడుకరిని సంకేతపదము "
+"(సంకేతపదము vnc-password "
 "కీతో తెలుపబడుతుంది) అడుగుతుంది అనుసంధానమునకు ముందు మరియు \"none\" ఏ దూరస్థ "
 "వినియోగదారైనా "
 "అనుసంధానమగుటకు అనుమతిస్తుంది."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
-msgid "Lock the screen when last user disconnect"
-msgstr "చివరి వాడుకరి తెంచునపుడు తెరకి తాళం వేయు"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
-msgid "Network interface for listening"
-msgstr "వినుట కొరకు నెట్వర్కు యింటర్ఫేస్"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
-msgid "Notify on connect"
-msgstr "అనుసంధానమైనపుడు తెలియజేస్తుంది."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
-msgid "Only allow remote users to view the desktop"
-msgstr "రంగస్థలం దర్శించుటకు దూరస్థ వాడుకరిలకు మాత్రమే అనుమతించు"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "\"విఎన్ సి\" ప్రామాణీకరణ కొరకు సంకేతపదము అవసరము"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
-msgid "Prompt the user before completing a connection"
-msgstr "అనుసంధానమును పూర్తిచేయుటకు ముందుగా వాడుకరిని అడుగుతుంది"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
-msgid "Require encryption"
-msgstr "రహస్యపరచుట అవసరము"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.h:22
+#| msgid ""
+#| "The password which the remote user will be prompted for if the \"vnc\" "
+#| "authentication method is used. The password specified by the key is "
+#| "base64 encoded. The special value of 'keyring' (which is not valid "
+#| "base64) means that the password is stored in the GNOME keyring."
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
-"encoded. The special value of 'keyring' (which is not valid base64) means "
-"that the password is stored in the GNOME keyring."
+"encoded.\n"
+"\n"
+"The special value of 'keyring' (which is not valid base64) means that the "
+"password is stored in the GNOME keyring."
 msgstr ""
 "\"vnc\" ధృవీకరణ పద్దతి వుపయోగించినప్పుడు దూరస్థ వాడుకరి అడుగబడునటువంటి "
 "సంకేతపదము. కీ ద్వారా "
-"తెలుపబడునటువంటి సంకేతపదము base64 ఎన్కోడెడ్‌ది.ఒక ప్రత్యేక కీరింగ్ విలువ "
-"(base64 కి వర్తించనిది) "
-"అంటే GNOME కీరింగ్  లో సంకేతపదమును దాచుట   "
+"తెలుపబడునటువంటి సంకేతపదము base64 ఎన్కోడెడ్‌ది.\n"
+"\n"
+"ఒక ప్రత్యేక కీరింగ్ విలువ (base64 కి వర్తించనిది) అంటే GNOME కీరింగ్  లో "
+"సంకేతపదమును దాచుట."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
+#: ../common/org.gnome.Vino.gschema.xml.h:25
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "దూరస్థ రంగస్థల యుఆర్ యల్ పంపబడు ఈ-తపాలా చిరునామా "
+
+#: ../common/org.gnome.Vino.gschema.xml.h:26
 msgid ""
-"The port which the server will listen to if the 'use-alternative-port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
+"dialog."
 msgstr ""
-"'use-alternative-port' కీ సత్యమునకు అమర్చితే సేవిక వినునటువంటి పోర్టు. "
-"చెల్లునటువంటి "
-"విలువలు 5000 నుండి 50000 విస్తృతిలోపల వుంటాయి."
+"రంగస్థల పంచు  అభీష్టాల డైలాగునందలి URLపై వాడుకరి నొక్కితే ఆ URL యే ఈ-మెయిల్ "
+"చిరునామాకు పంపాలో ఈ కీ "
+"తెలుపుతుంది."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
+#: ../common/org.gnome.Vino.gschema.xml.h:27
+msgid "Lock the screen when last user disconnect"
+msgstr "చివరి వాడుకరి తెంచునపుడు తెరకి తాళం వేయు"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:28
+msgid "If true, screen will be locked after the last remote client disconnect."
+msgstr ""
+"సత్యమైతే, చివరి దూరస్థ క్లైంటు అననుసంధానము కాగానే తెర లాక్ చేయబడుతుంది."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:29
+msgid "When the status icon should be shown"
+msgstr "సుస్థితి ప్రతిమ ఎప్పుడు చూపబడుతుంది"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:30
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - The icon will be always there; \"client\" - You will see the "
@@ -263,97 +274,115 @@ msgstr ""
 "మాత్రమే మీకు ప్రతిమ "
 "కనబడుతుంది, యిది అప్రమేయ ప్రవర్తన; \"never\" - యెప్పటికి ప్రతిమను చూపదు."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Desktop Sharing preferences "
-"dialog."
-msgstr ""
-"రంగస్థల పంచు  అభీష్టాల డైలాగునందలి URLపై వాడుకరి నొక్కితే ఆ URL యే ఈ-మెయిల్ "
-"చిరునామాకు పంపాలో ఈ కీ "
-"తెలుపుతుంది."
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
-msgid "When the status icon should be shown"
-msgstr "సుస్థితి ప్రతిమ ఎప్పుడు చూపబడుతుంది"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "When true, disable the background on receive valid session"
 msgstr ""
 "సత్యమైతే, చెల్లునటువంటి సెషన్ స్వీకరించినప్పుడు బ్యాక్‌గ్రౌండును "
 "అచేతనముచేస్తుంది"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:30
-msgid "Whether we should disable the XDamage extension of X.org"
-msgstr "X.org యొక్క Xdamage పొడిగింపును మనము అచేతనము చేయాలా"
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:31
+#: ../common/org.gnome.Vino.gschema.xml.h:32
 msgid "Whether we should use UPNP to forward the port in routers"
 msgstr "రూటర్లనందు పోర్టును ముందుకుపంపుటకు మనము UPNPను వుపయోగించాలా"
 
+#: ../common/org.gnome.Vino.gschema.xml.h:33
+msgid ""
+"If true, we will use UPNP protocol to automatically forward the port used by "
+"vino in the router."
+msgstr ""
+"సత్యమైతే, రూటర్ నందు vino చేత వుపయోగించబడిన పోర్టును స్వయంచాలకంగా "
+"ముందుకుపంపుటకు మనము "
+"UPNP నింభందనను వుపయోగిస్తాము."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "X.org యొక్క Xdamage పొడిగింపును మనము అచేతనము చేయాలా"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
+msgid ""
+"If true, we will not use the XDamage extension of X.org. This extension does "
+"not work properly on some video drivers when using 3D effects. Disabling it "
+"will make vino work on these environments with a slower rendering as side "
+"effect."
+msgstr ""
+"సత్యమైతే, X.org యొక్క XDamage పొడిగింపును మనము వుపయోగించము. 3D ప్రభావాలను "
+"వుపయోగించునప్పుడు "
+"కొన్ని వీడియో డ్రైవర్లపై ఈ పొడిగింపు సరిగా పనిచేయదు. దీనిని అచేతనముచేస్తే "
+"vino ఈ యెన్విరాన్మెట్లనందు నిదానమైన "
+"రెండరింగుతో పనిచేస్తుంది."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:36
+msgid "Notify on connect"
+msgstr "అనుసంధానమైనపుడు తెలియజేస్తుంది."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:37
+msgid "If true, we will notify, when the user connects to the system."
+msgstr ""
+"ఇది నిజమైనట్లయితే, వినియోగదారు వ్యవస్థ అనుసంధానం చేసినప్పుడు, మేము "
+"తెలియచేస్తాము."
+
 #: ../capplet/vino-preferences.ui.h:1
-msgid "Al_ways"
-msgstr "ఎల్లపుడూ(_w)"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Allow other users to _view your desktop"
-msgstr "మీ రంగస్థలం ను దర్శించుటకు ఇతర వాడుకరిలను అనుమతించు (_v)"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "UPnP రౌటరును పోర్టును తెరుచుటకు మరియుపంపుటకు స్వయచాలన రూపకరణ (_c)"
-
-#: ../capplet/vino-preferences.ui.h:4
 msgid "Desktop Sharing Preferences"
 msgstr "రంగస్థలమున పంచబడనున్న  అభీష్టాలు"
 
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "దూరస్థ వాడుకరులు మీ మౌస్‌ను మరియు కీబోర్డును నియంత్రణ చేయగలరు"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "Security"
-msgstr "రక్షణ"
-
-#: ../capplet/vino-preferences.ui.h:7
+#: ../capplet/vino-preferences.ui.h:2
 msgid "Sharing"
 msgstr "భాగస్వామ్యం"
 
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Show Notification Area Icon"
-msgstr "నోటీసు ప్రాంత ప్రతిమను చూపించుము"
-
-#: ../capplet/vino-preferences.ui.h:9
+#: ../capplet/vino-preferences.ui.h:3
 msgid "Some of these preferences are locked down"
 msgstr "ఈ అభీష్టాలు కొన్ని తాళం వేయబడినవి"
 
-#: ../capplet/vino-preferences.ui.h:10
-msgid "The router must have the UPnP feature enabled"
-msgstr "రూటర్ UPnP సౌలభ్యమును తప్పక చేతనంగా కలిగివుండవలెను."
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "మీ రంగస్థలం ను దర్శించుటకు ఇతర వాడుకరిలను అనుమతించు (_v)"
 
-#: ../capplet/vino-preferences.ui.h:11
+#: ../capplet/vino-preferences.ui.h:5
 msgid "Your desktop will be shared"
 msgstr "మీ డెస్కుటాప్ భాగస్వామ్యపరచ బడుతుంది"
 
-#: ../capplet/vino-preferences.ui.h:12
+#: ../capplet/vino-preferences.ui.h:6
 msgid "_Allow other users to control your desktop"
 msgstr "ఇతర వాడుకరిలకు మీ రంగస్థలం నియంత్రించుటకు అనుమతించు (_A)"
 
-#: ../capplet/vino-preferences.ui.h:13
-msgid "_Never"
-msgstr "ఎప్పుడు కాదు(_N)"
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "దూరస్థ వాడుకరులు మీ మౌస్‌ను మరియు కీబోర్డును నియంత్రణ చేయగలరు"
 
-#: ../capplet/vino-preferences.ui.h:14
-msgid "_Only when someone is connected"
-msgstr "ఎవరోఒక వ్యక్తి మాత్రమే అనుసంధించబడినాడు(_O)"
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Security"
+msgstr "రక్షణ"
 
-#: ../capplet/vino-preferences.ui.h:15
+#: ../capplet/vino-preferences.ui.h:9
+msgid "_You must confirm each access to this machine"
+msgstr "ఈ పరికరమునకు మీరు తప్పక ప్రతి యాక్సెస్‌ను నిర్ధారించవలెను (_Y)"
+
+#: ../capplet/vino-preferences.ui.h:10
 msgid "_Require the user to enter this password:"
 msgstr "వాడుకరి ఈ సంకేతపదమును చేర్చుట అవసరము (_R):"
 
+#: ../capplet/vino-preferences.ui.h:11
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "UPnP రౌటరును పోర్టును తెరుచుటకు మరియుపంపుటకు స్వయచాలన రూపకరణ (_c)"
+
+#: ../capplet/vino-preferences.ui.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "రూటర్ UPnP సౌలభ్యమును తప్పక చేతనంగా కలిగివుండవలెను."
+
+#: ../capplet/vino-preferences.ui.h:13
+msgid "Show Notification Area Icon"
+msgstr "నోటీసు ప్రాంత ప్రతిమను చూపించుము"
+
+#: ../capplet/vino-preferences.ui.h:14
+msgid "Al_ways"
+msgstr "ఎల్లపుడూ(_w)"
+
+#: ../capplet/vino-preferences.ui.h:15
+msgid "_Only when someone is connected"
+msgstr "ఎవరోఒక వ్యక్తి మాత్రమే అనుసంధించబడినాడు(_O)"
+
 #: ../capplet/vino-preferences.ui.h:16
-msgid "_You must confirm each access to this machine"
-msgstr "ఈ పరికరమునకు మీరు తప్పక ప్రతి యాక్సెస్‌ను నిర్ధారించవలెను (_Y)"
+msgid "_Never"
+msgstr "ఎప్పుడు కాదు(_N)"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -423,7 +452,7 @@ msgstr "సెషన్ నిర్వాహిక ఐచ్చికాలు:
 msgid "Show session management options"
 msgstr "సెషన్ నిర్వాహిక ఐచ్చికాలను చూపుము"
 
-#: ../server/vino-main.c:108
+#: ../server/vino-main.c:202
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -431,11 +460,15 @@ msgstr ""
 "మీ Xసేవిక Xపరిక్ష పొడగింపుకు సహకరించదు - దూరస్థ రంగస్థల సాంగత్యం "
 "దర్శించుటకు-మాత్రమే కలదు \n"
 
-#: ../server/vino-main.c:200
+#: ../server/vino-main.c:298
+msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
+msgstr "ట్యూబ్ రీతినందు ప్రారంభించు,  ‘నా డెస్కుటాప్ పంచుకొను’ విశేషణం కొరకు"
+
+#: ../server/vino-main.c:304
 msgid "- VNC Server for GNOME"
 msgstr "- GNOME కొరకు VNC సేవిక"
 
-#: ../server/vino-main.c:206
+#: ../server/vino-main.c:312
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr ""
@@ -443,7 +476,7 @@ msgstr ""
 "--help' "
 "నడుపుము"
 
-#: ../server/vino-main.c:226
+#: ../server/vino-main.c:333
 msgid "GNOME Desktop Sharing"
 msgstr "GNOME రంగస్థల పంచుట"
 
@@ -490,6 +523,14 @@ msgstr ""
 "ప్రయత్నించుచున్నాడు."
 
 #: ../server/vino-prompt.ui.h:1
+msgid "Question"
+msgstr "ప్రశ్న"
+
+#: ../server/vino-prompt.ui.h:2
+msgid "Another user is trying to view your desktop."
+msgstr "వేరే వాడుకరి మీ డెస్కుటాపును దర్శించుటకు ప్రయత్నిస్తున్నారు."
+
+#: ../server/vino-prompt.ui.h:3
 msgid ""
 "A user on another computer is trying to remotely view or control your "
 "desktop."
@@ -498,27 +539,19 @@ msgstr ""
 "ప్రయత్నించుటకు "
 "ప్రయత్నించుచున్నాడు."
 
-#: ../server/vino-prompt.ui.h:2
-msgid "Another user is trying to view your desktop."
-msgstr "వేరే వాడుకరి మీ డెస్కుటాపును దర్శించుటకు ప్రయత్నిస్తున్నారు."
-
-#: ../server/vino-prompt.ui.h:3
+#: ../server/vino-prompt.ui.h:4
 msgid "Do you want to allow them to do so?"
 msgstr "మీరు వారిని అలా చేయుటకు అనుమతించాలని కోరుకొనుచున్నారా?"
 
-#: ../server/vino-prompt.ui.h:4
-msgid "Question"
-msgstr "ప్రశ్న"
-
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "అనుమతించు (_A)"
-
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:90
+#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:90
 msgid "_Refuse"
 msgstr "తిరస్కరించు (_R)"
 
-#: ../server/vino-server.c:158 ../server/vino-server.c:181
+#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "అనుమతించు (_A)"
+
+#: ../server/vino-server.c:162 ../server/vino-server.c:185
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "వాహకము కు బంధం తెరుచుటకు విఫలమైంది: %s\n"
@@ -662,7 +695,7 @@ msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "'%s' కంప్యూటర్ పై ఉన్న వాడుకరి దూరస్థంగా మీ రంగస్థలంను నియంత్రించుచున్నాడు."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "తాఖీదుఇచ్చు బుడగ ప్రదర్శించుచున్నపుడు దోషము: %s\n"
@@ -672,30 +705,30 @@ msgstr "తాఖీదుఇచ్చు బుడగ ప్రదర్శి�
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "దూరస్థ వాడుకరి '%s' అననుసంధానించబడుతోంది. మీకు ఖచ్చితంగా కావాలా?"
 
-#: ../server/vino-tube-server.c:269 ../server/vino-tube-server.c:298
+#: ../server/vino-tube-server.c:220 ../server/vino-tube-server.c:249
 msgid "Share my desktop information"
 msgstr "నా డెస్కుటాపు సమాచారమును భాగస్వామ్యపరచుము"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:273
+#: ../server/vino-tube-server.c:224
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "'%s' డెస్కుటాపు పంచుకొను ఆహ్వానమును తిరస్కరించినది."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:277
+#: ../server/vino-tube-server.c:228
 #, c-format
 msgid "'%s' disconnected"
 msgstr "'%s' అననుసంధానించబడింది"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:304
+#: ../server/vino-tube-server.c:255
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "'%s' దూరస్థంగా మీ డెస్కుటాప్‌ను నియంత్రిస్తోంది."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:313
+#: ../server/vino-tube-server.c:264
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "స్క్రీన్‌నకు అనుసంధానమగుటకు '%s' కొరకు వేచివుంది."
@@ -704,12 +737,12 @@ msgstr "స్క్రీన్‌నకు అనుసంధానమగు�
 msgid "An error has occurred:"
 msgstr "ఒక దోషము యెదురైంది:"
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "రద్దైనది"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -724,55 +757,55 @@ msgstr[1] ""
 "దోషము: సంకేతపదము యొక్క గరిష్ట పొడవు %d అక్షరములు. దయచేసి, సంకేతపదమును "
 "తిరిగి-ప్రవేశ పెట్టండి."
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "Vino సంకేతపదమును మార్చుచున్నది.\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "కొత్త Vino సంకేతపదమును ప్రవేశపెట్టుము: "
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "కొత్త Vino సంకేతపదమును తిరిగిటైపుచేయుము: "
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "vino-సంకేతపదము: సంకేతపదము సమర్ధవంతంగా నవీకరించబడింది.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "క్షమించండి, సంకేతపదము సరిపోలలేదు.\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "vino-సంకేతపదము: సంకేతపదము మార్చబడలేదు.\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "Vino వర్షన్ చూపుము"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- Vino సంకేతపదమును నవీకరిస్తుంది"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr ""
 "అందుబాటులోవున్న ఆదేశవరుస ఐచ్చికాల పూర్తి జాబితా చూచుటకు 'vno-password --help' "
 "నడుపండి"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "VINO వర్షన్ %s\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "దోషము: Vino సంకేతపదమును మార్చుటకు మీరు తగినన్ని అనుమతులను కలిగిలేరు.\n"
