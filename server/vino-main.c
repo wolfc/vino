@@ -295,6 +295,9 @@ main (int argc, char **argv)
 #ifdef VINO_HAVE_TELEPATHY_GLIB
       { "tube", 't',
         0, G_OPTION_ARG_NONE, &tube,
+        /* Tube mode uses Telepathy's Tubes to share a user's desktop directly
+         * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+         */
         N_("Start in tube mode, for the ‘Share my Desktop’ feature"),
         NULL },
 #endif
