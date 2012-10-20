@@ -8,9 +8,9 @@
   <shortdesc xml:lang="en">GNOME Desktop Sharing Server</shortdesc>
   <description>Vino is a Virtual Network Computing (VNC) server for GNOME, that
   allows you to share your desktop with remote clients.</description>
-  <homepage rdf:resource="http://live.gnome.org/Vino" />
+  <homepage rdf:resource="https://live.gnome.org/Vino" />
   <download-page rdf:resource="http://download.gnome.org/sources/vino/" />
-  <bug-database rdf:resource="http://bugzilla.gnome.org/browse.cgi?product=vino" />
+  <bug-database rdf:resource="https://bugzilla.gnome.org/browse.cgi?product=vino" />
 
   <category rdf:resource="http://api.gnome.org/doap-extensions#desktop" />
 
