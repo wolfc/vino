@@ -5,7 +5,8 @@
       <description>
         If true, allows remote access to the desktop via the RFB
         protocol. Users on remote machines may then connect to the
-        desktop using a VNC viewer.</description>
+        desktop using a VNC viewer.
+      </description>
       <default>false</default>
     </key>
 
@@ -14,7 +15,7 @@
       <description>
         If true, remote users accessing the desktop are not allowed
         access until the user on the host machine approves the
-        connection.  Recommended especially when access is not password
+        connection. Recommended especially when access is not password
         protected.
       </description>
       <default>true</default>
@@ -35,8 +36,8 @@
       <description>
         If not set, the server will listen on all network interfaces.
 
-        Set this if you want that accept connections only from some
-        specific network interface. eg: eth0, wifi0, lo, ...
+        Set this if you want to accept connections only from some specific
+        network interface. For example, eth0, wifi0, lo and so on.
       </description>
       <default>''</default>
     </key>
@@ -44,9 +45,8 @@
     <key name='use-alternative-port' type='b'>
       <summary>Listen on an alternative port</summary>
       <description>
-        If true, the server will listen to another port, instead of the
-        default (5900). The port must be specified in the
-        'alternative-port' key.
+        If true, the server will listen on another port, instead of the default
+        (5900). The port must be specified in the 'alternative-port' key.
       </description>
       <default>false</default>
     </key>
@@ -54,9 +54,8 @@
     <key name='alternative-port' type='q'>
       <summary>Alternative port number</summary>
       <description>
-        The port which the server will listen to if the
-        'use-alternative-port' key is set to true.  Valid values are in
-        the range from 5000 to 50000.
+        The port which the server will listen to if the 'use-alternative-port'
+        key is set to true. Valid values are in the range of 5000 to 50000.
       </description>
       <default>5900</default>
     </key>
@@ -69,7 +68,7 @@
         client which supports encryption unless the intervening network
         is trusted.
       </description>
-      <default>false</default>
+      <default>true</default>
     </key>
 
     <key name='authentication-methods' type='as'>
@@ -116,8 +115,8 @@
     <key name='lock-screen-on-disconnect' type='b'>
       <summary>Lock the screen when last user disconnect</summary>
       <description>
-        If true, screen will be locked after the last remote client
-        disconnect.
+        If true, the screen will be locked after the last remote client
+        disconnects.
       </description>
       <default>false</default>
     </key>
@@ -126,27 +125,27 @@
       <summary>When the status icon should be shown</summary>
       <description>
         This key controls the behavior of the status icon. There are
-        three options: "always" - The icon will be always there;
-        "client" - You will see the icon only when there is someone
-        connected, this is the default behavior; "never" - Never shows
-        the icon.
+        three options: "always" - the icon will always be present; "client" -
+        the icon will only be present when someone is connected (this is the
+        default behavior); "never" - the icon will not be present.
       </description>
       <default>'client'</default>
     </key>
 
     <key name='disable-background' type='b'>
-      <summary>When true, disable the background on receive valid session</summary>
+      <summary>Whether to disable the desktop background when a user is connected</summary>
       <description>
-        When true, disable the background on receive valid session
+        When true, disable the desktop background and replace it with a single
+        block of color when a user successfully connects.
       </description>
       <default>false</default>
     </key>
 
     <key name='use-upnp' type='b'>
-      <summary>Whether we should use UPNP to forward the port in routers</summary>
+      <summary>Whether a UPnP router should be used to forward and open ports</summary>
       <description>
-        If true, we will use UPNP protocol to automatically forward the
-        port used by vino in the router.
+        If true, request that a UPnP-capable router should forward and open the
+        port used by Vino.
       </description>
       <default>false</default>
     </key>
@@ -154,10 +153,10 @@
     <key name='disable-xdamage' type='b'>
       <summary>Whether we should disable the XDamage extension of X.org</summary>
       <description>
-        If true, we will not use the XDamage extension of X.org. This
-        extension does not work properly on some video drivers when
-        using 3D effects.  Disabling it will make vino work on these
-        environments with a slower rendering as side effect.
+        If true, do not use the XDamage extension of X.org. This extension does
+        not work properly on some video drivers when using 3D effects.
+        Disabling it will make Vino work in these environments, with slower
+        rendering as a side effect.
       </description>
       <default>false</default>
     </key>
@@ -165,10 +164,9 @@
     <key name='notify-on-connect' type='b'>
       <summary>Notify on connect</summary>
       <description>
-        If true, we will notify, when the user connects to the system.
+        If true, show a notification when a user connects to the system.
       </description>
       <default>true</default>
     </key>
   </schema>
 </schemalist>
-
