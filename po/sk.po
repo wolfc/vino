@@ -10,7 +10,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
 "POT-Creation-Date: 2012-10-20 08:05+0000\n"
-"PO-Revision-Date: 2012-10-23 23:00+0100\n"
+"PO-Revision-Date: 2012-10-23 23:18+0100\n"
 "Last-Translator: Richard Stanislavský <kenny.vv@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -73,7 +73,7 @@ msgstr "Zdieľanie pracovnej plochy"
 #: ../capplet/vino-preferences.desktop.in.in.h:2
 msgid "Choose how other users can remotely view your desktop"
 msgstr ""
-"Zvoľte ako môžu ostatní používatelia vzdialene vidieť vašu pracovnú plochu"
+"Zvoľte ako môžu ostatní používatelia vzdialene zobraziť vašu pracovnú plochu"
 
 # PM: skôr heslo pre zdieľanie
 #: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
@@ -85,7 +85,6 @@ msgstr "Heslo pre zdieľanie vzdialenej pracovnej plochy"
 msgid "Enable remote access to the desktop"
 msgstr "Povoliť vzdialený prístup k pracovnej ploche"
 
-# PM: prečo si nepreložil viewer
 # gconf description
 #: ../common/org.gnome.Vino.gschema.xml.h:2
 msgid ""
@@ -115,7 +114,7 @@ msgstr ""
 # gconf summary
 #: ../common/org.gnome.Vino.gschema.xml.h:5
 msgid "Only allow remote users to view the desktop"
-msgstr "Povoliť vzdialeným používateľom iba pozeranie pracovnej plochy"
+msgstr "Povoliť vzdialeným používateľom iba zobrazenie pracovnej plochy"
 
 # gconf description
 #: ../common/org.gnome.Vino.gschema.xml.h:6
@@ -124,7 +123,7 @@ msgid ""
 "desktop. Remote users will not be able to use the mouse or keyboard."
 msgstr ""
 "Ak je „true“, vzdialení používatelia pristupujúci k pracovnej ploche majú "
-"povolené len pozeranie na pracovnú plochu. Vzdialení používatelia nebudú "
+"povolené len zobrazenie pracovnej plochy. Vzdialení používatelia nebudú "
 "môcť používať myš ani klávesnicu."
 
 # gconf summary
@@ -361,11 +360,10 @@ msgstr "Zdieľanie"
 msgid "Some of these preferences are locked down"
 msgstr "Niektoré z týchto nastavení sú uzamknuté"
 
-# PK: bije sa zo Za_vriet
 # GtkCheckButton
 #: ../capplet/vino-preferences.ui.h:4
 msgid "Allow other users to _view your desktop"
-msgstr "Povoliť ostatným používateľom _vidieť vašu pracovnú plochu"
+msgstr "Povoliť ostatným používateľom _zobraziť vašu pracovnú plochu"
 
 # GtkCheckButton tooltip
 #: ../capplet/vino-preferences.ui.h:5
@@ -375,7 +373,7 @@ msgstr "Vaša pracovná plocha bude zdieľaná"
 # GtkCheckButton
 #: ../capplet/vino-preferences.ui.h:6
 msgid "_Allow other users to control your desktop"
-msgstr "_Povoliť ostatným používateľom ovládať vašu pracovnú plochu"
+msgstr "P_ovoliť ostatným používateľom ovládať vašu pracovnú plochu"
 
 # GtkCheckButton tooltip
 #: ../capplet/vino-preferences.ui.h:7
@@ -395,7 +393,7 @@ msgstr "_Každý prístup k tomuto stroju musí byť potvrdený"
 # GtkCheckButton
 #: ../capplet/vino-preferences.ui.h:10
 msgid "_Require the user to enter this password:"
-msgstr "_Vyžadovať od používateľa zadanie tohoto hesla:"
+msgstr "V_yžadovať od používateľa zadanie tohoto hesla:"
 
 # GtkCheckButton
 #: ../capplet/vino-preferences.ui.h:11
@@ -412,16 +410,15 @@ msgstr "Smerovač musí mať povolenú funkciu UPnP"
 msgid "Show Notification Area Icon"
 msgstr "Zobraziť ikonu v oblasti upozornení"
 
-# PK: bije sa so Za_vriet
 # VinoRadioButton
 #: ../capplet/vino-preferences.ui.h:14
 msgid "Al_ways"
-msgstr "_Vždy"
+msgstr "Vž_dy"
 
 # VinoRadioButton
 #: ../capplet/vino-preferences.ui.h:15
 msgid "_Only when someone is connected"
-msgstr "_Iba ak je niekto pripojený"
+msgstr "I_ba ak je niekto pripojený"
 
 # VinoRadioButton
 #: ../capplet/vino-preferences.ui.h:16
@@ -512,7 +509,7 @@ msgid ""
 "will be view-only\n"
 msgstr ""
 "Váš XServer nepodporuje rozšírenie XTest - prístup k vzdialenej pracovnej "
-"ploche bude len na pozeranie\n"
+"ploche bude len na zobrazenie\n"
 
 # popis voľby príkazového riadka
 #. Tube mode uses Telepathy's Tubes to share a user's desktop directly
@@ -638,9 +635,9 @@ msgstr "Zdieľanie pracovnej plochy je povolené"
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
-msgstr[0] "%d osôb si prezerá vašu pracovnú plochu"
-msgstr[1] "Jedna osoba si prezerá vašu pracovnú plochu"
-msgstr[2] "%d osoby si prezerajú vašu pracovnú plochu"
+msgstr[0] "%d osôb zobrazuje vašu pracovnú plochu"
+msgstr[1] "Jedna osoba zobrazuje vašu pracovnú plochu"
+msgstr[2] "%d osoby zobrazujú vašu pracovnú plochu"
 
 #: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
 msgid "Error displaying preferences"
