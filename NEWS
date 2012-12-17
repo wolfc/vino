@@ -1,3 +1,53 @@
+Vino 3.7.3
+==========
+
+Alexandre Rostovtsev (1):
+      Consistently use SECRET_DEPS, not LIBSECRET_DEPS
+
+David King (4):
+      Post-release version bump to 3.7.1
+      Update GSettings schema descriptions and summaries
+      Use https URLs where possible in DOAP file
+      Update NEWS for 3.7.3 release
+
+Dr.T.Vasudevan (1):
+      Updated Tamil translation
+
+Fran Diéguez (1):
+      Updated Galician translations
+
+Huzaifa Sidhpurwala (1):
+      Do not leak clipboard to unauthenticated clients
+
+Ihar Hrachyshka (1):
+      Updated Belarusian translation.
+
+Khoem Sokhem (1):
+      [l10n] Added Khmer translation
+
+ManojKumar Giri (1):
+      Updated Odia Translation with FUEL implementation.
+
+Nilamdyuti Goswami (1):
+      Assamese translation updated
+
+Richard Stanislavský (3):
+      Updated Slovak translation
+      Updated Slovak translation
+      Updated slovak translation
+
+Ryan Lortie (1):
+      server/miniupnp/: -Wmissing-prototypes fixups
+
+Rūdolfs Mazurs (1):
+      Updated Latvian translation
+
+Wolfgang Stoeggl (1):
+      Updated German translation
+
+ozu17928 (1):
+      Set quality level if JPEG support is enabled
+
 Vino 3.6.0
 ==========
 
