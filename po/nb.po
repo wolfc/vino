@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 3.5.x\n"
+"Project-Id-Version: vino 3.7.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-08-22 10:55+0200\n"
-"PO-Revision-Date: 2012-08-22 10:57+0200\n"
+"POT-Creation-Date: 2012-12-21 17:16+0100\n"
+"PO-Revision-Date: 2012-12-21 17:16+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -109,23 +109,26 @@ msgid "Network interface for listening"
 msgstr "Nettverksgrensesnitt det skal lyttes på"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:8
+#, fuzzy
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
-"Set this if you want that accept connections only from some specific network "
-"interface. eg: eth0, wifi0, lo, ..."
+"Set this if you want to accept connections only from some specific network "
+"interface. For example, eth0, wifi0, lo and so on."
 msgstr ""
 "Tjeneren vil lytte på alle nettverksgrensesnitt hvis denne ikke er satt.\n"
 "\n"
-"Sett denne hvis du vil godta tilkoblinger kun fra spesifikke nettverksgrensesnitt som eth0, wifi0, lo …"
+"Sett denne hvis du vil godta tilkoblinger kun fra spesifikke "
+"nettverksgrensesnitt som eth0, wifi0, lo …"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
 msgstr "Lytt på en alternativ port"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
+#, fuzzy
 msgid ""
-"If true, the server will listen to another port, instead of the default "
+"If true, the server will listen on another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
 msgstr ""
 "Hvis «true» er satt vil serveren lytte på en annen port enn forvalgt port "
@@ -136,9 +139,10 @@ msgid "Alternative port number"
 msgstr "Portnummer for alternativ port"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:14
+#, fuzzy
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"is set to true. Valid values are in the range of 5000 to 50000."
 msgstr ""
 "Porten som tjeneren vil lytte på hvis «use-alternative_port»-nøkkelen er "
 "satt til «true». Gyldige verdier er i området fra 5000 til 50000."
@@ -171,9 +175,12 @@ msgid ""
 "password key) before connecting and \"none\" which allows any remote user to "
 "connect."
 msgstr ""
-"Viser autentiseringsmetodene som eksterne brukere kan få tilgang på skrivebordet med.\n"
+"Viser autentiseringsmetodene som eksterne brukere kan få tilgang på "
+"skrivebordet med.\n"
 "\n"
-"Det er to mulige autentiseringsmetoder; med «vnc» blir den eksterne brukeren spurt etter et passord (passordet er lagret i «vnc-password»-nøkkelen) før tilkobling. «none» tillater alle eksterne brukere å koble til."
+"Det er to mulige autentiseringsmetoder; med «vnc» blir den eksterne brukeren "
+"spurt etter et passord (passordet er lagret i «vnc-password»-nøkkelen) før "
+"tilkobling. «none» tillater alle eksterne brukere å koble til."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
@@ -188,9 +195,12 @@ msgid ""
 "The special value of 'keyring' (which is not valid base64) means that the "
 "password is stored in the GNOME keyring."
 msgstr ""
-"Passordet som den eksterne brukeren vil bli spurt etter hvis «vnc»-autentisering blir brukt. Passordet som blir spesifisert har base64 kryptering.\n"
+"Passordet som den eksterne brukeren vil bli spurt etter hvis «vnc»-"
+"autentisering blir brukt. Passordet som blir spesifisert har base64 "
+"kryptering.\n"
 "\n"
-"Hvis verdien «keyring» blir oppgitt (denne er ikke gyldig base64) betyr dette at passordet blir lagret i GNOME nøkkelringen."
+"Hvis verdien «keyring» blir oppgitt (denne er ikke gyldig base64) betyr "
+"dette at passordet blir lagret i GNOME nøkkelringen."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "E-mail address to which the remote desktop URL should be sent"
@@ -211,7 +221,9 @@ msgid "Lock the screen when last user disconnect"
 msgstr "Lås skjermen når siste bruker kobler fra"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:28
-msgid "If true, screen will be locked after the last remote client disconnect."
+#, fuzzy
+msgid ""
+"If true, the screen will be locked after the last remote client disconnects."
 msgstr ""
 "Hvis denne settes til true vil skjermen låses etter at siste eksterne klient "
 "kobler fra."
@@ -221,11 +233,12 @@ msgid "When the status icon should be shown"
 msgstr "Kontrollerer når statusikonet skal vises"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:30
+#, fuzzy
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
+"\"always\" - the icon will always be present; \"client\" - the icon will "
+"only be present when someone is connected (this is the default behavior); "
+"\"never\" - the icon will not be present."
 msgstr ""
 "Denne nøkkelen kontrollerer oppførsel for statusikonet. Det finnes tre "
 "alternativer: «always» - Ikonet vises hele tiden; «client» - Ikonet vises "
@@ -233,44 +246,51 @@ msgstr ""
 "vises aldri."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
-msgid "When true, disable the background on receive valid session"
+#, fuzzy
+msgid "Whether to disable the desktop background when a user is connected"
 msgstr ""
 "Deaktiver bakgrunn ved mottak av gyldig sesjon hvis denne er satt til «true»"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:32
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "Om UPNP skal brukes for videresending av port i rutere"
+msgid ""
+"When true, disable the desktop background and replace it with a single block "
+"of color when a user successfully connects."
+msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
-msgstr ""
-"Sett denne til true for å bruke UPNP-protokollen til å videresende porten "
-"som brukes av vino automatisk i ruteren."
+#, fuzzy
+msgid "Whether a UPnP router should be used to forward and open ports"
+msgstr "Om UPNP skal brukes for videresending av port i rutere"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid ""
+"If true, request that a UPnP-capable router should forward and open the port "
+"used by Vino."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Om XDamage-utvidelsen for X.org skal slås av"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:35
+#: ../common/org.gnome.Vino.gschema.xml.h:36
+#, fuzzy
 msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
+"If true, do not use the XDamage extension of X.org. This extension does not "
+"work properly on some video drivers when using 3D effects. Disabling it will "
+"make Vino work in these environments, with slower rendering as a side effect."
 msgstr ""
 "Hvis denne settes til «true» så vil ikke XDamage-tillegget i X.org brukes. "
 "Tillegget fungerer ikke korrekt med noen grafikkdrivere når 3D-effekter "
 "brukes. Hvis du slå dette av vil vino fungere på disse systemene, men dog "
 "med tregere grafikk."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:36
+#: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "Notify on connect"
 msgstr "Varsle ved tilkobling"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:37
-msgid "If true, we will notify, when the user connects to the system."
+#: ../common/org.gnome.Vino.gschema.xml.h:38
+#, fuzzy
+msgid "If true, show a notification when a user connects to the system."
 msgstr "Varsler når bruker kobler til systemet hvis satt til «true»."
 
 #: ../capplet/vino-preferences.ui.h:1
@@ -413,22 +433,25 @@ msgstr ""
 "Din X-tjener støtter ikke XTest-utvidelsen - fjerntilgang vil kun fungere "
 "med visning\n"
 
-#: ../server/vino-main.c:298
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:301
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
 msgstr "Start i tubemodus for funksjonen «Del mitt skrivebord»"
 
-#: ../server/vino-main.c:304
+#: ../server/vino-main.c:307
 msgid "- VNC Server for GNOME"
 msgstr "- VNC-tjener for GNOME"
 
-#: ../server/vino-main.c:312
+#: ../server/vino-main.c:315
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr ""
 "Kjør «vino-server --help» for å se en full liste med tilgjengelige "
 "kommandolinjeflagg"
 
-#: ../server/vino-main.c:333
+#: ../server/vino-main.c:336
 msgid "GNOME Desktop Sharing"
 msgstr "Deling av skrivebord for GNOME"
 
@@ -758,3 +781,10 @@ msgstr "VINO Versjon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "FEIL: Du har ikke tilstrekkelige rettigheter til å bytte passord for Vino.\n"
+
+#~ msgid ""
+#~ "If true, we will use UPNP protocol to automatically forward the port used "
+#~ "by vino in the router."
+#~ msgstr ""
+#~ "Sett denne til true for å bruke UPNP-protokollen til å videresende porten "
+#~ "som brukes av vino automatisk i ruteren."
