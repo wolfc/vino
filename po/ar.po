@@ -9,8 +9,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-03-30 00:01+0200\n"
-"PO-Revision-Date: 2012-03-30 00:07+0200\n"
+"POT-Creation-Date: 2012-12-24 18:39+0200\n"
+"PO-Revision-Date: 2012-12-24 18:43+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
 "Language: ar\n"
@@ -65,12 +65,15 @@ msgstr "مشاركة سطح المكتب"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "اختر كيف يستطيع المستخدمين الآخرين عرض سطح مكتبك عن بعد"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:1
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "كلمة سر مشاركة سطح المكتب عن بعد"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
 msgstr "اسمح بالوصول إلى سطح المكتب عن بعد"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:2
-#, fuzzy
+#: ../common/org.gnome.Vino.gschema.xml.h:2
 msgid ""
 "If true, allows remote access to the desktop via the RFB protocol. Users on "
 "remote machines may then connect to the desktop using a VNC viewer."
@@ -78,11 +81,11 @@ msgstr ""
 "إذا ضبط لـtrue، سيسمح بالوصول البعيد لسطح المكتب من خلال بروتوكول RFB.يمكن "
 "أن يتّصل المستخدمون على أجهزة بعيدة إلى سطح المكتب من خلال عارض VNC."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:3
+#: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Prompt the user before completing a connection"
 msgstr "اسأل المستخدم قبل إكمال اتصال"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:4
+#: ../common/org.gnome.Vino.gschema.xml.h:4
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -92,11 +95,11 @@ msgstr ""
 "المستخدم على الجهاز المضيف على الاتّصال. ينصح به خاصة عندما لا يكون الوصول "
 "محميًا بكلمة سر."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:5
+#: ../common/org.gnome.Vino.gschema.xml.h:5
 msgid "Only allow remote users to view the desktop"
 msgstr "اسمح للمستخدمين البعيدين بعرض سطح المكتب فقط"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:6
+#: ../common/org.gnome.Vino.gschema.xml.h:6
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -104,49 +107,47 @@ msgstr ""
 "إذا ضبط لصحيح، لن يسمح للمستخدمين البعيدين النافذين إلى سطح المكتب بعرض سطح "
 "المكتب. لن يتمكّن المستخدمون البعيدون من استخدام الفأرة أو لوحة المفاتيح."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:7
+#: ../common/org.gnome.Vino.gschema.xml.h:7
 msgid "Network interface for listening"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:8
+#: ../common/org.gnome.Vino.gschema.xml.h:8
 msgid ""
-"If not set, the server will listen on all network interfaces. Set this if "
-"you want that accept connections only from some specific network interface. "
-"eg: eth0, wifi0, lo, ..."
+"If not set, the server will listen on all network interfaces.\n"
+"\n"
+"Set this if you want to accept connections only from some specific network "
+"interface. For example, eth0, wifi0, lo and so on."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:9
-#, fuzzy
+#: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
 msgstr "استمع لمنفذ بديل"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:10
-#, fuzzy
+#: ../common/org.gnome.Vino.gschema.xml.h:12
 msgid ""
-"If true, the server will listen to another port, instead of the default "
+"If true, the server will listen on another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
 msgstr ""
-"لو صحيح، سيستمع الخادوم لمنفذ آخر، بدلا من الإفتراضي (5900). يجب أن يحدد "
-"المنفذ قي مفتاح 'alternative_port'."
+"لو صحيح، سيستمع الخادوم لمنفذ آخر، بدلا من المبدئي (5900). يجب أن يحدد "
+"المنفذ قي مفتاح 'alternative-port'."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:11
+#: ../common/org.gnome.Vino.gschema.xml.h:13
 msgid "Alternative port number"
 msgstr "رقم المنفذ البديل"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:12
-#, fuzzy
+#: ../common/org.gnome.Vino.gschema.xml.h:14
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"is set to true. Valid values are in the range of 5000 to 50000."
 msgstr ""
-"المنفذ الذي سيستمع إليه الخادوم إذا ضبط مفتاح 'use_alternative_port' كصحيح. "
+"المنفذ الذي سيستمع إليه الخادوم إذا ضبط مفتاح 'use-alternative-port' كصحيح. "
 "القيم المقبولة في المدى 5000 إلى 50000."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:13
+#: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Require encryption"
 msgstr "التعمية مطلوبة"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:14
+#: ../common/org.gnome.Vino.gschema.xml.h:16
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -155,108 +156,119 @@ msgstr ""
 "إذا ضبط لـtrue، يطلب من المستخدمين البعيدين أن يدعموا التّشفير. ينصح بشكل "
 "كبير أن تستخدم عميلًا يدعم التّشفير ما لم تكن الشبكة موثوقة."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:15
+#: ../common/org.gnome.Vino.gschema.xml.h:17
 msgid "Allowed authentication methods"
 msgstr "طرق التّوثّق المسموحة"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:16
-#, fuzzy
+#: ../common/org.gnome.Vino.gschema.xml.h:18
 msgid ""
 "Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc-password key) before connecting and \"none\" which allows any remote "
-"user to connect."
+"desktop.\n"
+"\n"
+"There are two possible authentication methods; \"vnc\" causes the remote "
+"user to be prompted for a password (the password is specified by the vnc-"
+"password key) before connecting and \"none\" which allows any remote user to "
+"connect."
 msgstr ""
 "يعرض قائمة بطرق التّوثّق الممكن للمستخدمين البعيدين استخدامها للوصول لسطح "
-"المكتب. هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن "
-"كلمة سر (تحدّد كلمة السر بمفتاح vnc_password( قبل الاتّصال، و \"none\" التي "
-"تسمح لأي مستخدم بعيد بالاتّصال."
+"المكتب.\n"
+"\n"
+"هناك طريقتان ممكنتان للتّوثّق، \"vnc\" التي تسائل المستخدم البعيد عن كلمة سر "
+"(تحدّد كلمة السر بمفتاح vnc-password) قبل الاتّصال، و \"none\" التي تسمح لأي "
+"مستخدم بعيد بالاتّصال."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:17
+#: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
 msgstr "كلمة السر مطلوبة لتوثّق \"vnc\""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:18
+#: ../common/org.gnome.Vino.gschema.xml.h:22
 #, fuzzy
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
-"encoded. The special value of 'keyring' (which is not valid base64) means "
-"that the password is stored in the GNOME keyring."
+"encoded.\n"
+"\n"
+"The special value of 'keyring' (which is not valid base64) means that the "
+"password is stored in the GNOME keyring."
 msgstr ""
 "كلمة السر التي سيُساءل المستخدم عنها إذا استخدمت طريقة توثّق \"vnc\". كلمة "
 "السر المحدّدة بالمفتاح مرمّزة بترميز قاعدة 64."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:19
+#: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب البعيد إليه"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:20
-#, fuzzy
+#: ../common/org.gnome.Vino.gschema.xml.h:26
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
 "dialog."
 msgstr ""
 "يحدّد هذا المفتاح عنوان البريد الإلكتروني الذي سيتمّ إرسال عنوان سطح المكتب "
-"البعيد إليه إذا نقر المستخدم على العنوان في حوار تفضيلات سطح المكتب البعيد."
+"البعيد إليه إذا نقر المستخدم على العنوان في حوار تفضيلات مشاركة سطح المكتب."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:21
+#: ../common/org.gnome.Vino.gschema.xml.h:27
 msgid "Lock the screen when last user disconnect"
 msgstr "اغلق الشاشة عند اغلاق آخر مستخدم للاتصال"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:22
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "اذا كان صحيحا، سيتم غلق الشاشة عند اغلاق آخر مستخدم للاتصال."
+#: ../common/org.gnome.Vino.gschema.xml.h:28
+msgid ""
+"If true, the screen will be locked after the last remote client disconnects."
+msgstr "إذا كان صحيحا، سيتم غلق الشاشة عند إغلاق آخر مستخدم للاتصال."
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:23
+#: ../common/org.gnome.Vino.gschema.xml.h:29
 msgid "When the status icon should be shown"
 msgstr "متى يجب إظهار أيقونة التنبيه"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:24
+#: ../common/org.gnome.Vino.gschema.xml.h:30
+#, fuzzy
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
+"\"always\" - the icon will always be present; \"client\" - the icon will "
+"only be present when someone is connected (this is the default behavior); "
+"\"never\" - the icon will not be present."
 msgstr ""
-"يتحكم هذا المفتاح في ايقونة التنبيه. هناك ثلاث خيارات: \"always\" (دائم) "
-"\"client\" (فقط عندما يكون أحدهم متصلا - و هذا هو الإفتراضي)، \"never"
-"\"  (أبدا)"
+"يتحكم هذا المفتاح في أيقونة التنبيه. هناك ثلاث خيارات: \"always\" (دائم) "
+"\"client\" (فقط عندما يكون أحدهم متصلا - و هو المبدئي)، \"never\"  (أبدا)"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:25
-msgid "When true, disable the background on receive valid session"
+#: ../common/org.gnome.Vino.gschema.xml.h:31
+#, fuzzy
+msgid "Whether to disable the desktop background when a user is connected"
 msgstr "إذا صحيح, عطل خلفية الشاشة عند تلقي جلسة صالحة"
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:26
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr ""
-
-#: ../common/org.gnome.Vino.gschema.xml.in.h:27
+#: ../common/org.gnome.Vino.gschema.xml.h:32
 msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
+"When true, disable the desktop background and replace it with a single block "
+"of color when a user successfully connects."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:28
+#: ../common/org.gnome.Vino.gschema.xml.h:33
+msgid "Whether a UPnP router should be used to forward and open ports"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid ""
+"If true, request that a UPnP-capable router should forward and open the port "
+"used by Vino."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:29
+#: ../common/org.gnome.Vino.gschema.xml.h:36
 msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
+"If true, do not use the XDamage extension of X.org. This extension does not "
+"work properly on some video drivers when using 3D effects. Disabling it will "
+"make Vino work in these environments, with slower rendering as a side effect."
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:30
+#: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "Notify on connect"
 msgstr ""
 
-#: ../common/org.gnome.Vino.gschema.xml.in.h:31
-msgid "If true, we will notify, when the user connects to the system."
+#: ../common/org.gnome.Vino.gschema.xml.h:38
+msgid "If true, show a notification when a user connects to the system."
 msgstr ""
 
 #: ../capplet/vino-preferences.ui.h:1
@@ -391,22 +403,29 @@ msgstr "خيارات إدارة الجلسات:"
 msgid "Show session management options"
 msgstr "اعرض خيارات إدارة الجلسات"
 
-#: ../server/vino-main.c:108
+#: ../server/vino-main.c:202
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr "لايدعم خادوم X الامتداد XTest - سيكون سطح المكتب البعيد للعرض فقط\n"
 
-#: ../server/vino-main.c:200
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:301
+msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
+msgstr ""
+
+#: ../server/vino-main.c:307
 msgid "- VNC Server for GNOME"
 msgstr "- خادوم VNC لجنوم"
 
-#: ../server/vino-main.c:206
+#: ../server/vino-main.c:315
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "شغّل 'vinno-server --help' لرؤية قائمة كاملة لخيارات سطر الأوامر."
 
-#: ../server/vino-main.c:226
+#: ../server/vino-main.c:336
 msgid "GNOME Desktop Sharing"
 msgstr "مشاركة سطح مكتب جنوم"
 
@@ -475,7 +494,7 @@ msgstr "ا_رفض"
 msgid "_Allow"
 msgstr "ا_سمح"
 
-#: ../server/vino-server.c:158 ../server/vino-server.c:181
+#: ../server/vino-server.c:162 ../server/vino-server.c:185
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح اتصال مع الناقل: %s\n"
@@ -626,7 +645,7 @@ msgstr "يتحكّم مستخدم آخر بسطح مكتبك"
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "تحكّم مستخدم على الحاسوب '%s' بسطح مكتبك عن بعد."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:435
+#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
@@ -636,30 +655,30 @@ msgstr "خطأ أثناء عرض فقّاعة التبليغ: %s\n"
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "سيُقطع اتصال المستخدم عن بعد من '%s'. أمتأكّد؟"
 
-#: ../server/vino-tube-server.c:269 ../server/vino-tube-server.c:298
+#: ../server/vino-tube-server.c:220 ../server/vino-tube-server.c:249
 msgid "Share my desktop information"
 msgstr "شارِك معلومات سطح مكتبي"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:273
+#: ../server/vino-tube-server.c:224
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
 msgstr "رفض '%s' دعوة مشاركة سطح المكتب."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:277
+#: ../server/vino-tube-server.c:228
 #, c-format
 msgid "'%s' disconnected"
 msgstr "‏'%s' قطع الاتصال"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:304
+#: ../server/vino-tube-server.c:255
 #, c-format
 msgid "'%s' is remotely controlling your desktop."
 msgstr "يتحكّم '%s' بسطح مكتبك عن بعد."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
-#: ../server/vino-tube-server.c:313
+#: ../server/vino-tube-server.c:264
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "في انتظار اتصال '%s' بالشاشة."
@@ -668,12 +687,12 @@ msgstr "في انتظار اتصال '%s' بالشاشة."
 msgid "An error has occurred:"
 msgstr "حدث خطأ:"
 
-#: ../tools/vino-passwd.c:115
+#: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
 msgstr "أُلغِيَ"
 
-#: ../tools/vino-passwd.c:122
+#: ../tools/vino-passwd.c:115
 #, c-format
 msgid ""
 "ERROR: Maximum length of password is %d character. Please, re-enter the "
@@ -688,53 +707,53 @@ msgstr[3] "خطأ: أقصى طول لكلمة السر هو %d حروف. أعد 
 msgstr[4] "خطأ: أقصى طول لكلمة السر هو %d حرفا. أعد إدخال كلمة السر."
 msgstr[5] "خطأ: أقصى طول لكلمة السر هو %d حرف. أعد إدخال كلمة السر."
 
-#: ../tools/vino-passwd.c:156
+#: ../tools/vino-passwd.c:149
 #, c-format
 msgid "Changing Vino password.\n"
 msgstr "تغيير كلمة سر فينو.\n"
 
-#: ../tools/vino-passwd.c:158
+#: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
 msgstr "أدخل كلمة سر جديدة لـ فينو:"
 
-#: ../tools/vino-passwd.c:161
+#: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
 msgstr "أعد كتابة كلمة سر فينو الجديدة:"
 
-#: ../tools/vino-passwd.c:167
+#: ../tools/vino-passwd.c:160
 #, c-format
 msgid "vino-passwd: password updated successfully.\n"
 msgstr "passwd-فينو: حُدثت كلمة السر بنجاح.\n"
 
-#: ../tools/vino-passwd.c:172
+#: ../tools/vino-passwd.c:165
 #, c-format
 msgid "Sorry, passwords do not match.\n"
 msgstr "آسف, كلمتا السر غير متطابقتين.\n"
 
-#: ../tools/vino-passwd.c:173
+#: ../tools/vino-passwd.c:166
 #, c-format
 msgid "vino-passwd: password unchanged.\n"
 msgstr "passwd-فينو: كلمة السر لم تتغير.\n"
 
-#: ../tools/vino-passwd.c:189
+#: ../tools/vino-passwd.c:182
 msgid "Show Vino version"
 msgstr "اعرض إصدار فينو"
 
-#: ../tools/vino-passwd.c:198
+#: ../tools/vino-passwd.c:191
 msgid "- Updates Vino password"
 msgstr "- يحدث كلمة سر فينو"
 
-#: ../tools/vino-passwd.c:208
+#: ../tools/vino-passwd.c:201
 msgid ""
 "Run 'vino-passwd --help' to see a full list of available command line options"
 msgstr "اأمر بـ'vino-passwd --help' لرؤية قائمة كاملة بخيارات سطر الأوامر"
 
-#: ../tools/vino-passwd.c:215
+#: ../tools/vino-passwd.c:208
 #, c-format
 msgid "VINO Version %s\n"
 msgstr "إصدارة فينو %s\n"
 
-#: ../tools/vino-passwd.c:226
+#: ../tools/vino-passwd.c:219
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "خطأ: ليس لديك أذون كافية لتغيير كلمة سر فينو. \n"
