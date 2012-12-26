@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-09-04 21:22+0200\n"
-"PO-Revision-Date: 2012-09-04 21:25+0200\n"
+"POT-Creation-Date: 2012-12-27 00:01+0100\n"
+"PO-Revision-Date: 2012-12-27 00:02+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -120,14 +120,14 @@ msgstr "Interfejs sieciowy do nasłuchiwania"
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
-"Set this if you want that accept connections only from some specific network "
-"interface. eg: eth0, wifi0, lo, ..."
+"Set this if you want to accept connections only from some specific network "
+"interface. For example, eth0, wifi0, lo and so on."
 msgstr ""
 "Jeśli nie jest ustawione, to serwer będzie nasłuchiwał na wszystkich "
 "interfejsach sieciowych.\n"
 "\n"
 "Można to ustawić, jeśli wymagane jest akceptowane połączenie wyłącznie z "
-"konkretnych interfejsów sieciowych, np.: eth0, wifi0, lo."
+"konkretnych interfejsów sieciowych, np.: eth0, wifi0, lo itd."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
@@ -135,7 +135,7 @@ msgstr "Nasłuch na alternatywnym porcie"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
 msgid ""
-"If true, the server will listen to another port, instead of the default "
+"If true, the server will listen on another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
 msgstr ""
 "Jeśli jest ustawione na \"true\", to serwer będzie nasłuchiwał na porcie "
@@ -149,7 +149,7 @@ msgstr "Alternatywny numer portu"
 #: ../common/org.gnome.Vino.gschema.xml.h:14
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"is set to true. Valid values are in the range of 5000 to 50000."
 msgstr ""
 "Numer portu, na którym serwer będzie nasłuchiwał w przypadku ustawienia "
 "klucza \"use-alternative-port\". Dopuszczalnymi wartościami są liczby z "
@@ -229,7 +229,8 @@ msgid "Lock the screen when last user disconnect"
 msgstr "Blokowanie ekranu po rozłączeniu ostatniego użytkownika"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:28
-msgid "If true, screen will be locked after the last remote client disconnect."
+msgid ""
+"If true, the screen will be locked after the last remote client disconnects."
 msgstr ""
 "Jeśli jest ustawione na \"true\", to ekran zostanie zablokowany po "
 "rozłączeniu ostatniego zdalnego klienta."
@@ -241,42 +242,50 @@ msgstr "Kiedy ikona stanu ma być wyświetlana"
 #: ../common/org.gnome.Vino.gschema.xml.h:30
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
+"\"always\" - the icon will always be present; \"client\" - the icon will "
+"only be present when someone is connected (this is the default behavior); "
+"\"never\" - the icon will not be present."
 msgstr ""
-"Ten klucz kontroluje zachowanie ikony stanu. Istnieją trzy opcje:  \"always"
-"\" - ikona zawsze wyświetlona; \"client\" - wyświetlona tylko, gdy ktoś jest "
-"podłączony; domyślne; \"never\" - ikona nigdy nie będzie wyświetlona."
+"Ten klucz kontroluje zachowanie ikony stanu. Istnieją trzy opcje: \"always"
+"\" - ikona zawsze jest wyświetlana; \"client\" - wyświetlana jest tylko, gdy "
+"ktoś jest podłączony (to domyślne zachowanie); \"never\" - ikona nigdy nie "
+"będzie wyświetlana."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
-msgid "When true, disable the background on receive valid session"
-msgstr ""
-"Jeśli jest ustawione na \"true\", to tło pulpitu zostanie wyłączone na czas "
-"prawidłowej sesji"
+msgid "Whether to disable the desktop background when a user is connected"
+msgstr "Określa, czy wyłączać tło pulpitu, kiedy użytkownik jest połączony"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:32
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "Określa, czy używać UPnP do przekierowania portu w ruterach"
+msgid ""
+"When true, disable the desktop background and replace it with a single block "
+"of color when a user successfully connects."
+msgstr ""
+"Jeśli jest ustawione na \"true\", to wyłącza tło pulpitu i zastępuje je "
+"pojedynczym kolorem po pomyślnym połączeniu użytkownika."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
+msgid "Whether a UPnP router should be used to forward and open ports"
 msgstr ""
-"Jeśli jest ustawione na \"true\", to zostanie użyty protokół UPnP, aby "
-"automatycznie przekierować port używany przez program Vino do rutera."
+"Określa, czy router UPnP powinien być używany do przekierowania i otwierania "
+"portów"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid ""
+"If true, request that a UPnP-capable router should forward and open the port "
+"used by Vino."
+msgstr ""
+"Jeśli jest ustawione na \"true\", to żąda przekierowania portów i otwarcia "
+"portu używanego przez program Vino od routera z funkcją UPnP."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Określa, czy rozszerzenie XDamage systemu X.org ma zostać wyłączone"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:35
+#: ../common/org.gnome.Vino.gschema.xml.h:36
 msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
+"If true, do not use the XDamage extension of X.org. This extension does not "
+"work properly on some video drivers when using 3D effects. Disabling it will "
+"make Vino work in these environments, with slower rendering as a side effect."
 msgstr ""
 "Jeśli jest ustawione na \"true\", to rozszerzenie XDamage systemu X.org nie "
 "będzie używane. To rozszerzenie nie działa poprawnie z niektórym "
@@ -284,15 +293,15 @@ msgstr ""
 "umożliwi działanie programu Vino w takich środowiskach z wolniejszym "
 "wyświetlaniem jako efektem ubocznym."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:36
+#: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "Notify on connect"
 msgstr "Powiadamianie o połączeniu"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:37
-msgid "If true, we will notify, when the user connects to the system."
+#: ../common/org.gnome.Vino.gschema.xml.h:38
+msgid "If true, show a notification when a user connects to the system."
 msgstr ""
-"Jeśli jest ustawione na \"true\", to powiadamia po połączeniu użytkownika z "
-"systemem."
+"Jeśli jest ustawione na \"true\", to wyświetla powiadomienie po połączeniu "
+"użytkownika z systemem."
 
 #: ../capplet/vino-preferences.ui.h:1
 msgid "Desktop Sharing Preferences"
@@ -437,22 +446,25 @@ msgstr ""
 "Serwer X nie obsługuje rozszerzenia XTest - dostęp zdalnego pulpitu będzie "
 "ograniczony tylko do wyświetlania\n"
 
-#: ../server/vino-main.c:298
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:301
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
 msgstr "Uruchamia w trybie tuby dla funkcji \"Współdzielenie pulpitu\""
 
-#: ../server/vino-main.c:304
+#: ../server/vino-main.c:307
 msgid "- VNC Server for GNOME"
 msgstr "- serwer VNC dla środowiska GNOME"
 
-#: ../server/vino-main.c:312
+#: ../server/vino-main.c:315
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr ""
 "Proszę uruchomić \"vino-server --help\", aby uzyskać pełną listę opcji w "
 "wierszu poleceń"
 
-#: ../server/vino-main.c:333
+#: ../server/vino-main.c:336
 msgid "GNOME Desktop Sharing"
 msgstr "Współdzielenie pulpitu środowiska GNOME"
 
