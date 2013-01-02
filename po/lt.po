@@ -11,8 +11,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: lt\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-08-20 21:35+0000\n"
-"PO-Revision-Date: 2012-09-01 22:30+0300\n"
+"POT-Creation-Date: 2012-10-20 07:53+0000\n"
+"PO-Revision-Date: 2013-01-02 23:23+0300\n"
 "Last-Translator: Aurimas Černius <aurisc4@gmail.com>\n"
 "Language-Team: Lithuanian <gnome-lt@lists.akl.lt>\n"
 "Language: lt\n"
@@ -68,7 +68,6 @@ msgstr "Pasirinkite, kaip kiti žmonės gali matyti ar valdyti Jūsų darbastal�
 
 #: ../common/vino-keyring.c:54
 #: ../tools/vino-passwd.c:54
-#| msgid "Retype new Vino password: "
 msgid "Remote desktop sharing password"
 msgstr "Nuotolinio dalinimosi darbastaliu slaptažodis"
 
@@ -102,24 +101,28 @@ msgstr "Tinklo sąsaja išoriniams prisijungimams"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:8
 #| msgid ""
-#| "If not set, the server will listen on all network interfaces. Set this if "
-#| "you want that accept connections only from some specific network "
-#| "interface. eg: eth0, wifi0, lo, ..."
+#| "If not set, the server will listen on all network interfaces.\n"
+#| "\n"
+#| "Set this if you want that accept connections only from some specific "
+#| "network interface. eg: eth0, wifi0, lo, ..."
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
-"Set this if you want that accept connections only from some specific network interface. eg: eth0, wifi0, lo, ..."
+"Set this if you want to accept connections only from some specific network interface. For example, eth0, wifi0, lo and so on."
 msgstr ""
-"Jei nenustatyta, serveris lauks prisijungimų visomis sąsajomis.\n"
+"Jei nenustatyta, serveris lauks prisijungimų visomis tinklo sąsajomis.\n"
 "\n"
-"Nustatykite, jei norite priimti prisijungimus tik keliomis konkrečiomis tinklo sąsajomis, pvz., eth0, wlan0, lo, ..."
+"Nustatykite, jei norite priimti prisijungimus tik keliomis konkrečiomis tinklo sąsajomis, pvz., eth0, wifi0, lo, ..."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
 msgstr "Laukti prisijungimų alternatyviu prievadu"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
-msgid "If true, the server will listen to another port, instead of the default (5900). The port must be specified in the 'alternative-port' key."
+#| msgid ""
+#| "If true, the server will listen to another port, instead of the default "
+#| "(5900). The port must be specified in the 'alternative-port' key."
+msgid "If true, the server will listen on another port, instead of the default (5900). The port must be specified in the 'alternative-port' key."
 msgstr "Jei teigiama, serveris lauks prisijungimų prie kito prievado, o ne numatytojo (5900). Prievado numeris turi būti nurodytas rakte „alternative-port“."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:13
@@ -127,7 +130,10 @@ msgid "Alternative port number"
 msgstr "Alternatyvus prievado numeris"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:14
-msgid "The port which the server will listen to if the 'use-alternative-port' key is set to true. Valid values are in the range from 5000 to 50000."
+#| msgid ""
+#| "The port which the server will listen to if the 'use-alternative-port' "
+#| "key is set to true. Valid values are in the range from 5000 to 50000."
+msgid "The port which the server will listen to if the 'use-alternative-port' key is set to true. Valid values are in the range of 5000 to 50000."
 msgstr "Prievadas, kuriame laukiama prisijungimų, jei „use-alternative-port“ reikšmė teigiama. Leistinos reikšmės nuo 5000 iki 50000."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:15
@@ -143,12 +149,6 @@ msgid "Allowed authentication methods"
 msgstr "Leistini tapatumo nustatymo metodai"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:18
-#| msgid ""
-#| "Lists the authentication methods with which remote users may access the "
-#| "desktop. There are two possible authentication methods; \"vnc\" causes "
-#| "the remote user to be prompted for a password (the password is specified "
-#| "by the vnc-password key) before connecting and \"none\" which allows any "
-#| "remote user to connect."
 msgid ""
 "Lists the authentication methods with which remote users may access the desktop.\n"
 "\n"
@@ -163,11 +163,6 @@ msgid "Password required for \"vnc\" authentication"
 msgstr "Slaptažodis, reikalingas „vnc“ tapatumo nustatymui"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:22
-#| msgid ""
-#| "The password which the remote user will be prompted for if the \"vnc\" "
-#| "authentication method is used. The password specified by the key is "
-#| "base64 encoded. The special value of 'keyring' (which is not valid "
-#| "base64) means that the password is stored in the GNOME keyring."
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded.\n"
 "\n"
@@ -190,7 +185,9 @@ msgid "Lock the screen when last user disconnect"
 msgstr "Užrakinti ekraną, kai atsijungia paskutinis naudotojas"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:28
-msgid "If true, screen will be locked after the last remote client disconnect."
+#| msgid ""
+#| "If true, screen will be locked after the last remote client disconnect."
+msgid "If true, the screen will be locked after the last remote client disconnects."
 msgstr "Jeigu reikšmė teigiama, atsijungus paskutiniam nutolusiam klientui, ekranas bus užrakintas."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:29
@@ -198,35 +195,52 @@ msgid "When the status icon should be shown"
 msgstr "Ar rodyti būsenos piktogramą"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:30
-msgid "This key controls the behavior of the status icon. There are three options: \"always\" - The icon will be always there; \"client\" - You will see the icon only when there is someone connected, this is the default behavior; \"never\" - Never shows the icon."
-msgstr "Šis nustatymas valdo statuso piktogramą. Yra trys pasirinkimai: „always“ - piktograma visada rodoma; „client“ - piktograma rodoma tik kai kas nors prisijungęs (standartinė elgsena); „never“ - piktograma niekada nerodoma."
+#| msgid ""
+#| "This key controls the behavior of the status icon. There are three "
+#| "options: \"always\" - The icon will be always there; \"client\" - You "
+#| "will see the icon only when there is someone connected, this is the "
+#| "default behavior; \"never\" - Never shows the icon."
+msgid "This key controls the behavior of the status icon. There are three options: \"always\" - the icon will always be present; \"client\" - the icon will only be present when someone is connected (this is the default behavior); \"never\" - the icon will not be present."
+msgstr "Šis nustatymas valdo būsenos piktogramą. Yra trys pasirinkimai: „always“ - piktograma visada rodoma; „client“ - piktograma rodoma tik kai kas nors prisijungęs (numatyta elgsena); „never“ - piktograma niekada nerodoma."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
-msgid "When true, disable the background on receive valid session"
-msgstr "Kai teisinga, išjungti foną priėmus korektišką sesiją"
+#| msgid "When true, disable the background on receive valid session"
+msgid "Whether to disable the desktop background when a user is connected"
+msgstr "Ar išjungti darbastalio foną prisijungus naudotojui"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:32
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "Ar naudoti UPnP prievado persiuntimui maršrutizatoriuje"
+msgid "When true, disable the desktop background and replace it with a single block of color when a user successfully connects."
+msgstr "Kai teigiama, naudotojui sėkmingai prisijungus išjungti darbastalio foną ir pakeisti jį viena spalva."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
-msgid "If true, we will use UPNP protocol to automatically forward the port used by vino in the router."
-msgstr "Jei nustatyta, bus naudojamas UPnP protokolas, kad vino naudojamas prievadas būtų peradresuotas maršrutizatoriuje į šį kompiuterį."
+#| msgid "Whether we should use UPNP to forward the port in routers"
+msgid "Whether a UPnP router should be used to forward and open ports"
+msgstr "Ar naudoti UPnP maršrutizatorių prievadų atvėrimui ir persiuntimui"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid "If true, request that a UPnP-capable router should forward and open the port used by Vino."
+msgstr "Jei teigiama, reikalauti, kad UPnP-gebantis maršrutizatorius atvertų ir persiųstų Vino naudojamą prievadą."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Ar išjungti X.org plėtinį XDamage."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:35
-msgid "If true, we will not use the XDamage extension of X.org. This extension does not work properly on some video drivers when using 3D effects. Disabling it will make vino work on these environments with a slower rendering as side effect."
-msgstr "Jei nustatyta, nebus naudojamas X.org plėtinys XDamage. Šis plėtinys su kai kuriomis vaizdo tvarkyklėmis veikia netinkamai, kai naudojami 3D efektai. Išjungimas leis vino veikti tokiose aplinkose, tačiau tai sulėtins atvaizdavimą."
-
 #: ../common/org.gnome.Vino.gschema.xml.h:36
+#| msgid ""
+#| "If true, we will not use the XDamage extension of X.org. This extension "
+#| "does not work properly on some video drivers when using 3D effects. "
+#| "Disabling it will make vino work on these environments with a slower "
+#| "rendering as side effect."
+msgid "If true, do not use the XDamage extension of X.org. This extension does not work properly on some video drivers when using 3D effects. Disabling it will make Vino work in these environments, with slower rendering as a side effect."
+msgstr "Jei teigiama, nebus naudojamas X.org plėtinys XDamage. Šis plėtinys su kai kuriomis vaizdo tvarkyklėmis veikia netinkamai, kai naudojami 3D efektai. Išjungimas leis vino veikti tokiose aplinkose, tačiau tai sulėtins atvaizdavimą."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "Notify on connect"
 msgstr "Pranešti, kai prisijungia"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:37
-msgid "If true, we will notify, when the user connects to the system."
+#: ../common/org.gnome.Vino.gschema.xml.h:38
+#| msgid "If true, we will notify, when the user connects to the system."
+msgid "If true, show a notification when a user connects to the system."
 msgstr "Jei teigiama, bus pranešta, kai naudotojas prisijungia prie sistemos."
 
 #: ../capplet/vino-preferences.ui.h:1
@@ -365,19 +379,22 @@ msgstr "Rodyti seanso valdymo nustatymus"
 msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
 msgstr "Jūsų XServeris nepalaiko XTest plėtinio – nutolusio dabastalio prieiga bus tik skaitymui\n"
 
-#: ../server/vino-main.c:298
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:301
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
 msgstr "Paleisti tube veiksena, savybei „Dalinti darbastaliu“"
 
-#: ../server/vino-main.c:304
+#: ../server/vino-main.c:307
 msgid "- VNC Server for GNOME"
 msgstr "- VNC serveris GNOME sistemai"
 
-#: ../server/vino-main.c:312
+#: ../server/vino-main.c:315
 msgid "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "Paleiskite „vino-server --help“, jei norite pamatyti komandinės eilutės parametrus"
 
-#: ../server/vino-main.c:333
+#: ../server/vino-main.c:336
 msgid "GNOME Desktop Sharing"
 msgstr "GNOME darbastalio dalijimasis"
 
