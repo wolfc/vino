@@ -655,6 +655,8 @@ vino_status_icon_show_new_client_notification (gpointer user_data)
                             G_CALLBACK (vino_status_handle_new_client_notification_closed),
                             icon);
 
+  notify_notification_set_hint_string (icon->priv->new_client_notification,
+                                       "desktop-entry", PACKAGE_TARNAME);
   notify_notification_set_timeout (icon->priv->new_client_notification,
                                    NOTIFICATION_TIMEOUT * 1000);
 
