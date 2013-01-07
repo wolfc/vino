@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of vino.
 # Copyright (C) 2004, Red Hat, Inc.
 # This file is distributed under the same license as the vino package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2004-2012.
+# Kjartan Maraas <kmaraas@gnome.org>, 2004-2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: vino 3.7.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-21 17:16+0100\n"
-"PO-Revision-Date: 2012-12-21 17:16+0100\n"
+"POT-Creation-Date: 2013-01-07 11:57+0100\n"
+"PO-Revision-Date: 2013-01-07 11:57+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -532,6 +532,10 @@ msgstr "Kunne ikke åpne tilkobling til buss: %s\n"
 msgid "GNOME Desktop Sharing Server"
 msgstr "Tjener for deling av skrivebord for GNOME"
 
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "vnc;deling;ekstern;"
+
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
 msgstr "Deling av skrivebord er aktivert"
@@ -666,7 +670,7 @@ msgstr "En annen bruker kontrollerer ditt skrivebord"
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "En bruker på datamaskin «%s» kontrollerer ditt skrivebord."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:666 ../server/vino-status-tube-icon.c:439
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Feil under visning av meldingsboble: %s\n"
@@ -781,10 +785,3 @@ msgstr "VINO Versjon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "FEIL: Du har ikke tilstrekkelige rettigheter til å bytte passord for Vino.\n"
-
-#~ msgid ""
-#~ "If true, we will use UPNP protocol to automatically forward the port used "
-#~ "by vino in the router."
-#~ msgstr ""
-#~ "Sett denne til true for å bruke UPNP-protokollen til å videresende porten "
-#~ "som brukes av vino automatisk i ruteren."
