@@ -1,3 +1,51 @@
+Vino 3.7.4
+==========
+
+Adrián Arévalo (1):
+      Updated Spanish translation
+
+Alexander Shopov (1):
+      Updated Bulgarian translation
+
+Aurimas Černius (1):
+      Updated Lithuanian translation
+
+Daniel Mustieles (1):
+      Added keywords to .desktop file, bug 691062
+
+David King (3):
+      Post-release version bump to 3.7.4
+      Add "desktop-entry" notification hint, bug 691045
+      Update NEWS for 3.7.4 release
+
+Dimitris Spingos (1):
+      Updated Greek translation
+
+Fran Diéguez (1):
+      Updated Galician translations
+
+Gheyret Kenji (1):
+      Updated Uyghur translation
+
+Khaled Hosny (1):
+      Update Arabic translation
+
+Kjartan Maraas (2):
+      Updated Norwegian bokmål translation
+      Updated Norwegian bokmål translation
+
+Mattias Põldaru (1):
+      [l10n] Updated Estonian translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Shankar Prasad (1):
+      Updated Kannada Translations
+
+Yaron Shahrabani (1):
+      Updated Hebrew translation.
+
 Vino 3.7.3
 ==========
 
