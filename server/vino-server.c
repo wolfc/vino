@@ -66,6 +66,7 @@ struct _VinoServerPrivate
   guint             io_watch[RFB_MAX_SOCKETLISTEN];
 
   GSList           *clients;
+  guint             num_clients;
 
   VinoAuthMethod    auth_methods;
   char             *vnc_password;
@@ -125,7 +126,8 @@ enum
   PROP_USE_UPNP,
   PROP_DISABLE_XDAMAGE,
   PROP_NOTIFY_ON_CONNECT,
-  PROP_REJECT_INCOMING
+  PROP_REJECT_INCOMING,
+  PROP_CONNECTED
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -308,10 +310,16 @@ vino_server_client_accepted (VinoServer *server,
   if (server->priv->display_status_icon)
     vino_status_icon_add_client (server->priv->icon, client);
 
+  server->priv->num_clients++;
+
   vino_server_unlock_screen ();
 
   if (vino_server_get_disable_background (server))
     vino_background_draw (FALSE);
+
+  /* First client? */
+  if (server->priv->num_clients == 1)
+    g_object_notify (G_OBJECT (server), "connected");
 }
 
 
@@ -329,6 +337,10 @@ vino_server_client_disconnected (VinoServer *server,
             vino_background_draw (TRUE);
         }
     }
+
+  server->priv->num_clients--;
+  if (server->priv->num_clients == 0)
+    g_object_notify (G_OBJECT (server), "connected");
 }
 
 static void
@@ -1261,6 +1273,9 @@ vino_server_get_property (GObject    *object,
     case PROP_REJECT_INCOMING:
       g_value_set_boolean (value, server->priv->reject_incoming);
       break;
+    case PROP_CONNECTED:
+      g_value_set_boolean (value, server->priv->num_clients > 0);
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1512,6 +1527,16 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_READWRITE   |
                                                          G_PARAM_CONSTRUCT_ONLY |
                                                          G_PARAM_STATIC_STRINGS));
+  g_object_class_install_property (gobject_class,
+				   PROP_CONNECTED,
+				   g_param_spec_boolean ("connected",
+							 "Connected",
+							 "Whether at least one client is connected",
+							 FALSE,
+                                                         G_PARAM_READABLE   |
+                                                         G_PARAM_STATIC_NAME |
+                                                         G_PARAM_STATIC_NICK |
+                                                         G_PARAM_STATIC_BLURB));
 }
 
 VinoServer *
@@ -1730,6 +1755,14 @@ vino_server_set_prompt_enabled (VinoServer *server,
 
       g_object_notify (G_OBJECT (server), "prompt-enabled");
     }
+}
+
+gboolean
+vino_server_get_has_clients (VinoServer *server)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
+
+  return server->priv->num_clients > 0;
 }
 
 static void

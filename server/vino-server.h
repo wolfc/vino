@@ -70,6 +70,7 @@ GType                vino_server_get_type                 (void) G_GNUC_CONST;
 VinoServer          *vino_server_new                      (GdkScreen      *screen,
 							   gboolean        view_only);
 GdkScreen           *vino_server_get_screen               (VinoServer     *server);
+gboolean             vino_server_get_has_clients          (VinoServer     *server);
 void                 vino_server_set_on_hold              (VinoServer     *server,
 							   gboolean        on_hold);
 gboolean             vino_server_get_on_hold              (VinoServer     *server);

@@ -210,8 +210,36 @@ vino_dbus_listener_get_property (GDBusConnection  *connection,
   else if (strcmp (property_name, "AvahiHost") == 0)
     return g_variant_new_string (vino_mdns_get_hostname());
 
+  else if (strcmp (property_name, "Connected") == 0)
+    return g_variant_new_boolean (vino_server_get_has_clients (listener->server));
+
   else
     g_assert_not_reached ();
+}
+
+static void
+server_connected_changed_cb (GObject    *gobject,
+                             GParamSpec *pspec,
+                             gpointer    user_data)
+{
+  GVariantBuilder *builder;
+  VinoDBusListener *listener = (VinoDBusListener *) user_data;
+
+  builder = g_variant_builder_new (G_VARIANT_TYPE_ARRAY);
+  g_variant_builder_add (builder,
+                         "{sv}",
+                         "Connected",
+                         g_variant_new_boolean (vino_server_get_has_clients (listener->server)));
+  g_dbus_connection_emit_signal (listener->connection,
+                                 NULL,
+                                 listener->path,
+                                 "org.freedesktop.DBus.Properties",
+                                 "PropertiesChanged",
+                                 g_variant_new ("(sa{sv}as)",
+                                                ORG_GNOME_VINO_SCREEN_INTERFACE_NAME,
+                                                builder,
+                                                NULL),
+                                 NULL);
 }
 
 void
@@ -229,6 +257,9 @@ vino_dbus_listener_set_server (VinoDBusListener *listener,
    * nobody will have checked properties before now (see large comment
    * above in get_property()).
    */
+
+  g_signal_connect (listener->server, "notify::connected",
+                    G_CALLBACK (server_connected_changed_cb), listener);
 }
 
 VinoDBusListener *

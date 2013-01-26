@@ -41,12 +41,17 @@ static const GDBusPropertyInfo org_gnome_VinoScreen_AvahiHost = {
   -1, "AvahiHost", "s", G_DBUS_PROPERTY_INFO_FLAGS_READABLE
 };
 
+static const GDBusPropertyInfo org_gnome_VinoScreen_Connected = {
+  -1, "Connected", "b", G_DBUS_PROPERTY_INFO_FLAGS_READABLE
+};
+
 static const GDBusPropertyInfo* const org_gnome_VinoScreen_properties[] = {
   &org_gnome_VinoScreen_ExternalHost,
   &org_gnome_VinoScreen_ExternalPort,
   &org_gnome_VinoScreen_AvahiHost,
   &org_gnome_VinoScreen_Host,
   &org_gnome_VinoScreen_Port,
+  &org_gnome_VinoScreen_Connected,
   NULL
 };
 
