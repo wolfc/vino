@@ -25,18 +25,17 @@
 #include "vino-prompt.h"
 
 #include <gtk/gtk.h>
+#include <libnotify/notify.h>
 #include "vino-util.h"
 #include "vino-enums.h"
 #include "vino-marshal.h"
 
 struct _VinoPromptPrivate
 {
-  GdkScreen     *screen;
-  GtkWidget     *dialog;
-  GtkWidget     *sharing_icon;
-  GtkWidget     *host_label;
-  rfbClientPtr   current_client;
-  GSList        *pending_clients;
+  GdkScreen          *screen;
+  NotifyNotification *notification;
+  rfbClientPtr        current_client;
+  GSList             *pending_clients;
 };
 
 enum
@@ -59,6 +58,14 @@ static guint prompt_signals [LAST_SIGNAL] = { 0 };
 G_DEFINE_TYPE (VinoPrompt, vino_prompt, G_TYPE_OBJECT);
 
 static void
+clear_notification (VinoPrompt *prompt)
+{
+  if (prompt->priv->notification)
+    notify_notification_close (prompt->priv->notification, NULL);
+  g_clear_object (&prompt->priv->notification);
+}
+
+static void
 vino_prompt_finalize (GObject *object)
 {
   VinoPrompt *prompt = VINO_PROMPT (object);
@@ -66,11 +73,7 @@ vino_prompt_finalize (GObject *object)
   g_slist_free (prompt->priv->pending_clients);
   prompt->priv->pending_clients = NULL;
 
-  if (prompt->priv->dialog)
-    gtk_widget_destroy (prompt->priv->dialog);
-  prompt->priv->dialog = NULL;
-  prompt->priv->sharing_icon = NULL;
-  prompt->priv->host_label = NULL;
+  clear_notification (prompt);
 
   g_free (prompt->priv);
   prompt->priv = NULL;
@@ -222,36 +225,27 @@ emit_response_signal (VinoPrompt   *prompt,
 }
 
 static void
-vino_prompt_handle_dialog_response (VinoPrompt *prompt,
-				    int         response,
-				    GtkDialog  *dialog)
+vino_prompt_handle_response (NotifyNotification *notification,
+			     char               *response,
+			     gpointer            user_data)
 {
+  VinoPrompt *prompt = user_data;
   rfbClientPtr rfb_client;
   int          prompt_response = VINO_RESPONSE_INVALID;
 
   dprintf (PROMPT, "Got a response for client %p: %s\n",
 	   prompt->priv->current_client,
-	   response == GTK_RESPONSE_ACCEPT ? "accept" :
-	   response == GTK_RESPONSE_REJECT ? "reject" : "unknown");
+	   response);
 
-  switch (response)
-    {
-    case GTK_RESPONSE_ACCEPT:
-      prompt_response = VINO_RESPONSE_ACCEPT;
-      break;
-    case GTK_RESPONSE_REJECT:
-    default:
-      prompt_response = VINO_RESPONSE_REJECT;
-      break;
-    }
+  if (g_strcmp0 (response, "accept") == 0)
+    prompt_response = VINO_RESPONSE_ACCEPT;
+  else
+    prompt_response = VINO_RESPONSE_REJECT;
 
   rfb_client = prompt->priv->current_client;
   prompt->priv->current_client = NULL;
 
-  prompt->priv->dialog = NULL;
-  prompt->priv->sharing_icon = NULL;
-  prompt->priv->host_label = NULL;
-  gtk_widget_destroy (GTK_WIDGET (dialog));
+  clear_notification (prompt);
 
   if (rfb_client != NULL)
     {
@@ -261,67 +255,16 @@ vino_prompt_handle_dialog_response (VinoPrompt *prompt,
   vino_prompt_process_pending_clients (prompt);
 }
 
-static void
-vino_prompt_setup_icons (VinoPrompt *prompt,
-			 GtkBuilder *builder)
-{
-#define ICON_SIZE_STANDARD 48
-
-  prompt->priv->sharing_icon = GTK_WIDGET (gtk_builder_get_object (builder,
-                                                                   "sharing_icon"));
-  g_assert (prompt->priv->sharing_icon != NULL);
-
-  gtk_window_set_icon_name (GTK_WINDOW (prompt->priv->dialog),
-			    "preferences-desktop-remote-desktop");
-  gtk_image_set_from_icon_name (GTK_IMAGE (prompt->priv->sharing_icon),
-				"preferences-desktop-remote-desktop", GTK_ICON_SIZE_DIALOG);
-
-#undef ICON_SIZE_STANDARD
-}
-
 static gboolean
 vino_prompt_setup_dialog (VinoPrompt *prompt)
 {
-#define VINO_UI_FILE "vino-prompt.ui"
-
-  GtkBuilder *builder;
-  const char *ui_file;
-  GtkWidget  *help_button;
-  GError     *error = NULL;
-
-  if (g_file_test (VINO_UI_FILE, G_FILE_TEST_EXISTS))
-    ui_file = VINO_UI_FILE;
-  else
-    ui_file = VINO_UIDIR "/" VINO_UI_FILE;
-
-  builder = gtk_builder_new ();
-  if (!gtk_builder_add_from_file (builder, ui_file, &error))
-  {
-    g_warning ("Unable to locate ui file '%s'", ui_file);
-    g_error_free (error);
-    return FALSE;
-  }
-
-  prompt->priv->dialog = GTK_WIDGET (gtk_builder_get_object (builder, "vino_dialog"));
-  g_assert (prompt->priv->dialog != NULL);
-
-  g_signal_connect_swapped (prompt->priv->dialog, "response",
-			    G_CALLBACK (vino_prompt_handle_dialog_response), prompt);
-
-  vino_prompt_setup_icons (prompt, builder);
-
-  prompt->priv->host_label = GTK_WIDGET (gtk_builder_get_object (builder, "host_label"));
-  g_assert (prompt->priv->host_label != NULL);
-
-  help_button = GTK_WIDGET (gtk_builder_get_object (builder, "help_button"));
-  g_assert (help_button != NULL);
-  gtk_widget_hide (help_button);
-
-  g_object_unref (builder);
+  if (!notify_is_initted () &&  !notify_init (g_get_application_name ()))
+    {
+      g_printerr (_("Error initializing libnotify\n"));
+      return FALSE;
+    }
 
   return TRUE;
-
-#undef VINO_UI_FILE
 }
 
 static gboolean
@@ -331,13 +274,7 @@ vino_prompt_display (VinoPrompt   *prompt,
   char *host_label;
 
   if (prompt->priv->current_client)
-    {
-      g_assert (prompt->priv->dialog);
-      gtk_window_present (GTK_WINDOW (prompt->priv->dialog));
-      return prompt->priv->current_client == rfb_client;
-    }
-
-  g_assert (prompt->priv->dialog == NULL);
+    return prompt->priv->current_client == rfb_client;
 
   if (!vino_prompt_setup_dialog (prompt))
     return FALSE;
@@ -345,13 +282,27 @@ vino_prompt_display (VinoPrompt   *prompt,
   host_label = g_strdup_printf (_("A user on the computer '%s' is trying to remotely view or control your desktop."),
 				rfb_client->host);
 
-  gtk_label_set_text (GTK_LABEL (prompt->priv->host_label), host_label);
+  prompt->priv->notification = notify_notification_new (_("Another user is trying to view your desktop."),
+							host_label,
+							"preferences-desktop-remote-desktop");
+  notify_notification_add_action (prompt->priv->notification,
+				  "refuse",
+				  _("Refuse"),
+				  vino_prompt_handle_response,
+				  prompt,
+				  NULL);
+  notify_notification_add_action (prompt->priv->notification,
+				  "accept",
+				  _("Accept"),
+				  vino_prompt_handle_response,
+				  prompt,
+				  NULL);
 
   g_free (host_label);
 
   prompt->priv->current_client = rfb_client;
 
-  gtk_widget_show_all (prompt->priv->dialog);
+  notify_notification_show (prompt->priv->notification, NULL);
 
   dprintf (PROMPT, "Prompting for client %p\n", rfb_client);
 
@@ -383,11 +334,7 @@ vino_prompt_remove_client (VinoPrompt   *prompt,
 
   if (prompt->priv->current_client == rfb_client)
     {
-      g_assert (prompt->priv->dialog != NULL);
-
-      gtk_widget_destroy (prompt->priv->dialog);
-      prompt->priv->dialog = NULL;
-      prompt->priv->current_client = NULL;
+      clear_notification (prompt);
     }
   else
     {

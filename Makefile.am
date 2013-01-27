@@ -289,8 +289,7 @@ vino_passwd_LDADD = \
 uidir = $(pkgdatadir)
 dist_ui_DATA = \
 	capplet/vino-preferences.ui \
-	capplet/webservices \
-	server/vino-prompt.ui
+	capplet/webservices
 
 autostartdir = $(sysconfdir)/xdg/autostart
 autostart_in_files = server/vino-server.desktop.in
