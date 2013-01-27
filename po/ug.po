@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-12-19 15:38+0000\n"
-"PO-Revision-Date: 2011-06-27 15:40+0600\n"
-"Last-Translator: Sahran <sahran.ug@gmail.com>\n"
+"POT-Creation-Date: 2013-01-14 10:11+0000\n"
+"PO-Revision-Date: 2013-01-27 13:20+0900\n"
+"Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups.com>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -62,7 +62,6 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr "يىراقتىكى ئۈستەلئۈستىنى كۆرسىتىش ئۇسۇلىنى تاللاش پروگراممىسى"
 
 #: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-#| msgid "Retype new Vino password: "
 msgid "Remote desktop sharing password"
 msgstr "يىراقتىكى ئۈستەلئۈستى ھەمبەھىرىنىڭ ئىمى"
 
@@ -102,10 +101,6 @@ msgid "Network interface for listening"
 msgstr "تىڭشايدىغان تور ئارايۈزى(تور كارتىسى)"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:8
-#| msgid ""
-#| "If not set, the server will listen on all network interfaces. Set this if "
-#| "you want that accept connections only from some specific network "
-#| "interface. eg: eth0, wifi0, lo, ..."
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
@@ -120,9 +115,6 @@ msgid "Listen on an alternative port"
 msgstr "باشقا بىر ئېغىزنى تىڭشا"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
-#| msgid ""
-#| "If true, the server will listen to another port, instead of the default "
-#| "(5900). The port must be specified in the 'alternative-port' key."
 msgid ""
 "If true, the server will listen on another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
@@ -133,9 +125,6 @@ msgid "Alternative port number"
 msgstr "باشقا ئېغىز نومۇرى"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:14
-#| msgid ""
-#| "The port which the server will listen to if the 'use-alternative-port' "
-#| "key is set to true. Valid values are in the range from 5000 to 50000."
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range of 5000 to 50000."
@@ -157,12 +146,6 @@ msgid "Allowed authentication methods"
 msgstr "رۇخسەت قىلىنغان سالاھىيەت دەلىللەش ئۇسۇللىرى"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:18
-#| msgid ""
-#| "Lists the authentication methods with which remote users may access the "
-#| "desktop. There are two possible authentication methods; \"vnc\" causes "
-#| "the remote user to be prompted for a password (the password is specified "
-#| "by the vnc-password key) before connecting and \"none\" which allows any "
-#| "remote user to connect."
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop.\n"
@@ -180,11 +163,6 @@ msgid "Password required for \"vnc\" authentication"
 msgstr "«vnc» سالاھىيىتىنى دەلىللەش ئۈچۈن ئۈچۈن ئىم تەلەپ قىلىنىدۇ"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:22
-#| msgid ""
-#| "The password which the remote user will be prompted for if the \"vnc\" "
-#| "authentication method is used. The password specified by the key is "
-#| "base64 encoded. The special value of 'keyring' (which is not valid "
-#| "base64) means that the password is stored in the GNOME keyring."
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -212,8 +190,6 @@ msgid "Lock the screen when last user disconnect"
 msgstr "ئەڭ ئاخىرقى ئىشلەتكۈچى ئۈزۈلگەندە ئېكراننى قۇلۇپلا"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:28
-#| msgid ""
-#| "If true, screen will be locked after the last remote client disconnect."
 msgid ""
 "If true, the screen will be locked after the last remote client disconnects."
 msgstr "ئەگەر true بولسا، ئەڭ ئاخىرقى يىراقتىكى ئىشلەتكۈچى ئۈزۈلگەندىن كېيىن ئېكران قۇلۇپلىنىدۇ."
@@ -223,11 +199,6 @@ msgid "When the status icon should be shown"
 msgstr "ھالەت سىنبەلگىسىنى قاچان كۆرسىتىدۇ"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:30
-#| msgid ""
-#| "This key controls the behavior of the status icon. There are three "
-#| "options: \"always\" - The icon will be always there; \"client\" - You "
-#| "will see the icon only when there is someone connected, this is the "
-#| "default behavior; \"never\" - Never shows the icon."
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - the icon will always be present; \"client\" - the icon will "
@@ -236,7 +207,6 @@ msgid ""
 msgstr "بۇ ئاچقۇچ ھالەت سىنبەلگىسىنىڭ ھەرىكىتىنى تىزگىنلەيدۇ. ئۈچ تاللانما بار: «ھەمىشە» - سىنبەلگە كۆرسىتىدۇ؛ «خېرىدار» - پەقەت باشقىلار باغلانغاندىلا ئاندىن سىنبەلگىنى كۆرەلەيسىز، بۇ كۆڭۈلدىكى مەشغۇلات؛ «ھەرگىز» - سىنبەلگىنى ھەرگىز كۆرسەتمەيدۇ."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
-#| msgid "When true, disable the background on receive valid session"
 msgid "Whether to disable the desktop background when a user is connected"
 msgstr "بىر ئىشلەتكۈچى باغلانغاندا ئۈستەلئۈستى تەگلىكىنى ئىناۋەتسىز قىلسۇنمۇ"
 
@@ -247,7 +217,6 @@ msgid ""
 msgstr "ئەگەر true بولسا، بىر ئىشلەتكۈچى باغلانغاندا ئېكران تەكلىكى بىر خىل رەڭدىلا كۆرسىتىلىدۇ."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
-#| msgid "Whether we should use UPNP to forward the port in routers"
 msgid "Whether a UPnP router should be used to forward and open ports"
 msgstr ""
 
@@ -262,11 +231,6 @@ msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "بىز X.org نىڭ XDamage كېڭەيتىلمىسىنى چەكلەمدۇق يوق"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:36
-#| msgid ""
-#| "If true, we will not use the XDamage extension of X.org. This extension "
-#| "does not work properly on some video drivers when using 3D effects. "
-#| "Disabling it will make vino work on these environments with a slower "
-#| "rendering as side effect."
 msgid ""
 "If true, do not use the XDamage extension of X.org. This extension does not "
 "work properly on some video drivers when using 3D effects. Disabling it will "
@@ -361,7 +325,7 @@ msgstr "تونۇيالمىغان ئۈستەلئۈستى ھۆججەت نەشرى 
 #: ../server/smclient/eggdesktopfile.c:974
 #, c-format
 msgid "Starting %s"
-msgstr "%s قوزغىلىۋاتىدۇ"
+msgstr "قوزغىلىۋاتقىنى %s"
 
 #: ../server/smclient/eggdesktopfile.c:1116
 #, c-format
@@ -417,7 +381,7 @@ msgstr "ئەڭگىمە باشقۇرغۇ تاللانمىلىرى كۆرسەت"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "سىزنىڭ XServer ڭىز Xtest نىڭ كېڭەيتىلمىسىنى قوللىمايدۇ - يىراقتىكى كومپيۇتېرنى پەقەت كۆرۈشكىلا بولىدۇ\n"
+msgstr "سىزنىڭ XServer ئىڭىز Xtest نىڭ كېڭەيتىلمىسىنى قوللىمايدۇ - يىراقتىكى كومپيۇتېرنى پەقەت كۆرۈشكىلا بولىدۇ\n"
 
 #. Tube mode uses Telepathy's Tubes to share a user's desktop directly
 #. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
@@ -513,6 +477,10 @@ msgstr "باش لىنىيىگە باشلىنىشنى ئېچىش مەغلۇپ ب�
 msgid "GNOME Desktop Sharing Server"
 msgstr "گىنوم ئۈستەلئۈستى ھەمبەھىر مۇلازىمېتىرى"
 
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "vnc؛share؛remote؛ھەمبەھىر؛يىراق؛"
+
 #: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
 msgid "Desktop sharing is enabled"
 msgstr "ئۈستەلئۈستى ھەمبەھىرى قوزغىتىلغان"
@@ -563,13 +531,7 @@ msgstr "GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە ئىككى�
 msgid "translator-credits"
 msgstr "Gheyret Kenji <gheyret@gmail.com>\n"
 "Sahran<sahran@live.com>\n"
-"Muhemmed Erdem <misran_erdem@hotmail.com>\n"
-"\n"
-"Launchpad Contributions:\n"
-"  Abdumomin.Kadir https://launchpad.net/~abdumomin-kadir\n"
-"  Gheyret T.Kenji https://launchpad.net/~gheyret\n"
-"  Gheyret T.Kenji https://launchpad.net/~gheyretkenji\n"
-"  Sahran https://launchpad.net/~sahran"
+"Muhemmed Erdem <misran_erdem@hotmail.com>"
 
 #: ../server/vino-status-icon.c:288
 msgid "Share your desktop with other users"
@@ -645,7 +607,7 @@ msgstr "باشقا بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى ي
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "‹%s› كومپيۇتېردىكى بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى يىراقتىن باشقۇرۇۋاتىدۇ."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:666 ../server/vino-status-tube-icon.c:439
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "كۆپۈكچە ئۇقتۇرۇشنى كۆرسىتىۋاتقاندا خاتالىق كۆرۈلدى: %s\n"
