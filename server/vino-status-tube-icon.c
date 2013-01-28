@@ -408,7 +408,7 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
   g_free (filename);
 
   notify_notification_set_hint_string (icon->priv->new_client_notification,
-                                       "desktop-entry", PACKAGE_TARNAME);
+                                       "desktop-entry", "vino-server");
   notify_notification_set_timeout (icon->priv->new_client_notification,
       NOTIFICATION_TIMEOUT * 1000);
 

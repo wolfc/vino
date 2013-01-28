@@ -285,6 +285,7 @@ vino_prompt_display (VinoPrompt   *prompt,
   prompt->priv->notification = notify_notification_new (_("Another user is trying to view your desktop."),
 							host_label,
 							"preferences-desktop-remote-desktop");
+  notify_notification_set_hint_string (prompt->priv->notification, "desktop-entry", "vino-server");
   notify_notification_add_action (prompt->priv->notification,
 				  "refuse",
 				  _("Refuse"),

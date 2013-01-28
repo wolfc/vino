@@ -10,3 +10,4 @@ Type=Application
 AutostartCondition=GSettings org.gnome.Vino enabled
 X-GNOME-Autostart-Phase=Applications
 X-GNOME-AutoRestart=true
+X-GNOME-UsesNotifications=true
