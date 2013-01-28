@@ -3,9 +3,9 @@
 capplet/vino-message-box.c
 capplet/vino-preferences.c
 capplet/vino-preferences.desktop.in.in
-common/vino-keyring.c
-common/org.gnome.Vino.gschema.xml
 [type: gettext/glade]capplet/vino-preferences.ui
+common/org.gnome.Vino.gschema.xml
+common/vino-keyring.c
 server/smclient/eggdesktopfile.c
 server/smclient/eggsmclient.c
 server/vino-dbus-listener.c
@@ -13,7 +13,6 @@ server/vino-main.c
 server/vino-mdns.c
 server/vino-prefs.c
 server/vino-prompt.c
-[type: gettext/glade]server/vino-prompt.ui
 server/vino-server.c
 server/vino-server.desktop.in.in
 server/vino-status-icon.c
