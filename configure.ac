@@ -71,32 +71,6 @@ AS_IF([test "x$have_telepathy" = "xyes"],
 
 AM_CONDITIONAL([VINO_HAVE_TELEPATHY_GLIB], [test "x$have_telepathy" = "xyes"])
 
-# Check for libnotify
-LIBNOTIFY_DEPS="libnotify >= 0.4.4"
-LIBNOTIFY_0_7_DEPS="libnotify >= 0.7.0"
-
-AC_ARG_WITH([libnotify],
-  [AS_HELP_STRING([--without-libnotify],
-    [ignore the presence of libnotify and disable it])])
-
-AS_IF([test "x$with_libnotify" != "xno"],
-  [PKG_CHECK_EXISTS([$LIBNOTIFY_DEPS],
-    [have_libnotify=yes],
-    [have_libnotify=no])],
-  [have_libnotify=no])
-
-AS_IF([test "x$have_libnotify" = "xyes"],
-  [AC_DEFINE([VINO_HAVE_LIBNOTIFY], [], [Build with libnotify support])
-    PKG_CHECK_EXISTS([$LIBNOTIFY_0_7_DEPS],
-      [have_libnotify_0_7=yes],
-      [have_libnotify_0_7=no])
-    AS_IF([test "x$have_libnotify_0_7" = "xyes"],
-      [LIBNOTIFY_DEPS="$LIBNOTIFY_0_7_DEPS"
-        AC_DEFINE([VINO_HAVE_LIBNOTIFY_0_7], [], [Build with libnotify 0.7 or greater support])])],
-  [LIBNOTIFY_DEPS=""
-    AS_IF([test "x$have_libnotify" = "xyes"],
-    [AC_MSG_ERROR([libnotify support requested but not found])])])
-
 # Check for NetworkManager
 NETWORKMANAGER_DEPS="NetworkManager >= 0.7"
 
@@ -328,7 +302,7 @@ GLIB_VERSION=2.17.0
 GIO_VERSION=2.26
 SOUP_VERSION=2.24.0
 
-PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS $LIBNOTIFY_DEPS $SECRET_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
+PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS libnotify >= 0.7.0 $SECRET_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
 
 PKG_CHECK_MODULES([VINO_CAPPLET], [glib-2.0 >= $GLIB_VERSION gio-2.0 >= $GIO_VERSION gtk+-3.0 >= $GTK_VERSION libsoup-2.4 >= $SOUP_VERSION $SECRET_DEPS])
 

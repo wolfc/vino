@@ -24,10 +24,8 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include <gio/gdesktopappinfo.h>
-#ifdef VINO_HAVE_LIBNOTIFY
 #include <glib/gi18n.h>
 #include <libnotify/notify.h>
-#endif
 
 #include "vino-status-tube-icon.h"
 #include "vino-enums.h"
@@ -40,9 +38,7 @@ struct _VinoStatusTubeIconPrivate
   GtkWidget *disconnect_dialog;
   VinoStatusTubeIconVisibility visibility;
 
-#ifdef VINO_HAVE_LIBNOTIFY
   NotifyNotification *new_client_notification;
-#endif
 };
 
 G_DEFINE_TYPE (VinoStatusTubeIcon, vino_status_tube_icon, GTK_TYPE_STATUS_ICON);
@@ -59,14 +55,12 @@ vino_status_tube_icon_finalize (GObject *object)
 {
   VinoStatusTubeIcon *icon = VINO_STATUS_TUBE_ICON (object);
 
-#ifdef VINO_HAVE_LIBNOTIFY
   if (icon->priv->new_client_notification != NULL)
     {
       notify_notification_close (icon->priv->new_client_notification, NULL);
       g_object_unref (icon->priv->new_client_notification);
       icon->priv->new_client_notification = NULL;
     }
-#endif
 
   if (icon->priv->menu != NULL)
     {
@@ -107,9 +101,7 @@ static void
 vino_status_tube_icon_init (VinoStatusTubeIcon *icon)
 {
   icon->priv = G_TYPE_INSTANCE_GET_PRIVATE (icon, VINO_TYPE_STATUS_TUBE_ICON, VinoStatusTubeIconPrivate);
-#ifdef VINO_HAVE_LIBNOTIFY
   icon->priv->new_client_notification = NULL;
-#endif
 }
 
 static void
@@ -375,7 +367,6 @@ vino_status_tube_icon_set_visibility (VinoStatusTubeIcon *icon,
     }
 }
 
-#ifdef VINO_HAVE_LIBNOTIFY
 static void
 vino_status_tube_icon_show_invalidated_notif_closed
     (VinoStatusTubeIcon *icon)
@@ -383,13 +374,11 @@ vino_status_tube_icon_show_invalidated_notif_closed
   dprintf (TUBE, "Notification was closed");
   vino_tube_server_fire_closed (icon->priv->server);
 }
-#endif
 
 void
 vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
     const gchar *summary, const gchar *body, gboolean invalidated)
 {
-#ifdef VINO_HAVE_LIBNOTIFY
 #define NOTIFICATION_TIMEOUT 5
 
   GError *error;
@@ -414,12 +403,7 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
       filename = g_strdup ("stock_person");
 
   icon->priv->new_client_notification =
-#ifdef VINO_HAVE_LIBNOTIFY_0_7
       notify_notification_new (summary, body, filename);
-#else
-      notify_notification_new_with_status_icon (summary, body,
-      filename, GTK_STATUS_ICON (icon));
-#endif
 
   g_free (filename);
 
@@ -442,9 +426,5 @@ vino_status_tube_icon_show_notif (VinoStatusTubeIcon *icon,
     }
 
 #undef NOTIFICATION_TIMEOUT
-#else
-  if (invalidated)
-    vino_tube_server_fire_closed (icon->priv->server);
-#endif /* VINO_HAVE_LIBNOTIFY */
 }
 
