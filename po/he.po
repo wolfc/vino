@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2012-12-20 14:58+0200\n"
-"PO-Revision-Date: 2012-12-20 14:59+0200\n"
+"POT-Creation-Date: 2013-02-02 11:50+0200\n"
+"PO-Revision-Date: 2013-02-02 11:52+0200\n"
 "Last-Translator: Yaron Shahrabani <sh.yaron@gmail.com>\n"
 "Language-Team: Hebrew\n"
 "Language: \n"
@@ -63,10 +63,69 @@ msgstr "שיתוף שולחן העבודה"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "נא לבחור כיצד משתמשים אחרים יכולים לצפות מרחוק בשולחן העבודה שלך"
 
-#: ../common/vino-keyring.c:54
-#: ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "ססמה לשיתוף המסך לשליטה מרחוק"
+#: ../capplet/vino-preferences.ui.h:1
+msgid "Desktop Sharing Preferences"
+msgstr "העדפות שיתוף שולחן העבודה"
+
+#: ../capplet/vino-preferences.ui.h:2
+msgid "Sharing"
+msgstr "שיתוף"
+
+#: ../capplet/vino-preferences.ui.h:3
+msgid "Some of these preferences are locked down"
+msgstr "כמה מאפשרויות אלו חסומות"
+
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "מתן הרשאה למשתמשים אחרים ל_צפות בשולחן העבודה שלך"
+
+#: ../capplet/vino-preferences.ui.h:5
+msgid "Your desktop will be shared"
+msgstr "שולחן העבודה שלך ישותף"
+
+#: ../capplet/vino-preferences.ui.h:6
+msgid "_Allow other users to control your desktop"
+msgstr "מתן ה_רשאה למשתמשים אחרים לשלוט בשולחן העבודה שלך"
+
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "משתמשים מרוחקים יכולים לשלוט בעכבר ובמקלדת שלך"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Security"
+msgstr "אבטחה"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "_You must confirm each access to this machine"
+msgstr "מתן _אישור לכל גישה למחשב זה"
+
+#: ../capplet/vino-preferences.ui.h:10
+msgid "_Require the user to enter this password:"
+msgstr "יש ל_דרוש מהמשתמש להקליד את הססמה:"
+
+#: ../capplet/vino-preferences.ui.h:11
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "ה_גדרת נתבים התומכים ב־UPnP לפתוח ולהעביר פתחות"
+
+#: ../capplet/vino-preferences.ui.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "יש לאפשר את פונקציית ה־UPnP בנתב"
+
+#: ../capplet/vino-preferences.ui.h:13
+msgid "Show Notification Area Icon"
+msgstr "הצגת סמל באזור הדיווחים"
+
+#: ../capplet/vino-preferences.ui.h:14
+msgid "Al_ways"
+msgstr "_תמיד"
+
+#: ../capplet/vino-preferences.ui.h:15
+msgid "_Only when someone is connected"
+msgstr "_רק כאשר מישהו מחובר"
+
+#: ../capplet/vino-preferences.ui.h:16
+msgid "_Never"
+msgstr "_אף פעם"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -214,69 +273,10 @@ msgstr "Notify on connect"
 msgid "If true, show a notification when a user connects to the system."
 msgstr "If true, show a notification when a user connects to the system."
 
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "העדפות שיתוף שולחן העבודה"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "שיתוף"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "כמה מאפשרויות אלו חסומות"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "מתן הרשאה למשתמשים אחרים ל_צפות בשולחן העבודה שלך"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "שולחן העבודה שלך ישותף"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "מתן ה_רשאה למשתמשים אחרים לשלוט בשולחן העבודה שלך"
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "משתמשים מרוחקים יכולים לשלוט בעכבר ובמקלדת שלך"
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "אבטחה"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "מתן _אישור לכל גישה למחשב זה"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "יש ל_דרוש מהמשתמש להקליד את הססמה:"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "ה_גדרת נתבים התומכים ב־UPnP לפתוח ולהעביר פתחות"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "יש לאפשר את פונקציית ה־UPnP בנתב"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "הצגת סמל באזור הדיווחים"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "_תמיד"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "_רק כאשר מישהו מחובר"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "_אף פעם"
+#: ../common/vino-keyring.c:54
+#: ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "ססמה לשיתוף המסך לשליטה מרחוק"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -393,47 +393,40 @@ msgstr "%s's remote desktop on %s"
 msgid "Received signal %d, exiting."
 msgstr "התקבל האות %d, התכנה מסתיימת..."
 
-#: ../server/vino-prompt.c:141
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "מסך"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "המסך שעליו יש להציג את הסמן־מנחה"
 
-#: ../server/vino-prompt.c:345
+#: ../server/vino-prompt.c:263
+#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "Error initializing libnotify\n"
+
+#: ../server/vino-prompt.c:282
 #, c-format
 msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
 msgstr "המשתמש במחשב '%s' מנסה לצפות או לשלוט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-prompt.ui.h:1
-msgid "Question"
-msgstr "שאלה"
-
-#: ../server/vino-prompt.ui.h:2
+#: ../server/vino-prompt.c:285
 msgid "Another user is trying to view your desktop."
 msgstr "משתמש נוסף מנסה לצפות בשולחן העבודה שלך"
 
-#: ../server/vino-prompt.ui.h:3
-msgid "A user on another computer is trying to remotely view or control your desktop."
-msgstr "משתמש העובד במחשב אחר מנסה לצפות או לשלוט מרחוק בשולחן העבודה שלך."
+#: ../server/vino-prompt.c:291
+msgid "Refuse"
+msgstr "לסרב"
 
-#: ../server/vino-prompt.ui.h:4
-msgid "Do you want to allow them to do so?"
-msgstr "האם ברצונך לאפשר להם לעשות זאת?"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "לקבל"
 
-#: ../server/vino-prompt.ui.h:5
-#: ../server/vino-util.c:90
-msgid "_Refuse"
-msgstr "_סירוב"
-
-#: ../server/vino-prompt.ui.h:6
-#: ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "הס_כמה"
-
-#: ../server/vino-server.c:162
-#: ../server/vino-server.c:185
+#: ../server/vino-server.c:164
+#: ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Failed to open connection to bus: %s\n"
@@ -442,29 +435,33 @@ msgstr "Failed to open connection to bus: %s\n"
 msgid "GNOME Desktop Sharing Server"
 msgstr "שרת שיתוף שולחנות עבודה של GNOME"
 
-#: ../server/vino-status-icon.c:103
-#: ../server/vino-status-tube-icon.c:96
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "שיתוף;מרוחק;מרחוק;"
+
+#: ../server/vino-status-icon.c:97
+#: ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
 msgstr "שיתוף שולחן העבודה מופעל"
 
-#: ../server/vino-status-icon.c:111
+#: ../server/vino-status-icon.c:105
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "משתמש אחד צופה בשולחן העבודה שלך"
 msgstr[1] "%d משתמשים צופים בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:212
-#: ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:208
+#: ../server/vino-status-tube-icon.c:172
 msgid "Error displaying preferences"
 msgstr "שגיאה בהצגת ההעדפות"
 
-#: ../server/vino-status-icon.c:234
-#: ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:230
+#: ../server/vino-status-tube-icon.c:192
 msgid "Error displaying help"
 msgstr "שגיאה בהצגת העזרה"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -501,7 +498,7 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
 msgstr ""
 "יאיר הרשקוביץ <yairhr@gmail.com>\n"
@@ -510,93 +507,87 @@ msgstr ""
 "פרויקט תרגום GNOME לעברית:\n"
 "‏http://gnome-il.berlios.de"
 
-#: ../server/vino-status-icon.c:288
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "שיתוף שולחן העבודה שלך עם משתמשים אחרים"
 
-#: ../server/vino-status-icon.c:355
-#: ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:351
+#: ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "האם אכן ברצונך לנתק את '%s'?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "המשתמש המרוחק מ־'%s' ינותק. האם להמשיך?"
 
-#: ../server/vino-status-icon.c:364
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "האם אכן ברצונך לנתק את כל הלקוחות?"
 
-#: ../server/vino-status-icon.c:366
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "כל המשתמשים המרוחקים ינותקו. האם להמשיך?"
 
-#: ../server/vino-status-icon.c:378
-#: ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:374
+#: ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "ניתוק"
 
-#: ../server/vino-status-icon.c:404
-#: ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:400
+#: ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "הע_דפות"
 
-#: ../server/vino-status-icon.c:419
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "ניתוק של כולם"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:443
-#: ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:439
+#: ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "ניתוק %s"
 
-#: ../server/vino-status-icon.c:464
-#: ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:460
+#: ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "ע_זרה"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "על _אודות"
 
-#: ../server/vino-status-icon.c:605
-#: ../server/vino-status-tube-icon.c:400
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "Error initializing libnotify\n"
-
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "משתמש אחר צופה בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "המשתמש במחשב '%s' צופה מרחוק בשולחן העבודה שלך."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:634
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "משתמש אחר שולט בשולחן העבודה שלך"
 
-#: ../server/vino-status-icon.c:636
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "המשתמש במחשב '%s' שולט מרחוק בשולחן העבודה שלך."
 
-#: ../server/vino-status-icon.c:664
-#: ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:651
+#: ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error while displaying notification bubble: %s\n"
 
-#: ../server/vino-status-tube-icon.c:235
+#: ../server/vino-status-tube-icon.c:227
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "המשתמש המרוחק '%s' ינותק. האם להמשיך?"
@@ -629,6 +620,14 @@ msgstr "‏'%s' שולט מרחוק בשולחן העבודה שלך."
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "ממתין ל־'%s' כדי שיתחבר למסך."
+
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "הס_כמה"
+
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "_סירוב"
 
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
@@ -695,6 +694,17 @@ msgstr "VINO Version %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ERROR: You do not have enough permissions to change Vino password.\n"
+
+#~ msgid "Question"
+#~ msgstr "שאלה"
+
+#~ msgid ""
+#~ "A user on another computer is trying to remotely view or control your "
+#~ "desktop."
+#~ msgstr "משתמש העובד במחשב אחר מנסה לצפות או לשלוט מרחוק בשולחן העבודה שלך."
+
+#~ msgid "Do you want to allow them to do so?"
+#~ msgstr "האם ברצונך לאפשר להם לעשות זאת?"
 
 #~ msgid ""
 #~ "If true, we will use UPNP protocol to automatically forward the port used "
