@@ -6,11 +6,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.master.ml\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
-"cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-08-20 21:35+0000\n"
-"PO-Revision-Date: 2012-09-17 20:03+0000\n"
-"Last-Translator: Ani Peter <apeter@redhat.com>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2013-02-09 21:27+0000\n"
+"PO-Revision-Date: 2013-02-10 22:09+0530\n"
+"Last-Translator: Hrishikesh K B <hrishi.kb@gmail.com>\n"
 "Language-Team: Malayalam <discuss@lists.smc.org.in>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
@@ -48,7 +48,8 @@ msgstr " അല്ലെങ്കില്‍ "
 #: ../capplet/vino-preferences.c:315
 #, c-format
 msgid "Others can access your computer using the address %s."
-msgstr "മറ്റുള്ളവര്‍ക്കു് നിങ്ങളുടെ കമ്പ്യൂട്ടറിലേക്ക് %s വിലാസം ഉപയോഗിച്ചു് പ്രവേശിക്കുവാന്‍ സാധിക്കുന്നു."
+msgstr ""
+"മറ്റുള്ളവര്‍ക്കു് നിങ്ങളുടെ കമ്പ്യൂട്ടറിലേക്ക് %s വിലാസം ഉപയോഗിച്ചു് പ്രവേശിക്കുവാന്‍ സാധിക്കുന്നു."
 
 #: ../capplet/vino-preferences.c:324
 msgid "Nobody can access your desktop."
@@ -56,7 +57,6 @@ msgstr "നിങ്ങളുടെ പണിയിടത്തിലേക്�
 
 #: ../capplet/vino-preferences.desktop.in.in.h:1
 #: ../server/vino-server.desktop.in.in.h:1
-#| msgid "Desktop sharing is enabled"
 msgid "Desktop Sharing"
 msgstr "പണിയിടം പങ്കിടാനാകും"
 
@@ -64,250 +64,7 @@ msgstr "പണിയിടം പങ്കിടാനാകും"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "മറ്റുളള ഉപയോക്താക്കള്‍ക്ക് നിങ്ങളുടെ പണിയിടം കാണുന്നതെങ്ങനെയെന്നു് തെരഞ്ഞെടുക്കുക"
 
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-#| msgid "Retype new Vino password: "
-msgid "Remote desktop sharing password"
-msgstr "വിദൂര പണിയിടം പങ്കിടുന്നതിനുള്ള അടയാളവാക്ക്"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:1
-#| msgid "Only allow remote users to view the desktop"
-msgid "Enable remote access to the desktop"
-msgstr "വിദൂരത്തുളള ഉപയോക്താക്കള്‍ക്ക് പണിയിടം കാണുവാന്‍ പ്രവര്‍ത്തന സജ്ജമാക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:2
-#| msgid ""
-#| "If true, allows remote access to the desktop via the RFB protocol. Users "
-#| "on remote machines may then connect to the desktop using a vncviewer."
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a VNC viewer."
-msgstr ""
-"true എന്നാണെങ്കില്‍, RFB സന്പ്രദായം വഴി ഡസ്ക്-ടോപ്പിലേക്ക് വിദൂരത്തുളള കംപ്യൂട്ടറുകള്‍ക്ക്  "
-"പ്രവേശനത്തിനുളള അനുവാദം നല്‍കുക. ഒരു vncviewer ഉപയോഗിച്ച് പിന്നീട് ഇവയ്ക് പണിയിടത്തിലേക്കു്"
-"കണക്ട് ചെയ്യാവുന്നതാണ്. "
-
-#: ../common/org.gnome.Vino.gschema.xml.h:3
-msgid "Prompt the user before completing a connection"
-msgstr "ഒരു കണക്ഷന്‍ പൂര്‍ത്തിയാക്കുന്നതിന് മുന്പ് ഉപയോക്താവിനെ അറിയിക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:4
-msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
-msgstr ""
-"സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിനെ ആഥിതേയന്‍ ബന്ധപ്പെടാന്‍ അനുവദിക്കുന്നത് വരെ കാത്ത് നിര്‍ത്തുക. "
-"പ്രധാനമായി അടയാളവാക്കിനാല്‍ സംരക്ഷിയ്ക്കപ്പെടാത്ത ബന്ധമാണെങ്കില്‍."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:5
-msgid "Only allow remote users to view the desktop"
-msgstr "വിദൂരത്തുളള ഉപയോക്താക്കള്‍ക്ക് മാത്രം പണിയിടം കാണുന്നതിന് അനുവദിക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:6
-msgid ""
-"If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിന് പണിയിടം കാണുവാന്‍ മാത്രം അനുവദിച്ചിരിക്കുന്നു. വിദൂര "
-"ഉപയോക്താവിന് കീബോഡോ മൗസോ ഉപയോഗിക്കാന്‍ കഴിയുകയില്ല."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:7
-msgid "Network interface for listening"
-msgstr "ശ്രദ്ധിക്കുന്നതിനുള്ള നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസ്"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:8
-#| msgid ""
-#| "If not set, the server will listen on all network interfaces. Set this if "
-#| "you want that accept connections only from some specific network "
-#| "interface. eg: eth0, wifi0, lo, ..."
-msgid ""
-"If not set, the server will listen on all network interfaces.\n"
-"\n"
-"Set this if you want that accept connections only from some specific network "
-"interface. eg: eth0, wifi0, lo, ..."
-msgstr ""
-"സജ്ജമല്ലെങ്കില്‍, സര്‍വര്‍ എല്ലാ നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസുകളിലും ശ്രദ്ധിക്കുന്നു.\n"
-"\n"
-"നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസില്‍ നിന്നും മാത്രം നിങ്ങള്‍ക്കു് കണക്ഷന്‍ സ്വീകരിച്ചാല്‍ മതിയെങ്കില്‍, ഇതു് "
-"സജ്ജമാക്കുക.ഉദാ: eth0, wifi0, lo, ..."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:11
-#| msgid "Listen an alternative port"
-msgid "Listen on an alternative port"
-msgstr "മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:12
-#| msgid ""
-#| "If true, the server will listen to another port, instead of the default "
-#| "(5900). The port must be specified in the 'alternative_port' key."
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative-port' key."
-msgstr ""
-"true എങ്കില്‍, തനത് (5900) പോര്‍ട്ടിന് പകരം,സര്‍വര്‍ മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കും. ആ പോര്‍ട്ട് "
-"'alternative_port' കീയില്‍ വ്യക്തമാക്കിയിരിക്കണം."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:13
-msgid "Alternative port number"
-msgstr "മറ്റൊരു പോര്‍ട്ട് നമ്പര്‍"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:14
-#| msgid ""
-#| "The port which the server will listen to if the 'use_alternative_port' "
-#| "key is set to true. Valid values are in the range from 5000 to 50000."
-msgid ""
-"The port which the server will listen to if the 'use-alternative-port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"'use_alternative_port' കീ true ആയി സജ്ജമെങ്കില്‍, സര്‍വര്‍ ശ്രദ്ധിക്കുന്ന പോര്‍ട്ട്. 5000 മുതല്‍ "
-"50000 വരെയുള്ള പരിധിയിലുള്ളതാണു് ശരിയായ മൂല്ല്യങ്ങള്‍."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:15
-msgid "Require encryption"
-msgstr "എന്‍ക്രിപ്ഷന്‍ ആവശ്യമുണ്ട്"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:16
-msgid ""
-"If true, remote users accessing the desktop are required to support "
-"encryption. It is highly recommended that you use a client which supports "
-"encryption unless the intervening network is trusted."
-msgstr ""
-"സത്യമെങ്കില്‍, പണിയിടം ഉപ്യോഗിക്കാന്‍ കഴിയുന്ന വിദൂര ഉപയോക്താക്കക്ക് എന്‍ക്രിപ്ഷന് കഴിയാണം. "
-"കടന്നുവരുന്ന ശൃംഘല വിശ്വസിക്കാവുന്നതല്ലെങ്കില്‍ എന്‍ക്രിപ്ഷന്‍ സപ്പോര്‍ട്ട് ചെയ്യുന്ന ഒരു ക്ലയന്റിനെ മാത്രം "
-"ഉപയോഗിക്കുക."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:17
-msgid "Allowed authentication methods"
-msgstr "ഓഥന്‍റിക്കേഷന്‍ മാര്‍ഗ്ഗങ്ങള്‍ അനുവദിക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:18
-#| msgid ""
-#| "Lists the authentication methods with which remote users may access the "
-#| "desktop. There are two possible authentication methods; \"vnc\" causes "
-#| "the remote user to be prompted for a password (the password is specified "
-#| "by the vnc_password key) before connecting and \"none\" which allows any "
-#| "remote user to connect."
-msgid ""
-"Lists the authentication methods with which remote users may access the "
-"desktop.\n"
-"\n"
-"There are two possible authentication methods; \"vnc\" causes the remote "
-"user to be prompted for a password (the password is specified by the vnc-"
-"password key) before connecting and \"none\" which allows any remote user to "
-"connect."
-msgstr ""
-"റിമോട്ട് ഉപയോക്താക്കള്‍ക്കു് പണിയിടത്തിലേക്കു് പ്രവേശിക്കുവാന്‍ സഹായിക്കുന്ന ആധികാരികത ഉറപ്പാക്കല്‍ "
-"സംവിധാനങ്ങള്‍ ലഭ്യമാക്കുക.\n"
-"\n"
-"രണ്ടു് മാര്‍ഗ്ഗങ്ങള്‍ക്കാണു് സാധ്യത; കണക്ട് ചെയ്യുന്നതിനു് മുമ്പു് \"vnc\" "
-"റിമോട്ട് ഉപയോക്താവിനോടു് അടയാളവാക്ക് ആവശ്യപ്പെടുന്നു (vnc_password കീയാണു് അടയാളവാക്കു് "
-"നല്‍കുന്നതു്), കണക്ട് ചെയ്യുന്നതിനു് ഏതു് റിമോട്ട് ഉപയോക്താവിനെയും അനുവദിക്കുന്നതിനുള്ള\"none\"."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:21
-msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" ഓഥമന്‍റിക്കേഷന് പാസ്‍വേര്‍ഡ് ആവശ്യമുണ്ട്"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:22
-#| msgid ""
-#| "The password which the remote user will be prompted for if the \"vnc\" "
-#| "authentication method is used. The password specified by the key is "
-#| "base64 encoded."
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded.\n"
-"\n"
-"The special value of 'keyring' (which is not valid base64) means that the "
-"password is stored in the GNOME keyring."
-msgstr ""
-"\"vnc\" ആധികാരികത ഉറപ്പാക്കല്‍ സംവിധാനം ഉപയോഗിക്കുമ്പോള്‍ റിമോട്ട് ഉപയോക്താവിനോടു് "
-"ആവശ്യപ്പെടുന്ന അടയാളവാക്കു്. കീ വ്യക്തമാക്കിയിരിക്കുന്ന അടയാളവാക്കു് base64 "
-"എന്‍കോഡഡ് ആണു്.\n"
-"\n"
-"'keyring'-ന്റെ (ശരിയായ base64 അല്ല) പ്രത്യേക മൂല്ല്യത്തിനര്‍ത്ഥം, രഹസ്യവാക്ക് ഗ്നോം കീറിങില്‍ "
-"സൂക്ഷിച്ചിരിയ്ക്കുന്നു എന്നാകുന്നു."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:25
-msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "വിദൂരത്തുളള പണിയിടം-ന്‍റെ URL അയയ്ക്കേണ്ട ഈമെയില്‍ മേല്‍വിലാസം"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:26
-#| msgid ""
-#| "This key specifies the e-mail address to which the remote desktop URL "
-#| "should be sent if the user clicks on the URL in the Remote Desktop "
-#| "preferences dialog."
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Desktop Sharing preferences "
-"dialog."
-msgstr ""
-"ഈ കീ, വിദൂര പണിടമുന്‍ഗണനാ ഡയലോഗിലുള്ള URLല്‍ ഉപയോക്താവ് ക്ലിക് ചെയ്യുമ്പോള്‍ ഏത് "
-"മിന്നഞ്ചലിലേക്കാണ് പണിയിട URL അയയ്ക്കേണ്ടതെന്ന് സൂചിപ്പിക്കുന്നു"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:27
-msgid "Lock the screen when last user disconnect"
-msgstr "അവസാന ഉപയോക്താവും ബന്ധം വിച്ഛേദിക്കുമ്പോള്‍ സ്ക്രീന്‍ പൂട്ടുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:28
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "സത്യമെങ്കില്‍, അവസാന ഉപയോക്താവും ബന്ധം വിച്ഛേദിക്കുന്നതോടെ സ്ക്രീന്‍ പൂട്ടപ്പെടും."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:29
-msgid "When the status icon should be shown"
-msgstr "അവസ്ഥാചിഹ്നങ്ങള്‍ എപ്പോള്‍ കാണിക്കണം"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:30
-msgid ""
-"This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
-msgstr ""
-"ഈ കീ സ്ഥിതിചിഹ്നത്തിന്റെ രീതി നിയന്ത്രിക്കുന്നു.മൂന്ന് വഴികളാണ് ഉള്ളത്: \"എപ്പോഴും\" - ചിഹ്നം "
-"എപ്പോഴും അവിടെയുണ്ടാകും; \"ക്ലയന്റ്\" - ആരെങ്കിലും ബന്ധപ്പെട്ടിരിക്കുമ്പോള്‍ മാത്രം ചിഹ്നം "
-"കാണിക്കുന്നു,ഇതാണ് തനത് രീതി; \"ഒരിയ്ക്കലും\" - ഒരിയ്ക്കലും ചിഹ്നം കാണിക്കില്ല."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:31
-msgid "When true, disable the background on receive valid session"
-msgstr "സത്യമാണെങ്കില്‍, ഒരു വാളിഡ് സെഷന്‍ തുടങ്ങുമ്പോള്‍ പശ്ചാത്തലം നിര്‍വീര്യമാക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:32
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "റൌട്ടറുകളില്‍ പോര്‍ട്ട് ഫോര്‍വേഡ് ചെയ്യുന്നതിനു് UPNP ഉപയോഗിക്കണമോ എന്നു്"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:33
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
-msgstr ""
-"true എങ്കില്‍, റൌട്ടറില്‍ വിനോ ഉപയോഗിക്കുന്ന പോര്‍ട്ട് സ്വയമായി ഫോര്‍വേഡ് ചെയ്യുന്നതിനു് നമ്മള്‍ UPNP "
-"സമ്പ്രദായം ഉപയോഗിക്കുന്നു."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:34
-msgid "Whether we should disable the XDamage extension of X.org"
-msgstr "X.org-ന്റെ XDamage എക്സ്റ്റെന്‍ഷന്‍ പ്രവര്‍ത്തന രഹിതമാക്കണമോ എന്നു്"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:35
-msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
-msgstr ""
-"true എങ്കില്‍, X.org-ന്റെ XDamage എക്സ്റ്റെന്‍ഷന്‍ നമ്മള്‍ ഉപയോഗിക്കുകയില്ല. ത്രിഡി സംവിധാനങ്ങള്‍ "
-"ഉപയോഗിക്കുമ്പോള്‍, ചില വീഡിയോ ഡ്രൈവറുകളില്‍ ഈ എക്സ്റ്റെന്‍ഷന്‍ ശരിയായി പ്രവര്‍ത്തിക്കുന്നതല്ല. ഇവ "
-"പ്രവര്‍ത്തന രഹിതമാക്കിയാല്‍, ഈ സാഹചര്യങ്ങളില്‍ വിനോ പ്രവര്‍ത്തിക്കുന്നു, പക്ഷേ ചില തടസ്സങ്ങളുണ്ടാവാം."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:36
-msgid "Notify on connect"
-msgstr "കണക്ട് ചെയ്യുമ്പോള്‍ അറിയിക്കുക"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:37
-msgid "If true, we will notify, when the user connects to the system."
-msgstr "true എങ്കില്‍, സിസ്റ്റത്തിലേക്കു് ഉപയോക്താവു് കണക്ട് ചെയ്യുമ്പോള്‍, അറിയിയ്ക്കുന്നു."
-
 #: ../capplet/vino-preferences.ui.h:1
-#| msgid "Remote Desktop Preferences"
 msgid "Desktop Sharing Preferences"
 msgstr "വിദൂരത്തിലുളള പണിയിടം മുന്‍ഗണനകള്‍"
 
@@ -356,7 +113,6 @@ msgid "The router must have the UPnP feature enabled"
 msgstr "റൌട്ടറില്‍ UPnP വിശേഷത സജ്ജമാക്കേണ്ടതാണു്"
 
 #: ../capplet/vino-preferences.ui.h:13
-#| msgid "Notification Area"
 msgid "Show Notification Area Icon"
 msgstr "അറിയിപ്പുകള്‍ക്കുള്ള ഇടത്തിനുള്ള പ്രതിരൂപം കാണിയ്ക്കുക"
 
@@ -365,14 +121,229 @@ msgid "Al_ways"
 msgstr "_എപ്പോഴും"
 
 #: ../capplet/vino-preferences.ui.h:15
-#| msgid "One person is connected"
-#| msgid_plural "%d people are connected"
 msgid "_Only when someone is connected"
 msgstr "ഒരാള്‍ കണക്ട് ചെയ്യുമ്പോള്‍ _മാത്രം"
 
 #: ../capplet/vino-preferences.ui.h:16
 msgid "_Never"
 msgstr "_ഒരിക്കലുമില്ല"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:1
+msgid "Enable remote access to the desktop"
+msgstr "വിദൂരത്തുളള ഉപയോക്താക്കള്‍ക്ക് പണിയിടം കാണുവാന്‍ പ്രവര്‍ത്തന സജ്ജമാക്കുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:2
+msgid ""
+"If true, allows remote access to the desktop via the RFB protocol. Users on "
+"remote machines may then connect to the desktop using a VNC viewer."
+msgstr ""
+"true എന്നാണെങ്കില്‍, RFB സന്പ്രദായം വഴി ഡസ്ക്-ടോപ്പിലേക്ക് വിദൂരത്തുളള കംപ്യൂട്ടറുകള്‍ക്ക്  "
+"പ്രവേശനത്തിനുളള അനുവാദം നല്‍കുക. ഒരു vncviewer ഉപയോഗിച്ച് പിന്നീട് ഇവയ്ക് "
+"പണിയിടത്തിലേക്കു്കണക്ട് ചെയ്യാവുന്നതാണ്. "
+
+#: ../common/org.gnome.Vino.gschema.xml.h:3
+msgid "Prompt the user before completing a connection"
+msgstr "ഒരു കണക്ഷന്‍ പൂര്‍ത്തിയാക്കുന്നതിന് മുന്പ് ഉപയോക്താവിനെ അറിയിക്കുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:4
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിനെ ആഥിതേയന്‍ ബന്ധപ്പെടാന്‍ അനുവദിക്കുന്നത് വരെ കാത്ത് നിര്‍ത്തുക. "
+"പ്രധാനമായി അടയാളവാക്കിനാല്‍ സംരക്ഷിയ്ക്കപ്പെടാത്ത ബന്ധമാണെങ്കില്‍."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:5
+msgid "Only allow remote users to view the desktop"
+msgstr "വിദൂരത്തുളള ഉപയോക്താക്കള്‍ക്ക് മാത്രം പണിയിടം കാണുന്നതിന് അനുവദിക്കുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:6
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+"സത്യമെങ്കില്‍, വിദൂര ഉപയോക്താവിന് പണിയിടം കാണുവാന്‍ മാത്രം അനുവദിച്ചിരിക്കുന്നു. വിദൂര "
+"ഉപയോക്താവിന് കീബോഡോ മൗസോ ഉപയോഗിക്കാന്‍ കഴിയുകയില്ല."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:7
+msgid "Network interface for listening"
+msgstr "ശ്രദ്ധിക്കുന്നതിനുള്ള നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസ്"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:8
+msgid ""
+"If not set, the server will listen on all network interfaces.\n"
+"\n"
+"Set this if you want to accept connections only from some specific network "
+"interface. For example, eth0, wifi0, lo and so on."
+msgstr ""
+"സജ്ജമല്ലെങ്കില്‍, സര്‍വര്‍ എല്ലാ നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസുകളിലും ശ്രദ്ധിക്കുന്നു.\n"
+"\n"
+"നെറ്റ്‌വര്‍ക്ക് ഇന്റര്‍ഫെയിസില്‍ നിന്നും മാത്രം നിങ്ങള്‍ക്കു് കണക്ഷന്‍ സ്വീകരിച്ചാല്‍ മതിയെങ്കില്‍, ഇതു് "
+"സജ്ജമാക്കുക.ഉദാ: eth0, wifi0, lo, മുതലായവ"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:11
+msgid "Listen on an alternative port"
+msgstr "മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:12
+msgid ""
+"If true, the server will listen on another port, instead of the default "
+"(5900). The port must be specified in the 'alternative-port' key."
+msgstr ""
+"true എങ്കില്‍, തനത് (5900) പോര്‍ട്ടിന് പകരം,സര്‍വര്‍ മറ്റൊരു പോര്‍ട്ട് ശ്രദ്ധിക്കും. ആ പോര്‍ട്ട് "
+"'alternative_port' കീയില്‍ വ്യക്തമാക്കിയിരിക്കണം."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:13
+msgid "Alternative port number"
+msgstr "മറ്റൊരു പോര്‍ട്ട് നമ്പര്‍"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:14
+msgid ""
+"The port which the server will listen to if the 'use-alternative-port' key "
+"is set to true. Valid values are in the range of 5000 to 50000."
+msgstr ""
+"'use_alternative_port' കീ true ആയി സജ്ജമെങ്കില്‍, സര്‍വര്‍ ശ്രദ്ധിക്കുന്ന പോര്‍ട്ട്. 5000 മുതല്‍ "
+"50000 വരെയുള്ള പരിധിയിലുള്ളതാണു് ശരിയായ മൂല്ല്യങ്ങള്‍."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:15
+msgid "Require encryption"
+msgstr "എന്‍ക്രിപ്ഷന്‍ ആവശ്യമുണ്ട്"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:16
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"സത്യമെങ്കില്‍, പണിയിടം ഉപ്യോഗിക്കാന്‍ കഴിയുന്ന വിദൂര ഉപയോക്താക്കക്ക് എന്‍ക്രിപ്ഷന് കഴിയാണം. "
+"കടന്നുവരുന്ന ശൃംഘല വിശ്വസിക്കാവുന്നതല്ലെങ്കില്‍ എന്‍ക്രിപ്ഷന്‍ സപ്പോര്‍ട്ട് ചെയ്യുന്ന ഒരു ക്ലയന്റിനെ മാത്രം "
+"ഉപയോഗിക്കുക."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:17
+msgid "Allowed authentication methods"
+msgstr "ഓഥന്‍റിക്കേഷന്‍ മാര്‍ഗ്ഗങ്ങള്‍ അനുവദിക്കുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:18
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop.\n"
+"\n"
+"There are two possible authentication methods; \"vnc\" causes the remote "
+"user to be prompted for a password (the password is specified by the vnc-"
+"password key) before connecting and \"none\" which allows any remote user to "
+"connect."
+msgstr ""
+"റിമോട്ട് ഉപയോക്താക്കള്‍ക്കു് പണിയിടത്തിലേക്കു് പ്രവേശിക്കുവാന്‍ സഹായിക്കുന്ന ആധികാരികത ഉറപ്പാക്കല്‍ "
+"സംവിധാനങ്ങള്‍ ലഭ്യമാക്കുക.\n"
+"\n"
+"രണ്ടു് മാര്‍ഗ്ഗങ്ങള്‍ക്കാണു് സാധ്യത; കണക്ട് ചെയ്യുന്നതിനു് മുമ്പു് \"vnc\" റിമോട്ട് ഉപയോക്താവിനോടു് "
+"അടയാളവാക്ക് ആവശ്യപ്പെടുന്നു (vnc_password കീയാണു് അടയാളവാക്കു് നല്‍കുന്നതു്), കണക്ട് ചെയ്യുന്നതിനു് "
+"ഏതു് റിമോട്ട് ഉപയോക്താവിനെയും അനുവദിക്കുന്നതിനുള്ള\"none\"."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:21
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" ഓഥമന്‍റിക്കേഷന് പാസ്‍വേര്‍ഡ് ആവശ്യമുണ്ട്"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:22
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded.\n"
+"\n"
+"The special value of 'keyring' (which is not valid base64) means that the "
+"password is stored in the GNOME keyring."
+msgstr ""
+"\"vnc\" ആധികാരികത ഉറപ്പാക്കല്‍ സംവിധാനം ഉപയോഗിക്കുമ്പോള്‍ റിമോട്ട് ഉപയോക്താവിനോടു് "
+"ആവശ്യപ്പെടുന്ന അടയാളവാക്കു്. കീ വ്യക്തമാക്കിയിരിക്കുന്ന അടയാളവാക്കു് base64 എന്‍കോഡഡ് ആണു്.\n"
+"\n"
+"'keyring'-ന്റെ (ശരിയായ base64 അല്ല) പ്രത്യേക മൂല്ല്യത്തിനര്‍ത്ഥം, രഹസ്യവാക്ക് ഗ്നോം കീറിങില്‍ "
+"സൂക്ഷിച്ചിരിയ്ക്കുന്നു എന്നാകുന്നു."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:25
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "വിദൂരത്തുളള പണിയിടം-ന്‍റെ URL അയയ്ക്കേണ്ട ഈമെയില്‍ മേല്‍വിലാസം"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:26
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
+"dialog."
+msgstr ""
+"ഈ കീ, വിദൂര പണിടമുന്‍ഗണനാ ഡയലോഗിലുള്ള URLല്‍ ഉപയോക്താവ് ക്ലിക് ചെയ്യുമ്പോള്‍ ഏത് "
+"മിന്നഞ്ചലിലേക്കാണ് പണിയിട URL അയയ്ക്കേണ്ടതെന്ന് സൂചിപ്പിക്കുന്നു"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:27
+msgid "Lock the screen when last user disconnect"
+msgstr "അവസാന ഉപയോക്താവും ബന്ധം വിച്ഛേദിക്കുമ്പോള്‍ സ്ക്രീന്‍ പൂട്ടുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:28
+msgid ""
+"If true, the screen will be locked after the last remote client disconnects."
+msgstr "സത്യമെങ്കില്‍, അവസാന ഉപയോക്താവും ബന്ധം വിച്ഛേദിക്കുന്നതോടെ സ്ക്രീന്‍ പൂട്ടപ്പെടും."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:29
+msgid "When the status icon should be shown"
+msgstr "അവസ്ഥാചിഹ്നങ്ങള്‍ എപ്പോള്‍ കാണിക്കണം"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:30
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - the icon will always be present; \"client\" - the icon will "
+"only be present when someone is connected (this is the default behavior); "
+"\"never\" - the icon will not be present."
+msgstr ""
+"ഈ കീ സ്ഥിതിചിഹ്നത്തിന്റെ രീതി നിയന്ത്രിക്കുന്നു.മൂന്ന് വഴികളാണ് ഉള്ളത്: \"എപ്പോഴും\" - ചിഹ്നം "
+"എപ്പോഴും അവിടെയുണ്ടാകും; \"ക്ലയന്റ്\" - ആരെങ്കിലും ബന്ധപ്പെട്ടിരിക്കുമ്പോള്‍ മാത്രം ചിഹ്നം "
+"കാണിക്കുന്നു,ഇതാണ് തനത് രീതി; \"ഒരിയ്ക്കലും\" - ഒരിയ്ക്കലും ചിഹ്നം കാണിക്കില്ല."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:31
+msgid "Whether to disable the desktop background when a user is connected"
+msgstr "ഒരു യൂസര്‍ കണക്റ്റ് ചെയ്യുമ്പോള്‍ പണിയിടത്തിന്റെ പശ്ചാത്തലം ഒഴിവാക്കണോയെന്ന് "
+
+#: ../common/org.gnome.Vino.gschema.xml.h:32
+msgid ""
+"When true, disable the desktop background and replace it with a single block "
+"of color when a user successfully connects."
+msgstr "true എങ്കില്‍ പണിയിട പശ്ചാത്തലം  ഒഴിവാക്കി പകരം  ഒരു കളര്‍ ബ്ലോക്ക് ഉപയോഗിക്കുക "
+
+#: ../common/org.gnome.Vino.gschema.xml.h:33
+msgid "Whether a UPnP router should be used to forward and open ports"
+msgstr "റൌട്ടറുകളില്‍ പോര്‍ട്ട് ഫോര്‍വേഡ് ചെയ്യുന്നതിനു് UPNP ഉപയോഗിക്കണമോ എന്നു്"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid ""
+"If true, request that a UPnP-capable router should forward and open the port "
+"used by Vino."
+msgstr ""
+"true എങ്കില്‍ വിനോ ഉപയോഗിക്കുന്ന പോര്‍ട്ട് ഒരു  UPnP സജ്ജമായ റൗട്ടര്‍ ഫോര്‍വേര്‍ഡ് ചെയ്യുകയും  "
+"തുറക്കുകയും  ചെയ്യണം "
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr "X.org-ന്റെ XDamage എക്സ്റ്റെന്‍ഷന്‍ പ്രവര്‍ത്തന രഹിതമാക്കണമോ എന്നു്"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:36
+msgid ""
+"If true, do not use the XDamage extension of X.org. This extension does not "
+"work properly on some video drivers when using 3D effects. Disabling it will "
+"make Vino work in these environments, with slower rendering as a side effect."
+msgstr ""
+"true എങ്കില്‍, X.org-ന്റെ XDamage എക്സ്റ്റെന്‍ഷന്‍ നമ്മള്‍ ഉപയോഗിക്കുകയില്ല. ത്രിഡി സംവിധാനങ്ങള്‍ "
+"ഉപയോഗിക്കുമ്പോള്‍, ചില വീഡിയോ ഡ്രൈവറുകളില്‍ ഈ എക്സ്റ്റെന്‍ഷന്‍ ശരിയായി പ്രവര്‍ത്തിക്കുന്നതല്ല. ഇവ "
+"പ്രവര്‍ത്തന രഹിതമാക്കിയാല്‍, ഈ സാഹചര്യങ്ങളില്‍ വിനോ പ്രവര്‍ത്തിക്കുന്നു, പക്ഷേ ചില തടസ്സങ്ങളുണ്ടാവാം."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:37
+msgid "Notify on connect"
+msgstr "കണക്ട് ചെയ്യുമ്പോള്‍ അറിയിക്കുക"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:38
+msgid "If true, show a notification when a user connects to the system."
+msgstr "true എങ്കില്‍, സിസ്റ്റത്തിലേക്കു് ഉപയോക്താവു് കണക്ട് ചെയ്യുമ്പോള്‍, അറിയിയ്ക്കുന്നു."
+
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "വിദൂര പണിയിടം പങ്കിടുന്നതിനുള്ള അടയാളവാക്ക്"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -450,20 +421,24 @@ msgstr ""
 "നിങ്ങളുടെ Xserver, XTest extension പിന്തുണയ്ക്കുന്നില്ല - വിദൂര പണിയിടം കാണുവാന്‍-മാത്രം "
 "ആയിരിക്കും\n"
 
-#: ../server/vino-main.c:298
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:301
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
 msgstr "'എന്റെ പണിയിടം പങ്കിടുക' എന്ന വിശേഷതയ്ക്കു്, ട്യൂബ് മോഡില്‍ ആരംഭിയ്ക്കുക"
 
-#: ../server/vino-main.c:304
+#: ../server/vino-main.c:307
 msgid "- VNC Server for GNOME"
 msgstr "- ഗ്നോമിനുള്ള വിഎന്‍സി സര്‍വര്‍"
 
-#: ../server/vino-main.c:312
-msgid "Run 'vino-server --help' to see a full list of available command line options"
-msgstr "ലഭ്യമായ ആജ്ഞാമേഘലാ ഉത്തരവുകള്‍ ഏതൊക്കെയെന്നറിയാന്‍ 'vino-server --help പ്രവര്‍ത്തിപ്പിക്കുക"
+#: ../server/vino-main.c:315
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr ""
+"ലഭ്യമായ ആജ്ഞാമേഘലാ ഉത്തരവുകള്‍ ഏതൊക്കെയെന്നറിയാന്‍ 'vino-server --help പ്രവര്‍ത്തിപ്പിക്കുക"
 
-#: ../server/vino-main.c:333
-#| msgid "GNOME Remote Desktop Server"
+#: ../server/vino-main.c:336
 msgid "GNOME Desktop Sharing"
 msgstr "ഗ്നോം പണിയിട പങ്കിടല്‍"
 
@@ -488,84 +463,76 @@ msgstr "%s-ന്‍റെ %s-ലെ വിദൂര പണിയിടം"
 
 #: ../server/vino-prefs.c:111
 #, c-format
-#| msgid "Received signal %d, exiting...\n"
 msgid "Received signal %d, exiting."
 msgstr "%d സിഗ്നല്‍ ലഭിച്ചു, പുറത്തു് കടക്കുന്നു."
 
-#: ../server/vino-prompt.c:141
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "സ്ക്രീന്‍"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "ഏത് സ്ക്രീന്‍ ഉപയോഗിക്കണമെന്ന കാണിക്കുക (പ്രോമ്പ്റ്റ് ഉളള സ്ക്രീന്‍)"
 
-#: ../server/vino-prompt.c:345
+#: ../server/vino-prompt.c:263 ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "libnotify തുടങ്ങുന്നതില്‍ പിശക്\n"
+
+#: ../server/vino-prompt.c:282
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
-msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ ശ്രമിക്കുന്നു."
+msgstr ""
+"കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ ശ്രമിക്കുന്നു."
 
-#: ../server/vino-prompt.ui.h:1
-msgid "Question"
-msgstr "ചോദ്യം"
-
-#: ../server/vino-prompt.ui.h:2
+#: ../server/vino-prompt.c:285
 msgid "Another user is trying to view your desktop."
 msgstr "മറ്റൊരു ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനായി ശ്രമിക്കുന്നു."
 
-#: ../server/vino-prompt.ui.h:3
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"മറ്റൊരു കംപ്യൂട്ടറിലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ "
-"ശ്രമിക്കുന്നു."
-
-#: ../server/vino-prompt.ui.h:4
-msgid "Do you want to allow them to do so?"
-msgstr "നിങ്ങള്‍ക്ക് ഇതിനായി ഇവരെ അനുവദിക്കണമോ?"
-
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:90
-msgid "_Refuse"
+#: ../server/vino-prompt.c:291
+msgid "Refuse"
 msgstr "നിഷേധിക്കുക (_R)"
 
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "അനുവദിക്കുക (_A)"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "സ്വീകരിക്കുക"
 
-#: ../server/vino-server.c:162 ../server/vino-server.c:185
+#: ../server/vino-server.c:164 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "പാതയിലേക്കുള്ള ബന്ധം സ്ഥാപിയ്കുവാന്‍ കഴിയുന്നില്ല:%s\n"
 
 #: ../server/vino-server.desktop.in.in.h:2
-#| msgid "GNOME Remote Desktop Server"
 msgid "GNOME Desktop Sharing Server"
 msgstr "ഗ്നോം പണിയിട പങ്കിടല്‍ സര്‍വര്‍"
 
-#: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "vnc;share;remote;"
+
+#: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
 msgstr "പണിയിടം പങ്കിടാനാകും"
 
-#: ../server/vino-status-icon.c:111
+#: ../server/vino-status-icon.c:105
 #, c-format
-#| msgid "Another user is viewing your desktop"
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "മറ്റൊരുപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നു"
 msgstr[1] "%d ഉപയോക്താക്കള്‍ നിങ്ങളുടെ പണിയിടം കാണുന്നു"
 
-#: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
 msgid "Error displaying preferences"
 msgstr "മുന്‍ഗണനകള്‍ പ്രദര്‍ശിപ്പിക്കുന്നതില്‍ പിശക്"
 
-#: ../server/vino-status-icon.c:234 ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
 msgid "Error displaying help"
 msgstr "സഹായം ലഭ്യമാക്കുന്നതില്‍ പിശക്"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -602,92 +569,87 @@ msgstr ""
 "MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
 msgstr ""
 "അനി പീറ്റര്‍ <apeter@redhat.com>\n"
 "പ്രവീണ്‍ <pravin.vet@gmail.com>"
 
-#: ../server/vino-status-icon.c:288
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "നിങ്ങളുടെ പണിയിടം മറ്റെല്ലാ ഉപയോക്താക്കളുമായും പങ്കിടുക"
 
-#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "'%s'-നെ വിച്ഛേദിയ്ക്കണമെന്ന് ഉറപ്പാണോ?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s'-ല്‍ നിന്നുള്ള വിദൂര ഉപയോക്താവുമായുള്ള ബന്ധം വിച്ഛേദിക്കപ്പെടും.വേണോ?"
 
-#: ../server/vino-status-icon.c:364
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "എല്ലാ ക്ലയന്റുകളുമായുമുള്ള ബന്ധം വിച്ഛേദിക്കണമെന്ന് ഉറപ്പാണോ?"
 
-#: ../server/vino-status-icon.c:366
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "എല്ലാ വിദൂര ഉപയോക്താക്കളുമായുള്ള ബന്ധവും വിച്ഛേദിയ്ക്കപ്പെടും.വേണോ?"
 
-#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "വിച്ഛേദിക്കുക"
 
-#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "മുന്‍ഗണനകള്‍ _P"
 
-#: ../server/vino-status-icon.c:419
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "എല്ലാം വിച്ഛേദിക്കുക"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "വിച്ഛേദിക്കുക %s"
 
-#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "_സഹായം"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "_സംബന്ധിച്ചു്"
 
-#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "libnotify തുടങ്ങുന്നതില്‍ പിശക്\n"
-
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "മറ്റൊരുപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നു"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നു."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:634
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "മറ്റൊരുപയോക്താവ് നിങ്ങളുടെ കമ്പ്യൂട്ടര്‍ നിയന്ത്രിക്കുന്നു"
 
-#: ../server/vino-status-icon.c:636
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "കംപ്യൂട്ടര്‍ '%s'-ലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം നിയന്ത്രിക്കുന്നു"
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "അറിയിപ്പ് കുമിള കാണിക്കുന്നതില്‍ പിശക്: %s\n"
 
-#: ../server/vino-status-tube-icon.c:235
+#: ../server/vino-status-tube-icon.c:227
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "വിദൂര ഉപയോക്താവു '%s' വിച്ഛേദിക്കപ്പെടും.വേണോ?"
@@ -719,6 +681,14 @@ msgstr "'%s' നിങ്ങളുടെ പണിയിടം നിയന്�
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "സ്ക്രീനിലേക്ക് കണക്ട് ചെയ്യുന്നതിനായി '%s'-നായി കാത്തിരിക്കുന്നു."
+
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "അനുവദിക്കുക (_A)"
+
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "നിഷേധിക്കുക (_R)"
 
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
@@ -777,8 +747,10 @@ msgid "- Updates Vino password"
 msgstr "- വീനോ അടയാളവാക്ക് അപ്ഡേറ്റ് ചെയ്യുന്നു"
 
 #: ../tools/vino-passwd.c:201
-msgid "Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr "ലഭ്യമായ ആജ്ഞാമേഘലാ ഉത്തരവുകള്‍ ഏതൊക്കെയെന്നറിയാന്‍  'vino-passwd --help' പ്രവര്‍ത്തിപ്പിക്കുക"
+msgid ""
+"Run 'vino-passwd --help' to see a full list of available command line options"
+msgstr ""
+"ലഭ്യമായ ആജ്ഞാമേഘലാ ഉത്തരവുകള്‍ ഏതൊക്കെയെന്നറിയാന്‍  'vino-passwd --help' പ്രവര്‍ത്തിപ്പിക്കുക"
 
 #: ../tools/vino-passwd.c:208
 #, c-format
@@ -790,47 +762,22 @@ msgstr "വീനോ പതിപ്പ് %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "പിശക്:നിങ്ങള്‍ക്ക് വീനോയുടെ അടയാളവാക്ക് മാറ്റുവാന്‍വേണ്ട അനുവാധമില്ല.\n"
 
-#~| msgid "Send this command by email"
-#~ msgid "_Send address by email"
-#~ msgstr "_വിലാസം ഈമെയില്‍ വഴി അയയ്കുക"
-
-#~ msgid "_Copy address to clipboard"
-#~ msgstr "വിലാസം ക്ലിപ്ബോര്‍ഡിലേക്ക് _പകര്‍ത്തുക"
-
-#~ msgid "Remote Desktop"
-#~ msgstr "വിദൂരത്തിലുളള പണിയിടം"
-
-#~ msgid "Al_ways display an icon"
-#~ msgstr "എപ്പോഴും വേണ്ട ചിഹ്നം കാട്ടുക‌ _w"
-
-#~ msgid "Maximum size: 8 characters"
-#~ msgstr "ഏറ്റവും കൂടിയ വ്യാപ്തി: 8 അക്ഷരങ്ങള്‍"
-
-#~ msgid "You will be queried to allow or to refuse every incoming connection"
+#~ msgid ""
+#~ "If true, we will use UPNP protocol to automatically forward the port used "
+#~ "by vino in the router."
 #~ msgstr ""
-#~ "അകത്തേക്കുള്ള എല്ലാ കണക്ഷനുകളും സ്വീകരിക്കുന്നതിനും നിരസിക്കുന്നതിനും നിങ്ങളെ ചോദ്യം ചെയ്യുന്നു"
+#~ "true എങ്കില്‍, റൌട്ടറില്‍ വിനോ ഉപയോഗിക്കുന്ന പോര്‍ട്ട് സ്വയമായി ഫോര്‍വേഡ് ചെയ്യുന്നതിനു് നമ്മള്‍ "
+#~ "UPNP സമ്പ്രദായം ഉപയോഗിക്കുന്നു."
 
-#~ msgid "_Configure network automatically to accept connections"
-#~ msgstr "കണക്ഷനുകള്‍ സ്വയമായി സ്വീകരിക്കുന്നതിനായി നെറ്റ്‌വര്‍ക്ക് _ക്രമീകരിക്കുക"
-
-#~ msgid "_Never display an icon"
-#~ msgstr "യാതൊരു ചിഹ്നവും കാണിക്കണ്ട"
-
-#~ msgid "_Only display an icon when there is someone connected"
-#~ msgstr "‌_Oആരെങ്കിലും ബന്ധപ്പെട്ടിരിക്കുമ്പോള്‍ മാത്രം ചിഹ്നം കാണിക്കുക"
-
-#~ msgid "Remote Desktop server already running; exiting ...\n"
-#~ msgstr "വിദൂര പണിയിടം നിലവില്‍ പ്രവര്‍ത്തിക്കുന്നു; പുറത്തേക്ക് പോകുന്നു...\n"
-
-#~ msgid "GNOME Remote Desktop"
-#~ msgstr "ഗ്നോം വിദൂര പണിയിടം"
-
-#~ msgid "Enable remote desktop access"
-#~ msgstr "വിദൂരത്തുളള പണിയിടം പ്രവേശനം സജ്ജമാക്കുക"
+#~ msgid "Question"
+#~ msgstr "ചോദ്യം"
 
 #~ msgid ""
-#~ "Error while communicating with GConf. Are you logged into a GNOME session?"
-#~ msgstr "GConf-മായി ബന്ധപ്പെടുമ്പോള്‍ പിശക്. നിങ്ങള്‍ ഒരു ഗ്നോം സെഷനില്‍ ലോഗിന്‍ ചെയ്തിട്ടുണ്ടോ?"
+#~ "A user on another computer is trying to remotely view or control your "
+#~ "desktop."
+#~ msgstr ""
+#~ "മറ്റൊരു കംപ്യൂട്ടറിലുളള ഉപയോക്താവ് നിങ്ങളുടെ പണിയിടം കാണുന്നതിനോ നിയന്ത്രിക്കുന്നതിനോ "
+#~ "ശ്രമിക്കുന്നു."
 
-#~ msgid "Error message:"
-#~ msgstr "പിശക് സന്ദേശം:"
+#~ msgid "Do you want to allow them to do so?"
+#~ msgstr "നിങ്ങള്‍ക്ക് ഇതിനായി ഇവരെ അനുവദിക്കണമോ?"
