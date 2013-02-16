@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2013-01-14 10:11+0000\n"
-"PO-Revision-Date: 2013-01-27 13:28+0900\n"
+"POT-Creation-Date: 2013-01-28 19:57+0000\n"
+"PO-Revision-Date: 2013-02-16 13:36+0900\n"
 "Last-Translator: Gheyret Kenji <gheyret@gmail.com>\n"
 "Language-Team: GNOME Uighur Translation Project <gnome-uighur@yahoogroups.com>\n"
 "Language: \n"
@@ -61,9 +61,69 @@ msgstr "ئۈستەلئۈستىنى ھەمبەھىرلەش"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "يىراقتىكى ئۈستەلئۈستىنى كۆرسىتىش ئۇسۇلىنى تاللاش پروگراممىسى"
 
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "يىراقتىكى ئۈستەلئۈستى ھەمبەھىرىنىڭ ئىمى"
+#: ../capplet/vino-preferences.ui.h:1
+msgid "Desktop Sharing Preferences"
+msgstr "ئۈستەلئۈستى ھەمبەھىرى مايىللىقى"
+
+#: ../capplet/vino-preferences.ui.h:2
+msgid "Sharing"
+msgstr "ھەمبەھىر"
+
+#: ../capplet/vino-preferences.ui.h:3
+msgid "Some of these preferences are locked down"
+msgstr "بىر قىسىم مايىللىق قۇلۇپلاندى"
+
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "باشقىلارنىڭ كومپيۇتېرىڭىزنى كۆرۈشىگە رۇخسەت قىلىش(_V)"
+
+#: ../capplet/vino-preferences.ui.h:5
+msgid "Your desktop will be shared"
+msgstr "كومپيۇتېرىڭىز ھەمبەھىرلىنىدۇ"
+
+#: ../capplet/vino-preferences.ui.h:6
+msgid "_Allow other users to control your desktop"
+msgstr "باشقا ئىشلەتكۈچىلەرنىڭ كومپيۇتېرىڭىزنى كونترول قىلىشىغا رۇخسەت قىلىڭ(_A)"
+
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "يىراقتىكى ئىشلەتكۈچى چاشقىنەك ۋە ھەرپتاختىڭىزنى باشقۇرالايدۇ."
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Security"
+msgstr "بىخەتەرلىك"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "_You must confirm each access to this machine"
+msgstr "مەزكۇر كومپيۇتېرغا بولغان ھەر بىر زىيارەتنى جەزملە(_Y)"
+
+#: ../capplet/vino-preferences.ui.h:10
+msgid "_Require the user to enter this password:"
+msgstr "ئىشلەتكۈچى بۇ ئىمنى كىرگۈزۈشى زۆرۈر(_R):"
+
+#: ../capplet/vino-preferences.ui.h:11
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "UPnP يېتەكلىگۈچنىڭ ئوچۇق ۋە ئۇلاپ تارقىتىدىغان ئېغىزنى ئۆزلۈكىدىن سەپلەيدۇ(_C)"
+
+#: ../capplet/vino-preferences.ui.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "router نىڭ UPnP ئىقتىدارى ئىناۋەتلىك قىلىنىشى كېرەك"
+
+#: ../capplet/vino-preferences.ui.h:13
+msgid "Show Notification Area Icon"
+msgstr "ئۇقتۇرۇش رايونى سىنبەلگىسىنى كۆرسىتىش"
+
+#: ../capplet/vino-preferences.ui.h:14
+msgid "Al_ways"
+msgstr "ھەمىشە(_W)"
+
+#: ../capplet/vino-preferences.ui.h:15
+msgid "_Only when someone is connected"
+msgstr "پەقەت بىرەرى باغلانغاندىلا(_O)"
+
+#: ../capplet/vino-preferences.ui.h:16
+msgid "_Never"
+msgstr "ھەرگىز(_N)"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -218,13 +278,13 @@ msgstr "ئەگەر true بولسا، بىر ئىشلەتكۈچى باغلانغ�
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid "Whether a UPnP router should be used to forward and open ports"
-msgstr ""
+msgstr "UPnP يېتەكلىگۈچى ئوچۇق ۋە ئۇلاپ تارقىتىدىغان ئېغىزنى ئىشلەتسۇنمۇ"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
 msgid ""
 "If true, request that a UPnP-capable router should forward and open the port "
 "used by Vino."
-msgstr ""
+msgstr "ئەگەر true بولسا،  UPnP ئىقتىدارى بار يېتەكلىگۈچ Vino ئىشلەتكەن ئېغىزنى ئېچىپ ئۇلاپ تارقىتىدۇ."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
@@ -245,69 +305,9 @@ msgstr "باغلانغاندا ئۇقتۇرسۇن"
 msgid "If true, show a notification when a user connects to the system."
 msgstr "ئەگەر true بولسا، ئىشلەتكۈچى سىستېمىغا باغلانغاندا، ئۇقتۇرۇش قىلىدۇ."
 
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "ئۈستەلئۈستى ھەمبەھىرى مايىللىقى"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "ھەمبەھىر"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "بىر قىسىم مايىللىق قۇلۇپلاندى"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "باشقىلارنىڭ كومپيۇتېرىڭىزنى كۆرۈشىگە رۇخسەت قىلىش(_V)"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "كومپيۇتېرىڭىز ھەمبەھىرلىنىدۇ"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "باشقا ئىشلەتكۈچىلەرنىڭ كومپيۇتېرىڭىزنى كونترول قىلىشىغا رۇخسەت قىلىڭ(_A)"
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "يىراقتىكى ئىشلەتكۈچى چاشقىنەك ۋە ھەرپتاختىڭىزنى باشقۇرالايدۇ."
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "بىخەتەرلىك"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "مەزكۇر كومپيۇتېرغا بولغان ھەر بىر زىيارەتنى جەزملە(_Y)"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "ئىشلەتكۈچى بۇ ئىمنى كىرگۈزۈشى زۆرۈر(_R):"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "UPnP يېتەكلىگۈچنىڭ ئوچۇق ۋە ئۇلاپ تارقىتىدىغان ئېغىزنى ئۆزلۈكىدىن سەپلەيدۇ(_C)"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "router نىڭ UPnP ئىقتىدارى ئىناۋەتلىك قىلىنىشى كېرەك"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "ئۇقتۇرۇش رايونى سىنبەلگىسىنى كۆرسىتىش"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "ھەمىشە(_W)"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "پەقەت بىرەرى باغلانغاندىلا(_O)"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "ھەرگىز(_N)"
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "يىراقتىكى ئۈستەلئۈستى ھەمبەھىرىنىڭ ئىمى"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -351,7 +351,7 @@ msgstr "ئىجراچان تۈر ئەمەس"
 
 #: ../server/smclient/eggsmclient.c:226
 msgid "Disable connection to session manager"
-msgstr "ئەڭگىمە باشقۇرغۇچقا باغلىنىشنى چەكلە"
+msgstr "ئەڭگىمە باشقۇرغۇچقا باغلىنىشنى ئىناۋەتسىز قىل"
 
 #: ../server/smclient/eggsmclient.c:229
 msgid "Specify file containing saved configuration"
@@ -381,7 +381,7 @@ msgstr "ئەڭگىمە باشقۇرغۇ تاللانمىلىرى كۆرسەت"
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
-msgstr "سىزنىڭ XServer ئىڭىز Xtest نىڭ كېڭەيتىلمىسىنى قوللىمايدۇ - يىراقتىكى كومپيۇتېرنى پەقەت كۆرۈشكىلا بولىدۇ\n"
+msgstr "سىزنىڭ XServer ىڭىز Xtest نىڭ كېڭەيتىلمىسىنى قوللىمايدۇ - يىراقتىكى كومپيۇتېرنى پەقەت كۆرۈشكىلا بولىدۇ\n"
 
 #. Tube mode uses Telepathy's Tubes to share a user's desktop directly
 #. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
@@ -427,48 +427,41 @@ msgstr "%s@%s نىڭ يىراقتىكى ئۈستەلئۈستى"
 msgid "Received signal %d, exiting."
 msgstr "%d دېگەن سىگنالنى تاپشۇرۇۋالدى، چېكىنىۋاتىدۇ."
 
-#: ../server/vino-prompt.c:141
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "ئېكران"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "كىرگۈزۈشنى كۆرسىتىدىغان ئېكران"
 
-#: ../server/vino-prompt.c:345
+#: ../server/vino-prompt.c:263 ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "libnotify دەسلەپلەشتۈرۈشتە خاتالىق كۆرۈلدى\n"
+
+#: ../server/vino-prompt.c:282
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr "كومپيۇتېر %s ئۈستىدىكى مەلۇم ئىشلەتكۈچى يىراقتىن سىزنىڭ كومپيۇتېرىڭىزنى كۆرمەكچى ياكى كونترول قىلماقچى"
 
-#: ../server/vino-prompt.ui.h:1
-msgid "Question"
-msgstr "سوئال"
-
-#: ../server/vino-prompt.ui.h:2
+#: ../server/vino-prompt.c:285
 msgid "Another user is trying to view your desktop."
 msgstr "باشقا ئىشلەتكۈچى ئۈستەلئۈستىڭىزنى كۆرمەكچى"
 
-#: ../server/vino-prompt.ui.h:3
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr "باشقا كومپيۇتېر ئۈستىدىكى مەلۇم ئىشلەتكۈچى يىراقتىن سىزنىڭ كومپيۇتېرىڭىزنى كۆرمەكچى ياكى كونترول قىلماقچى"
+#: ../server/vino-prompt.c:291
+#| msgid "_Refuse"
+msgid "Refuse"
+msgstr "رەت قىل"
 
-#: ../server/vino-prompt.ui.h:4
-msgid "Do you want to allow them to do so?"
-msgstr "ئۇلارنىڭ شۇنداق قىلىشىغا يول قويامسىز؟"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "قوشۇل"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:90
-msgid "_Refuse"
-msgstr "رەت قىلىش(_R)"
-
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "يول قويۇش(_A)"
-
-#: ../server/vino-server.c:162 ../server/vino-server.c:185
+#: ../server/vino-server.c:164 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "باش لىنىيىگە باشلىنىشنى ئېچىش مەغلۇپ بولدى: %s\n"
@@ -479,27 +472,27 @@ msgstr "گىنوم ئۈستەلئۈستى ھەمبەھىر مۇلازىمېتى�
 
 #: ../server/vino-server.desktop.in.in.h:3
 msgid "vnc;share;remote;"
-msgstr "vnc؛share؛remote؛ھەمبەھىر؛يىراق؛"
+msgstr "vnc;share;remote;ھەمبەھىر;يىراق;"
 
-#: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
+#: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
 msgstr "ئۈستەلئۈستى ھەمبەھىرى قوزغىتىلغان"
 
-#: ../server/vino-status-icon.c:111
+#: ../server/vino-status-icon.c:105
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "%d كىشى ئۈستەلئۈستىڭىزنى كۆرۈۋاتىدۇ"
 
-#: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
 msgid "Error displaying preferences"
 msgstr "مايىللىقنى كۆرسىتىشتە خاتالىق كۆرۈلدى"
 
-#: ../server/vino-status-icon.c:234 ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
 msgid "Error displaying help"
 msgstr "ياردەمنى كۆرسىتىشتە خاتالىق كۆرۈلدى"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -527,92 +520,87 @@ msgstr "GNU ئادەتتىكى ئاممىۋى ئىجازەتنامە ئىككى�
 "02110-1301\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
 msgstr "Gheyret Kenji <gheyret@gmail.com>\n"
 "Sahran<sahran@live.com>\n"
 "Muhemmed Erdem <misran_erdem@hotmail.com>"
 
-#: ../server/vino-status-icon.c:288
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "ئۈستەلئۈستىڭىزنى باشقا ئىشلەتكۈچىلەرگە ھەمبەھىرلەڭ"
 
-#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "راستىنىلا «%s» نىڭ باغلىنىشىنى ئۈزەمسىز؟"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "‹%s› دىكى ئىشلەتكۈچى  ئۈزۈلىدۇ. شۇنداقمۇ؟"
 
-#: ../server/vino-status-icon.c:364
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "راستىنىلا ھەممە خېرىدار باغلىنىشىنى ئۈزەمسىز؟"
 
-#: ../server/vino-status-icon.c:366
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "يىراقتىكى ھەممە ئىشلەتكۈچى ئۈزۈلىدۇ. شۇنداقمۇ؟"
 
-#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "ئۈز"
 
-#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "مايىللىق(_P)"
 
-#: ../server/vino-status-icon.c:419
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "ھەممىنى ئۈز"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s نى ئۈز"
 
-#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "ياردەم(_H)"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "ھەققىدە(_A)"
 
-#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "libnotify دەسلەپلەشتۈرۈشتە خاتالىق كۆرۈلدى\n"
-
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "باشقا بىر ئىشلەتكۈچى ئۈستەلئۈستىڭىزنى كۆرۈۋاتىدۇ."
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "‹%s› كومپيۇتېردىكى بىر ئىشلەتكۈچى ئۈستەلئۈستىڭىزنى يىراقتىن كۆرۈۋاتىدۇ."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:634
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "باشقا بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى يىراقتىن باشقۇرۇۋاتىدۇ."
 
-#: ../server/vino-status-icon.c:636
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "‹%s› كومپيۇتېردىكى بىر ئىشلەتكۈچى كومپيۇتېرىڭىزنى يىراقتىن باشقۇرۇۋاتىدۇ."
 
-#: ../server/vino-status-icon.c:666 ../server/vino-status-tube-icon.c:439
+#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "كۆپۈكچە ئۇقتۇرۇشنى كۆرسىتىۋاتقاندا خاتالىق كۆرۈلدى: %s\n"
 
-#: ../server/vino-status-tube-icon.c:235
+#: ../server/vino-status-tube-icon.c:227
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "يىراقتىكى ئىشلەتكۈچى ‹%s› ئۈزۈلىدۇ. شۇنداقمۇ؟"
@@ -644,6 +632,14 @@ msgstr "‹%s› كومپيۇتېرىڭىزنى يىراقتىن باشقۇرۇ�
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "‹%s› نىڭ ئېكرانغا باغلىنىشىنى كۈتۈۋاتىدۇ."
+
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "يول قويۇش(_A)"
+
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "رەت قىلىش(_R)"
 
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
@@ -714,6 +710,19 @@ msgstr "VINO نەشرى %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "خاتالىق: Vino نىڭ ئىمىنى ئۆزگەرتىشكە ھوقۇقىڭىز يەتمەيدۇ.\n"
+
+#~ msgid "Question"
+#~ msgstr "سوئال"
+
+#~ msgid ""
+#~ "A user on another computer is trying to remotely view or control your "
+#~ "desktop."
+#~ msgstr ""
+#~ "باشقا كومپيۇتېر ئۈستىدىكى مەلۇم ئىشلەتكۈچى يىراقتىن سىزنىڭ "
+#~ "كومپيۇتېرىڭىزنى كۆرمەكچى ياكى كونترول قىلماقچى"
+
+#~ msgid "Do you want to allow them to do so?"
+#~ msgstr "ئۇلارنىڭ شۇنداق قىلىشىغا يول قويامسىز؟"
 
 #~ msgid ""
 #~ "If true, we will use UPNP protocol to automatically forward the port used "
