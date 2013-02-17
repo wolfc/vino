@@ -12,8 +12,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-31 20:38+0100\n"
-"PO-Revision-Date: 2013-01-31 20:39+0100\n"
+"POT-Creation-Date: 2013-02-17 21:20+0100\n"
+"PO-Revision-Date: 2013-02-17 21:21+0100\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -754,11 +754,11 @@ msgstr "Zmienianie hasła programu Vino.\n"
 
 #: ../tools/vino-passwd.c:151
 msgid "Enter new Vino password: "
-msgstr "Proszę wprowadzić nowe hasło programu Vino:"
+msgstr "Proszę wprowadzić nowe hasło programu Vino: "
 
 #: ../tools/vino-passwd.c:154
 msgid "Retype new Vino password: "
-msgstr "Proszę ponownie wprowadzić nowe hasło programu Vino:"
+msgstr "Proszę ponownie wprowadzić nowe hasło programu Vino: "
 
 #: ../tools/vino-passwd.c:160
 #, c-format
