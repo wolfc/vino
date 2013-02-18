@@ -1,3 +1,71 @@
+Vino 3.7.90
+===========
+
+Anish A (1):
+      Updated Malayalam Localization
+
+Aurimas Černius (1):
+      Updated Lithuanian translation
+
+Bastien Nocera (4):
+      Export whether the server is connected to through D-Bus
+      server: Make libnotify a hard dependency
+      Use notifications to prompt
+      Fix notification desktop hint
+
+Chao-Hsiung Liao (1):
+      Updated Traditional Chinese translation(Hong Kong and Taiwan)
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (2):
+      Post-release version bump to 3.7.5
+      Update NEWS for 3.7.90 release
+
+Fran Diéguez (1):
+      Updated Galician translations
+
+Gheyret Kenji (3):
+      Updated Uyghur translation
+      Updated Uyghur translation
+      Updated Uyghur translation
+
+Ihar Hrachyshka (1):
+      Updated Belarusian translation.
+
+Inaki Larranaga Murgoitio (1):
+      Updated Basque language
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
+Matej Urbančič (2):
+      Updated Slovenian translation
+      Updated Slovenian translation
+
+Matthias Clasen (2):
+      Don't show vino-preferences in GNOME
+      Bring up the sharing panel when available
+
+Piotr Drąg (3):
+      Updated POTFILES.in
+      Updated Polish translation
+      Updated Polish translation
+
+Robert Ancell (1):
+      Change schema path to standard format
+
+Wouter Bolsterlee (1):
+      Updated Dutch translation
+
+Yaron Shahrabani (1):
+      Updated Hebrew translation.
+
+Мирослав Николић (2):
+      Updated Serbian translation
+      Updated Serbian translation
+
 Vino 3.7.4
 ==========
 
