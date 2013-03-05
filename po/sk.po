@@ -9,8 +9,8 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-10-23 22:18+0000\n"
-"PO-Revision-Date: 2012-10-25 21:45+0100\n"
+"POT-Creation-Date: 2013-03-03 18:52+0000\n"
+"PO-Revision-Date: 2013-03-04 19:55+0100\n"
 "Last-Translator: Richard Stanislavský <kenny.vv@gmail.com>\n"
 "Language-Team: Slovak <gnome-sk-list@gnome.org>\n"
 "Language: sk\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 1 : (n>=2 && n<=4) ? 2 : 0;\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.5.5\n"
 
 # message dialog
 #: ../capplet/vino-message-box.c:55
@@ -74,9 +74,85 @@ msgid "Choose how other users can remotely view your desktop"
 msgstr ""
 "Zvoľte, ako môžu ostatní používatelia vzdialene zobraziť vašu pracovnú plochu"
 
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "Heslo pre zdieľanie vzdialenej pracovnej plochy"
+# GtkDialog title
+#: ../capplet/vino-preferences.ui.h:1
+msgid "Desktop Sharing Preferences"
+msgstr "Nastavenia zdieľania pracovnej plochy"
+
+# GtkBox GtkLabel
+#: ../capplet/vino-preferences.ui.h:2
+msgid "Sharing"
+msgstr "Zdieľanie"
+
+# GtkLabel
+#: ../capplet/vino-preferences.ui.h:3
+msgid "Some of these preferences are locked down"
+msgstr "Niektoré z týchto nastavení sú uzamknuté"
+
+# GtkCheckButton
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "Povoliť ostatným používateľom _zobraziť vašu pracovnú plochu"
+
+# GtkCheckButton tooltip
+#: ../capplet/vino-preferences.ui.h:5
+msgid "Your desktop will be shared"
+msgstr "Vaša pracovná plocha bude zdieľaná"
+
+# GtkCheckButton
+#: ../capplet/vino-preferences.ui.h:6
+msgid "_Allow other users to control your desktop"
+msgstr "P_ovoliť ostatným používateľom ovládať vašu pracovnú plochu"
+
+# GtkCheckButton tooltip
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Vzdialení používatelia môžu ovládať vašu myš a klávesnicu"
+
+# GtkBox GtkLabel
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Security"
+msgstr "Bezpečnosť"
+
+# GtkCheckButton
+#: ../capplet/vino-preferences.ui.h:9
+msgid "_You must confirm each access to this machine"
+msgstr "_Každý prístup k tomuto stroju musí byť potvrdený"
+
+# GtkCheckButton
+#: ../capplet/vino-preferences.ui.h:10
+msgid "_Require the user to enter this password:"
+msgstr "V_yžadovať od používateľa zadanie tohoto hesla:"
+
+# GtkCheckButton
+#: ../capplet/vino-preferences.ui.h:11
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "_Automaticky otvoriť a presmerovať porty na smerovači pomocou UPnP"
+
+# GtkCheckButton tooltip
+#: ../capplet/vino-preferences.ui.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "Smerovač musí mať povolenú funkciu UPnP"
+
+# GtkBox GtkLabel
+#: ../capplet/vino-preferences.ui.h:13
+msgid "Show Notification Area Icon"
+msgstr "Zobraziť ikonu v oblasti upozornení"
+
+# VinoRadioButton
+#: ../capplet/vino-preferences.ui.h:14
+msgid "Al_ways"
+msgstr "Vž_dy"
+
+# VinoRadioButton
+#: ../capplet/vino-preferences.ui.h:15
+msgid "_Only when someone is connected"
+msgstr "I_ba ak je niekto pripojený"
+
+# VinoRadioButton
+#: ../capplet/vino-preferences.ui.h:16
+msgid "_Never"
+msgstr "_Nikdy"
 
 # gconf summary
 #: ../common/org.gnome.Vino.gschema.xml.h:1
@@ -338,85 +414,9 @@ msgid "If true, show a notification when a user connects to the system."
 msgstr ""
 "Ak je „true“, budete informovaný, keď sa pripojí používateľ do systému."
 
-# GtkDialog title
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "Nastavenia zdieľania pracovnej plochy"
-
-# GtkBox GtkLabel
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "Zdieľanie"
-
-# GtkLabel
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "Niektoré z týchto nastavení sú uzamknuté"
-
-# GtkCheckButton
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "Povoliť ostatným používateľom _zobraziť vašu pracovnú plochu"
-
-# GtkCheckButton tooltip
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "Vaša pracovná plocha bude zdieľaná"
-
-# GtkCheckButton
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "P_ovoliť ostatným používateľom ovládať vašu pracovnú plochu"
-
-# GtkCheckButton tooltip
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "Vzdialení používatelia môžu ovládať vašu myš a klávesnicu"
-
-# GtkBox GtkLabel
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "Bezpečnosť"
-
-# GtkCheckButton
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "_Každý prístup k tomuto stroju musí byť potvrdený"
-
-# GtkCheckButton
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "V_yžadovať od používateľa zadanie tohoto hesla:"
-
-# GtkCheckButton
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "_Automaticky otvoriť a presmerovať porty na smerovači pomocou UPnP"
-
-# GtkCheckButton tooltip
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "Smerovač musí mať povolenú funkciu UPnP"
-
-# GtkBox GtkLabel
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "Zobraziť ikonu v oblasti upozornení"
-
-# VinoRadioButton
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "Vž_dy"
-
-# VinoRadioButton
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "I_ba ak je niekto pripojený"
-
-# VinoRadioButton
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "_Nikdy"
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "Heslo pre zdieľanie vzdialenej pracovnej plochy"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -549,17 +549,23 @@ msgid "Received signal %d, exiting."
 msgstr "Prijatý signál %d, ukončuje sa."
 
 # GDK_TYPE_SCREEN
-#: ../server/vino-prompt.c:141
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "Obrazovka"
 
 # popis GDK_TYPE_SCREEN
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "Obrazovka, na ktorej sa má zobraziť výzva"
 
+#: ../server/vino-prompt.c:263 ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "Chyba pri inicializácii libnotify\n"
+
 # text v dialogovom okne
-#: ../server/vino-prompt.c:345
+#: ../server/vino-prompt.c:282
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -568,41 +574,21 @@ msgstr ""
 "Používateľ na počítači „%s“ sa pokúša na diaľku zobraziť alebo ovládať vašu "
 "pracovnú plochu."
 
-# GtkDialog title
-#: ../server/vino-prompt.ui.h:1
-msgid "Question"
-msgstr "Otázka"
-
 # GtkLabel
-#: ../server/vino-prompt.ui.h:2
+#: ../server/vino-prompt.c:285
 msgid "Another user is trying to view your desktop."
 msgstr "Iný používateľ sa pokúša zobraziť vašu pracovnú plochu."
 
-# GtkLabel
-#: ../server/vino-prompt.ui.h:3
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"Používateľ na inom počítači sa pokúša vzdialene zobraziť alebo ovládať vašu "
-"pracovnú plochu."
-
-# GtkLabel
-#: ../server/vino-prompt.ui.h:4
-msgid "Do you want to allow them to do so?"
-msgstr "Chcete to povoliť?"
-
 # GtkButton
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:90
-msgid "_Refuse"
-msgstr "_Odmietnuť"
+#: ../server/vino-prompt.c:291
+msgid "Refuse"
+msgstr "Odmietnuť"
 
-# GtkButton
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "_Povoliť"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "Prijať"
 
-#: ../server/vino-server.c:162 ../server/vino-server.c:185
+#: ../server/vino-server.c:164 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Otvorenie spojenia so zbernicou zlyhalo: %s\n"
@@ -612,13 +598,17 @@ msgstr "Otvorenie spojenia so zbernicou zlyhalo: %s\n"
 msgid "GNOME Desktop Sharing Server"
 msgstr "Server zdieľania pracovnej plochy GNOME"
 
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "vnc;zdieľanie;vzdialený;prístup;"
+
 # tooltip
-#: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
+#: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
 msgstr "Zdieľanie pracovnej plochy je povolené"
 
 # tooltip
-#: ../server/vino-status-icon.c:111
+#: ../server/vino-status-icon.c:105
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
@@ -626,15 +616,15 @@ msgstr[0] "%d osôb zobrazuje vašu pracovnú plochu"
 msgstr[1] "Jedna osoba zobrazuje vašu pracovnú plochu"
 msgstr[2] "%d osoby zobrazujú vašu pracovnú plochu"
 
-#: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
 msgid "Error displaying preferences"
 msgstr "Chyba pri zobrazovaní nastavení"
 
-#: ../server/vino-status-icon.c:234 ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
 msgid "Error displaying help"
 msgstr "Chyba pri zobrazovaní pomocníka"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -671,97 +661,92 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
 msgstr ""
 "Marcel Telka <marcel@telka.sk>\n"
 "Richard Stanislavský <kenny.vv@gmail.com>"
 
 # about dialog
-#: ../server/vino-status-icon.c:288
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "Zdieľajte vašu pracovnú plochu s ostatnými používateľmi"
 
-#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Naozaj sa chcete odpojiť „%s“?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Vzdialený používateľ z „%s“ bude odpojený. Naozaj to chcete?"
 
-#: ../server/vino-status-icon.c:364
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Naozaj chcete odpojiť všetkých klientov?"
 
-#: ../server/vino-status-icon.c:366
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Všetci vzdialení používatelia budú odpojení. Naozaj to chcete?"
 
-#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "Odpojiť"
 
-#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "Nas_tavenia"
 
-#: ../server/vino-status-icon.c:419
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "Odpojiť všetkých"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "Odpojiť %s"
 
-#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "_Pomocník"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "_O programe"
 
-#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "Chyba pri inicializácii libnotify\n"
-
 # notification summary
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "Iný používateľ zobrazuje vašu pracovnú plochu"
 
 # notification body
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Používateľ na počítači „%s“ na diaľku zobrazuje vašu pracovnú plochu."
 
 # notification summary
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:634
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "Iný používateľ ovláda vašu pracovnú plochu"
 
 # notification body
-#: ../server/vino-status-icon.c:636
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Používateľ na počítači „%s“ ovláda na diaľku vašu pracovnú plochu."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Chyba pri zobrazovaní bubliny s upozornením: %s\n"
 
-#: ../server/vino-status-tube-icon.c:235
+#: ../server/vino-status-tube-icon.c:227
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Vzdialený používateľ „%s“ bude odpojený. Naozaj to chcete?"
@@ -799,6 +784,16 @@ msgstr "Používateľ „%s“ vzdialene ovláda vašu pracovnú plochu."
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Čaká sa, kým sa používateľ „%s“ pripojí k obrazovke."
+
+# GtkButton
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "_Povoliť"
+
+# GtkButton
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "_Odmietnuť"
 
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
