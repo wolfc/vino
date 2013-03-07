@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: vino.master\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-10-20 07:53+0000\n"
+"POT-Creation-Date: 2013-01-28 19:57+0000\n"
 "PO-Revision-Date: 2012-10-01 08:19+0300\n"
 "Last-Translator: Ihar Hrachyshka <ihar.hrachyshka@gmail.com>\n"
 "Language-Team: Belarusian <i18n-bel-gnome@googlegroups.com>\n"
@@ -60,9 +60,71 @@ msgstr "Супольны доступ да стала"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "Магчымасць прагляду вашага стала іншымі карыстальнікамі"
 
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "Пароль супольнадаступнага аддаленага стала"
+#: ../capplet/vino-preferences.ui.h:1
+msgid "Desktop Sharing Preferences"
+msgstr "Настройкі супольнага доступу да стала"
+
+#: ../capplet/vino-preferences.ui.h:2
+msgid "Sharing"
+msgstr "Супольны доступ"
+
+#: ../capplet/vino-preferences.ui.h:3
+msgid "Some of these preferences are locked down"
+msgstr "Некаторыя з гэтых настроек заблакіраваныя"
+
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "_Дазваляць іншым карыстальнікам праглядаць ваш стол"
+
+#: ../capplet/vino-preferences.ui.h:5
+msgid "Your desktop will be shared"
+msgstr "Супольны доступ да вашага стала ўключаны"
+
+#: ../capplet/vino-preferences.ui.h:6
+msgid "_Allow other users to control your desktop"
+msgstr "Дазваляць іншым _карыстальнікам кіраваць вашым сталом"
+
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Аддаленыя карыстальнікі могуць кіраваць вашай мышшу і клавіятурай"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Security"
+msgstr "Бяспека"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "_You must confirm each access to this machine"
+msgstr "_Вы мусіце пацвердзіць кожны запыт доступу да гэтай машыны"
+
+#: ../capplet/vino-preferences.ui.h:10
+msgid "_Require the user to enter this password:"
+msgstr "_Патрабаваць у карыстальніка ўводу пароля:"
+
+#: ../capplet/vino-preferences.ui.h:11
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr ""
+"_Аўтаматычна настройваць UPnP-маршрутызатар для адкрыцця і перанакіравання "
+"партоў"
+
+#: ../capplet/vino-preferences.ui.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "Маршрутызатар мусіць мець уключаную функцыю UPnP"
+
+#: ../capplet/vino-preferences.ui.h:13
+msgid "Show Notification Area Icon"
+msgstr "Паказваць значок у абшары апавяшчэнняў"
+
+#: ../capplet/vino-preferences.ui.h:14
+msgid "Al_ways"
+msgstr "_Заўсёды"
+
+#: ../capplet/vino-preferences.ui.h:15
+msgid "_Only when someone is connected"
+msgstr "_Толькі калі нехта далучаны"
+
+#: ../capplet/vino-preferences.ui.h:16
+msgid "_Never"
+msgstr "_Ніколі"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -239,8 +301,8 @@ msgid ""
 msgstr ""
 "Гэты ключ кіруе паводзінамі значка стану. Магчымыя тры значэнні: \"always"
 "\" (заўсёды паказваць значок), \"client\" (паказваць значок, толькі калі "
-"нехта падлучаны да стала; гэта прадвызначаныя паводзіны праграмы), "
-"\"never\" (ніколі не паказваць значок)."
+"нехта падлучаны да стала; гэта прадвызначаныя паводзіны праграмы), \"never"
+"\" (ніколі не паказваць значок)."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "Whether to disable the desktop background when a user is connected"
@@ -256,14 +318,17 @@ msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid "Whether a UPnP router should be used to forward and open ports"
-msgstr "Ці трэба выкарыстоўваць UPnP-маршрутызатар для перанакіравання і адкрыцця партоў"
+msgstr ""
+"Ці трэба выкарыстоўваць UPnP-маршрутызатар для перанакіравання і адкрыцця "
+"партоў"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
 msgid ""
 "If true, request that a UPnP-capable router should forward and open the port "
 "used by Vino."
 msgstr ""
-"Калі ўключана, UPnP-маршрутызатар будзе перанакіроўваць і адкрываць парты, якія выкарыстоўваюцца праграмай Vino."
+"Калі ўключана, UPnP-маршрутызатар будзе перанакіроўваць і адкрываць парты, "
+"якія выкарыстоўваюцца праграмай Vino."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
@@ -290,71 +355,9 @@ msgstr ""
 "Калі ўключана, праграма будзе паказваць апавяшчэнне пры падлучэнні "
 "карыстальніка да сістэмы."
 
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "Настройкі супольнага доступу да стала"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "Супольны доступ"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "Некаторыя з гэтых настроек заблакіраваныя"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "_Дазваляць іншым карыстальнікам праглядаць ваш стол"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "Супольны доступ да вашага стала ўключаны"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "Дазваляць іншым _карыстальнікам кіраваць вашым сталом"
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "Аддаленыя карыстальнікі могуць кіраваць вашай мышшу і клавіятурай"
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "Бяспека"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "_Вы мусіце пацвердзіць кожны запыт доступу да гэтай машыны"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "_Патрабаваць у карыстальніка ўводу пароля:"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr ""
-"_Аўтаматычна настройваць UPnP-маршрутызатар для адкрыцця і перанакіравання "
-"партоў"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "Маршрутызатар мусіць мець уключаную функцыю UPnP"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "Паказваць значок у абшары апавяшчэнняў"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "_Заўсёды"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "_Толькі калі нехта далучаны"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "_Ніколі"
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "Пароль супольнадаступнага аддаленага стала"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -480,15 +483,21 @@ msgstr "Аддалены стол карыстальніка %s на %s"
 msgid "Received signal %d, exiting."
 msgstr "Атрыманы сігнал %d, выхад з праграмы."
 
-#: ../server/vino-prompt.c:141
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "Экран"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "Экран, на якім трэба паказаць акно пацвярджэння"
 
-#: ../server/vino-prompt.c:345
+#: ../server/vino-prompt.c:263 ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "Памылка ініцыяцыі бібліятэкі \"libnotify\"\n"
+
+#: ../server/vino-prompt.c:282
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -497,35 +506,19 @@ msgstr ""
 "Карыстальнік камп'ютара \"%s\" спрабуе аддалена праглядзець ці кіраваць "
 "вашым сталом."
 
-#: ../server/vino-prompt.ui.h:1
-msgid "Question"
-msgstr "Пытанне"
-
-#: ../server/vino-prompt.ui.h:2
+#: ../server/vino-prompt.c:285
 msgid "Another user is trying to view your desktop."
 msgstr "Іншы карыстальнік спрабуе праглядзець ваш стол."
 
-#: ../server/vino-prompt.ui.h:3
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"Карыстальнік іншага камп'ютара спрабуе аддалена праглядзець ці кіраваць "
-"вашым сталом."
+#: ../server/vino-prompt.c:291
+msgid "Refuse"
+msgstr "Адмовіць"
 
-#: ../server/vino-prompt.ui.h:4
-msgid "Do you want to allow them to do so?"
-msgstr "Дазволіць яму гэта?"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "Прыняць"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:90
-msgid "_Refuse"
-msgstr "_Адмовіць"
-
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "_Дазволіць"
-
-#: ../server/vino-server.c:162 ../server/vino-server.c:185
+#: ../server/vino-server.c:164 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Не ўдалося адкрыць злучэнне з машістраллю: %s\n"
@@ -534,11 +527,15 @@ msgstr "Не ўдалося адкрыць злучэнне з машістра�
 msgid "GNOME Desktop Sharing Server"
 msgstr "Сервер супольнага доступу да стала GNOME"
 
-#: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "vnc;доступ;супольны;рэсурс;аддалены;"
+
+#: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
 msgstr "Супольны доступ да стала ўключаны"
 
-#: ../server/vino-status-icon.c:111
+#: ../server/vino-status-icon.c:105
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
@@ -546,15 +543,15 @@ msgstr[0] "%d чалавек праглядае ваш стол"
 msgstr[1] "%d чалавекі праглядаюць ваш стол"
 msgstr[2] "%d чалавек праглядаюць ваш стол"
 
-#: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
 msgid "Error displaying preferences"
 msgstr "Памылка паказу акна настроек"
 
-#: ../server/vino-status-icon.c:234 ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
 msgid "Error displaying help"
 msgstr "Памылка паказу даведкі"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -592,92 +589,87 @@ msgstr ""
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
 msgstr ""
 "Insomnia <defragbrain@gmail.com>\n"
 "Ihar Hrachyshka <ihar.hrachyshka@gmail.com>"
 
-#: ../server/vino-status-icon.c:288
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "Супольны доступ да вашага стала для іншых карыстальнікаў"
 
-#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Ці вы насамрэч хочаце адлучыць \"%s\"?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Аддалены карыстальнік з \"%s\" будзе адлучаны. Вы ўпэўнены?"
 
-#: ../server/vino-status-icon.c:364
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Ці вы сапраўды хочаце адлучыць усіх кліентаў?"
 
-#: ../server/vino-status-icon.c:366
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Усе аддаленыя карыстальнікі будуць адлучаныя. Вы ўпэўнены?"
 
-#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "Адлучыць"
 
-#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "_Настройкі"
 
-#: ../server/vino-status-icon.c:419
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "Адлучыць усіх"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "Адлучыць %s"
 
-#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "_Дапамога"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "_Аб праграме"
 
-#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "Памылка ініцыяцыі бібліятэкі \"libnotify\"\n"
-
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "Іншы карыстальнік праглядае ваш стол"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Карыстальнік камп'ютара \"%s\" аддалена праглядае ваш стол."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:634
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "Іншы карыстальнік кіруе вашым сталом"
 
-#: ../server/vino-status-icon.c:636
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Карыстальнік камп'ютара \"%s\" аддалена кіруе вашым сталом."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Памылка падчас паказу выплыўнога апавяшчэння: %s\n"
 
-#: ../server/vino-status-tube-icon.c:235
+#: ../server/vino-status-tube-icon.c:227
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Аддалены карыстальнік \"%s\" будзе адлучаны. Вы ўпэўнены?"
@@ -709,6 +701,14 @@ msgstr "\"%s\" аддалена кіруе вашым сталом."
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Чакаем злучэння кантакту \"%s\" з вашым экранам."
+
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "_Дазволіць"
+
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "_Адмовіць"
 
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
@@ -786,4 +786,3 @@ msgstr "VINO: версія %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "Памылка: вы не маеце дазволу на змяненне пароля Vino.\n"
-
