@@ -8,15 +8,15 @@
 # Priit Laes <plaes plaes org>, 2005-2006, 2010
 # Ain Vagula <avagula gmail com>, 2005.
 # Ivar Smolin <okul linux ee>, 2006-2008.
-# Mattias Põldaru <mahfiaz@gmail.com>, 2008, 2009, 2011, 2012.
+# Mattias Põldaru <mahfiaz@gmail.com>, 2008, 2009, 2011, 2012, 2013.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: Vino HEAD\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-12-18 09:35+0000\n"
-"PO-Revision-Date: 2012-12-19 17:31+0300\n"
+"POT-Creation-Date: 2013-03-10 22:52+0000\n"
+"PO-Revision-Date: 2013-03-12 16:46+0300\n"
 "Last-Translator: Mattias Põldaru <mahfiaz@gmail.com>\n"
 "Language-Team: Estonian <gnome-et@linux.ee>\n"
 "Language: et\n"
@@ -59,8 +59,53 @@ msgstr "Töölaua jagamine"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "Määrab kuidas teised kasutajad sinu töölauda vaadata tohivad"
 
-msgid "Remote desktop sharing password"
-msgstr "Töölaua jagamise parool"
+msgid "Desktop Sharing Preferences"
+msgstr "Töölaua jagamise eelistused"
+
+msgid "Sharing"
+msgstr "Ühiskasutus"
+
+msgid "Some of these preferences are locked down"
+msgstr "Mõned nendest eelistustest on lukustatud"
+
+msgid "Allow other users to _view your desktop"
+msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
+
+msgid "Your desktop will be shared"
+msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
+
+msgid "_Allow other users to control your desktop"
+msgstr "_Teistel kasutajatel lubatakse juhtida Sinu töölauda"
+
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "Kaugkasutajatel on lubatud sinu hiirt ja klaviatuuri juhtida"
+
+msgid "Security"
+msgstr "Turvalisus"
+
+msgid "_You must confirm each access to this machine"
+msgstr "_Iga pöördumist sellesse masinasse peab kasutaja kinnitama"
+
+msgid "_Require the user to enter this password:"
+msgstr "Nõutakse kasutajalt pa_rooli sisestamist:"
+
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "UPnP ruuteris portite automaatne avamine ja suunamine"
+
+msgid "The router must have the UPnP feature enabled"
+msgstr "Ruuteris peab UPnP võimalus olema lubatud"
+
+msgid "Show Notification Area Icon"
+msgstr "Teateala ikooni näitamine"
+
+msgid "Al_ways"
+msgstr "_Alati"
+
+msgid "_Only when someone is connected"
+msgstr "_Ainult, kui keegi on ühendatud"
+
+msgid "_Never"
+msgstr "_Mitte kunagi"
 
 msgid "Enable remote access to the desktop"
 msgstr "Kaugkasutajatel lubatakse töölauda ainult vaadata"
@@ -251,53 +296,8 @@ msgstr "Teade ühendumisel"
 msgid "If true, show a notification when a user connects to the system."
 msgstr "Kui märgitud, siis antakse teada kasutaja ühendumisest süsteemiga."
 
-msgid "Desktop Sharing Preferences"
-msgstr "Töölaua jagamise eelistused"
-
-msgid "Sharing"
-msgstr "Ühiskasutus"
-
-msgid "Some of these preferences are locked down"
-msgstr "Mõned nendest eelistustest on lukustatud"
-
-msgid "Allow other users to _view your desktop"
-msgstr "Teistel kasutajatel on lubatud _vaadata Sinu töölauda"
-
-msgid "Your desktop will be shared"
-msgstr "Sinu töölaud jagatakse ühiskasutuseks välja"
-
-msgid "_Allow other users to control your desktop"
-msgstr "_Teistel kasutajatel lubatakse juhtida Sinu töölauda"
-
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "Kaugkasutajatel on lubatud sinu hiirt ja klaviatuuri juhtida"
-
-msgid "Security"
-msgstr "Turvalisus"
-
-msgid "_You must confirm each access to this machine"
-msgstr "_Iga pöördumist sellesse masinasse peab kasutaja kinnitama"
-
-msgid "_Require the user to enter this password:"
-msgstr "Nõutakse kasutajalt pa_rooli sisestamist:"
-
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "UPnP ruuteris portite automaatne avamine ja suunamine"
-
-msgid "The router must have the UPnP feature enabled"
-msgstr "Ruuteris peab UPnP võimalus olema lubatud"
-
-msgid "Show Notification Area Icon"
-msgstr "Teateala ikooni näitamine"
-
-msgid "Al_ways"
-msgstr "_Alati"
-
-msgid "_Only when someone is connected"
-msgstr "_Ainult, kui keegi on ühendatud"
-
-msgid "_Never"
-msgstr "_Mitte kunagi"
+msgid "Remote desktop sharing password"
+msgstr "Töölaua jagamise parool"
 
 #, c-format
 msgid "File is not a valid .desktop file"
@@ -407,33 +407,24 @@ msgid "The screen on which to display the prompt"
 msgstr "Viiba kuvamiseks kasutatav ekraan"
 
 #, c-format
+msgid "Error initializing libnotify\n"
+msgstr "Viga libnotify lähtestamisel\n"
+
+#, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
 "desktop."
 msgstr ""
 "Kasutaja arvutist '%s' proovib üle võrgu vaadata või kasutada Sinu töölauda."
 
-msgid "Question"
-msgstr "Küsimus"
-
 msgid "Another user is trying to view your desktop."
 msgstr "Üks kasutaja proovib vaadata sinu töölauda."
 
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"Kasutaja teisest arvutist proovib üle võrgu vaadata või kasutada Sinu "
-"töölauda."
+msgid "Refuse"
+msgstr "Keeldu"
 
-msgid "Do you want to allow them to do so?"
-msgstr "Kas sa lubad tal seda teha?"
-
-msgid "_Refuse"
-msgstr "_Keela"
-
-msgid "_Allow"
-msgstr "_Luba"
+msgid "Accept"
+msgstr "Nõustu"
 
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
@@ -441,6 +432,9 @@ msgstr "Tõrge siiniga ühendumisel: %s\n"
 
 msgid "GNOME Desktop Sharing Server"
 msgstr "GNOME töölaua jagamise server"
+
+msgid "vnc;share;remote;"
+msgstr "vnc;jagamine;kaugtöölaud;"
 
 msgid "Desktop sharing is enabled"
 msgstr "Töölaua jagamine on lubatud"
@@ -539,10 +533,6 @@ msgstr "A_bi"
 msgid "_About"
 msgstr "_Programmist lähemalt"
 
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "Viga libnotify lähtestamisel\n"
-
 #. Translators: %s is a hostname
 msgid "Another user is viewing your desktop"
 msgstr "Teine kasutaja vaatab Sinu töölauda"
@@ -589,6 +579,12 @@ msgstr "'%s' juhib üle võrgu Sinu töölauda."
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Oodatakse masina '%s' järel, et see looks ühenduse ekraaniga."
+
+msgid "_Allow"
+msgstr "_Luba"
+
+msgid "_Refuse"
+msgstr "_Keela"
 
 msgid "An error has occurred:"
 msgstr "Esines järgnev viga:"
@@ -650,3 +646,16 @@ msgstr "VINO versioon %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "VIGA: Sul ei ole piisavalt õiguseid Vino parooli muutmiseks.\n"
+
+#~ msgid "Question"
+#~ msgstr "Küsimus"
+
+#~ msgid ""
+#~ "A user on another computer is trying to remotely view or control your "
+#~ "desktop."
+#~ msgstr ""
+#~ "Kasutaja teisest arvutist proovib üle võrgu vaadata või kasutada Sinu "
+#~ "töölauda."
+
+#~ msgid "Do you want to allow them to do so?"
+#~ msgstr "Kas sa lubad tal seda teha?"
