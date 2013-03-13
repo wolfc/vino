@@ -1,16 +1,16 @@
 # translation of gu.po to Gujarati
 # Ankit Patel <ankit644@yahoo.com>, 2005, 2006.
 # Ankit Patel <ankit@redhat.com>, 2006, 2007, 2008.
-# Sweta Kothari <swkothar@redhat.com>, 2009, 2011, 2012.
+# Sweta Kothari <swkothar@redhat.com>, 2009, 2011, 2012, 2013.
 msgid ""
 msgstr ""
 "Project-Id-Version: gu\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug."
 "cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2012-08-20 21:35+0000\n"
-"PO-Revision-Date: 2012-09-17 10:39+0530\n"
+"POT-Creation-Date: 2013-01-28 19:57+0000\n"
+"PO-Revision-Date: 2013-03-13 12:10+0530\n"
 "Last-Translator: \n"
-"Language-Team: gu_IN <kde-i18n-doc@kde.org>\n"
+"Language-Team: American English <kde-i18n-doc@kde.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -68,10 +68,69 @@ msgstr "ડેસ્કટોપ વહેંચણી"
 msgid "Choose how other users can remotely view your desktop"
 msgstr "કેટલા બીજા વપરાશકર્તાઓ એ તમારા ડેસ્કટોપ ને દૂરસ્થ રીતે દેખી શકે છે તે પસંદ કરો"
 
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-#| msgid "Retype new Vino password: "
-msgid "Remote desktop sharing password"
-msgstr "દૂરસ્થ ડેસ્કટોપ વહેંચણી પાસવર્ડ"
+#: ../capplet/vino-preferences.ui.h:1
+msgid "Desktop Sharing Preferences"
+msgstr "ડૅસ્કટોપ વહેંચણી પસંદગીઓ"
+
+#: ../capplet/vino-preferences.ui.h:2
+msgid "Sharing"
+msgstr "ભાગીદારી"
+
+#: ../capplet/vino-preferences.ui.h:3
+msgid "Some of these preferences are locked down"
+msgstr "તેમાંની અમુક પસંદગીઓને તાળુ લગાવી દેવામાં આવ્યું"
+
+#: ../capplet/vino-preferences.ui.h:4
+msgid "Allow other users to _view your desktop"
+msgstr "તમારી ડેસ્કટોપ બીજા વપરાશકર્તાઓને વાપરવા માટેની પરવાનગી આપે છે (_v)"
+
+#: ../capplet/vino-preferences.ui.h:5
+msgid "Your desktop will be shared"
+msgstr "તમારું ડેસ્કટોપ વહેંચવામાં આવશે"
+
+#: ../capplet/vino-preferences.ui.h:6
+msgid "_Allow other users to control your desktop"
+msgstr "બીજા વપરાશકર્તાઓને તમારી ડેસ્કટોપ નિયંત્રિત કરવાની પરવાનગી આપે છે (_A)"
+
+#: ../capplet/vino-preferences.ui.h:7
+msgid "Remote users are able to control your mouse and keyboard"
+msgstr "દૂરસ્થ વપરાશકર્તાઓ તમારું માઉસ અને કીબોર્ડ નિયંત્રિત કરવા માટે સમર્થ છે"
+
+#: ../capplet/vino-preferences.ui.h:8
+msgid "Security"
+msgstr "સુરક્ષા"
+
+#: ../capplet/vino-preferences.ui.h:9
+msgid "_You must confirm each access to this machine"
+msgstr "તમે આ મશીનનાં દરેક પ્રવેશની ખાતરી કરવી જ જોઇએ (_Y)"
+
+#: ../capplet/vino-preferences.ui.h:10
+msgid "_Require the user to enter this password:"
+msgstr "વપરાશકર્તાને આ પાસવર્ડ દાખલ કરવો જરુરી છે (_R):"
+
+#: ../capplet/vino-preferences.ui.h:11
+msgid "Automatically _configure UPnP router to open and forward ports"
+msgstr "આપમેળે પોર્ટને આગળ ધપાવા અને ખોલવા માટે UPnP ને રૂપરેખાંકિત કરો (_c)"
+
+#: ../capplet/vino-preferences.ui.h:12
+msgid "The router must have the UPnP feature enabled"
+msgstr "રાઉટર પાસે સક્રિય થયેલ UPnP લક્ષણ હોવુ જ જોઇએ"
+
+#: ../capplet/vino-preferences.ui.h:13
+msgid "Show Notification Area Icon"
+msgstr "સૂચન વિસ્તાર ચિહ્નને બતાવો"
+
+#: ../capplet/vino-preferences.ui.h:14
+msgid "Al_ways"
+msgstr "હંમેશા (_w)"
+
+#: ../capplet/vino-preferences.ui.h:15
+msgid "_Only when someone is connected"
+msgstr "ફક્ત જયારે કોઇ જોડાય (_O)"
+
+#: ../capplet/vino-preferences.ui.h:16
+msgid "_Never"
+msgstr "કદી નહિં (_N)"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -116,39 +175,50 @@ msgid "Network interface for listening"
 msgstr "યાદી માટે નેટવર્ક ઇન્ટરફેસ"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:8
+#| msgid ""
+#| "If not set, the server will listen on all network interfaces.\n"
+#| "\n"
+#| "Set this if you want that accept connections only from some specific "
+#| "network interface. eg: eth0, wifi0, lo, ..."
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
-"Set this if you want that accept connections only from some specific network "
-"interface. eg: eth0, wifi0, lo, ..."
+"Set this if you want to accept connections only from some specific network "
+"interface. For example, eth0, wifi0, lo and so on."
 msgstr ""
 "જો સુયોજિત ન હોય તો, સર્વર એ બધા નેટવર્ક ઇન્ટરફેસો પર સાંભળશે.\n"
 "\n"
 "આ સુયોજિત કરો જો તમે અમુક ચોક્કસ નેટવર્ક ઇન્ટરફેસ માંથી ફક્ત જોડાણો સ્વીકારવા ઇચ્છતા "
-"હોય. દાત: eth0, wifi0, lo, ..."
+"હોય. દાત:  eth0, wifi0, lo અને આગળ."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
 msgstr "વૈકલ્પિક પોર્ટ પર સાંભળો"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
+#| msgid ""
+#| "If true, the server will listen to another port, instead of the default "
+#| "(5900). The port must be specified in the 'alternative-port' key."
 msgid ""
-"If true, the server will listen to another port, instead of the default "
+"If true, the server will listen on another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
 msgstr ""
 "જો true હોય, તો સર્વર અન્ય પોર્ટ પર સાંભળશે, મૂળભૂત (5900) ની જગ્યાએ. પોર્ટ "
-"'alternative_port' કીમાં સ્પષ્ટ થયેલ હોવો જ જોઈએ."
+"'alternative-port' કીમાં સ્પષ્ટ થયેલ હોવો જ જોઈએ."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:13
 msgid "Alternative port number"
 msgstr "વૈકલ્પિક પોર્ટ નંબર"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:14
+#| msgid ""
+#| "The port which the server will listen to if the 'use-alternative-port' "
+#| "key is set to true. Valid values are in the range from 5000 to 50000."
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
+"is set to true. Valid values are in the range of 5000 to 50000."
 msgstr ""
-"પોર્ટ કે જેને સર્વર સાંભળશે જો 'use_alternative_port' કી true તરીકે સુયોજિત થયેલ હોય. "
+"પોર્ટ કે જેને સર્વર સાંભળશે જો 'use-alternative-port' કી true તરીકે સુયોજિત થયેલ હોય. "
 "માન્ય કિંમતો 5000 થી 50000 ના વિસ્તારમાં છે."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:15
@@ -222,126 +292,89 @@ msgid "Lock the screen when last user disconnect"
 msgstr "જ્યારે છેલ્લા વપરાશકર્તાનું જોડાણ તૂટે ત્યારે સ્ક્રીનને તાળું મારો"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:28
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "જો સાચું હોય, તો સ્ક્રીનને છેલ્લે દૂરસ્થ ક્લાઈન્ટનું જોડાણ તૂટે પછી તાળું મરાઈ જશે."
+#| msgid ""
+#| "If true, screen will be locked after the last remote client disconnect."
+msgid "If true, the screen will be locked after the last remote client disconnects."
+msgstr "જો true હોય, તો સ્ક્રીનને છેલ્લે દૂરસ્થ ક્લાઈન્ટનું જોડાણ તૂટે પછી તાળું મરાઈ જશે."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:29
 msgid "When the status icon should be shown"
 msgstr "ક્યારે પરિસ્થિતિ ચિહ્ન દર્શાવવામાં આવવો જોઈએ"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:30
+#| msgid ""
+#| "This key controls the behavior of the status icon. There are three "
+#| "options: \"always\" - The icon will be always there; \"client\" - You "
+#| "will see the icon only when there is someone connected, this is the "
+#| "default behavior; \"never\" - Never shows the icon."
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
-"\"always\" - The icon will be always there; \"client\" - You will see the "
-"icon only when there is someone connected, this is the default behavior; "
-"\"never\" - Never shows the icon."
+"\"always\" - the icon will always be present; \"client\" - the icon will "
+"only be present when someone is connected (this is the default behavior); "
+"\"never\" - the icon will not be present."
 msgstr ""
 "આ કી પરિસ્થિતિ ચિહ્નની વર્તણૂક નિયંત્રિત કરે છે. ત્રણ વિકલ્પો છે: \"હંમેશા\" - ચિહ્ન હંમેશા "
-"ત્યાં રહેશે; \"ક્લાઈન્ટ\" - તમને માત્ર ચિહ્ન જ દેખાશે જ્યારે ત્યાં કોઈક જોડાયેલ હોય, આ મૂળભૂત "
-"વર્તણૂક છે; \"ક્યારેય નહિં\" - ક્યારેય ચિહ્ન બતાવશો નહિં."
+"ત્યાં રહેશે; \"ક્લાયન્ટ\" - તમને માત્ર ચિહ્ન જ દેખાશે જ્યારે ત્યાં કોઈક જોડાયેલ હોય, (આ "
+"મૂળભૂત "
+"વર્તણૂક છે); \"ક્યારેય નહિં\" - ચિહ્ન હાજર રહેશે નહિં."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
-msgid "When true, disable the background on receive valid session"
-msgstr "જ્યારે ખરું હોય ત્યારે, માન્ય સત્ર મેળવવા પર પાશ્વ ભાગ નિષ્ક્રિય કરો"
+#| msgid "When true, disable the background on receive valid session"
+msgid "Whether to disable the desktop background when a user is connected"
+msgstr "ક્યાંતો ડેસ્કટોપ પાશ્ર્વભાગને નિષ્ક્રિય કરવાનું છે જ્યારે વપરાશકર્તા જોડાયેલ હોય"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:32
-msgid "Whether we should use UPNP to forward the port in routers"
-msgstr "કયાંતો રાઉટરોમાં પોર્ટ ને આગળ ધપાવા માટે આપણે UPNP ને વાપરવુ જોઇએ"
+msgid ""
+"When true, disable the desktop background and replace it with a single block "
+"of color when a user successfully connects."
+msgstr ""
+"જ્યારે true હોય તો, ડેસ્કટોપ પાશ્ર્વભાગને નિષ્ક્રિય કરો અને રંગના એક જ બ્લોક સાથે તેને બદલો "
+"જ્યારે વપરાશકર્તા સફળતાપૂર્વક જોડાય."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
-msgid ""
-"If true, we will use UPNP protocol to automatically forward the port used by "
-"vino in the router."
-msgstr ""
-"જો true હોય તો, આપણે રાઉટરમાં vino દ્દારા પોર્ટ ને આપોઆપ આગળ ધપાવવા માટે UPNP "
-"પ્રોટોકોલ વાપરશે."
+#| msgid "Whether we should use UPNP to forward the port in routers"
+msgid "Whether a UPnP router should be used to forward and open ports"
+msgstr "કયાંતો UPnP રાઉટરને આગળ ધપાવા વાપરવુ જોઇએ અને પોર્ટોને ખોલો"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid ""
+"If true, request that a UPnP-capable router should forward and open the port "
+"used by Vino."
+msgstr ""
+"જો true હોય તો, માંગણી કરીએ છે કે UPnP-સક્ષમ રાઉટર એ આગળ વધવુ જોઇએ અને Vino દ્દારા વાપરેલ "
+"પોર્ટને ખોલો."
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "ક્યાંતો આપણે X.org નાં XDamage એક્સટેન્શનને નિષ્ક્રિય કરવુ જોઇએ"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:35
+#: ../common/org.gnome.Vino.gschema.xml.h:36
+#| msgid ""
+#| "If true, we will not use the XDamage extension of X.org. This extension "
+#| "does not work properly on some video drivers when using 3D effects. "
+#| "Disabling it will make vino work on these environments with a slower "
+#| "rendering as side effect."
 msgid ""
-"If true, we will not use the XDamage extension of X.org. This extension does "
-"not work properly on some video drivers when using 3D effects. Disabling it "
-"will make vino work on these environments with a slower rendering as side "
-"effect."
+"If true, do not use the XDamage extension of X.org. This extension does not "
+"work properly on some video drivers when using 3D effects. Disabling it will "
+"make Vino work in these environments, with slower rendering as a side effect."
 msgstr ""
 "જો true હોય તો, આપણે X.org નાં XDamage એક્સટેન્શનને વાપરશું નહિં. આ એક્સટેન્શન અમુક "
-"વીડિયો ડ્રાઇવરો પર યોગ્ય રીતે કામ કરતા નથી જ્યારે 3D અસરોને વાપરી રહ્યા હોય. તે બીજી "
+"વિડિયો ડ્રાઇવરો પર યોગ્ય રીતે કામ કરતા નથી જ્યારે 3D અસરોને વાપરી રહ્યા હોય. તે બીજી "
 "અસર તરીકે ધીમી રેન્ડરીંગ સાથે આ પર્યાવરણો પર vino કામ બનાવશે તેને નિષ્ક્રિય કરી રહ્યા છે."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:36
+#: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "Notify on connect"
 msgstr "જોડાણ વખતે સૂચિત કરો"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:37
-msgid "If true, we will notify, when the user connects to the system."
+#: ../common/org.gnome.Vino.gschema.xml.h:38
+#| msgid "If true, we will notify, when the user connects to the system."
+msgid "If true, show a notification when a user connects to the system."
 msgstr "જો true હોય તો, અમે સૂચિત કરશુ, જ્યારે વપરાશકર્તા સિસ્ટમમાં જોડાય છે."
 
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "ડૅસ્કટોપ વહેંચણી પસંદગીઓ"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "ભાગીદારી"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "તેમાંની અમુક પસંદગીઓને તાળુ લગાવી દેવામાં આવ્યું"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "તમારી ડેસ્કટોપ બીજા વપરાશકર્તાઓને વાપરવા માટેની પરવાનગી આપે છે (_v)"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "તમારું ડેસ્કટોપ વહેંચવામાં આવશે"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "બીજા વપરાશકર્તાઓને તમારી ડેસ્કટોપ નિયંત્રિત કરવાની પરવાનગી આપે છે (_A)"
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "દૂરસ્થ વપરાશકર્તાઓ તમારું માઉસ અને કીબોર્ડ નિયંત્રિત કરવા માટે સમર્થ છે"
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "સુરક્ષા"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "તમે આ મશીનનાં દરેક પ્રવેશની ખાતરી કરવી જ જોઇએ (_Y)"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "વપરાશકર્તાને આ પાસવર્ડ દાખલ કરવો જરુરી છે (_R):"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "આપમેળે પોર્ટને આગળ ધપાવા અને ખોલવા માટે UPnP ને રૂપરેખાંકિત કરો (_c)"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "રાઉટર પાસે સક્રિય થયેલ UPnP લક્ષણ હોવુ જ જોઇએ"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "સૂચન વિસ્તાર ચિહ્નને બતાવો"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "હંમેશા (_w)"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "ફક્ત જયારે કોઇ જોડાય (_O)"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "કદી નહિં (_N)"
+#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "દૂરસ્થ ડેસ્કટોપ વહેંચણી પાસવર્ડ"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -419,19 +452,22 @@ msgstr ""
 "તમારુ X સર્વર X ચકાસો પ્રત્યયને આધાર આપતું નથી - રીમોટ ડેસ્કટોપ ચલાવવાનું માત્ર દેખાડવાનું "
 "હશે\n"
 
-#: ../server/vino-main.c:298
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:301
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
 msgstr "ટ્યુબ સ્થિતિમાં ખોલો, ‘મારા ડેસ્કટોપને વહેંચો’ લક્ષણ માટે"
 
-#: ../server/vino-main.c:304
+#: ../server/vino-main.c:307
 msgid "- VNC Server for GNOME"
 msgstr "- GNOME માટે VNC સર્વર"
 
-#: ../server/vino-main.c:312
+#: ../server/vino-main.c:315
 msgid "Run 'vino-server --help' to see a full list of available command line options"
 msgstr "ઉપલબ્ધ આદેશવાક્ય વિકલ્પોની સંપૂર્ણ યાદી જોવા માટે 'vino-server --help' ચલાવો"
 
-#: ../server/vino-main.c:333
+#: ../server/vino-main.c:336
 msgid "GNOME Desktop Sharing"
 msgstr "GNOME ડૅસ્કટોપ વહેંચણી"
 
@@ -459,15 +495,21 @@ msgstr "%s નું દૂરસ્થ ડેસ્કટોપ %s પર"
 msgid "Received signal %d, exiting."
 msgstr "મળેલ સંકેત %d, અસ્તિત્વ ધરાવે છે."
 
-#: ../server/vino-prompt.c:141
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "સ્ક્રીન"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "સ્ક્રીન કે જેના ઉપર પ્રોમ્પ્ટ પ્રદર્શિત કરવાનું છે"
 
-#: ../server/vino-prompt.c:345
+#: ../server/vino-prompt.c:263 ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
+#, c-format
+msgid "Error initializing libnotify\n"
+msgstr "libnotify નો આરંભ કરવામાં ભૂલ\n"
+
+#: ../server/vino-prompt.c:282
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -476,35 +518,20 @@ msgstr ""
 "આ કમ્પ્યુટર પરનો વપરાશકર્તા '%s' એ તમારી ડેસ્કટોપ દૂરથી નિયંત્રિત કરવાનો અથવા જોવાનો "
 "પ્રયત્ન કરે છે."
 
-#: ../server/vino-prompt.ui.h:1
-msgid "Question"
-msgstr "પ્રશ્ન"
-
-#: ../server/vino-prompt.ui.h:2
+#: ../server/vino-prompt.c:285
 msgid "Another user is trying to view your desktop."
 msgstr "બીજો વપરાશકર્તા તમારી ડેસ્કટોપ જોવાનો પ્રયત્ન કરે છે."
 
-#: ../server/vino-prompt.ui.h:3
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"બીજા કમ્પ્યુટર પરનો વપરાશકર્તા એ તમારા કમ્પ્યુટરને દૂરથી જોવાનો અથવા નિયંત્રિત કરવાનો "
-"પ્રયત્ન કરે છે."
+#: ../server/vino-prompt.c:291
+#| msgid "_Refuse"
+msgid "Refuse"
+msgstr "નકારો"
 
-#: ../server/vino-prompt.ui.h:4
-msgid "Do you want to allow them to do so?"
-msgstr "શું તમે એમને આ કરવા માટેની પરવાનગી આપો છો?"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "સ્વીકારો"
 
-#: ../server/vino-prompt.ui.h:5 ../server/vino-util.c:90
-msgid "_Refuse"
-msgstr "જવા દો (_R)"
-
-#: ../server/vino-prompt.ui.h:6 ../server/vino-util.c:89
-msgid "_Allow"
-msgstr "પરવાનગી આપો (_A)"
-
-#: ../server/vino-server.c:162 ../server/vino-server.c:185
+#: ../server/vino-server.c:164 ../server/vino-server.c:187
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "બસ સાથેનું જોડાણ ખોલવામાં નિષ્ફળ: %s\n"
@@ -513,26 +540,30 @@ msgstr "બસ સાથેનું જોડાણ ખોલવામાં �
 msgid "GNOME Desktop Sharing Server"
 msgstr "GNOME ડૅસ્કટોપ વહેંચણી સર્વર"
 
-#: ../server/vino-status-icon.c:103 ../server/vino-status-tube-icon.c:96
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "vnc;વહેંચણી;દૂરસ્થ;"
+
+#: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
 msgstr "ડેસ્કટોપ વહેંચણી સક્રિય કરેલ છે"
 
-#: ../server/vino-status-icon.c:111
+#: ../server/vino-status-icon.c:105
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
 msgstr[0] "એક માણસ તમારા ડૅસ્કટોપને જોઇ રહ્યુ છે"
 msgstr[1] "%d માણસ તમારા ડૅસ્કટોપને જોઇ રહ્યુ છે"
 
-#: ../server/vino-status-icon.c:212 ../server/vino-status-tube-icon.c:180
+#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
 msgid "Error displaying preferences"
 msgstr "પસંદગીઓ દર્શાવવામાં ભૂલ"
 
-#: ../server/vino-status-icon.c:234 ../server/vino-status-tube-icon.c:200
+#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
 msgid "Error displaying help"
 msgstr "ત્યાં મદદ દર્શાવવામાં ભૂલ"
 
-#: ../server/vino-status-icon.c:267
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -569,90 +600,85 @@ msgstr ""
 "02110-1301, USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:282
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
 msgstr "અંકિત પટેલ <ankit644@yahoo.com>, શ્ર્વેતા કોઠારી <swkothar@redhat.com>"
 
-#: ../server/vino-status-icon.c:288
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "તમારા ડેસ્કટોપને અન્ય વપરાશકર્તાઓ સાથે વહેંચો"
 
-#: ../server/vino-status-icon.c:355 ../server/vino-status-tube-icon.c:232
+#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "શું તમે ખરેખર '%s' સાથેનું જોડાણ તોડવા માંગો છો?"
 
-#: ../server/vino-status-icon.c:358
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s' માંથી દૂરસ્થ વપરાશકર્તાઓનું જોડાણ તૂટી જશે. શું તમે ચોક્કસ છો?"
 
-#: ../server/vino-status-icon.c:364
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "શું તમે ખરેખર બધા ક્લાઈન્ટોનું જોડાણ તોડવા માંગો છો?"
 
-#: ../server/vino-status-icon.c:366
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "બધા દૂરસ્થ વપરાશકર્તાઓનું જોડાણ તૂટી જશે. શું તમે ચોક્કસ છો?"
 
-#: ../server/vino-status-icon.c:378 ../server/vino-status-tube-icon.c:246
+#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "જોડાણ તોડો"
 
-#: ../server/vino-status-icon.c:404 ../server/vino-status-tube-icon.c:271
+#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "પસંદગીઓ (_P)"
 
-#: ../server/vino-status-icon.c:419
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "બધા જોડાણ તોડો"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:443 ../server/vino-status-tube-icon.c:284
+#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s નું જોડાણ તોડો"
 
-#: ../server/vino-status-icon.c:464 ../server/vino-status-tube-icon.c:303
+#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "મદદ (_H)"
 
-#: ../server/vino-status-icon.c:472
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "વિશે (_A)"
 
-#: ../server/vino-status-icon.c:605 ../server/vino-status-tube-icon.c:400
-#, c-format
-msgid "Error initializing libnotify\n"
-msgstr "libnotify નો આરંભ કરવામાં ભૂલ\n"
-
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:626
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "બીજો વપરાશકર્તા તમારી ડેસ્કટોપ જોઈ રહ્યો છે"
 
-#: ../server/vino-status-icon.c:628
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "કમ્પ્યૂટર '%s' પરનો વપરાશકર્તા દૂરસ્થ રીતે તમારી ડેસ્કટોપ જોઈ રહ્યો છે."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:634
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "અન્ય વપરાશકર્તા તમારી ડેસ્કટોપ નિયંત્રિત કરી રહ્યો છે"
 
-#: ../server/vino-status-icon.c:636
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "કમ્પ્યૂટર '%s' પરનો વપરાશકર્તા દૂરસ્થ રીતે તમારી ડેસ્કટોપ નિયંત્રિત કરી રહ્યો છે."
 
-#: ../server/vino-status-icon.c:664 ../server/vino-status-tube-icon.c:437
+#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "bubble વિશે સૂચન દર્શાવતી વખતે ભૂલ: %s\n"
 
-#: ../server/vino-status-tube-icon.c:235
+#: ../server/vino-status-tube-icon.c:227
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "દૂરસ્થ વપરાશકર્તાઓ '%s' નું જોડાણ તૂટી જશે. શું તમે ચોક્કસ છો?"
@@ -684,6 +710,14 @@ msgstr "'%s' એ તમારા ડેસ્કટોપનું દૂરસ�
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "સ્ક્રીન નું જોડાણ કરવા '%s' માટે રાહ જોઇ રહ્યા છે."
+
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "પરવાનગી આપો (_A)"
+
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "જવા દો (_R)"
 
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
@@ -754,6 +788,26 @@ msgstr "VINO આવૃત્તિ %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "ભૂલ: તમારી પાસે Vino પાસવર્ડ બદલવા માટે પૂરતી પરવાનગીઓ નથી.\n"
+
+#~ msgid ""
+#~ "If true, we will use UPNP protocol to automatically forward the port used "
+#~ "by vino in the router."
+#~ msgstr ""
+#~ "જો true હોય તો, આપણે રાઉટરમાં vino દ્દારા પોર્ટ ને આપોઆપ આગળ ધપાવવા માટે UPNP "
+#~ "પ્રોટોકોલ વાપરશે."
+
+#~ msgid "Question"
+#~ msgstr "પ્રશ્ન"
+
+#~ msgid ""
+#~ "A user on another computer is trying to remotely view or control your "
+#~ "desktop."
+#~ msgstr ""
+#~ "બીજા કમ્પ્યુટર પરનો વપરાશકર્તા એ તમારા કમ્પ્યુટરને દૂરથી જોવાનો અથવા નિયંત્રિત "
+#~ "કરવાનો પ્રયત્ન કરે છે."
+
+#~ msgid "Do you want to allow them to do so?"
+#~ msgstr "શું તમે એમને આ કરવા માટેની પરવાનગી આપો છો?"
 
 #~ msgid "Remote Desktop"
 #~ msgstr "રીમોટ ડેસ્કટોપ"
