@@ -138,6 +138,8 @@ static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
 static void vino_server_setup_framebuffer     (VinoServer *server);
 static void vino_server_release_framebuffer   (VinoServer *server);
 static void vino_server_update_security_types (VinoServer *server);
+static void vino_server_init_io_channels      (VinoServer *server);
+static void vino_server_deinit_io_channels    (VinoServer *server);
 static void vino_server_set_notify_on_connect (VinoServer *server,
     gboolean notify_on_connect);
 
@@ -960,13 +962,56 @@ vino_server_clipboard_cb (GtkClipboard *cb,
 }
 
 static void
+vino_server_init_io_channels(VinoServer *server)
+{
+  rfbScreenInfoPtr rfb_screen = server->priv->rfb_screen;
+  int              i;
+
+  vino_server_deinit_io_channels (server);
+
+  dprintf (RFB, "Creating watch for listening socket [ ");
+  for (i=0; i < rfb_screen->rfbListenSockTotal; i++)
+    {
+      dprintf (RFB, "%d ", rfb_screen->rfbListenSock[i]);
+
+      server->priv->io_channel[i] = g_io_channel_unix_new (rfb_screen->rfbListenSock[i]);
+      server->priv->io_watch[i]   = g_io_add_watch (server->priv->io_channel[i],
+                                                    G_IO_IN|G_IO_PRI,
+                                                   (GIOFunc) vino_server_new_connection_pending,
+                                                    server);
+   }
+   dprintf(RFB,"]- port %d\n", rfb_screen->rfbPort);
+}
+
+static void
+vino_server_deinit_io_channels(VinoServer *server)
+{
+  rfbScreenInfoPtr rfb_screen = server->priv->rfb_screen;
+  int              i;
+
+  for(i=0; i < rfb_screen->rfbListenSockTotal; i++)
+    {
+      if (server->priv->io_watch[i])
+	{
+	  dprintf(RFB, "Removing watch for listening socket [ %d ]- port %d\n",
+		  rfb_screen->rfbListenSock[i], rfb_screen->rfbPort);
+	  g_source_remove (server->priv->io_watch[i]);
+	  server->priv->io_watch[i] = 0;
+	}
+
+      if (server->priv->io_channel[i])
+        g_io_channel_unref (server->priv->io_channel[i]);
+      server->priv->io_channel[i] = NULL;
+    }
+}
+
+static void
 vino_server_init_from_screen (VinoServer *server,
 			      GdkScreen  *screen)
 {
   rfbScreenInfoPtr  rfb_screen;
   char             *name;
   GtkClipboard     *cb;
-  int               i;
 
   g_return_if_fail (server->priv->screen == NULL);
   g_return_if_fail (screen != NULL);
@@ -1041,18 +1086,7 @@ vino_server_init_from_screen (VinoServer *server,
 
   vino_server_update_security_types (server);
 
-  dprintf (RFB, "Creating watch for listening socket [ ");
-  for (i=0; i < rfb_screen->rfbListenSockTotal; i++)
-    {
-      dprintf (RFB, "%d ", rfb_screen->rfbListenSock[i]);
-
-      server->priv->io_channel[i] = g_io_channel_unix_new (rfb_screen->rfbListenSock[i]);
-      server->priv->io_watch[i]   = g_io_add_watch (server->priv->io_channel[i],
-                                                    G_IO_IN|G_IO_PRI,
-                                                   (GIOFunc) vino_server_new_connection_pending,
-                                                    server);
-   }
-   dprintf(RFB,"]- port %d\n", rfb_screen->rfbPort);
+  vino_server_init_io_channels (server);
 
 #ifdef VINO_ENABLE_HTTP_SERVER
   server->priv->http = vino_http_get (rfb_screen->rfbPort);
@@ -1075,7 +1109,6 @@ static void
 vino_server_finalize (GObject *object)
 {
   VinoServer *server = VINO_SERVER (object);
-  int i;
   
 #ifdef VINO_ENABLE_HTTP_SERVER
   if (server->priv->http)
@@ -1087,16 +1120,7 @@ vino_server_finalize (GObject *object)
   server->priv->http = NULL;
 #endif /* VINO_ENABLE_HTTP_SERVER */
 
-  for(i=0; i < server->priv->rfb_screen->rfbListenSockTotal; i++)
-    {
-      if (server->priv->io_watch[i])
-        g_source_remove (server->priv->io_watch[i]);
-      server->priv->io_watch[i] = 0;
-
-      if (server->priv->io_channel[i])
-        g_io_channel_unref (server->priv->io_channel[i]);
-      server->priv->io_channel[i] = NULL;
-    }
+  vino_server_deinit_io_channels (server);
   
   if (server->priv->rfb_screen)
     rfbScreenCleanup (server->priv->rfb_screen);
@@ -1649,6 +1673,7 @@ vino_server_set_use_alternative_port (VinoServer *server,
           rfbSetAutoPort (server->priv->rfb_screen,
                           !server->priv->use_alternative_port);
 
+	  vino_server_init_io_channels (server);
 	  vino_server_control_upnp (server);
         }
 
@@ -1679,6 +1704,7 @@ vino_server_set_alternative_port (VinoServer *server,
           server->priv->use_alternative_port)
 	{
 	  rfbSetPort (server->priv->rfb_screen, server->priv->alternative_port);
+	  vino_server_init_io_channels (server);
 	  vino_server_control_upnp (server);
 	}
 
