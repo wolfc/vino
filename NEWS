@@ -1,3 +1,62 @@
+Vino 3.7.92
+===========
+
+Balázs Úr (1):
+      Updated Hungarian translation
+
+Carles Ferrando (1):
+      [l10n] Updated Catalan (Valencian) translation
+
+Changwoo Ryu (1):
+      Updated Korean translation
+
+Claude Paroz (1):
+      Updated French translation
+
+Claudio Arseni (1):
+      [l10n] Updated Italian translation.
+
+David King (3):
+      Post-release version bump to 3.7.92
+      Remove choices from authentication-methods setting
+      Update NEWS for 3.7.92 release
+
+Duarte Loreto (1):
+      Updated Portuguese translation and converted to New Spelling (Novo AO)
+
+Enrico Nicoletto (1):
+      Updated Brazilian Portuguese translation
+
+Ihar Hrachyshka (1):
+      Updated Belarusian translation.
+
+Joan Duran (1):
+      [l10] Updated Catalan translation
+
+Joe Hansen (1):
+      Updated Danish translation
+
+Jonathan Kamens (1):
+      Reset sockets when changing ports, bug 668187
+
+Mattias Põldaru (1):
+      [l10n] Updated Estonian translation
+
+Nilamdyuti Goswami (1):
+      Assamese translation updated for gnome 3.8
+
+Richard Stanislavský (1):
+      Updated slovak translation
+
+Rūdolfs Mazurs (1):
+      Updated Latvian translation
+
+Sweta Kothari (1):
+      Updated gujarati file
+
+Ville-Pekka Vainio (1):
+      Finnish translation update by Jiri Grönroos
+
 Vino 3.7.91
 ===========
 
