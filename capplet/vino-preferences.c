@@ -68,9 +68,9 @@ set_inverted (const GValue       *value,
   return g_variant_new_boolean (!g_value_get_boolean (value));
 }
 
-/* Next, one that maps between the array-of-strings list of
- * authentication mechanisms and a boolean that is FALSE if the 'none'
- * and TRUE otherwise (ie: for 'vnc' in the list).
+/* Next, one that maps between the array-of-strings list of authentication
+ * mechanisms and a boolean that is TRUE only if "vnc" is in the list and FALSE
+ * otherwise.
  */
 static gboolean
 get_authtype (GValue   *value,
@@ -81,11 +81,11 @@ get_authtype (GValue   *value,
   const gchar *type;
 
   g_variant_iter_init (&iter, variant);
-  g_value_set_boolean (value, TRUE);
+  g_value_set_boolean (value, FALSE);
 
   while (g_variant_iter_next (&iter, "s", &type))
-    if (strcmp (type, "none") == 0)
-      g_value_set_boolean (value, FALSE);
+    if (strcmp (type, "vnc") == 0)
+      g_value_set_boolean (value, TRUE);
 
   return TRUE;
 }
@@ -95,14 +95,12 @@ set_authtype (const GValue       *value,
               const GVariantType *type,
               gpointer            user_data)
 {
-  const gchar *authtype;
+  const gchar *vnc_auth = "vnc";
 
   if (g_value_get_boolean (value))
-    authtype = "vnc";
+    return g_variant_new_strv (&vnc_auth, 1);
   else
-    authtype = "none";
-
-  return g_variant_new_strv (&authtype, 1);
+    return g_variant_new_strv (NULL, 0);
 }
 
 
