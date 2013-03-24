@@ -16,8 +16,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-17 15:02+0100\n"
-"PO-Revision-Date: 2013-03-17 18:21+0200\n"
+"POT-Creation-Date: 2013-03-24 15:00+0100\n"
+"PO-Revision-Date: 2013-03-24 14:14+0100\n"
 "Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
 "Language-Team: Danish <dansk@dansk-gruppen.dk>\n"
 "Language: da\n"
@@ -31,7 +31,7 @@ msgstr ""
 msgid "There was an error showing the URL \"%s\""
 msgstr "Der opstod en fejl ved visning af URL'en \"%s\""
 
-#: ../capplet/vino-preferences.c:245
+#: ../capplet/vino-preferences.c:243
 #, c-format
 msgid ""
 "There was an error displaying help:\n"
@@ -40,24 +40,24 @@ msgstr ""
 "Der opstod en fejl ved visning af hjælp:\n"
 "%s"
 
-#: ../capplet/vino-preferences.c:278
+#: ../capplet/vino-preferences.c:276
 msgid "Checking the connectivity of this machine..."
 msgstr "Kontrollerer denne maskines forbindelsesevner..."
 
-#: ../capplet/vino-preferences.c:298
+#: ../capplet/vino-preferences.c:296
 msgid "Your desktop is only reachable over the local network."
 msgstr "Dit skrivebord kan kun nås over det lokale netværk."
 
-#: ../capplet/vino-preferences.c:311
+#: ../capplet/vino-preferences.c:309
 msgid " or "
 msgstr " eller "
 
-#: ../capplet/vino-preferences.c:315
+#: ../capplet/vino-preferences.c:313
 #, c-format
 msgid "Others can access your computer using the address %s."
 msgstr "Andre kan tilgå din computer ved brug af adressen %s."
 
-#: ../capplet/vino-preferences.c:324
+#: ../capplet/vino-preferences.c:322
 msgid "Nobody can access your desktop."
 msgstr "Ingen kan tilgå dit skrivebord."
 
@@ -529,7 +529,7 @@ msgstr "Server til deling af GNOME-skrivebord"
 
 #: ../server/vino-server.desktop.in.in.h:3
 msgid "vnc;share;remote;"
-msgstr "vnc;del;ekstern;fjern"
+msgstr "vnc;del;ekstern;fjern;"
 
 #: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
