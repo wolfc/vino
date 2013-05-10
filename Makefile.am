@@ -4,7 +4,7 @@ SUBDIRS = po
 DISTCHECK_CONFIGURE_FLAGS = \
 	--with-avahi \
 	--with-libnotify \
-	--with-gnome-keyring \
+	--with-secret \
 	--with-network-manager \
 	--with-telepathy \
 	--with-gnutls \
@@ -241,37 +241,7 @@ server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Tel
 	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
 bin_PROGRAMS = \
-	vino-preferences \
 	vino-passwd
-
-vino_preferences_CPPFLAGS = \
-	-I$(top_srcdir)/common \
-	-I$(top_builddir) \
-	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\"  \
-	-DVINO_UIDIR=\""$(pkgdatadir)"\" \
-	-DVINO_ICONDIR=\""$(datadir)/pixmaps\"" \
-	$(VINO_CAPPLET_CFLAGS) \
-	$(WARN_CFLAGS) \
-	$(DISABLE_DEPRECATED)
-
-vino_preferences_SOURCES = \
-	common/vino-dbus.h \
-	common/vino-dbus.c \
-	common/vino-keyring.h \
-	common/vino-keyring.c \
-	capplet/vino-connectivity-info.h \
-	capplet/vino-connectivity-info.c \
-	capplet/vino-url-webservice.h \
-	capplet/vino-url-webservice.c \
-	capplet/vino-radio-button.h \
-	capplet/vino-radio-button.c \
-	capplet/vino-message-box.h \
-	capplet/vino-message-box.c \
-	capplet/vino-preferences.c
-
-vino_preferences_LDADD = \
-	$(VINO_CAPPLET_LIBS) \
-	$(X_LIBS)
 
 vino_passwd_CPPFLAGS = \
 	-I$(top_builddir) \
@@ -286,24 +256,15 @@ vino_passwd_SOURCES = \
 vino_passwd_LDADD = \
 	$(VINO_TOOLS_LIBS)
 
-uidir = $(pkgdatadir)
-dist_ui_DATA = \
-	capplet/vino-preferences.ui \
-	capplet/webservices
-
 autostartdir = $(sysconfdir)/xdg/autostart
 autostart_in_files = server/vino-server.desktop.in
 nodist_autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
-
-desktopdir = $(datadir)/applications
-desktop_in_files = capplet/vino-preferences.desktop.in
-nodist_desktop_DATA = $(desktop_in_files:.desktop.in=.desktop)
 
 @INTLTOOL_DESKTOP_RULE@
 
 # GSettings schemas, enum files and conversion file
 gsettings_ENUM_NAMESPACE = org.gnome.Vino
-gsettings_ENUM_FILES = capplet/vino-preferences.c
+gsettings_ENUM_FILES = common/vino-enums.h
 gsettings_SCHEMAS = common/org.gnome.Vino.gschema.xml
 
 @GSETTINGS_RULES@
@@ -330,6 +291,7 @@ dist-changelog:
 dist_noinst_DATA = \
 	$(desktop_in_files) \
 	\
+	$(gsettings_ENUM_FILES) \
 	$(gsettings_SCHEMAS) \
 	\
 	docs/remote-desktop.txt \

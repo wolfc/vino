@@ -1,4 +1,6 @@
 /*
+ * Copyright (C) 2003 Sun Microsystems, Inc.
+ * Copyright (C) 2006 Jonh Wendell <wendell@bani.com.br> 
  * Copyright © 2010 Codethink Limited
  *
  * This program is free software; you can redistribute it and/or
@@ -16,18 +18,15 @@
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
  * 02111-1307, USA.
  *
- * Author: Ryan Lortie <desrt@desrt.ca>
+ * Authors:
+ *      Mark McLoughlin <mark@skynet.ie>
+ *      Jonh Wendell <wendell@bani.com.br>
+ *      Ryan Lortie <desrt@desrt.ca>
  */
 
-#include <glib.h>
-
-typedef struct _VinoConnectivityInfo VinoConnectivityInfo;
-
-VinoConnectivityInfo * vino_connectivity_info_new (gint screen_number);
-gboolean vino_connectivity_info_get (VinoConnectivityInfo  *info,
-                                     gchar                **internal_host,
-                                     guint16               *internal_port,
-                                     gchar                **external_host,
-                                     guint16               *external_port,
-                                     gchar                **avahi_host);
-void vino_connectivity_info_check (VinoConnectivityInfo *info);
+typedef enum
+{
+  VINO_ICON_VISIBILITY_NEVER,
+  VINO_ICON_VISIBILITY_ALWAYS,
+  VINO_ICON_VISIBILITY_CLIENT
+} VinoIconVisibility;

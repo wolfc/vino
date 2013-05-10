@@ -315,7 +315,6 @@ GLIB_GSETTINGS
 
 AC_CONFIG_FILES([
 Makefile
-capplet/vino-preferences.desktop.in
 po/Makefile.in
 ])
 
