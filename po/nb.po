@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 3.7.x\n"
+"Project-Id-Version: vino 3.8.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-27 18:08+0100\n"
-"PO-Revision-Date: 2013-02-27 18:12+0100\n"
+"POT-Creation-Date: 2013-05-16 14:43+0200\n"
+"PO-Revision-Date: 2013-05-16 14:43+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -16,114 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#: ../capplet/vino-message-box.c:55
-#, c-format
-msgid "There was an error showing the URL \"%s\""
-msgstr "Det oppsto en feil under visning av URL «%s»"
-
-#: ../capplet/vino-preferences.c:245
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-"%s"
-msgstr ""
-"Det oppsto en feil under visning av hjelp:\n"
-"%s"
-
-#: ../capplet/vino-preferences.c:278
-msgid "Checking the connectivity of this machine..."
-msgstr "Sjekker konnektivitet for denne maskinen …"
-
-#: ../capplet/vino-preferences.c:298
-msgid "Your desktop is only reachable over the local network."
-msgstr "Skrivebordet ditt kan kun nås over det lokale nettverket."
-
-#: ../capplet/vino-preferences.c:311
-msgid " or "
-msgstr " eller "
-
-#: ../capplet/vino-preferences.c:315
-#, c-format
-msgid "Others can access your computer using the address %s."
-msgstr "Andre kan få tilgang til din datamaskin via adressen %s."
-
-#: ../capplet/vino-preferences.c:324
-msgid "Nobody can access your desktop."
-msgstr "Ingen har tilgang til ditt skrivebord."
-
-#: ../capplet/vino-preferences.desktop.in.in.h:1
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "Desktop Sharing"
-msgstr "Deling av skrivebord"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Choose how other users can remotely view your desktop"
-msgstr "Velg hvordan andre eksterne brukere kan se ditt skrivebord"
-
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "Brukervalg for deling av skrivebord"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "Deling"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "Noen av disse brukervalgene er låst"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "La andre brukere _se ditt skrivebord"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "Ditt skrivebord vil bli delt"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "L_a andre brukere kontrollere ditt skrivebord"
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "Eksterne brukere kan kontrollere mus og tastatur"
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "Sikkerhet"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "D_u må bekrefte hver tilgang til denne maskinen"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "K_rev at bruker oppgir dette passordet:"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "_Konfigurer UPnP-ruter til å åpne og videresende porter automatisk"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "Ruter må ha funksjonen UPnP slått på"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "Vis ikon for varslingsområde"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "All_tid"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "Kun når n_oen er koblet til"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "A_ldri"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -177,7 +69,8 @@ msgid ""
 msgstr ""
 "Tjeneren vil lytte på alle nettverksgrensesnitt hvis denne ikke er satt.\n"
 "\n"
-"Sett denne hvis du vil godta tilkoblinger kun fra spesifikke nettverksgrensesnitt som eth0, wifi0, lo osv."
+"Sett denne hvis du vil godta tilkoblinger kun fra spesifikke "
+"nettverksgrensesnitt som eth0, wifi0, lo osv."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Listen on an alternative port"
@@ -199,7 +92,9 @@ msgstr "Portnummer for alternativ port"
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range of 5000 to 50000."
-msgstr "Porten som tjeneren vil lytte på hvis «use-alternative-port»-nøkkelen er satt til «true». Gyldige verdier er i området fra 5000 til 50000."
+msgstr ""
+"Porten som tjeneren vil lytte på hvis «use-alternative-port»-nøkkelen er "
+"satt til «true». Gyldige verdier er i området fra 5000 til 50000."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Require encryption"
@@ -291,7 +186,11 @@ msgid ""
 "\"always\" - the icon will always be present; \"client\" - the icon will "
 "only be present when someone is connected (this is the default behavior); "
 "\"never\" - the icon will not be present."
-msgstr "Denne nøkkelen kontrollerer oppførsel for statusikonet. Det finnes tre alternativer: «always» - Ikonet vises hele tiden; «client» - Ikonet vises kun når noen er tilkoblet; dette er forvalgt oppførsel; «never» - Ikonet vises aldri."
+msgstr ""
+"Denne nøkkelen kontrollerer oppførsel for statusikonet. Det finnes tre "
+"alternativer: «always» - Ikonet vises hele tiden; «client» - Ikonet vises "
+"kun når noen er tilkoblet; dette er forvalgt oppførsel; «never» - Ikonet "
+"vises aldri."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "Whether to disable the desktop background when a user is connected"
@@ -322,7 +221,11 @@ msgid ""
 "If true, do not use the XDamage extension of X.org. This extension does not "
 "work properly on some video drivers when using 3D effects. Disabling it will "
 "make Vino work in these environments, with slower rendering as a side effect."
-msgstr "Hvis denne settes til «true» så vil ikke XDamage-utvidelsen i X.org brukes. Utvidelsen fungerer ikke korrekt med noen grafikkdrivere når 3D-effekter brukes. Hvis du slå dette av vil Vino fungere på disse systemene, men dog med tregere grafikk."
+msgstr ""
+"Hvis denne settes til «true» så vil ikke XDamage-utvidelsen i X.org brukes. "
+"Utvidelsen fungerer ikke korrekt med noen grafikkdrivere når 3D-effekter "
+"brukes. Hvis du slå dette av vil Vino fungere på disse systemene, men dog "
+"med tregere grafikk."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:37
 msgid "Notify on connect"
@@ -331,10 +234,6 @@ msgstr "Varsle ved tilkobling"
 #: ../common/org.gnome.Vino.gschema.xml.h:38
 msgid "If true, show a notification when a user connects to the system."
 msgstr "Varsler når bruker kobler til systemet hvis satt til «true»."
-
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "Passord for deling av skrivebordet"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -492,10 +391,14 @@ msgstr "Avslå"
 msgid "Accept"
 msgstr "Godta"
 
-#: ../server/vino-server.c:164 ../server/vino-server.c:187
+#: ../server/vino-server.c:166 ../server/vino-server.c:189
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Kunne ikke åpne tilkobling til buss: %s\n"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "Deling av skrivebord"
 
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "GNOME Desktop Sharing Server"
@@ -684,6 +587,10 @@ msgstr "_Nekt"
 msgid "An error has occurred:"
 msgstr "En feil har oppstått:"
 
+#: ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "Passord for deling av skrivebordet"
+
 #: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
@@ -757,3 +664,79 @@ msgstr "VINO Versjon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "FEIL: Du har ikke tilstrekkelige rettigheter til å bytte passord for Vino.\n"
+
+#~ msgid "There was an error showing the URL \"%s\""
+#~ msgstr "Det oppsto en feil under visning av URL «%s»"
+
+#~ msgid ""
+#~ "There was an error displaying help:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "Det oppsto en feil under visning av hjelp:\n"
+#~ "%s"
+
+#~ msgid "Checking the connectivity of this machine..."
+#~ msgstr "Sjekker konnektivitet for denne maskinen …"
+
+#~ msgid "Your desktop is only reachable over the local network."
+#~ msgstr "Skrivebordet ditt kan kun nås over det lokale nettverket."
+
+#~ msgid " or "
+#~ msgstr " eller "
+
+#~ msgid "Others can access your computer using the address %s."
+#~ msgstr "Andre kan få tilgang til din datamaskin via adressen %s."
+
+#~ msgid "Nobody can access your desktop."
+#~ msgstr "Ingen har tilgang til ditt skrivebord."
+
+#~ msgid "Choose how other users can remotely view your desktop"
+#~ msgstr "Velg hvordan andre eksterne brukere kan se ditt skrivebord"
+
+#~ msgid "Desktop Sharing Preferences"
+#~ msgstr "Brukervalg for deling av skrivebord"
+
+#~ msgid "Sharing"
+#~ msgstr "Deling"
+
+#~ msgid "Some of these preferences are locked down"
+#~ msgstr "Noen av disse brukervalgene er låst"
+
+#~ msgid "Allow other users to _view your desktop"
+#~ msgstr "La andre brukere _se ditt skrivebord"
+
+#~ msgid "Your desktop will be shared"
+#~ msgstr "Ditt skrivebord vil bli delt"
+
+#~ msgid "_Allow other users to control your desktop"
+#~ msgstr "L_a andre brukere kontrollere ditt skrivebord"
+
+#~ msgid "Remote users are able to control your mouse and keyboard"
+#~ msgstr "Eksterne brukere kan kontrollere mus og tastatur"
+
+#~ msgid "Security"
+#~ msgstr "Sikkerhet"
+
+#~ msgid "_You must confirm each access to this machine"
+#~ msgstr "D_u må bekrefte hver tilgang til denne maskinen"
+
+#~ msgid "_Require the user to enter this password:"
+#~ msgstr "K_rev at bruker oppgir dette passordet:"
+
+#~ msgid "Automatically _configure UPnP router to open and forward ports"
+#~ msgstr "_Konfigurer UPnP-ruter til å åpne og videresende porter automatisk"
+
+#~ msgid "The router must have the UPnP feature enabled"
+#~ msgstr "Ruter må ha funksjonen UPnP slått på"
+
+#~ msgid "Show Notification Area Icon"
+#~ msgstr "Vis ikon for varslingsområde"
+
+#~ msgid "Al_ways"
+#~ msgstr "All_tid"
+
+#~ msgid "_Only when someone is connected"
+#~ msgstr "Kun når n_oen er koblet til"
+
+#~ msgid "_Never"
+#~ msgstr "A_ldri"
