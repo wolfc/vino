@@ -91,8 +91,8 @@ update_upnp_status (VinoUpnp *upnp)
   dprintf (UPNP, "found.\n");
   dprintf (UPNP, "UPnP: Looking for a valid IGD... ");
 
-  upnp->priv->urls = g_new (struct UPNPUrls, 1);
-  upnp->priv->data = g_new (struct IGDdatas, 1);
+  upnp->priv->urls = g_new0 (struct UPNPUrls, 1);
+  upnp->priv->data = g_new0 (struct IGDdatas, 1);
 
   res = UPNP_GetValidIGD (devlist,
 			  upnp->priv->urls,
