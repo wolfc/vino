@@ -1,3 +1,24 @@
+Vino 3.9.2
+==========
+
+Andika Triwidada (1):
+      Updated Indonesian translation
+
+Daniel Korostil (1):
+      Update uk translation
+
+David King (4):
+      Update NEWS for 3.9.2 release
+      Post-release version bump to 3.9.1
+      Back out "authentication-method" setting change
+      Remove preferences dialog, bug 700070
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
+Matthias Clasen (1):
+      Be more careful with memory allocation
+
 Vino 3.8.0
 ==========
 
