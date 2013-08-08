@@ -5,10 +5,10 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 3.8.x\n"
+"Project-Id-Version: vino 3.9.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-05-16 14:43+0200\n"
-"PO-Revision-Date: 2013-05-16 14:43+0200\n"
+"POT-Creation-Date: 2013-08-08 22:03+0200\n"
+"PO-Revision-Date: 2013-08-08 22:04+0200\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -664,79 +664,3 @@ msgstr "VINO Versjon %s\n"
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr ""
 "FEIL: Du har ikke tilstrekkelige rettigheter til å bytte passord for Vino.\n"
-
-#~ msgid "There was an error showing the URL \"%s\""
-#~ msgstr "Det oppsto en feil under visning av URL «%s»"
-
-#~ msgid ""
-#~ "There was an error displaying help:\n"
-#~ "%s"
-#~ msgstr ""
-#~ "Det oppsto en feil under visning av hjelp:\n"
-#~ "%s"
-
-#~ msgid "Checking the connectivity of this machine..."
-#~ msgstr "Sjekker konnektivitet for denne maskinen …"
-
-#~ msgid "Your desktop is only reachable over the local network."
-#~ msgstr "Skrivebordet ditt kan kun nås over det lokale nettverket."
-
-#~ msgid " or "
-#~ msgstr " eller "
-
-#~ msgid "Others can access your computer using the address %s."
-#~ msgstr "Andre kan få tilgang til din datamaskin via adressen %s."
-
-#~ msgid "Nobody can access your desktop."
-#~ msgstr "Ingen har tilgang til ditt skrivebord."
-
-#~ msgid "Choose how other users can remotely view your desktop"
-#~ msgstr "Velg hvordan andre eksterne brukere kan se ditt skrivebord"
-
-#~ msgid "Desktop Sharing Preferences"
-#~ msgstr "Brukervalg for deling av skrivebord"
-
-#~ msgid "Sharing"
-#~ msgstr "Deling"
-
-#~ msgid "Some of these preferences are locked down"
-#~ msgstr "Noen av disse brukervalgene er låst"
-
-#~ msgid "Allow other users to _view your desktop"
-#~ msgstr "La andre brukere _se ditt skrivebord"
-
-#~ msgid "Your desktop will be shared"
-#~ msgstr "Ditt skrivebord vil bli delt"
-
-#~ msgid "_Allow other users to control your desktop"
-#~ msgstr "L_a andre brukere kontrollere ditt skrivebord"
-
-#~ msgid "Remote users are able to control your mouse and keyboard"
-#~ msgstr "Eksterne brukere kan kontrollere mus og tastatur"
-
-#~ msgid "Security"
-#~ msgstr "Sikkerhet"
-
-#~ msgid "_You must confirm each access to this machine"
-#~ msgstr "D_u må bekrefte hver tilgang til denne maskinen"
-
-#~ msgid "_Require the user to enter this password:"
-#~ msgstr "K_rev at bruker oppgir dette passordet:"
-
-#~ msgid "Automatically _configure UPnP router to open and forward ports"
-#~ msgstr "_Konfigurer UPnP-ruter til å åpne og videresende porter automatisk"
-
-#~ msgid "The router must have the UPnP feature enabled"
-#~ msgstr "Ruter må ha funksjonen UPnP slått på"
-
-#~ msgid "Show Notification Area Icon"
-#~ msgstr "Vis ikon for varslingsområde"
-
-#~ msgid "Al_ways"
-#~ msgstr "All_tid"
-
-#~ msgid "_Only when someone is connected"
-#~ msgstr "Kun når n_oen er koblet til"
-
-#~ msgid "_Never"
-#~ msgstr "A_ldri"
