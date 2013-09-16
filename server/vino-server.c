@@ -445,9 +445,12 @@ vino_server_update_client_timeout (rfbClientPtr rfb_client)
 }
 
 static inline gboolean
-more_data_pending (int fd)
+more_data_pending (rfbClientPtr rfb_client)
 {
-  struct pollfd pollfd = { fd, POLLIN|POLLPRI, 0 };
+  struct pollfd pollfd = { rfb_client->sock, POLLIN|POLLPRI, 0 };
+
+  if (ReadPending(rfb_client) > 0)
+      return TRUE;
 
   return poll (&pollfd, 1, 0) == 1;
 }
@@ -462,7 +465,7 @@ vino_server_client_data_pending (GIOChannel   *source,
 
   do {
     rfbProcessClientMessage (rfb_client);
-  } while (more_data_pending (rfb_client->sock));
+  } while (more_data_pending (rfb_client));
   
   return vino_server_update_client (rfb_client);
 }

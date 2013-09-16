@@ -457,6 +457,21 @@ int ReadExact(rfbClientPtr cl,char* buf,int len)
 }
 
 #ifdef VINO_HAVE_GNUTLS
+extern int ReadPending(rfbClientPtr cl)
+{
+    if (cl->useTLS && cl->tlsSession)
+        return gnutls_record_check_pending(cl->tlsSession);
+    else
+        return 0;
+}
+#else
+extern int ReadPending(rfbClientPtr cl)
+{
+    return 0;
+}
+#endif
+
+#ifdef VINO_HAVE_GNUTLS
 static int
 WriteExactOverTLS(rfbClientPtr cl, const char* buf, int len)
 {
