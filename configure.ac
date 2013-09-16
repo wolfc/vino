@@ -1,5 +1,5 @@
 AC_PREREQ([2.64])
-AC_INIT([Vino], [3.9.5], [https://bugzilla.gnome.org/enter_bug.cgi?product=vino], [vino], [https://live.gnome.org/Vino])
+AC_INIT([Vino], [3.9.92], [https://bugzilla.gnome.org/enter_bug.cgi?product=vino], [vino], [https://live.gnome.org/Vino])
 AC_CONFIG_AUX_DIR([build-aux])
 AC_CONFIG_SRCDIR([server/vino-fb.c])
 AC_CONFIG_HEADERS([config.h])

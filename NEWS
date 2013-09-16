@@ -1,3 +1,19 @@
+Vino 3.9.92
+===========
+
+Daniel P. Berrange (1):
+      Fix reading of TLS data to account for cached data
+
+David King (2):
+      Post-release version bump to 3.9.5
+      Reject new clients if in the deferred state
+
+Jiro Matsuzawa (1):
+      l10n: Update Japanese translation
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation
+
 Vino 3.9.3
 ==========
 
