@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-03-23 18:32+0200\n"
+"POT-Creation-Date: 2013-09-22 10:19+0200\n"
 "PO-Revision-Date: 2013-03-23 18:34+0200\n"
 "Last-Translator: Khaled Hosny <khaledhosny@eglug.org>\n"
 "Language-Team: Arabic <doc@arabeyes.org>\n"
@@ -20,114 +20,6 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 ? 4 : 5;\n"
 "X-Generator: Virtaal 0.7.0\n"
-
-#: ../capplet/vino-message-box.c:55
-#, c-format
-msgid "There was an error showing the URL \"%s\""
-msgstr "حدث خطأ عند عرض المسار \"%s\""
-
-#: ../capplet/vino-preferences.c:243
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-"%s"
-msgstr ""
-"حدث خطأ عند عرض المساعدة:\n"
-"%s"
-
-#: ../capplet/vino-preferences.c:276
-msgid "Checking the connectivity of this machine..."
-msgstr "يفحص الاتصال بهذا الجهاز..."
-
-#: ../capplet/vino-preferences.c:296
-msgid "Your desktop is only reachable over the local network."
-msgstr "جهازك متاح عبر الشبكة المحلية فقط."
-
-#: ../capplet/vino-preferences.c:309
-msgid " or "
-msgstr " أو "
-
-#: ../capplet/vino-preferences.c:313
-#, c-format
-msgid "Others can access your computer using the address %s."
-msgstr "يستطيع الآخرون الدخول إلى حاسوبك باستخدام العنوان %s."
-
-#: ../capplet/vino-preferences.c:322
-msgid "Nobody can access your desktop."
-msgstr "لا يستطيع أحد الدخول إلى حاسوبك."
-
-#: ../capplet/vino-preferences.desktop.in.in.h:1
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "Desktop Sharing"
-msgstr "مشاركة سطح المكتب"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Choose how other users can remotely view your desktop"
-msgstr "اختر كيف يستطيع المستخدمين الآخرين عرض سطح مكتبك عن بعد"
-
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "تفضيلات مشاركة سطح المكتب"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "المشاركة"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "بعض هذه التّفضيلات موصد"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "سيتشارك سطح مكتبك"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسطح مكتبك."
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "المستخدمون البعيدون يمكنهم التحكم بفأرتك و لوحة مفاتيحك"
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "الأمن"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "يجب أن _تؤكد كل اتصال بهذا الجهاز"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "ا_طلب من المستخدم ادخال كلمة السر هذه:"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "ا_ضبط مسيّر UPnP تلقائيا لفتح وتمرير المنافذ"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "يجب أن تكون خاصية UPnP مفعلة في المسيّر (router)"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "أظهِر أيقونة في منطقة التبليغ"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "دا_ئمًا"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "عندما يتّصل أحد _فقط"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "أ_بدًا"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -331,10 +223,6 @@ msgstr ""
 msgid "If true, show a notification when a user connects to the system."
 msgstr ""
 
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "كلمة سر مشاركة سطح المكتب عن بعد"
-
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
 msgid "File is not a valid .desktop file"
@@ -490,6 +378,10 @@ msgstr "اقبل"
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "فشل فتح اتصال مع الناقل: %s\n"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "مشاركة سطح المكتب"
 
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "GNOME Desktop Sharing Server"
@@ -686,6 +578,10 @@ msgstr "ا_رفض"
 msgid "An error has occurred:"
 msgstr "حدث خطأ:"
 
+#: ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "كلمة سر مشاركة سطح المكتب عن بعد"
+
 #: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
@@ -756,6 +652,82 @@ msgstr "إصدارة فينو %s\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "خطأ: ليس لديك أذون كافية لتغيير كلمة سر فينو. \n"
+
+#~ msgid "There was an error showing the URL \"%s\""
+#~ msgstr "حدث خطأ عند عرض المسار \"%s\""
+
+#~ msgid ""
+#~ "There was an error displaying help:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "حدث خطأ عند عرض المساعدة:\n"
+#~ "%s"
+
+#~ msgid "Checking the connectivity of this machine..."
+#~ msgstr "يفحص الاتصال بهذا الجهاز..."
+
+#~ msgid "Your desktop is only reachable over the local network."
+#~ msgstr "جهازك متاح عبر الشبكة المحلية فقط."
+
+#~ msgid " or "
+#~ msgstr " أو "
+
+#~ msgid "Others can access your computer using the address %s."
+#~ msgstr "يستطيع الآخرون الدخول إلى حاسوبك باستخدام العنوان %s."
+
+#~ msgid "Nobody can access your desktop."
+#~ msgstr "لا يستطيع أحد الدخول إلى حاسوبك."
+
+#~ msgid "Choose how other users can remotely view your desktop"
+#~ msgstr "اختر كيف يستطيع المستخدمين الآخرين عرض سطح مكتبك عن بعد"
+
+#~ msgid "Desktop Sharing Preferences"
+#~ msgstr "تفضيلات مشاركة سطح المكتب"
+
+#~ msgid "Sharing"
+#~ msgstr "المشاركة"
+
+#~ msgid "Some of these preferences are locked down"
+#~ msgstr "بعض هذه التّفضيلات موصد"
+
+#~ msgid "Allow other users to _view your desktop"
+#~ msgstr "اسمح للمستخدمين الآخرين ب_عرض سطح مكتبك"
+
+#~ msgid "Your desktop will be shared"
+#~ msgstr "سيتشارك سطح مكتبك"
+
+#~ msgid "_Allow other users to control your desktop"
+#~ msgstr "ا_سمح للمستخدمين الآخرين بالتّحكّم بسطح مكتبك."
+
+#~ msgid "Remote users are able to control your mouse and keyboard"
+#~ msgstr "المستخدمون البعيدون يمكنهم التحكم بفأرتك و لوحة مفاتيحك"
+
+#~ msgid "Security"
+#~ msgstr "الأمن"
+
+#~ msgid "_You must confirm each access to this machine"
+#~ msgstr "يجب أن _تؤكد كل اتصال بهذا الجهاز"
+
+#~ msgid "_Require the user to enter this password:"
+#~ msgstr "ا_طلب من المستخدم ادخال كلمة السر هذه:"
+
+#~ msgid "Automatically _configure UPnP router to open and forward ports"
+#~ msgstr "ا_ضبط مسيّر UPnP تلقائيا لفتح وتمرير المنافذ"
+
+#~ msgid "The router must have the UPnP feature enabled"
+#~ msgstr "يجب أن تكون خاصية UPnP مفعلة في المسيّر (router)"
+
+#~ msgid "Show Notification Area Icon"
+#~ msgstr "أظهِر أيقونة في منطقة التبليغ"
+
+#~ msgid "Al_ways"
+#~ msgstr "دا_ئمًا"
+
+#~ msgid "_Only when someone is connected"
+#~ msgstr "عندما يتّصل أحد _فقط"
+
+#~ msgid "_Never"
+#~ msgstr "أ_بدًا"
 
 #~ msgid "Question"
 #~ msgstr "السّؤال"
