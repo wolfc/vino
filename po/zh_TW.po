@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: vino 3.3.4\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-02-04 13:53+0800\n"
+"POT-Creation-Date: 2013-09-24 19:26+0800\n"
 "PO-Revision-Date: 2013-02-03 23:18+0800\n"
 "Last-Translator: Chao-Hsiung Liao <j_h_liau@yahoo.com.tw>\n"
 "Language-Team: Chinese (traditional)\n"
@@ -18,114 +18,6 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
-
-#: ../capplet/vino-message-box.c:55
-#, c-format
-msgid "There was an error showing the URL \"%s\""
-msgstr "顯示網址「%s」時發生錯誤"
-
-#: ../capplet/vino-preferences.c:245
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-"%s"
-msgstr ""
-"顯示說明文件時發生錯誤：\n"
-"%s"
-
-#: ../capplet/vino-preferences.c:278
-msgid "Checking the connectivity of this machine..."
-msgstr "正在檢查這個機器的連線能力…"
-
-#: ../capplet/vino-preferences.c:298
-msgid "Your desktop is only reachable over the local network."
-msgstr "您的桌面只能透過區域網路使用。"
-
-#: ../capplet/vino-preferences.c:311
-msgid " or "
-msgstr " 或 "
-
-#: ../capplet/vino-preferences.c:315
-#, c-format
-msgid "Others can access your computer using the address %s."
-msgstr "其他人可以使用位址 %s 來存取您的電腦。"
-
-#: ../capplet/vino-preferences.c:324
-msgid "Nobody can access your desktop."
-msgstr "其他人不能存取您的桌面。"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:1
-#: ../server/vino-server.desktop.in.in.h:1
-msgid "Desktop Sharing"
-msgstr "桌面分享"
-
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Choose how other users can remotely view your desktop"
-msgstr "選擇其他使用者要以何種方式遠端觀看您的桌面"
-
-#: ../capplet/vino-preferences.ui.h:1
-msgid "Desktop Sharing Preferences"
-msgstr "桌面分享偏好設定"
-
-#: ../capplet/vino-preferences.ui.h:2
-msgid "Sharing"
-msgstr "分享"
-
-#: ../capplet/vino-preferences.ui.h:3
-msgid "Some of these preferences are locked down"
-msgstr "一部分偏好設定已被鎖定"
-
-#: ../capplet/vino-preferences.ui.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "允許其他使用者觀看您的桌面(_V)"
-
-#: ../capplet/vino-preferences.ui.h:5
-msgid "Your desktop will be shared"
-msgstr "將會分享您的桌面"
-
-#: ../capplet/vino-preferences.ui.h:6
-msgid "_Allow other users to control your desktop"
-msgstr "允許其他使用者控制您的桌面(_A)"
-
-#: ../capplet/vino-preferences.ui.h:7
-msgid "Remote users are able to control your mouse and keyboard"
-msgstr "遠端使用者可以控制您的滑鼠和鍵盤"
-
-#: ../capplet/vino-preferences.ui.h:8
-msgid "Security"
-msgstr "安全性"
-
-#: ../capplet/vino-preferences.ui.h:9
-msgid "_You must confirm each access to this machine"
-msgstr "您必須確認每次對這臺機器的連線(_Y)"
-
-#: ../capplet/vino-preferences.ui.h:10
-msgid "_Require the user to enter this password:"
-msgstr "使用者需要輸入密碼(_R):"
-
-#: ../capplet/vino-preferences.ui.h:11
-msgid "Automatically _configure UPnP router to open and forward ports"
-msgstr "自動設定 UPnP 路由來開啟並將連接埠轉址(_C)"
-
-#: ../capplet/vino-preferences.ui.h:12
-msgid "The router must have the UPnP feature enabled"
-msgstr "路由器必須啟用 UPnP 功能"
-
-#: ../capplet/vino-preferences.ui.h:13
-msgid "Show Notification Area Icon"
-msgstr "在通知區中顯示圖示"
-
-#: ../capplet/vino-preferences.ui.h:14
-msgid "Al_ways"
-msgstr "永遠(_W)"
-
-#: ../capplet/vino-preferences.ui.h:15
-msgid "_Only when someone is connected"
-msgstr "只在有人連線時(_O)"
-
-#: ../capplet/vino-preferences.ui.h:16
-msgid "_Never"
-msgstr "永不(_N)"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
 msgid "Enable remote access to the desktop"
@@ -216,7 +108,7 @@ msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.h:17
 msgid "Allowed authentication methods"
-msgstr "允許的驗證方式"
+msgstr "允許的核對方式"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:18
 msgid ""
@@ -228,14 +120,14 @@ msgid ""
 "password key) before connecting and \"none\" which allows any remote user to "
 "connect."
 msgstr ""
-"列出遠端使用者可以使用的驗證方式。\n"
+"列出遠端使用者可以使用的核對方式。\n"
 "\n"
-"有兩種可能的驗證方式：一是「vnc」，即在連接前提示遠端使用者輸入密碼 (此密碼是"
+"有兩種可能的核對方式：一是「vnc」，即在連接前提示遠端使用者輸入密碼 (此密碼是"
 "由 vnc-password 設定鍵決定)，或者是「none」，即允許任何遠端使用者連接。"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:21
 msgid "Password required for \"vnc\" authentication"
-msgstr "“vnc”驗證方式需要密碼"
+msgstr "“vnc”核對方式需要密碼"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:22
 msgid ""
@@ -246,7 +138,7 @@ msgid ""
 "The special value of 'keyring' (which is not valid base64) means that the "
 "password is stored in the GNOME keyring."
 msgstr ""
-"如果使用「vnc」驗證方法的話，遠端使用者需要輸入這個密碼。此密碼是用 base64 編"
+"如果使用「vnc」核對方法的話，遠端使用者需要輸入這個密碼。此密碼是用 base64 編"
 "碼的。\n"
 "\n"
 "若看到特殊的數值「keyring」(不是有效的 base64) 表示密碼是儲存在 GNOME 鑰匙圈"
@@ -332,10 +224,6 @@ msgstr "連線時通知"
 #: ../common/org.gnome.Vino.gschema.xml.h:38
 msgid "If true, show a notification when a user connects to the system."
 msgstr "如果設為 true，當使用者連線到系統時顯示通知。"
-
-#: ../common/vino-keyring.c:54 ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "遠端桌面分享密碼"
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -488,10 +376,14 @@ msgstr "拒絕"
 msgid "Accept"
 msgstr "接受"
 
-#: ../server/vino-server.c:164 ../server/vino-server.c:187
+#: ../server/vino-server.c:166 ../server/vino-server.c:189
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "開啟至 bus 的連線失敗：%s\n"
+
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "桌面分享"
 
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "GNOME Desktop Sharing Server"
@@ -685,6 +577,10 @@ msgstr "拒絕(_R)"
 msgid "An error has occurred:"
 msgstr "發生錯誤："
 
+#: ../tools/vino-passwd.c:54
+msgid "Remote desktop sharing password"
+msgstr "遠端桌面分享密碼"
+
 #: ../tools/vino-passwd.c:108
 #, c-format
 msgid "Cancelled"
@@ -751,6 +647,82 @@ msgstr "VINO %s 版\n"
 #, c-format
 msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 msgstr "錯誤：您沒有足夠的權限來改變 Vino 密碼。\n"
+
+#~ msgid "There was an error showing the URL \"%s\""
+#~ msgstr "顯示網址「%s」時發生錯誤"
+
+#~ msgid ""
+#~ "There was an error displaying help:\n"
+#~ "%s"
+#~ msgstr ""
+#~ "顯示說明文件時發生錯誤：\n"
+#~ "%s"
+
+#~ msgid "Checking the connectivity of this machine..."
+#~ msgstr "正在檢查這個機器的連線能力…"
+
+#~ msgid "Your desktop is only reachable over the local network."
+#~ msgstr "您的桌面只能透過區域網路使用。"
+
+#~ msgid " or "
+#~ msgstr " 或 "
+
+#~ msgid "Others can access your computer using the address %s."
+#~ msgstr "其他人可以使用位址 %s 來存取您的電腦。"
+
+#~ msgid "Nobody can access your desktop."
+#~ msgstr "其他人不能存取您的桌面。"
+
+#~ msgid "Choose how other users can remotely view your desktop"
+#~ msgstr "選擇其他使用者要以何種方式遠端觀看您的桌面"
+
+#~ msgid "Desktop Sharing Preferences"
+#~ msgstr "桌面分享偏好設定"
+
+#~ msgid "Sharing"
+#~ msgstr "分享"
+
+#~ msgid "Some of these preferences are locked down"
+#~ msgstr "一部分偏好設定已被鎖定"
+
+#~ msgid "Allow other users to _view your desktop"
+#~ msgstr "允許其他使用者觀看您的桌面(_V)"
+
+#~ msgid "Your desktop will be shared"
+#~ msgstr "將會分享您的桌面"
+
+#~ msgid "_Allow other users to control your desktop"
+#~ msgstr "允許其他使用者控制您的桌面(_A)"
+
+#~ msgid "Remote users are able to control your mouse and keyboard"
+#~ msgstr "遠端使用者可以控制您的滑鼠和鍵盤"
+
+#~ msgid "Security"
+#~ msgstr "安全性"
+
+#~ msgid "_You must confirm each access to this machine"
+#~ msgstr "您必須確認每次對這臺機器的連線(_Y)"
+
+#~ msgid "_Require the user to enter this password:"
+#~ msgstr "使用者需要輸入密碼(_R):"
+
+#~ msgid "Automatically _configure UPnP router to open and forward ports"
+#~ msgstr "自動設定 UPnP 路由來開啟並將連接埠轉址(_C)"
+
+#~ msgid "The router must have the UPnP feature enabled"
+#~ msgstr "路由器必須啟用 UPnP 功能"
+
+#~ msgid "Show Notification Area Icon"
+#~ msgstr "在通知區中顯示圖示"
+
+#~ msgid "Al_ways"
+#~ msgstr "永遠(_W)"
+
+#~ msgid "_Only when someone is connected"
+#~ msgstr "只在有人連線時(_O)"
+
+#~ msgid "_Never"
+#~ msgstr "永不(_N)"
 
 #~ msgid ""
 #~ "If true, we will use UPNP protocol to automatically forward the port used "
