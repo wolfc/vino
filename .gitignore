@@ -70,6 +70,4 @@ Makefile.in
 /tools/*.o
 /tools/.deps
 /tools/.dirstamp
-/vino-preferences
-/vino-passwd
 /vino-server

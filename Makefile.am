@@ -240,22 +240,6 @@ nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
 server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in
 	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
-bin_PROGRAMS = \
-	vino-passwd
-
-vino_passwd_CPPFLAGS = \
-	-I$(top_builddir) \
-	-DVINO_LOCALEDIR=\""$(prefix)/$(DATADIRNAME)/locale"\" \
-	$(VINO_TOOLS_CFLAGS) \
-	$(WARN_CFLAGS) \
-	$(DISABLE_DEPRECATED)
-
-vino_passwd_SOURCES = \
-	tools/vino-passwd.c
-
-vino_passwd_LDADD = \
-	$(VINO_TOOLS_LIBS)
-
 autostartdir = $(sysconfdir)/xdg/autostart
 autostart_in_files = server/vino-server.desktop.in
 nodist_autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
