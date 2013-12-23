@@ -3,7 +3,6 @@ SUBDIRS = po
 
 DISTCHECK_CONFIGURE_FLAGS = \
 	--with-avahi \
-	--with-libnotify \
 	--with-secret \
 	--with-network-manager \
 	--with-telepathy \
@@ -147,9 +146,10 @@ clientfiledir = $(datarootdir)/telepathy/clients
 dist_clientfile_DATA = server/Vino.client
 endif
 
+BUILT_SOURCES = \
+	$(nodist_vino_server_SOURCES)
+
 vino_server_SOURCES = \
-	$(marshal_data) \
-	$(enum_data) \
 	common/vino-dbus.c \
 	common/vino-dbus.h \
 	server/vino-cursor.c \
@@ -183,6 +183,10 @@ vino_server_SOURCES = \
 	$(VINO_HTTP_sources) \
 	$(VINO_TELEPATHY_GLIB_sources)
 
+nodist_vino_server_SOURCES = \
+	server/vino-enums.c \
+	server/vino-marshal.c
+
 marshal_data = \
 	server/vino-marshal.c \
 	server/vino-marshal.h
@@ -198,10 +202,10 @@ enum_data = \
 	server/vino-enums.h
 
 vino_enum_headers = \
-	server/vino-server.h \
-	server/vino-prompt.h \
-	server/vino-status-icon.h \
-	server/vino-status-tube-icon.h
+	$(srcdir)/server/vino-server.h \
+	$(srcdir)/server/vino-prompt.h \
+	$(srcdir)/server/vino-status-icon.h \
+	$(srcdir)/server/vino-status-tube-icon.h
 
 server/vino-enums.c: $(vino_enum_headers) server/vino-enums.h
 	$(AM_V_GEN)$(GLIB_MKENUMS) \
@@ -248,7 +252,7 @@ nodist_autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
 
 # GSettings schemas, enum files and conversion file
 gsettings_ENUM_NAMESPACE = org.gnome.Vino
-gsettings_ENUM_FILES = common/vino-enums.h
+gsettings_ENUM_FILES = common/vino-settings-enums.h
 gsettings_SCHEMAS = common/org.gnome.Vino.gschema.xml
 
 @GSETTINGS_RULES@
