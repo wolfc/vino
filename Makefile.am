@@ -150,10 +150,10 @@ BUILT_SOURCES = \
 	$(nodist_vino_server_SOURCES)
 
 vino_server_SOURCES = \
-	common/vino-dbus.c \
-	common/vino-dbus.h \
 	server/vino-cursor.c \
 	server/vino-cursor.h \
+	server/vino-dbus.c \
+	server/vino-dbus.h \
 	server/vino-fb.c \
 	server/vino-fb.h \
 	server/vino-input.c \
