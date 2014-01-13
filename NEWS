@@ -1,3 +1,31 @@
+Vino 3.11.4
+===========
+
+Antoine Jacoutot (1):
+      remove dependency on libsoup
+
+Chao-Hsiung Liao (1):
+      Updated Traditional Chinese translation(Hong Kong and Taiwan)
+
+David King (6):
+      Post-release version bump to 3.11.1
+      Remove vino-passwd
+      Update links to GNOME wiki
+      Use correct wiki link
+      Add dependencies on generated files, bug 720956
+      Move dbus code under server/ directory
+
+Søren Sandmann (1):
+      vino_background_draw: Make 'initialised' static
+
+Victor Ibragimov (3):
+      Tajik translation updated
+      Tajik translation updated
+      Tajik translation updated
+
+eternalhui (1):
+      Update Chinese simplified translation
+
 Vino 3.10.0
 ===========
 
