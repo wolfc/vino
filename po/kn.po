@@ -545,6 +545,7 @@ msgid "GNOME Desktop Sharing Server"
 msgstr "GNOME ಗಣಕತೆರೆ ಹಂಚಿಕಾ ಪೂರೈಕೆಗಣಕ"
 
 #: ../server/vino-server.desktop.in.in.h:3
+#, fuzzy
 msgid "vnc;share;remote;"
 msgstr "vnc;ಹಂಚಿಕೆ;ದೂರಸ್ಥ"
 
