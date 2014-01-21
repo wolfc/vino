@@ -1,14 +1,14 @@
 # Norwegian bokmål translation of vino.
 # Copyright (C) 2004, Red Hat, Inc.
 # This file is distributed under the same license as the vino package.
-# Kjartan Maraas <kmaraas@gnome.org>, 2004-2013.
+# Kjartan Maraas <kmaraas@gnome.org>, 2004-2014.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: vino 3.9.x\n"
+"Project-Id-Version: vino 3.11.x\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-08-08 22:03+0200\n"
-"PO-Revision-Date: 2013-08-08 22:04+0200\n"
+"POT-Creation-Date: 2014-01-21 21:00+0100\n"
+"PO-Revision-Date: 2014-01-21 21:01+0100\n"
 "Last-Translator: Kjartan Maraas <kmaraas@gnome.org>\n"
 "Language-Team: Norwegian bokmål <i18n-nb@lister.ping.uio.no>\n"
 "Language: \n"
@@ -586,81 +586,3 @@ msgstr "_Nekt"
 #: ../server/vino-util.c:140
 msgid "An error has occurred:"
 msgstr "En feil har oppstått:"
-
-#: ../tools/vino-passwd.c:54
-msgid "Remote desktop sharing password"
-msgstr "Passord for deling av skrivebordet"
-
-#: ../tools/vino-passwd.c:108
-#, c-format
-msgid "Cancelled"
-msgstr "Avbrutt"
-
-#: ../tools/vino-passwd.c:115
-#, c-format
-msgid ""
-"ERROR: Maximum length of password is %d character. Please, re-enter the "
-"password."
-msgid_plural ""
-"ERROR: Maximum length of password is %d characters. Please, re-enter the "
-"password."
-msgstr[0] ""
-"FEIL: Maksimal lengde på passord er %d tegn. Vennligst skriv inn passordet "
-"på nytt."
-msgstr[1] ""
-"FEIL: Maksimal lengde på passord er %d tegn. Vennligst skriv inn passordet "
-"på nytt."
-
-#: ../tools/vino-passwd.c:149
-#, c-format
-msgid "Changing Vino password.\n"
-msgstr "Bytter passord for Vino.\n"
-
-#: ../tools/vino-passwd.c:151
-msgid "Enter new Vino password: "
-msgstr "Oppgi nytt passord for Vino: "
-
-#: ../tools/vino-passwd.c:154
-msgid "Retype new Vino password: "
-msgstr "Skriv nytt passord for Vino på nytt: "
-
-#: ../tools/vino-passwd.c:160
-#, c-format
-msgid "vino-passwd: password updated successfully.\n"
-msgstr "vino-passwd: oppdatering av passord fullført.\n"
-
-#: ../tools/vino-passwd.c:165
-#, c-format
-msgid "Sorry, passwords do not match.\n"
-msgstr "Beklager. Passordene er ikke like.\n"
-
-#: ../tools/vino-passwd.c:166
-#, c-format
-msgid "vino-passwd: password unchanged.\n"
-msgstr "vino-passwd: passord ikke endret.\n"
-
-#: ../tools/vino-passwd.c:182
-msgid "Show Vino version"
-msgstr "Vis Vino-versjon"
-
-#: ../tools/vino-passwd.c:191
-msgid "- Updates Vino password"
-msgstr "- Oppdaterer passord for Vino"
-
-#: ../tools/vino-passwd.c:201
-msgid ""
-"Run 'vino-passwd --help' to see a full list of available command line options"
-msgstr ""
-"Kjør «vino-passwd --help» for å se en full liste med tilgjengelige "
-"kommandolinjeflagg"
-
-#: ../tools/vino-passwd.c:208
-#, c-format
-msgid "VINO Version %s\n"
-msgstr "VINO Versjon %s\n"
-
-#: ../tools/vino-passwd.c:219
-#, c-format
-msgid "ERROR: You do not have enough permissions to change Vino password.\n"
-msgstr ""
-"FEIL: Du har ikke tilstrekkelige rettigheter til å bytte passord for Vino.\n"
