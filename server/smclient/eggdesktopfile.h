@@ -13,7 +13,8 @@
  *
  * You should have received a copy of the GNU Lesser General Public
  * License along with this library; see the file COPYING.LIB. If not,
- * see <http://www.gnu.org/licenses/>.
+ * write to the Free Software Foundation, Inc., 59 Temple Place -
+ * Suite 330, Boston, MA 02111-1307, USA.
  */
 
 #ifndef __EGG_DESKTOP_FILE_H__

@@ -13,7 +13,266 @@
  * General Public License for more details.
  *
  * You should have received a copy of the GNU General Public License
- * along with this program; if not, see <http://www.gnu.org/licenses/>.\n");
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA
+ * 02111-1307, USA.
+ *
+ * Authors:
+ *      Jonh Wendell <wendell@bani.com.br>
+ *      Mark McLoughlin <mark@skynet.ie>
+ */
+
+#include <config.h>
+#include <gtk/gtk.h>
+#include <gio/gdesktopappinfo.h>
+#include <string.h>
+#include <libnotify/notify.h>
+
+#include "vino-status-icon.h"
+#include "vino-enums.h"
+#include "vino-util.h"
+
+struct _VinoStatusIconPrivate
+{
+  GtkMenu    *menu;
+  VinoServer *server;
+  GSList     *clients;
+  GtkWidget  *disconnect_dialog;
+  VinoStatusIconVisibility visibility;
+
+  NotifyNotification *new_client_notification;
+};
+
+G_DEFINE_TYPE (VinoStatusIcon, vino_status_icon, GTK_TYPE_STATUS_ICON);
+
+enum
+{
+  PROP_0,
+  PROP_SERVER,
+  PROP_VISIBILITY
+};
+
+typedef struct
+{
+  VinoStatusIcon *icon;
+  VinoClient     *client;
+}VinoStatusIconNotify;
+
+static gboolean vino_status_icon_show_new_client_notification (gpointer user_data);
+
+static void
+vino_status_icon_finalize (GObject *object)
+{
+  VinoStatusIcon *icon = VINO_STATUS_ICON (object);
+
+  if (icon->priv->new_client_notification)
+    g_object_unref (icon->priv->new_client_notification);
+  icon->priv->new_client_notification = NULL;
+
+  if (icon->priv->menu)
+    gtk_widget_destroy (GTK_WIDGET(icon->priv->menu));
+  icon->priv->menu = NULL;
+
+  if (icon->priv->clients)
+    g_slist_free (icon->priv->clients);
+  icon->priv->clients = NULL;
+
+  if (icon->priv->disconnect_dialog)
+    gtk_widget_destroy (icon->priv->disconnect_dialog);
+  icon->priv->disconnect_dialog = NULL;
+
+  G_OBJECT_CLASS (vino_status_icon_parent_class)->finalize (object);
+}
+
+void
+vino_status_icon_update_state (VinoStatusIcon *icon)
+{
+  char     *tooltip;
+  gboolean visible;
+
+  g_return_if_fail (VINO_IS_STATUS_ICON (icon));
+
+  visible = !vino_server_get_on_hold (icon->priv->server);
+
+  tooltip = g_strdup (_("Desktop sharing is enabled"));
+  
+  if (icon->priv->clients != NULL)
+    {
+      int n_clients;
+
+      n_clients = g_slist_length (icon->priv->clients);
+
+      tooltip = g_strdup_printf (ngettext ("One person is viewing your desktop",
+                                           "%d people are viewing your desktop",
+                                           n_clients),
+                                 n_clients);
+      visible = (visible) && ( (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_CLIENT) ||
+			     (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS) );
+    }
+  else
+    visible = visible && (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS);
+
+  gtk_status_icon_set_tooltip_text (GTK_STATUS_ICON (icon), tooltip);
+  gtk_status_icon_set_visible (GTK_STATUS_ICON (icon), visible);
+
+  g_free (tooltip);
+}
+
+static void
+vino_status_icon_init (VinoStatusIcon *icon)
+{
+  icon->priv = G_TYPE_INSTANCE_GET_PRIVATE (icon, VINO_TYPE_STATUS_ICON, VinoStatusIconPrivate);
+}
+
+static void
+vino_status_icon_set_property (GObject      *object,
+			       guint         prop_id,
+			       const GValue *value,
+			       GParamSpec   *pspec)
+{
+  VinoStatusIcon *icon = VINO_STATUS_ICON (object);
+
+  switch (prop_id)
+    {
+    case PROP_SERVER:
+      icon->priv->server = g_value_get_object (value);
+      break;
+    case PROP_VISIBILITY:
+      vino_status_icon_set_visibility (icon, g_value_get_enum (value));
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+      break;
+    }
+}
+
+static void
+vino_status_icon_get_property (GObject    *object,
+			       guint       prop_id,
+			       GValue     *value,
+			       GParamSpec *pspec)
+{
+  VinoStatusIcon *icon = VINO_STATUS_ICON (object);
+
+  switch (prop_id)
+    {
+    case PROP_SERVER:
+      g_value_set_object (value, icon->priv->server);
+      break;
+    case PROP_VISIBILITY:
+      g_value_set_enum (value, icon->priv->visibility);
+      break;
+    default:
+      G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
+      break;
+    }
+}
+
+VinoStatusIcon *
+vino_status_icon_new (VinoServer *server,
+                      GdkScreen  *screen)
+{
+  g_return_val_if_fail (VINO_IS_SERVER (server), NULL);
+  g_return_val_if_fail (GDK_IS_SCREEN  (screen), NULL);
+  
+  return g_object_new (VINO_TYPE_STATUS_ICON,
+                       "icon-name", "preferences-desktop-remote-desktop",
+                       "server",    server,
+                       "screen",    screen,
+                       NULL);
+}
+
+VinoServer *
+vino_status_icon_get_server (VinoStatusIcon *icon)
+{
+  g_return_val_if_fail (VINO_IS_STATUS_ICON (icon), NULL);
+
+  return icon->priv->server;
+}
+
+static void
+vino_status_icon_preferences (VinoStatusIcon *icon)
+{
+  GdkScreen *screen;
+  GDesktopAppInfo *info;
+  GdkAppLaunchContext *context;
+  GError *error = NULL;
+
+  screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
+  info = g_desktop_app_info_new ("gnome-sharing-panel.desktop");
+  if (info == NULL)
+    info = g_desktop_app_info_new ("vino-preferences.desktop");
+  context = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
+  if (!g_app_info_launch (G_APP_INFO (info), NULL, G_APP_LAUNCH_CONTEXT (context), &error))
+    {
+      vino_util_show_error (_("Error displaying preferences"),
+                            error->message,
+                            NULL);
+      g_error_free (error);
+    }
+
+  g_object_unref (info);
+  g_object_unref (context);
+}
+
+static void
+vino_status_icon_help (VinoStatusIcon *icon)
+{
+  GdkScreen *screen;
+  GError    *error = NULL;
+
+  screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
+  if (!gtk_show_uri (screen,
+		     "help:gnome-help/sharing-desktop",
+		     GDK_CURRENT_TIME,
+		     &error))
+    {
+      vino_util_show_error (_("Error displaying help"),
+			    error->message,
+			    NULL);
+      g_error_free (error);
+    }
+}
+
+static void
+vino_status_icon_about (VinoStatusIcon *icon)
+{
+
+  g_return_if_fail (VINO_IS_STATUS_ICON (icon));
+
+  static const gchar * const authors[] = {
+    "Mark McLoughlin <mark@skynet.ie>",
+    "Calum Benson <calum.benson@sun.com>",
+    "Federico Mena Quintero <federico@ximian.com>",
+    "Sebastien Estienne <sebastien.estienne@gmail.com>",
+    "Shaya Potter <spotter@cs.columbia.edu>",
+    "Steven Zhang <steven.zhang@sun.com>",
+    "Srirama Sharma <srirama.sharma@wipro.com>",
+    "Jonh Wendell <wendell@bani.com.br>",
+    "David King <amigadave@amigadave.com>",
+    NULL
+  };
+  static const gchar copyright[] = \
+    "Copyright © 2004–2011 Mark McLoughlin\n" \
+    "Copyright © 2006–2011 Jonh Wendell\n" \
+    "Copyright © 2011 David King";
+
+  char *license;
+  char *translators;
+
+  license = _("Licensed under the GNU General Public License Version 2\n\n"
+              "Vino is free software; you can redistribute it and/or\n"
+              "modify it under the terms of the GNU General Public License\n"
+              "as published by the Free Software Foundation; either version 2\n"
+              "of the License, or (at your option) any later version.\n\n"
+              "Vino is distributed in the hope that it will be useful,\n"
+              "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+              "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the\n"
+              "GNU General Public License for more details.\n\n"
+              "You should have received a copy of the GNU General Public License\n"
+              "along with this program; if not, write to the Free Software\n"
+              "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+              "02110-1301, USA.\n");
 
   /* Translators comment: put your own name here to appear in the about dialog. */
   translators = _("translator-credits");
