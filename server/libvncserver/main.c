@@ -34,6 +34,8 @@
 #include <signal.h>
 #include <time.h>
 
+#include <glib.h>
+
 int rfbEnableLogging=1;
 
 #ifdef WORDS_BIGENDIAN
@@ -49,6 +51,8 @@ void rfbLogEnable(int enabled) {
 /*
  * rfbLog prints a time-stamped message to the log file (stderr).
  */
+
+static void rfbDefaultLog(const char *format, ...) G_GNUC_PRINTF (1, 2);
 
 static void
 rfbDefaultLog(const char *format, ...)
