@@ -1,3 +1,24 @@
+Vino 3.11.92
+============
+
+Daniel Mustieles (2):
+      Updated FSF's address
+      Revert "Updated FSF's address"
+
+Kjartan Maraas (3):
+      Updated Norwegian bokmål translation
+      Updated Norwegian bokmål translation
+      Updated Norwegian bokmål translation
+
+Piotr Drąg (1):
+      Add a trailing semicolon to keywords in Kannada translation
+
+Ryan Lortie (1):
+      libvncserver: fix non-literal format string issue
+
+Shankar Prasad (1):
+      updated kn.po
+
 Vino 3.11.4
 ===========
 
