@@ -114,16 +114,6 @@ vino_prefs_sighandler (int sig)
   exit (0);
 }
 
-static void
-notify_enabled (void)
-{
-  if (!g_settings_get_boolean (settings, "enabled"))
-    {
-      g_message ("The desktop sharing service is disabled, exiting.");
-      exit (0);
-    }
-}
-
 void
 vino_prefs_init (gboolean view_only)
 {
@@ -133,10 +123,6 @@ vino_prefs_init (gboolean view_only)
   signal (SIGQUIT, vino_prefs_sighandler);
   signal (SIGTERM, vino_prefs_sighandler); /* kill -15 */
   signal (SIGSEGV, vino_prefs_sighandler); /* Segmentation fault */
-
-  g_signal_connect (settings, "changed::enabled",
-                    G_CALLBACK (notify_enabled), NULL);
-  notify_enabled ();
 
   force_view_only = view_only;
 }

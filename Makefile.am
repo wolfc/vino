@@ -244,9 +244,9 @@ nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
 server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in
 	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
-autostartdir = $(sysconfdir)/xdg/autostart
-autostart_in_files = server/vino-server.desktop.in
-nodist_autostart_DATA = $(autostart_in_files:.desktop.in=.desktop)
+applicationsdir = $(datadir)/applications/
+applications_in_files = server/vino-server.desktop.in
+nodist_applications_DATA = $(applications_in_files:.desktop.in=.desktop)
 
 @INTLTOOL_DESKTOP_RULE@
 
