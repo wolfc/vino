@@ -451,12 +451,6 @@ extern rfbBool rfbSetTranslateFunction(rfbClientPtr cl);
 extern rfbBool rfbSetClientColourMap(rfbClientPtr cl, int firstColour, int nColours);
 extern void rfbSetClientColourMaps(rfbScreenInfoPtr rfbScreen, int firstColour, int nColours);
 
-/* httpd.c */
-
-extern void httpInitSockets(rfbScreenInfoPtr rfbScreen);
-extern void httpCheckFds(rfbScreenInfoPtr rfbScreen);
-
-
 
 /* auth.c */
 

@@ -44,10 +44,9 @@ typedef enum
   VINO_DEBUG_TLS     = 1 << 4,
   VINO_DEBUG_MDNS    = 1 << 5,
   VINO_DEBUG_PROMPT  = 1 << 6,
-  VINO_DEBUG_HTTP    = 1 << 7,
-  VINO_DEBUG_DBUS    = 1 << 8,
-  VINO_DEBUG_UPNP    = 1 << 9,
-  VINO_DEBUG_TUBE    = 1 << 10
+  VINO_DEBUG_DBUS    = 1 << 7,
+  VINO_DEBUG_UPNP    = 1 << 8,
+  VINO_DEBUG_TUBE    = 1 << 9
 } VinoDebugFlags;
 
 #ifdef GNOME_ENABLE_DEBUG

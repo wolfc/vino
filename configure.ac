@@ -11,18 +11,6 @@ AM_SILENT_RULES([yes])
 AC_PROG_CC
 AM_PROG_CC_C_O
 
-# Check whether to enable HTTP server support
-AC_ARG_ENABLE([http-server],
-  [AS_HELP_STRING([--disable-http-server],
-   [build with an HTTP server for serving a Java applet client @<:@default=yes@:>@])],
-   [],
-   [enable_http_server=yes])
-
-AS_IF([test "x$enable_http_server" = "xyes"],
-  [AC_DEFINE([VINO_ENABLE_HTTP_SERVER], [], [Enable HTTP server support])])
-
-AM_CONDITIONAL([VINO_ENABLE_HTTP_SERVER], [test "x$enable_http_server" = "xyes"])
-
 # GNOME common
 AM_MAINTAINER_MODE([enable])
 GNOME_MAINTAINER_MODE_DEFINES

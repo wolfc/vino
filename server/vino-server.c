@@ -26,9 +26,6 @@
 
 #include <rfb/rfb.h>
 #include "vino-fb.h"
-#ifdef VINO_ENABLE_HTTP_SERVER
-#include "vino-http.h"
-#endif
 #include "vino-mdns.h"
 #include "vino-input.h"
 #include "vino-cursor.h"
@@ -70,10 +67,6 @@ struct _VinoServerPrivate
 
   VinoAuthMethod    auth_methods;
   char             *vnc_password;
-
-#ifdef VINO_ENABLE_HTTP_SERVER
-  VinoHTTP         *http;
-#endif
 
   int               alternative_port;
 
@@ -1091,10 +1084,6 @@ vino_server_init_from_screen (VinoServer *server,
 
   vino_server_init_io_channels (server);
 
-#ifdef VINO_ENABLE_HTTP_SERVER
-  server->priv->http = vino_http_get (rfb_screen->rfbPort);
-#endif
-
   vino_mdns_add_service ("_rfb._tcp", rfb_screen->rfbPort);
 
   cb = gtk_clipboard_get_for_display (gdk_screen_get_display (screen),
@@ -1112,16 +1101,6 @@ static void
 vino_server_finalize (GObject *object)
 {
   VinoServer *server = VINO_SERVER (object);
-  
-#ifdef VINO_ENABLE_HTTP_SERVER
-  if (server->priv->http)
-    {
-      vino_http_remove_rfb_port (server->priv->http,
-				 server->priv->rfb_screen->rfbPort);
-      g_object_unref (server->priv->http);
-    }
-  server->priv->http = NULL;
-#endif /* VINO_ENABLE_HTTP_SERVER */
 
   vino_server_deinit_io_channels (server);
   

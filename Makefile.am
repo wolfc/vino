@@ -11,7 +11,6 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--with-zlib \
 	--with-jpeg \
 	--enable-debug \
-	--enable-http-server \
 	--enable-compile-warnings=maximum
 
 noinst_LTLIBRARIES = \
@@ -126,12 +125,6 @@ vino_server_LDADD = \
 	$(JPEG_LIBS) \
 	$(X_LIBS) $(XTEST_LIBS) $(XSHM_LIBS) $(XDAMAGE_LIBS) $(ZLIB_LIBS)
 
-if VINO_ENABLE_HTTP_SERVER
-VINO_HTTP_sources = \
-	server/vino-http.c \
-	server/vino-http.h
-endif
-
 if VINO_HAVE_TELEPATHY_GLIB
 VINO_TELEPATHY_GLIB_sources = \
 	server/vino-tube-servers-manager.c \
@@ -180,7 +173,6 @@ vino_server_SOURCES = \
 	$(VINO_MINIUPNP_sources) \
 	$(VINO_IFADDR_sources) \
 	$(VINO_LIBVNCSERVER_sources) \
-	$(VINO_HTTP_sources) \
 	$(VINO_TELEPATHY_GLIB_sources)
 
 nodist_vino_server_SOURCES = \
