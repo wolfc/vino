@@ -1,3 +1,18 @@
+Vino 3.13.90
+============
+
+Kjartan Maraas (1):
+      Updated Norwegian bokmål translation from Åka Sikrom.
+
+Mihai Capotă (1):
+      Remove all HTTP server code
+
+Olav Vitters (1):
+      doap category core
+
+Piotr Drąg (1):
+      doap: add <programming-language>
+
 Vino 3.13.3
 ===========
 
