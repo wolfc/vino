@@ -13,120 +13,284 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino.HEAD.ne\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2007-08-07 03:23+0100\n"
-"PO-Revision-Date: 2007-12-20 19:14+0545\n"
-"Last-Translator: Shyam Krishna Bal <balshyam24@yahoo.com>\n"
-"Language-Team: Nepali <info@mpp.org.np>\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2014-06-24 09:50+0000\n"
+"PO-Revision-Date: 2014-09-21 00:58+0400\n"
+"Last-Translator: Pawan Chitrakar <chautari@gmail.com>\n"
+"Language-Team: Nepali Translation Team <chautari@gmail.com>\n"
+"Language: ne\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Nepali\n"
 "X-Poedit-Country: NEPAL\n"
-"X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: KBabel 1.11.4\n"
 "Plural-Forms: nplurals=2; plural=n !=1\n"
 
-#: ../capplet/vino-preferences.c:634 ../capplet/vino-preferences.c:669
-#: ../capplet/vino-preferences.c:727 ../server/vino-dbus-listener.c:374
-#: ../server/vino-server.c:148
-#, c-format
-msgid "Failed to open connection to bus: %s\n"
-msgstr "बसमा जडान खोल्न असफल भयो: %s\n"
+#: ../common/org.gnome.Vino.gschema.xml.h:1
+msgid "Prompt the user before completing a connection"
+msgstr "जडान पूरा गर्नु पहिले प्रयोगकर्तालाई प्रोम्ट गर्नुहोस्"
 
-#: ../capplet/vino-preferences.c:936
-msgid "Send this command by email"
-msgstr "यो आदेश इमेलबाट पठाउनुहोस्"
+#: ../common/org.gnome.Vino.gschema.xml.h:2
+msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
+msgstr "यदि सही भएमा, होस्टमा भएको प्रयोगकर्ताले सम्पर्कलाई समर्थन नजनाए सम्म डेस्कटपमा पहुँच गर्न प्रयास गरिरहेका टाढाको प्रयोगकर्तारूलाई पहुँच गर्न अनुमति दिदैन। पहुँच पासवर्ड सुरक्षित नभएको बेलामा विशेषरूपमा सिफारिश गरिन्छ।"
 
-#: ../capplet/vino-preferences.c:971
-#, c-format
+#: ../common/org.gnome.Vino.gschema.xml.h:3
+msgid "Only allow remote users to view the desktop"
+msgstr "डेस्कटप हेर्न टाढा प्रयोगकर्ताहरूलाई मात्र अनुमति दिनुहोस्"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:4
+msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr "यदि सही भएमा, डेस्कटपमा पहुँच गर्न प्रयास गरिरहेका टाढा प्रयोगकर्तारूलाई डेस्कटप हेर्न मात्र अनुमति दिइन्छ। टाढा प्रयोगकर्ताहरूले माउस वा कुञ्जीपाटी प्रयोग गर्न सक्ने छैन।"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:5
+#, fuzzy
+msgid "Network interface for listening"
+msgstr "ताररहित सञ्जाल %s का लागि पासफ्रेज"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:6
 msgid ""
-"There was an error displaying help:\n"
-"%s"
+"If not set, the server will listen on all network interfaces.\n"
+"\n"
+"Set this if you want to accept connections only from some specific network interface. For example, eth0, wifi0, lo and so on."
 msgstr ""
-"त्यहाँ मद्दत प्रदर्शन गर्दा त्रुटि थियो:\n"
-"%s"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:1
-msgid "Remote Desktop"
-msgstr "टाढाको डेस्कटप"
+#: ../common/org.gnome.Vino.gschema.xml.h:9
+#, fuzzy
+#| msgid "Listen an alternative port"
+msgid "Listen on an alternative port"
+msgstr "सर्भर चलाउन पहुँच गर्ने पोर्ट ।"
 
-#: ../capplet/vino-preferences.desktop.in.in.h:2
-msgid "Set your remote desktop access preferences"
-msgstr "तपाईँको टाढाको डेस्कटप पहुँच प्राथमिकताहरू सेट गर्नुहोस्"
+#: ../common/org.gnome.Vino.gschema.xml.h:10
+#, fuzzy
+#| msgid ""
+#| "If true, the server will listen to another port, instead of the default "
+#| "(5900). The port must be specified in the 'alternative_port' key."
+msgid "If true, the server will listen on another port, instead of the default (5900). The port must be specified in the 'alternative-port' key."
+msgstr "यदि सही भएमा, सर्भरले पूर्वनिर्धारित पोर्ट (५९००) को सट्टा अर्को पोर्टमा सुन्नेछ । पोर्ट 'alternative_port' कुञ्जीमा निर्दिष्ट गरेको हुनुपर्छ ।"
 
-#: ../capplet/vino-preferences.glade.h:1
-msgid "<b>Security</b>"
-msgstr "<b>सुरक्षा</b>"
+#: ../common/org.gnome.Vino.gschema.xml.h:11
+msgid "Alternative port number"
+msgstr "वैकल्पिक पोर्ट सङ्ख्या"
 
-#: ../capplet/vino-preferences.glade.h:2
-msgid "<b>Sharing</b>"
-msgstr "<b>साझेदारी</b>"
+#: ../common/org.gnome.Vino.gschema.xml.h:12
+#, fuzzy
+#| msgid ""
+#| "The port which the server will listen to if the 'use_alternative_port' "
+#| "key is set to true. Valid values are in the range from 5000 to 50000."
+msgid "The port which the server will listen to if the 'use-alternative-port' key is set to true. Valid values are in the range of 5000 to 50000."
+msgstr "'पोर्ट-वैकल्पिक-प्रयोग' कुञ्जी सहीमा सेट हुँदा सर्भरले सुन्ने पोर्ट । वैध मानहरू ५००० देखि ५०००० को दायरा भित्र छ ।"
 
-#: ../capplet/vino-preferences.glade.h:3
-msgid "A_sk you for confirmation"
-msgstr "स्वीकृतिका लागि तपाईँलाई सोध्ने"
+#: ../common/org.gnome.Vino.gschema.xml.h:13
+msgid "Require encryption"
+msgstr "गुप्तीकरण आवश्यक छ"
 
-#: ../capplet/vino-preferences.glade.h:4
-msgid "Allow other users to _view your desktop"
-msgstr "अन्य प्रयोगकर्तालाई तपाईँको डेस्कटप हेर्ने अनुमति दिनुहोस्"
+#: ../common/org.gnome.Vino.gschema.xml.h:14
+msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
+msgstr "यदि सही भएमा, डेस्कटपमा पहुँच गर्न टाढाको प्रयोगकर्ताहरूले गुप्तिकरण समर्थन गर्न सक्ने हुनु आवश्यक हुन्छ। बीचमा आउने सञ्जाल भरोसा नगरेसम्म गुप्तिकरण समर्थन गर्ने एउटा ग्राहक प्रयोग गर्न तपाईँलाई उच्च रूपमा सिफारिश गरिन्छ।"
 
-#: ../capplet/vino-preferences.glade.h:5
-msgid "Remote Desktop Preferences"
-msgstr "टाढाको डेस्कटप प्राथमिकता"
+#: ../common/org.gnome.Vino.gschema.xml.h:15
+msgid "Allowed authentication methods"
+msgstr "अनुमति प्राप्त प्रमाणीकरण विधिहरू"
 
-#: ../capplet/vino-preferences.glade.h:6
-msgid "Some of these preferences are locked down"
-msgstr "प्राथमिकताहरू मध्ये केहीलाई ताल्चा लगाइएको छ"
-
-#: ../capplet/vino-preferences.glade.h:7
-msgid "Users can view your desktop using this command:"
-msgstr "प्रयोगकर्ताहरूले यो आदेश प्रयोग गरेर तपाईँको डेस्कटप हेर्न सक्दछन्:"
-
-#: ../capplet/vino-preferences.glade.h:8
-msgid "When a user tries to view or control your desktop:"
-msgstr "प्रयोगकर्ताले तपाईँको डेस्कटप हेर्ने वा नियन्त्रणमा लिने प्रयास गर्दा:"
-
-#: ../capplet/vino-preferences.glade.h:9
-msgid "_Allow other users to control your desktop"
-msgstr "अन्य प्रयोगकर्तारूलाई तपाईँको डेस्कटप नियन्त्रणमा लिने अनुमति दिनुहोस्"
-
-#: ../capplet/vino-preferences.glade.h:10
-msgid "_Password:"
-msgstr "पासवर्ड:"
-
-#: ../capplet/vino-preferences.glade.h:11
-msgid "_Require the user to enter this password:"
-msgstr "यो पासवर्ड प्रविष्ट गर्न प्रयोगकर्ता आवश्यक पर्दछ:"
-
-#: ../server/vino-dbus-listener.c:188 ../server/vino-dbus-listener.c:218
-#: ../server/vino-dbus-listener.c:249
-#, c-format
-msgid "Out of memory handling '%s' message"
-msgstr "'%s' सन्देश ह्यान्डलिङ्ग गर्दा स्मृति बाहिर"
-
-#: ../server/vino-dbus-listener.c:334
-#, c-format
-msgid "Out of memory registering object path '%s'"
-msgstr "वस्तु मार्ग '%s' दर्ता गर्दा स्मृति बाहिर"
-
-#: ../server/vino-dbus-listener.c:407
-#, c-format
-msgid "Failed to acquire D-Bus name '%s'\n"
-msgstr "डी-बस नाम '%s' प्राप्त गर्न असफल भयो\n"
-
-#: ../server/vino-main.c:83
+#: ../common/org.gnome.Vino.gschema.xml.h:16
+#, fuzzy
+#| msgid ""
+#| "Lists the authentication methods with which remote users may access the "
+#| "desktop. There are two possible authentication methods; \"vnc\" causes "
+#| "the remote user to be prompted for a password (the password is specified "
+#| "by the vnc_password key) before connecting and \"none\" which allows any "
+#| "remote user to connect."
 msgid ""
-"Your XServer does not support the XTest extension - remote desktop access "
-"will be view-only\n"
+"Lists the authentication methods with which remote users may access the desktop.\n"
+"\n"
+"There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc-password key) before connecting and \"none\" which allows any remote user to connect."
+msgstr "टाढा प्रयोगकर्ताले डेस्कटपमा पहुँच गर्न सक्ने प्रमाणीकरण विधिहरू सूचीकृत गर्नुहोस्। त्यहाँ दुई प्रकारका सम्भाव्य प्रमाणीकरण विधिहरू छन्, जडान गर्नु अगाडि पासवर्ड (यो पासवर्ड भि एन सि पासवर्ड कुञ्जी द्वारा निर्दिष्ट गरिएको पासवर्ड हो)का लागि \"vnc\" को कारणले टाढाको प्रयोगकर्ता प्रोम्ट गरिनु पर्दछ र \"none\"जसले कुनै पनि प्रयोगकर्तालाई जडान गर्न अनुमति दिन्छ।"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:19
+msgid "Password required for \"vnc\" authentication"
+msgstr "\"vnc\" प्रमाणीकरणका लागि पासवर्ड आवश्यक पर्दछ"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:20
+#, fuzzy
+#| msgid ""
+#| "The password which the remote user will be prompted for if the \"vnc\" "
+#| "authentication method is used. The password specified by the key is "
+#| "base64 encoded."
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded.\n"
+"\n"
+"The special value of 'keyring' (which is not valid base64) means that the password is stored in the GNOME keyring."
+msgstr "\"vnc\" प्रमाणीकरण विधि प्रयोग गर्दा टाढा प्रयोगकर्तालाई प्रोम्ट गर्ने पासवर्ड। कुञ्जीले निर्दिष्ट गरेको पासवर्ड आधार६४मा सङ्केतन गरिएको छ।"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:23
+msgid "E-mail address to which the remote desktop URL should be sent"
+msgstr "इमेल ठेगाना जसमा टाढाको डेस्कटप यूआरएल पठाउनु पर्दछ"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:24
+#, fuzzy
+#| msgid ""
+#| "This key specifies the e-mail address to which the remote desktop URL "
+#| "should be sent if the user clicks on the URL in the Remote Desktop "
+#| "preferences dialog."
+msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Desktop Sharing preferences dialog."
+msgstr "यो कुञ्जीले यदि प्रयोगकर्ताले टाढाको डेस्कटप प्राथमिकताहरूको संवादको यूआरएलमा क्लिक गर्यो भने टाढाको डेस्कटप यूआरएल पठाउन पर्ने इमेल ठेगाना निर्दिष्ट गर्दछ ।"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:25
+msgid "Lock the screen when last user disconnect"
+msgstr "अन्तिम प्रयोगकर्ता विच्छेदन हुँदा पर्दामा ताल्चा लगाउनुहोस्"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:26
+#, fuzzy
+#| msgid ""
+#| "If true, screen will be locked after the last remote client disconnect."
+msgid "If true, the screen will be locked after the last remote client disconnects."
+msgstr "यदि सही भएमा, पर्दा अन्तिम टाढाको क्लाइन्ट विच्छेदन भएपछि ताल्चा लगाइनेछ ।"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:27
+msgid "When the status icon should be shown"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:28
+msgid "This key controls the behavior of the status icon. There are three options: \"always\" - the icon will always be present; \"client\" - the icon will only be present when someone is connected (this is the default behavior); \"never\" - the icon will not be present."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:29
+msgid "Whether to disable the desktop background when a user is connected"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:30
+msgid "When true, disable the desktop background and replace it with a single block of color when a user successfully connects."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:31
+msgid "Whether a UPnP router should be used to forward and open ports"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:32
+msgid "If true, request that a UPnP-capable router should forward and open the port used by Vino."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:33
+msgid "Whether we should disable the XDamage extension of X.org"
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:34
+msgid "If true, do not use the XDamage extension of X.org. This extension does not work properly on some video drivers when using 3D effects. Disabling it will make Vino work in these environments, with slower rendering as a side effect."
+msgstr ""
+
+#: ../common/org.gnome.Vino.gschema.xml.h:35
+#, fuzzy
+msgid "Notify on connect"
+msgstr "सुरुआतमा जडान नगर्नुहोस्"
+
+#: ../common/org.gnome.Vino.gschema.xml.h:36
+msgid "If true, show a notification when a user connects to the system."
+msgstr ""
+
+#: ../server/smclient/eggdesktopfile.c:165
+#, fuzzy, c-format
+msgid "File is not a valid .desktop file"
+msgstr "`%s` फाइल वैध स्निपेट फाइल होइन"
+
+#. translators: 'Version' is from a desktop file, and
+#. * should not be translated. '%s' would probably be a
+#. * version number.
+#: ../server/smclient/eggdesktopfile.c:191
+#, fuzzy, c-format
+msgid "Unrecognized desktop file Version '%s'"
+msgstr "डेस्कटप फाइल '%s': %s लोड गर्दा त्रुटि"
+
+#: ../server/smclient/eggdesktopfile.c:974
+#, c-format
+msgid "Starting %s"
+msgstr "%s सुरु गर्दै"
+
+#: ../server/smclient/eggdesktopfile.c:1116
+#, c-format
+msgid "Application does not accept documents on command line"
+msgstr ""
+
+#: ../server/smclient/eggdesktopfile.c:1184
+#, fuzzy, c-format
+msgid "Unrecognized launch option: %d"
+msgstr "-%c ले एउटा मान लिन्छ"
+
+#. translators: The 'Type=Link' string is found in a
+#. * desktop file, and should not be translated.
+#: ../server/smclient/eggdesktopfile.c:1391
+#, c-format
+msgid "Can't pass document URIs to a 'Type=Link' desktop entry"
+msgstr ""
+
+#: ../server/smclient/eggdesktopfile.c:1412
+#, fuzzy, c-format
+msgid "Not a launchable item"
+msgstr "एउटा सुरुआतयोग्य वस्तु छैन"
+
+#: ../server/smclient/eggsmclient.c:226
+#, fuzzy
+msgid "Disable connection to session manager"
+msgstr "सत्र प्रबन्धकसँग जडान अक्षम पार्नुहोस्"
+
+#: ../server/smclient/eggsmclient.c:229
+msgid "Specify file containing saved configuration"
+msgstr ""
+
+#: ../server/smclient/eggsmclient.c:229
+msgid "FILE"
+msgstr "फाईल"
+
+#: ../server/smclient/eggsmclient.c:232
+#, fuzzy
+msgid "Specify session management ID"
+msgstr "सत्र प्रबन्ध आईडी निर्दिष्ट गर्नुहोस्"
+
+#: ../server/smclient/eggsmclient.c:232
+msgid "ID"
+msgstr "आईडी"
+
+#: ../server/smclient/eggsmclient.c:253
+#, fuzzy
+msgid "Session management options:"
+msgstr "सत्र प्रबन्ध विकल्प देखाउनुहोस्"
+
+#: ../server/smclient/eggsmclient.c:254
+#, fuzzy
+msgid "Show session management options"
+msgstr "सत्र प्रबन्ध विकल्प देखाउनुहोस्"
+
+#: ../server/vino-main.c:153
+msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
 msgstr "तपाईँको X सर्भरले X पाठ जाँच विस्तारलाई समर्थन गर्दैन - टाढा डेस्कटप पहुँच हेर्न मात्र हुँनेछ\n"
+
+#. Tube mode uses Telepathy's Tubes to share a user's desktop directly
+#. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
+#.
+#: ../server/vino-main.c:249
+msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
+msgstr ""
+
+#: ../server/vino-main.c:255
+#, fuzzy
+msgid "- VNC Server for GNOME"
+msgstr "जिनोमको लागि एक सङ्ग्रह प्रबन्धक ।"
+
+#: ../server/vino-main.c:263
+msgid "Run 'vino-server --help' to see a full list of available command line options"
+msgstr ""
+
+#: ../server/vino-main.c:275
+#| msgid "GNOME Remote Desktop"
+msgid "GNOME Desktop Sharing"
+msgstr " जीनोमले मंडलाको साझेदारि"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
 #. * "1" if "%s's remote desktop" doesn't make sense in
 #. * your language.
 #.
-#: ../server/vino-mdns.c:59
+#: ../server/vino-mdns.c:62
 msgid "vino-mdns:showusername"
 msgstr "vino-mdns:प्रयोगकर्ता नाम देखाउनुहोस्"
 
@@ -135,226 +299,100 @@ msgstr "vino-mdns:प्रयोगकर्ता नाम देखाउन
 #. * translated "vino-mdns:showusername" to anything
 #. * other than "1"
 #.
-#: ../server/vino-mdns.c:71
+#: ../server/vino-mdns.c:74
 #, c-format
 msgid "%s's remote desktop on %s"
 msgstr "%s को टाढाको डेस्कटप खुल्ला छ %s"
 
-#: ../server/vino-prompt.c:142
+#: ../server/vino-prefs.c:111
+#, fuzzy, c-format
+msgid "Received signal %d, exiting."
+msgstr "%d सङ्केत प्राप्त भयो, स्पष्ट रूपमा बन्द हुँदैछ"
+
+#: ../server/vino-prompt.c:144
 msgid "Screen"
 msgstr "पर्दा"
 
-#: ../server/vino-prompt.c:143
+#: ../server/vino-prompt.c:145
 msgid "The screen on which to display the prompt"
 msgstr "प्रोम्प्ट प्रदर्शन गर्ने पर्दा"
 
-#: ../server/vino-prompt.c:343
+#: ../server/vino-prompt.c:263
+#: ../server/vino-status-icon.c:598
+#: ../server/vino-status-tube-icon.c:389
 #, c-format
-msgid ""
-"A user on the computer '%s' is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"'%s' कम्प्यूटरमा भएको एउटा प्रयोगकर्ताले तपाईँको डेस्कटप टाढाबाट हेर्ने वा नियन्त्रणमा लिने "
-"प्रयास गरिरहेको छ।"
+msgid "Error initializing libnotify\n"
+msgstr "libnotify सुरुआत गर्दा त्रुटि\n"
 
-#: ../server/vino-prompt.glade.h:1
-msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+#: ../server/vino-prompt.c:282
+#, c-format
+msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
+msgstr "'%s' कम्प्यूटरमा भएको एउटा प्रयोगकर्ताले तपाईँको डेस्कटप टाढाबाट हेर्ने वा नियन्त्रणमा लिने प्रयास गरिरहेको छ।"
+
+#: ../server/vino-prompt.c:285
+#, fuzzy
+#| msgid "<big><b>Another user is trying to view your desktop.</b></big>"
+msgid "Another user is trying to view your desktop."
 msgstr "<big><b>अरू प्रयोगकर्ताले तपाईँको डेस्कटप हेर्न प्रयास गरिरहेको छ।</b></big>"
 
-#: ../server/vino-prompt.glade.h:2
-msgid ""
-"A user on another computer is trying to remotely view or control your "
-"desktop."
-msgstr ""
-"अरू कम्प्युटरमा भएको एउटा प्रयोगकर्ताले तपाईँको डेस्कटप टाढा बाट हेर्न वा नियन्त्रणमा लिन "
-"प्रयास गरिरहेको छ।"
-
-#: ../server/vino-prompt.glade.h:3
-msgid "Do you want to allow them to do so?"
-msgstr "तपाईँले तिनीलाई त्यसो गर्न अनुमति दिन चाहनुहुन्छ ?"
-
-#: ../server/vino-prompt.glade.h:4
-msgid "Question"
-msgstr "प्रश्‍न"
-
-#: ../server/vino-prompt.glade.h:5 ../server/vino-util.c:63
-msgid "_Allow"
-msgstr "अनुमति दिनुहोस्"
-
-#: ../server/vino-prompt.glade.h:6 ../server/vino-util.c:64
-msgid "_Refuse"
+#: ../server/vino-prompt.c:291
+#| msgid "_Refuse"
+msgid "Refuse"
 msgstr "अस्वीकार गर्नुहोस्"
 
-#: ../server/vino-server.schemas.in.h:1
-msgid "Allowed authentication methods"
-msgstr "अनुमति प्राप्त प्रमाणीकरण विधिहरू"
+#: ../server/vino-prompt.c:297
+msgid "Accept"
+msgstr "स्वीकार गर्नुहोस्"
 
-#: ../server/vino-server.schemas.in.h:2
-msgid "Alternative port number"
-msgstr "वैकल्पिक पोर्ट सङ्ख्या"
-
-#: ../server/vino-server.schemas.in.h:3
-msgid "E-mail address to which the remote desktop URL should be sent"
-msgstr "इमेल ठेगाना जसमा टाढाको डेस्कटप यूआरएल पठाउनु पर्दछ"
-
-#: ../server/vino-server.schemas.in.h:4
-msgid "Enable remote desktop access"
-msgstr "टाढाको डेस्कटप पहुँच सक्षम पार्नुहोस्"
-
-#: ../server/vino-server.schemas.in.h:5
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a vncviewer."
-msgstr ""
-"यदि सही भएमा, RFB प्रोटोकल भएर टाढाबाट डेस्कटपमा पहुँचलाई अनुमति दिन्छ। त्यसपछि टाढा "
-"मेसिनहरुमा भएका प्रयोगकर्ताहरूले एउट भि एन सी दर्शक प्रयोग गरेर डेस्कटपसँग सम्पर्क र्न "
-"सक्दछन् छ।"
-
-#: ../server/vino-server.schemas.in.h:6
-msgid ""
-"If true, remote users accessing the desktop are not allowed access until the "
-"user on the host machine approves the connection. Recommended especially "
-"when access is not password protected."
-msgstr ""
-"यदि सही भएमा, होस्टमा भएको प्रयोगकर्ताले सम्पर्कलाई समर्थन नजनाए सम्म डेस्कटपमा पहुँच "
-"गर्न प्रयास गरिरहेका टाढाको प्रयोगकर्तारूलाई पहुँच गर्न अनुमति दिदैन। पहुँच पासवर्ड सुरक्षित "
-"नभएको बेलामा विशेषरूपमा सिफारिश गरिन्छ।"
-
-#: ../server/vino-server.schemas.in.h:7
-msgid ""
-"If true, remote users accessing the desktop are only allowed to view the "
-"desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr ""
-"यदि सही भएमा, डेस्कटपमा पहुँच गर्न प्रयास गरिरहेका टाढा प्रयोगकर्तारूलाई डेस्कटप हेर्न "
-"मात्र अनुमति दिइन्छ। टाढा प्रयोगकर्ताहरूले माउस वा कुञ्जीपाटी प्रयोग गर्न सक्ने छैन।"
-
-#: ../server/vino-server.schemas.in.h:8
-msgid ""
-"If true, remote users accessing the desktop are required to support "
-"encryption. It is highly recommended that you use a client which supports "
-"encryption unless the intervening network is trusted."
-msgstr ""
-"यदि सही भएमा, डेस्कटपमा पहुँच गर्न टाढाको प्रयोगकर्ताहरूले गुप्तिकरण समर्थन गर्न सक्ने हुनु "
-"आवश्यक हुन्छ। बीचमा आउने सञ्जाल भरोसा नगरेसम्म गुप्तिकरण समर्थन गर्ने एउटा ग्राहक प्रयोग "
-"गर्न तपाईँलाई उच्च रूपमा सिफारिश गरिन्छ।"
-
-#: ../server/vino-server.schemas.in.h:9
-msgid "If true, screen will be locked after the last remote client disconnect."
-msgstr "यदि सही भएमा, पर्दा अन्तिम टाढाको क्लाइन्ट विच्छेदन भएपछि ताल्चा लगाइनेछ ।"
-
-#: ../server/vino-server.schemas.in.h:10
-msgid ""
-"If true, the server will listen to another port, instead of the default "
-"(5900). The port must be specified in the 'alternative_port' key."
-msgstr "यदि सही भएमा, सर्भरले पूर्वनिर्धारित पोर्ट (५९००) को सट्टा अर्को पोर्टमा सुन्नेछ । पोर्ट 'alternative_port' कुञ्जीमा निर्दिष्ट गरेको हुनुपर्छ ।"
-
-#: ../server/vino-server.schemas.in.h:11
-msgid ""
-"If true, the server will only accept connections from localhost and network "
-"connections will be rejected. Set this option to true if you wish to "
-"exclusively use a tunneling mechanism to access the server, such as ssh."
-msgstr ""
-"यदि सही भएमा, सर्भरले स्थानिय होस्टबाट मात्र जडानहरू स्वीकार गर्नेछ र सञ्जाल जडानहरू "
-"अस्वीकार गरिनेछ । यदि तपाईँ बाह्य रूपमा सर्भर पहुँच गर्न, ssh जस्तै टुनेलिङ यन्त्रावली "
-"प्रयोग गर्न चाहनुहुन्छ भने यो विकल्प सहीमा सेट गर्नुहोस् ।"
-
-#: ../server/vino-server.schemas.in.h:12
-msgid "Listen an alternative port"
-msgstr "एउटा वैकल्पिक पोर्ट सुन्नुहोस्"
-
-#: ../server/vino-server.schemas.in.h:13
-msgid ""
-"Lists the authentication methods with which remote users may access the "
-"desktop. There are two possible authentication methods; \"vnc\" causes the "
-"remote user to be prompted for a password (the password is specified by the "
-"vnc_password key) before connecting and \"none\" which allows any remote "
-"user to connect."
-msgstr ""
-"टाढा प्रयोगकर्ताले डेस्कटपमा पहुँच गर्न सक्ने प्रमाणीकरण विधिहरू सूचीकृत गर्नुहोस्। त्यहाँ दुई "
-"प्रकारका सम्भाव्य प्रमाणीकरण विधिहरू छन्, जडान गर्नु अगाडि पासवर्ड (यो पासवर्ड भि एन "
-"सि पासवर्ड कुञ्जी द्वारा निर्दिष्ट गरिएको पासवर्ड हो)का लागि \"vnc\" को कारणले "
-"टाढाको प्रयोगकर्ता प्रोम्ट गरिनु पर्दछ र \"none\"जसले कुनै पनि प्रयोगकर्तालाई जडान गर्न "
-"अनुमति दिन्छ।"
-
-#: ../server/vino-server.schemas.in.h:14
-msgid "Lock the screen when last user disconnect"
-msgstr "अन्तिम प्रयोगकर्ता विच्छेदन हुँदा पर्दामा ताल्चा लगाउनुहोस्"
-
-#: ../server/vino-server.schemas.in.h:15
-msgid "Only allow local connections"
-msgstr "स्थानिय जडानहरू मात्र अनुमति दिनुहोस्"
-
-#: ../server/vino-server.schemas.in.h:16
-msgid "Only allow remote users to view the desktop"
-msgstr "डेस्कटप हेर्न टाढा प्रयोगकर्ताहरूलाई मात्र अनुमति दिनुहोस्"
-
-#: ../server/vino-server.schemas.in.h:17
-msgid "Password required for \"vnc\" authentication"
-msgstr "\"vnc\" प्रमाणीकरणका लागि पासवर्ड आवश्यक पर्दछ"
-
-#: ../server/vino-server.schemas.in.h:18
-msgid "Prompt the user before completing a connection"
-msgstr "जडान पूरा गर्नु पहिले प्रयोगकर्तालाई प्रोम्ट गर्नुहोस्"
-
-#: ../server/vino-server.schemas.in.h:19
-msgid "Require encryption"
-msgstr "गुप्तीकरण आवश्यक छ"
-
-#: ../server/vino-server.schemas.in.h:20
-msgid ""
-"The password which the remote user will be prompted for if the \"vnc\" "
-"authentication method is used. The password specified by the key is base64 "
-"encoded."
-msgstr ""
-"\"vnc\" प्रमाणीकरण विधि प्रयोग गर्दा टाढा प्रयोगकर्तालाई प्रोम्ट गर्ने पासवर्ड। कुञ्जीले "
-"निर्दिष्ट गरेको पासवर्ड आधार६४मा सङ्केतन गरिएको छ।"
-
-#: ../server/vino-server.schemas.in.h:21
-msgid ""
-"The port which the server will listen to if the 'use_alternative_port' key "
-"is set to true. Valid values are in the range from 5000 to 50000."
-msgstr ""
-"'पोर्ट-वैकल्पिक-प्रयोग' कुञ्जी सहीमा सेट हुँदा सर्भरले सुन्ने पोर्ट । वैध मानहरू ५००० देखि "
-"५०००० को दायरा भित्र छ ।"
-
-#: ../server/vino-server.schemas.in.h:22
-msgid ""
-"This key specifies the e-mail address to which the remote desktop URL should "
-"be sent if the user clicks on the URL in the Remote Desktop preferences "
-"dialog."
-msgstr ""
-"यो कुञ्जीले यदि प्रयोगकर्ताले टाढाको डेस्कटप प्राथमिकताहरूको संवादको यूआरएलमा क्लिक गर्यो भने "
-"टाढाको डेस्कटप यूआरएल पठाउन पर्ने इमेल ठेगाना निर्दिष्ट गर्दछ ।"
-
-#: ../server/vino-shell.c:76
-msgid "Remote Desktop server already running; exiting ...\n"
-msgstr "टाढाको डेस्कटप सर्भर पहिले नै चलिरहेको छ; निस्किदै छ ...\n"
-
-#: ../server/vino-shell.c:79
-msgid ""
-"Problem registering the remote desktop server with bonobo-activation; "
-"exiting ...\n"
-msgstr "बोनोबो-सक्रियतासँग टाढाको डेस्कटप सर्भर दर्ता गर्दा समस्या; निस्कँदैछ ...\n"
-
-#: ../server/vino-status-icon.c:204
+#: ../server/vino-server.c:166
+#: ../server/vino-server.c:189
 #, c-format
-msgid ""
-"There was an error displaying preferences:\n"
-" %s"
-msgstr ""
-"त्यहाँ प्राथमिकता प्रदर्शन गर्दा त्रुटि थियो:\n"
-"%s"
+msgid "Failed to open connection to bus: %s\n"
+msgstr "बसमा जडान खोल्न असफल भयो: %s\n"
 
-#: ../server/vino-status-icon.c:212
-#, c-format
-msgid ""
-"There was an error displaying help:\n"
-" %s"
-msgstr ""
-"त्यहाँ मद्दत प्रदर्शन गर्दा त्रुटि थियो:\n"
-"%s"
+#: ../server/vino-server.desktop.in.in.h:1
+msgid "Desktop Sharing"
+msgstr "डेक्सटप साझेदारी"
 
-#: ../server/vino-status-icon.c:235
+#: ../server/vino-server.desktop.in.in.h:2
+#, fuzzy
+msgid "GNOME Desktop Sharing Server"
+msgstr "टाढाको डेस्कटप सर्भर सुरु गरिँदैछ"
+
+#: ../server/vino-server.desktop.in.in.h:3
+msgid "vnc;share;remote;"
+msgstr "भिएनसि;साझेदारि;टाढा;"
+
+#: ../server/vino-status-icon.c:97
+#: ../server/vino-status-tube-icon.c:90
+msgid "Desktop sharing is enabled"
+msgstr "डेक्सटप साझेदारि सक्षम छ"
+
+#: ../server/vino-status-icon.c:105
+#, fuzzy, c-format
+#| msgid "Another user is viewing your desktop"
+msgid "One person is viewing your desktop"
+msgid_plural "%d people are viewing your desktop"
+msgstr[0] "अन्य प्रयोगकर्तालाई तपाईँको डेस्कटप हेरिरहेको छ"
+msgstr[1] "अन्य प्रयोगकर्तालाई तपाईँको डेस्कटप हेरिरहेको छ"
+
+#: ../server/vino-status-icon.c:208
+#: ../server/vino-status-tube-icon.c:172
+#| msgid ""
+#| "There was an error displaying preferences:\n"
+#| " %s"
+msgid "Error displaying preferences"
+msgstr "प्राथमिकता प्रदर्शन गर्दा त्रुटि थि"
+
+#: ../server/vino-status-icon.c:230
+#: ../server/vino-status-tube-icon.c:192
+#| msgid ""
+#| "There was an error displaying help:\n"
+#| "%s"
+msgid "Error displaying help"
+msgstr "मद्दत प्रदर्शन गर्न त्रुटि"
+
+#: ../server/vino-status-icon.c:263
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -392,118 +430,138 @@ msgstr ""
 "02110-1301, USA लाई लेख्नुहोस् ।\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:250
+#: ../server/vino-status-icon.c:278
 msgid "translator-credits"
-msgstr "Shyam Krishna bal <balshyam24@yahoo.com>"
+msgstr "Pawan Chitrakar < chautari@gmail.com >"
 
-#: ../server/vino-status-icon.c:256 ../server/vino-status-icon.c:560
-msgid "GNOME Remote Desktop"
-msgstr "जिनोम टाढाको डेस्कटप"
-
-#: ../server/vino-status-icon.c:257
+#: ../server/vino-status-icon.c:284
 msgid "Share your desktop with other users"
 msgstr "तपाईँ डेस्कटप अन्य प्रयोगकर्तासँग साझेदार गर्नुहोस्"
 
-#: ../server/vino-status-icon.c:320
+#: ../server/vino-status-icon.c:351
+#: ../server/vino-status-tube-icon.c:224
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "तपाईँ साँच्चिकै '%s' विच्छेदन गर्न चाहनुहुन्छ ?"
 
-#: ../server/vino-status-icon.c:322
+#: ../server/vino-status-icon.c:354
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "'%s' बाट टाढाको प्रयोगकर्ता विच्छेदन हुनेछ । तपाईँ निश्चित हुनुहुन्छ ?"
 
-#: ../server/vino-status-icon.c:327
+#: ../server/vino-status-icon.c:360
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "तपाईँ सबै क्लाइन्टहरू विच्छेदन गर्न चाहनुहुन्छ ?"
 
-#: ../server/vino-status-icon.c:328
+#: ../server/vino-status-icon.c:362
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "सबै टाढाका प्रयोगकर्ताहरू विच्छेदन हुनेछ । तपाईँ निश्चित हुनुहुन्छ ?"
 
-#: ../server/vino-status-icon.c:340
+#: ../server/vino-status-icon.c:374
+#: ../server/vino-status-tube-icon.c:238
 msgid "Disconnect"
 msgstr "विच्छेदन गर्नुहोस्"
 
-#: ../server/vino-status-icon.c:365
+#: ../server/vino-status-icon.c:400
+#: ../server/vino-status-tube-icon.c:263
 msgid "_Preferences"
 msgstr "प्राथमिकता"
 
-#: ../server/vino-status-icon.c:377
+#: ../server/vino-status-icon.c:415
 msgid "Disconnect all"
 msgstr "सबै विच्छेदन गर्नुहोस्"
 
-#: ../server/vino-status-icon.c:399
+#. Translators: %s is a hostname
+#. Translators: %s is the alias of the telepathy contact
+#: ../server/vino-status-icon.c:439
+#: ../server/vino-status-tube-icon.c:276
 #, c-format
 msgid "Disconnect %s"
 msgstr "%s विच्छेदन गर्नुहोस्"
 
-#: ../server/vino-status-icon.c:416
+#: ../server/vino-status-icon.c:460
+#: ../server/vino-status-tube-icon.c:295
 msgid "_Help"
 msgstr "मद्दत"
 
-#: ../server/vino-status-icon.c:424
+#: ../server/vino-status-icon.c:468
 msgid "_About"
 msgstr "बारेमा"
 
-#: ../server/vino-status-icon.c:458
-#, c-format
-msgid "One person is connected"
-msgid_plural "%d people are connected"
-msgstr[0] "एउटा व्यक्ति जडान भएको छ"
-msgstr[1] "%d व्यक्ति जडान भएको छ"
-
-#: ../server/vino-status-icon.c:562
-msgid "Error initializing libnotify\n"
-msgstr "libnotify सुरुआत गर्दा त्रुटि\n"
-
-#: ../server/vino-status-icon.c:576
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:619
 msgid "Another user is viewing your desktop"
 msgstr "अन्य प्रयोगकर्तालाई तपाईँको डेस्कटप हेरिरहेको छ"
 
-#: ../server/vino-status-icon.c:577
+#: ../server/vino-status-icon.c:621
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "कम्प्युटर '%s' मा प्रयोगकर्ताले टाढैबाट तपाईँको डेस्कटप हेरिरहेको छ ।"
 
-#: ../server/vino-status-icon.c:582
+#. Translators: %s is a hostname
+#: ../server/vino-status-icon.c:627
 msgid "Another user is controlling your desktop"
 msgstr "अर्को प्रयोगकर्ताले तपाईँको डेस्कटप नियन्त्रण गरिरहेको छ"
 
-#: ../server/vino-status-icon.c:583
+#: ../server/vino-status-icon.c:629
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "'%s' कम्प्यूटरमा भएको एउटा प्रयोगकर्ताले तपाईँको डेस्कटप टाढाबाट नियन्त्रण गरिरहेको छ ।"
 
-#: ../server/vino-status-icon.c:605
+#: ../server/vino-status-icon.c:651
+#: ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "सूचना बबल प्रदर्शन गर्दा त्रुटि: %s\n"
 
-#: ../session/vino-session.c:133
-msgid "Remote desktop server died, restarting\n"
-msgstr "टाढाको डेस्कटप सर्भर बन्द भयो, पुन: सुरु गर्दैछ\n"
+#: ../server/vino-status-tube-icon.c:227
+#, fuzzy, c-format
+#| msgid "The remote user from '%s' will be disconnected. Are you sure?"
+msgid "The remote user '%s' will be disconnected. Are you sure?"
+msgstr "'%s' बाट टाढाको प्रयोगकर्ता विच्छेदन हुनेछ । तपाईँ निश्चित हुनुहुन्छ ?"
 
-#: ../session/vino-session.c:154
+#: ../server/vino-tube-server.c:220
+#: ../server/vino-tube-server.c:249
+#, fuzzy
+#| msgid "Share your desktop with other users"
+msgid "Share my desktop information"
+msgstr "तपाईँ डेस्कटप अन्य प्रयोगकर्तासँग साझेदार गर्नुहोस्"
+
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:224
 #, c-format
-msgid "Activation of %s failed: %s\n"
-msgstr "%s को सक्रिय पार्न असफल: %s\n"
+msgid "'%s' rejected the desktop sharing invitation."
+msgstr ""
 
-#: ../session/vino-session.c:160
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:228
 #, c-format
-msgid "Activation of %s failed: Unknown Error\n"
-msgstr "%s लाई सक्रिय पार्न असफल: अज्ञात त्रुटि\n"
+#| msgid "Disconnect"
+msgid "'%s' disconnected"
+msgstr "'%s' विच्छेदन भयो"
 
-#: ../session/vino-session.c:231
-msgid "Failed to activate remote desktop server: tried too many times\n"
-msgstr "टाढाको डेस्कटप सर्भरलाई सक्रिय गर्न असफल: धेरै पटक प्रयास गरिसक्यो\n"
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:255
+#, fuzzy, c-format
+#| msgid "A user on the computer '%s' is remotely controlling your desktop."
+msgid "'%s' is remotely controlling your desktop."
+msgstr "अर्को प्रयोगकर्ताले तपाईँको डेस्कटप नियन्त्रण गरिरहेको छ"
 
-#: ../session/vino-session.c:295
-msgid "Starting remote desktop server"
-msgstr "टाढाको डेस्कटप सर्भर सुरु गरिँदैछ"
+#. Translators: '%s' is the name of a contact, buddy coming from Empathy
+#: ../server/vino-tube-server.c:264
+#, fuzzy, c-format
+msgid "Waiting for '%s' to connect to the screen."
+msgstr "'%s' प्रदर्शनपर्दा जडान गर्ने परखाई"
 
-#: ../session/vino-session.c:300
-msgid "Not starting remote desktop server"
-msgstr "टाढाको डेस्कटप सर्भर सुरु गरिएको छैन"
+#: ../server/vino-util.c:89
+msgid "_Allow"
+msgstr "अनुमति दिनुहोस्"
+
+#: ../server/vino-util.c:90
+msgid "_Refuse"
+msgstr "अस्वीकार गर्नुहोस्"
+
+#: ../server/vino-util.c:140
+msgid "An error has occurred:"
+msgstr "एउटा त्रुटि देखापर्यो ।"
 
