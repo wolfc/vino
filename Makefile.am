@@ -249,9 +249,6 @@ gsettings_SCHEMAS = common/org.gnome.Vino.gschema.xml
 
 @GSETTINGS_RULES@
 
-convertdir = $(datadir)/GConf/gsettings
-dist_convert_DATA = common/org.gnome.Vino.convert
-
 if MAINTAINER_MODE
 dist-hook: dist-changelog
 else
