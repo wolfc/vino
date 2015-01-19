@@ -1,3 +1,26 @@
+Vino 3.15.4
+===========
+
+David King (6):
+      Remove obsolete GSettings conversion file
+      Fix Turkish desktop keywords translation
+      Remove obsolete intltool scripts from Makefile
+      Skip intermediate file with Automake 1.15
+      Do not set obsolete PKG_NAME variable
+      Update NEWS for 3.15.4 release
+
+Emin Tufan (1):
+      Updated Turkish translation
+
+Muhammet Kara (1):
+      Updated Turkish translation
+
+Timo Jyrinki (1):
+      Change Finnish translation team web page to l10n.gnome.org
+
+Trần Ngọc Quân (1):
+      Updated Vietnamese translation
+
 Vino 3.14.0
 ===========
 
