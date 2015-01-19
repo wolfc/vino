@@ -289,9 +289,6 @@ dist_noinst_DATA = \
 	server/miniupnp/LICENCE \
 	\
 	ChangeLog.pre-git \
-	intltool-extract.in \
-	intltool-merge.in \
-	intltool-update.in \
 	vino.doap
 
 dist_noinst_SCRIPTS = autogen.sh
@@ -305,9 +302,6 @@ CLEANFILES = \
 	server/vino-server.desktop.in
 
 DISTCLEANFILES = \
-	intltool-extract \
-	intltool-merge \
-	intltool-update \
 	po/.intltool-merge-cache
 
 MAINTAINERCLEANFILES = $(gsettings_SCHEMAS:.xml=.valid)
