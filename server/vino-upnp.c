@@ -30,10 +30,6 @@
 #include "miniupnp/miniupnpc.h"
 #include "miniupnp/upnpcommands.h"
 
-#ifdef VINO_HAVE_NETWORKMANAGER
-#include <NetworkManager/NetworkManager.h>
-#endif
-
 #include "vino-upnp.h"
 #include "vino-util.h"
 
@@ -45,13 +41,14 @@ struct _VinoUpnpPrivate
   gboolean         have_igd;
   int              port;
   int              internal_port;
-#ifdef VINO_HAVE_NETWORKMANAGER
-  GDBusConnection *bus;
-  GDBusProxy      *proxy_nm, *proxy_name;
-#endif
+  GNetworkMonitor *netmon;
 };
 
 G_DEFINE_TYPE (VinoUpnp, vino_upnp, G_TYPE_OBJECT);
+
+static void network_changed (GNetworkMonitor *monitor,
+			     gboolean         available,
+			     gpointer         user_data);
 
 static void
 clean_upnp_data (VinoUpnp *upnp)
@@ -132,25 +129,9 @@ vino_upnp_dispose (GObject *object)
 
   vino_upnp_remove_port (upnp);
 
-#ifdef VINO_HAVE_NETWORKMANAGER
-  if (upnp->priv->proxy_nm)
-    {
-      g_object_unref (upnp->priv->proxy_nm);
-      upnp->priv->proxy_nm = NULL;
-    }
-
-  if (upnp->priv->proxy_name)
-    {
-      g_object_unref (upnp->priv->proxy_name);
-      upnp->priv->proxy_name = NULL;
-    }
-
-  if (upnp->priv->bus)
-    {
-      g_object_unref (upnp->priv->bus);
-      upnp->priv->bus = NULL;
-    }
-#endif
+  g_signal_handlers_disconnect_by_func (upnp->priv->netmon,
+					G_CALLBACK (network_changed),
+					upnp);
 
   G_OBJECT_CLASS (vino_upnp_parent_class)->dispose (object);
 }
@@ -166,10 +147,6 @@ vino_upnp_class_init (VinoUpnpClass *klass)
   g_type_class_add_private (gobject_class, sizeof (VinoUpnpPrivate));
 }
 
-#ifdef VINO_HAVE_NETWORKMANAGER
-static void setup_network_monitor (VinoUpnp *upnp);
-#endif
-
 static void
 vino_upnp_init (VinoUpnp *upnp)
 {
@@ -181,13 +158,9 @@ vino_upnp_init (VinoUpnp *upnp)
   upnp->priv->port = -1;
   upnp->priv->internal_port = -1;
 
-#ifdef VINO_HAVE_NETWORKMANAGER
-  upnp->priv->proxy_nm = NULL;
-  upnp->priv->proxy_name = NULL;
-  upnp->priv->bus = NULL;
-
-  setup_network_monitor (upnp);
-#endif
+  upnp->priv->netmon = g_network_monitor_get_default ();
+  g_signal_connect (upnp->priv->netmon, "network-changed",
+		    G_CALLBACK (network_changed), upnp);
 }
 
 VinoUpnp *
@@ -333,7 +306,6 @@ vino_upnp_get_external_port (VinoUpnp *upnp)
   return upnp->priv->port;
 }
 
-#ifdef VINO_HAVE_NETWORKMANAGER
 static gboolean
 redo_forward (gpointer data)
 {
@@ -351,56 +323,15 @@ redo_forward (gpointer data)
 }
 
 static void
-state_changed (GDBusProxy *proxy,
-               const gchar *sender_name,
-               const gchar *signal_name,
-               GVariant    *parameters,
-               gpointer     user_data)
+network_changed (GNetworkMonitor *network_monitor,
+		 gboolean         network_available,
+		 gpointer         user_data)
 {
   VinoUpnp *upnp = user_data;
-  guint state;
 
-  g_variant_get (parameters, "(u)", &state);
+  dprintf (UPNP, "UPnP: Got the 'network changed' signal. Available = %s\n",
+	   network_available ? "TRUE" : "FALSE");
 
-  dprintf (UPNP, "UPnP: Got the 'network state changed' signal. Status = %d\n", state);
-
-  if ((state == NM_STATE_CONNECTED) && (upnp->priv->internal_port != -1))
+  if (network_available && (upnp->priv->internal_port != -1))
     g_timeout_add (2000, redo_forward, upnp);
 }
-
-static void
-proxy_created (GObject      *source,
-               GAsyncResult *result,
-               gpointer      user_data)
-{
-  VinoUpnp *upnp = user_data;
-  GError *error = NULL;
-  GDBusProxy *proxy;
-
-  proxy = g_dbus_proxy_new_for_bus_finish (result, &error);
-
-  if (proxy != NULL)
-    {
-      g_signal_connect (proxy, "g-signal", G_CALLBACK (state_changed), upnp);
-      g_timeout_add (2000, redo_forward, upnp);
-      upnp->priv->proxy_nm = proxy;
-    }
-
-  else
-    {
-      g_warning ("Failed to create proxy: %s\n", error->message);
-      g_error_free (error);
-    }
-}
-
-static void
-setup_network_monitor (VinoUpnp *upnp)
-{
-  g_dbus_proxy_new_for_bus (G_BUS_TYPE_SYSTEM,
-                            G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES |
-                            G_DBUS_PROXY_FLAGS_DO_NOT_AUTO_START,
-                            NULL,
-                            NM_DBUS_SERVICE, NM_DBUS_PATH, NM_DBUS_INTERFACE,
-                            NULL, proxy_created, g_object_ref (upnp));
-}
-#endif /* VINO_HAVE_NETWORKMANAGER */

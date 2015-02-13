@@ -59,25 +59,6 @@ AS_IF([test "x$have_telepathy" = "xyes"],
 
 AM_CONDITIONAL([VINO_HAVE_TELEPATHY_GLIB], [test "x$have_telepathy" = "xyes"])
 
-# Check for NetworkManager
-NETWORKMANAGER_DEPS="NetworkManager >= 0.7"
-
-AC_ARG_WITH([network-manager],
-  [AS_HELP_STRING([--without-network-manager],
-    [ignore the presence of NetworkManager and disable it])])
-
-AS_IF([test "x$with_network_manager" != "xno"],
-  [PKG_CHECK_EXISTS([$NETWORKMANAGER_DEPS],
-    [have_network_manager=yes],
-    [have_network_manager=no])],
-  [have_network_manager=no])
-
-AS_IF([test "x$have_network_manager" = "xyes"],
-  [AC_DEFINE([VINO_HAVE_NETWORKMANAGER], [], [Build with NetworkManager support])],
-  [NETWORKMANAGER_DEPS=""
-    AS_IF([test "x$with_network_manager" = "xyes"],
-    [AC_MSG_ERROR([NetworkManager support requested but not found])])])
-
 # Check for secret
 SECRET_DEPS="libsecret-1"
 
@@ -286,10 +267,10 @@ AC_MSG_RESULT([$have_ipv6])
 
 # GNOME libraries
 GTK_VERSION=3.0.0
-GLIB_VERSION=2.17.0
+GLIB_VERSION=2.32.0
 GIO_VERSION=2.26
 
-PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS libnotify >= 0.7.0 $SECRET_DEPS $NETWORKMANAGER_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
+PKG_CHECK_MODULES([VINO_SERVER], [glib-2.0 >= $GLIB_VERSION gio-unix-2.0 gtk+-x11-3.0 >= $GTK_VERSION $TELEPATHY_GLIB_DEPS libnotify >= 0.7.0 $SECRET_DEPS $GNUTLS_DEPS $AVAHI_DEPS])
 
 # EGG stuff
 PKG_CHECK_MODULES([EGG_SMCLIENT], [gtk+-3.0])
