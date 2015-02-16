@@ -1,3 +1,9 @@
+Vino 3.15.90
+============
+
+Dan Winship (1):
+      vino-upnp: Use GNetworkMonitor
+
 Vino 3.15.4
 ===========
 
