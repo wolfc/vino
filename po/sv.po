@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2014-04-17 11:41+0000\n"
+"POT-Creation-Date: 2015-03-14 00:15+0000\n"
 "PO-Revision-Date: 2014-05-22 23:14+0100\n"
 "Last-Translator: Anders Jonsson <anders.jonsson@norsjovallen.se>\n"
 "Language-Team: Swedish <tp-sv@listor.tp-sv.se>\n"
@@ -21,23 +21,10 @@ msgstr ""
 "X-Generator: Poedit 1.6.4\n"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:1
-msgid "Enable remote access to the desktop"
-msgstr "Aktivera fjärråtkomst till skrivbordet"
-
-#: ../common/org.gnome.Vino.gschema.xml.h:2
-msgid ""
-"If true, allows remote access to the desktop via the RFB protocol. Users on "
-"remote machines may then connect to the desktop using a VNC viewer."
-msgstr ""
-"Om detta är sant tillåts fjärråtkomst till skrivbordet via RFB-protokollet. "
-"Användare på fjärrdatorer kan då ansluta till skrivbordet genom att använda "
-"en VNC-klient."
-
-#: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Prompt the user before completing a connection"
 msgstr "Fråga användaren innan en anslutning färdigställs"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:4
+#: ../common/org.gnome.Vino.gschema.xml.h:2
 msgid ""
 "If true, remote users accessing the desktop are not allowed access until the "
 "user on the host machine approves the connection. Recommended especially "
@@ -47,11 +34,11 @@ msgstr ""
 "användaren på värddatorn godkänner anslutningen. Rekommenderas särskilt om "
 "åtkomsten inte skyddas av ett lösenord."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:5
+#: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Only allow remote users to view the desktop"
 msgstr "Tillåt endast fjärranvändare att se skrivbordet"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:6
+#: ../common/org.gnome.Vino.gschema.xml.h:4
 msgid ""
 "If true, remote users accessing the desktop are only allowed to view the "
 "desktop. Remote users will not be able to use the mouse or keyboard."
@@ -59,16 +46,11 @@ msgstr ""
 "Om detta är sant tillåts fjärranvändare endast att se skrivbordet. "
 "Fjärranvändare kommer inte att kunna använda musen eller tangentbordet."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:7
+#: ../common/org.gnome.Vino.gschema.xml.h:5
 msgid "Network interface for listening"
 msgstr "Nätverksgränssnitt att lyssna på"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:8
-#| msgid ""
-#| "If not set, the server will listen on all network interfaces.\n"
-#| "\n"
-#| "Set this if you want that accept connections only from some specific "
-#| "network interface. eg: eth0, wifi0, lo, ..."
+#: ../common/org.gnome.Vino.gschema.xml.h:6
 msgid ""
 "If not set, the server will listen on all network interfaces.\n"
 "\n"
@@ -80,14 +62,11 @@ msgstr ""
 "Ställ in detta om du endast vill acceptera anslutningar på specifika "
 "nätverksgränssnitt, t.ex: eth0, wifi0, lo och så vidare."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:11
+#: ../common/org.gnome.Vino.gschema.xml.h:9
 msgid "Listen on an alternative port"
 msgstr "Lyssna på en alternativ port"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:12
-#| msgid ""
-#| "If true, the server will listen to another port, instead of the default "
-#| "(5900). The port must be specified in the 'alternative-port' key."
+#: ../common/org.gnome.Vino.gschema.xml.h:10
 msgid ""
 "If true, the server will listen on another port, instead of the default "
 "(5900). The port must be specified in the 'alternative-port' key."
@@ -95,14 +74,11 @@ msgstr ""
 "Om sant kommer servern att lyssna på en annan port istället för "
 "standardporten (5900). Porten måste anges i nyckeln \"alternative-port\"."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:13
+#: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Alternative port number"
 msgstr "Alternativt portnummer"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:14
-#| msgid ""
-#| "The port which the server will listen to if the 'use-alternative-port' "
-#| "key is set to true. Valid values are in the range from 5000 to 50000."
+#: ../common/org.gnome.Vino.gschema.xml.h:12
 msgid ""
 "The port which the server will listen to if the 'use-alternative-port' key "
 "is set to true. Valid values are in the range of 5000 to 50000."
@@ -110,11 +86,11 @@ msgstr ""
 "Porten som servern kommer att lyssna på om nyckeln \"use-alternative-port\" "
 "är inställd till sant. Giltiga värden är i intervallet 5000 upp till 50000."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:15
+#: ../common/org.gnome.Vino.gschema.xml.h:13
 msgid "Require encryption"
 msgstr "Kräv kryptering"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:16
+#: ../common/org.gnome.Vino.gschema.xml.h:14
 msgid ""
 "If true, remote users accessing the desktop are required to support "
 "encryption. It is highly recommended that you use a client which supports "
@@ -125,11 +101,11 @@ msgstr ""
 "som har stöd för kryptering såvida du inte litar på det mellanliggande "
 "nätverket."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:17
+#: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Allowed authentication methods"
 msgstr "Tillåtna autentiseringsmetoder"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:18
+#: ../common/org.gnome.Vino.gschema.xml.h:16
 msgid ""
 "Lists the authentication methods with which remote users may access the "
 "desktop.\n"
@@ -147,11 +123,11 @@ msgstr ""
 "anslutning, och \"none\" som tillåter vilken fjärranvändare som helst att "
 "ansluta."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:21
+#: ../common/org.gnome.Vino.gschema.xml.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Lösenord krävs för \"vnc\"-autentisering"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:22
+#: ../common/org.gnome.Vino.gschema.xml.h:20
 msgid ""
 "The password which the remote user will be prompted for if the \"vnc\" "
 "authentication method is used. The password specified by the key is base64 "
@@ -167,11 +143,11 @@ msgstr ""
 "Det speciella värdet \"keyring\" (som inte är giltig base64) betyder att "
 "lösenordet är lagrat i GNOME-nyckelringen."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:25
+#: ../common/org.gnome.Vino.gschema.xml.h:23
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "E-postadress till vilken fjärrskrivbords-URL:en ska skickas"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:26
+#: ../common/org.gnome.Vino.gschema.xml.h:24
 msgid ""
 "This key specifies the e-mail address to which the remote desktop URL should "
 "be sent if the user clicks on the URL in the Desktop Sharing preferences "
@@ -181,29 +157,22 @@ msgstr ""
 "ska skickas om användaren klickar på URL:en i inställningsdialogen för "
 "skrivbordsdelning."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:27
+#: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "Lock the screen when last user disconnect"
 msgstr "Lås skärmen när sista användaren kopplar från"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:28
-#| msgid ""
-#| "If true, screen will be locked after the last remote client disconnect."
+#: ../common/org.gnome.Vino.gschema.xml.h:26
 msgid ""
 "If true, the screen will be locked after the last remote client disconnects."
 msgstr ""
 "Om sant kommer skärmen att låsas efter att den sista fjärrklienten kopplar "
 "från."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:29
+#: ../common/org.gnome.Vino.gschema.xml.h:27
 msgid "When the status icon should be shown"
 msgstr "När statusikonen ska visas"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:30
-#| msgid ""
-#| "This key controls the behavior of the status icon. There are three "
-#| "options: \"always\" - The icon will be always there; \"client\" - You "
-#| "will see the icon only when there is someone connected, this is the "
-#| "default behavior; \"never\" - Never shows the icon."
+#: ../common/org.gnome.Vino.gschema.xml.h:28
 msgid ""
 "This key controls the behavior of the status icon. There are three options: "
 "\"always\" - the icon will always be present; \"client\" - the icon will "
@@ -215,13 +184,12 @@ msgstr ""
 "endast när någon är ansluten (detta är standardbeteendet); \"never\" - "
 "Ikonen visas aldrig."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:31
-#| msgid "When true, disable the background on receive valid session"
+#: ../common/org.gnome.Vino.gschema.xml.h:29
 msgid "Whether to disable the desktop background when a user is connected"
 msgstr ""
 "Huruvida skrivbordsbakgrunden ska inaktiveras när en användare är ansluten"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:32
+#: ../common/org.gnome.Vino.gschema.xml.h:30
 msgid ""
 "When true, disable the desktop background and replace it with a single block "
 "of color when a user successfully connects."
@@ -229,13 +197,12 @@ msgstr ""
 "Då detta är sant inaktiveras skrivbordsbakgrunden och ersätts med en "
 "enfärgad bakgrund då en användare ansluter."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:33
-#| msgid "Whether we should use UPNP to forward the port in routers"
+#: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "Whether a UPnP router should be used to forward and open ports"
 msgstr ""
 "Huruvida en UPnP-router ska användas för att vidarebefordra och öppna portar"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:34
+#: ../common/org.gnome.Vino.gschema.xml.h:32
 msgid ""
 "If true, request that a UPnP-capable router should forward and open the port "
 "used by Vino."
@@ -243,16 +210,11 @@ msgstr ""
 "Om sant begärs att en UPnP-kapabel router ska vidarebefordra och öppna "
 "porten som används av Vino."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:35
+#: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Huruvida vi ska inaktivera X.org-utökningen XDamage"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:36
-#| msgid ""
-#| "If true, we will not use the XDamage extension of X.org. This extension "
-#| "does not work properly on some video drivers when using 3D effects. "
-#| "Disabling it will make vino work on these environments with a slower "
-#| "rendering as side effect."
+#: ../common/org.gnome.Vino.gschema.xml.h:34
 msgid ""
 "If true, do not use the XDamage extension of X.org. This extension does not "
 "work properly on some video drivers when using 3D effects. Disabling it will "
@@ -263,14 +225,13 @@ msgstr ""
 "den kommer att göra att Vino fungerar i dessa miljöer med långsammare "
 "rendering som en sidoeffekt."
 
-#: ../common/org.gnome.Vino.gschema.xml.h:37
+#: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Notify on connect"
-msgstr "Notifiera vid anslutning"
+msgstr "Avisera vid anslutning"
 
-#: ../common/org.gnome.Vino.gschema.xml.h:38
-#| msgid "If true, we will notify, when the user connects to the system."
+#: ../common/org.gnome.Vino.gschema.xml.h:36
 msgid "If true, show a notification when a user connects to the system."
-msgstr "Om sant visas en notifiering när en användare ansluter till systemet."
+msgstr "Om sant visas en avisering när en användare ansluter till systemet."
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -340,7 +301,7 @@ msgstr "Flaggor för sessionshantering:"
 msgid "Show session management options"
 msgstr "Visa flaggor för sessionshantering"
 
-#: ../server/vino-main.c:202
+#: ../server/vino-main.c:153
 msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
@@ -351,22 +312,22 @@ msgstr ""
 #. Tube mode uses Telepathy's Tubes to share a user's desktop directly
 #. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
 #.
-#: ../server/vino-main.c:301
+#: ../server/vino-main.c:249
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
 msgstr "Starta i tubläge, för funktionen ”Dela mitt skrivbord”"
 
-#: ../server/vino-main.c:307
+#: ../server/vino-main.c:260
 msgid "- VNC Server for GNOME"
 msgstr "- VNC-server för GNOME"
 
-#: ../server/vino-main.c:315
+#: ../server/vino-main.c:268
 msgid ""
 "Run 'vino-server --help' to see a full list of available command line options"
 msgstr ""
 "Kör ”vino-server --help” för en komplett lista över tillgängliga "
 "kommandoradsflaggor"
 
-#: ../server/vino-main.c:336
+#: ../server/vino-main.c:280
 msgid "GNOME Desktop Sharing"
 msgstr "GNOME-skrivbordsdelning"
 
@@ -403,13 +364,13 @@ msgstr "Skärm"
 msgid "The screen on which to display the prompt"
 msgstr "Skärmen på vilken frågan ska visas"
 
-#: ../server/vino-prompt.c:263 ../server/vino-status-icon.c:598
+#: ../server/vino-prompt.c:270 ../server/vino-status-icon.c:598
 #: ../server/vino-status-tube-icon.c:389
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Fel vid initiering av libnotify\n"
 
-#: ../server/vino-prompt.c:282
+#: ../server/vino-prompt.c:289
 #, c-format
 msgid ""
 "A user on the computer '%s' is trying to remotely view or control your "
@@ -418,20 +379,19 @@ msgstr ""
 "En användare på datorn ”%s” försöker att se eller fjärrstyra ditt skrivbord "
 "över nätverket."
 
-#: ../server/vino-prompt.c:285
+#: ../server/vino-prompt.c:292
 msgid "Another user is trying to view your desktop."
 msgstr "En annan användare försöker att se ditt skrivbord."
 
-#: ../server/vino-prompt.c:291
-#| msgid "_Refuse"
+#: ../server/vino-prompt.c:298
 msgid "Refuse"
 msgstr "Neka"
 
-#: ../server/vino-prompt.c:297
+#: ../server/vino-prompt.c:304
 msgid "Accept"
 msgstr "Acceptera"
 
-#: ../server/vino-server.c:166 ../server/vino-server.c:189
+#: ../server/vino-server.c:159 ../server/vino-server.c:182
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
 msgstr "Misslyckades med att öppna anslutning mot bussen: %s\n"
@@ -585,7 +545,7 @@ msgstr "En användare på datorn ”%s” fjärrstyr ditt skrivbord."
 #: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
-msgstr "Fel vid visning av notifieringsbubbla: %s\n"
+msgstr "Fel vid visning av aviseringsbubbla: %s\n"
 
 #: ../server/vino-status-tube-icon.c:227
 #, c-format
@@ -620,17 +580,28 @@ msgstr "”%s” fjärrstyr ditt skrivbord."
 msgid "Waiting for '%s' to connect to the screen."
 msgstr "Väntar på att ”%s” ska ansluta till skärmen."
 
-#: ../server/vino-util.c:89
+#: ../server/vino-util.c:88
 msgid "_Allow"
 msgstr "_Tillåt"
 
-#: ../server/vino-util.c:90
+#: ../server/vino-util.c:89
 msgid "_Refuse"
 msgstr "_Neka"
 
-#: ../server/vino-util.c:140
+#: ../server/vino-util.c:139
 msgid "An error has occurred:"
 msgstr "Ett fel har inträffat:"
+
+#~ msgid "Enable remote access to the desktop"
+#~ msgstr "Aktivera fjärråtkomst till skrivbordet"
+
+#~ msgid ""
+#~ "If true, allows remote access to the desktop via the RFB protocol. Users "
+#~ "on remote machines may then connect to the desktop using a VNC viewer."
+#~ msgstr ""
+#~ "Om detta är sant tillåts fjärråtkomst till skrivbordet via RFB-"
+#~ "protokollet. Användare på fjärrdatorer kan då ansluta till skrivbordet "
+#~ "genom att använda en VNC-klient."
 
 #~ msgid "There was an error showing the URL \"%s\""
 #~ msgstr "Det uppstod ett fel vid visning av URL:en \"%s\""
@@ -708,7 +679,7 @@ msgstr "Ett fel har inträffat:"
 #~ msgstr "Routern måste ha UPnP-funktionen aktiverad"
 
 #~ msgid "Show Notification Area Icon"
-#~ msgstr "Visa ikon i notifieringsytan"
+#~ msgstr "Visa ikon i aviseringsytan"
 
 #~ msgid "Al_ways"
 #~ msgstr "A_lltid"
