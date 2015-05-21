@@ -304,7 +304,7 @@ msgid ""
 "\"never\" - the icon will not be present."
 msgstr ""
 "Aquesta clau controla el comportament de la icona d'estat. Hi ha tres "
-"opcions: «always» - la icona sempre està visible, «client» - l'icona només "
+"opcions: «always» - la icona sempre està visible, «client» - la icona només "
 "es mostrarà quan hi ha algú connectat (aquest és el comportament per "
 "defecte) i «never» - la icona no es mostra mai."
 
@@ -484,7 +484,7 @@ msgstr "Escriptori remot de %s a %s"
 #: ../server/vino-prefs.c:111
 #, c-format
 msgid "Received signal %d, exiting."
-msgstr "S'ha rebut la senyal %d, s'està sortint."
+msgstr "S'ha rebut el senyal %d, s'està sortint."
 
 #: ../server/vino-prompt.c:144
 msgid "Screen"
