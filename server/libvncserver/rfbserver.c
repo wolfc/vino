@@ -150,7 +150,7 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
     struct sockaddr_storage addr;
     socklen_t addrlen = sizeof(addr);
     int i;
-    char host[NI_MAXHOST];
+    char host[NI_MAXHOST] = "(unresolved)";
     const char *prt = "unknown";
 
     cl = (rfbClientPtr)calloc(sizeof(rfbClientRec),1);
@@ -166,11 +166,11 @@ rfbNewClient(rfbScreenInfoPtr rfbScreen,
 
       getpeername(sock, (struct sockaddr *)&addr, &addrlen);
 
-      getnameinfo((struct sockaddr *)&addr,
-                  addrlen,
-                  host, sizeof(host),
-                  NULL, 0,
-                  0);
+      if (getnameinfo((struct sockaddr *)&addr, addrlen,
+                      host, sizeof(host), NULL, 0, 0)) {
+        getnameinfo((struct sockaddr *)&addr, addrlen,
+                    host, sizeof(host), NULL, 0, NI_NUMERICHOST);
+      }
 
       cl->host = strdup(host);
 
