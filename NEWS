@@ -1,3 +1,32 @@
+Vino 3.17.91
+============
+
+Chao-Hsiung Liao (1):
+      Updated Chinese (Taiwan) translation
+
+Cédric Valmary (2):
+      Updated Occitan translation
+      Updated Occitan translation
+
+Dimitri Tarassenko (1):
+      Improve handling of name resolution failure
+
+Fabio Tomat (2):
+      Added Friulian translation
+      Updated Friulian translation
+
+Jordi Mas (1):
+      Fixes to Catalan transation
+
+Pedro Albuquerque (1):
+      Updated Portuguese translation
+
+Piotr Drąg (1):
+      Updated Polish translation
+
+Sveinn í Felli (1):
+      Added Icelandic translation
+
 Vino 3.16.0
 ===========
 
