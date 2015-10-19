@@ -165,7 +165,14 @@ vino_status_tube_icon_preferences (VinoStatusTubeIcon *icon)
   GError *error = NULL;
 
   screen = gtk_status_icon_get_screen (GTK_STATUS_ICON (icon));
-  info = g_desktop_app_info_new ("vino-preferences.desktop");
+  info = g_desktop_app_info_new ("gnome-sharing-panel.desktop");
+  if (info == NULL)
+    info = g_desktop_app_info_new ("vino-preferences.desktop");
+  if (info == NULL)
+    {
+      vino_util_show_error (NULL, _("Error displaying preferences"), NULL);
+      return;
+    }
   context = gdk_display_get_app_launch_context (gdk_screen_get_display (screen));
   if (!g_app_info_launch (G_APP_INFO (info), NULL, G_APP_LAUNCH_CONTEXT (context), &error))
     {
