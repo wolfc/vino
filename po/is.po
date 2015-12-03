@@ -8,7 +8,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
 "POT-Creation-Date: 2015-12-03 02:58+0000\n"
-"PO-Revision-Date: 2015-12-03 10:05+0000\n"
+"PO-Revision-Date: 2015-12-03 10:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -28,6 +28,9 @@ msgid ""
 "user on the host machine approves the connection. Recommended especially "
 "when access is not password protected."
 msgstr ""
+"Ef þetta er valið, verður fjartengdum notendum ekki leyfður aðgangur fyrr en "
+"notandi á hýsivélinni hefur samþykkt tenginguna. Sérstaklega er mælt með "
+"þessu ef tengingin er ekki varin með lykilorði."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Only allow remote users to view the desktop"
@@ -165,24 +168,31 @@ msgstr ""
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "Whether a UPnP router should be used to forward and open ports"
-msgstr ""
+msgstr "Hvort nota eigi UPnP-beini til að áframsenda og opna gáttir"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:32
 msgid ""
 "If true, request that a UPnP-capable router should forward and open the port "
 "used by Vino."
 msgstr ""
+"Ef þetta er valið, á að krefjast UPnP-beinis til að áframsenda og opna gáttir "
+"þær sem notaðar eru af Vino."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid "Whether we should disable the XDamage extension of X.org"
-msgstr ""
+msgstr "Hvort gera skuli XDamage-viðbótina í X.org óvirka"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
+#, fuzzy
 msgid ""
 "If true, do not use the XDamage extension of X.org. This extension does not "
 "work properly on some video drivers when using 3D effects. Disabling it will "
 "make Vino work in these environments, with slower rendering as a side effect."
 msgstr ""
+"Ef þetta er valið, skal ekki nota XDamage-viðbótina í X.org. Þessi viðbót "
+"(extension) virkar ekki vel með sumum skjákortsreklum þegar verið er að nota "
+"þrívíddarbrellur. Með þ Vino work in these environments, with slower "
+"rendering as a side effect."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Notify on connect"
