@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
 "product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2015-12-03 02:58+0000\n"
-"PO-Revision-Date: 2015-12-03 10:16+0000\n"
+"POT-Creation-Date: 2015-12-03 10:17+0000\n"
+"PO-Revision-Date: 2015-12-03 16:16+0000\n"
 "Last-Translator: Sveinn í Felli <sv1@fellsnet.is>\n"
 "Language-Team: Icelandic <translation-team-is@lists.sourceforge.net>\n"
 "Language: is\n"
@@ -141,6 +141,8 @@ msgstr "Læsa skjánum þegar síðasti notandinn aftengist"
 msgid ""
 "If true, the screen will be locked after the last remote client disconnects."
 msgstr ""
+"Ef þetta er valið, verður skjánum læst eftir að síðasti fjartengdi notandinn "
+"aftengist."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:27
 msgid "When the status icon should be shown"
@@ -163,8 +165,8 @@ msgid ""
 "When true, disable the desktop background and replace it with a single block "
 "of color when a user successfully connects."
 msgstr ""
-"Ef þetta er valið, skal gera bakgrunn skjáborðsins óvirkan og skipta honum út "
-"með heillituðum fleti, þegar notandi hefur tengst."
+"Ef þetta er valið, skal gera bakgrunn skjáborðsins óvirkan og skipta honum "
+"út með heillituðum fleti, þegar notandi hefur tengst."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "Whether a UPnP router should be used to forward and open ports"
@@ -175,15 +177,14 @@ msgid ""
 "If true, request that a UPnP-capable router should forward and open the port "
 "used by Vino."
 msgstr ""
-"Ef þetta er valið, á að krefjast UPnP-beinis til að áframsenda og opna gáttir "
-"þær sem notaðar eru af Vino."
+"Ef þetta er valið, á að krefjast UPnP-beinis til að áframsenda og opna "
+"gáttir þær sem notaðar eru af Vino."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Hvort gera skuli XDamage-viðbótina í X.org óvirka"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
-#, fuzzy
 msgid ""
 "If true, do not use the XDamage extension of X.org. This extension does not "
 "work properly on some video drivers when using 3D effects. Disabling it will "
@@ -191,8 +192,8 @@ msgid ""
 msgstr ""
 "Ef þetta er valið, skal ekki nota XDamage-viðbótina í X.org. Þessi viðbót "
 "(extension) virkar ekki vel með sumum skjákortsreklum þegar verið er að nota "
-"þrívíddarbrellur. Með þ Vino work in these environments, with slower "
-"rendering as a side effect."
+"þrívíddarbrellur. Með því að gera hana óvirka, mun Vino geta virkað í slíku "
+"umhverfi, en þó þannig að myndgerð verður hægvirkari."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Notify on connect"
@@ -276,6 +277,8 @@ msgid ""
 "Your XServer does not support the XTest extension - remote desktop access "
 "will be view-only\n"
 msgstr ""
+"X-þjónninn þinn styður ekki við XTest-viðbótina - fjartengd skjáborð verður "
+"því einungis hægt að skoða\n"
 
 #. Tube mode uses Telepathy's Tubes to share a user's desktop directly
 #. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
