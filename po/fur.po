@@ -6,9 +6,10 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: vino master\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2016-04-05 02:35+0000\n"
-"PO-Revision-Date: 2016-04-05 12:47+0200\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
+"product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2016-04-07 14:46+0000\n"
+"PO-Revision-Date: 2016-04-08 01:10+0200\n"
 "Last-Translator: Fabio Tomat <f.t.public@gmail.com>\n"
 "Language-Team: Friulian <fur@li.org>\n"
 "Language: fur\n"
@@ -23,124 +24,207 @@ msgid "Prompt the user before completing a connection"
 msgstr "Domande al utent prime di completâ une conession"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:2
-msgid "If true, remote users accessing the desktop are not allowed access until the user on the host machine approves the connection. Recommended especially when access is not password protected."
-msgstr "Se metût su VÊR, i utents rimots che a cirin di acedi al scritori no puedin fâlu fintremai che l'utent sul host nol aprove la conession. Racomandât cuant che l'acès nol è protet di password."
+msgid ""
+"If true, remote users accessing the desktop are not allowed access until the "
+"user on the host machine approves the connection. Recommended especially "
+"when access is not password protected."
+msgstr ""
+"Se metût su VÊR, i utents rimots che a cirin di acedi al scritori no puedin "
+"fâlu fintremai che l'utent sul host nol aprove la conession. Racomandât "
+"cuant che l'acès nol è protet di password."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:3
 msgid "Only allow remote users to view the desktop"
 msgstr "Permet ai utents rimots nome di viodi il scritori"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:4
-msgid "If true, remote users accessing the desktop are only allowed to view the desktop. Remote users will not be able to use the mouse or keyboard."
-msgstr "Se metût VÊR, ai utents rimots che a jentrin tal scritori al è permetût nome la visualizazion dal scritori. Chei utents no podaran doprâ il mouse o la tastiere."
+msgid ""
+"If true, remote users accessing the desktop are only allowed to view the "
+"desktop. Remote users will not be able to use the mouse or keyboard."
+msgstr ""
+"Se metût VÊR, ai utents rimots che a jentrin tal scritori al è permetût nome "
+"la visualizazion dal scritori. Chei utents no podaran doprâ il mouse o la "
+"tastiere."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:5
 msgid "Network interface for listening"
 msgstr "Interface di rêt pe scolte"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:6
-msgid "If not set, the server will listen on all network interfaces.\n"
+msgid ""
+"If not set, the server will listen on all network interfaces.\n"
 "\n"
-"Set this if you want to accept connections only from some specific network interface. For example, eth0, wifi0, lo and so on."
-msgstr "Se no impuestade, il servidôr al reste in scolte su dutis lis interfacis di rêt.\n"
+"Set this if you want to accept connections only from some specific network "
+"interface. For example, eth0, wifi0, lo and so on."
+msgstr ""
+"Se no impuestade, il servidôr al reste in scolte su dutis lis interfacis di "
+"rêt.\n"
 "\n"
-"Impuestâ par acetâ lis conessions nome di cualchi interface di rêt specifiche come: eth0, wifi0, lo e cussì indenant."
+"Impuestâ par acetâ lis conessions nome di cualchi interface di rêt "
+"specifiche come: eth0, wifi0, lo e cussì indenant."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:9
 msgid "Listen on an alternative port"
 msgstr "Scolte suntune puarte alternative"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:10
-msgid "If true, the server will listen on another port, instead of the default (5900). The port must be specified in the 'alternative-port' key."
-msgstr "Se impuestât su VÊR, il servidôr al reste in scolte suntune puarte divierse di che predefinide (5900). La puarte a scugne sedi specificade te clâf 'alternative-port'."
+msgid ""
+"If true, the server will listen on another port, instead of the default "
+"(5900). The port must be specified in the 'alternative-port' key."
+msgstr ""
+"Se impuestât su VÊR, il servidôr al reste in scolte suntune puarte divierse "
+"di che predefinide (5900). La puarte e scugne sedi specificade te clâf "
+"'alternative-port'."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:11
 msgid "Alternative port number"
 msgstr "Numar puarte alternative"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:12
-msgid "The port which the server will listen to if the 'use-alternative-port' key is set to true. Valid values are in the range of 5000 to 50000."
-msgstr "La puarte dulà che il servidôr al starà in scolte se la clâf 'use-alternative-port' a je impuestade su VÊR. I valôrs pussibii a van di 5000 a 50000."
+msgid ""
+"The port which the server will listen to if the 'use-alternative-port' key "
+"is set to true. Valid values are in the range of 5000 to 50000."
+msgstr ""
+"La puarte dulà che il servidôr al starà in scolte se la clâf 'use-"
+"alternative-port' e je impuestade su VÊR. I valôrs pussibii a van di 5000 a "
+"50000."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:13
 msgid "Require encryption"
 msgstr "Domande cifradure"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:14
-msgid "If true, remote users accessing the desktop are required to support encryption. It is highly recommended that you use a client which supports encryption unless the intervening network is trusted."
-msgstr "Se metût VÊR, i utents rimots che a jentrin tal scritori a scugnin supuartâ la cifradure. Al è une vore conseât doprâ un client che al supuarti la cifradure, a mancul che no si cjatisi suntune rêt fidade."
+msgid ""
+"If true, remote users accessing the desktop are required to support "
+"encryption. It is highly recommended that you use a client which supports "
+"encryption unless the intervening network is trusted."
+msgstr ""
+"Se metût VÊR, i utents rimots che a jentrin tal scritori a scugnin supuartâ "
+"la cifradure. Al è une vore conseât doprâ un client che al supuarti la "
+"cifradure, a mancul che no si cjatisi suntune rêt fidade."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Allowed authentication methods"
 msgstr "Metodis di autenticazion permetûts"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:16
-msgid "Lists the authentication methods with which remote users may access the desktop.\n"
+msgid ""
+"Lists the authentication methods with which remote users may access the "
+"desktop.\n"
 "\n"
-"There are two possible authentication methods; \"vnc\" causes the remote user to be prompted for a password (the password is specified by the vnc-password key) before connecting and \"none\" which allows any remote user to connect."
-msgstr "Liste i metodis di autenticazion mediant i cuai i utents rimots a puedin acedi al scritori.\n"
+"There are two possible authentication methods; \"vnc\" causes the remote "
+"user to be prompted for a password (the password is specified by the vnc-"
+"password key) before connecting and \"none\" which allows any remote user to "
+"connect."
+msgstr ""
+"Liste i metodis di autenticazion mediant i cuai i utents rimots a puedin "
+"acedi al scritori.\n"
 "\n"
-"A son doi pussibii manieris: \"vnc\" che al domande une password al utent rimot (la password a je specificade de clâf vnc-password) prime di conetisi e \"none\" che al permet a ogni utent rimot di conetisi."
+"A son dôs pussibilis manieris: \"vnc\" che al domande une password al utent "
+"rimot (la password e je specificade de clâf vnc-password) prime di conetisi "
+"e \"none\" che al permet a ogni utent rimot di conetisi."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:19
 msgid "Password required for \"vnc\" authentication"
 msgstr "Password domandade pe autenticazion \"vnc\""
 
 #: ../common/org.gnome.Vino.gschema.xml.h:20
-msgid "The password which the remote user will be prompted for if the \"vnc\" authentication method is used. The password specified by the key is base64 encoded.\n"
+msgid ""
+"The password which the remote user will be prompted for if the \"vnc\" "
+"authentication method is used. The password specified by the key is base64 "
+"encoded.\n"
 "\n"
-"The special value of 'keyring' (which is not valid base64) means that the password is stored in the GNOME keyring."
-msgstr "La password che a vegnarà domandade al utent rimot se al ven doprât il metodi di autenticazion \"vnc\". La password specificade de clâf a je codificade in base64.\n"
+"The special value of 'keyring' (which is not valid base64) means that the "
+"password is stored in the GNOME keyring."
+msgstr ""
+"La password che e vegnarà domandade al utent rimot se al ven doprât il "
+"metodi di autenticazion \"vnc\". La password specificade de clâf e je "
+"codificade in base64.\n"
 "\n"
-"Il valôr speciâl di \"keyring\" (che nol è codificât in base64 valit) al indiche che la password a je archiviade tal puarteclâfs di GNOME."
+"Il valôr speciâl di \"keyring\" (che nol è codificât in base64 valit) al "
+"indiche che la password a je archiviade tal puarteclâfs di GNOME."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:23
 msgid "E-mail address to which the remote desktop URL should be sent"
 msgstr "Recapit e-mail dulà inviâ il URL dal scritori rimot"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:24
-msgid "This key specifies the e-mail address to which the remote desktop URL should be sent if the user clicks on the URL in the Desktop Sharing preferences dialog."
-msgstr "Cheste clâf a specifiche il recapit e-mail dulà che al vegnarà mandât il URL dal scritori rimot se l'utent al fâs clic sul URL tal dialic des preferencis di condivision scritori."
+msgid ""
+"This key specifies the e-mail address to which the remote desktop URL should "
+"be sent if the user clicks on the URL in the Desktop Sharing preferences "
+"dialog."
+msgstr ""
+"Cheste clâf e specifiche il recapit e-mail dulà che al vegnarà mandât il URL "
+"dal scritori rimot se l'utent al fâs clic sul URL tal dialic des preferencis "
+"di condivision scritori."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "Lock the screen when last user disconnect"
 msgstr "Bloche il schermi ae disconession dal ultin utent"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:26
-msgid "If true, the screen will be locked after the last remote client disconnects."
-msgstr "Se metût VÊR il schermi al ven blocât dopo la disconession dal ultin client rimot."
+msgid ""
+"If true, the screen will be locked after the last remote client disconnects."
+msgstr ""
+"Se metût VÊR il schermi al ven blocât dopo la disconession dal ultin client "
+"rimot."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:27
 msgid "When the status icon should be shown"
 msgstr "Cuant mostrâ la icone di stât"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:28
-msgid "This key controls the behavior of the status icon. There are three options: \"always\" - the icon will always be present; \"client\" - the icon will only be present when someone is connected (this is the default behavior); \"never\" - the icon will not be present."
-msgstr "Cheste clâf a controle il compuartament de icone di stât. A son disponibii trê opzions: \"always\" - la icone a je simpri present; \"client\" - la icone a je visibil nome se cualchidun al è conetût (chest al è il compuartament predefinît); \"never\" - la icone no ven mai mostrade."
+msgid ""
+"This key controls the behavior of the status icon. There are three options: "
+"\"always\" - the icon will always be present; \"client\" - the icon will "
+"only be present when someone is connected (this is the default behavior); "
+"\"never\" - the icon will not be present."
+msgstr ""
+"Cheste clâf e controle il compuartament de icone di stât. A son disponibii "
+"trê opzions: \"always\" - la icone e je simpri presinte; \"client\" - la "
+"icone e je visibil nome se cualchidun al è conetût (chest al è il "
+"compuartament predefinît); \"never\" - la icone no ven mai mostrade."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:29
 msgid "Whether to disable the desktop background when a user is connected"
-msgstr "Indiche se disabilitâ il sfont dal scritori cuant che un utent al è conetût"
+msgstr ""
+"Indiche se disabilitâ il sfont dal scritori cuant che un utent al è conetût"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:30
-msgid "When true, disable the desktop background and replace it with a single block of color when a user successfully connects."
-msgstr "Se VÊR al disabilite il sfont dal scritori e lu sostituìs cuntun singul bloc di colôr cuant che un utent a si conet cun sucès."
+msgid ""
+"When true, disable the desktop background and replace it with a single block "
+"of color when a user successfully connects."
+msgstr ""
+"Se VÊR al disabilite il fondâl dal scritori e lu sostituìs cuntun singul "
+"bloc di colôr cuant che un utent si conet cun sucès."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:31
 msgid "Whether a UPnP router should be used to forward and open ports"
-msgstr "Indiche se doprâ un router UPnP par mandâ indenant e vierzi lis puartis"
+msgstr ""
+"Indiche se doprâ un router UPnP par mandâ indenant e vierzi lis puartis"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:32
-msgid "If true, request that a UPnP-capable router should forward and open the port used by Vino."
-msgstr "Se VÊR, al domande che un router cun funzionalitât UPnP al mandi indenant e al vierzi la puarte doprade di Vino."
+msgid ""
+"If true, request that a UPnP-capable router should forward and open the port "
+"used by Vino."
+msgstr ""
+"Se VÊR, al domande che un router cun funzionalitât UPnP al mandi indenant e "
+"al vierzi la puarte doprade di Vino."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:33
 msgid "Whether we should disable the XDamage extension of X.org"
 msgstr "Indiche se disabilitâ l'estension XDamage di X.org"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:34
-msgid "If true, do not use the XDamage extension of X.org. This extension does not work properly on some video drivers when using 3D effects. Disabling it will make Vino work in these environments, with slower rendering as a side effect."
-msgstr "Se metût VÊR no ven doprade l'estension XDamage di X.org. Cheste estension no funzione in maniere juste con cualchi driver video cuant che a si doprin i efiets 3D. Disabilitanle al è pussibil fâ funzionâ Vino in chei ambients, ancje se cuntun rendering plui lent."
+msgid ""
+"If true, do not use the XDamage extension of X.org. This extension does not "
+"work properly on some video drivers when using 3D effects. Disabling it will "
+"make Vino work in these environments, with slower rendering as a side effect."
+msgstr ""
+"Se metût VÊR no ven doprade l'estension XDamage di X.org. Cheste estension "
+"no funzione in maniere juste con cualchi driver video cuant che si doprin i "
+"efiets 3D. Disabilitanle al è pussibil fâ funzionâ Vino in chei ambients, "
+"ancje se cuntun rendering plui lent."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:35
 msgid "Notify on connect"
@@ -148,7 +232,8 @@ msgstr "Notifiche ae conession"
 
 #: ../common/org.gnome.Vino.gschema.xml.h:36
 msgid "If true, show a notification when a user connects to the system."
-msgstr "Se metût VÊR al mostre une notifiche cuant che un utent a si conet al sisteme."
+msgstr ""
+"Se metût VÊR al mostre une notifiche cuant che un utent si conet al sisteme."
 
 #: ../server/smclient/eggdesktopfile.c:165
 #, c-format
@@ -219,25 +304,32 @@ msgid "Show session management options"
 msgstr "Mostre lis opzions di gjestion session"
 
 #: ../server/vino-main.c:153
-msgid "Your XServer does not support the XTest extension - remote desktop access will be view-only\n"
-""
-msgstr "Il XServer in ûs nol supuarte la estension XTest - l'acès rimot al sarà nome in visualizazion\n"
-""
+msgid ""
+"Your XServer does not support the XTest extension - remote desktop access "
+"will be view-only\n"
+msgstr ""
+"Il XServer in ûs nol supuarte la estension XTest - l'acès rimot al sarà nome "
+"in visualizazion\n"
 
 #. Tube mode uses Telepathy's Tubes to share a user's desktop directly
 #. * with another IM contact. http://telepathy.freedesktop.org/wiki/Tubes
 #.
 #: ../server/vino-main.c:249
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
-msgstr "Invie in modalitât \"tube\" par la funzionalitât \"Condividi il propri scritori\""
+msgstr ""
+"Invie in modalitât \"tube\" par la funzionalitât \"Condividi il propri "
+"scritori\""
 
 #: ../server/vino-main.c:260
 msgid "- VNC Server for GNOME"
 msgstr "- Servidôr VNC par GNOME"
 
 #: ../server/vino-main.c:268
-msgid "Run 'vino-server --help' to see a full list of available command line options"
-msgstr "Eseguî \"vino-server --help\" par visualizâ une liste complete di dutis lis opzions disponibii a rie di comant"
+msgid ""
+"Run 'vino-server --help' to see a full list of available command line options"
+msgstr ""
+"Eseguî \"vino-server --help\" par visualizâ une liste complete di dutis lis "
+"opzions disponibii a rie di comant"
 
 #: ../server/vino-main.c:280
 msgid "GNOME Desktop Sharing"
@@ -279,14 +371,16 @@ msgstr "Il schermi dulà mostrâ la richieste"
 #: ../server/vino-status-tube-icon.c:396
 #, c-format
 msgid "Error initializing libnotify\n"
-""
 msgstr "Erôr tal inizializâ libnotify\n"
-""
 
 #: ../server/vino-prompt.c:289
 #, c-format
-msgid "A user on the computer '%s' is trying to remotely view or control your desktop."
-msgstr "Un utent tal computer \"%s\" al sta cirint di viodi o controlâ chest scritori."
+msgid ""
+"A user on the computer '%s' is trying to remotely view or control your "
+"desktop."
+msgstr ""
+"Un utent tal computer \"%s\" al sta cirint di viodi o controlâ chest "
+"scritori."
 
 #: ../server/vino-prompt.c:292
 msgid "Another user is trying to view your desktop."
@@ -303,9 +397,7 @@ msgstr "Acete"
 #: ../server/vino-server.c:159 ../server/vino-server.c:182
 #, c-format
 msgid "Failed to open connection to bus: %s\n"
-""
 msgstr "Vierzidure conession al bus falide: %s\n"
-""
 
 #: ../server/vino-server.desktop.in.in.h:1
 msgid "Desktop Sharing"
@@ -327,7 +419,7 @@ msgstr "La condivision dal scritori e je abilitade"
 #, c-format
 msgid "One person is viewing your desktop"
 msgid_plural "%d people are viewing your desktop"
-msgstr[0] "Une persone al sta viodint chest scritori"
+msgstr[0] "Une persone e sta viodint chest scritori"
 msgstr[1] "%d personis a stan viodint chest scritori"
 
 #: ../server/vino-status-icon.c:207 ../server/vino-status-icon.c:213
@@ -340,7 +432,8 @@ msgid "Error displaying help"
 msgstr "Erôr tal mostrâ il jutori"
 
 #: ../server/vino-status-icon.c:268
-msgid "Licensed under the GNU General Public License Version 2\n"
+msgid ""
+"Licensed under the GNU General Public License Version 2\n"
 "\n"
 "Vino is free software; you can redistribute it and/or\n"
 "modify it under the terms of the GNU General Public License\n"
@@ -356,8 +449,8 @@ msgid "Licensed under the GNU General Public License Version 2\n"
 "along with this program; if not, write to the Free Software\n"
 "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
 "02110-1301, USA.\n"
-""
-msgstr "Dât fûr sot la licence GNU General Public License version 2\n"
+msgstr ""
+"Dât fûr sot la licence GNU General Public License version 2\n"
 "\n"
 "Vino al è software libar; al è pussibil tornâ a distribuîlu \n"
 "e/o modificâlu secont i tiermins de licence GNU General \n"
@@ -376,7 +469,6 @@ msgstr "Dât fûr sot la licence GNU General Public License version 2\n"
 "  Free Software Foundation, Inc.\n"
 "  51 Franklin Street, Fifth Floor, Boston, MA\n"
 "  02111-1301  USA.\n"
-""
 
 #. Translators comment: put your own name here to appear in the about dialog.
 #: ../server/vino-status-icon.c:283
@@ -440,7 +532,8 @@ msgstr "Un altri utent al sta viodint chest scritori"
 #: ../server/vino-status-icon.c:626
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
-msgstr "Un utent tal computer \"%s\" al sta visualizant di rimot chest scritori."
+msgstr ""
+"Un utent tal computer \"%s\" al sta visualizant di rimot chest scritori."
 
 #. Translators: %s is a hostname
 #: ../server/vino-status-icon.c:632
@@ -450,14 +543,13 @@ msgstr "Un altri utent al sta controlant chest scritori"
 #: ../server/vino-status-icon.c:634
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
-msgstr "Un utent tal computer \"%s\" al sta controlant di rimot chest scritori."
+msgstr ""
+"Un utent tal computer \"%s\" al sta controlant di rimot chest scritori."
 
 #: ../server/vino-status-icon.c:656 ../server/vino-status-tube-icon.c:430
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
-""
 msgstr "Erôr tal mostrâ la notifiche:%s\n"
-""
 
 #: ../server/vino-status-tube-icon.c:234
 #, c-format
@@ -472,13 +564,13 @@ msgstr "Condivît lis informazions dal scritori"
 #: ../server/vino-tube-server.c:224
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
-msgstr "\"%s\" al/a à refudât l'invît ae condivision dal scritori."
+msgstr "\"%s\" al/e à refudât l'invît ae condivision dal scritori."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #: ../server/vino-tube-server.c:228
 #, c-format
 msgid "'%s' disconnected"
-msgstr "\"%s\" al/a à sierât la conession"
+msgstr "\"%s\" al/e à sierât la conession"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #: ../server/vino-tube-server.c:255
@@ -490,7 +582,7 @@ msgstr "\"%s\" al/e sta controlant chest scritori di rimot."
 #: ../server/vino-tube-server.c:264
 #, c-format
 msgid "Waiting for '%s' to connect to the screen."
-msgstr "In atese che \"%s\" a si coneti al schermi."
+msgstr "In atese che \"%s\" si coneti al schermi."
 
 #: ../server/vino-util.c:88
 msgid "_Allow"
@@ -503,4 +595,3 @@ msgstr "_Refude"
 #: ../server/vino-util.c:139
 msgid "An error has occurred:"
 msgstr "Si è verificât un erôr:"
-
