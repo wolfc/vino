@@ -6,14 +6,14 @@
 # -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 # Artur Flinta <aflinta@at.kernel.pl>, 2004-2007.
 # Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009.
-# Piotr Drąg <piotrdrag@gmail.com>, 2010-2015.
-# Aviary.pl <gnomepl@aviary.pl>, 2007-2015.
+# Piotr Drąg <piotrdrag@gmail.com>, 2010-2016.
+# Aviary.pl <gnomepl@aviary.pl>, 2007-2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-08-24 18:54+0200\n"
-"PO-Revision-Date: 2015-08-24 18:55+0200\n"
+"POT-Creation-Date: 2016-04-07 20:53+0200\n"
+"PO-Revision-Date: 2016-04-07 20:54+0200\n"
 "Last-Translator: Piotr Drąg <piotrdrag@gmail.com>\n"
 "Language-Team: Polish <gnomepl@aviary.pl>\n"
 "Language: pl\n"
@@ -160,7 +160,7 @@ msgid ""
 msgstr ""
 "Ten klucz określa adres e-mail, na który powinien zostać wysłany adres URL "
 "zdalnego pulpitu. Adres będzie wysłany po kliknięciu na adres URL w oknie "
-"preferencji współdzielenia pulpitu."
+"preferencji udostępniania pulpitu."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
 msgid "Lock the screen when last user disconnect"
@@ -322,7 +322,7 @@ msgstr ""
 #.
 #: ../server/vino-main.c:249
 msgid "Start in tube mode, for the ‘Share my Desktop’ feature"
-msgstr "Uruchamia w trybie tuby dla funkcji „Współdzielenie pulpitu”"
+msgstr "Uruchamia w trybie tuby dla funkcji „Udostępnianie pulpitu”"
 
 #: ../server/vino-main.c:260
 msgid "- VNC Server for GNOME"
@@ -337,7 +337,7 @@ msgstr ""
 
 #: ../server/vino-main.c:280
 msgid "GNOME Desktop Sharing"
-msgstr "Współdzielenie pulpitu GNOME"
+msgstr "Udostępnianie pulpitu GNOME"
 
 #.
 #. * Translators: translate "vino-mdns:showusername" to
@@ -371,8 +371,8 @@ msgstr "Ekran"
 msgid "The screen on which to display the prompt"
 msgstr "Ekran, na którym zostanie wyświetlone pytanie"
 
-#: ../server/vino-prompt.c:270 ../server/vino-status-icon.c:598
-#: ../server/vino-status-tube-icon.c:389
+#: ../server/vino-prompt.c:270 ../server/vino-status-icon.c:603
+#: ../server/vino-status-tube-icon.c:396
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Błąd podczas inicjowania biblioteki libnotify\n"
@@ -404,19 +404,19 @@ msgstr "Nie można otworzyć połączenia do magistrali: %s\n"
 
 #: ../server/vino-server.desktop.in.in.h:1
 msgid "Desktop Sharing"
-msgstr "Współdzielenie pulpitu"
+msgstr "Udostępnianie pulpitu"
 
 #: ../server/vino-server.desktop.in.in.h:2
 msgid "GNOME Desktop Sharing Server"
-msgstr "Serwer współdzielenia pulpitu dla środowiska GNOME"
+msgstr "Serwer udostępniania pulpitu dla środowiska GNOME"
 
 #: ../server/vino-server.desktop.in.in.h:3
 msgid "vnc;share;remote;"
-msgstr "vnc;współdzielenie;zdalnie;zdalne;"
+msgstr "vnc;udostępnianie;współdzielenie;zdalnie;zdalne;"
 
 #: ../server/vino-status-icon.c:97 ../server/vino-status-tube-icon.c:90
 msgid "Desktop sharing is enabled"
-msgstr "Współdzielenie pulpitu jest włączone"
+msgstr "Udostępnianie pulpitu jest włączone"
 
 #: ../server/vino-status-icon.c:105
 #, c-format
@@ -426,15 +426,16 @@ msgstr[0] "Jedna osoba wyświetla pulpit"
 msgstr[1] "%d osoby wyświetlają pulpit"
 msgstr[2] "%d osób wyświetla pulpit"
 
-#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
+#: ../server/vino-status-icon.c:207 ../server/vino-status-icon.c:213
+#: ../server/vino-status-tube-icon.c:173 ../server/vino-status-tube-icon.c:179
 msgid "Error displaying preferences"
 msgstr "Wystąpił błąd podczas wyświetlania preferencji"
 
-#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
+#: ../server/vino-status-icon.c:235 ../server/vino-status-tube-icon.c:199
 msgid "Error displaying help"
 msgstr "Wystąpił błąd podczas wyświetlania pomocy"
 
-#: ../server/vino-status-icon.c:263
+#: ../server/vino-status-icon.c:268
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -473,102 +474,102 @@ msgstr ""
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:283
 msgid "translator-credits"
 msgstr ""
 "Artur Flinta <aflinta@at.kernel.pl>, 2004-2007\n"
 "Tomasz Dominikowski <dominikowski@gmail.com>, 2007-2009\n"
-"Piotr Drąg <piotrdrag@gmail.com>, 2010-2015\n"
-"Aviary.pl <gnomepl@aviary.pl>, 2007-2015"
+"Piotr Drąg <piotrdrag@gmail.com>, 2010-2016\n"
+"Aviary.pl <gnomepl@aviary.pl>, 2007-2016"
 
-#: ../server/vino-status-icon.c:284
+#: ../server/vino-status-icon.c:289
 msgid "Share your desktop with other users"
-msgstr "Współdzielenie pulpitu z innymi użytkownikami"
+msgstr "Udostępnianie pulpitu innym użytkownikom"
 
-#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
+#: ../server/vino-status-icon.c:356 ../server/vino-status-tube-icon.c:231
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Na pewno rozłączyć „%s”?"
 
-#: ../server/vino-status-icon.c:354
+#: ../server/vino-status-icon.c:359
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "Zdalny użytkownik z „%s” zostanie rozłączny. Kontynuować?"
 
-#: ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:365
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Na pewno rozłączyć wszystkich klientów?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:367
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Wszyscy zdalni klienci zostaną rozłączeni. Kontynuować?"
 
-#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
+#: ../server/vino-status-icon.c:379 ../server/vino-status-tube-icon.c:245
 msgid "Disconnect"
 msgstr "Rozłącz"
 
-#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
+#: ../server/vino-status-icon.c:405 ../server/vino-status-tube-icon.c:270
 msgid "_Preferences"
 msgstr "_Preferencje"
 
-#: ../server/vino-status-icon.c:415
+#: ../server/vino-status-icon.c:420
 msgid "Disconnect all"
 msgstr "Rozłącz wszystkich"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
+#: ../server/vino-status-icon.c:444 ../server/vino-status-tube-icon.c:283
 #, c-format
 msgid "Disconnect %s"
 msgstr "Rozłącz %s"
 
-#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
+#: ../server/vino-status-icon.c:465 ../server/vino-status-tube-icon.c:302
 msgid "_Help"
 msgstr "Pomo_c"
 
-#: ../server/vino-status-icon.c:468
+#: ../server/vino-status-icon.c:473
 msgid "_About"
 msgstr "_O programie"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:624
 msgid "Another user is viewing your desktop"
 msgstr "Inny użytkownik wyświetla pulpit"
 
-#: ../server/vino-status-icon.c:621
+#: ../server/vino-status-icon.c:626
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr "Użytkownik komputera „%s” wyświetla zdalnie pulpit."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:632
 msgid "Another user is controlling your desktop"
 msgstr "Inny użytkownik kontroluje pulpit"
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:634
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr "Użytkownik komputera „%s” zdalnie kontroluje pulpit."
 
-#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
+#: ../server/vino-status-icon.c:656 ../server/vino-status-tube-icon.c:430
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Błąd podczas wyświetlania komunikatu powiadamiania: %s\n"
 
-#: ../server/vino-status-tube-icon.c:227
+#: ../server/vino-status-tube-icon.c:234
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "Zdalny użytkownik „%s” zostanie rozłączny. Kontynuować?"
 
 #: ../server/vino-tube-server.c:220 ../server/vino-tube-server.c:249
 msgid "Share my desktop information"
-msgstr "Współdzielenie informacji o pulpicie z innymi użytkownikami"
+msgstr "Udostępnianie informacji o pulpicie innym użytkownikom"
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #: ../server/vino-tube-server.c:224
 #, c-format
 msgid "'%s' rejected the desktop sharing invitation."
-msgstr "Użytkownik „%s” odrzucił zaproszenie do współdzielenia pulpitu."
+msgstr "Użytkownik „%s” odrzucił zaproszenie do udostępniania pulpitu."
 
 #. Translators: '%s' is the name of a contact, buddy coming from Empathy
 #: ../server/vino-tube-server.c:228
