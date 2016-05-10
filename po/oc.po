@@ -5,15 +5,16 @@
 # This file is distributed under the same license as the vino package.
 # Yannig Marchegay (Kokoyaya) <yannig@marchegay.org>, 2006-2008.
 # Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>, 2015.
+# Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>, 2016.
 msgid ""
 msgstr ""
 "Project-Id-Version: vino\n"
-"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?"
-"product=vino&keywords=I18N+L10N&component=Preferences Dialog\n"
-"POT-Creation-Date: 2015-05-26 00:00+0000\n"
-"PO-Revision-Date: 2015-05-25 15:05+0200\n"
-"Last-Translator: Cédric Valmary (Tot en òc) <cvalmary@yahoo.fr>\n"
-"Language-Team: Tot en òc (totenoc.eu)\n"
+"Report-Msgid-Bugs-To: http://bugzilla.gnome.org/enter_bug.cgi?product=vino&ke"
+"ywords=I18N+L10N&component=Preferences Dialog\n"
+"POT-Creation-Date: 2016-03-05 03:11+0000\n"
+"PO-Revision-Date: 2016-05-08 18:52+0200\n"
+"Last-Translator: Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>\n"
+"Language-Team: Tot En Òc\n"
 "Language: oc\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -102,7 +103,7 @@ msgid ""
 msgstr ""
 "Se verai, los utilizaires distants qu'accedisson al burèu devon poder prene "
 "en carga lo chiframent. Es bravament recomandat qu'utilizetz un client que "
-"prenga en carga lo chiframent a mens que lo ret en question siá fisabla."
+"prenga en carga lo chiframent a mens que la ret en question siá fisabla."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:15
 msgid "Allowed authentication methods"
@@ -156,7 +157,7 @@ msgid ""
 "dialog."
 msgstr ""
 "Aquesta clau indica l'adreça electronica a la quala cal mandar l'URL del "
-"burèu à distància se l'utilizaire clica sus l'URL dins la bóstia de dialòg "
+"burèu a distància se l'utilizaire clica sus l'URL dins la bóstia de dialòg "
 "de preferéncias del partiment de burèu."
 
 #: ../common/org.gnome.Vino.gschema.xml.h:25
@@ -223,7 +224,7 @@ msgid ""
 "make Vino work in these environments, with slower rendering as a side effect."
 msgstr ""
 "Se verai, l'extension XDamage de X.org es pas utilizada. Aquesta extension "
-"fonciona pas corrèctament amb certans pilòts grafics quand los efièches 3D "
+"fonciona pas corrèctament amb certans pilòts grafics quand los efèits 3D "
 "son activats. Sa desactivacion permet a vino de foncionar dins aqueles cases "
 "de figura, amb coma consequéncia un alentiment d'afichatge."
 
@@ -369,8 +370,8 @@ msgstr "Ecran"
 msgid "The screen on which to display the prompt"
 msgstr "L'ecran sul qual cal afichar lo convit"
 
-#: ../server/vino-prompt.c:270 ../server/vino-status-icon.c:598
-#: ../server/vino-status-tube-icon.c:389
+#: ../server/vino-prompt.c:270 ../server/vino-status-icon.c:603
+#: ../server/vino-status-tube-icon.c:396
 #, c-format
 msgid "Error initializing libnotify\n"
 msgstr "Error al moment de l'inicializacion de libnotify\n"
@@ -424,15 +425,16 @@ msgid_plural "%d people are viewing your desktop"
 msgstr[0] "Una persona es a veire vòstre burèu"
 msgstr[1] "%d personas son a veire vòstre burèu"
 
-#: ../server/vino-status-icon.c:208 ../server/vino-status-tube-icon.c:172
+#: ../server/vino-status-icon.c:207 ../server/vino-status-icon.c:213
+#: ../server/vino-status-tube-icon.c:173 ../server/vino-status-tube-icon.c:179
 msgid "Error displaying preferences"
-msgstr "Una error s'es producha al moment de l'afichatge de las preferéncias"
+msgstr "Una error s'es produita al moment de l'afichatge de las preferéncias"
 
-#: ../server/vino-status-icon.c:230 ../server/vino-status-tube-icon.c:192
+#: ../server/vino-status-icon.c:235 ../server/vino-status-tube-icon.c:199
 msgid "Error displaying help"
-msgstr "Una error s'es producha al moment de l'afichatge de l'ajuda"
+msgstr "Una error s'es produita al moment de l'afichatge de l'ajuda"
 
-#: ../server/vino-status-icon.c:263
+#: ../server/vino-status-icon.c:268
 msgid ""
 "Licensed under the GNU General Public License Version 2\n"
 "\n"
@@ -467,88 +469,88 @@ msgstr ""
 "USA.\n"
 
 #. Translators comment: put your own name here to appear in the about dialog.
-#: ../server/vino-status-icon.c:278
+#: ../server/vino-status-icon.c:283
 msgid "translator-credits"
 msgstr "Cédric Valmary (totenoc.eu) <cvalmary@yahoo.fr>"
 
-#: ../server/vino-status-icon.c:284
+#: ../server/vino-status-icon.c:289
 msgid "Share your desktop with other users"
 msgstr "Partejatz vòstre burèu amb d'autres utilizaires"
 
-#: ../server/vino-status-icon.c:351 ../server/vino-status-tube-icon.c:224
+#: ../server/vino-status-icon.c:356 ../server/vino-status-tube-icon.c:231
 #, c-format
 msgid "Are you sure you want to disconnect '%s'?"
 msgstr "Sètz segur que volètz desconnectar « %s » ?"
 
-#: ../server/vino-status-icon.c:354
+#: ../server/vino-status-icon.c:359
 #, c-format
 msgid "The remote user from '%s' will be disconnected. Are you sure?"
 msgstr "L'utilizaire distant de « %s » serà desconnectat. Sètz segur ?"
 
-#: ../server/vino-status-icon.c:360
+#: ../server/vino-status-icon.c:365
 msgid "Are you sure you want to disconnect all clients?"
 msgstr "Sètz segur que volètz desconnectar totes los clients ?"
 
-#: ../server/vino-status-icon.c:362
+#: ../server/vino-status-icon.c:367
 msgid "All remote users will be disconnected. Are you sure?"
 msgstr "Totes los utilizaires distants seràn desconnectats. Sètz segur ?"
 
-#: ../server/vino-status-icon.c:374 ../server/vino-status-tube-icon.c:238
+#: ../server/vino-status-icon.c:379 ../server/vino-status-tube-icon.c:245
 msgid "Disconnect"
 msgstr "Desconnectar"
 
-#: ../server/vino-status-icon.c:400 ../server/vino-status-tube-icon.c:263
+#: ../server/vino-status-icon.c:405 ../server/vino-status-tube-icon.c:270
 msgid "_Preferences"
 msgstr "_Preferéncias"
 
-#: ../server/vino-status-icon.c:415
+#: ../server/vino-status-icon.c:420
 msgid "Disconnect all"
 msgstr "Desconnectar tot"
 
 #. Translators: %s is a hostname
 #. Translators: %s is the alias of the telepathy contact
-#: ../server/vino-status-icon.c:439 ../server/vino-status-tube-icon.c:276
+#: ../server/vino-status-icon.c:444 ../server/vino-status-tube-icon.c:283
 #, c-format
 msgid "Disconnect %s"
 msgstr "Desconnectar %s"
 
-#: ../server/vino-status-icon.c:460 ../server/vino-status-tube-icon.c:295
+#: ../server/vino-status-icon.c:465 ../server/vino-status-tube-icon.c:302
 msgid "_Help"
 msgstr "A_juda"
 
-#: ../server/vino-status-icon.c:468
+#: ../server/vino-status-icon.c:473
 msgid "_About"
 msgstr "A _prepaus"
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:619
+#: ../server/vino-status-icon.c:624
 msgid "Another user is viewing your desktop"
 msgstr "Un autre utilizaire es a veire vòstre burèu"
 
-#: ../server/vino-status-icon.c:621
+#: ../server/vino-status-icon.c:626
 #, c-format
 msgid "A user on the computer '%s' is remotely viewing your desktop."
 msgstr ""
 "Un utilizaire sus l'ordenador « %s » es a veire vòstre burèu a distància."
 
 #. Translators: %s is a hostname
-#: ../server/vino-status-icon.c:627
+#: ../server/vino-status-icon.c:632
 msgid "Another user is controlling your desktop"
 msgstr "Un autre utilizaire es a contrarotlar vòstre burèu"
 
-#: ../server/vino-status-icon.c:629
+#: ../server/vino-status-icon.c:634
 #, c-format
 msgid "A user on the computer '%s' is remotely controlling your desktop."
 msgstr ""
 "Un utilizaire sus l'ordenador « %s » contraròtla actualament vòstre burèu a "
 "distància."
 
-#: ../server/vino-status-icon.c:651 ../server/vino-status-tube-icon.c:423
+#: ../server/vino-status-icon.c:656 ../server/vino-status-tube-icon.c:430
 #, c-format
 msgid "Error while displaying notification bubble: %s\n"
 msgstr "Error al moment de l'afichatge de la bulla de notificacion : %s\n"
 
-#: ../server/vino-status-tube-icon.c:227
+#: ../server/vino-status-tube-icon.c:234
 #, c-format
 msgid "The remote user '%s' will be disconnected. Are you sure?"
 msgstr "L'utilizaire distant « %s » serà desconnectat. Sètz segur ?"
@@ -591,88 +593,88 @@ msgstr "_Refusar"
 
 #: ../server/vino-util.c:139
 msgid "An error has occurred:"
-msgstr "Una error s'es producha :"
+msgstr "Una error s'es produita :"
 
 #~ msgid "There was an error showing the URL \"%s\""
-#~ msgstr "Una error s'es producha en affichant l'URL « %s »"
+#~ msgstr "Una error s'es produita en affichant l'URL « %s »"
 
 #~ msgid ""
 #~ "There was an error displaying help:\n"
 #~ "%s"
 #~ msgstr ""
-#~ "Una error s'es producha al moment de l'afichatge de l'ajuda :\n"
+#~ "Una error s'es produita al moment de l'afichatge de l'ajuda :\n"
 #~ "%s"
 
 #~ msgid "Checking the connectivity of this machine..."
-#~ msgstr "Vérification de la connectivité de cet ordenador..."
+#~ msgstr "Verificacion de la connectivitat d'aqueste ordenador..."
 
 #~ msgid "Your desktop is only reachable over the local network."
-#~ msgstr "Votre burèu n'est accessible qu'à partir de la ret local."
+#~ msgstr "Vòstre burèu es pas accessible qu'a partir de la ret locala."
 
 #~ msgid " or "
 #~ msgstr " o "
 
 #~ msgid "Others can access your computer using the address %s."
 #~ msgstr ""
-#~ "D'autres personnes pòdon accedir a votre ordenador en utilisant l'adresse "
+#~ "D'autras personas pòdon accedir a vòstre ordenador en utilizant l'adreça "
 #~ "%s."
 
 #~ msgid "Nobody can access your desktop."
-#~ msgstr "Personne ne pòt accedir a votre burèu."
+#~ msgstr "Personne ne pòt accedir a vòstre burèu."
 
 #~ msgid "Choose how other users can remotely view your desktop"
 #~ msgstr ""
-#~ "Choisir comment d'autres utilizaires pòdon veire votre burèu a distance"
+#~ "Causir cossí d'autres utilizaires pòdon veire vòstre burèu a distància"
 
 #~ msgid "Desktop Sharing Preferences"
-#~ msgstr "Preferéncias de partage de burèu"
+#~ msgstr "Preferéncias de partiment de burèu"
 
 #~ msgid "Sharing"
-#~ msgstr "Partage"
+#~ msgstr "Partiment"
 
 #~ msgid "Some of these preferences are locked down"
-#~ msgstr "Certaines de ces preferéncias son verrolhadas"
+#~ msgstr "Certanas d'aquelas preferéncias son verrolhadas"
 
 #~ msgid "Allow other users to _view your desktop"
-#~ msgstr "Autorizar d'autres utilizaires a _voir votre burèu"
+#~ msgstr "Autorizar d'autres utilizaires a _voir vòstre burèu"
 
 #~ msgid "Your desktop will be shared"
-#~ msgstr "Votre burèu serà partejat"
+#~ msgstr "Vòstre burèu serà partejat"
 
 #~ msgid "_Allow other users to control your desktop"
-#~ msgstr "_Autorizar d'autres utilizaires a contrôler votre burèu"
+#~ msgstr "_Autorizar d'autres utilizaires a contrarotlar vòstre burèu"
 
 #~ msgid "Remote users are able to control your mouse and keyboard"
 #~ msgstr ""
-#~ "Les utilizaires distants pòdon contrôler votre souris e votre clavièr"
+#~ "Los utilizaires distants pòdon contrarotlar vòstra mirga e vòstre clavièr"
 
 #~ msgid "Security"
 #~ msgstr "Seguretat"
 
 #~ msgid "_You must confirm each access to this machine"
-#~ msgstr "Chaque accès a cet _ordenador deu èsser confirmé"
+#~ msgstr "Cada accès a aqueste _ordenador deu èsser confirmat"
 
 #~ msgid "_Require the user to enter this password:"
-#~ msgstr "L'utilizaire deu picat_r ce senhal :"
+#~ msgstr "L'utilizaire deu pica_r aqueste senhal :"
 
 #~ msgid "Automatically _configure UPnP router to open and forward ports"
 #~ msgstr ""
-#~ "_Configurer automaticament lo routor UPnP per dobrir e rediriger des ports"
+#~ "_Configurar automaticament lo rotador UPnP per dobrir e redirigir de pòrts"
 
 #~ msgid "The router must have the UPnP feature enabled"
-#~ msgstr "La fonctionnalité UPnP deu èsser activée sus lo routor"
+#~ msgstr "La foncionalitat UPnP deu èsser activada sul rotador"
 
 #~ msgid "Show Notification Area Icon"
-#~ msgstr "Afichar l'icòna dins la zone de notification"
+#~ msgstr "Afichar l'icòna dins la zòna de notificacion"
 
 #~ msgid "Al_ways"
-#~ msgstr "_Toujours"
+#~ msgstr "_Totjorn"
 
 #~ msgid "_Only when someone is connected"
-#~ msgstr "_Solament se quelqu'un es connectat"
+#~ msgstr "_Solament se qualqu'un es connectat"
 
 #~ msgid "_Never"
-#~ msgstr "_Jamais"
+#~ msgstr "Pas _jamai"
 
 #~ msgid "Enable remote access to the desktop"
 #~ msgstr "Activar l'accès distant al burèu"
@@ -681,12 +683,12 @@ msgstr "Una error s'es producha :"
 #~ "If true, allows remote access to the desktop via the RFB protocol. Users "
 #~ "on remote machines may then connect to the desktop using a VNC viewer."
 #~ msgstr ""
-#~ "Se verai, permet l'accès a distance al burèu via lo protocole RFB. Les "
-#~ "utilizaires sus des ordenadors a distance pòdon alors se connecter al "
-#~ "burèu a l'ajuda d'un visionneur VNC."
+#~ "Se verai, permet l'accès a distància al burèu via lo protocòl RFB. Les "
+#~ "utilizaires sus des ordenadors a distància pòdon alara se connectar al "
+#~ "burèu amb l'ajuda d'un visionador VNC."
 
 #~ msgid "Remote desktop sharing password"
-#~ msgstr "Senhal del partage de burèu a distance"
+#~ msgstr "Senhal del partiment de burèu a distància"
 
 #~ msgid "Cancelled"
 #~ msgstr "Anullat"
@@ -698,10 +700,10 @@ msgstr "Una error s'es producha :"
 #~ "ERROR: Maximum length of password is %d characters. Please, re-enter the "
 #~ "password."
 #~ msgstr[0] ""
-#~ "ERREUR : la talha maximale des senhals es de %d caractèr. Picatz a novèl "
+#~ "ERROR : la talha maximala dels senhals es de %d caractèr. Picatz tornamai "
 #~ "lo senhal."
 #~ msgstr[1] ""
-#~ "ERREUR : la talha maximale des senhals es de %d caractèrs. Picatz a novèl "
+#~ "ERROR : la talha maximala dels senhals es de %d caractèrs. Picatz tornamai "
 #~ "lo senhal."
 
 #~ msgid "Changing Vino password.\n"
@@ -711,43 +713,43 @@ msgstr "Una error s'es producha :"
 #~ msgstr "Picatz lo novèl senhal Vino : "
 
 #~ msgid "Retype new Vino password: "
-#~ msgstr "Confirmez lo novèl senhal Vino : "
+#~ msgstr "Confirmatz lo novèl senhal Vino : "
 
 #~ msgid "vino-passwd: password updated successfully.\n"
-#~ msgstr "vino-passwd : lo senhal a été mis a jorn.\n"
+#~ msgstr "vino-passwd : lo senhal es estat mes a jorn.\n"
 
 #~ msgid "Sorry, passwords do not match.\n"
-#~ msgstr "Désolé, les senhals ne correspondent pas.\n"
+#~ msgstr "O planhèm, los senhals correspondon pas.\n"
 
 #~ msgid "vino-passwd: password unchanged.\n"
-#~ msgstr "vino-passwd : lo senhal reste inchangé.\n"
+#~ msgstr "vino-passwd : lo senhal demòra incambiat.\n"
 
 #~ msgid "Show Vino version"
 #~ msgstr "Afichar la version de Vino"
 
 #~ msgid "- Updates Vino password"
-#~ msgstr "- Mesa a jorn des senhals de Vino"
+#~ msgstr "- Mesa a jorn dels senhals de Vino"
 
 #~ msgid ""
 #~ "Run 'vino-passwd --help' to see a full list of available command line "
 #~ "options"
 #~ msgstr ""
-#~ "Lancez « vino-passwd --help » per veire la lista complète des options "
-#~ "disponibles en linha de comanda"
+#~ "Aviatz « vino-passwd --help » per veire la lista completa de las opcions "
+#~ "disponiblas en linha de comanda"
 
 #~ msgid "VINO Version %s\n"
 #~ msgstr "Version de Vino %s\n"
 
 #~ msgid "ERROR: You do not have enough permissions to change Vino password.\n"
 #~ msgstr ""
-#~ "ERREUR : vous n'avez pas la permission de changer lo senhal de Vino.\n"
+#~ "ERROR : avètz pas la permission de cambiar lo senhal de Vino.\n"
 
 #~ msgid ""
 #~ "A user on another computer is trying to remotely view or control your "
 #~ "desktop."
 #~ msgstr ""
-#~ "Un utilizaire sus un autre ordenador essaie de veire o contrôler a "
-#~ "distance votre burèu."
+#~ "Un utilizaire sus un autre ordenador ensaja de veire o contrarotlar a "
+#~ "distància vòstre burèu."
 
 #~ msgid "Do you want to allow them to do so?"
-#~ msgstr "Souhaitez-vous les autorizar a continuer ?"
+#~ msgstr "Los volètz autorizar a contunhar ?"
