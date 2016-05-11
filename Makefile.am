@@ -11,7 +11,8 @@ DISTCHECK_CONFIGURE_FLAGS = \
 	--with-zlib \
 	--with-jpeg \
 	--enable-debug \
-	--enable-compile-warnings=maximum
+	--enable-compile-warnings=maximum \
+	--with-systemduserunitdir='$${libdir}/systemd/user-distcheck'
 
 noinst_LTLIBRARIES = \
 	libeggsmclient.la
@@ -236,6 +237,13 @@ nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
 server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in
 	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
+systemdservicedir = $(systemduserunitdir)
+systemdservice_in_files = server/vino-server.service.in
+systemdservice_DATA = server/vino-server.service
+
+$(systemdservice_DATA): server/vino-server.service.in Makefile
+	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
+
 applicationsdir = $(datadir)/applications/
 applications_in_files = server/vino-server.desktop.in
 nodist_applications_DATA = $(applications_in_files:.desktop.in=.desktop)
@@ -267,6 +275,7 @@ dist-changelog:
 
 dist_noinst_DATA = \
 	$(desktop_in_files) \
+	$(systemdservice_in_files) \
 	\
 	$(gsettings_ENUM_FILES) \
 	$(gsettings_SCHEMAS) \
@@ -298,6 +307,7 @@ CLEANFILES = \
 	$(nodist_service_DATA) \
 	$(marshal_data) \
 	$(enum_data) \
+	$(systemdservice_DATA) \
 	server/vino-server.desktop \
 	server/vino-server.desktop.in
 

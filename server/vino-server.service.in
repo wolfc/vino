@@ -1,0 +1,8 @@
+[Unit]
+Description=Vino VNC server
+
+[Service]
+Type=dbus
+BusName=org.gnome.Vino
+ExecStart=@libexecdir@/vino-server
+Restart=on-failure

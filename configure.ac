@@ -265,6 +265,16 @@ AS_IF([test "x$have_ipv6" = "xyes"],
     [AC_MSG_ERROR([IPv6 support requested but not found])])])
 AC_MSG_RESULT([$have_ipv6])
 
+dnl systemd user unit directory
+PKG_CHECK_EXISTS (systemd,, AC_MSG_ERROR ([systemd development headers not found]))
+AC_ARG_WITH([systemduserunitdir],
+	    AS_HELP_STRING([--with-systemduserunitdir=DIR], [Directory for systemd user service files]),
+	    [],
+	    [with_systemduserunitdir=$($PKG_CONFIG --variable=systemduserunitdir systemd)])
+if test x$with_systemduserunitdir != xno; then
+	AC_SUBST([systemduserunitdir], [$with_systemduserunitdir])
+fi
+
 # GNOME libraries
 GTK_VERSION=3.0.0
 GLIB_VERSION=2.32.0
