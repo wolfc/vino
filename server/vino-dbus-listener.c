@@ -233,6 +233,7 @@ server_connected_changed_cb (GObject    *gobject,
                                                 builder,
                                                 NULL),
                                  NULL);
+  g_variant_builder_unref (builder);
 }
 
 void

@@ -94,8 +94,6 @@ vino_status_icon_update_state (VinoStatusIcon *icon)
 
   visible = !vino_server_get_on_hold (icon->priv->server);
 
-  tooltip = g_strdup (_("Desktop sharing is enabled"));
-  
   if (icon->priv->clients != NULL)
     {
       int n_clients;
@@ -110,7 +108,10 @@ vino_status_icon_update_state (VinoStatusIcon *icon)
 			     (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS) );
     }
   else
-    visible = visible && (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS);
+    {
+      tooltip = g_strdup (_("Desktop sharing is enabled"));
+      visible = visible && (icon->priv->visibility == VINO_STATUS_ICON_VISIBILITY_ALWAYS);
+    }
 
   gtk_status_icon_set_tooltip_text (GTK_STATUS_ICON (icon), tooltip);
   gtk_status_icon_set_visible (GTK_STATUS_ICON (icon), visible);
