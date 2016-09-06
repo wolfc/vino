@@ -4,7 +4,6 @@ SUBDIRS = po
 AM_DISTCHECK_CONFIGURE_FLAGS = \
 	--with-avahi \
 	--with-secret \
-	--with-network-manager \
 	--with-telepathy \
 	--with-gnutls \
 	--with-gcrypt \
