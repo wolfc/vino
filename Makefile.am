@@ -27,8 +27,7 @@ libeggsmclient_la_CPPFLAGS = \
 	-I$(top_builddir)
 
 libeggsmclient_la_LIBADD = \
-	$(EGG_SMCLIENT_LIBS) \
-	-lSM -lICE
+	$(EGG_SMCLIENT_LIBS)
 
 libeggsmclient_la_SOURCES = \
 	server/smclient/eggsmclient.c \
