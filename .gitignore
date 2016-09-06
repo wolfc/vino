@@ -53,6 +53,7 @@ Makefile.in
 /server/dbus-interface-glue.h
 /server/vino-server.desktop
 /server/vino-server.desktop.in
+/server/vino-server.service
 /server/org.freedesktop.Telepathy.Client.Vino.service
 /server/libvncserver/*.o
 /server/libvncserver/.deps

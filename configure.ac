@@ -266,14 +266,16 @@ AS_IF([test "x$have_ipv6" = "xyes"],
 AC_MSG_RESULT([$have_ipv6])
 
 dnl systemd user unit directory
-PKG_CHECK_EXISTS([systemd],, [AC_MSG_ERROR([systemd development headers not found])])
 AC_ARG_WITH([systemduserunitdir],
-	    AS_HELP_STRING([--with-systemduserunitdir=DIR], [Directory for systemd user service files]),
-	    [],
-	    [with_systemduserunitdir=$($PKG_CONFIG --variable=systemduserunitdir systemd)])
-if test x$with_systemduserunitdir != xno; then
-	AC_SUBST([systemduserunitdir], [$with_systemduserunitdir])
-fi
+  [AS_HELP_STRING([--with-systemduserunitdir=DIR],
+    [Directory for systemd user service files])],
+  [],
+  [PKG_CHECK_EXISTS([systemd],
+    [with_systemduserunitdir=$($PKG_CONFIG --variable=systemduserunitdir systemd)],
+    [with_systemduserunitdir='${libdir}/systemd/user'])])
+AS_IF([test x$with_systemduserunitdir != xno],
+  [AC_SUBST([systemduserunitdir], [$with_systemduserunitdir])])
+AM_CONDITIONAL([INSTALL_USER_UNITS], [test -n "$with_systemduserunitdir" -a "x$with_systemduserunitdir" != xno])
 
 # GNOME libraries
 GTK_VERSION=3.0.0

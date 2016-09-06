@@ -237,12 +237,14 @@ nodist_service_DATA = server/org.freedesktop.Telepathy.Client.Vino.service
 server/org.freedesktop.Telepathy.Client.Vino.service: server/org.freedesktop.Telepathy.Client.Vino.service.in
 	$(AM_V_GEN)$(SED) -e "s|[@]libexecdir[@]|$(libexecdir)|" $< > $@
 
+if INSTALL_USER_UNITS
 systemdservicedir = $(systemduserunitdir)
 systemdservice_in_files = server/vino-server.service.in
 systemdservice_DATA = server/vino-server.service
 
 $(systemdservice_DATA): server/vino-server.service.in Makefile
 	$(AM_V_GEN) $(SED) -e "s|\@libexecdir\@|$(libexecdir)|" $< > $@
+endif
 
 applicationsdir = $(datadir)/applications/
 applications_in_files = server/vino-server.desktop.in
