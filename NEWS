@@ -1,3 +1,43 @@
+Vino 3.21.92
+============
+
+Alberts Muktupāvels (1):
+      build: Fix syntax error introduced in 27785a2
+
+Bastien Nocera (2):
+      server: Add a way for Vino to be started via user systemd
+      build: Use AM_DISTCHECK_CONFIGURE_FLAGS
+
+Cédric Valmary (2):
+      Updated Occitan translation
+      Updated Occitan translation
+
+Daniel Mustieles (1):
+      Updated Spanish translation
+
+David King (4):
+      Update British English translation
+      Allow building on non-systemd systems
+      Check for sm and ice in configure
+      Remove unused --with-network-manager option
+
+Eric R. Schulz (1):
+      Fix two memory leaks
+
+Fabio Tomat (3):
+      Updated Friulian translation
+      Updated Friulian translation
+      Updated Friulian translation     (cherry picked from commit 02c55160b2703675f55880dd8238c84342405532)
+
+Piotr Drąg (4):
+      Updated Polish translation
+      Add Language headers to po files
+      Updated Polish translation
+      Updated Polish translation
+
+Tiago Santos (1):
+      Updated Portuguese translation
+
 Vino 3.20.0
 ===========
 
