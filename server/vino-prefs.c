@@ -95,6 +95,8 @@ vino_prefs_create_server (GdkScreen *screen)
                    server, "notify-on-connect", G_SETTINGS_BIND_GET);
   g_settings_bind (settings, "icon-visibility",
                    icon, "visibility", G_SETTINGS_BIND_GET);
+  g_settings_bind (settings, "accepted-hosts",
+                   server, "accepted-hosts", G_SETTINGS_BIND_GET);
 
   vino_server_set_on_hold (server, FALSE);
 

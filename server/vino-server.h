@@ -125,6 +125,8 @@ gboolean             vino_server_get_notify_on_connect    (VinoServer     *serve
 void                 vino_server_set_reject_incoming      (VinoServer     *server,
                                                            gboolean        reject);
 gboolean             vino_server_get_reject_incoming      (VinoServer     *server);
+void                 vino_server_set_accepted_hosts       (VinoServer     *server,
+							   const char     *accepted_hosts);
 
 #include "vino-status-icon.h"
 VinoStatusIcon      *vino_server_get_status_icon          (VinoServer      *server);

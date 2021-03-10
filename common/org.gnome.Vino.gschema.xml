@@ -154,5 +154,14 @@
       </description>
       <default>true</default>
     </key>
+
+    <key name='accepted-hosts' type='s'>
+      <summary>Hosts which are accepted without prompt</summary>
+      <description>
+        This key specifies the hosts for which no acceptance prompt
+        will be shown.
+      </description>
+      <default>''</default>
+    </key>
   </schema>
 </schemalist>

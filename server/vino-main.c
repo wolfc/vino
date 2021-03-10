@@ -197,6 +197,8 @@ name_acquired (GDBusConnection *connection,
       g_settings_bind (vino->settings, "icon-visibility",
                        vino_server_get_status_icon (server),
                        "visibility", G_SETTINGS_BIND_GET);
+      g_settings_bind (vino->settings, "accepted-hosts",
+                       server, "accepted-hosts", G_SETTINGS_BIND_GET);
 
       vino_dbus_listener_set_server (vino->listeners[i], server);
       vino_server_set_on_hold (server, FALSE);

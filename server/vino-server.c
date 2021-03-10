@@ -83,6 +83,8 @@ struct _VinoServerPrivate
   guint             disable_xdamage : 1;
   guint             notify_on_connect : 1;
   guint             reject_incoming : 1;
+
+  char             *accepted_hosts;
 };
 
 struct _VinoClient
@@ -120,7 +122,8 @@ enum
   PROP_DISABLE_XDAMAGE,
   PROP_NOTIFY_ON_CONNECT,
   PROP_REJECT_INCOMING,
-  PROP_CONNECTED
+  PROP_CONNECTED,
+  PROP_ACCEPTED_HOSTS
 };
 
 static enum rfbNewClientAction vino_server_auth_client (VinoServer *server,
@@ -582,6 +585,13 @@ vino_server_handle_authenticated_client (rfbClientPtr rfb_client)
   g_return_val_if_fail (VINO_IS_SERVER (server), RFB_CLIENT_REFUSE);
 
   if (!server->priv->prompt_enabled)
+    {
+      vino_server_client_accepted (server, client);
+      return RFB_CLIENT_ACCEPT;
+    }
+
+  fprintf(stderr, "Must show prompt for %s\n", rfb_client->host);
+  if (server->priv->accepted_hosts && strstr(server->priv->accepted_hosts, rfb_client->host))
     {
       vino_server_client_accepted (server, client);
       return RFB_CLIENT_ACCEPT;
@@ -1209,6 +1219,9 @@ vino_server_set_property (GObject      *object,
     case PROP_REJECT_INCOMING:
       vino_server_set_reject_incoming (server, g_value_get_boolean (value));
       break;
+    case PROP_ACCEPTED_HOSTS:
+      vino_server_set_accepted_hosts (server, g_value_get_string (value));
+      break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
       break;
@@ -1281,6 +1294,9 @@ vino_server_get_property (GObject    *object,
       break;
     case PROP_CONNECTED:
       g_value_set_boolean (value, server->priv->num_clients > 0);
+      break;
+    case PROP_ACCEPTED_HOSTS:
+      g_value_set_string (value, server->priv->accepted_hosts);
       break;
     default:
       G_OBJECT_WARN_INVALID_PROPERTY_ID (object, prop_id, pspec);
@@ -1543,6 +1559,18 @@ vino_server_class_init (VinoServerClass *klass)
                                                          G_PARAM_STATIC_NAME |
                                                          G_PARAM_STATIC_NICK |
                                                          G_PARAM_STATIC_BLURB));
+
+  g_object_class_install_property (gobject_class,
+				   PROP_ACCEPTED_HOSTS,
+				   g_param_spec_string ("accepted-hosts",
+							"Accepted hosts",
+							"Do not prompt for acceptance for given hosts",
+							NULL,
+                                                        G_PARAM_READWRITE   |
+                                                        G_PARAM_CONSTRUCT   |
+                                                        G_PARAM_STATIC_NAME |
+                                                        G_PARAM_STATIC_NICK |
+                                                        G_PARAM_STATIC_BLURB));
 }
 
 VinoServer *
@@ -1997,4 +2025,18 @@ vino_server_get_reject_incoming (VinoServer *server)
   g_return_val_if_fail (VINO_IS_SERVER (server), FALSE);
 
   return server->priv->reject_incoming;
+}
+
+void
+vino_server_set_accepted_hosts (VinoServer *server,
+			      const char *accepted_hosts)
+{
+  g_return_if_fail (VINO_IS_SERVER (server));
+
+  if (server->priv->accepted_hosts)
+    g_free (server->priv->accepted_hosts);
+
+  server->priv->accepted_hosts = g_strdup (accepted_hosts);
+
+  g_object_notify (G_OBJECT (server), "accepted-hosts");
 }
